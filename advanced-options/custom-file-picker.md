@@ -1,0 +1,127 @@
+# Custom File Picker
+
+#### Main concepts
+
+This feature allows you to have your own file picker for choosing files (images) in the BEE Editor, to make its integration in your platform look even more seamless. It leverages BEE’s [Content Dialog](https://docs.beefree.io/content-dialog/) feature. To set it up you will need to add the corresponding entry to the [configuration object](https://docs.beefree.io/configuration-parameters/):
+
+```
+
+
+contentDialog: {
+    filePicker: {
+        handler: function(resolve, reject, args) {
+            // Your function
+        }
+    },
+    ...
+}
+
+
+```
+
+**The `handler` function** lets you use your own logic to retrieve the desired value, and it has a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise)-like signature.
+
+If data from Beefree SDK is available, it will be sent in the `args` parameter (see below). Once the value is available, you must call the `resolve(value)` function to pass it to the editor. In case you want to cancel the operation, call the `reject()` function.
+
+Please note that **a `resolve` or `reject` call is mandatory**. If you miss this step, the editor will remain in waiting mode – and the error management on the host application must call the `reject()` function to unblock the editor.
+
+**The `args` parameter** is where the File Picker’s Content Dialog will receive additional data.
+
+```
+
+
+{
+    "X-BEE-UserName": "string", // e.g. image, all
+    "X-BEE-Uid": "string", // e.g. the current user's id
+    "X-BEE-Mimetypes": "string", // e.g. "*" -Or- "image/*"
+}
+
+
+```
+
+Images dragged onto an image block or edited via the “apply effects and more” button will be passed to the image storage per your app’s file storage settings. To prevent images from passing through Beefree SDK’s file storage, the file upload can be disabled via [advanced permissions](https://docs.beefree.io/advanced-permissions/).
+
+#### Returned value syntax
+
+Values must use the same pattern used in the [configuration object](https://docs.beefree.io/configuration-parameters/): the returned object is validated against the expected format. If the validation fails, an error will be returned to the browser console, eg: `Error getting content filePicker value, the item is malformed`
+
+```
+
+
+{
+   "url":"https://d1oco4z2z1fhwp.cloudfront.net/templates/default/113/rocket-color.png",
+   "context":"imageModule.src"
+}
+
+
+```
+
+#### A basic example
+
+The following is the most basic example, which returns an image URL immediately after clicking the “Browse” button. This example does not open a file picker.
+
+In a real-world scenario, the host application would display a file picker UI and let the user search for and locate the file before finally returning the file’s location (URL) to Beefree SDK:
+
+```
+
+
+contentDialog: {
+  filePicker: {
+    handler: function(resolve, reject) {
+      resolve({
+        url: 'string', // url to the file (e.g. http://www.example.com/myimage.jpg)
+      })
+    }
+  },
+}
+
+
+```
+
+#### List of modules
+
+The following is a list of all modules that are sent as part of the _args_ parameter:
+
+| Modules               |
+| --------------------- |
+| **sidebar.link**      |
+| **buttonModule.link** |
+| **imageModule.link**  |
+| **iconsModule.link**  |
+| **menuModule.link**   |
+
+| Social Module Icon   |
+| -------------------- |
+| **socialModule.src** |
+
+| Icons Module Icon   |
+| ------------------- |
+| **iconsModule.src** |
+
+| Text Module Link    |
+| ------------------- |
+| **textModule.link** |
+
+| Image module URL    |
+| ------------------- |
+| **imageModule.src** |
+
+| Title module link    |
+| -------------------- |
+| **titleModule.link** |
+
+| Row background image URL |
+| ------------------------ |
+| **row.backgroundImage**  |
+
+| Row background video URL |
+| ------------------------ |
+| **backgroundVideo.src**  |
+
+| Special links: Text module toolbar |
+| ---------------------------------- |
+| **toolbar.specialLink**            |
+
+| Special links: Sidebar  |
+| ----------------------- |
+| **sidebar.specialLink** |
