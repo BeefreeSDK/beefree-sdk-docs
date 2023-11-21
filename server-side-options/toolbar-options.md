@@ -1,5 +1,9 @@
 # Toolbar options
 
+{% hint style="info" %}
+Please note that server-side configurations are only available on [paid plans](https://dam.beefree.io/pluginpricing).
+{% endhint %}
+
 In the Toolbar Options tab you can:
 
 * control individual settings that affect the top toolbar in the builder
@@ -17,7 +21,7 @@ For example, in our MailUp App for Shopify, we hide the toolbar completely and c
 
 ![](http://docs.beefree.io/wp-content/uploads/2017/08/bee\_plugin\_embedded\_shopify2.jpg)
 
-If you decide to go this route, use the methods from this page to control the builder from your UI.
+If you decide to go this route, use the [methods from this page](../getting-started/installation/methods-and-events.md) to control the builder from your UI.
 
 | Option                    | Description                                                                 |
 | ------------------------- | --------------------------------------------------------------------------- |

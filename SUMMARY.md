@@ -25,7 +25,6 @@
     * [Advanced settings](popup-builder/setting-layout-and-size/advanced-settings.md)
 * [File Manager application overview](file-manager-application-overview.md)
 * [Server-side options](server-side-options/README.md)
-  * [Where to find them](server-side-options/where-to-find-them.md)
   * [Toolbar options](server-side-options/toolbar-options.md)
   * [Storage options](server-side-options/storage-options/README.md)
     * [Configure your AWS S3 bucket](server-side-options/storage-options/configure-your-aws-s3-bucket.md)
