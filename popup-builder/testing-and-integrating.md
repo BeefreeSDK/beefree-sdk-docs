@@ -1,10 +1,5 @@
 # Testing and integrating
 
-1. [Creating an application](broken-reference)
-2. [Integrating the Popup Builder](broken-reference)
-3. [HTML output](broken-reference)
-4. [Developer resources](broken-reference)
-
 ### Creating an application <a href="#creating-an-application" id="creating-an-application"></a>
 
 When you log into the [Beefree SDK Console](https://dam.beefree.io/devmain) you can immediately see what type of applications you have already created under your Beefree SDK subscriptions.
@@ -15,23 +10,20 @@ Just head over to the “Popup Builder Application” section and click on Activ
 
 ![](https://docs.beefree.io/wp-content/uploads/2021/08/firefox\_2021-08-18\_19.07.52.png)
 
-Once created, head over to “Details” for all server-side configurations. Paid applications allow you to create child [development applications](https://docs.beefree.io/initializing-bee-plugin/#production-vs-development-apps), to ease new feature testing, development, and maintenance.
+Once created, head over to “Details” for all server-side configurations. Paid applications allow you to create child [development applications](../getting-started/development-applications.md), to ease new feature testing, development, and maintenance.
 
 All builders share the same **core functionalities**, including authentication and configuration. If you have already integrated our Email builder, you can re-use most of your work using the same configuration and callbacks.
 
-Out-of-the-box, the setup and configuration are the [same as Email and Page Builder](https://docs.beefree.io/popup-builder-getting-started/). This section will cover the settings specific to Popup Builder. Check out our [Getting Started guide](https://docs.beefree.io/popup-builder-getting-started/) if you’re new to Beefree SDK or unfamiliar with the configuration basics (as seen in the example below).
+## Integrating the Popup Builder
 
-```
+Out-of-the-box, the setup and configuration are the same as [Email and Page Builder](../getting-started/installation/). This section will cover the settings specific to Popup Builder. Check out our [Getting Started guide](../getting-started/installation/) if you’re new to Beefree SDK or unfamiliar with the configuration basics (as seen in the example below).
 
-
+```json
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
   container: 'bee-plugin-container', // [mandatory]
   ...
 }
-
-
-
 ```
 
 Loading Popup Builder with no additional settings will give the end-user a beautifully designed popup and workspace to design their content. However, Popup Builder comes with an additional, robust set of configuration options to customize the workspace. This allows the host application to build a workspace that matches their popup’s look and feel and that of the destination page.

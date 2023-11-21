@@ -1,11 +1,14 @@
-# page
+# Embedding videos in a page
+
+{% hint style="info" %}
+This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+{% endhint %}
 
 The Page Builder includes an expanded Video content block for optimized usage of videos on web pages. Videos are added inside an iframe via the HTML5 video tag.
 
 There are multiple ways to add a video to a page built with Beefree SDK. Additional settings allow the video progress bar and loop playback to be turned on or off.
 
-**Embedded**\
-
+**Embedded**
 
 The Embedded mode allows video playback inside the page. It requires the URL of a video hosted on YouTube, YouTube Shorts, or Vimeo.
 

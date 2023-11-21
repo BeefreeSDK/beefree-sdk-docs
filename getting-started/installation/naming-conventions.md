@@ -27,4 +27,4 @@ Here is a list of terms used frequently throughout the Beefree SDK technical doc
 * **Beefree system**\
   The backend system that interacts with your _Beefree application_ to provide services such as application authorization.
 * **Content Services API**\
-  A set of [API methods](https://docs.beefree.io/message-services-api/) in the _Beefree system_ that allow you to perform a variety of tasks connected to the implementation of a content creation workflow.
+  A set of [API methods](../../content-services-api/) in the _Beefree system_ that allow you to perform a variety of tasks connected to the implementation of a content creation workflow.

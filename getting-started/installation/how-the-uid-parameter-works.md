@@ -6,7 +6,7 @@
 
 The UID parameter:
 
-* Is an alphanumeric string passed to Beefree SDK in the [editor configuration file](https://docs.beefree.io/configuration-parameters/).
+* Is an alphanumeric string passed to Beefree SDK in the [editor configuration file](configuration-parameters/).
 * Has a minimum length of 3 characters.
 * Can contain letters from a to z (uppercase or lowercase), numbers and the special characters “\_” (underscore) and “-” (dash).
 * Make sure that you pass a string, not a numeric value. So even if your UID is a number, pass `"12345"` and not `12345`.
@@ -16,7 +16,7 @@ The UID parameter:
 
 It uniquely identifies a user of the application. When we say “uniquely”, we mean that:
 
-1. It will be counted as a unique user for [monthly billing purposes](https://dam.beefree.io/pluginpricing).
+1. It will be counted as a unique user for [monthly billing purposes](https://developers.beefree.io/pricing-plans).
 2. Images (and other files) used by the user when creating and editing messages will be associated with it and not visible to other users (when using the default storage).
 
 ### Users, sub-users and client accounts
@@ -29,9 +29,3 @@ A quick example to help you visualize this.
 * You typically don’t want client ABC to see client XYZ’s images
 * So you will use a certain UID for client ABC and another UID for client XYZ
 * If there are 5 users within client ABC account in your application, however, it’s OK that they see the same images, since they are likely collaborating on the same emails or landing pages, so you don’t need to use a different UID: all 5 will share the same UID.
-
-### Related resources
-
-* [How much do you charge for Beefree SDK?](https://beefree.io/bee-plugin/pricing/)
-* [How do I configure the editor?](https://docs.beefree.io/configuration-parameters/)
-* [Client vs. server-side configurations](https://docs.beefree.io/server-side-options/)

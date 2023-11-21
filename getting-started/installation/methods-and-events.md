@@ -1,9 +1,10 @@
 # Methods and Events
 
-1. [Instance Methods](broken-reference)
-2. [Instance Events](broken-reference)
-
 ### Instance Methods <a href="#instance-methods" id="instance-methods"></a>
+
+{% hint style="info" %}
+NOTE: if initializing a File Manager application, the only supported method is beePluginInstance.start() without parameters.
+{% endhint %}
 
 Assuming that `beePluginInstance` is the instance of your embedded builder application, here are the methods you can call:
 
@@ -30,17 +31,17 @@ Here’s some useful methods for this scenario:
 
 The top toolbar displayed by default within the builder contains buttons that trigger certain actions. These are the callbacks that are triggered when the buttons are clicked.
 
-| Event                  | Description                                                            | Returned values                                                             |
-| ---------------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| **onSave**             | Fired when the Save button is clicked.                                 | JSON and HTML documents                                                     |
-| **onSaveAsTemplate**   | Fired when “Save as template” is clicked.                              | JSON document                                                               |
-| **onAutoSave**         | Fired automatically based on `autosave` configuration parameter value. | JSON document                                                               |
-| **onSend**             | Fired when the “Send a test button” is clicked.                        | HTML document                                                               |
-| **onLoad**             | Fired when the JSON is loaded in the builder.                          | JSON document                                                               |
-| **onError**            | Fired every time an error occurs.                                      | Error message                                                               |
-| **onPreview**          | Fired every time the preview button is pressed.                        | Status (Boolean)                                                            |
-| **onTogglePreview**    | Fired every time the preview is opened or closed.                      | Status (Boolean)                                                            |
-| **onChange**           | Fired every time a change on the message is performed.                 | [Read More](https://docs.beefree.io/tracking-message-changes/#how-it-works) |
-| **onComment**          | Fired every time a thread or comment changes.                          | [Read More](https://docs.beefree.io/commenting/#commenting-callback)        |
-| **onFilePickerInsert** | Fired when the “insert” button is clicked.                             | Object with file info                                                       |
-| **onFilePickerCancel** | Fired when the “X” button is clicked.                                  | None                                                                        |
+| Event                  | Description                                                            | Returned values                                   |
+| ---------------------- | ---------------------------------------------------------------------- | ------------------------------------------------- |
+| **onSave**             | Fired when the Save button is clicked.                                 | JSON and HTML documents                           |
+| **onSaveAsTemplate**   | Fired when “Save as template” is clicked.                              | JSON document                                     |
+| **onAutoSave**         | Fired automatically based on `autosave` configuration parameter value. | JSON document                                     |
+| **onSend**             | Fired when the “Send a test button” is clicked.                        | HTML document                                     |
+| **onLoad**             | Fired when the JSON is loaded in the builder.                          | JSON document                                     |
+| **onError**            | Fired every time an error occurs.                                      | Error message                                     |
+| **onPreview**          | Fired every time the preview button is pressed.                        | Status (Boolean)                                  |
+| **onTogglePreview**    | Fired every time the preview is opened or closed.                      | Status (Boolean)                                  |
+| **onChange**           | Fired every time a change on the message is performed.                 | [Read More](../../tracking-message-changes.md)    |
+| **onComment**          | Fired every time a thread or comment changes.                          | [Read More](../../advanced-options/commenting.md) |
+| **onFilePickerInsert** | Fired when the “insert” button is clicked.                             | Object with file info                             |
+| **onFilePickerCancel** | Fired when the “X” button is clicked.                                  | None                                              |

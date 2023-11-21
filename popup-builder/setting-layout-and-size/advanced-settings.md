@@ -1,15 +1,5 @@
 # Advanced settings
 
-1. [Custom styles (themes)](broken-reference)
-2. [Applying styles to the HTML](broken-reference)
-3. [Order of operations](broken-reference)
-4. [Starting from scratch](broken-reference)
-5. [Applying custom styles](broken-reference)
-6. [Deep-dive into CSS properties](broken-reference)
-7. [Custom layouts](broken-reference)
-8. [The layout HTML](broken-reference)
-9. [Changing the position of a layout](broken-reference)
-
 What if the default styles and standard settings aren’t enough? No worries! In the following sections, we will look at styling your popup to make it look and feel more like the one real visitors will interact with.
 
 ### Custom styles (themes) <a href="#custom-styles-themes" id="custom-styles-themes"></a>
@@ -18,9 +8,7 @@ A theme is simply a set of custom styles that give the popup its look and feel. 
 
 Here is a preview of the configuration:
 
-```
-
-
+```json
 workspace: {
   popup: {
     customStyles: {
@@ -28,19 +16,15 @@ workspace: {
     },
   }
 }
-
-
 ```
 
 #### Applying styles to the HTML <a href="#applying-styles-to-the-html" id="applying-styles-to-the-html"></a>
 
 To understand the best way to apply your styles, let’s start by inspecting the underlying HTML structure so you can view where the system will map your styles.
 
-Popup HTML
+**Popup HTML**
 
-```
-
-
+```markup
 <div id="popup-container">
   <div id="popup-header">
     <div></div>
@@ -54,8 +38,6 @@ Popup HTML
     <div></div>
   </div>
 </div>  
-
-
 ```
 
 Here is a quick break down of what each div does:
@@ -86,9 +68,7 @@ You can use this div to show a traditional footer for your popup or position som
 
 The above HTML structure is represented in your bee config as the following JSON object.
 
-```
-
-
+```json
 customStyles: {
   container: {},
   header: {},
@@ -96,24 +76,18 @@ customStyles: {
   footer: {},
   overlay: {},
 },   
-
-
 ```
 
 Add styles to the JSON section that corresponds to the HTML element you want to style.
 
 For example, if you want to apply styles to the div with id popup-container, then you would add the styles to the following JSON:
 
-```
-
-
+```json
 customStyles: {
   container: {
     ...styles,
   },
 },   
-
-
 ```
 
 We’ll go deeper into styling in the following sections.
@@ -128,9 +102,7 @@ We said that you could start from scratch if you want, and the easiest way to do
 
 Example:
 
-```
-
-
+```json
 beeConfig: {
   workspace: {
     popup: {
@@ -138,8 +110,6 @@ beeConfig: {
     }
   }
 }
-
-
 ```
 
 #### Applying custom styles <a href="#applying-custom-styles" id="applying-custom-styles"></a>
@@ -170,11 +140,8 @@ workspace: {
 
 **Example:**
 
-```
-
-
-workspace: {
-  popup: {
+<pre><code><strong>workspace: {
+</strong>  popup: {
     customStyles: {
       container: {
         boxShadow: '0 5px 15px rgba(0, 0, 0, 0.5)'
@@ -182,9 +149,7 @@ workspace: {
     }
   }
 }
-
-
-```
+</code></pre>
 
 #### Deep-dive into CSS properties <a href="#deep-dive-into-css-properties" id="deep-dive-into-css-properties"></a>
 
@@ -205,7 +170,6 @@ We covered the default layout settings in Setting layout and size section. To re
 Here is a preview of the configuration:
 
 ```
-
 workspace: {
   popup: {
     customLayout: {
@@ -213,7 +177,6 @@ workspace: {
     },
   }
 }
-
 ```
 
 ### The layout HTML <a href="#the-layout-html" id="the-layout-html"></a>
@@ -222,9 +185,7 @@ The popup is positioned in the workspace using divs and CSS flexbox. We created 
 
 Layout HTML:
 
-```
-
-
+```markup
 <div id="html">
   <div id="body">
     <div id="main">    
@@ -235,11 +196,9 @@ Layout HTML:
     </div>
   </div>
 </div>  
-
-
 ```
 
-Overview
+**Overview**
 
 Here is a quick break down of what each div does:
 
@@ -271,9 +230,7 @@ The wrapper of the popup is used entirely for positioning the popup within the w
 
 Example:
 
-```
-
-
+```json
 workspace: {
   popup: {
     layout: 'classic-center',
@@ -284,6 +241,4 @@ workspace: {
     }
   }
 }
-
-
 ```

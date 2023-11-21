@@ -1,12 +1,5 @@
 # Workspaces
 
-1. [Overview](broken-reference)
-2. [Available workspaces](broken-reference)
-3. [Starting the builder with a workspace](broken-reference)
-4. [Switching workspaces](broken-reference)
-5. [Workspace callbacks](broken-reference)
-6. [Use cases](broken-reference)
-
 ### Overview <a href="#overview" id="overview"></a>
 
 In user interfaces, a workspace is a parameter that changes the appearance, settings, and widgets available in an builder, to help the user to focus on what matters.
@@ -18,7 +11,7 @@ You can load the builder with a certain workspace, but workspaces can also be ch
 Switching between workspaces might change:
 
 * content visibility on the stage
-* tiles availabilty in the content tab
+* tiles availability in the content tab
 * available previews
 * outputs when saving a content
 * …and more!
@@ -31,7 +24,7 @@ We currently offer 3 additional workspaces, and we are planning to launch more a
 
 These 3 workspaces revolve around the use of **AMP content**, and are provided so that you can tailor the experience of creating AMP emails in Beefree SDK.
 
-Here is an overview of the different workspaces and their differences. Please [refer to this page](https://docs.beefree.io/amp-carousel/) for more information on using AMP in Beefree SDK.
+Here is an overview of the different workspaces and their differences. Please [refer to this page](../../../amp-carousel.md) for more information on using AMP in Beefree SDK.
 
 |                                                   | default                    | mixed                    | amp\_only                                 | html\_only                               |
 | ------------------------------------------------- | -------------------------- | ------------------------ | ----------------------------------------- | ---------------------------------------- |
@@ -49,8 +42,7 @@ Here is an overview of the different workspaces and their differences. Please [r
 
 Here is an example of loading Beefree SDK with a “mixed” workspace:
 
-```
-
+```javascript
 
 type ClientConfig = {
   workspace?: {
@@ -71,9 +63,6 @@ const beeConfig: ClientConfig = {
 function BeePlugin.create(token, beeConfig, (beePluginInstance) => { 
   //.... 
 }
-         
-
-
 
 ```
 
@@ -83,21 +72,15 @@ You can implement a workspace selector within your application, so that users ca
 
 First, you need to define template files for the workspaces you want to propose, as JSONs:
 
-```
-
-
+```javascript
 {
   "type":"mixed"
 }
-
-
 ```
 
 Then, you can load those workspaces at runtime:
 
-```
-
-
+```javascript
 type Workspace = 'default'|'mixed'|'amp_only'|'html_only'
 
 const req = url => fetch(url).then(r => r.json())
@@ -105,15 +88,11 @@ const loadWorkspace = async (workspace:Workspace) => {
   const { type } = await req(`https://example.com/workspaces/${workspace}.json`)
   beePluginInstance.loadWorkspace(type) 
 }
-
-
 ```
 
 And here is how to create a simple select to switch workspace:
 
-```
-
-
+```markup
 <select id="workspace" onchange="loadWorkspace(this.value)">
 <option selected="selected" value="">WORKSPACE</option>
 <option value="default">DEFAULT</option>
@@ -121,8 +100,6 @@ And here is how to create a simple select to switch workspace:
 <option value="amp_only">AMP_ONLY</option>
 <option value="html_only">HTML_ONLY</option>
 </select>
-
-
 ```
 
 ### Workspace callbacks <a href="#workspace-callbacks" id="workspace-callbacks"></a>
@@ -131,43 +108,30 @@ After you load a workspace, the application will trigger one of these three call
 
 **Success**
 
-```
-
-
+```javascript
 //SUCCESS 
 onLoadWorkspace: function (workspace) {
   console.log(`workspace: ${workspace} has been loaded`);
 },
-
-
 ```
 
 **Failure**
 
-```
-
-
-//FAILURE
-onError: function (error) {
+<pre class="language-javascript"><code class="lang-javascript"><strong>//FAILURE
+</strong>onError: function (error) {
  console.error('error: ', error);
 },
-
-
-```
+</code></pre>
 
 **Invalid workspace**
 
-```
-
-
+```javascript
 {
  code: 1400, 
  name: "Invalid workspace type",
  message: "RANDOM : is not a valid workspace",
  details: "Available workspaces are: [ default,mixed,amp_only,html_only ]"
 }
-
-
 ```
 
 ### Use cases <a href="#use-cases" id="use-cases"></a>

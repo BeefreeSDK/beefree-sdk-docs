@@ -1,10 +1,5 @@
 # Setting layout and size
 
-1. [Width settings](broken-reference)
-2. [Layout settings](broken-reference)
-3. [Changing the background](broken-reference)
-4. [Applying a preset layout](broken-reference)
-
 ### Width settings <a href="#width-settings" id="width-settings"></a>
 
 Let’s start by looking at some of the peculiarities of the Popup builder.
@@ -15,17 +10,13 @@ With Popup Builder, the same template may have multiple contexts, and each conte
 
 Since the content area’s width is tightly coupled to the context and layout, no one size fits all width is saved in the template. Instead, **the host app will specify the width settings** when the builder loads, based on the context of using the template. Here is a quick example:
 
-```
-
-
+```json
 workspace: {
   popup: {
     contentWidth: 600,
     contentWidthMobile: 300
   }
 }
-
-
 ```
 
 Two final notes:
@@ -47,8 +38,7 @@ What if you like most of the defaults but want to do some minor adjustments? We 
 
 You can easily change the background to make the workspace look like the destination page where your customer will embed the popup.
 
-```
-
+```markup
 beeConfig: {
   ...
   workspace: {
@@ -59,18 +49,15 @@ beeConfig: {
     }
   }
 }
-
 ```
 
-If this option is not set, then we will provide a default skeleton layout. It’s worth noting at this point that you can apply every setting for both desktop and mobile design modes. That means you can have a different background when editing in [Mobile Design Mode](https://docs.beefree.io/mobile-design-mode/).
+If this option is not set, then we will provide a default skeleton layout. It’s worth noting at this point that you can apply every setting for both desktop and mobile design modes. That means you can have a different background when editing in [Mobile Design Mode](../../mobile-design-mode.md).
 
 #### Applying a preset layout <a href="#applying-a-preset-layout" id="applying-a-preset-layout"></a>
 
 One of the most common needs is changing the popup’s default-centered position to better match the end-user’s use case. Out-of-the-box, the Popup Builder comes with many of the most common popup layouts preconfigured. You can use any available presets “as is” or use them as starting points that you can fine-tune to your satisfaction.
 
-```
-
-
+```json
 beeConfig: {
   ...
   workspace: {
@@ -79,8 +66,6 @@ beeConfig: {
     }
   }
 }
-
-
 ```
 
 Here is a complete list of preset layouts:

@@ -25,7 +25,7 @@ Congratulations on registering your first application!  Now it’s time to insta
 
 **HTML**
 
-```
+```markup
 
 
 <script src="https://app-rsrc.getbee.io/plugin/BeePlugin.js" type="text/javascript"></script>
@@ -49,7 +49,7 @@ The embedded application (email builder, page builder, popup builder, file manag
 
 We recommend starting with an empty div, as follows:
 
-```
+```markup
 
 
 <div id="bee-plugin-container"></div>
@@ -63,11 +63,11 @@ Beefree cares about your security. This is why we use a standard JSON Web Token,
 
 To authenticate your application, pass your **Client ID** and **Client Secret** to our authorization service, and we’ll send your unique token back to you.
 
-We talk about this step in detail here, but here’s a quick example using jQuery:
+We talk about this step in detail [here](authorization-process-in-detail.md), but here’s a quick example using jQuery:
 
 **jQuery**
 
-```
+```javascript
 
 
 var endpoint = "https://auth.getbee.io/apiauth";
@@ -145,3 +145,11 @@ var template = { ... }; // Any valid template, as JSON object
 bee.start(template);
 
 ```
+
+{% hint style="info" %}
+The instance method <mark style="color:red;">`bee.start(template)`</mark> does not need to be called immediately after <mark style="color:red;">`create`</mark>. In a SPA (Single Page Application) or React app, you can <mark style="color:red;">`create`</mark> the editor in a hidden global state but then call the `start` method when the template is selected and available.\
+\
+The application loads quickly when all steps are completed consecutively. However, by separating the loading workflow into two parts, the end-user will perceive loading in a fraction of the overall time.\
+\
+Remember, if the <mark style="color:red;">`client_id`</mark> belongs to a File Manager application, <mark style="color:red;">`bee.start()`</mark> can be called without any parameters.
+{% endhint %}
