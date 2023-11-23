@@ -1,9 +1,9 @@
 # Custom Attributes
 
-1. [Overview](broken-reference)
-2. [Use cases](broken-reference)
-3. [How it works](broken-reference)
-4. [How to activate it](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.\
+If you're on the Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Core-level features.
+{% endhint %}
 
 ### Overview <a href="#overview" id="overview"></a>
 
@@ -32,11 +32,15 @@ Custom attributes can be applied to:
 
 For images and buttons, these attributes will be visible in the **editor sidebar**, under the new “ATTRIBUTES” section.
 
-![Adding a custom attribute in the editor sidebar](https://docs.beefree.io/wp-content/uploads/2021/01/Custom-Attributes-add-in-sidebar-zoom.gif)\
+\
 For links in text blocks, they will be part of the dialog window for creating a link.
 
-![Add a custom attribute in a link dialog](https://docs.beefree.io/wp-content/uploads/2021/01/Custom-attributes-add-in-link-dialog.png)\
+<figure><img src="https://docs.beefree.io/wp-content/uploads/2021/01/Custom-Attributes-add-in-sidebar-zoom.gif" alt="" width="563"><figcaption></figcaption></figure>
+
+\
 You can provide the editor with a list of attributes that will be available to the user through the UI. How the attribute value is formatted impacts how the builder UI displays it and how the user interacts with it.
+
+<figure><img src="https://docs.beefree.io/wp-content/uploads/2021/01/Custom-attributes-add-in-link-dialog.png" alt="" width="563"><figcaption></figcaption></figure>
 
 Depending on how custom attributes are implemented, users may:
 
@@ -49,11 +53,9 @@ Depending on how custom attributes are implemented, users may:
 
 Regardless of how a custom attribute is added, it will be included in the `a` or `img` tag when HTML is generated for an email/page, like the segment attribute in this hyperlink:
 
-```
-
+```javascript
 
 <a href=”https://beefree.io/” segment=”emaildesign”>Visit BEE!</a>
-
 
 ```
 
@@ -65,13 +67,11 @@ Custom attributes are a client-side configuration that needs to be passed when i
 
 The easiest implementation is to just pass a simple configuration at startup:
 
-```
-
+```javascript
 
 customAttributes: {
   enableOpenFields: true
 }
-
 
 ```
 
@@ -79,10 +79,9 @@ With this setup, users can indicate a “Custom” custom attribute by manually 
 
 #### Standard
 
-You can pass the necessary custom attributes in the initial configuration. Those attributes will be available in the interface, as explained in the [How it works](https://docs.beefree.io/custom-attributes#how-it-works) section, and the user will be able to specify the value for these attributes, if possible.
+You can pass the necessary custom attributes in the initial configuration. Those attributes will be available in the interface, and the user will be able to specify the value for these attributes, if possible.
 
-```
-
+```javascript
 
 customAttributes:{
   attributes: [
@@ -103,7 +102,6 @@ customAttributes:{
   ]
 }
 
-
 ```
 
 Let’s look through the attributes defined in the example above, and how they will look like in the builder.
@@ -122,4 +120,4 @@ The `Class` attribute has no defined value, so the user can enter anything in a 
 
 #### Advanced
 
-You can totally customize the UX of adding attributes by invoking a [Content Dialog](https://docs.beefree.io/content-dialog/#custom-attributes) that will take over the editor’s UI. The dialog will need to return the attribute that needs to be applied.
+You can totally customize the UX of adding attributes by invoking a [Content Dialog](content-dialog.md) that will take over the editor’s UI. The dialog will need to return the attribute that needs to be applied.

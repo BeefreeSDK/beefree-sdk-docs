@@ -1,10 +1,8 @@
 # Display Conditions
 
-1. [How they work](broken-reference)
-2. [Activating and using the feature](broken-reference)
-3. [Display conditions and user roles & permissions](broken-reference)
-4. [Additional information](broken-reference)
-5. [Extending Display Conditions](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Core-level features.
+{% endhint %}
 
 ### How they work <a href="#how-they-work" id="how-they-work"></a>
 
@@ -30,12 +28,11 @@ Restrict access to some of the functionality based on user roles. For example, s
 
 ### Activating and using the feature <a href="#activating-and-using-the-feature" id="activating-and-using-the-feature"></a>
 
-Please note that the Display conditions are **disabled by default.** You can turn this feature on by enabling it under the Server-side configurations. You must be on a paid plan (Core subscription and above) to enable this feature.
+Please note that the Display conditions are **disabled by default.** You can turn this feature on by enabling it under the [Server-side configurations](../server-side-options/). You must be on a paid plan (Core subscription and above) to enable this feature.
 
 As the application hosting the builder, you can now pass an array of conditions.
 
-```
-
+```javascript
 
 var rowDisplayConditions = [{
   type: 'Last ordered catalog',
@@ -58,7 +55,6 @@ var rowDisplayConditions = [{
   after: '{% endif %}
 {% endraw %}',
 }, { ... }]
-
 
 ```
 
@@ -135,7 +131,7 @@ Conditional syntax and row content are isolated from each other in the HTML gene
 
 ### Extending Display Conditions <a href="#extending-display-conditions" id="extending-display-conditions"></a>
 
-You can extend this feature and allow users of the editor to build their own _Display Conditions_, on the fly, using a UI that you control. It’s part of the [Content Dialog](https://about/content-dialog/#display-conditions) functionality. This is an advanced feature that requires some development on the side of the hosting application, but that provides fantastic flexibility. [Check it out](https://about/content-dialog/#display-conditions)!
+You can extend this feature and allow users of the editor to build their own _Display Conditions_, on the fly, using a UI that you control. It’s part of the [Content Dialog](content-dialog.md) functionality. This is an advanced feature that requires some development on the side of the hosting application, but that provides fantastic flexibility. [Check it out!](content-dialog.md)
 
 Here is an example of a custom builder of _Display Conditions_.
 

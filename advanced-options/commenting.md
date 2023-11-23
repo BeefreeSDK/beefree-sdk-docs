@@ -1,19 +1,6 @@
 # Commenting
 
-1. [Overview](broken-reference)
-2. [Use cases](broken-reference)
-3. [How to activate it](broken-reference)
-4. [How it works](broken-reference)
-5. [The Reviewer Role](broken-reference)
-6. [Disable Commenting for specific customers](broken-reference)
-7. [Managing notifications](broken-reference)
-8. [Sample code for email notifications](broken-reference)
-9. [Comments schema](broken-reference)
-10. [Commenting callback](broken-reference)
-11. [Adding mentions](broken-reference)
-12. [Go to comment](broken-reference)
-
-### Overview <a href="#overview" id="overview"></a>
+## Overview
 
 With Commenting, teams using your application can **collaborate asynchronously** on the same email, page or popup, in order to **get their work done** more quickly and **reach approval** for going live more efficiently.
 
@@ -46,14 +33,13 @@ To do so:
 * [Login into the Beefree SDK Console](https://dam.beefree.io/devmain)
 * Click **Details** next to the application you want to configure
   * We recommend you first familiarize with Commenting in a Development or QA application
-  * Learn more about Production vs. Development application [here](https://docs.beefree.io/getting-started/#production-vs-development-apps)
-* Click view more under **Application configuration**.
+  * Learn more about [Production vs. Development application here](../getting-started/development-applications.md)
+* Click **view more** under Application configuration.
 * Toggle **Enable commenting** ON and click the **Save** button to activate Commenting for the application.
 
 To activate Commenting when launching your Beefree application, you will need to pass a `username`, `userHandle`, and a `userColor` in the configuration parameters. See this example:
 
-```
-
+```javascript
 const beeConfig = {
     uid: 'dev-user',
     language: 'en-US',
@@ -63,7 +49,6 @@ const beeConfig = {
     userHandle: 'd09b0f5d-e08b-4dca-b7ae-6010b5da04d3' // unique id
     ...
 }
-
 ```
 
 ### How it works <a href="#how-it-works" id="how-it-works"></a>
@@ -75,7 +60,7 @@ When opening an email, a landing page or a popup, a contributor can add a new co
 * in the row or block outline, inside the editing stage
 * in the header of the Row properties or Content properties
 
-[https://docs.beefree.io/wp-content/uploads/2020/09/Commenting-icons.mp4](https://docs.beefree.io/wp-content/uploads/2020/09/Commenting-icons.mp4)
+{% embed url="https://docs.beefree.io/wp-content/uploads/2020/09/Commenting-icons.mp4" %}
 
 Clicking one of these two icons will activate the **commenting panel**, which takes over the editor sidebar. From there, the user can insert a new comment. After the first comment, another contributor can start a thread by adding a second comment.
 
@@ -127,11 +112,11 @@ Suggest edits in seconds, and save time with the copy/paste feature. Copy text f
 
 **Real-time notifications when a new comment is added**
 
-If you subscribed to a Superpowers plan, and have[ co-editing](https://docs.beefree.io/co-editing/) enabled, your users will never lose a new comment again with the new notification system. Users will receive real-time notifications whenever a new comment is added to the document straight in the builder.
+If you subscribed to a Superpowers plan, and have [co-editing](../collaborative-editing.md) enabled, your users will never lose a new comment again with the new notification system. Users will receive real-time notifications whenever a new comment is added to the document straight in the builder.
 
-By clicking on the notification, they will be able to quickly open the comment, and highlight the element where the conversation is taking place. The toast notification can be styled with [custom CSS](https://docs.beefree.io/custom-css/) to match your application look-and-feel.
+By clicking on the notification, they will be able to quickly open the comment, and highlight the element where the conversation is taking place. The toast notification can be styled with [custom CSS](../appearance/custom-css.md) to match your application look-and-feel.
 
-If you want to learn how to implement co-editing in your application, check the related documentation article [here](https://docs.beefree.io/co-editing/).
+If you want to learn how to implement co-editing in your application, check the related documentation article [here](../collaborative-editing.md).
 
 ![](https://docs.beefree.io/wp-content/uploads/2022/04/commenting\_1-high.gif)
 
@@ -148,13 +133,11 @@ In short, this new role has the following characteristics:
 
 This new role can be easily enabled by passing the following parameter in your configuration:
 
-```
-
+```javascript
 beeConfig: {
   role: 'reviewer',
   ...
 }
-
 ```
 
 Once you turn on the feature in the Beefree SDK Console, you may want to **disable Commenting for some customers**. You can do so via the client-side configuration document that you feed to your Beefree application when initializing the editor.
@@ -173,8 +156,7 @@ Here’s how to do so:
 
 Here is a simple example:
 
-```
-
+```javascript
 
 const beeConfig = {
     uid: 'dev-user',
@@ -184,11 +166,9 @@ const beeConfig = {
     ...
 }
 
-
 ```
 
-```
-
+```javascript
 
  var beeConfig = {
   ...
@@ -202,7 +182,6 @@ const beeConfig = {
         uid: "f6287c33-6e77-40cb-8a5d-66d62b4f38bb",
       })
     },
-
 
 ```
 
@@ -232,8 +211,7 @@ We’ve put together a [sample code](https://dam.beefree.io/pluginsamplecode) th
 
 The following JSON is saved as part of the template:
 
-```
-
+```javascript
 
 "comments": {
     "aab0227f-766d-439d-b3d9-8bf7d04d551f": {
@@ -266,7 +244,6 @@ The following JSON is saved as part of the template:
     }
   }
 
-
 ```
 
 You may want to save multiple copies of a template, e.g. to create a history/revision or a draft feature.
@@ -275,10 +252,11 @@ In such cases, you may decide to store the comments in a database, and add the s
 
 Comments can also be added dynamically, but it’s an advanced task, which requires matching the comment schema to the target content by its “elementId”.
 
+## Commenting Callback
+
 When a thread or comment changes, the Beefree system triggers the `onComment` callback.  The callback returns the following details:
 
-**change**\
-
+**change**
 
 * JSON contains all the details on the change
 
@@ -290,7 +268,7 @@ When a thread or comment changes, the Beefree system triggers the `onComment` ca
 
 * JSON contains the `contributors` array with all users in a thread.
 
-#### change schema
+### Change Schema
 
 **type**
 
@@ -306,8 +284,7 @@ JSON contains all the details of the change
 
 **example of new comment payload**
 
-```
-
+```javascript
 
 {
     "change": {
@@ -355,7 +332,6 @@ JSON contains all the details of the change
     }
 }
 
-
 ```
 
 ### Adding mentions <a href="#adding-mentions" id="adding-mentions"></a>
@@ -364,8 +340,7 @@ You can activate a mention dialog for comments by adding a data source to the Be
 
 To configure a hook data source, define the `hooks` section in your bee config and implement the `getMentions` method.
 
-```
-
+```javascript
 
 var beeConfig = {
   ...
@@ -392,15 +367,13 @@ var beeConfig = {
   },
   ...
 
-
 ```
 
 You can also extend the default mention dialog via Content Dialog. For example, you can enable end-users to to invite an external user not available in the data source.
 
 To configure a hook content dialog, define the `contentDialog` section in your Beefree application configuration and implement the `getMention` method.
 
-```
-
+```javascript
 
 var beeConfig = {
   ...
@@ -415,7 +388,6 @@ var beeConfig = {
       })
     },
 
-
 ```
 
 You can generate a link to a specific comment, which can be used to notify the user. Common use cases include sending a link via email, Slack, API, or via in-app messaging. To implement this action use the `onComment` callback combined with a new instance method called `showComment`.
@@ -424,14 +396,12 @@ You can generate a link to a specific comment, which can be used to notify the u
 
 The `onComment` callback contains the comment’s id and a new section called “mentions” containing an array of mentioned users’ uid values.
 
-```
-
+```javascript
 
   "mentions": [
     "45b9cdd1-60af-4235-ac9f-ddcb7b07a9e0",
     "04b3a1a3-ab04-46f7-b03b-e651357b54ab"
   ],
-
 
 ```
 
@@ -443,12 +413,10 @@ Next, using the comment’s id, your app can generate a link back to the email c
 
 Note: In the sample below, `getParameterByName` is a function that takes the `commentId` from the browser’s URL query string.
 
-```
-
+```javascript
 
 onLoad: function () {
   bee.showComment(getParameterByName('commentId'))
 },
-
 
 ```

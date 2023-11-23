@@ -1,10 +1,8 @@
 # Smart Merge Tags
 
-1. [Overview](broken-reference)
-2. [How it works](broken-reference)
-3. [How to enable it](broken-reference)
-4. [Configuring sample content](broken-reference)
-5. [Displaying sample content during editing](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [**Core plan**](https://dam.beefree.io/pluginpricing) and above. If you're on the Essentials plan, [**upgrade a development application**](https://docs.beefree.io/initializing-bee-plugin/#production-vs-development-apps) for free to try this and other Core-level features.
+{% endhint %}
 
 ### Overview <a href="#overview" id="overview"></a>
 
@@ -46,21 +44,19 @@ Smart merge tags are **disabled by default**. If your application doesn’t have
 * Click view more under **Application configuration**.
 * Under the Services section, toggle **Enable Smart merge tags** ON and click the **Save** button.
 
-Notice that, at this point, you will be prompted to enable the merge tag preview in the toolbar. You can skip this option when your integration is not using the [standard toolbar](https://docs.beefree.io/toolbar-options/) or you’re not passing sample content for your [merge tags](https://docs.beefree.io/special-links-merge-tags/#merge-tags-merge-content).
+Notice that, at this point, you will be prompted to enable the merge tag preview in the toolbar. You can skip this option when your integration is not using the [standard toolbar](../server-side-options/toolbar-options.md) or you’re not passing sample content for your [merge tags](smart-merge-tags.md).
 
 #### Configuring sample content <a href="#configuring-sample-content" id="configuring-sample-content"></a>
 
-After enabling Smart merge tags from your developer account, you need to apply a minor change to the merge tags’ [initial configuration](https://docs.beefree.io/special-links-merge-tags/#merge-tags-merge-content).
+After enabling Smart merge tags from your developer account, you need to apply a minor change to the merge tags’ [initial configuration](../getting-started/installation/configuration-parameters/).
 
-```
-
+```javascript
 
 {
   name: 'first name',
   value: '[first-name]',
   previewValue: 'John',
 }
-
 
 ```
 
@@ -72,7 +68,7 @@ The value of this new parameter **will replace the merge tag in the editor previ
 
 Sample content strings are not limited to the preview, but can be displayed in the editor’s stage as mentioned above.
 
-The way to do this depends on how your integration manages the [toolbar options](https://docs.beefree.io/toolbar-options/).
+The way to do this depends on how your integration manages the [toolbar options](../server-side-options/toolbar-options.md).
 
 **Toolbar enabled**
 
@@ -86,14 +82,10 @@ The option works as a toggle that alternates between displaying the `previewValu
 
 **Toolbar disabled**
 
-As with all the actions available in the toolbar, [we provide methods](https://docs.beefree.io/methods-and-events/#instance-methods) to control this option from your own UI:
+As with all the actions available in the toolbar, [we provide methods](../getting-started/installation/methods-and-events.md) to control this option from your own UI:
 
-```
-
-
+```javascript
 beePluginInstance.toggleMergeTagsPreview()
-
-
 ```
 
 Use this method to replicate the behavior described for the standard toolbar.
