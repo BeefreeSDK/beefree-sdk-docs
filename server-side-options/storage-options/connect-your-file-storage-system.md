@@ -10,14 +10,6 @@ It can be built with your preferred technology: just be sure to follow our instr
 
 Once successfully connected, when a user uploads a file or creates a new folder in the Beefree File Manager, this API will perform these actions in your storage, instead of our default cloud storage. Directories permissions, root directory to use, how thumbnails for images are generated, etc.: you decide.
 
-1. [Getting Started: data formats](broken-reference)
-2. [Authentication](broken-reference)
-3. [File System operations](broken-reference)
-4. [Status codes](broken-reference)
-5. [Error codes](broken-reference)
-6. [Displaying thumbnails](broken-reference)
-7. [Sample code](broken-reference)
-
 ### Getting Started: data formats <a href="#getting-started-data-formats" id="getting-started-data-formats"></a>
 
 In order to let your Beefree application consume your FSP (File system provider) API, you will need to provide a Base URL to reach the API.
@@ -60,7 +52,7 @@ In case of request failure, the API returns the error codes described in the err
 
 Authentication is managed using Basic Authentication type. The Beefree system’s resource server works as a proxy for FSP (File system provider) and consumes FSP API endpoints adding the following fields to HTTP Request Headers. Please note that  **the API must use HTTPS** to grant secure connections and safe data transfer.
 
-User information is segmented by [UID parameter](https://docs.beefree.io/how-the-uid-parameter-works/).
+User information is segmented by [UID parameter](../../getting-started/installation/how-the-uid-parameter-works.md).
 
 ```
 
@@ -294,6 +286,14 @@ X-BEE-Uid: 1111-2222-333-444
 
 ```
 
+{% hint style="info" %}
+**The trailing slash (/) on the request matters!**\
+\
+The FSP API uses the trailing slash (/) on the resource path to understand if the required resource is a file (no trailing slash) or a directory (with trailing slash).\
+\
+For example, if the FSP API receives a GET request for `/sample.jpg` it will return `sample.jpg` file metadata, whereas if it receives a GET request for `/sample.jpg/` it will return a list of the content located in the `sample.jpg` directory.
+{% endhint %}
+
 ### Status codes <a href="#status-codes" id="status-codes"></a>
 
 The FSP (File system provider) API uses standard HTTP status codes to manage success and error responses. Status codes include:
@@ -319,7 +319,7 @@ In case of errors, the API returns a JSON object structured like this:
 
 ```
 
-To read the full list of possible errors, please refer to [this page](https://docs.beefree.io/file-system-provider-errors/).
+To read the full list of possible errors, please refer to [this page](../../error-management/file-system-provider-errors.md).
 
 ### Displaying thumbnails <a href="#displaying-thumbnails" id="displaying-thumbnails"></a>
 
@@ -335,4 +335,4 @@ The thumbnail image must be contained in a 200px by 200px virtual square (see pi
 
 ### Sample code <a href="#sample-code" id="sample-code"></a>
 
-In the sample code page, you can download an example file system provider API written in Python (Django).
+In the [sample code page](../../sample-code.md), you can download an example file system provider API written in Python (Django).

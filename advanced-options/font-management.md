@@ -1,5 +1,9 @@
 # Font management
 
+{% hint style="info" %}
+This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+{% endhint %}
+
 You can now customize the list of fonts available in the editor’s text toolbar and the BODY settings panel.
 
 This new feature allows you (or users of your app) to:
@@ -7,7 +11,7 @@ This new feature allows you (or users of your app) to:
 * Expand the list of available fonts, adding web fonts from popular services, such as Google fonts, font library.org or alike.
 * Reduce the list of fonts to a limited number of options, removing some or all our default fonts.
 
-Unlike other premium features, fonts are part of the client side configuration, so they can be defined each time the editor is started.
+Unlike other premium features, fonts are part of the [client-side configuration](../getting-started/installation/configuration-parameters/), so they can be defined each time the editor is started.
 
 This flexible approach will help you to use this feature in a variety of scenarios. For example:
 
@@ -21,10 +25,9 @@ For instance, in our hosted [email design suite](https://dam.beefree.io/beepro) 
 
 ### Adding the editorFonts object
 
-This object, passed as part of the builder configuration, tells the editor which fonts to load in any drop-down where a list of fonts is shown. It defines the availability of the default fonts and provides a list of additional, custom fonts.
+This object, passed as part of the [builder configuration](../getting-started/installation/configuration-parameters/), tells the editor which fonts to load in any drop-down where a list of fonts is shown. It defines the availability of the default fonts and provides a list of additional, custom fonts.
 
-```
-
+```javascript
 
 editorFonts: {
     showDefaultFonts: true,
@@ -39,7 +42,6 @@ editorFonts: {
     }]
 }
 
-
 ```
 
 In this example default fonts are loaded, and two new fonts are added: a web safe font (Comic Sans) and a Google hosted web font (Lobster).
@@ -48,15 +50,7 @@ Here is a more detailed description on how the editorFonts object is built:
 
 #### Parameters
 
-| Parameter           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `showDefaultsFonts` | This boolean parameter indicates if the entire list of default fonts is available or not. When the value is false, only the fonts added as custom fonts will be active in the editor.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `customFonts`       | <p>When the default font parameter is true, the custom fonts declared inside this object will be added to the list of default fonts: both are loaded into the editor. Otherwise, only custom fonts will be shown.<br>Each <code>customFonts</code> element can have the following properties:</p><table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>name</code></td><td>This string will be shown in the font dropdown list. You can use the term you prefer and we suggest the usage of common font names, but you can go creative and use semantic names that fit on your application. Long strings may impact the interface, so we recommend to keep it short. The characters { } [ ] : ” / \ | ? * are invalid.</td></tr><tr><td><code>fontFamily</code></td><td>Describes the CSS font stack that will be applied to the final HTML. Is important that you provide at least one fallback font to ensure that the text is not displayed using an unwanted font family. Is important that you use single quote marks with the font names instead of double quotation marks to maintain a correct JSON syntax.</td></tr><tr><td><code>url</code></td><td>This parameter is used only when we work with web fonts. Is important that the URL points to a CSS file with the @font-face properties, and not directly to the font files. To work, the CSS must be hosted in HTTPS.</td></tr><tr><td><code>fontWeight</code></td><td>Adds a new option in the dropdown of the content block’s settings for title, button, paragraph, and list blocks (e.g. 100: Thin). If not defined, only Regular (400) and Bold (700) will be available.</td></tr></tbody></table> |
-| Parameter           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| `name`              | This string will be shown in the font dropdown list. You can use the term you prefer and we suggest the usage of common font names, but you can go creative and use semantic names that fit on your application. Long strings may impact the interface, so we recommend to keep it short. The characters { } \[ ] : ” / \ \| ? \* are invalid.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `fontFamily`        | Describes the CSS font stack that will be applied to the final HTML. Is important that you provide at least one fallback font to ensure that the text is not displayed using an unwanted font family. Is important that you use single quote marks with the font names instead of double quotation marks to maintain a correct JSON syntax.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| `url`               | This parameter is used only when we work with web fonts. Is important that the URL points to a CSS file with the @font-face properties, and not directly to the font files. To work, the CSS must be hosted in HTTPS.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `fontWeight`        | Adds a new option in the dropdown of the content block’s settings for title, button, paragraph, and list blocks (e.g. 100: Thin). If not defined, only Regular (400) and Bold (700) will be available.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+<table><thead><tr><th width="220">Parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>showDefaultsFonts</code></td><td>This boolean parameter indicates if the entire list of default fonts is available or not. When the value is false, only the fonts added as custom fonts will be active in the editor.</td></tr><tr><td><code>customFonts</code></td><td><p>When the default font parameter is true, the custom fonts declared inside this object will be added to the list of default fonts: both are loaded into the editor. Otherwise, only custom fonts will be shown.<br>Each <code>customFonts</code> element can have the following properties:</p><table><thead><tr><th width="100">Parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>name</code></td><td>This string will be shown in the font dropdown list. You can use the term you prefer and we suggest the usage of common font names, but you can go creative and use semantic names that fit on your application. Long strings may impact the interface, so we recommend to keep it short. The characters { } [ ] : ” / \ | ? * are invalid.</td></tr><tr><td><code>fontFamily</code></td><td>Describes the CSS font stack that will be applied to the final HTML. Is important that you provide at least one fallback font to ensure that the text is not displayed using an unwanted font family. Is important that you use single quote marks with the font names instead of double quotation marks to maintain a correct JSON syntax.</td></tr><tr><td><code>url</code></td><td>This parameter is used only when we work with web fonts. Is important that the URL points to a CSS file with the @font-face properties, and not directly to the font files. To work, the CSS must be hosted in HTTPS.</td></tr><tr><td><code>fontWeight</code></td><td>Adds a new option in the dropdown of the content block’s settings for title, button, paragraph, and list blocks (e.g. 100: Thin). If not defined, only Regular (400) and Bold (700) will be available.</td></tr></tbody></table></td></tr></tbody></table>
 
 ### Working with custom fonts
 
@@ -70,8 +64,7 @@ Web fonts are hosted online and need to be loaded by the email client when the e
 
 We want the editor to work with only 2 fonts when creating a message, we want that only Lobster and Cabin fonts are available when editing this message:
 
-```
-
+```javascript
 
 editorFonts: {
     showDefaultFonts: false,
@@ -87,13 +80,11 @@ editorFonts: {
     }]
 }
 
-
 ```
 
 In the following example, instead, we don’t want to add new fonts but restrict the default ones to our own selection:
 
-```
-
+```javascript
 
 editorFonts: {
     showDefaultFonts: false,
@@ -121,15 +112,13 @@ editorFonts: {
       }]
 }
 
-
 ```
 
 Notice that if you want to change the default set of fonts, you need to disable them and use custom fonts to indicate the new set, including the URL parameter for web fonts.
 
 This is the complete list of the default fonts in the application and its configuration, including the external URL for web fonts:
 
-```
-
+```javascript
 
   {
     name: "Arial",
@@ -198,13 +187,11 @@ This is the complete list of the default fonts in the application and its config
     url: "https://fonts.googleapis.com/css?family=Ubuntu"
 }
 
-
 ```
 
 In this example, we want to add font weight options to our list:
 
-```
-
+```javascript
 
 var editorFonts = {
         showDefaultFonts: true,
@@ -229,7 +216,6 @@ var editorFonts = {
           }
         }]
       };
-
 
 ```
 

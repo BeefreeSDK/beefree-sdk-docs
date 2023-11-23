@@ -1,30 +1,18 @@
 # Content Dialog
 
-1. [The problem](broken-reference)
-2. [A flexible solution](broken-reference)
-3. [An interactive UI layer](broken-reference)
-4. [What it does](broken-reference)
-5. [How it works](broken-reference)
-6. [Merge tags](broken-reference)
-7. [Special links](broken-reference)
-8. [Merge contents](broken-reference)
-9. [Display conditions](broken-reference)
-10. [Custom rows](broken-reference)
-11. [Synced rows](broken-reference)
-12. [Save rows](broken-reference)
-13. [Forms](broken-reference)
-14. [Custom attributes](broken-reference)
-15. [Custom video](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+{% endhint %}
 
 ### The problem <a href="#the-problem" id="the-problem"></a>
 
-When designing a message or a landing page with Beefree’s editors, there might be cases in which users of your application insert a [merge tag](https://docs.beefree.io/special-links-merge-tags/), add a link to an image, or apply a [conditional statement](https://docs.beefree.io/display-conditions/).
+When designing a message or a landing page with Beefree’s editors, there might be cases in which users of your application insert a [merge tag](smart-merge-tags.md), add a link to an image, or apply a [conditional statement](content-dialog.md#display-conditions).
 
 It’s all good until things scale up. For example…
 
-* What if you have 400 merge tags? You can [feed an array of merge tags](https://docs.beefree.io/special-links-merge-tags/) to the editor, but that’s not going to cut it.
-* What if it’s a 6,000 product database? How will they locate the right one? [Special Links](https://docs.beefree.io/special-links-merge-tags/) is not the right fit.
-* And what if a [display condition](https://docs.beefree.io/display-conditions/) needs to be built on-the-fly?
+* What if you have 400 merge tags? You can [feed an array of merge tags](smart-merge-tags.md) to the editor, but that’s not going to cut it.
+* What if it’s a 6,000 product database? How will they locate the right one? [Special Links](special-links-and-merge-tags.md) is not the right fit.
+* And what if a [display condition](content-dialog.md#display-conditions) needs to be built on-the-fly?
 
 ### A flexible solution <a href="#a-flexible-solution" id="a-flexible-solution"></a>
 
@@ -50,12 +38,12 @@ Here is a visual example of what you could accomplish in that _find a product li
 
 The user experience in this interaction layer is entirely up to you. In the example above, the user clicked on “Find a product” (or alike) in the editor, and a modal window was shown, with a search box in it. Since you decide what the user experience will be like, you are fully in control of how users will select and insert:
 
-* a text placeholder ([merge tag](https://docs.beefree.io/special-links-merge-tags/))
-* a dynamic link or a link to specific content ([special link](https://docs.beefree.io/special-links-merge-tags/))
-* a markup placeholder ([merge content](https://docs.beefree.io/special-links-merge-tags/))
-* a conditional statement ([display conditions](https://docs.beefree.io/display-conditions/)).
+* a text placeholder ([merge tag](smart-merge-tags.md))
+* a dynamic link or a link to specific content ([special link](smart-merge-tags.md))
+* a markup placeholder ([merge content](smart-merge-tags.md))
+* a conditional statement ([display conditions](display-conditions.md)).
 
-For each type of content, you can define the action that will be triggered in your application (e.g. display a modal window), and the text that will be displayed in the BEE editor’s UI to trigger that action (e.g. “Locate a merge tag”), keeping a consistent UX with other areas of your application.
+For each type of content, you can define the action that will be triggered in your application (e.g. display a modal window), and the text that will be displayed in the Beefree SDK editor’s UI to trigger that action (e.g. “Locate a merge tag”), keeping a consistent UX with other areas of your application.
 
 ### What it does <a href="#what-it-does" id="what-it-does"></a>
 
@@ -86,7 +74,7 @@ The text for the action is defined by the host application, so you can use your 
 
 To set up content dialogs you will need to add the `contentDialog` object to `beeConfig`:
 
-```
+```javascript
 
 
 contentDialog: {
@@ -161,7 +149,7 @@ Error management on the host application must call the reject function to unbloc
 
 **Simple application of a link action**
 
-```
+```javascript
 
 
 contentDialog: {
@@ -188,7 +176,7 @@ The waiting mode will not be perceived, and there is no cancel action.
 
 **Apply a link with a delay**
 
-```
+```javascript
 
 
 contentDialog: {
@@ -213,7 +201,7 @@ Same as the previous example, but the waiting mode will display for two seconds 
 
 **Opening a dialog UI element**
 
-```
+```javascript
 
 
 contentDialog: {
@@ -250,7 +238,7 @@ These errors will not trigger any visible notification in the UI.
 
 **Configuration**
 
-```
+```javascript
 
 
 contentDialog: {
@@ -261,7 +249,6 @@ contentDialog: {
 		}
 	},
 },
-
 
 ```
 
@@ -278,27 +265,20 @@ You can add a new action, available in the text toolbar, and associated with the
 
 **Value**
 
-```
-
-
+```javascript
 {
 	name: 'Placeholder name', // Will not be shown
 	value: '{{ syntax }}' // Text string that will be added
 }
-
-
 ```
 
 _The name parameter may be later displayed if the user selection is saved and loaded in beeConfig on subsequent requests._
-
-Here is a visual example of a hypothetical user experience:
 
 ### Special links <a href="#special-links" id="special-links"></a>
 
 **Configuration**
 
-```
-
+```javascript
 
 contentDialog: {
 	specialLinks: {
@@ -308,8 +288,6 @@ contentDialog: {
 		}
 	},
 },
-
-
 ```
 
 Links are applied to different contents, so, when you define a link dialog action, it will be displayed in:
@@ -330,16 +308,12 @@ An image or button action
 
 **Value**
 
-```
-
-
+```javascript
 {
     type: 'A link type', // will not be shown
     label: 'Text', // Will be used as default text when text is not selected
 	link: 'http://...' // The URL that will be applied. Placeholders can be used
 }
-
-
 ```
 
 _The type parameter may be lately displayed if the user selection is saved and loaded in `beeConfig` on later requests._
@@ -348,20 +322,15 @@ _The type parameter may be lately displayed if the user selection is saved and l
 
 **Configuration**
 
-```
-
-
-contentDialog: {
-	mergeContents: {
+<pre class="language-javascript"><code class="lang-javascript"><strong>contentDialog: {
+</strong>	mergeContents: {
 		label: 'Set up a new product recommendation',
 		handler: function(resolve, reject) {
 			//your function goes here
 		}
 	},
 },
-
-
-```
+</code></pre>
 
 The content dialog adds a button to the merge content list:
 
@@ -373,18 +342,16 @@ The content dialog adds a button to the merge content list:
 * Set up the content and/or layout for a dynamic advertising
 * Set up the content and/or layout for another type of targeted content
 
-Notice that, to display the Dynamic content tile in the contents panel, you must configure [mergeContents](https://docs.beefree.io/special-links-merge-tags/) in [beeConfig](https://docs.beefree.io/configuration-parameters/) with at least one predefined item.
+Notice that, to display the Dynamic content tile in the contents panel, you must configure [mergeContents](smart-merge-tags.md) in [beeConfig](../getting-started/installation/configuration-parameters/) with at least one predefined item.
 
 **Value**
 
-```
-
+```javascript
 
 {
 	name: 'Content name', // Will be displayed in the editor UI and in the message
 	value: '{{ syntax }}' // Text string that will be added to the HTML output (will be show in the preview)
 }
-
 
 ```
 
@@ -392,9 +359,7 @@ Notice that, to display the Dynamic content tile in the contents panel, you must
 
 **Configuration**
 
-```
-
-
+```javascript
 contentDialog: {
 	rowDisplayConditions: {
 		label: 'Open builder',
@@ -403,8 +368,6 @@ contentDialog: {
         }
     },
 },
-
-
 ```
 
 A new button will be available in the display condition widget. In this example, the button says “Open builder”, which is the `label` shown in the JSON configuration file shown above.
@@ -418,9 +381,7 @@ A new button will be available in the display condition widget. In this example,
 
 **Value**
 
-```
-
-
+```javascript
 {
 	type: 'A category for this condition', // Will not be shown
 	label: 'Condition', // Will be displayed as the condition name
@@ -430,8 +391,6 @@ A new button will be available in the display condition widget. In this example,
 	after: '{% endif %}
 {% endraw %}', // Will be added after the selected row
 }
-
-
 ```
 
 _The type parameter may be later displayed if the user selection is saved and loaded in `beeConfig` on subsequent requests._
@@ -448,19 +407,15 @@ When users click on “Confirm”, the information is passed back to the editor 
 
 ![Custom display condition](https://docs.beefree.io/wp-content/uploads/2018/02/after.confirm.jpg)
 
-Of course, it can be edited in the editor like any other _Display condition_, if the user has the [rights to do so](https://docs.beefree.io/roles-and-permissions/).
+Of course, it can be edited in the editor like any other _Display condition_, if the user has the [rights to do so](roles-and-permissions.md).
 
 ![Edit custom display condition](https://docs.beefree.io/wp-content/uploads/2018/02/edit.view\_.jpg)
-
-And here is another, visual example of a hypothetical user experience of Content Dialog applied to Display Conditions:
 
 ### Custom rows <a href="#custom-rows" id="custom-rows"></a>
 
 **Configuration**
 
-```
-
-
+```javascript
 contentDialog: {
     externalContentURLs: {
             label: 'Search products',
@@ -469,8 +424,6 @@ contentDialog: {
         }
     }
 }
-
-
 ```
 
 The content dialog adds a new item, using your text label, in the Rows drop-down:
@@ -485,15 +438,11 @@ The content dialog adds a new item, using your text label, in the Rows drop-down
 
 **Value**
 
-```
-
-
+```javascript
 {
     "name":"Results name", // Will be added as a new choice in the rows drop-down
     "value":"https://..." // Will be used to get the list of rows
 }
-
-
 ```
 
 This response will:
@@ -519,17 +468,11 @@ Usage example:
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/06/Search\_multiple.jpg)
 
-**A more complex implementation**
-
-In this screencast, you will see a more complex implementation of Content Dialog applied to Custom Rows: users search a content library for blog posts, find the blog posts they want to use in their newsletter, and find them in the editor as new rows that can be dragged and dropped.
-
-### Synced rows <a href="#synced-rows" id="synced-rows"></a>
+## Synced Rows
 
 **Configuration**
 
-```
-
-
+```javascript
 contentDialog: {
     editSyncedRow: {
 		label: 'Edit synced rows',
@@ -543,15 +486,13 @@ contentDialog: {
     	}
     }
 }
-
-
 ```
 
 The `label`, `description` and `notPermittedDescription` fields handle the wording related to the “Edit synced row” call-to-action/button. Here’s how and where they are used:
 
 * `label`: Label related to the sidebar button that triggers the content dialog
 * `description`: Description of the action on top of the button
-* `notPermittedDescription`: Description of the action when the button is hidden from the dedicated [advanced permission ](https://docs.beefree.io/advanced-permissions/)
+* `notPermittedDescription`: Description of the action when the button is hidden from the dedicated [advanced permission](advanced-permissions.md)&#x20;
 
 Here’s an example of what `label` and `description` would look like:
 
@@ -565,9 +506,7 @@ And here’s an example of what `notPermittedDescription` would look like:
 
 **Configuration**
 
-```
-
-
+```javascript
 contentDialog: {
     saveRow: {
         handler: function (resolve, reject, args) {
@@ -575,17 +514,15 @@ contentDialog: {
         }
     }
 }
-
-
 ```
 
 Unlike the rest of content dialog configurations, _Save rows_ doesn’t use the `label` parameter as the UI element is a save icon displayed on the selected row (and in the row’s properties panel):
 
-![](https://docs.beefree.io/wp-content/uploads/2018/11/saveicon-1024x134.png)
+<figure><img src="https://docs.beefree.io/wp-content/uploads/2018/11/saveicon-1024x134.png" alt=""><figcaption></figcaption></figure>
 
-The _Save rows_ content dialog is a mandatory step in the [Save rows](https://docs.beefree.io/save-rows/) workflow.
+The _Save rows_ content dialog is a mandatory step in the [Save rows](../saved-rows/) workflow.
 
-The `resolve` function must return metadata for the selected row. The [_metadata_](https://docs.beefree.io/save-rows/#saved-rows-metadata) section of the rows schema allows you to keep track of row-specific information.
+The `resolve` function must return metadata for the selected row. The [_metadata_](../saved-rows/) section of the rows schema allows you to keep track of row-specific information.
 
 The `args` object in the handler function returns to the host application metadata already applied to the selected row.
 
@@ -603,7 +540,7 @@ The `args` object in the handler function returns to the host application metada
 
 ```
 
-This response will provide metadata that is added to the row in the asset (email, page, popup) before it’s provided through the [Save Rows callback](https://docs.beefree.io/save-rows/#save-rows-callback).
+This response will provide metadata that is added to the row in the asset (email, page, popup) before it’s provided through the [Save Rows callback](../saved-rows/).
 
 The row name is the only required metadata and it’s displayed as the row title in the _Rows_ panel:
 
@@ -611,23 +548,19 @@ The row name is the only required metadata and it’s displayed as the row title
 * Displayed in the row card when the row is shown in the _Rows_ panel.
 * Used for text searches within the _Rows_ panel
 
-&#x20;Check the [Saved rows metadata section](https://docs.beefree.io/save-rows/#saved-rows-metadata) for further details on recommended metadata.
+&#x20;Check the [Saved rows metadata section](../saved-rows/save-rows-overview.md) for further details on recommended metadata.
 
 ### Forms <a href="#forms" id="forms"></a>
 
 **Configuration**
 
-```
-
-
+```javascript
 manageForm: {
 	label: 'Edit form',
 	handler: async (resolve, reject, args) => { 
 		// Your function
 	} 
 },
-
-
 ```
 
 If you want to have total control on the forms that a Beefree application displays and renders, you can use this _forms_ Content Dialog rather than passing a single form to the Beefree application.
@@ -636,15 +569,13 @@ The **forms** Content Dialog works the same way as the previous Content Dialog f
 
 The `args` object in the handler function returns to the host application the form object already applied. With this information, the application can decide what to display to the user (e.g., edit the current form, suggest a similar form, etc.).
 
-To understand how this data is structured, refer to the [form structure page](https://docs.beefree.io/form-structure-and-parameters/) on this website.
+To understand how this data is structured, refer to the [form structure page](../form-block/integrating-and-using-the-form-block/form-structure-and-parameters.md) on this website.
 
 ### Custom attributes <a href="#custom-attributes" id="custom-attributes"></a>
 
 **Configuration**
 
-```
-
-
+```javascript
         customAttribute: {
           label: 'Search Attributes',
           handler: (resolve, reject) => {
@@ -656,8 +587,6 @@ To understand how this data is structured, refer to the [form structure page](ht
             })
           }
         },
-
-
 ```
 
 If your end users need to apply custom attributes to the links and images in their content, you can completely customize the user experience and workflow for adding those attributes with a Content Dialog that will take over the editor’s UI. The dialog will need to return the attribute to apply.
@@ -666,9 +595,7 @@ If your end users need to apply custom attributes to the links and images in the
 
 **Configuration**
 
-```
-
-
+```javascript
 addVideo: {
   label: 'Choose a video',
   handler: async (resolve, reject) => {
@@ -679,8 +606,6 @@ addVideo: {
     })
   }
 }
-
-
 ```
 
 It is possible to leverage the Content Dialog method to add videos from custom sources – other than YouTube and Vimeo.
@@ -688,5 +613,3 @@ It is possible to leverage the Content Dialog method to add videos from custom s
 You can use the `addVideo` Content Dialog modal, which will take over the builder’s UI. The video will be added as a thumbnail in the content area.
 
 The user must fill out the video URL from a custom source, the image used as a thumbnail, and an alt text/title by implementing a custom modal window (optional). When the user clicks on the video thumbnail, it will open `videoSrc` in a new tab/window.
-
-Here is a visual example of how users can leverage the content dialog, both the video URL and thumbnail link are mandatory fields:

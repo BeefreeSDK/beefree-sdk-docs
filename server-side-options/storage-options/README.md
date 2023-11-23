@@ -60,7 +60,7 @@ For the moment, only subscriptions on paid plans will be notified by our Custome
 
 **I’m using Beefree SDK storage. What can I do to avoid getting charged?**
 
-You can switch to [using your S3 storage](https://docs.beefree.io/configure-your-aws-for-bee/) or [connect your file storage](https://docs.beefree.io/connect-your-own-file-storage/).
+You can switch to [using your S3 storage](configure-your-aws-s3-bucket.md) or [connect your file storage](connect-your-file-storage-system.md).
 
 **I connected my application’s storage to an already existing one. How will the billing work?**
 

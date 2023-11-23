@@ -1,12 +1,8 @@
-# Changes history
-
-1. [Overview](broken-reference)
-2. [How it works](broken-reference)
-3. [Activating the widget](broken-reference)
+# Undo & Changes history
 
 ### Overview <a href="#overview" id="overview"></a>
 
-Your users will have the ability to rewind and fast-forward to any point in their recent edit history.  Once _Undo_ is enabled in the [Beefree SDK Console](https://dam.beefree.io/devmain), the application immediately begins tracking changes.  Behind the scenes, this is accomplished via a new callback event – called onChange – which can also be used “stand-alone” without enabling _Undo_. No client-side configuration is required to use this feature.  Continue reading to learn how to activate and use _Undo_. And if you can’t wait to try it yourself, you can immediately do so at [beefree.io](https://dam.beefree.io/beefreetemplates)
+Your users will have the ability to rewind and fast-forward to any point in their recent edit history.  Once _Undo_ is enabled in the [Beefree SDK Console](https://dam.beefree.io/devmain), the application immediately begins tracking changes. Behind the scenes, this is accomplished via a new callback event – [called onChange](../tracking-message-changes.md) – which can also be used “stand-alone” without enabling _Undo_. No client-side configuration is required to use this feature. Continue reading to learn how to activate and use _Undo_. And if you can’t wait to try it yourself, you can immediately do so at [beefree.io](https://dam.beefree.io/beefreetemplates)
 
 ### How it works <a href="#how-it-works" id="how-it-works"></a>
 
@@ -14,9 +10,10 @@ When changes are detected, a compact _Undo_ widget displays in the bottom left c
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/08/undo\_widget-1024x327.png)
 
-The widget displays 3 actions:\
-**Undo and Redo arrows** that offer the classic pattern to move back and forth between changes.\
-**A history icon** that expands a timeline of the latest changes:
+The widget displays 3 actions:
+
+* **Undo and Redo arrows** that offer the classic pattern to move back and forth between changes.
+* **A history icon** that expands a timeline of the latest changes:
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/08/undo\_timeline-1024x954.jpg)
 
@@ -46,9 +43,11 @@ We are also doing additional testing to see if the number of recent edits can be
 
 The last saved edits are only available at the session level, so they reset every time the builder is loaded. If you need to provide a complete message history, you can build a custom one based on the _onSave_ and _onChange_ events (see below).
 
+## Activating the Widget
+
 The Undo option is available at the application level in the [Beefree SDK Console](https://dam.beefree.io/devmain). Select your application from the list and open the _Application configuration_ in the bottom-right.\
 The option to enable this widget is available in the _Services_ list:
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/08/enableUNDO-300x42.png)
 
-The widget uses the onChange callback information to work. However, it doesn’t need a client-side configuration for the callback: once _Undo_ is enabled, the application starts tracking changes even if the _trackChanges_ parameter is not set in [_beeConfig_](https://docs.beefree.io/configuration-parameters/).
+The widget uses the [onChange callback](../tracking-message-changes.md) information to work. However, it doesn’t need a client-side configuration for the callback: once _Undo_ is enabled, the application starts tracking changes even if the [_trackChanges_ parameter](../tracking-message-changes.md) is not set in [_beeConfig_](../getting-started/installation/configuration-parameters/).

@@ -23,7 +23,7 @@ Currently, you can manage these content blocks:
 If you’re configuring a Page Builder application, there are a few differences in what these blocks allow:
 
 * the **HTML Block** also allows **script and iframe tags;**
-* the **Video block** allows for video playback, either embedding a YouTube, YouTube Shorts, or Vimeo video or pointing to a hosted video ([read more](https://docs.beefree.io/embedding-videos-in-a-page/)). Supported video formats are:
+* the **Video block** allows for video playback, either embedding a YouTube, YouTube Shorts, or Vimeo video or pointing to a hosted video ([read more](../page-builder/embedding-videos-in-a-page.md)). Supported video formats are:
   * YouTube (16:9 aspect ratio)
     * Public Videos
     * Unlisted Videos
@@ -41,8 +41,8 @@ There is also an additional option for turning on the **Form block**.
 
 Please note that you need to implement one of the two methods indicated in this article for the Form tile to appear in the Content tab of the editor:
 
-* The [default form](https://docs.beefree.io/passing-forms-to-the-builder/#default-form-in-starting-configuration) method is available for all plans, including free
-* The [content dialog](https://docs.beefree.io/passing-forms-to-the-builder/#implementing-a-content-dialog) method is available for paid plans only.
+* The [default form](../form-block/integrating-and-using-the-form-block/passing-forms-to-the-builder.md) method is available for all plans, including free
+* The [content dialog](../advanced-options/content-dialog.md) method is available for paid plans only.
 
 #### AMP Content <a href="#amp-content" id="amp-content"></a>
 
@@ -50,6 +50,6 @@ In this section, you can enable AMP blocks that will be available in the “Cont
 
 ![](https://docs.beefree.io/wp-content/uploads/2020/10/Dev-Portal-AMP-toggle.png)
 
-We currently provide an [AMP Carousel](https://docs.beefree.io/amp-carousel/) content block. After enabling the toggle, you will need to configure an [AMP-compatible workspace](https://docs.beefree.io/amp-carousel/#using-workspaces-for-amp).
+We currently provide an [AMP Carousel](../amp-carousel.md) content block. After enabling the toggle, you will need to configure an [AMP-compatible workspace](../amp-carousel.md).
 
 Please note that AMP content is not available for Page Builder.

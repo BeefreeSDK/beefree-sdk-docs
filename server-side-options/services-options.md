@@ -1,28 +1,8 @@
 # Services options
 
-The last tab allows you to enable optional services that extend the functionality of the builder
-
-1. [Free stock image gallery](broken-reference)
-2. [Dark Mode Preview](broken-reference)
-3. [Row background image](broken-reference)
-4. [Background image (entire document)](broken-reference)
-5. [Row background video](broken-reference)
-6. [Video picker](broken-reference)
-7. [Free stock videos gallery](broken-reference)
-8. [Dynamic images](broken-reference)
-9. [Do not stack on mobile](broken-reference)
-10. [Display conditions](broken-reference)
-11. [Hide content on mobile or desktop](broken-reference)
-12. [Custom social icons](broken-reference)
-13. [Undo and changes history](broken-reference)
-14. [Save rows feature](broken-reference)
-15. [Import from external source in file manager](broken-reference)
-16. [Enable image editor ('Apply effects & more') in image module](broken-reference)
-17. [Commenting](broken-reference)
-18. [Reverse stacking on mobile](broken-reference)
-19. [Disable anonymous usage tracking](broken-reference)
-20. [Disable the HTML sanitize service in the HTML content block](broken-reference)
-21. [Activate custom limitations on File Manager](broken-reference)
+{% hint style="info" %}
+Please note that server-side configurations are only available on [paid plans](https://dam.beefree.io/pluginpricing).
+{% endhint %}
 
 #### Free stock image gallery <a href="#free-stock-image-gallery" id="free-stock-image-gallery"></a>
 
@@ -46,7 +26,7 @@ When toggled on, this option scales the background image to fit the background d
 
 #### Row background video <a href="#row-background-video" id="row-background-video"></a>
 
-For [Page](https://docs.beefree.io/page-builder-overview/) and [PopUp Builder](https://docs.beefree.io/popup-builder-overview/).
+For [Page](../page-builder/) and [PopUp Builder](../popup-builder/).
 
 When this is active, advanced users of the builder can set a video as the background when editing a row.
 
@@ -72,7 +52,7 @@ When enabled, adds a new row option to keep the horizontal layout on mobile devi
 
 #### Display conditions <a href="#display-conditions" id="display-conditions"></a>
 
-When enabled, the display conditions widget will show as a row option. The widget can be used to apply the conditions created by the host applications or to add new syntax manually. [More about display conditions](http://docs.beefree.io/display-conditions/).
+When enabled, the display conditions widget will show as a row option. The widget can be used to apply the conditions created by the host applications or to add new syntax manually. [More about display conditions](services-options.md#display-conditions).
 
 #### Hide content on mobile or desktop <a href="#hide-content-on-mobile-or-desktop" id="hide-content-on-mobile-or-desktop"></a>
 
@@ -81,6 +61,8 @@ When enabled, it adds a new property in the “Content properties” section of 
 ![Hide block on mobile](https://docs.beefree.io/wp-content/uploads/2021/04/hide-content-on.png)
 
 More on [hiding content on mobile or desktop devices.](https://dam.beefree.io/hideonmobile)
+
+## Custom Social Icons
 
 When you enable Custom Social Icons in the Social module, users will be able to upload their own social media icons as a new “Add a custom icon” feature will now be available in the Social content block’s property panel.
 
@@ -92,7 +74,7 @@ When enabled, it will give users the ability to _Undo_ or _Redo_ any changes tha
 
 #### Save rows feature <a href="#save-rows-feature" id="save-rows-feature"></a>
 
-This will allow users to select a row in the current message and save it for later use. [More about Saved Rows](https://docs.beefree.io/save-rows/).
+This will allow users to select a row in the current message and save it for later use. More [about Saved Rows](../saved-rows/).
 
 #### Import from external source in file manager <a href="#import-from-external-source-in-file-manager" id="import-from-external-source-in-file-manager"></a>
 

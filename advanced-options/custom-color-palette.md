@@ -1,9 +1,8 @@
 # Custom Color Palette
 
-1. [Color picker palette overview](broken-reference)
-2. [Choosing the default colors in the color picker](broken-reference)
-3. [Disabling the color history](broken-reference)
-4. [Disabling the template's base colors](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+{% endhint %}
 
 #### Color picker palette overview <a href="#color-picker-palette-overview" id="color-picker-palette-overview"></a>
 
@@ -23,14 +22,12 @@ The builder allows you to configure a custom color palette (per user), by modify
 
 If no color profile is provided, then the builder will continue to suggest a color palette based on the colors used in the template that is being loaded.
 
-```
-
+```javascript
 
 var beeConfig = {
         uid: config.uid,
         defaultColors: ['#ffffff', '#000000', '#95d24f', '#ff00dd'],
         ...        
-
 
 ```
 
@@ -40,14 +37,12 @@ The builder will remember recently selected colors and add them to your color pa
 
 If you want the color palette to be static such that recently selected colors are not included, then you can disable the history in your configuration.
 
-```
-
+```javascript
 
 var beeConfig = {
         uid: config.uid,
         disableColorHistory: true,
         ...        
-
 
 ```
 
@@ -57,13 +52,11 @@ The builder by default adds colors found in the template’s body section to the
 
 If you want the color palette to only show the colors you pass in via the bee config document, then you must disable the base colors.
 
-```
-
+```javascript
 
 var beeConfig = {
         uid: config.uid,
         disableBaseColors: true,
         ...        
-
 
 ```
