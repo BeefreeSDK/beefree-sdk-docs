@@ -1,23 +1,21 @@
 # Integrating and using the Form block
 
-1. [How it works](broken-reference)
-2. [Pass a single form](broken-reference)
-3. [Pass multiple forms](broken-reference)
-4. [Load your form builder](broken-reference)
-5. [Embed a third-party form](broken-reference)
-6. [Customizing forms](broken-reference)
-7. [Editing form fields](broken-reference)
-8. [What happens after a form is submitted?](broken-reference)
-9. [Developer resources](broken-reference)
+{% hint style="info" %}
+The Form block is available for the [Page Builder](../../page-builder/) and the [Popup Builder](../../popup-builder/)
+{% endhint %}
 
-### How it works <a href="#how-it-works" id="how-it-works"></a>
+## How it Works
 
 You can enable your users to add forms in Beefree SDK with two methods:
 
-* by passing in the [configuration parameters](https://docs.beefree.io/configuration-parameters/) a single, **default JSON form**, potentially including all the fields your application supports, and then have **customers build and style forms** with our **form content block**.
-* by implementing a [content dialog](https://docs.beefree.io/content-dialog/) on top of the form content block and building a user interface on top of the builder, so that your users can either **browse and select pre-built forms** or **build a new form.**
+* by passing in the [configuration parameters](../../getting-started/installation/configuration-parameters/) a single, **default JSON form**, potentially including all the fields your application supports, and then have **customers build and style forms** with our **form content block**.
+* by implementing a [content dialog](../../advanced-options/content-dialog.md) on top of the form content block and building a user interface on top of the builder, so that your users can either **browse and select pre-built forms** or **build a new form.**
 
-#### Pass a single form <a href="#pass-a-single-form" id="pass-a-single-form"></a>
+{% hint style="info" %}
+**Note:** For the "Form" tile to appear in the "Content" of the builder, you must successfully implement one of the two methods mentioned above.
+{% endhint %}
+
+## Pass a Single Form
 
 Your application passes a single JSON form, potentially including all the fields that may be required in a form. You are in control of which fields are visibile when the form is dragged. From there, users have a vast control on how to customize the form, by:
 
@@ -30,11 +28,15 @@ Your application passes a single JSON form, potentially including all the fields
 
 This is the **quickest way** to get started using forms. You may also decide to include such forms inside templates provided by your application.
 
-[**Learn more about this method**](https://docs.beefree.io/passing-forms-to-the-builder/#default-form-in-starting-configuration)
+[Learn more about this method](passing-forms-to-the-builder.md)
 
-#### Pass multiple forms <a href="#pass-multiple-forms" id="pass-multiple-forms"></a>
+## Pass Multiple Forms
 
-If you want to pass more than one form to the builder, you can do so by implementing a [Content dialog](https://docs.beefree.io/content-dialog/) on top of the form content block.
+{% hint style="info" %}
+The Content Dialog feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+{% endhint %}
+
+If you want to pass more than one form to the builder, you can do so by implementing a [Content dialog](../../advanced-options/content-dialog.md) on top of the form content block.
 
 With a content dialog, you have full control over the experience of adding a form. A few examples:
 
@@ -48,17 +50,21 @@ Here is an example of form selection built with a Content Dialog.
 
 Once the content dialog returns a form to the application, users can then change the form content properties in the builder, by adding and removing fields, rearranging their order. and customizing their labels and style
 
-[**Learn more about this method**](https://docs.beefree.io/passing-forms-to-the-builder/#implementing-a-content-dialog)
+[Learn more about this method](passing-forms-to-the-builder.md)
 
-#### Load your form builder <a href="#load-your-form-builder" id="load-your-form-builder"></a>
+## Load Your Form Builder
 
 You may even want to go a step further and use the Content dialog to load your UI for form creation, on top of the builder; your users will be able to create a new form and add it to the web content they’re building, without interrupting their workflow.
 
 ![](https://docs.beefree.io/wp-content/uploads/2020/03/mock-form-builder-with-content-dialog.png)
 
-#### Embed a third-party form <a href="#embed-a-third-party-form" id="embed-a-third-party-form"></a>
+## Embed a Third-Party Form
 
-As an alternative to the above-mentioned methods, your users can add an **HTML block** and easily **embed forms** created with any [form builder](https://dam.beefree.io/formbuilders) available on the market (e.g. Typeform, JotForm, etc.).
+{% hint style="info" %}
+The HTML Block is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+{% endhint %}
+
+As an alternative to the above-mentioned methods, your users can add an **HTML block** and easily **embed forms** created with [any form builder](https://www.g2.com/categories/online-form-builder) available on the market (e.g. Typeform, JotForm, etc.).
 
 ![](https://docs.beefree.io/wp-content/uploads/2020/03/firefox\_oDUJyfo03S.png)
 
@@ -75,7 +81,7 @@ Once a form is added to the web content, the user has these options to manage fi
 * Rearrange their order
 * Rename their labels
 
-Besides, end users can [edit fields](broken-reference), when the “edit” action is available.
+Besides, end users can [edit fields](form-structure-and-parameters.md), when the “edit” action is available.
 
 ![Manage fields panel](https://docs.beefree.io/wp-content/uploads/2021/01/Icons.png)
 
@@ -89,7 +95,7 @@ Finally, users can apply various styling options to the form:
 * style buttons
 * and more . . .
 
-#### Editing form fields <a href="#editing-form-fields" id="editing-form-fields"></a>
+## Editing Form Fields
 
 When managing fields in a form block, users can click on the “Edit” action to change field types and properties. To facilitate the user, the icon next to the label highlights the current field type.
 
@@ -170,7 +176,7 @@ This type is just like a text field, but it’s meant for longer inputs. It has 
 
 Beefree SDK just passes the data back to the host application. It doesn’t save anything or touch any of the data.
 
-You can implement client-side validation in your JSON forms using the built-in [HTML5 form validation](https://dam.beefree.io/formvalidation), to validate things like:
+You can implement client-side validation in your JSON forms using the built-in [HTML5 form validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form\_validation#using\_built-in\_form\_validation), to validate things like:
 
 * required field;
 * response length, for strings (“must be less than” or “must be higher than” n characters);
@@ -187,11 +193,11 @@ Any other post-submission validation and action must be defined and performed by
 
 ### Developer resources <a href="#developer-resources" id="developer-resources"></a>
 
-[**Passing forms to the Builder**](https://docs.beefree.io/passing-forms-to-the-builder/)
+[**Passing forms to the Builder**](passing-forms-to-the-builder.md)
 
 Learn how to implement the different methods to pass forms to the Builder
 
-[**Form structure and parameters**](https://docs.beefree.io/form-structure-and-parameters/)
+[**Form structure and parameters**](form-structure-and-parameters.md)
 
 A closer look at how to structure a JSON form
 

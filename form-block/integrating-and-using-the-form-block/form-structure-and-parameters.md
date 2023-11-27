@@ -1,12 +1,5 @@
 # Form structure and parameters
 
-1. [Overview](broken-reference)
-2. [Attributes](broken-reference)
-3. [Fields](broken-reference)
-4. [Layout](broken-reference)
-5. [Title and description](broken-reference)
-6. [Using reCAPTCHA](broken-reference)
-
 ### Overview <a href="#overview" id="overview"></a>
 
 A form is defined through the `structure` object, which includes its main properties.
@@ -17,8 +10,7 @@ To take a look at real-world examples and samples, you can head to [our dedicate
 
 Let’s now examine the anatomy of a Beefree SDK form structure.
 
-```
-
+```json
 
 {
     "structure": {
@@ -29,7 +21,6 @@ Let’s now examine the anatomy of a Beefree SDK form structure.
         "description": "Form description"
     }
 }
-
 
 ```
 
@@ -50,11 +41,11 @@ This object contains the general form attributes as strings: all of them are sta
 
 ### Fields <a href="#fields" id="fields"></a>
 
-An object that lists all the form fields included in the form with its relative properties. The order in which they appear only matters if you [pass a single form](https://docs.beefree.io/passing-forms-to-the-builder/#default-form-in-starting-configuration) to an application. If you want to use the content dialog to feed forms in the builder, the order is not relevant and you can set the form layout in the layout array.
+An object that lists all the form fields included in the form with its relative properties. The order in which they appear only matters if you [pass a single form](passing-forms-to-the-builder.md) to an application. If you want to use the content dialog to feed forms in the builder, the order is not relevant and you can set the form layout in the layout array.
 
-Beefree SDK supports the vast majority of standard HTML5 `form` fields. A few of them (such as `color`, `datetime`, `datalist`) have mixed browser support, so please make sure to check [browser compatibility](https://dam.beefree.io/caniuse) before using them.
+Beefree SDK supports the vast majority of standard HTML5 `form` fields. A few of them (such as `color`, `datetime`, `datalist`) have mixed browser support, so please make sure to check [browser compatibility](https://caniuse.com/) before using them.
 
-To see them in action, you can find a few examples on [our dedicated GitHub page](https://dam.beefree.io/githubbeeforms). Head over [here](https://docs.beefree.io/allowed-form-fields/) if you need the full list of **allowed field types**, along with the available attributes and options for each of them.
+To see them in action, you can find a few examples on [our dedicated GitHub page](https://dam.beefree.io/githubbeeforms). Head over to [allowed form fields](allowed-form-fields.md) if you need the full list of **allowed field types**, along with the available attributes and options for each of them.
 
 If you want to use a single form, you can use the optional `canBeRemovedFromLayout` and `removeFromLayout` attributes to determine (respectively) if that specific field can be removed from the layout by the user, and if it should appear in the stage when the form is dragged in.
 
@@ -74,7 +65,7 @@ It’s a best practice to add `canBeRemovedFromLayout: false` to mandatory field
 | ------------------ | ---------- | ------- | ------------- |
 | `removeFromLayout` | all fields | boolean | false         |
 
-This attribute indicates that a field is toggled off by default when the form is loaded. This behavior is particularly useful to simplify the user experience when you implement forms in the builder through a [default form in the configuration parameters](https://docs.beefree.io/passing-forms-to-the-builder/#default-form-in-starting-configuration).
+This attribute indicates that a field is toggled off by default when the form is loaded. This behavior is particularly useful to simplify the user experience when you implement forms in the builder through a [default form in the configuration parameters](passing-forms-to-the-builder.md).
 
 ### Layout <a href="#layout" id="layout"></a>
 
@@ -99,7 +90,8 @@ Probably the best way to represent this is with an example:
 ]
 </code></pre> |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| ![](https://docs.beefree.io/wp-content/uploads/2020/03/forms-layout.png)                                 |                                                                                                          |
+
+<figure><img src="https://docs.beefree.io/wp-content/uploads/2020/03/forms-layout.png" alt=""><figcaption></figcaption></figure>
 
 ### Title and description <a href="#title-and-description" id="title-and-description"></a>
 
@@ -107,37 +99,32 @@ The form **title** is a string value. It is not displayed to the user while work
 
 ### Using reCAPTCHA <a href="#using-recaptcha" id="using-recaptcha"></a>
 
-reCAPTCHA is a free service from Google that helps protect websites from spam and abuse. To learn more about reCAPTCHA, visit the [official website](https://dam.beefree.io/recaptchaintro) or Google [technical documentation](https://developers.google.com/recaptcha/) site.
+reCAPTCHA is a free service from Google that helps protect websites from spam and abuse. To learn more about reCAPTCHA, visit the [official website](https://www.google.com/recaptcha/about/) or Google [technical documentation](https://developers.google.com/recaptcha/) site.
 
 To embed Google ReCaptcha in a Form you need a Google API key for ReCaptcha, the key has to be enabled for a specific website URL or domain; this is crucial because otherwise the script will load but will fail its validation, returning API key errors.
 
 Here’s what’s needed in the submit action when passing a form configuration:
 
-```
-
+```javascript
 
 "class": "g-recaptcha"
 "data-action": "submit"
 "data-sitekey": "___YOUR_RECAPTCHA_API_KEY___"
 "data-callback": "onSubmit" (this can be optional, check reCaptcha docs)
 
-
 ```
 
 In addition, you have to add an HTML block that imports the reCaptcha library inside the template that encapsulates the form:
 
-```
-
+```markup
 
 <script src="https://www.recaptcha.net/recaptcha/api.js" async defer></script>
-
 
 ```
 
 Here’s a sample JSON config for the submit button:
 
-```
-
+```json
 
 "submit": {
   "attributes": {
@@ -151,8 +138,9 @@ Here’s a sample JSON config for the submit button:
   "type": "submit"
 }
 
-
 ```
 
-Note 1: Make sure HTML sanitize is OFF (this is the default value).\
-Note 2: Please remember that the reCaptcha UI elements will be visible neither in the Beefree SDK work area nor in the Preview, but they will be integrated when the page will be published. Furthermore, the page has to be hosted on the domain that was enabled on the Google Developers Console when setting the reCaptcha.
+Ensure you keep the following in mind:
+
+* Make sure HTML sanitize is OFF (this is the default value).
+* Remember that the reCaptcha UI elements will be visible neither in the Beefree SDK work area nor in the Preview, but they will be integrated when the page will be published. Furthermore, the page has to be hosted on the domain that was enabled on the Google Developers Console when setting the reCaptcha.

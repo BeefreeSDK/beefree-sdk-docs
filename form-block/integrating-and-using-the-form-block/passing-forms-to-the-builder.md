@@ -1,15 +1,11 @@
 # Passing forms to the builder
 
-1. [Providing forms](broken-reference)
-2. [Default form in starting configuration](broken-reference)
-3. [Implementing a content dialog](broken-reference)
-
 ### Providing forms <a href="#providing-forms" id="providing-forms"></a>
 
 You can load forms in the builder with two methods:
 
-* by passing in the [configuration parameters](https://docs.beefree.io/configuration-parameters/) a single, **default JSON form**, potentially including all the fields your application supports;
-* by implementing a [content dialog](https://docs.beefree.io/content-dialog/) and building a user interface on top of the builder, so that your users can **browse and select forms**.
+* by passing in the [configuration parameters](../../getting-started/installation/configuration-parameters/) a single, **default JSON form**, potentially including all the fields your application supports;
+* by implementing a [content dialog](../../advanced-options/content-dialog.md) and building a user interface on top of the builder, so that your users can **browse and select forms**.
 
 If you successfully implement either method, you’ll see a new Form content tile in the builder Content tab.
 
@@ -17,15 +13,13 @@ Let’s see in detail how these methods work.
 
 ### Default form in starting configuration <a href="#default-form-in-starting-configuration" id="default-form-in-starting-configuration"></a>
 
-Use this method to provide a default form in the [configuration parameters](https://docs.beefree.io/configuration-parameters/) when the builder starts.
+Use this method to provide a default form in the [configuration parameters](../../getting-started/installation/configuration-parameters/) when the builder starts.
 
-```
-
+```javascript
 
 defaultForm: {
   // Form
 },
-
 
 ```
 
@@ -33,8 +27,7 @@ The default form will load when the user drags the form tile from the “Content
 
 Here is an example of a typical login form:
 
-```
-
+```javascript
 
 defaultForm: {
   structure: {
@@ -49,7 +42,6 @@ defaultForm: {
     ]
   }
 },
-
 
 ```
 
@@ -95,8 +87,7 @@ This attribute indicates that a field is toggled off by default when the form is
 
 Here is an example:
 
-```
-
+```javascript
 
 defaultForm: {
     "structure": {
@@ -149,7 +140,6 @@ defaultForm: {
 	}
 },
 
-
 ```
 
 When added, the form shows the minimum fields for submtting an email, e.g. for subscribing to a newsletter:
@@ -162,14 +152,17 @@ but then, the user can toggle on the available fields to transform it:
 
 ### Implementing a content dialog <a href="#implementing-a-content-dialog" id="implementing-a-content-dialog"></a>
 
+{% hint style="info" %}
+The Content Dialog feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+{% endhint %}
+
 The content dialog allows you to build a user interface for selecting a form, on top of the builder. It can be a simple list with prebuilt forms, a search through categorized forms, a small form configurator or wizard, or even a complete form builder tailored for your application’s data.
 
-For detailed information about this feature, please check the [content dialog](https://docs.beefree.io/content-dialog/) section.
+For detailed information about this feature, please check the content dialog section.
 
 The object that defines the form content dialog is the following:
 
-```
-
+```javascript
 
  manageForm: {
             label: 'Change form',
@@ -178,21 +171,19 @@ The object that defines the form content dialog is the following:
             } 
           },
 
-
 ```
 
 As with most content dialog objects, the label is used within the interface to trigger the function:
 
 ![](https://docs.beefree.io/wp-content/uploads/2020/04/change-form.png)
 
-The resolve object in the handler function must return a form using the structure and parameters described in [this section](https://docs.beefree.io/form-structure-and-parameters/).
+The resolve object in the handler function must return a form using the structure and parameters described in [this section](form-structure-and-parameters.md).
 
 The args object in the handler function returns to the host application the form object already applied. With this information, the application can decide what to display to the user (e.g., edit the current form, suggest a similar form, etc.).
 
 An example of the content dialog object in beeConfig that handles special links and forms:
 
-```
-
+```javascript
 
 contentDialog: {
   specialLinks: {
@@ -211,6 +202,5 @@ contentDialog: {
       } 
   },
 },
-
 
 ```

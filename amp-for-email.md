@@ -1,19 +1,8 @@
-# AMP Carousel
-
-1. [What is AMP for Email?](broken-reference)
-2. [How AMP for email works](broken-reference)
-3. [Activating the AMP Carousel](broken-reference)
-4. [Using workspaces for AMP](broken-reference)
-5. [How to use the AMP carousel](broken-reference)
-6. [Creating the HTML fallback](broken-reference)
-7. [FAQs on the AMP Carousel](broken-reference)
-8. [Disable the AMP Carousel for specific customers](broken-reference)
-9. [What you need to do to send AMP emails](broken-reference)
-10. [What your end users need to do to send AMP emails](broken-reference)
+# AMP for Email
 
 ### What is AMP for Email? <a href="#what-is-amp-for-email" id="what-is-amp-for-email"></a>
 
-[AMP](https://dam.beefree.io/ampmain) is an open-source, web component framework, maintained by the OpenJS Foundation with significant support from Google. Its goal is to create great experiences across the web, focusing on interactivity and speed.
+[AMP](https://amp.dev/) is an open-source, web component framework, maintained by the OpenJS Foundation with significant support from Google. Its goal is to create great experiences across the web, focusing on interactivity and speed.
 
 ![](https://docs.beefree.io/wp-content/uploads/2020/10/AMP-Carousel-in-BEE.gif)
 
@@ -26,7 +15,7 @@ Traditionally, a marketing or a transactional email is a multipart message, with
 * HTML: this is what the vast majority of email clients support. It is also the usual output of our email builder.
 * Text: Originally, this was the only way to send emails. When the HTML MIME type was rolled out, not all email clients supported HTML, or readers could set their client to stick to the Text version. The text part still acts as a fallback for the HTML part. Beefree builders do not produce this MIME type.
 
-[AMP for Email](https://dam.beefree.io/ampaboutemail) works by creating AMP markup that looks like HTML but is a new specification. That code is written in a separate email file, delivered using a third, additional MIME type (on top of existing HTML and text types). We’ll provide an additional AMPHTML document when there’s AMP content in the email saved by Beefree’s email builder.
+[AMP for Email](https://amp.dev/about/email) works by creating AMP markup that looks like HTML but is a new specification. That code is written in a separate email file, delivered using a third, additional MIME type (on top of existing HTML and text types). We’ll provide an additional AMPHTML document when there’s AMP content in the email saved by Beefree’s email builder.
 
 The AMPHTML version will be delivered only to the inboxes of **service providers that support AMP –** currently **Gmail, Yahoo Mail** (webmail only), and **mail.ru**. All other clients will **fall back to the HTML** version.
 
@@ -62,8 +51,7 @@ Also, when the message contains AMP content, you will:
 
 Here is how to load a Beefree application with a “mixed” workspace:
 
-```
-
+```javascript
 
 type ClientConfig = {
   workspace?: {
@@ -85,27 +73,24 @@ function BeePlugin.create(token, beeConfig, (beePluginInstance) => {
   //.... 
 }
 
-
 ```
 
 If the workspace is loaded successfully, a `onLoadWorkspace(workspace)` callback is triggered.
 
-```
-
+```javascript
 
 //SUCCESS 
 onLoadWorkspace: function (workspace) {
   console.log(`workspace: ${workspace} has been loaded`);
 },
 
-
 ```
 
-[Click here](https://docs.beefree.io/workspaces) to learn more about what workspaces are and the additional workspaces you can use for AMP content.
+Visit [Workspaces](getting-started/installation/configuration-parameters/workspaces.md) to learn more about what workspaces are and the additional workspaces you can use for AMP content.
 
 #### Loading a template with AMP content
 
-If you don’t set a workspace when loading the builder, AMP widgets are not visible in the Content tab. However, if a message or template containing AMP is loaded, the builder will send an [`onWarning`](https://about/error-management/#warning-codes) [callback](https://about/error-management/#warning-codes) to your application. At that point, you may decide to switch to an AMP-compatible workspace, using the [`loadWorkspace`](https://about/workspaces/#switching-workspaces) [method](https://about/workspaces/#switching-workspaces).
+If you don’t set a workspace when loading the builder, AMP widgets are not visible in the Content tab. However, if a message or template containing AMP is loaded, the builder will send an [`onWarning`](https://about/error-management/#warning-codes) [callback](error-management/onwarning.md) to your application. At that point, you may decide to switch to an AMP-compatible workspace, using the [`loadWorkspace`](https://about/workspaces/#switching-workspaces) [method](getting-started/installation/configuration-parameters/workspaces.md).
 
 ### How to use the AMP carousel <a href="#how-to-use-the-amp-carousel" id="how-to-use-the-amp-carousel"></a>
 
@@ -157,19 +142,19 @@ Besides the carousel, users can mark any part of the email as AMP-only by applyi
 
 ### FAQs on the AMP Carousel <a href="#faqs-on-the-amp-carousel" id="faqs-on-the-amp-carousel"></a>
 
-What image formats are supported?
+**What image formats are supported?**
 
-There are no particular limitations. You can use any image type that already works with the standard Image block (GIFs included). Please note that if you have a [custom file system provider](https://docs.beefree.io/connect-your-own-file-storage/) that limits the image types that can be loaded in the builder, it will reflect also on the AMP carousel.
+There are no particular limitations. You can use any image type that already works with the standard Image block (GIFs included). Please note that if you have a custom [file system provider](server-side-options/storage-options/connect-your-file-storage-system.md) that limits the image types that can be loaded in the builder, it will reflect also on the AMP carousel.
 
-Can I edit an image used as a carousel slide?
+**Can I edit an image used as a carousel slide?**
 
 No, it’s not possible to use the image editor. You might work around this limitation by editing the image in a standard Image block and then adding it to the carousel.
 
-Are there any suggestions for image sizes?
+**Are there any suggestions for image sizes?**
 
 The best way to build a carousel is to use images with the same size, or that respect the same image ratio. Plus, the first slide should be wide at least as the carousel block, to avoid image stretching.
 
-Why am I getting an INVALID\_AMP email in the inbox when I send a test email with AMP content?
+**Why am I getting an INVALID\_AMP email in the inbox when I send a test email with AMP content?**
 
 AMP is a versatile but pretty strict framework, and it will not render messages that don’t respect its validation protocol. The most common validation error is related to **invalid HREF value** in links (e.g., no URL, invalid or missing protocol, or incorrect URL composition).
 
@@ -192,13 +177,13 @@ Why? Because you may decide to make the feature available to your customers:
 Here’s how to do so:
 
 * Enable AMP Carousel in the Beefree SDK Console, as mentioned above.
-* Configure the ‘default’ workspace in the beeConfig document, so that AMP cannot be used ([more details here](https://about/workspaces/#available-workspaces)). As an alternative, if you don’t configure a workspace, the Beefree application will be loaded with the default workspace.
+* Configure the ‘default’ workspace in the beeConfig document, so that AMP cannot be used ([more details here](getting-started/installation/configuration-parameters/workspaces.md)). As an alternative, if you don’t configure a workspace, the Beefree application will be loaded with the default workspace.
 
 ### What you need to do to send AMP emails <a href="#what-you-need-to-do-to-send-amp-emails" id="what-you-need-to-do-to-send-amp-emails"></a>
 
 * Your app must save the additional AMPHTML version of the email, when returned by the Beefree system, the same way it already saves the HTML version.
-* Your sending infrastructure must handle delivering an additional MIME type for AMP – this typically involves becoming an [authorized sender](https://dam.beefree.io/ampregister) for dynamic emails.
-  * In alternative, you can leverage one of the existing ESPs that already support sending AMP emails via SMTP or API, such as Amazon SES, Mailgun, and Sparkpost. See the full list list [here](https://dam.beefree.io/ampemailsupport).
+* Your sending infrastructure must handle delivering an additional MIME type for AMP – this typically involves becoming an [authorized sender](https://developers.google.com/gmail/ampemail/register) for dynamic emails.
+  * In alternative, you can leverage one of the existing ESPs that already support sending AMP emails via SMTP or API, such as Amazon SES, Mailgun, and Sparkpost. See the full list list [here](https://amp.dev/support/faq/email-support).
 * You should advise end-users on creating fallback for AMP content due to limited client support for AMP – _optional, but highly recommended_.
   * For example, if they create an image carousel with AMP, they should also add some images for the HTML version. They can hide content for the AMP version with the “Hide on AMP” content property.
 

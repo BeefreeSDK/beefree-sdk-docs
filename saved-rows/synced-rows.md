@@ -1,19 +1,13 @@
 # Synced Rows
 
-1. [Overview](broken-reference)
-2. [Prerequisites](broken-reference)
-3. [How it works](broken-reference)
-4. [Designating a row as "synced"](broken-reference)
-5. [Identifying synced rows](broken-reference)
-6. [Editing synced rows](broken-reference)
-7. [Example synced rows workflow](broken-reference)
-8. [Synchronizing row changes](broken-reference)
-9. [Efficient template updates](broken-reference)
-10. [Additional references](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.\
+If you're on the Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Core-level features.
+{% endhint %}
 
 ### Overview <a href="#overview" id="overview"></a>
 
-**Synced Rows** expands on the foundational capabilities of [Save Rows](https://docs.beefree.io/save-rows/) and [Single Row Edit Mode](https://docs.beefree.io/save-rows/edit-single-row-mode/), helping users manage rows more effectively. Using the `merge` and `index` methods in the [Content Services API (CSAPI)](https://docs.beefree.io/message-services-api/), app developers can create a seamless row management workflow. This ensures that when users update content in one row marked as “synced,” those updates are reflected across all connected designs.
+**Synced Rows** expands on the foundational capabilities of [Save Rows](./) and [Single Row Edit Mode](edit-single-row-mode.md), helping users manage rows more effectively. Using the `merge` and `index` methods in the [Content Services API (CSAPI)](../content-services-api/), app developers can create a seamless row management workflow. This ensures that when users update content in one row marked as “synced,” those updates are reflected across all connected designs.
 
 #### Key features
 
@@ -38,8 +32,8 @@
 
 Before diving into Synced Rows, we recommend reviewing the following features:
 
-1. [**Save Rows**](https://docs.beefree.io/save-rows/): Implement this feature first, as it establishes the foundation for a row management workflow.
-2. [**Single Row Edit Mode**](https://docs.beefree.io/save-rows/edit-single-row-mode/) **&** [**Content Services API (CSAPI)**](https://docs.beefree.io/message-services-api/): Familiarizing yourself with the Single Row Edit Mode and CSAPI will enhance your understanding of key concepts later. However, they are not strictly necessary to start with Synced Rows.
+1. [Save Rows](./): Implement this feature first, as it establishes the foundation for a row management workflow.
+2. [Single Row Edit Mode](edit-single-row-mode.md) & [Content Services API (CSAPI)](../content-services-api/): Familiarizing yourself with the Single Row Edit Mode and CSAPI will enhance your understanding of key concepts later. However, they are not strictly necessary to start with Synced Rows.
 
 ### How it works <a href="#how-it-works" id="how-it-works"></a>
 
@@ -55,8 +49,8 @@ You might need to modify the `saveRow` handler from the Metadata Content Dialog 
 
 If you need a refresher, check out:
 
-* [Save Rows workflow for developers](https://docs.beefree.io/save-rows/#saving-rows-workflow-for-developers)
-* [Metadata Content Dialog response format](https://docs.beefree.io/save-rows/#metadata-content-dialog)
+* [Save Rows workflow for developers](./)
+* [Metadata Content Dialog response format](save-rows-overview.md)
 
 Here’s a **sample implementation for the Metadata Content Dialog**, offering the synced row option:
 
@@ -66,8 +60,7 @@ The JSON returned to the builder includes the user’s input and selections from
 
 **Example**
 
-```
-
+```json
 
 contentDialog: {
   saveRow: {
@@ -85,7 +78,6 @@ contentDialog: {
     }
   },
 },
-
 
 ```
 
@@ -123,8 +115,7 @@ The user’s selection from the above example `editSyncedRow`  content dialog UI
 
 **Example**
 
-```
-
+```json
 
 contentDialog: {
     editSyncedRow: {
@@ -140,12 +131,15 @@ contentDialog: {
     }
 }
 
-
 ```
+
+{% hint style="info" %}
+A comprehensive reference of the `editSyncedRow` Content Dialog settings, such as the CTA button label and optional text, can be found in our [Content Dialog docs](../appearance/content-defaults.md).
+{% endhint %}
 
 The following animation shows this **example of edit synced rows workflow** in action. We’ll dive into this process in the following sections.
 
-![](https://docs.beefree.io/wp-content/uploads/2023/03/Edit\_Synced\_Row.gif)
+<figure><img src="https://docs.beefree.io/wp-content/uploads/2023/03/Edit_Synced_Row.gif" alt=""><figcaption></figcaption></figure>
 
 ### Example synced rows workflow <a href="#example-synced-rows-workflow" id="example-synced-rows-workflow"></a>
 
@@ -153,7 +147,7 @@ Suppose a user selects “Edit and update everywhere” from the content dialog.
 
 Here’s a breakdown of the typical workflow the host app adopts:
 
-1. **Initialization**: The host app launches the Single Row Edit Mode in a new builder instance to enable editing of the synchronized row. Our [Single Row Edit Mode](https://docs.beefree.io/save-rows/edit-single-row-mode/) documentation is available for reference for a deeper understanding.
+1. **Initialization**: The host app launches the Single Row Edit Mode in a new builder instance to enable editing of the synchronized row. Our [Single Row Edit Mode](edit-single-row-mode.md) documentation is available for reference for a deeper understanding.
 2. **User edits**: Users generally hit ‘Save’ to confirm their edits once they modify the synchronized row. Simultaneously, the host app can proactively track these edits using the `onChange` method.
 3. **Synchronization timing**: The decision on when to synchronize changes across all designs rests with the host application. Given the potential need to propagate edits to multiple designs, holding off until the user indicates their wish to exit is customary.
 4. **Initiation of synchronization**: The synchronization is initiated as soon as the user signifies their satisfaction with the edits, either through the ‘Save’ or ‘Save & Exit’ options.
@@ -168,12 +162,10 @@ The `merge` method functions as a sophisticated “find and replace.”
 
 * i.e., To synchronize content, the host app forwards a request comprising the outdated template, the newly edited row, and a succinct query detailing which row(s) the API should target for replacement.  The “query” is a standards-based JSON Path query typically referencing a globally unique identifier that was added to the saved row during the Metadata Content Dialog step.
 
-Here’s an example of how to use the `merge` method. For more details check out our [merge method documentation](https://docs.beefree.io/message-services-api-reference/#merge).
+Here’s an example of how to use the `merge` method. For more details check out our merge [method documentation](../content-services-api/).
 
-```
-
-
-curl --location 'https://api.getbee.io/v1/message/merge' \
+<pre class="language-javascript"><code class="lang-javascript"><strong>
+</strong>curl --location 'https://api.getbee.io/v1/message/merge' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {YOUR-API-KEY}' \
@@ -189,8 +181,7 @@ curl --location 'https://api.getbee.io/v1/message/merge' \
   }'
 
 
-
-```
+</code></pre>
 
 ### Efficient template updates <a href="#efficient-template-updates" id="efficient-template-updates"></a>
 
@@ -205,12 +196,3 @@ Upon adding a synced row into a design, the `onChange` callback method supplies 
 For those rows incorporated into designs before the implementation of the `onChange` tracking method, CSAPI’s `index` method is available. This method indexes your template and returns a JSON array detailing every saved row dropped within the JSON.
 
 The specific objectives of the host application steer the choice between these methods. Whatever the choice, the primary focus is meticulously tracking the row across all linked templates, ensuring accurate and efficient updates.
-
-### Additional references <a href="#additional-references" id="additional-references"></a>
-
-For additional information and advanced usage, reference the links provided below.
-
-* [Content Dialog](https://docs.beefree.io/content-dialog/)
-* [Content Services API](https://docs.beefree.io/message-services-api/)
-* [Save Rows](https://docs.beefree.io/save-rows-3/)
-* [Edit Single Row](https://docs.beefree.io/save-rows/edit-single-row-mode/)

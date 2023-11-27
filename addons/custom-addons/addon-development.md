@@ -51,10 +51,16 @@ When you create a new Custom AddOn, you will be prompted to enter some informati
   A toggle element to enable and disable the AddOn. When toggled _OFF,_ the AddOn is not visible to end-users of the editor in your application (the _host application_).
 * **Type**:\
   The type of content that the AddOn will create. Currently, the following content types are available:
-  * _image_
+  * _Image_
   * _HTML_
-  * _mixed_
-  * _row_
+  * _Mixed_
+  * _Row_
+  * _Paragraph_
+  * _Button_
+  * _Title_
+  * _List_
+  * _Menu_
+  * _Icon_
 * **Handle**:\
   A unique identifier for this AddOn. This value will be the future reference between the AddOn and its content dialog. Additionally, it will be used to override settings per user or build a content dialog for the AddOn.
 * **Method**:\
@@ -119,14 +125,28 @@ You don’t need to implement a **JavaScript API** or **Server API** when using 
 
 An AddOn can only return one type of content. The type you choose will determine which sidebar properties are shown when your AddOn is selected.
 
-Currently, you may choose between the following three types:
+Currently, you may choose between the following content types:
 
 * **Image**:\
-  Will insert an image module on the stage, and show the properties of an image content block in the sidebar.
+  Will insert an image module on the stage, and show the properties of an image content block in the sidebar. Adjusting the properties allows for customization of the content type.
 * **HTML**:\
   Will insert an HTML module on the stage, and show the properties of a custom HTML content block in the sidebar, except the HTML text input will be hidden. That’s because the HTML cannot be edited outside of the content dialog or iframe made available by your AddOn.
 * **Mixed**:\
   Will insert a module on the stage that allows for loading of different content blocks with a single action.
+* **Row**:\
+  Will insert a row module on the stage, and show the row properties in the sidebar. The row is pre-built with a specific use case in mind. For example, a row that serves of the purpose of allowing end users to add products to their builders.
+* **Paragraph**:\
+  Will insert a paragraph module on the stage, and show the properties of a paragraph content block in the sidebar.
+* **Button**:\
+  Will insert a button module on the stage, and show the properties of a button content block in the sidebar. This simplifies offering pre-built buttons to your end users.
+* **Title**:\
+  Will insert a title module on the stage, and show the properties of a title content block in the sidebar.
+* **List**:\
+  Will insert a list module on the stage, and show the properties of a list content block in the sidebar.
+* **Menu**:\
+  Will insert a menu module on the stage, and show the properties of a menu content block in the sidebar. This simplifies offering pre-built menus to your end users.
+* **Icon**:\
+  Will insert an icon module on the stage, and show the properties of an icon content block in the sidebar.
 
 ### Mixed Content AddOns <a href="#mixed-content-addons" id="mixed-content-addons"></a>
 
@@ -137,7 +157,7 @@ Mixed Content AddOns are a new type of content tile that allows the host applica
 To utilize this new feature, it is necessary to:
 
 * Create a new custom AddOn of type “Mixed Content” from developers.beefree.io, as described in the “Getting started” section of this article;
-* Add the [integration code](https://docs.beefree.io/addon-development-power-content/#the-content-dialog-method) required by custom AddOns (for example, if the user chose the “Content Dialog” method, it might look something like this):
+* Add the [integration code](broken-reference) required by custom AddOns (for example, if the user chose the “Content Dialog” method, it might look something like this):
 
 ```
 
@@ -209,164 +229,191 @@ If the response is not valid, an error is raised, and `onError` is called.
 
 #### Modules definition
 
-For each module type, here is the list of allowed properties.\
+For each module type, here is the list of allowed properties.
+
 Unless otherwise specified, the properties are optional.
 
 **Title**
 
-| Property | Value                                      | Mandatory |
-| -------- | ------------------------------------------ | --------- |
-| text     | string (e.g., “this is the title content”) | no        |
-|          |                                            |           |
-| title    | string (e.g., ex. “h1”)                    | no        |
+The following code calls a function named resolve with an object argument. This object defines a heading element with characteristics such as type, text content, alignment, font size, boldness, text color, and link color. The resolve function handles or returns the constructed heading element.
+
+```
+
+resolve({
+  type: 'heading',
+  value: {
+    title: 'h3',
+    text: 'Title',
+    align: 'right',
+    size: '48',
+    bold: true,
+    color: 'pink',
+    linkColor: 'green',
+  }
+})
+
+
+```
+
+The following table displays a list of properties in the resolve function, and each of its respective value types and whether or not they are mandatory.
+
+| Property  | Value   | Mandatory |
+| --------- | ------- | --------- |
+| title     | String  | No        |
+| text      | String  | Yes       |
+| align     | String  | No        |
+| size      | String  | No        |
+| bold      | Boolean | No        |
+| color     | String  | No        |
+| linkColor | String  | No        |
 
 **Image**
 
-| Property   | Value                                                   | Mandatory |
-| ---------- | ------------------------------------------------------- | --------- |
-| alt        | string                                                  | no        |
-|            |                                                         |           |
-| href       | string (e.g., “http://www.my-website.com”)              | no        |
-| src        | string (e.g., “http://www.my-website.com/my-image.png”) | no        |
-| dynamicSrc | string (e.g., “\{{my-merge-tag\}}”)                     | no        |
-| target     | string (for ex. “\_blank”)                              | no        |
+The following sample code defines an image element with various attributes.
+
+```
+
+resolve({
+  type: 'image',
+  value: {
+    alt: 'Alternative desc',
+    href: 'http://www.example.com/',
+    src: 'https://url.to.myimage.com,
+    dynamicSrc: '{{any-merge-tag}}',
+    target: '_self',
+  }
+})
+
+
+```
+
+The following table displays a list of properties in the resolve function, and each of its respective value types and whether or not they are mandatory.
+
+| Property   | Value        | Mandatory |
+| ---------- | ------------ | --------- |
+| alt        | String       | Yes       |
+| href       | String (URL) | Yes       |
+| src        | String (URL) | Yes       |
+| dynamicSrc | String (URL) | No        |
+| target     | String       | No        |
 
 **Button**
 
-| Property | Value                                  | Mandatory |
-| -------- | -------------------------------------- | --------- |
-| label    | string (e.g., “my button content”)     | no        |
-| href     | string (e.g., “http://www.google.it/”) | no        |
-| target   | string (for ex. “\_blank”)             | no        |
+The following sample code defines a button element with various attributes.
+
+```
+
+resolve({
+  type: 'button',
+  value: {
+    label: 'Button',
+    href: 'https://beefree.io',
+    target: '_self',
+    color: 'pink',
+    'background-color': 'yellow',
+  },
+  mergeTags: [...],
+})
+
+
+```
+
+The following table displays a list of properties in the resolve function, and each of its respective value types and whether or not they are mandatory.
+
+| Property         | Value        | Mandatory |
+| ---------------- | ------------ | --------- |
+| label            | String       | Yes       |
+| href             | String (URL) | No        |
+| target           | String       | No        |
+| color            | String       | No        |
+| background-color | String       | No        |
 
 **Paragraph**
 
-| Property | Value                                                   | Mandatory |
-| -------- | ------------------------------------------------------- | --------- |
-| html     | string (e.g., "this is the \<b>paragraph\</b> content") | no        |
-
-**List**
-
-| Property | Value                                                         | Mandatory |
-| -------- | ------------------------------------------------------------- | --------- |
-| tag      | string (e.g., “ol” or “ul”)                                   | yes       |
-| html     | string (e.g., "\<ol>\<li>first\</li>\<li>second\</li>\</ol>") | no        |
-
-**Icons**
-
-| Property     | Value                                          | Mandatory |
-| ------------ | ---------------------------------------------- | --------- |
-| image        | string (for ex. “http://my-image-url”)         | yes       |
-| textPosition | string (for ex. “right” “left” “top” “bottom”) | yes       |
-| text         | string                                         | no        |
-| alt          | string                                         | no        |
-| title        | string                                         | no        |
-| href         | string                                         | no        |
-| target       | string (for ex. “\_blank”)                     | no        |
-| width        | string (for ex. “200px”)                       | yes       |
-| height       | string (for ex. “300px”)                       | yes       |
-
-As an example, here is a response that contains at least one occurrence for each module type:
+The following sample code defines a paragraph element with various attributes. The mergeTags property contains a list of merge tags, which can be used for dynamic content insertion.
 
 ```
 
-
-{
-  "type": "mixed", 
-  "value": [
-  {
-    "type": "title",
-    "value": { }
-  }, {
-    "type": "title",
-    "value": {
-      "text": "This is an H1 block",
-      "title": "h1"
-    }
-  }, {
-    "type": "title",
-    "value": {
-      "text": "This is an H2 block",
-      "title": "h2"
-    }
-  }, {
-    "type": "title",
-    "value": {
-      "text": "This is an H3 block",
-      "title": "h3"
-    }
-  }, {
-    "type": "image",
-    "value": { }
-  }, {
-    "type": "image",
-    "value": {
-      "src": "http://my-image-url",
-    }
-  }, {
-    "type": "image",
-    "value": {
-      "alt": "My custom image with dynamicSrc",
-      "href": "http://www.google.com/",
-      "src": "http://my-image-url",
-      "dynamicSrc": "{{any-merge-tag}}"
-    }
-  }, {
-    "type": "button",
-    "value": { },
-  }, {
-    "type": "button",
-    "value": {
-      "label": "AddOn custom Button",
-      "href": "http://www.test.com",
-    }
-  }, {
-    "type": "paragraph",
-    "value": { }
-  }, {
-    "type": "paragraph",
-    "value": {
-      "html": "AddOn custom <b><u>Paragraph</u></b>"
-    }
-  }, {
-    "type": "list",
-    "value": {
-      "tag": "ul",
-    }
-  }, {
-    "type": "list",
-    "value": {
-      "tag": "ol",
-      "html": "<ol><li>AddOn custom List item</li></ol>"
-    }
-  }, {
-    "type": "icons",
-    "value": {},
-  }, {
-    "type": "icons",
-    "value": {
-      "icons": []
-    },
-  }, {
-    "type": "icons",
-    "value": {
-      "icons": [{
-        "image": "http://my-image-url",
-        "textPosition": "right",
-        "text": "Custom AddOn icon text",
-        "alt": "Custom AddOn icon alt",
-        "title": "Custom AddOn icon title",
-        "href": "https://www.google.com",
-        "target": "_blank",
-        "width": "100px",
-        "height": "100px",
-      }],
-    }
-  }]
-}
+resolve({
+  type: 'paragraph',
+  value: {
+    html: 'My text,
+    underline: true,
+    italic: true,
+    align: 'right',
+    size: '48',
+    bold: true,
+    color: 'pink',
+    linkColor: 'green',
+  },
+  mergeTags: [...],
+})
 
 
 ```
+
+The following table displays a list of properties in the resolve function, and each of its respective value types and whether or not they are mandatory.
+
+| Property     | Value        | Mandatory |
+| ------------ | ------------ | --------- |
+| image        | String (URL) | Yes       |
+| text         | String       | No        |
+| target       | String       | No        |
+| alt          | String       | No        |
+| title        | String       | No        |
+| href         | String (URL) | No        |
+| width        | String       | No        |
+| height       | String       | No        |
+| textPosition | String       | Yes       |
+
+**HTML**
+
+The following sample code defines an HTML element with various attributes.
+
+![](https://docs.beefree.io/wp-content/uploads/2023/09/carbon.png)
+
+The following table displays a list of properties in the resolve function, and each of its respective value types and whether or not they are mandatory.
+
+| Property | Value                 | Mandatory |
+| -------- | --------------------- | --------- |
+| html     | String (HTML content) | Yes       |
+
+**Menu**
+
+The code defines a menu structure with a list of items. Each item has text content (e.g., “Menu item”) and a link associated with it. The link includes a title, URL (href), and a target attribute, demonstrating that it generates a menu with clickable items that open the specified links in the same browser window or tab when clicked.
+
+```
+
+resolve({
+  type: 'menu',
+  value: {
+    items: [
+      {
+        text: 'Menu item',
+        link: {
+          title: 'Link',
+          href: 'https://beefree.io',
+          target: '_self'
+        }
+      },
+      ...
+    ],
+  }
+})
+
+
+```
+
+The following table displays a list of properties in the resolve function, and each of its respective value types and whether or not they are mandatory.
+
+| Property | Value            | Mandatory |
+| -------- | ---------------- | --------- |
+| items    | Array of objects | Yes       |
+| text     | String           | No        |
+| link     | Object           | No        |
+| title    | String           | No        |
+| href     | String (URL)     | No        |
+| target   | String           | No        |
 
 ### Custom AddOn - Row <a href="#custom-addon-row" id="custom-addon-row"></a>
 
@@ -381,7 +428,7 @@ This feature expands the capabilities of Custom AddOns by including:
 To take advantage of this new feature, you have to:
 
 * Create a new custom AddOn of type “Row” from [developers.beefree.io](http://developers.beefree.io/), as described in the “Getting started” section of this article;
-* Add the [integration code](https://docs.beefree.io/addon-development-power-content/#the-content-dialog-method) required by custom AddOns (for example, if the user chose the “Content Dialog” method, it might look something like this):
+* Add the [integration code](broken-reference) required by custom AddOns (for example, if the user chose the “Content Dialog” method, it might look something like this):
 
 ```
 
@@ -476,6 +523,8 @@ The content dialog configuration, required for this custom AddOn is the same con
 
 ### The Content dialog method <a href="#the-content-dialog-method" id="the-content-dialog-method"></a>
 
+The purpose of the contentDialog object in the code snippet is to handle different types of content that can be added to a dialog. It has a handler function that resolves with an image or HTML content based on the provided contentDialogId.
+
 To set up the content dialogs you will need to add the _contentDialog_ object to _beeConfig._ For more details about the content dialog, please review [Content Dialog: How it works](https://docs.beefree.io/content-dialog/#how-it-works).
 
 #### Configure content dialog in beeConfig
@@ -484,15 +533,36 @@ To set up the content dialogs you will need to add the _contentDialog_ object to
 
 
 contentDialog: {
-  addOn: {
-    handler: (resolve, reject, args) => {},
-   },
-},
+    addOn: {
+        handler: (resolve, reject, args) => {
+            if (args.contentDialogId == { addOnID }) {
+                resolve(
+                    {
+                        "type": "image",
+                        "value": {
+                            "alt": "Alternative desc",
+                            "href": "http://www.example.com/",
+                            "src": "https://d1oco4z2z1fhwp.cloudfront.net/templates/default/731/HNY2020.gif",
+                            "dynamicSrc": "{{any-merge-tag}}"
+                        }
+                    }
+                )
+            } else if (args.contentDialogId == { addOnID }) {
+                resolve(
+                    {
+                        "type": "html",
+                        "value": {
+                            "html": "<div>example</div>",
+                        }
+                    }
+                )
+            }
+        }, // close handler
+    }, // close addOn
+}, // close contentDialog
 
 
 ```
-
-#### Returned value syntax
 
 **Image**
 
@@ -503,7 +573,7 @@ contentDialog: {
   "type": "image",
   "value": {
     "alt": "Alternative desc",
-    href": "http://www.example.com/",
+    "href": "http://www.example.com/",
     "src": "https://d1oco4z2z1fhwp.cloudfront.net/templates/default/731/HNY2020.gif"
     "dynamicSrc": "{{any-merge-tag}}"
   }
@@ -520,9 +590,37 @@ contentDialog: {
 {
   "type": "html",
   "value": {
-    html: '',
+    "html": "<div>example</div>",
   }
 }
+
+
+```
+
+**Custom Fields**
+
+This is optional. Should you feel the need to add custom fields when resolving, we created a “customFields” key allowing to you place any additional custom fields inside of that object.
+
+```
+
+
+resolve (
+    {
+        "type": "html",
+        "value": {
+            "html": "<div>example</div>",
+            "customFields": {
+                "customField_example_one": {
+                    "example_key": "...",
+                    "...": "..."
+                },
+                "customField_example_two": [
+                    "example_index"
+                ]
+            },
+        }
+    }
+)
 
 
 ```

@@ -50,6 +50,6 @@ In this section, you can enable AMP blocks that will be available in the “Cont
 
 ![](https://docs.beefree.io/wp-content/uploads/2020/10/Dev-Portal-AMP-toggle.png)
 
-We currently provide an [AMP Carousel](../amp-carousel.md) content block. After enabling the toggle, you will need to configure an [AMP-compatible workspace](../amp-carousel.md).
+We currently provide an [AMP Carousel](../amp-for-email.md) content block. After enabling the toggle, you will need to configure an [AMP-compatible workspace](../amp-for-email.md).
 
 Please note that AMP content is not available for Page Builder.
