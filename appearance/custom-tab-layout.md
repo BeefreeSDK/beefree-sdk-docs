@@ -1,7 +1,9 @@
 # Custom Tab Layout
 
-1. [Setting the default tab](broken-reference)
-2. [Changing the tab order](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.\
+If you're on the Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Core-level features.
+{% endhint %}
 
 #### Setting the default tab <a href="#setting-the-default-tab" id="setting-the-default-tab"></a>
 
@@ -17,14 +19,12 @@ Available Options:
 * rows
 * settings
 
-```
-
+```javascript
 
 var beeConfig = {
         uid: config.uid,
         defaultTab: 'content',
         ...  
-
 
 ```
 
@@ -32,13 +32,11 @@ var beeConfig = {
 
 Building upon the default tab configuration option, in Beefree SDK v3 you may also re-organize the way tabs are ordered.
 
-```
-
+```javascript
 
 var beeConfig = {
         uid: config.uid,
         defaultTabsOrder: ['content', 'settings', 'rows'],
         ...  
-
 
 ```

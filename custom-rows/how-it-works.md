@@ -1,8 +1,5 @@
 # How it works
 
-1. [Overview](broken-reference)
-2. [Rows configuration](broken-reference)
-
 ### Overview <a href="#overview" id="overview"></a>
 
 When the builder starts, you can feed to it multiple lists of _custom rows_, which will display in the rows selector:
@@ -10,7 +7,7 @@ When the builder starts, you can feed to it multiple lists of _custom rows_, whi
 ![](https://docs.beefree.io/wp-content/uploads/2018/04/CR\_config\_list-1024x405.jpg)
 
 Each list is an array of objects (JSON) describing the rows and must be returned by a URL that the builder will call when the user selects its name.\
-These objects may be [Saved Rows](https://docs.beefree.io/save-rows/) or [Simplified Rows](https://docs.beefree.io/generating-custom-rows-from-existing-content/) (a JSON schema that allows you to generate rows from existing contents through an API).
+These objects may be [Saved Rows](../saved-rows/) or [Simplified Rows](generating-custom-rows-from-existing-content.md) (a JSON schema that allows you to generate rows from existing contents through an API).
 
 When the user selects the list name, the builder will call the given URL to retrieve the rows and display them:
 
@@ -44,8 +41,7 @@ All textual content included in the selected array – including image file name
 
 Defines the usage of _custom rows_ in the _beeConfig_ object when you start the builder:
 
-```
-
+```javascript
 
 rowsConfiguration: {
             emptyRows: true,
@@ -58,7 +54,6 @@ rowsConfiguration: {
                 value: "https://URL-02"
             }]         
         },
-
 
 ```
 
@@ -102,7 +97,7 @@ Here is an example of how the _Rows_ drop-down looks when the application config
 
 * **Empty** rows (see above)
 * **Default** rows (see above)
-* **Saved** rows ([learn about displaying _Saved rows_](https://docs.beefree.io/displaying-saved-rows/))
+* **Saved** rows (l[earn about displaying Saved rows](displaying-saved-rows.md))
 * 3 additional arrays for **Custom** rows
 
 ![BEE Rows - Custom](https://docs.beefree.io/wp-content/uploads/2020/01/rows\_custom.png)

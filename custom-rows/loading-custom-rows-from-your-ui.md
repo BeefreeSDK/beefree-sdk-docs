@@ -1,9 +1,5 @@
 # Loading Custom Rows from your UI
 
-1. [Overview](broken-reference)
-2. [How it works](broken-reference)
-3. [How to integrate it](broken-reference)
-
 ### Overview <a href="#overview" id="overview"></a>
 
 Custom Rows are a powerful way to provide “ready-to-go” content directly into the builder. Think products, blog articles, events, coupons. And don’t forget that Saved Rows your customers might have will be loaded as Custom Rows the next time they load the builder.
@@ -42,15 +38,13 @@ When users click on MailChimp, the modal window fades off, the builder switches 
 
 You can trigger the _Custom Rows content dialog_ via the `loadRows` instance event.
 
-```
-
+```javascript
 
 bee.loadRows()
-
 
 ```
 
 Once the Content Dialog is triggered, you have two options, as explained in the How it works section:
 
-* Interact with the end user, as described in our [Content Dialog](https://docs.beefree.io/content-dialog/) documentation, and eventually return a URL of custom rows.
+* Interact with the end user, as described in our [Content Dialog](../advanced-options/content-dialog.md) documentation, and eventually return a URL of custom rows.
 * Immediately return the rows URL, without displaying the Content Dialog. This is useful if you have a menu and already know which rows to load based on the interaction by the end user with you application’s UI.

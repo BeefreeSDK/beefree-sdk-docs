@@ -1,11 +1,14 @@
 # Custom File Picker
 
+{% hint style="info" %}
+This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Superpowers-level features.
+{% endhint %}
+
 #### Main concepts
 
-This feature allows you to have your own file picker for choosing files (images) in the BEE Editor, to make its integration in your platform look even more seamless. It leverages BEE’s [Content Dialog](https://docs.beefree.io/content-dialog/) feature. To set it up you will need to add the corresponding entry to the [configuration object](https://docs.beefree.io/configuration-parameters/):
+This feature allows you to have your own file picker for choosing files (images) in Beefree SDK's Editor, to make its integration in your platform look even more seamless. It leverages Beefree SDK’s [Content Dialog](content-dialog.md) feature. To set it up you will need to add the corresponding entry to the [configuration object](../getting-started/installation/configuration-parameters/):
 
 ```
-
 
 contentDialog: {
     filePicker: {
@@ -15,7 +18,6 @@ contentDialog: {
     },
     ...
 }
-
 
 ```
 
@@ -39,20 +41,18 @@ Please note that **a `resolve` or `reject` call is mandatory**. If you miss this
 
 ```
 
-Images dragged onto an image block or edited via the “apply effects and more” button will be passed to the image storage per your app’s file storage settings. To prevent images from passing through Beefree SDK’s file storage, the file upload can be disabled via [advanced permissions](https://docs.beefree.io/advanced-permissions/).
+Images dragged onto an image block or edited via the “apply effects and more” button will be passed to the image storage per your app’s file storage settings. To prevent images from passing through Beefree SDK’s file storage, the file upload can be disabled via [advanced permissions](advanced-permissions.md).
 
 #### Returned value syntax
 
-Values must use the same pattern used in the [configuration object](https://docs.beefree.io/configuration-parameters/): the returned object is validated against the expected format. If the validation fails, an error will be returned to the browser console, eg: `Error getting content filePicker value, the item is malformed`
+Values must use the same pattern used in the [configuration object](../getting-started/installation/configuration-parameters/): the returned object is validated against the expected format. If the validation fails, an error will be returned to the browser console, eg: `Error getting content filePicker value, the item is malformed`
 
-```
-
+```javascript
 
 {
    "url":"https://d1oco4z2z1fhwp.cloudfront.net/templates/default/113/rocket-color.png",
    "context":"imageModule.src"
 }
-
 
 ```
 
@@ -62,8 +62,7 @@ The following is the most basic example, which returns an image URL immediately 
 
 In a real-world scenario, the host application would display a file picker UI and let the user search for and locate the file before finally returning the file’s location (URL) to Beefree SDK:
 
-```
-
+```javascript
 
 contentDialog: {
   filePicker: {
@@ -74,7 +73,6 @@ contentDialog: {
     }
   },
 }
-
 
 ```
 

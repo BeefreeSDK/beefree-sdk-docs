@@ -1,6 +1,6 @@
 # Displaying Saved Rows
 
-Rows can be saved directly in the editor using the [Save Rows feature](https://docs.beefree.io/save-rows/). These rows are returned to the host application as JSON objects that you can store based on your application logic.
+Rows can be saved directly in the editor using the [Save Rows feature](../saved-rows/). These rows are returned to the host application as JSON objects that you can store based on your application logic.
 
 These same rows can then be fed back into the editor by leveraging Custom Rows.
 
@@ -10,8 +10,7 @@ The rows are displayed based on your rows configuration, so you can categorize t
 
 Here is an example of a rows configuration that displays saved items divided into usage categories:
 
-```
-
+```javascript
 
 rowsConfiguration: {
             emptyRows: true,
@@ -31,13 +30,11 @@ rowsConfiguration: {
             }]        
         },
 
-
 ```
 
 And here is another example where saved rows are organized based on the campaign type:
 
-```
-
+```javascript
 
 rowsConfiguration: {
             emptyRows: true,
@@ -57,13 +54,11 @@ rowsConfiguration: {
             }]        
         },
 
-
 ```
 
 The following is an example of the response schema when the editor calls one of the provided URLs:
 
-```
-
+```javascript
 
 [{
     [{
@@ -98,9 +93,8 @@ The following is an example of the response schema when the editor calls one of 
     }]
 }]
 
-
 ```
 
 **Loading External Rows with an Instance Method**
 
-With the introduction of Saved Rows Management, we’ve also introduced the ability to load external rows with an instance method. See [here](https://docs.beefree.io/save-rows/#loading-external-rows-with-an-instance-method) for more details.
+With the introduction of Saved Rows Management, we’ve also introduced the ability to load external rows with an instance method. See [here](../saved-rows/save-rows-overview.md) for more details.

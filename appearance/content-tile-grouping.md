@@ -1,7 +1,8 @@
 # Content Tile Grouping
 
-1. [Grouping Content Tiles](broken-reference)
-2. [Full List of Content Tiles](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Superpowers-level features.
+{% endhint %}
 
 ### Grouping Content Tiles <a href="#grouping-content-tiles" id="grouping-content-tiles"></a>
 
@@ -13,10 +14,13 @@ Content Tile Grouping supports:
 * Special Characters
 * Emojis
 
+{% hint style="info" %}
+Please note that emoji support may be determined by the OS or browsers used. Some browsers do not support, or may display emojis incorrectly.
+{% endhint %}
+
 To display custom groups, the application must pass the groups settings in the configuration at initialization, like so:
 
-```
-
+```javascript
 
 modulesGroups: [
   {
@@ -48,7 +52,6 @@ modulesGroups: [
     ]
   }
 ]
-
 
 ```
 

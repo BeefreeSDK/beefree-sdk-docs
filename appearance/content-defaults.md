@@ -1,9 +1,8 @@
 # Content Defaults
 
-1. [Overview](broken-reference)
-2. [Use cases](broken-reference)
-3. [How it works](broken-reference)
-4. [Available content settings](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+{% endhint %}
 
 ### Overview <a href="#overview" id="overview"></a>
 
@@ -47,7 +46,7 @@ If your application has brand settings that are used for your app’s UI or for 
 
 **Create a more consistent experience within the editor**
 
-If you’ve customized how the editor looks like, either through [Themes](https://docs.beefree.io/custom-look-feel/) or [Custom CSS](https://docs.beefree.io/custom-css/), you may want default content to adhere to the same style.
+If you’ve customized how the editor looks like, either through [Themes](themes.md) or [Custom CSS](custom-css.md), you may want default content to adhere to the same style.
 
 **Define custom social blocks**
 
@@ -59,8 +58,7 @@ Since the Social block is one of the available Content defaults, you can define 
 
 To set up the content styles you will need to add the `contentDefaults` object to `beeConfig`:
 
-```
-
+```javascript
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
@@ -80,7 +78,6 @@ beeConfig: {
   }
 }
 
-
 ```
 
 ### Available content settings <a href="#available-content-settings" id="available-content-settings"></a>
@@ -91,8 +88,7 @@ All the contents use the same pattern, but the object must match the content sch
 
 **title**
 
-```
-
+```javascript
 
 titleDefaultConfig: {
   bold: true
@@ -154,13 +150,15 @@ contentDefaults: {
   }
 }
 
-
 ```
 
 **text**
 
-```
+{% hint style="info" %}
+Please note that the default text inside `html` is required.
+{% endhint %}
 
+```javascript
 
 text: {
   html: 'This is default text for block...',
@@ -186,13 +184,11 @@ text: {
   },
 }
 
-
 ```
 
 **image**
 
-```
-
+```javascript
 
 image: {
   alt: "My Alt Label",
@@ -216,13 +212,11 @@ image: {
   },
 }
 
-
 ```
 
 **button**
 
-```
-
+```javascript
 
 button: {
   label: "My New Label",
@@ -263,13 +257,11 @@ button: {
   },
 }
 
-
 ```
 
 **divider**
 
-```
-
+```javascript
 
 divider: {
   width: '50%',
@@ -289,13 +281,11 @@ divider: {
   },
 }
 
-
 ```
 
 **social**
 
-```
-
+```javascript
 
 social: {
   icons: [
@@ -329,13 +319,11 @@ social: {
   },
 }
 
-
 ```
 
 **dynamic**
 
-```
-
+```javascript
 
 dynamic: {
     blockOptions: {
@@ -347,13 +335,11 @@ dynamic: {
     }
   }
 
-
 ```
 
 **video**
 
-```
-
+```javascript
 
 video: {
   blockOptions: {
@@ -371,13 +357,11 @@ video: {
   },
 }
 
-
 ```
 
 **form**
 
-```
-
+```javascript
 
 form: {
   structure: {...}, // see form docs
@@ -452,13 +436,11 @@ form: {
   },
 }
 
-
 ```
 
 **icons**
 
-```
-
+```javascript
 
 icons: {
   items: [
@@ -507,13 +489,11 @@ icons: {
   },
 }
 
-
 ```
 
 **menu**
 
-```
-
+```javascript
 
 menu: {
   items: [
@@ -565,13 +545,11 @@ menu: {
   },
 }
 
-
 ```
 
 **spacer**
 
-```
-
+```javascript
 
 spacer: {
   height: "60px",
@@ -580,13 +558,11 @@ spacer: {
   }
 }
 
-
 ```
 
 **paragraph**
 
-```
-
+```javascript
 
 paragraph: {
   styles: {
@@ -617,13 +593,11 @@ paragraph: {
   },
 }
 
-
 ```
 
 **list**
 
-```
-
+```javascript
 
 list: {
   styles: {
@@ -658,14 +632,13 @@ list: {
   },
 }
 
-
 ```
 
-Additionally, _listStyleType_ supports the following: revert, auto, disc, circle, square, decimal, lower-alpha, upper-alpha, lower-roman, upper-roman.
+Additionally, `listStyleType` supports the following: revert, auto, disc, circle, square, decimal, lower-alpha, upper-alpha, lower-roman, upper-roman.
 
 **carousel**
 
-```
+```javascript
 
 carousel: {
   blockOptions: {
@@ -687,8 +660,7 @@ carousel: {
 
 **general**
 
-```
-
+```javascript
 
 general: {
   backgroundColor: "#efefef",
@@ -697,6 +669,5 @@ general: {
   defaultFont: "'Comic Sans MS', cursive, sans-serif",
   linkColor: "#efefef"
 }
-
 
 ```

@@ -4,12 +4,7 @@ Custom Rows allows you to easily generate draggable rows from your application c
 
 To make it possible, we built a **Simplified Row Schema**, a JSON that describes each row and its contents with the minimum number of elements, to easily transform existing content into a destination format compliant by the Beefree SDK system.
 
-While the [Saved Rows](https://docs.beefree.io/save-rows/) feature provides the complex and continuously evolving object used in the message page, the **Simplified Row Schema** makes it easy to build an API that feeds the editor with contents from different origins like e-commerce stores, blogs, or digital asset management systems.
-
-1. [Simplified Row Schema](broken-reference)
-2. [General row schema](broken-reference)
-3. [General row parameters](broken-reference)
-4. [Content types scheme and parameters](broken-reference)
+While the [Saved Rows](../saved-rows/) feature provides the complex and continuously evolving object used in the message page, the **Simplified Row Schema** makes it easy to build an API that feeds the editor with contents from different origins like e-commerce stores, blogs, or digital asset management systems.
 
 ### Simplified Row Schema <a href="#simplified-row-schema" id="simplified-row-schema"></a>
 
@@ -22,8 +17,7 @@ The following is an example of four different row objects:
 * **Third:** A row with a background image on it.
 * **Four:** A row with a display condition.
 
-```
-
+```javascript
 
 [{
     "name": "First item", // Identifies the row
@@ -103,7 +97,6 @@ The following is an example of four different row objects:
       }]
  }]
 
-
 ```
 
 ### General row parameters <a href="#general-row-parameters" id="general-row-parameters"></a>
@@ -130,7 +123,7 @@ Properties:
 **display conditions**
 
 Set a row display condition.\
-Check the [display conditions documentation](https://docs.beefree.io/display-conditions/) for further details.
+Check the [display conditions documentation](../advanced-options/display-conditions.md) for further details.
 
 Properties:
 
@@ -189,8 +182,7 @@ Each module type has a set of available options. If none is included, the editor
 
 **Text**
 
-```
-
+```javascript
 
 {
   "type": "title",
@@ -199,7 +191,6 @@ Each module type has a set of available options. If none is included, the editor
   "type": "paragraph",
   "text": "I can be a long paragraph, a short sentence, or a simple word."
 }
-
 
 ```
 
@@ -222,8 +213,7 @@ Each module type has a set of available options. If none is included, the editor
 
 **Additional text parameters**
 
-```
-
+```javascript
 
 "align": "center" "left" "right"
 "size": integer // value in px
@@ -233,13 +223,11 @@ Each module type has a set of available options. If none is included, the editor
 "color": "#CFCFCF"
 "linkColor": "#CFCFCF"
 
-
 ```
 
 **Image**
 
-```
-
+```javascript
 
 {
     "type": "image",
@@ -248,7 +236,6 @@ Each module type has a set of available options. If none is included, the editor
     "alt": "This is a sample image", //optional 
     "dynamicSrc": "http://srcto/dynamic/src" //optional 
 }
-
 
 ```
 
@@ -262,8 +249,7 @@ Each module type has a set of available options. If none is included, the editor
 
 **Button**
 
-```
-
+```javascript
 
 {
   "type": "button",
@@ -275,7 +261,6 @@ Each module type has a set of available options. If none is included, the editor
   "href": "mailto:growth@beefree.io?subject=Custom content test&body=Sent from a custom button"
 }
 
-
 ```
 
 **text** text string that will be displayed as the button content. Must be a plain text string.
@@ -286,22 +271,18 @@ If not included, a default text string will be used
 
 **Additional button parameters**
 
-```
-
+```javascript
 
 "color": "#CFCFCF"
 "background-color": "#C2C2C2"
-
 
 ```
 
 **Divider**
 
-```
-
+```javascript
 
 {"type":"divider"}
-
 
 ```
 
@@ -309,10 +290,8 @@ Currently there are no additional parameters.
 
 **HTML**
 
-```
-
+```json
 
 {"type":"html","html":"<div class=\'our-class\'>This is custom HTML.<\/div>"}
-
 
 ```

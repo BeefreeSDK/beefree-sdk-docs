@@ -1,20 +1,13 @@
 # Save Rows Overview
 
-1. [Overview](broken-reference)
-2. [How it works](broken-reference)
-3. [Saving rows workflow for developers](broken-reference)
-4. [Displaying rows](broken-reference)
-5. [Saved Rows Management](broken-reference)
-6. [Loading External Rows with an Instance Method](broken-reference)
-7. [Saved rows schema](broken-reference)
-8. [Saved rows metadata](broken-reference)
-9. [Metadata Content Dialog](broken-reference)
-10. [Save Rows callback](broken-reference)
-11. [Edit Saved Rows](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.\
+If you're on the Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Core-level features.
+{% endhint %}
 
 ### Overview <a href="#overview" id="overview"></a>
 
-_Save Rows_ allows users to select a row in a message and save it for later use. More specifically, it allows users to submit a request to the host application to save a piece of content and turn it into a reusable element. The host application, using the Custom Rows feature, can feed these saved elements back to the builder as rows that can be dragged into other messages.
+Save Rows allows users to select a row in a message and save it for later use. More specifically, it allows users to submit a request to the host application to save a piece of content and turn it into a reusable element. The host application, using the [Custom Rows](../custom-rows/) feature, can feed these saved elements back to the builder as rows that can be dragged into other messages.
 
 ### How it works <a href="#how-it-works" id="how-it-works"></a>
 
@@ -39,7 +32,7 @@ It is entirely up to the host application:
 * where to store the JSON documents that describe these saved rows;
 * if and how to display them to users of the application;
 * whether to allow users to edit them individually
-* when and how to feed them back to the builder, using the Custom Rows feature.
+* when and how to feed them back to the builder, using the [Custom Rows](../custom-rows/) feature.
 
 **Enabling Save Rows in the Beefree SDK Console**
 
@@ -47,16 +40,16 @@ _Save Rows_ – as most Beefree SDK features – is made available to users in a
 
 To do so:
 
-* Login into the [Beefree SDK Console](https://developers.beefree.io/).
-* Click _Details_ next to the application you want to configure.
-* Click the _view more_ link under the _Application configuration_ heading.
-* Toggle _Enable saving rows_ on and click the _Save_ button to save the new setting.
+1. Login into the [Beefree SDK Console](https://developers.beefree.io/).
+2. Click _Details_ next to the application you want to configure.
+3. Click the _view more_ link under the _Application configuration_ heading.
+4. Toggle _Enable saving rows_ on and click the _Save_ button to save the new setting.
 
-![](https://docs.beefree.io/wp-content/uploads/2018/11/setup.png)
+<figure><img src="https://docs.beefree.io/wp-content/uploads/2018/11/setup.png" alt="" width="563"><figcaption></figcaption></figure>
 
 **Making Save Rows available only to select users**
 
-want to disable _Save Rows_ on a per-user basis.  This can be accomplished via the client-side configuration document that you feed to an application when initializing the builder for a certain user.
+Once the feature has been turned on at the global level, in [Beefree SDK Console](https://developers.beefree.io/), you may want to disable _Save Rows_ on a per-user basis.  This can be accomplished via the client-side configuration document that you feed to an application when initializing the builder for a certain user.
 
 Why? Because you may decide to make the feature available to different users of your application:
 
@@ -75,8 +68,7 @@ Here is a simple example:
 
 **Save Row Configuration**
 
-```
-
+```javascript
 
 const beeConfig = {
     uid: 'dev-user',
@@ -85,7 +77,6 @@ const beeConfig = {
     saveRows: false // boolean
     ...
 }
-
 
 ```
 
@@ -152,14 +143,13 @@ The following describes the recommended workflow to implement saved rows in a ho
 
 ### Displaying rows <a href="#displaying-rows" id="displaying-rows"></a>
 
-To display saved rows in the _Rows_ tab, add them to the list of rows available to users by leveraging the Custom Rows feature.
+To display saved rows in the _Rows_ tab, add them to the list of rows available to users by leveraging the [Custom Rows feature](../custom-rows/).
 
 The rows are organized in lists that are displayed based on your rows configuration. Use the metadata submitted by your users to categorize them, creating multiple lists of rows: this can significantly improve the user experience.
 
 Here is an example of a rows configuration that displays saved rows organized by category:
 
-```
-
+```json
 
 rowsConfiguration: {
             emptyRows: true,
@@ -178,7 +168,6 @@ rowsConfiguration: {
                 value: "https://URL-04"
             }]         
         },
-
 
 ```
 
@@ -200,8 +189,7 @@ These _custom rows_ names (_Headers, Footers, Product grids, etc._) could be the
 
 Here is another example that shows _saved rows_ organized in the _Rows_ tab based on the campaign type:
 
-```
-
+```javascript
 
 rowsConfiguration: {
             emptyRows: true,
@@ -220,7 +208,6 @@ rowsConfiguration: {
                 value: "https://URL-04"
             }]         
         },
-
 
 ```
 
@@ -244,8 +231,7 @@ In the section below you can learn how to configure the Saved Rows Management ca
 
 To get started, you will need to create a content dialog in your application configuration parameters. The content dialog method should be named `onDeleteRow` and be nested under the `contentDialog` object, as follows:
 
-```
-
+```javascript
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
@@ -259,7 +245,6 @@ beeConfig: {
   },
 }
 
-
 ```
 
 Following that, amend your `rowsConfiguration` object with the additional parameters:
@@ -269,8 +254,7 @@ Following that, amend your `rowsConfiguration` object with the additional parame
 
 Here’s an example:
 
-```
-
+```javascript
 
 rowsConfiguration: {
   externalContentURLs: [
@@ -288,15 +272,13 @@ rowsConfiguration: {
   ]
 }
 
-
 ```
 
 When the `onDeleteRow` method is called, utilize the 3rd parameter to obtain an argument containing the handle value of the row being requested, as well as the row metadata. Use the handle and the row’s metadata to determine which row should be deleted.
 
 **Example** **args:**
 
-```
-
+```json
 
 {
   value: "category-value",
@@ -311,15 +293,13 @@ When the `onDeleteRow` method is called, utilize the 3rd parameter to obtain an 
   }
 }
 
-
 ```
 
 Finally, we can call the `resolve` method, passing the value `true` if you want to refresh the rows, or `false` if you want to keep the side panel’s current listing.
 
 **Example onDeleteRow with args:**
 
-```
-
+```javascript
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
@@ -338,15 +318,13 @@ beeConfig: {
   },
 }
 
-
 ```
 
 **Configure Edit Row Metadata**
 
 To get started, much like with deleting rows, you will need to create a content dialog in your application configuration parameters. The content dialog method should be named `onEditRow` and be nested under the `contentDialog` object, as follows:
 
-```
-
+```javascript
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
@@ -360,7 +338,6 @@ beeConfig: {
   },
 }
 
-
 ```
 
 Following that, amend your `rowsConfiguration` object with the additional parameters:
@@ -370,8 +347,7 @@ Following that, amend your `rowsConfiguration` object with the additional parame
 
 Here’s an example:
 
-```
-
+```javascript
 
 rowsConfiguration: {
   externalContentURLs: [
@@ -389,15 +365,13 @@ rowsConfiguration: {
   ]
 }
 
-
 ```
 
 When the `onEditRow` method is called, utilize the 3rd parameter to obtain an argument containing the handle value of the row being requested, as well as the row metadata. Use the handle and the row’s metadata to determine which row should be edited.
 
 **Example** **args:**
 
-```
-
+```javascript
 
 {
   value: "category-value",
@@ -412,15 +386,13 @@ When the `onEditRow` method is called, utilize the 3rd parameter to obtain an ar
   }
 }
 
-
 ```
 
 Finally, we can call the `resolve` method, passing the value `true` if you want to refresh the rows, or `false` if you want to keep the side panel’s current listing.
 
 **Example onEditRow with args:**
 
-```
-
+```javascript
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
@@ -439,7 +411,6 @@ beeConfig: {
   },
 }
 
-
 ```
 
 **Errors and Warnings**
@@ -448,8 +419,7 @@ Saved Rows Management also provides errors and warnings for your application, so
 
 **Sample warning:**
 
-```
-
+```json
 
 {
   warn: {
@@ -458,13 +428,11 @@ Saved Rows Management also provides errors and warnings for your application, so
   }
 }
 
-
 ```
 
 **Sample error:**
 
-```
-
+```json
 
 {
   error: {
@@ -473,15 +441,13 @@ Saved Rows Management also provides errors and warnings for your application, so
   }
 }
 
-
 ```
 
 You can call the `reject` method, passing the message you want to display.
 
 **Example:**
 
-```
-
+```javascript
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
@@ -499,7 +465,6 @@ beeConfig: {
   },
 }
 
-
 ```
 
 #### Loading External Rows with an Instance Method <a href="#loading-external-rows-with-an-instance-method" id="loading-external-rows-with-an-instance-method"></a>
@@ -508,8 +473,7 @@ Saved Rows Management also comes with the ability to load any external rows via 
 
 To start, define a hook in your application configuration. The hook method should be named `getRows` and will be nested under the `hooks` object, as follows:
 
-```
-
+```javascript
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
@@ -523,7 +487,6 @@ beeConfig: {
   },
 }
 
-
 ```
 
 Following that, amend your `rowsConfiguration` object with the additional parameters:
@@ -533,8 +496,7 @@ Following that, amend your `rowsConfiguration` object with the additional parame
 
 Here’s an example:
 
-```
-
+```json
 
 rowsConfiguration: {
   externalContentURLs: [
@@ -547,21 +509,18 @@ rowsConfiguration: {
   ]
 }
 
-
 ```
 
 When the getRows method is invoked, utilize the 3rd parameter to obtain an argument containing the handle value of the row being requested. Use the handle to determine which set of rows should be returned.
 
 **Example** **args:**
 
-```
-
+```json
 
 {
   value: "category-value",
   handle: "category-handle",
 }
-
 
 ```
 
@@ -569,8 +528,7 @@ Finally, we can call the resolve method, passing in an array of savedRows.
 
 **Example hook with args:**
 
-```
-
+```javascript
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
@@ -588,15 +546,17 @@ beeConfig: {
   },
 }
 
-
 ```
+
+{% hint style="info" %}
+If you are using a React application, be sure to pass a new rows array and not a reference to a row state. Otherwise, the rows state may be “stale” and won’t update in the side panel.
+{% endhint %}
 
 ### Saved rows schema <a href="#saved-rows-schema" id="saved-rows-schema"></a>
 
 The following is the basic structure of the row’s JSON schema. Simply put, the schema is the structure of your saved rows data feed.
 
-```
-
+```javascript
 
 [
     {
@@ -609,22 +569,21 @@ The following is the basic structure of the row’s JSON schema. Simply put, the
     ...
 ]
 
-
 ```
 
-_(\*) PLEASE NOTE: The row schema is complex and we do not recommend creating rows programmatically. Therefore, there is no schema reference of the row itself. However, you can add your own parameters to the row’s metadata or use our Simplified Row Schema to generate them programmatically from existing content._
+{% hint style="info" %}
+**NOTE**: The row schema is complex and we do not recommend creating rows programmatically. Therefore, there is no schema reference of the row itself. However, you can add your own parameters to the row’s metadata or use our [Simplified Row Schema](../custom-rows/generating-custom-rows-from-existing-content.md) to generate them programmatically from existing content.
+{% endhint %}
 
 The _metadata_ section of the rows schema allows you to keep track of row-specific information.
 
-```
-
+```javascript
 
 metadata: {
     "name": "My Saved Row", // The row's title displayed in the "Rows" panel.
     "tags": "product, two columns, blue",
     ... additional custom parameters
 }
-
 
 ```
 
@@ -662,12 +621,11 @@ Useful to create filters, management, search, and in general to organize the con
 
 ### Metadata Content Dialog <a href="#metadata-content-dialog" id="metadata-content-dialog"></a>
 
-The metadata content dialog is triggered by the save icon in Beefree SDK. This step is required to provide Beefree SDK with information about the row, such as its name and/or id.  The Metadata Content Dialog is added in the same manner as other Content Dialogs, such as Merge Tags.  Please review the [Content Dialog](https://docs.beefree.io/advanced-permissions/#available-permissions-and-behaviors) section for more details about how to use Beefree SDK’s Content Dialog feature.
+The metadata content dialog is triggered by the save icon in Beefree SDK. This step is required to provide Beefree SDK with information about the row, such as its name and/or id.  The Metadata Content Dialog is added in the same manner as other Content Dialogs, such as Merge Tags.  Please review the [Content Dialog](../advanced-options/content-dialog.md) section for more details about how to use Beefree SDK’s Content Dialog feature.
 
 An example Metadata Content Dialog configuration can be found below.
 
-```
-
+```javascript
 
 contentDialog: {
     saveRow: {
@@ -692,16 +650,13 @@ externalContentURLs: {
    },
 },
 
-
 ```
 
 The metadata resolve function now accepts an `options` object in which you can pass the property `synced` to determine if the row needs to be saved and treated by the builder as synced.
 
-```
-
+```json
 
 { synced: true }
-
 
 ```
 
@@ -718,18 +673,18 @@ HTML preview of the selected row
 **pageJSON**\
 Page Partial of the selected row contained in a page (for editing a row as an independent piece of content).
 
-```
-
+```javascript
 
 onSaveRow: function (rowJSON, rowHTML, pageJSON) {
     // Do something with the returned values...
 },
 
-
 ```
 
 ### Edit Saved Rows <a href="#edit-saved-rows" id="edit-saved-rows"></a>
 
-With [Edit Single Row](https://docs.beefree.io/edit-single-row-mode/) mode you can offer an easy way for your users to edit saved rows individually, using a tailored UI built to modify the row structure, content, and style settings without worrying about messing up with the overall design of the email campaign, landing page, or pop-up.![](https://docs.beefree.io/wp-content/uploads/2022/03/image1.png)
+With [Edit Single Row](edit-single-row-mode.md) mode you can offer an easy way for your users to edit saved rows individually, using a tailored UI built to modify the row structure, content, and style settings without worrying about messing up with the overall design of the email campaign, landing page, or pop-up.
+
+<figure><img src="https://docs.beefree.io/wp-content/uploads/2022/03/image1.png" alt=""><figcaption></figcaption></figure>
 
 Enabling a more modular approach to saved rows simplifies how users can design and act on content: updating small details in a saved row, saving it, then deploying it to existing templates becomes a matter of minutes. If you want to learn more about how to leverage Edit Single Row mode to safely modify a Saved Row, take a look at the dedicated technical documentation.

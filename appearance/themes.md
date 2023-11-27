@@ -1,9 +1,9 @@
 # Themes
 
-1. [How it works](broken-reference)
-2. [Using a predefined theme](broken-reference)
-3. [Building your own theme](broken-reference)
-4. [Available settings explained](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.\
+If you're on the Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Core-level features.
+{% endhint %}
 
 ![](https://docs.beefree.io/wp-content/uploads/2017/12/gif-base\_hi-res\_2.gif)
 
@@ -13,7 +13,7 @@ This Beefree SDK configuration allows you to change the builder’s appearance w
 
 ![](https://docs.beefree.io/wp-content/uploads/2017/12/custom\_look\_dev-1024x626.png)
 
-Technically speaking, it allows you to change some parts of the CSS (Cascading Style Sheets) that controls the look & feel of the editor. If you want to use your own CSS, please refer to our [Custom CSS](https://docs.beefree.io/custom-css/) feature.
+Technically speaking, it allows you to change some parts of the CSS (Cascading Style Sheets) that controls the look & feel of the editor. If you want to use your own CSS, please refer to our [Custom CSS](custom-css.md) feature.
 
 ### Using a predefined theme <a href="#using-a-predefined-theme" id="using-a-predefined-theme"></a>
 
@@ -25,7 +25,7 @@ You can apply one of these themes as is, or use them as a starting point. And yo
 
 Note that themes will **not be applied automatically**, but rather will change the Look & feel values displayed in the lower part of the page.
 
-Once you’re happy with your selection, press _**Save**_ to apply the new theme to your Beefree SDK application.
+Once you’re happy with your selection, press **Save** to apply the new theme to your Beefree SDK application.
 
 ### Building your own theme <a href="#building-your-own-theme" id="building-your-own-theme"></a>
 

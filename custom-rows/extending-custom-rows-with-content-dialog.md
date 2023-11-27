@@ -1,24 +1,18 @@
 # Extending Custom Rows with content dialog
 
-1. [Overview](broken-reference)
-2. [Understanding the end-user experience](broken-reference)
-3. [How it works](broken-reference)
-
 ### Overview <a href="#overview" id="overview"></a>
 
-[_Content Dialog_](https://docs.beefree.io/content-dialog/) allows you to build user interfaces that let your users locate & insert additional content (Custom Rows) while they are working on their message.
+[Content Dialog](../advanced-options/content-dialog.md) allows you to build user interfaces that let your users locate & insert additional content (Custom Rows) while they are working on their message.
 
 By letting you establish an interaction layer between the editor and your application (e.g., you show a modal window), it allows your users to locate/build/insert new rows, thus making the _Rows_ tab in the editor dramatically more flexible and scalable.
 
-Note that _Content Dialog_ may be used to load other content types, as merge tags, special links, or display conditions. [Learn more about the Content dialog](https://docs.beefree.io/content-dialog/).
+Note that _Content Dialog_ may be used to load other content types, as merge tags, special links, or display conditions. [Learn more about the Content dialog](../advanced-options/content-dialog.md).
 
 To start using it, you need to add the _contentDialog_ object to _beeConfig_, or add the _externalContentURLs_ parameter if you already use this feature in your editor configuration.
 
 Here is an example of the syntax that needs to be added to the editor configuration document (_beeConfig_):
 
-```
-
-
+<pre class="language-javascript"><code class="lang-javascript">
 contentDialog: {
     externalContentURLs: {
             label: 'Search products',
@@ -27,9 +21,8 @@ contentDialog: {
         }
     }
 }
-
-
-```
+<strong>
+</strong></code></pre>
 
 ### Understanding the end-user experience <a href="#understanding-the-end-user-experience" id="understanding-the-end-user-experience"></a>
 
@@ -61,11 +54,9 @@ When the selection is made, you must return to the resolve function a URL contai
 
 The response must match the same format used to define the externalContentURLs in beeConfig:
 
-```
-
+```javascript
 
 {"name":"Results name","value":"Results URL"}
-
 
 ```
 
@@ -101,4 +92,4 @@ The form is part of the application, so we are using the same elements and style
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/06/example\_form-1024x939.jpg)
 
-[https://docs.beefree.io/wp-content/uploads/2018/06/content.dialog.w.history\_2.mp4](https://docs.beefree.io/wp-content/uploads/2018/06/content.dialog.w.history\_2.mp4)
+{% embed url="https://docs.beefree.io/wp-content/uploads/2018/06/content.dialog.w.history_2.mp4" %}

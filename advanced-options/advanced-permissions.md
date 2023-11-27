@@ -1,10 +1,8 @@
 # Advanced Permissions
 
-1. [Overview](broken-reference)
-2. [Use cases](broken-reference)
-3. [How it works](broken-reference)
-4. [Available permissions and behaviors](broken-reference)
-5. [Role templates](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [Superpowers plan](https://beefree.io/bee-plugin/pricing/) and above. If you're on the Core or Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Superpowers-level features.
+{% endhint %}
 
 ### Overview <a href="#overview" id="overview"></a>
 
@@ -20,7 +18,7 @@ These advanced permissions grant total customization of the experience you want 
 
 ### Use cases <a href="#use-cases" id="use-cases"></a>
 
-The absolute flexibility of these permissions makes it easy to address specific needs, not achievable with the [Roles and Permissions](https://docs.beefree.io/roles-and-permissions/) feature that is available in the Beefree SDK Console.
+The absolute flexibility of these permissions makes it easy to address specific needs, not achievable with the [Roles and Permissions](roles-and-permissions.md) feature that is available in the Beefree SDK Console.
 
 **Create skill-based roles**
 
@@ -33,17 +31,17 @@ You can create roles that can act only on a content type. For example, you may w
 
 Here is a brief example of how a “copywriter” role built with Advanced permission could look like:
 
-[https://docs.beefree.io/wp-content/uploads/2020/04/Advanced-permission-Copywriter.mp4](https://docs.beefree.io/wp-content/uploads/2020/04/Advanced-permission-Copywriter.mp4)
+{% embed url="https://docs.beefree.io/wp-content/uploads/2020/04/Advanced-permission-Copywriter.mp4" %}
 
 **Customize image & file management workflows**
 
 You can limit how users upload and manage images and files inside the plugin; for example, you want some users – e.g., external collaborators – to select pre-approved images and files uploaded by “admin” users. You can do so by:
 
 * disabling drag-and-drop of images onto the stage;
-* limit actions in the file manager (either the built-in one or your [custom file picker)](https://docs.beefree.io/custom-file-picker/) by disabling actions like upload, import, and create a folder.
+* limit actions in the file manager (either the built-in one or your [custom file picker](custom-file-picker.md)) by disabling actions like upload, import, and create a folder.
 
-Another interesting case for using advanced permissions is the possibility to set a **maximum size** **for uploads, per user**. The maximum size set per user must not exceed the **custom limitation** size set on the[ Activate Custom Limitation on File Manager](https://docs.beefree.io/services-options/#activate-custom-limitations-on-file-manager). **The default limit is 20 Mb** unless otherwise stated.\
-When this permission is configured, the system will check if a file exceeds the set size before uploading it; if so, the plugin will return an error message, which you may customize using [Custom languages](https://docs.beefree.io/custom-languages/).
+Another interesting case for using advanced permissions is the possibility to set a **maximum size** **for uploads, per user**. The maximum size set per user must not exceed the **custom limitation** size set on the [Activate Custom Limitation on File Manager](../server-side-options/services-options.md). **The default limit is 20 Mb** unless otherwise stated.\
+When this permission is configured, the system will check if a file exceeds the set size before uploading it; if so, the plugin will return an error message, which you may customize using [Custom languages](custom-languages.md).
 
 **Create custom, secondary roles**
 
@@ -60,8 +58,7 @@ By combining multiple permissions, you can load the plugin with radically differ
 
 To set up the advanced permissions, you will need to add the `advancedPermissions` object to `beeConfig`:
 
-```
-
+```javascript
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
@@ -112,7 +109,6 @@ beeConfig: {
   }
 }
 
-
 ```
 
 ### Available permissions and behaviors <a href="#available-permissions-and-behaviors" id="available-permissions-and-behaviors"></a>
@@ -136,8 +132,7 @@ All sidebar property widgets (e.g. width slider, alignment, color, etc.) accept 
 
 Let’s look at an example of these permissions applied to an image module. The following example will hide the image width property widget and lock the text alignment widget.  We’ll cover more of the available settings below.
 
-```
-
+```javascript
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
@@ -160,28 +155,25 @@ beeConfig: {
   }
 }  
 
-
-
 ```
 
 **Default behaviors**
 
 All contents and rows (e.g. image module, video module, stage row, etc.) accept the following basic behaviors:
 
-| Name           | Type    | Value         | Description                                                       |
-| -------------- | ------- | ------------- | ----------------------------------------------------------------- |
-| canSelect      | boolean | true or false | Can select a row or module to edit its properties                 |
-| canAdd         | boolean | true or false | Can drag and drop the content tile or row onto the stage          |
-| canViewSidebar | boolean | true or false | Can view the content in the sidebar                               |
-| canClone       | boolean | true or false | Can clone a content or row on the stage                           |
-| canMove        | boolean | true or false | Can drag content to another location on the stage                 |
-| canDelete      | boolean | true or false | Can remove the content or row from the stage                      |
-| canResetMobile | boolean | true or false | Can reset mobile style for content properties that make use of it |
+| Name             | Type    | Value         | Description                                                       |
+| ---------------- | ------- | ------------- | ----------------------------------------------------------------- |
+| `canSelect`      | boolean | true or false | Can select a row or module to edit its properties                 |
+| `canAdd`         | boolean | true or false | Can drag and drop the content tile or row onto the stage          |
+| `canViewSidebar` | boolean | true or false | Can view the content in the sidebar                               |
+| `canClone`       | boolean | true or false | Can clone a content or row on the stage                           |
+| `canMove`        | boolean | true or false | Can drag content to another location on the stage                 |
+| `canDelete`      | boolean | true or false | Can remove the content or row from the stage                      |
+| `canResetMobile` | boolean | true or false | Can reset mobile style for content properties that make use of it |
 
 Let’s look at an example of these behaviors applied to an image module. The following example will hide the image content tile on the sidebar.  We’ll cover more of the available settings below.
 
-```
-
+```javascript
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
@@ -198,16 +190,13 @@ beeConfig: {
   }
 }  
 
-
-
 ```
 
-#### components
+## Components
 
 **filePicker**
 
-```
-
+```javascript
 
 filePicker: {
   canUpload: true,
@@ -223,13 +212,11 @@ filePicker: {
   canSearchFreeVideos: true,
 }
 
-
 ```
 
 #### rows
 
-```
-
+```javascript
 
 rows: {
     behaviors: {
@@ -306,13 +293,11 @@ rows: {
     },
 }
 
-
 ```
 
 #### columns
 
-```
-
+```javascript
 
   columns: {
     behaviors: {
@@ -324,13 +309,11 @@ rows: {
   },
 },
 
-
 ```
 
 #### tabs
 
-```
-
+```javascript
 
 tabs: {
     rows: {
@@ -347,13 +330,11 @@ tabs: {
     },
   },
 
-
 ```
 
 #### settings
 
-```
-
+```javascript
 
 settings: {
     contentAreaWidth: {
@@ -386,15 +367,13 @@ settings: {
     },
 },
 
-
 ```
 
-#### content
+## Content
 
 **title**
 
-```
-
+```javascript
 
 title: {
   textEditor: {
@@ -461,13 +440,11 @@ title: {
   },
 }
 
-
 ```
 
 **text**
 
-```
-
+```javascript
 
 text: {
   textEditor: {
@@ -510,13 +487,11 @@ text: {
   },
 }
 
-
 ```
 
 **image**
 
-```
-
+```javascript
 
 image: {
   behaviors: {
@@ -560,13 +535,11 @@ image: {
   }
 }
 
-
 ```
 
 **button**
 
-```
-
+```javascript
 
 button: {
   textEditor: {
@@ -632,13 +605,11 @@ button: {
   },
 }
 
-
 ```
 
 **divider**
 
-```
-
+```javascript
 
 divider: {
   behaviors: {
@@ -674,13 +645,11 @@ divider: {
   },
 }
 
-
 ```
 
 **social**
 
-```
-
+```javascript
 
 social: {
   behaviors: {
@@ -720,14 +689,11 @@ social: {
   },
 }
 
-
 ```
 
 **dynamic**
 
-```
-
-
+<pre class="language-javascript"><code class="lang-javascript">
 dynamic: {
   behaviors: {
     canSelect: true,
@@ -749,14 +715,12 @@ dynamic: {
     },
   },
 }
-
-
-```
+<strong>
+</strong></code></pre>
 
 **html**
 
-```
-
+```javascript
 
 html: {
   behaviors: {
@@ -780,13 +744,11 @@ html: {
   },
 }
 
-
 ```
 
 **video (email builder block)**
 
-```
-
+```javascript
 
 video: {
   behaviors: {
@@ -822,13 +784,11 @@ video: {
   },
 }
 
-
 ```
 
 **form**
 
-```
-
+```javascript
 
 form: {
  properties: {
@@ -842,13 +802,11 @@ form: {
  }
 }
 
-
 ```
 
 **icon**
 
-```
-
+```javascript
 
 icons: {
   icons: { 
@@ -874,13 +832,11 @@ icons: {
   letterSpacing: { ... },
 }
 
-
 ```
 
 **paragraph**
 
-```
-
+```javascript
 
 content: {
   paragraph: {
@@ -910,13 +866,11 @@ content: {
   },
 }
 
-
 ```
 
 **list**
 
-```
-
+```javascript
 
 content: {
   list: {
@@ -949,13 +903,11 @@ content: {
   },
 }
 
-
 ```
 
 **linktypes**
 
-```
-
+```javascript
 
 linkTypes: {
       webAddress: {
@@ -975,13 +927,11 @@ linkTypes: {
       },
     },
 
-
 ```
 
 **menu**
 
-```
-
+```javascript
 
 menu: {
   behaviors: {
@@ -1057,15 +1007,13 @@ menu: {
   }
 }
 
-
 ```
 
 **addon**
 
 To assign permissions, you can make use of the addon’s ID. Based on the type of addon, you can assign relevant permissions. For instance, if your addon is an image type, you can assign permissions specific to the image content block. The advanced permissions structure will be as follows:
 
-```
-
+```javascript
 
 image: { /**/ },
 button: { /**/ },
@@ -1074,11 +1022,9 @@ addon: {
   'addons-id': { /**/ },
 }
 
-
 ```
 
-```
-
+```javascript
 
 addon: {
   'b17dc240-b226-415c-af71-246fc51bd088': { /**/ 
@@ -1087,7 +1033,6 @@ addon: {
     },
   },
 }
-
 
 ```
 

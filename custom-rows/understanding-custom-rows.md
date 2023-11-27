@@ -1,12 +1,9 @@
 # Understanding Custom Rows
 
-1. [Use cases](broken-reference)
-2. [User saved rows](broken-reference)
-3. [Prebuilt rows](broken-reference)
-4. [Default rows](broken-reference)
-5. [User/campaign tailored contents](broken-reference)
-6. [Blog updates and other news](broken-reference)
-7. [E-commerce products](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.\
+If you're on the Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Core-level features.
+{% endhint %}
 
 _Custom rows_ dramatically improves this area of the builder (now renamed simply _Rows_):
 
@@ -23,9 +20,9 @@ These new, _custom rows_ can be dragged and dropped into the editing pane the sa
 
 **User saved rows**
 
-Enabling the Save Rows feature, your users will be able to save into your application design elements that they want to use in other messages.
+Enabling the [Save Rows](../saved-rows/) feature, your users will be able to save into your application design elements that they want to use in other messages.
 
-To display saved rows in the _Rows_ tab, add them to the list of rows available to users by leveraging the Custom Rows feature.
+To display saved rows in the _Rows_ tab, add them to the list of rows available to users by leveraging the [Custom Rows feature](displaying-saved-rows.md).
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/11/Saved\_Rows-1024x601.jpg)
 

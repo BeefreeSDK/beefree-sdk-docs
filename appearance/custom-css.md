@@ -1,27 +1,22 @@
 # Custom CSS
 
-1. [Defining a custom look & feel through a CSS stylesheet](broken-reference)
-2. [Using different values for different users of the editor](broken-reference)
-3. [Best practices and risk management](broken-reference)
-4. [Sample Custom CSS Theme](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Superpowers-level features.
+{% endhint %}
 
 #### Defining a custom look & feel through a CSS stylesheet <a href="#defining-a-custom-look-feel-through-a-css-stylesheet" id="defining-a-custom-look-feel-through-a-css-stylesheet"></a>
 
-```
-
+```javascript
 
 customCss: 'https://yourdomain.com/stylesheet.css'
-
 
 ```
 
 #### Using different values for different users of the editor <a href="#using-different-values-for-different-users-of-the-editor" id="using-different-values-for-different-users-of-the-editor"></a>
 
-```
-
+```javascript
 
 customCss: 'https://yourdomain.com/' + users[config.user].id + '.css'
-
 
 ```
 
@@ -34,6 +29,10 @@ Please use this feature with caution.
 When used properly, it is a powerful tool that can be leveraged to accomplish anything from applying custom styles with fine granularity to changing icons.
 
 When misused, however, it may harm the user experience and the rendering capability of the editor’s stage.  For example, styles applied to the stage via CSS will _not_ be reflected in the preview or exported HTML.
+
+{% hint style="info" %}
+If you're looking to hide certain UI elements, we recommend you first check if that can be accomplished with [Advanced Permissions](../advanced-options/advanced-permissions.md), as it may be easier to implement.
+{% endhint %}
 
 For the best possible results, please follow these best practices:
 
@@ -54,7 +53,7 @@ Other selectors such as the following should be avoided as much as possible:
 
 #### Sample Custom CSS Theme <a href="#sample-custom-css-theme" id="sample-custom-css-theme"></a>
 
-```
+```url
 
 https://gist.github.com/44daee53546a9f48ecad7f52784efa55.git
 

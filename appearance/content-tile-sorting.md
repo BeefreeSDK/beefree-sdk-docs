@@ -1,7 +1,9 @@
 # Content Tile Sorting
 
-1. [Re-ordering Content Tiles](broken-reference)
-2. [Full List of Content Tiles](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.\
+If you're on the Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Core-level features.
+{% endhint %}
 
 ### Re-ordering Content Tiles <a href="#re-ordering-content-tiles" id="re-ordering-content-tiles"></a>
 
@@ -9,8 +11,7 @@ The Content Tile Sorting option allows the host application to change the order 
 
 To use this feature, the host application must simply pass in the preferred order inside the configuration passed at initialization, like so:
 
-```
-
+```javascript
 
 {
   // ...
@@ -23,14 +24,13 @@ To use this feature, the host application must simply pass in the preferred orde
   // ...
 }
 
-
 ```
 
-![](https://docs.beefree.io/wp-content/uploads/2021/10/image-5-e1634835450411.png)
+<figure><img src="https://docs.beefree.io/wp-content/uploads/2021/10/image-5-e1634835450411.png" alt=""><figcaption></figcaption></figure>
 
 The host application can pass as many or as few content blocks as they want. If only one content tile is specified, then only that content tile will be placed at the top, and the rest of the content tiles will follow the default order.
 
-For Custom/Partner Addons, the host application passes the “Content Title” value found in the Addon section of the Beefree SDK Console Application Configuration.
+For Custom/Partner AddOns, the host application passes the “Content Title” value found in the Addon section of the Beefree SDK Console Application Configuration.
 
 ### Full List of Content Tiles <a href="#full-list-of-content-tiles" id="full-list-of-content-tiles"></a>
 
