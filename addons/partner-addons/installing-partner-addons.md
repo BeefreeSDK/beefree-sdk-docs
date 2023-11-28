@@ -1,12 +1,12 @@
 # Installing Partner AddOns
 
-1. [Getting started](broken-reference)
-2. [Installing an AddOn](broken-reference)
-3. [Adding client-side configurations for AddOns](broken-reference)
+{% hint style="info" %}
+Visit our [Partner AddOn directory](partner-addons-directory.md) for a list of available and upcoming AddOns.
+{% endhint %}
 
 ### Getting started <a href="#getting-started" id="getting-started"></a>
 
-You can **use** ready-to-go AddOns to extend the functionality of Beefree SDK (you can also [build new AddOns](https://docs.beefree.io/addon-development/)).
+You can **use** ready-to-go AddOns to extend the functionality of Beefree SDK (you can also [build new AddOns](../custom-addons/)).
 
 To browse and install existing AddOns, log into the [Beefree SDK Console](https://dam.beefree.io/devmain) and click on _Details_ to navigate to the application details page.
 
@@ -69,12 +69,11 @@ It displays when the AddOn is added to the editing stage and invites the user to
 
 When the AddOn content is selected, the same button is displayed in the content properties.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/02/AddOn.action.png)\
-
+<figure><img src="https://docs.beefree.io/wp-content/uploads/2020/02/AddOn.action.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ### Adding client-side configurations for AddOns <a href="#adding-client-side-configurations-for-addons" id="adding-client-side-configurations-for-addons"></a>
 
-Once you have initialized Beefree SDK, you can pass a series of [configuration parameters](https://docs.beefree.io/configuration-parameters/) to it.
+Once you have initialized Beefree SDK, you can pass a series of [configuration parameters](../../getting-started/installation/configuration-parameters/) to it.
 
 The **AddOn section** of the configuration allows you to override the parameters you configured in the [Beefree SDK Console](https://dam.beefree.io/devmain), on a per-user basis.
 
@@ -86,8 +85,7 @@ For example:
 
 **Example**
 
-```
-
+```javascript
 
 addOns: [
   {
@@ -103,26 +101,15 @@ addOns: [
   }
 ]
 
-
-
 ```
 
-**Params:**
+## Parameters
 
-* Boolean. When false, the AddOn content is not displayed in the _Content_ tab.
-
-**id**
-
-* Identifies the AddOn by using the _handle_ provided in the configuration form.
-
-**label**
-
-* The text string displayed for the AddOn tile in the _Content_ tab
-
-**ctaLabel**
-
-* The text string displayed in the button that triggers the AddOn action.
-* It’s displayed in:
-  * The content placeholder (before any content is applied)
-  * The content properties
-* Text displayed in the content placeholder to provide further information about the content.
+| Parameter     | Type        | Description                                                                                                                                                                                                            |
+| ------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `enabled`     | Boolean     | When false, the AddOn content is not displayed in the _Content_ tab.                                                                                                                                                   |
+| `id`          | Number      | Identifies the AddOn by using the _handle_ provided in the configuration form.                                                                                                                                         |
+| `label`       | Text String | The text string displayed for the AddOn tile in the _Content_ tab                                                                                                                                                      |
+| `ctaLabel`    | Text String | <p>The text string displayed in the button that triggers the AddOn action.</p><p></p><p>It’s displayed in:</p><ul><li>The content placeholder (before any content is applied)</li><li>The content properties</li></ul> |
+| `placeholder` | Text        | Text displayed in the content placeholder to provide further information about the content.                                                                                                                            |
+| `editable`    | Boolean     | A boolean with a default value of **false**. If this boolean is set to **true**, the content related to that content AddOn will become editable.                                                                       |

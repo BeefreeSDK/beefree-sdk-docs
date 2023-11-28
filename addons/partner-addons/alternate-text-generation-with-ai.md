@@ -1,21 +1,5 @@
 # Alternate Text Generation with AI
 
-1. [Overview](broken-reference)
-2. [Prerequisites](broken-reference)
-3. [Configuration Steps](broken-reference)
-4. [Developer Console](broken-reference)
-5. [Microsoft Azure Configuration Steps](broken-reference)
-6. [Limit the Usage](broken-reference)
-7. [Display the Usage Widget](broken-reference)
-8. [Advanced Permissions](broken-reference)
-9. [Disable Prompts Per User](broken-reference)
-10. [Disable AddOn Per User](broken-reference)
-11. [Feature Limitations](broken-reference)
-12. [Billing](broken-reference)
-13. [Error Handling](broken-reference)
-14. [Additional Considerations](broken-reference)
-15. [FAQs](broken-reference)
-
 ### Overview <a href="#overview" id="overview"></a>
 
 The Alternate Text Generation with AI AddOn enables host application end users to instantly generate alternate text for images using AI. This feature is only available for images.
@@ -41,51 +25,50 @@ To active alternate text generation with AI in your Beefree SDK Developer Consol
 2. Enter your application
 3. Click on “AddOns”
 4. Select the “Azure AI Vision – Image Analysis” AddOn
-5. Click “Install”
+5.  Click “Install”
 
-Once you click “Install”, the “Set Up Content” pop up will appear to configure the AddOn
+    Once you click “Install”, the “Set Up Content” pop up will appear to configure the AddOn
+6. Toggle “Enable” to on
+7. Insert your Azure API Key and Endpoint
 
-1. Toggle “Enable” to on
-2. Insert your Azure API Key and Endpoint
-
-Note: If you do not yet have an Azure API Key and Endpoint, navigate to the [Microsoft Azure Configuration Steps](https://docs.google.com/document/d/1\_bToJB4U06SvsxphJHKUKsssz7hzoAE4Gbqfa76Mjbo/edit#heading=h.8k1sgzr7vogd) of this guide.
+**Note:** If you do not yet have an Azure API Key and Endpoint, navigate to the [Microsoft Azure Configuration Steps](https://docs.google.com/document/d/1\_bToJB4U06SvsxphJHKUKsssz7hzoAE4Gbqfa76Mjbo/edit#heading=h.8k1sgzr7vogd) of this guide.
 
 ![Image of API Key field and endpoint field inside the Beefree SDK Developer Console](https://docs.beefree.io/wp-content/uploads/2023/11/CleanShot-2023-11-03-at-12.26.07.png)
 
-Image 1: API Key field and endpoint field inside the Beefree SDK Developer Console
-
 ### Microsoft Azure Configuration Steps <a href="#microsoft-azure-configuration-steps" id="microsoft-azure-configuration-steps"></a>
 
-Azure Computer Vision is a key component of the Alternate Text Generation with AI AddOn. The steps highlighted in this section will guide you through how to obtain your Computer Vision or Cognitive Services API Key and Endpoint. If you have already obtained both, you can skip this section and navigate to the [Limit the Usage section](https://docs.google.com/document/d/1\_bToJB4U06SvsxphJHKUKsssz7hzoAE4Gbqfa76Mjbo/edit#heading=h.y7rvv2cgucp0) of this guide to learn more about customizing the AddOn for your end users.
+Azure Computer Vision is a key component of the Alternate Text Generation with AI AddOn. The steps highlighted in this section will guide you through how to obtain your Computer Vision or Cognitive Services API Key and Endpoint. If you have already obtained both, you can skip this section and navigate to the [Limit the Usage section](alternate-text-generation-with-ai.md#limit-the-usage) of this guide to learn more about customizing the AddOn for your end users.
 
 Take the following steps to configure Azure Computer Vision and successfully integrate the AddOn into your host application:
 
-1. Login to the [Microsoft Azure Portal](https://login.microsoftonline.com/)
-   1. Go to “Azure services”
-   2. Click “Create a resource”
-   3. Search “Cognitive Services”
-   4. Select “Cognitive Services” or “Computer Vision”
-   5. Note: Cognitive Services allows you to use other functions of Azure AI, but either “Cognitive Services” or “Computer Vision” will work for configuring the alternate text generation. Ensure you select the feature that is best for your use case.
-2. Click “Create”
+1.  Login to the [Microsoft Azure Portal](https://login.microsoftonline.com/)
 
-It will ask you for “Project Details”
+    1. Go to “Azure services”
+    2. Click “Create a resource”
+    3. Search “Cognitive Services”
+    4. Select “Cognitive Services” or “Computer Vision”
 
-1. Complete the following information to satisfy the “Project Details” requirement:
-   1. Subscription
-   2. Resource group
-   3. Instance Details
-   4. Region
-   5. Name
-   6. Pricing tier
+    **Note:** Cognitive Services allows you to use other functions of Azure AI, but either “Cognitive Services” or “Computer Vision” will work for configuring the alternate text generation. Ensure you select the feature that is best for your use case.
+2.  Click “Create”
 
-Note: Version 4.0 is not yet available in all regions, but it is required for this feature to work. If you only have access to the 3.2 version, this feature will not work. Ensure that you have access to the correct version.
+    It will ask you for “Project Details”
+3. Complete the following information to satisfy the “Project Details” requirement:
 
-1. Click “Review + create” to create the resource
-2. Azure will create your resource with an endpoint and API key &#x20;
-3. Input in the endpoint in the provider url field within in the Beefree Developer Console
-4. Input in the API key within the API key field within in the Beefree Developer Console
+* Subscription
+* Resource group
+* Instance Details
+* Region
+* Name
+* Pricing tier
 
-Note: Once you complete these steps, wait at least 15 minutes for the resources to become available. After 15 minutes, you will be able to move forward with using your API Key and Endpoint with the feature.&#x20;
+**Note:** Version 4.0 is not yet available in all regions, but it is required for this feature to work. If you only have access to the 3.2 version, this feature will not work. Ensure that you have access to the correct version.
+
+4. Click “Review + create” to create the resource
+5. Azure will create your resource with an endpoint and API key &#x20;
+6. Input in the endpoint in the provider url field within in the Beefree Developer Console
+7. Input in the API key within the API key field within in the Beefree Developer Console
+
+**Note:** Once you complete these steps, wait at least 15 minutes for the resources to become available. After 15 minutes, you will be able to move forward with using your API Key and Endpoint with the feature.&#x20;
 
 For more information, visit the [Microsoft Azure Computer Vision documentation](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/quickstarts-sdk/image-analysis-client-library-40?tabs=visual-studio%2Clinux\&pivots=programming-language-rest-api).
 
@@ -97,7 +80,7 @@ After you complete the configuration, the Alternate Text Generation with AI tool
 
 Sample code onInfo call:
 
-```
+```javascript
 
 const beeConfig = {
     uid: 'string',
@@ -130,27 +113,28 @@ const beeConfig = {
     ...
 }
 
-
 ```
 
-&#x20;      2\. Confirm the AddOn handle is “ai-alt-text”
+2. Confirm the AddOn handle is “ai-alt-text”
 
-IMPORTANT: You consume one image for each request.
+{% hint style="info" %}
+**IMPORTANT:** You consume one image for each request.
+{% endhint %}
 
 The following sample code shows imagesCounter and imagesAvailable, which determine how many images you have used, and the image limit the host application setup for users, respectively.
 
-```
+```javascript
 
 let imagesCounter = 0
 let imagesAvailable = 5
 
 ```
 
-Note: In this example, the end user can only make five requests in total, after the fifth request, the end user will no longer be able to generate alternate text. The number five is defined in the configuration and can be customized. For example, if imagesAvailable is set ten, the end user will be able to perform ten requests.
+**Note:** In this example, the end user can only make five requests in total, after the fifth request, the end user will no longer be able to generate alternate text. The number five is defined in the configuration and can be customized. For example, if imagesAvailable is set ten, the end user will be able to perform ten requests.
 
-&#x20;   3\. In the AddOn settings, isIconDisabled is configured to automatically disable the Alternate Text Generation with AI feature when the counter reaches zero. However, through the [Token Upselling](https://docs.beefree.io/openai-addon-customization/token-upselling/) notification banner, application end users will have the opportunity to purchase more images and regain access to the feature.
+3. In the AddOn settings, `isIconDisabled` is configured to automatically disable the Alternate Text Generation with AI feature when the counter reaches zero. However, through the [Token Upselling](token-upselling.md) notification banner, application end users will have the opportunity to purchase more images and regain access to the feature.
 
-```
+```javascript
 
   // Check which addon
         const handle = data.detail.handle
@@ -168,7 +152,6 @@ Note: In this example, the end user can only make five requests in total, after 
             ],
           }
 
-
 ```
 
 #### Display the Usage Widget <a href="#display-the-usage-widget" id="display-the-usage-widget"></a>
@@ -178,7 +161,7 @@ To display the widget usage, take the following steps:&#x20;
 1. The call looks for imagesAvailable value and ImagesUsed value
 2. To activate the display usage widget, provide the usage data via the addon settings.  Since the editor doesn’t track usage, you’ll need to refresh the values via the bee.loadConfig method to keep the display widget data current
 
-```
+```javascript
 
 let imagesCounter = 0
 let imagesAvailable = 1000
@@ -228,19 +211,19 @@ const beeConfig = {
 
 ```
 
-Note: If either of the settings imagesAvailable or imagesUsed are not sent, the application will not show the consumption.
+**Note:** If either of the settings imagesAvailable or imagesUsed are not sent, the application will not show the consumption.
 
 ### Advanced Permissions <a href="#advanced-permissions" id="advanced-permissions"></a>
 
-This section discusses advanced permissions for your application users. You can use the two settings IsIconDisabled and enabled to configure permissions for your end users. To configure both booleans, take the steps outlined in the subsequent sections.
+This section discusses advanced permissions for your application users. You can use the two settings `IsIconDisabled` and enabled to configure permissions for your end users. To configure both booleans, take the steps outlined in the subsequent sections.
 
 #### Disable Prompts Per User <a href="#disable-prompts-per-user" id="disable-prompts-per-user"></a>
 
 To disable prompts per user, perform the following:
 
-1. Set isIconDisabled to true
+1. Set `isIconDisabled` to true
 
-```
+```javascript
 
 {
                 id: "ai-alt-text",
@@ -248,10 +231,9 @@ To disable prompts per user, perform the following:
                   isIconDisabled: true
                 }
 
-
 ```
 
-Note: The end user will be able to see the button, but will not be able to use the button through setting the isIconDisabled setting to true&#x20;
+**Note:** The end user will be able to see the button, but will not be able to use the button through setting the `isIconDisabled` setting to true&#x20;
 
 You can reference the difference in appearance in the following images.
 
@@ -267,9 +249,9 @@ Image 2.0 displays an example of the AI wand icon when the feature is active.
 
 To disable the AddOn completely for an end user, perform the following:
 
-1. Set the enabled field to false
+1. Set the `enabled` field to false
 
-```
+```javascript
 
 const beeConfig = {
     uid: 'inactive-user',
@@ -313,11 +295,11 @@ For more information on potential errors and error codes, reference the [Azure C
 
 ### Additional Considerations <a href="#additional-considerations" id="additional-considerations"></a>
 
-The AI Alternate Text Generator is compatible with token upselling. The token upselling feature notifies the end users when their token usage is running low and when it is completely out. Both notifications include an option for the end user to purchase more tokens. The appearance of these notifications are customizable. Read the [Token Upselling documentation](https://docs.beefree.io/openai-addon-customization/token-upselling/) to learn more about configuring token upselling within your host application.
+The AI Alternate Text Generator is compatible with token upselling. The token upselling feature notifies the end users when their token usage is running low and when it is completely out. Both notifications include an option for the end user to purchase more tokens. The appearance of these notifications are customizable. Read the [Token Upselling documentation](token-upselling.md) to learn more about configuring token upselling within your host application.
 
 ### FAQs <a href="#faqs" id="faqs"></a>
 
-Q: Will Azure keep the photos used with this feature?&#x20;
+**Q: Will Azure keep the photos used with this feature?**&#x20;
 
 A: The following answer is directly from the [Azure Data and privacy for Image Analysis website](https://learn.microsoft.com/en-us/legal/cognitive-services/computer-vision/imageanalysis-data-privacy-security):
 

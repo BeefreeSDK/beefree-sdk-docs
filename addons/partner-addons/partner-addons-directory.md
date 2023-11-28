@@ -28,7 +28,7 @@ Engage and inform with dynamic content, timers, and millions of visuals.
 
 Email from your platform will come alive with this powerful set of dynamic-content tools and a massive collection of ready-to-use visuals. On-open content transforms the email experience into a live marketing channel, backed by millions of royalty-free visuals to grab inbox attention with eye-catching emails.
 
-[Addon website](https://dam.beefree.io/visboxmain) | [About the AddOn](https://dam.beefree.io/visboxabout) | [Privacy Policy](https://dam.beefree.io/visboxtos) | [Support](https://dam.beefree.io/visboxsupport)
+[Addon website](https://dam.beefree.io/visboxmain) | [Privacy Policy](https://dam.beefree.io/visboxtos) | [Support](https://dam.beefree.io/visboxsupport)
 
 ### Countdown Timers by Sendtric <a href="#countdown-timers-by-sendtric" id="countdown-timers-by-sendtric"></a>
 
@@ -38,11 +38,13 @@ Boost clickthrough rates with dynamic countdown timers.
 
 Sendtric countdown timers are perfect for your customers to create urgency in their campaigns. With our robust architecture and limitless customization options, our timers can be used for a variety of use cases such as sales, events, deadlines, new account sign-ups, abandoned cart reminders, and much more.
 
-[Addon website](https://dam.beefree.io/sendtricmain) | [About the AddOn](https://dam.beefree.io/sendtricabout) | [Privacy Policy](https://dam.beefree.io/sendtrictos) | [Support](mailto:support@sendtric.com)
+[Addon website](https://dam.beefree.io/sendtricmain) | [About the AddOn](https://dam.beefree.io/sendtricabout) | [Privacy Policy](https://www.sendtric.com/terms-of-service/) | [Support](mailto:support@sendtric.com)
 
 ### Viewed <a href="#viewed" id="viewed"></a>
 
-![](https://docs.beefree.io/wp-content/uploads/2021/01/thumbnail\_viewed\_300.jpg)Capture your customer’s attention and stand out from the competition with the use of autoplay video in email.
+![](https://docs.beefree.io/wp-content/uploads/2021/01/thumbnail\_viewed\_300.jpg)
+
+Capture your customer’s attention and stand out from the competition with the use of autoplay video in email.
 
 It works with all email clients and devices. Get up to 90% of views on your opened emails, against only 16% that can be achieved including a static picture linked to YouTube. Autoplay video in email is the best solution to quickly spread your message and get millions of video views.
 
@@ -50,11 +52,13 @@ It works with all email clients and devices. Get up to 90% of views on your open
 
 ### Gifs <a href="#gifs" id="gifs"></a>
 
-![](https://docs.beefree.io/wp-content/uploads/2020/10/gifsbygiphy-300x188.png) The GIFs by GIPHY AddOn gives your customers the best source for GIFs, ready to use in their emails and pages, without leaving the application. This AddOn is developed by Beefree SDK and powered by GIPHY.
+<figure><img src="https://docs.beefree.io/wp-content/uploads/2020/10/gifsbygiphy-300x188.png" alt=""><figcaption></figcaption></figure>
+
+The GIFs by GIPHY AddOn gives your customers the best source for GIFs, ready to use in their emails and pages, without leaving the application. This AddOn is developed by Beefree SDK and powered by GIPHY.
 
 Once installed and configured, they will see a new content tile in the builder. Once dragged into the email or page, a click on a button in the stage area will launch a GIPHY search dialog. Clicking on a GIF will import it instantly into the email or page.
 
-[Addon website](https://docs.beefree.io/giphy-addons) | [About the AddOn](https://docs.beefree.io/giphy-addons) | [Privacy Policy](https://beefree.io/privacy-policy/) | [Support](https://dam.beefree.io/devportal)
+[Addon website](./) | [About the AddOn](./) | [Privacy Policy](https://beefree.io/privacy-policy/) | [Support](https://dam.beefree.io/devportal)
 
 ### Stickers <a href="#stickers" id="stickers"></a>
 
@@ -64,4 +68,4 @@ The Stickers by GIPHY AddOn gives your customers the best source for stickers, r
 
 Once installed and configured, they will see a new content tile in the builder. Once dragged into the email or page, a click on a button in the stage area will launch a GIPHY search dialog. Clicking on a sticker will import it instantly into the email or page.
 
-[Addon website](https://docs.beefree.io/giphy-addons) | [About the AddOn](https://docs.beefree.io/giphy-addons) | [Privacy Policy](https://beefree.io/privacy-policy/) | [Support](https://dam.beefree.io/devportal)
+[Addon website](./) | [About the AddOn](./) | [Privacy Policy](https://beefree.io/privacy-policy/) | [Support](https://dam.beefree.io/devportal)

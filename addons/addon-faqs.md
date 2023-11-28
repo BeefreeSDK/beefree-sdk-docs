@@ -1,15 +1,5 @@
 # AddOn FAQs
 
-1. [What is an addon?](broken-reference)
-2. [What if I just want to use - not build - an addon?](broken-reference)
-3. [What is a Custom AddOn?](broken-reference)
-4. [What is a Partner AddOn?](broken-reference)
-5. [Who can build an addon for BEE?](broken-reference)
-6. [Can a Custom AddOn become a Partner AddOn](broken-reference)
-7. [Where are addons visibile in the BEE editor UI?](broken-reference)
-8. [What kind of content block can an addon generate?](broken-reference)
-9. [How do I know when new addons become available?](broken-reference)
-
 #### What is an addon? <a href="#what-is-an-addon" id="what-is-an-addon"></a>
 
 An addon is an application that extends the functionality of the BEE editor.

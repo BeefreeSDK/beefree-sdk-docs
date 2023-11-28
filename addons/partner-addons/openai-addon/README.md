@@ -1,16 +1,5 @@
 # OpenAI AddOn
 
-1. [Overview](broken-reference)
-2. [General Settings](broken-reference)
-3. [Monitor Usage](broken-reference)
-4. [Display Usage Widget](broken-reference)
-5. [Disable Prompts Per User](broken-reference)
-6. [Disable AddOn Per User](broken-reference)
-7. [Disable AddOn Per Content Block Type](broken-reference)
-8. [Prompt Suggestions](broken-reference)
-9. [Customize Prompt Suggestions](broken-reference)
-10. [References](broken-reference)
-
 ### Overview <a href="#overview" id="overview"></a>
 
 The OpenAI AddOn is fully functional from the moment it’s enabled via the [Beefree SDK Console](https://developers.beefree.io/). For information about enabling OpenAI AddOn [click here](https://devportal.beefree.io/hc/en-us/articles/10838757053330-How-do-I-enable-the-OpenAI-AddOn-).
@@ -33,22 +22,21 @@ We’ll cover all of these scenarios in the following sections as we discuss the
 
 ### General Settings <a href="#general-settings" id="general-settings"></a>
 
-Note: All settings are _optional_ and may be refreshed, in real-time, via the [configuration reload](https://docs.beefree.io/configuration-reload/) instance method (e.g. `bee.loadConfig(settings)`) during the active session.
+Note: All settings are _optional_ and may be refreshed, in real-time, via the [configuration reload](../../../getting-started/installation/configuration-parameters/configuration-reload.md) instance method (e.g. `bee.loadConfig(settings)`) during the active session.
 
 Currently, the following settings are supported:
 
-| Setting                 | Type    | Description                                                                                                                                                                                                                                                                                               |
-| ----------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| tokensAvailable         | number  | Display only value for the optional [Display Usage Widget](broken-reference): The total tokens available for the user to consume during the session. If provided, `tokensUsed` and `tokenLabel` are required.                                                                                             |
-| tokensUsed              | number  | Display only value for the optional [Display Usage Widget](broken-reference): The number of tokens that the addon user has consumed during the current session. If provided, `tokensAvailable` and `tokenLabel` are required.                                                                             |
-| tokenLabel              | string  | Display only value for the optional [Display Usage Widget](broken-reference): The API reports token usage, but the host app may refer to tokens as words or any other nomenclature that makes sense to its users. Required when providing usage limits via `tokensAvailable` and `tokensUsed` parameters. |
-| isPromptDisabled        | boolean | Set to true to lock the prompt. The chat interface will be disabled but allow previous answers to be applied.                                                                                                                                                                                             |
-| isSuggestionsDisabled   | boolean | Set to true to hide the suggestions popup                                                                                                                                                                                                                                                                 |
+| Setting                   | Type    | Description                                                                                                                                                                                                                                                                                 |
+| ------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `tokensAvailable`         | number  | Display only value for the optional [Display Usage Widget](./): The total tokens available for the user to consume during the session. If provided, `tokensUsed` and `tokenLabel` are required.                                                                                             |
+| `tokensUsed`              | number  | Display only value for the optional [Display Usage Widget](./): The number of tokens that the addon user has consumed during the current session. If provided, `tokensAvailable` and `tokenLabel` are required.                                                                             |
+| `tokenLabel`              | string  | Display only value for the optional [Display Usage Widget](./): The API reports token usage, but the host app may refer to tokens as words or any other nomenclature that makes sense to its users. Required when providing usage limits via `tokensAvailable` and `tokensUsed` parameters. |
+| `isPromptDisabled`        | boolean | Set to true to lock the prompt. The chat interface will be disabled but allow previous answers to be applied.                                                                                                                                                                               |
+| `isSuggestionsDisabled`   | boolean | Set to true to hide the suggestions popup                                                                                                                                                                                                                                                   |
 
 #### Example
 
-```
-
+```javascript
 
 const beeConfig = {
     uid: 'string',
@@ -68,8 +56,6 @@ const beeConfig = {
     ...
 }
      
-
-
 ```
 
 ### Monitor Usage <a href="#monitor-usage" id="monitor-usage"></a>
@@ -78,8 +64,7 @@ With each prompt response, the addon will report the usage data provided by the 
 
 #### Example
 
-```
-
+```javascript
 
 const beeConfig = {
     uid: 'string',
@@ -102,16 +87,15 @@ const beeConfig = {
     ...
 }
      
-
-
 ```
+
+## Display Usage Widget
 
 You may choose to track the end-user’s total usage through the aforementioned `onInfo` callback if desired. Additionally, you may choose to show the usage data to the user via the built-in display widget. To activate the display usage widget, provide the usage data via the addon settings.  Since the editor doesn’t track usage, you’ll need to refresh the values via the `bee.loadConfig` method to keep the display widget data current.
 
 #### Example
 
-```
-
+```javascript
 
 let tokenCounter = 0
 let tokensAvailable = 2000
@@ -166,7 +150,6 @@ const beeConfig = {
     },
 }
 
-
 ```
 
 See below for an example of how the UI will render when provided with the optional display usage widget.
@@ -181,8 +164,7 @@ The following example will **disable** the prompts for the user with an `uid` of
 
 #### Example
 
-```
-
+```json
 
 const beeConfig = {
     uid: 'inactive-user',
@@ -198,14 +180,11 @@ const beeConfig = {
     ...
 }
      
-
-
 ```
 
 ### Disable AddOn Per User <a href="#disable-addon-per-user" id="disable-addon-per-user"></a>
 
-```
-
+```json
 
 const beeConfig = {
     uid: 'inactive-user',
@@ -219,8 +198,6 @@ const beeConfig = {
     ...
 }
      
-
-
 ```
 
 ### Disable AddOn Per Content Block Type <a href="#disable-addon-per-content-block-type" id="disable-addon-per-content-block-type"></a>
@@ -238,8 +215,7 @@ The following example will disable the addon for the paragraph block:
 
 #### Example
 
-```
-
+```json
 
 const beeConfig = {
     uid: 'string',
@@ -262,8 +238,6 @@ const beeConfig = {
     ...
 }
      
-
-
 ```
 
 ### Prompt Suggestions <a href="#prompt-suggestions" id="prompt-suggestions"></a>
@@ -325,9 +299,3 @@ Below are the preset prompt suggestions we have identified for the different con
 | Make it \[number] words long                | mailup-bee-common-component-ai.characters-length    |
 | Make it \[tone] without changing the format | mailup-bee-common-component-ai.adjust-tone          |
 | Translate it to \[language]                 | mailup-bee-common-component-ai.translate-heading    |
-
-### References <a href="#references" id="references"></a>
-
-* [OnError, onWarning, and onInfo Callbacks](https://docs.beefree.io/error-management/)
-* [Custom Languages](https://docs.beefree.io/custom-languages/)
-* [Advanced Permissions](https://docs.beefree.io/advanced-permissions/)
