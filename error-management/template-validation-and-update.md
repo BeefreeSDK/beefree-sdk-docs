@@ -10,7 +10,7 @@ Currently, this feature is working in test mode, tracking any issue with existin
 
 #### Error response example
 
-```
+```javascript
 
 
 {"code":2200,"message":"required key not provided @ data[u'page'][u'body'][u'content'][u'style'][u'color']","error":"BAD REQUEST"}
@@ -18,4 +18,4 @@ Currently, this feature is working in test mode, tracking any issue with existin
 
 ```
 
-To read the full list of possible errors, please refer to [this page](https://docs.beefree.io/template-validation-errors/).
+To read the full list of possible errors, please refer to [Template Validation and Update Errors](template-validation-and-update-errors.md).

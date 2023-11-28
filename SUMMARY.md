@@ -98,7 +98,7 @@
 * [Multi-Language Templates](multi-language-templates.md)
 * [Error Management](error-management/README.md)
   * [onWarning](error-management/onwarning.md)
-  * [BEE Editor errors](error-management/bee-editor-errors.md)
+  * [Beefree SDK Editor Errors](error-management/beefree-sdk-editor-errors.md)
   * [File System Provider errors](error-management/file-system-provider-errors.md)
   * [JSON Parser errors](error-management/json-parser-errors.md)
   * [Template Validation and Update](error-management/template-validation-and-update.md)

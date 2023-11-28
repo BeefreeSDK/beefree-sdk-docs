@@ -2,28 +2,15 @@
 
 #### Example Response
 
-```
-
+```json
 
 {"code":3200,"message":"Resource Not Found","details":"http:\/\/myfsp.com\/docs\/errorcodes\/404"}
-
 
 ```
 
 #### Error Codes
 
-| Code                  | Message                                           | HTTP Status               | Details                                                       |
-| --------------------- | ------------------------------------------------- | ------------------------- | ------------------------------------------------------------- |
-| `3001`                | FSP Error                                         | 503 Service Unavailable   | Default generic FSP Error                                     |
-| `3100`                | Something went wrong accessing backend filesystem | 503 Service Unavailable   | Default generic Error                                         |
-| `3200`                | Resource not found                                | 404 Not Found             | File or directory not found                                   |
-| `3300`                | Permission denied                                 | 403 Forbidden             | Permission denied to access a file or a directory             |
-| `3400`                | Resource Already Exists                           | 409 Conflict              | File or directory already exists                              |
-| `3450`                | File Not Uploaded                                 | 422 Unprocessable Entity  | Error during file upload                                      |
-| `3500`                | Request Error                                     | 400 Bad Request           | Server could not understand the request due to invalid syntax |
-| `3600`                | User Error                                        | 403 Forbidden             | Not a valid S3 custom storage                                 |
-| `3650`                | Wrong Username or Password                        | 401 Unauthorized          | Wrong user credentials                                        |
-| from `3900` to `3999` | _Custom error message_                            | _Custom HTTP status code_ |                                                               |
+<table><thead><tr><th width="113">Code</th><th width="178">Message</th><th width="199">HTTP Status</th><th>Details</th></tr></thead><tbody><tr><td><code>3001</code></td><td>FSP Error</td><td>503 Service Unavailable</td><td>Default generic FSP Error</td></tr><tr><td><code>3100</code></td><td>Something went wrong accessing backend filesystem</td><td>503 Service Unavailable</td><td>Default generic Error</td></tr><tr><td><code>3200</code></td><td>Resource not found</td><td>404 Not Found</td><td>File or directory not found</td></tr><tr><td><code>3300</code></td><td>Permission denied</td><td>403 Forbidden</td><td>Permission denied to access a file or a directory</td></tr><tr><td><code>3400</code></td><td>Resource Already Exists</td><td>409 Conflict</td><td>File or directory already exists</td></tr><tr><td><code>3450</code></td><td>File Not Uploaded</td><td>422 Unprocessable Entity</td><td>Error during file upload</td></tr><tr><td><code>3500</code></td><td>Request Error</td><td>400 Bad Request</td><td>Server could not understand the request due to invalid syntax</td></tr><tr><td><code>3600</code></td><td>User Error</td><td>403 Forbidden</td><td>Not a valid S3 custom storage</td></tr><tr><td><code>3650</code></td><td>Wrong Username or Password</td><td>401 Unauthorized</td><td>Wrong user credentials</td></tr><tr><td>from <code>3900</code> to <code>3999</code></td><td><em>Custom error message</em></td><td><em>Custom HTTP status code</em></td><td> </td></tr></tbody></table>
 
 #### Displaying custom errors from your FSP API
 
@@ -41,5 +28,6 @@ An error sent with an error code number in this range displays the message as th
    **HTTP Status:** 400\
    **Message:** Upload error\
    **Details:** The file name is not allowed. Please make sure it does not contain one or more of these characters: \ / < > ? |
-4. The file manager inside the editor displays:\
-   ![](https://docs.beefree.io/wp-content/uploads/2018/05/FSP\_custom\_error-300x68.jpg)
+4. The file manager inside the editor displays:
+
+<figure><img src="https://docs.beefree.io/wp-content/uploads/2018/05/FSP_custom_error-300x68.jpg" alt=""><figcaption></figcaption></figure>
