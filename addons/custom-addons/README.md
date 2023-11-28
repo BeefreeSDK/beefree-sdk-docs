@@ -1,15 +1,14 @@
 # Custom AddOns
 
-1. [Introduction](broken-reference)
-2. [Example of a Custom AddOn](broken-reference)
-3. [Availability](broken-reference)
-4. [Getting started](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../../getting-started/development-applications.md) for free to try this and other Superpowers-level features.
+{% endhint %}
 
 ### Introduction <a href="#introduction" id="introduction"></a>
 
 A Custom AddOn is an addon that you typically developed for your own use.
 
-[Partner AddOns](https://docs.beefree.io/addon-development-vendor/) start as Custom AddOns, but are then published to the Partner AddOn Directory, becoming available to all applications that have embedded Beefree SDK.
+[Partner AddOns](../partner-addons/) start as Custom AddOns, but are then published to the Partner AddOn Directory, becoming available to all applications that have embedded Beefree SDK.
 
 Most Custom AddOns do not become Partner AddOns and therefore are not published to the Directory. That’s because, in most cases, you create a Custom AddOn to satisfy a use case that is specific to your application.
 
@@ -37,13 +36,13 @@ Custom AddOns are an advanced feature. As a result, the feature is available on 
 Of course, there are exceptions to this requirement.
 
 * **Testing**: if you are not yet on a Superpowers or Enterprise plan, and you want to test building a Custom AddOn:
-  * Create a [development application](https://docs.beefree.io/initializing-bee-plugin/#production-vs-development-apps), as shown [here](https://docs.beefree.io/initializing-bee-plugin/#production-vs-development-apps).
+  * Create a [development application](../../getting-started/development-applications.md).
   * Request an upgrade to the Superpowers plan.
   * Test as much as you want. If and when you decide that you wish to deploy your Custom AddOn in production, we will ask you to upgrade your production application to the Superpowers or Enterprise plan.
 * **Development of a Partner AddOn**:
   * You provide features that could be a good fit as an extension of our editors
   * You are not a Beefree SDK customer
-  * [Learn more about Partner AddOns](https://docs.beefree.io/addon-development-vendor/)
+  * [Learn more about Partner AddOns](../partner-addons/)
 
 ### Getting started <a href="#getting-started" id="getting-started"></a>
 
@@ -55,4 +54,4 @@ You will be taken to a page that lists the addons that have been installed for t
 
 ![Custom AddOns buttons](https://docs.beefree.io/wp-content/uploads/2022/06/Screenshot-2022-06-27-at-13.59.22.png)
 
-Refer to the [AddOn Development documentation](https://docs.beefree.io/addon-development/) for all the details on building your addon.
+Refer to the [AddOn Development documentation](addon-development.md) for all the details on building your addon.

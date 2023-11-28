@@ -1,12 +1,8 @@
 # Partner AddOns directory
 
-1. [OpenAI](broken-reference)
-2. [Countdown Timers by NiftyImages](broken-reference)
-3. [Visual Toolbox by Campaign Genius](broken-reference)
-4. [Countdown Timers by Sendtric](broken-reference)
-5. [Viewed](broken-reference)
-6. [Gifs](broken-reference)
-7. [Stickers](broken-reference)
+{% hint style="info" %}
+These AddOns need to be [installed from your Beefree SDK Console](installing-partner-addons.md). Some of them are offered by third-party providers, and they might require an active subscription with those providers in order to be used.
+{% endhint %}
 
 ### OpenAI <a href="#openai" id="openai"></a>
 

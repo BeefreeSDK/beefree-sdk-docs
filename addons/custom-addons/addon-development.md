@@ -1,30 +1,20 @@
 # AddOn Development
 
-1. [Introduction](broken-reference)
-2. [Creating a development app](broken-reference)
-3. [Getting started](broken-reference)
-4. [Concepts](broken-reference)
-5. [Mixed Content AddOns](broken-reference)
-6. [Custom AddOn - Row](broken-reference)
-7. [The Content dialog method](broken-reference)
-8. [The Iframe method](broken-reference)
-9. [Configuration parameters](broken-reference)
-
 ### Introduction <a href="#introduction" id="introduction"></a>
 
 Welcome to the Beefree SDK AddOn development documentation!
 
 This document is for anyone that wants to start creating AddOns for Beefree SDK users.
 
-Before you get started, you may want to review these [frequently asked questions](https://docs.beefree.io/addons-developer-faq/).
+Before you get started, you may want to review these [frequently asked questions](../addon-faqs.md).
 
 Happy coding!
 
 ### Creating a development app <a href="#creating-a-development-app" id="creating-a-development-app"></a>
 
-First, [create a development application](https://docs.beefree.io/initializing-bee-plugin/#production-vs-development-apps) so that you are not testing your new AddOn with a production application.
+First, [create a development application](../../getting-started/development-applications.md) so that you are not testing your new AddOn with a production application.
 
-Development applications inherit the plan of the production application to which they are connected. You can only build AddOns when you are on the [Superpowers plan or above](https://dam.beefree.io/pluginpricing). If you are **not** on one of those plans:
+Development applications inherit the plan of the production application to which they are connected. You can only build AddOns when you are on the [Superpowers plan or above](https://developers.beefree.io/pricing-plans). If you are **not** on one of those plans:
 
 * Create a development application
 * Request an upgrade
@@ -84,8 +74,8 @@ If you are using the **iFrame method**, some **additional fields** are shown on 
   The API Key optionally authorizes the application to load the URL provided above. If authorization is not needed, this field can be left empty.
 * **Authentication URL** – Optional\
   The endpoint that handles the optional authorization request. If authorization is not needed, this field can be left empty.
-* **Healthcheck URL** – Optional, but required for [Partner AddOns](https://docs.beefree.io/addon-development-vendor/)\
-  This URL will be contacted when the editor is started to verify the status of the AddOn. In the case of AddOn downtime, the editor hides it in the UI. Please note: if you are building a [Partner AddOn](https://docs.beefree.io/addon-development-vendor/), this is a required field as it will allow applications that have installed your AddOn to protect the quality of their end-users experience if your service is unavailable.
+* **Healthcheck URL** – Optional, but required for [Partner AddOns](../partner-addons/)\
+  This URL will be contacted when the editor is started to verify the status of the AddOn. In the case of AddOn downtime, the editor hides it in the UI. Please note: if you are building a [Partner AddOn](../partner-addons/), this is a required field as it will allow applications that have installed your AddOn to protect the quality of their end-users experience if your service is unavailable.
 
 Once you have entered all the details, click _Save_, and you should immediately find your AddOn visible within the Beefree SDK platform. However, your AddOn is not completed until the configuration steps described below are done.
 
@@ -154,16 +144,14 @@ Mixed Content AddOns are a new type of content tile that allows the host applica
 
 ![](https://docs.beefree.io/wp-content/uploads/2022/07/image-1010x1024.png)
 
-To utilize this new feature, it is necessary to:
+To utilize this feature:
 
-* Create a new custom AddOn of type “Mixed Content” from developers.beefree.io, as described in the “Getting started” section of this article;
-* Add the [integration code](broken-reference) required by custom AddOns (for example, if the user chose the “Content Dialog” method, it might look something like this):
+* Create a new custom AddOn of type “Mixed Content” from [developers.beefree.io](https://developers.beefree.io/), as described in the “Getting started” section of this article;
+* Add the [integration code required by custom AddOns](./) (for example, if the user chose the “Content Dialog” method, it might look something like this):
 
-```
-
+```javascript
 
 var beeConfig = { ... contentDialog: { addOn: { label: 'Custom AddOn Label', handler: (resolve, reject, args) => { ... } } } }
-
 
 ```
 
@@ -173,8 +161,7 @@ var beeConfig = { ... contentDialog: { addOn: { label: 'Custom AddOn Label', han
 
 A valid response that the hosting application should send to the Beefree app when the contents of a Mixed Content AddOn are selected must have the following structure:
 
-```
-
+```json
 
 {
   "type": "mixed",
@@ -183,13 +170,11 @@ A valid response that the hosting application should send to the Beefree app whe
   ]
 }
 
-
 ```
 
 For example:
 
-```
-
+```json
 
 {
   "type": "mixed",
@@ -222,7 +207,6 @@ For example:
   ]
 }
 
-
 ```
 
 If the response is not valid, an error is raised, and `onError` is called.
@@ -237,7 +221,7 @@ Unless otherwise specified, the properties are optional.
 
 The following code calls a function named resolve with an object argument. This object defines a heading element with characteristics such as type, text content, alignment, font size, boldness, text color, and link color. The resolve function handles or returns the constructed heading element.
 
-```
+```javascript
 
 resolve({
   type: 'heading',
@@ -251,7 +235,6 @@ resolve({
     linkColor: 'green',
   }
 })
-
 
 ```
 
@@ -271,7 +254,7 @@ The following table displays a list of properties in the resolve function, and e
 
 The following sample code defines an image element with various attributes.
 
-```
+```javascript
 
 resolve({
   type: 'image',
@@ -283,7 +266,6 @@ resolve({
     target: '_self',
   }
 })
-
 
 ```
 
@@ -301,7 +283,7 @@ The following table displays a list of properties in the resolve function, and e
 
 The following sample code defines a button element with various attributes.
 
-```
+```javascript
 
 resolve({
   type: 'button',
@@ -314,7 +296,6 @@ resolve({
   },
   mergeTags: [...],
 })
-
 
 ```
 
@@ -332,7 +313,7 @@ The following table displays a list of properties in the resolve function, and e
 
 The following sample code defines a paragraph element with various attributes. The mergeTags property contains a list of merge tags, which can be used for dynamic content insertion.
 
-```
+```javascript
 
 resolve({
   type: 'paragraph',
@@ -348,7 +329,6 @@ resolve({
   },
   mergeTags: [...],
 })
-
 
 ```
 
@@ -370,7 +350,14 @@ The following table displays a list of properties in the resolve function, and e
 
 The following sample code defines an HTML element with various attributes.
 
-![](https://docs.beefree.io/wp-content/uploads/2023/09/carbon.png)
+```javascript
+resolve({
+    type: 'html',
+    value: {
+        html: `<div><h4>Html Block</h4>
+    </div>`,
+    })
+```
 
 The following table displays a list of properties in the resolve function, and each of its respective value types and whether or not they are mandatory.
 
@@ -382,7 +369,7 @@ The following table displays a list of properties in the resolve function, and e
 
 The code defines a menu structure with a list of items. Each item has text content (e.g., “Menu item”) and a link associated with it. The link includes a title, URL (href), and a target attribute, demonstrating that it generates a menu with clickable items that open the specified links in the same browser window or tab when clicked.
 
-```
+```javascript
 
 resolve({
   type: 'menu',
@@ -400,7 +387,6 @@ resolve({
     ],
   }
 })
-
 
 ```
 
@@ -428,7 +414,7 @@ This feature expands the capabilities of Custom AddOns by including:
 To take advantage of this new feature, you have to:
 
 * Create a new custom AddOn of type “Row” from [developers.beefree.io](http://developers.beefree.io/), as described in the “Getting started” section of this article;
-* Add the [integration code](broken-reference) required by custom AddOns (for example, if the user chose the “Content Dialog” method, it might look something like this):
+* Add the [integration code required by custom AddOns](./) (for example, if the user chose the “Content Dialog” method, it might look something like this):
 
 ```
 
@@ -444,8 +430,7 @@ var beeConfig = { contentDialog: { addOn: { label: 'Custom AddOn Label',  handle
 
 A valid response that the hosting application should send to the Beefree app when the contents of a Row AddOn are selected must have the following structure:
 
-```
-
+```json
 
 {
   "type": "rowAddon", 
@@ -456,13 +441,11 @@ A valid response that the hosting application should send to the Beefree app whe
   }
 }
 
-
 ```
 
 For example:
 
-```
-
+```json
 
 {
     "type": "rowAddon",
@@ -516,21 +499,19 @@ For example:
     }
 }
 
-
 ```
 
-The content dialog configuration, required for this custom AddOn is the same configuration used by the other addons. Please see the [Content Dialog method](https://docs.beefree.io/?page\_id=7399\&preview=true#the-content-dialog-method) paragraph.
+The content dialog configuration, required for this custom AddOn is the same configuration used by the other AddOns. Please see the [Content Dialog method](../../advanced-options/content-dialog.md) paragraph.
 
 ### The Content dialog method <a href="#the-content-dialog-method" id="the-content-dialog-method"></a>
 
 The purpose of the contentDialog object in the code snippet is to handle different types of content that can be added to a dialog. It has a handler function that resolves with an image or HTML content based on the provided contentDialogId.
 
-To set up the content dialogs you will need to add the _contentDialog_ object to _beeConfig._ For more details about the content dialog, please review [Content Dialog: How it works](https://docs.beefree.io/content-dialog/#how-it-works).
+To set up the content dialogs you will need to add the _contentDialog_ object to _beeConfig._ For more details about the content dialog, please review [Content Dialog: How it works](../../advanced-options/content-dialog.md).
 
 #### Configure content dialog in beeConfig
 
-```
-
+```javascript
 
 contentDialog: {
     addOn: {
@@ -561,13 +542,11 @@ contentDialog: {
     }, // close addOn
 }, // close contentDialog
 
-
 ```
 
 **Image**
 
-```
-
+```json
 
 {
   "type": "image",
@@ -579,13 +558,11 @@ contentDialog: {
   }
 }
 
-
 ```
 
 **HTML**
 
-```
-
+```json
 
 {
   "type": "html",
@@ -594,15 +571,13 @@ contentDialog: {
   }
 }
 
-
 ```
 
 **Custom Fields**
 
 This is optional. Should you feel the need to add custom fields when resolving, we created a “customFields” key allowing to you place any additional custom fields inside of that object.
 
-```
-
+```json
 
 resolve (
     {
@@ -621,7 +596,6 @@ resolve (
         }
     }
 )
-
 
 ```
 
@@ -652,8 +626,8 @@ The data object sent in the messages exchanged between the Beefree app and the A
 
 The application inside the iframe may trigger the following actions:
 
-* onCancel
-* onSave
+* `onCancel`
+* `onSave`
 
 **Events**
 
@@ -685,8 +659,7 @@ The following parameters are available for the loaded method:
 
 The following is a full example of a fixed-size modal with rounded corners, no title, and no close button.  In this case, a custom close button is provided by the AddOn using the _onCancel_ method.
 
-```
-
+```javascript
 
   window.parent.postMessage(
     {
@@ -702,13 +675,11 @@ The following is a full example of a fixed-size modal with rounded corners, no t
     '*'
   )
 
-
 ```
 
 The Beefree app then responds with an _init_ message that contains the current locale of the editor and any pass-through data defined by the host application:
 
-```
-
+```javascript
 
 {
   action: 'init',
@@ -717,7 +688,6 @@ The Beefree app then responds with an _init_ message that contains the current l
     data: { ... sent by host app }
   }
 }
-
 
 ```
 
@@ -797,8 +767,8 @@ With authentication enabled, a specific protocol follows:
 
 ### Configuration parameters <a href="#configuration-parameters" id="configuration-parameters"></a>
 
-Once you have initialized the Beefree app, you can pass a series of [configuration parameters](https://docs.beefree.io/configuration-parameters/) to it.
+Once you have initialized the Beefree app, you can pass a series of [configuration parameters](addon-development.md#configuration-parameters) to it.
 
 The **AddOn section** of the configuration allows you to override the parameters you configured at the application level, on a per-user basis.
 
-See: [Adding client-side configuration parameters for AddOns](https://docs.beefree.io/using-addons/#adding-client-side-configurations-for-addons).
+See: [Adding client-side configuration parameters for AddOns](../partner-addons/installing-partner-addons.md).
