@@ -1,19 +1,12 @@
 # Mobile Design Mode
 
-1. [Overview](broken-reference)
-2. [Demo](broken-reference)
-3. [How to enable Mobile Design Mode](broken-reference)
-4. [How it works](broken-reference)
-5. [Designing content for Mobile](broken-reference)
-6. [Customization options](broken-reference)
-
 ### Overview <a href="#overview" id="overview"></a>
 
 Thanks to Mobile Design Mode, your customers can easily design responsive emails,  pages, and popups for mobile without switching between the builder stage and preview mode. When enabled, your customers will be able to:
 
 * Easily switch between desktop and mobile view to access and edit content;
 * Edit padding, text alignment, and font size optimized for Mobile;
-* Instantly display the results of [**mobile optimization options**](https://dam.beefree.io/hideonmobile) – such as _do not stack/reverse stack/hide on mobile_;
+* Instantly display the results of [mobile optimization options](https://devportal.beefree.io/hc/en-us/articles/4408466433938) – such as _do not stack/reverse stack/hide on mobile_;
 * Extend Beefree SDK’s design flexibility and build mobile-first campaigns.
 
 #### Use cases
@@ -23,26 +16,22 @@ Thanks to Mobile Design Mode, your customers can easily design responsive emails
 * **Control hidden elements visibility**: Remove the “Visibility” toggle and decide if elements with a “hide on” property can be visible with the blur effect or are not visible during editing.
 * **Custom UI controls**: start the builder in a predefined mode and offer your UI controls to switch between views and hidden elements visualization. To do so, you can use the loadStageMode method to trigger a change from your application.
 
-```
-
+```javascript
 
 bee.loadStageMode({
   type: 'mobile',
   display: 'hide',
 })
 
-
 ```
 
 You can also use the loadStageMode method to disable Mobile editing mode.
 
-```
-
+```javascript
 
 bee.loadStageMode({
   type: 'global',
 })
-
 
 ```
 
@@ -50,19 +39,21 @@ bee.loadStageMode({
 
 Here is a video explaining **why we built Mobile design mode** and how it **enhances the design UX** of Beefree SDK.
 
-[https://docs.beefree.io/wp-content/uploads/2021/03/Introducing-mobile-design-mode.mp4](https://docs.beefree.io/wp-content/uploads/2021/03/Introducing-mobile-design-mode.mp4)
+{% embed url="https://docs.beefree.io/wp-content/uploads/2021/03/Introducing-mobile-design-mode.mp4" %}
 
 ### How to enable Mobile Design Mode <a href="#how-to-enable-mobile-design-mode" id="how-to-enable-mobile-design-mode"></a>
 
 If your application doesn’t have Mobile Design Mode enabled yet, you need to enable it. It takes just a few clicks:
 
-* [Login into developers.beefree.io](https://dam.beefree.io/devmain)
-* Select the application you want to configure > Click Details
-  * We recommend testing the feature first with a DEV or QA application
-* Go to Application Configuration > View More&#x20;
-* Go to Services > Toggle Enable mobile design mode ON&#x20;
-* Click Save on the top-right corner of the page.
-* Congrats! You’ve successfully enabled Mobile Design Mode!
+1. [Login into developers.beefree.io](https://dam.beefree.io/devmain)
+2.  Select the application you want to configure > Click Details
+
+    We recommend testing the feature first with a DEV or QA application
+3. Go to Application Configuration > View More
+4. Go to Services > Toggle Enable mobile design mode ON&#x20;
+5.  Click Save on the top-right corner of the page.
+
+    Congrats! You’ve successfully enabled Mobile Design Mode!
 
 ### How it works <a href="#how-it-works" id="how-it-works"></a>
 
@@ -75,6 +66,10 @@ The _desktop view (screen icon on the left)_ will leverage your browser’s full
 The _mobile view_ (mobile icon on the right) will resize the work area width to 320px to simulate a mobile screen
 
 ![Switching between desktop and mobile view](https://docs.beefree.io/wp-content/uploads/2021/03/Going-from-desktop-to-mobile\_450.gif)
+
+{% hint style="info" %}
+**Note:** When Mobile design mode is enabled, users will work on a single template that will include both the desktop design and the mobile one. The template doesn’t require any duplicates. The mobile edits will be automatically saved and reflected in the templates.
+{% endhint %}
 
 #### Mobile optimization settings
 
@@ -153,11 +148,11 @@ They will find the Mobile-optimized properties in the sidebar menu, under the �
 
 Mobile-optimized elements are flagged with a clickable “Mobile” pill, as shown in the image below:
 
-#### ![](https://docs.beefree.io/wp-content/uploads/2022/07/Screenshot-2022-07-04-at-15.35.39.png)
+<figure><img src="https://docs.beefree.io/wp-content/uploads/2022/07/Screenshot-2022-07-04-at-15.35.39.png" alt="" width="563"><figcaption></figcaption></figure>
 
-When the pill is highlighted in light blue, it means the property has been edited and applied in the mobile stage. The mobile pill can be styled using [Custom CSS](https://docs.beefree.io/custom-css/) if covered by your [subscription plan](https://beefree.io/bee-plugin/pricing/).
+When the pill is highlighted in light blue, it means the property has been edited and applied in the mobile stage. The mobile pill can be styled using [Custom CSS](appearance/custom-css.md) if covered by your [subscription plan](https://beefree.io/bee-plugin/pricing/).
 
-#### ![](https://docs.beefree.io/wp-content/uploads/2022/07/Screenshot-2022-07-04-at-15.34.30.png)
+<figure><img src="https://docs.beefree.io/wp-content/uploads/2022/07/Screenshot-2022-07-04-at-15.34.30.png" alt="" width="563"><figcaption></figcaption></figure>
 
 Users can click on the x to revert the property back to the desktop.
 
@@ -165,9 +160,9 @@ Users can click on the x to revert the property back to the desktop.
 
 We have also improved the user experience by moving the Font Size Controls, previously displayed in the formatting tiny menu available in the content area, to the Content Properties Tab in the sidebar menu.
 
-#### ![](https://docs.beefree.io/wp-content/uploads/2022/07/Screenshot-2022-07-04-at-16.47.57.png)
+<figure><img src="https://docs.beefree.io/wp-content/uploads/2022/07/Screenshot-2022-07-04-at-16.47.57.png" alt="" width="375"><figcaption></figcaption></figure>
 
-#### ![](https://docs.beefree.io/wp-content/uploads/2022/07/Screenshot-2022-07-04-at-15.35.39.png)
+<figure><img src="https://docs.beefree.io/wp-content/uploads/2022/07/Screenshot-2022-07-04-at-15.35.39.png" alt="" width="375"><figcaption></figcaption></figure>
 
 #### Tracking changes in the history
 
@@ -181,8 +176,7 @@ Mobile Design Mode can be considered a “plug-and-play” feature because it ju
 
 If you want to customize the user experience, Beefree SDK allows you to configure a few client-side options to control permissions and styles. Take a look at the code snippet below to see how to load these settings into the initial configuration as part of the workspace section.
 
-```
-
+```javascript
 
 workspace: {
   type: 'default', // default, mixed, amp_only, html_only
@@ -191,14 +185,8 @@ workspace: {
   hideStageToggle: true, // default = false
 }
 
-
 ```
 
 Here is a brief description of the parameters and their options. They are all optional.
 
-| Parameter           | Description                                                                                                                                          | Values                                | Default                                  |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | ---------------------------------------- |
-| **type**            | loads different workspace types (currently used to handle [AMP content visibility](https://docs.beefree.io/amp-carousel/#using-workspaces-for-amp)). | default, mixed, amp\_only, html\_only | `default`                                |
-| **stage**           | Define if the builder starts in desktop view, mobile view, or global (i.e. without desktop/mobile views.)                                            | desktop, mobile, global               | inherits Developer account configuration |
-| **displayHidden**   | if defined, hidden elements will behave based on the parameter value.                                                                                | blur, hide                            | `blur`                                   |
-| **hideStageToggle** | if true, the mobile/desktop icons to switch view are not visible                                                                                     | true, false                           | `false`                                  |
+<table><thead><tr><th width="209">Parameter</th><th width="197">Description</th><th width="154">Values</th><th>Default</th></tr></thead><tbody><tr><td><code>type</code></td><td>loads different workspace types (currently used to handle <a href="amp-for-email.md">AMP content visibility</a>).</td><td>default, mixed, amp_only, html_only</td><td><code>default</code></td></tr><tr><td><code>stage</code></td><td>Define if the builder starts in desktop view, mobile view, or global (i.e. without desktop/mobile views.)</td><td>desktop, mobile, global</td><td>inherits Developer account configuration</td></tr><tr><td><code>displayHidden</code></td><td>if defined, hidden elements will behave based on the parameter value.</td><td>blur, hide</td><td><code>blur</code></td></tr><tr><td><code>hideStageToggle</code></td><td>if true, the mobile/desktop icons to switch view are not visible</td><td>true, false</td><td><code>false</code></td></tr></tbody></table>

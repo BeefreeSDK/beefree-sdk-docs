@@ -1,32 +1,23 @@
 # Multi-Language Templates
 
-1. [Overview](broken-reference)
-2. [Is MLT for Your Application?](broken-reference)
-3. [End User Functionality](broken-reference)
-4. [Prerequisites](broken-reference)
-5. [Configuration Steps](broken-reference)
-6. [Lang Attribute](broken-reference)
-7. [Test the Configuration](broken-reference)
-8. [Export Translations](broken-reference)
-9. [Changing the Language](broken-reference)
-10. [Triggering the Translation Preview](broken-reference)
+{% hint style="info" %}
+Multi-language Templates are only available for Superpower and Enterprise plans.
+{% endhint %}
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview
 
 Multi-language Templates (MLT) empower your end users to design customized experiences for their international audiences. Through the use of this feature, your end users will be able to select one default language, and up to three translations reflected in the top bar of their builder. Keep in mind that Multi-language Templates provide you with a means to translate template content, but _does not_ automatically translate the content for you.
 
 MLT provides a translation infrastructure. You can integrate translations into your application using one of the following two methods:
 
-* Enable translations through the [Beefree SDK OpenAI AddOn](https://docs.beefree.io/openai-addon-customization/)
+* Enable translations through the [Beefree SDK OpenAI AddOn](addons/partner-addons/openai-addon/)
 * Type the translations manually
 
-Note: The style of your templates stays the same across the language version while MLT is in use. The only change that will occur is the language of the text for the relevant components.
+**Note:** The style of your templates stays the same across the language version while MLT is in use. The only change that will occur is the language of the text for the relevant components.
 
-This Configuration Guide will help you get started with configuring the MLT feature. We recommend you start with the [Prerequisites](https://docs.beefree.io/?page\_id=8151\&preview=true#prerequisites) section to ensure you have everything you need for a successful configuration.&#x20;
+This Configuration Guide will help you get started with configuring the MLT feature. We recommend you start with the [Prerequisites](multi-language-templates.md#prerequisites) section to ensure you have everything you need for a successful configuration.&#x20;
 
-If you are uncertain if your host application is a good candidate for this functionality, continue to the [Is MLT for Your Application?](https://docs.beefree.io/?page\_id=8151\&preview=true#is-mlt-for-your-application) section to learn more about this feature.
-
-
+If you are uncertain if your host application is a good candidate for this functionality, continue to the [Is MLT for Your Application?](multi-language-templates.md#is-mlt-for-your-application) section to learn more about this feature.
 
 #### Is MLT for Your Application? <a href="#is-mlt-for-your-application" id="is-mlt-for-your-application"></a>
 
@@ -35,12 +26,12 @@ The Multi-language Templates (MLT) feature is an enhancement for companies worki
 MLT adds the following extended functionality to your host application:
 
 * Add a new language for the content inside Beefree SDK
-* Activate the language configuration in the [Beefree SDK configuration file](https://docs.beefree.io/configuration-parameters/)
+* Activate the language configuration in the [Beefree SDK configuration file](getting-started/installation/configuration-parameters/)
 * Customize a list of languages the user can choose from
 * Allow changes to the default language
 * Enable preview for templates in different language versions
 
-To use Multi-language Templates, your host application only needs to store one JSON file with the languages. For more information on this, visit the [Configuration Steps section](broken-reference).
+To use Multi-language Templates, your host application only needs to store one JSON file with the languages. For more information on this, visit the [Configuration Steps section](multi-language-templates.md#configuration-steps).
 
 For more information on key benefits and features of Multi-language Templates, visit our [Multi-language Template Knowledge Base article](https://devportal.beefree.io/hc/en-us/articles/13704895899026).
 
@@ -82,15 +73,15 @@ Enable multi-language templates
 
 Initialize multi-language templates
 
-1. Add the templateLanguage property to the config object. This property defines the default language for the template.
-2. Add the templateLanguages property to the config object. This property defines the list of language options for the template translations.
+1. Add the `templateLanguage` property to the config object. This property defines the default language for the template.
+2. Add the `templateLanguages` property to the config object. This property defines the list of language options for the template translations.
 3. Confirm you added both properties with the correct language options and save your changes.&#x20;
 
 The following example shows the properties within the config object. In this example, the languages are read and written from left to right.
 
 **Note:** You can only choose languages that are written and read from left to right, or right to left. You cannot mix languages with different directions of reading and writing within the same JSON.&#x20;
 
-```
+```json
 
 templateLanguage: { value: 'en-US', label: 'English' },
 templateLanguages: [
@@ -103,8 +94,7 @@ templateLanguages: [
 
 The following sample shows an example of a default language and three translation languages that are written and read from right to left.
 
-```
-
+```json
 
   templateLanguage: { value: 'fa-IR', label: 'فارسی' },
   templateLanguages: [
@@ -113,14 +103,17 @@ The following sample shows an example of a default language and three translatio
     { value: 'tr-TR', label: 'Türkçe' },
   ],
 
-
 ```
 
 **Note:** Depending on the current setup of your host application, there may or may not be a need to change the backend functionality. In other words, you can have up to 4 different versions of the design using one template.
 
+{% hint style="info" %}
+Languages are defined with a value and a label. The label is what will be shown in the language drop-down inside the top bar. The value is a key that stores the translations in the JSON. It is used to set the corresponding language meta attribute for each translation.
+{% endhint %}
+
 #### Lang Attribute <a href="#lang-attribute" id="lang-attribute"></a>
 
-The lang attribute on the content modules helps with [hyphenation and screen readability](https://docs.beefree.io/meta-tags/#language-attribute).
+The lang attribute on the content modules helps with [hyphenation and screen readability](advanced-options/meta-tags.md).
 
 ### Test the Configuration <a href="#test-the-configuration" id="test-the-configuration"></a>
 
@@ -153,17 +146,17 @@ Multi-language Templates (MLT) offer the option to save and export translation H
 
 To save the HTML output for a specific language take the following steps:
 
-1\. Use the bee.save method and provide the desired language as a parameter. In this example, we’ll save it for the Italian language (‘it-IT’).
+1. Use the `bee.save` method and provide the desired language as a parameter. In this example, we’ll save it for the Italian language (‘it-IT’).
 
-```
+```javascript
 
 bee.save({ language: 'it-IT' })
 
 ```
 
-2\. Set up an onSave event listener to handle the HTML saving process. This listener will be triggered when the HTML generation is complete. You can add it to the configuration object.
+2. Set up an `onSave` event listener to handle the HTML saving process. This listener will be triggered when the HTML generation is complete. You can add it to the configuration object.
 
-```
+```javascript
 
 bee.configure({
   onSave: (pageJson, pageHtml, ampHtml, templateVersion, language) => {
@@ -176,31 +169,31 @@ bee.configure({
 
 In the code above:
 
-* onSave is an event handler function that takes several parameters related to the generated HTML.
-* pageHtml contains the generated HTML.
-* language contains the requested language value, which was previously set in the bee.save method.
+* `onSave` is an event handler function that takes several parameters related to the generated HTML.
+* `pageHtml` contains the generated HTML.
+* language contains the requested language value, which was previously set in the `bee.save` method.
 
-If you want to use the default main language for generating HTML when the bee.save method is called without parameters, you don’t need to specify a language in the bee.save method. The default language will be used automatically.
+If you want to use the default main language for generating HTML when the `bee.save` method is called without parameters, you don’t need to specify a language in the `bee.save method`. The default language will be used automatically.
 
 ### Export Translations <a href="#export-translations" id="export-translations"></a>
 
 Take the steps outlined in this section to export the translation HTML.
 
-1\. Define an array of languages that you want to export translations for. Each language should be represented as a string.
+1. Define an array of languages that you want to export translations for. Each language should be represented as a string.
 
 The following example shows an array of multiple export languages.
 
-```
+```javascript
 
 const languages = ['en-US', 'es-ES', 'it-IT'];
 
 ```
 
-2\. Create a function, let’s call it exportAllTranslations as an example, which will iterate over the array of languages and call the bee.save method for each language.
+2. Create a function, let’s call it `exportAllTranslations` as an example, which will iterate over the array of languages and call the `bee.save method` for each language.
 
 View the following example function.
 
-```
+```javascript
 
 function exportAllTranslations() {
   languages.forEach(language => bee.save({ language }));
@@ -209,9 +202,9 @@ function exportAllTranslations() {
 
 ```
 
-3\. Implement the onSave callbacks for each language. These callbacks will be triggered when the bee.save method completes for each language. Make sure to handle the specific language-related data within each callback.
+3. Implement the `onSave` callbacks for each language. These callbacks will be triggered when the bee.save method completes for each language. Make sure to handle the specific language-related data within each callback.
 
-```
+```javascript
 
 // onSave callback for en-US
 1. onSave: (
@@ -245,11 +238,11 @@ function exportAllTranslations() {
 
 ```
 
-To get HTML in a specific language by our [CSAPI](https://docs.beefree.io/message-services-api-reference/#html), ensure you include a “language” key/value pair to the body of your request.
+To get HTML in a specific language by our [CSAPI](content-services-api/), ensure you include a “language” key/value pair to the body of your request.
 
 The following sample code displays this:
 
-```
+```javascript
 
 {
   beautifyHtmlEnabled: false,
@@ -263,24 +256,23 @@ The following sample code displays this:
 
 Follow the steps outlined in this section to create a specified functionality that allows the end user to change their template language when a custom top bar is enabled.
 
-1. Ensure you have [a custom top bar](https://docs.beefree.io/toolbar-options/).
-2. Create a function to handle the language change. You can use the instance method bee.switchTemplateLanguage for this purpose.
+1. Ensure you have a [custom top bar](server-side-options/toolbar-options.md).
+2. Create a function to handle the language change. You can use the instance method `bee.switchTemplateLanguage` for this purpose.
 
-```
+```javascript
 
 bee.switchTemplateLanguage({ language: 'es-ES' })
 
 ```
 
-&#x20;   3\. Verify if the specified language exists in the available languages. If it does, the language switch will happen automatically.
+3.  Verify if the specified language exists in the available languages. If it does, the language switch will happen automatically.
 
-&#x20;  Note: If the specified language _does not_ exist among the available languages, an event will be fired to the                 onError callback.
-
-&#x20;  4\. Once the language is successfully changed, a callback named onTemplateLanguageChange will be triggered.
+    **Note:** If the specified language _does not_ exist among the available languages, an event will be fired to the `onError` callback.
+4. Once the language is successfully changed, a callback named `onTemplateLanguageChange` will be triggered.
 
 You need to define this callback function to respond to the language change.
 
-```
+```javascript
 
 onTemplateLanguageChange: (lang) => {
   console.log(lang) // Example output: { label: 'Spanish', value: 'es-ES', isMain: false }
@@ -288,28 +280,28 @@ onTemplateLanguageChange: (lang) => {
 
 ```
 
-The onTemplateLanguageChange callback will receive an object (lang) containing information about the language the user switched to. This object will have three properties:
+The `onTemplateLanguageChange` callback will receive an object (lang) containing information about the language the user switched to. This object will have three properties:
 
-* label: The label or name of the language.
-* value: The value representing the language (e.g., ‘es-ES’ for Spanish).
-* isMain: A boolean property indicating whether the selected language is the default one, as defined with templateLanguage in the configuration object.
+* `label`: The label or name of the language.
+* `value`: The value representing the language (e.g., ‘es-ES’ for Spanish).
+* `isMain`: A boolean property indicating whether the selected language is the default one, as defined with `templateLanguage` in the configuration object.
 
-5\. Test the language switching functionality by calling bee.switchTemplateLanguage with different language values, and make sure that the onTemplateLanguageChange callback responds correctly.
+5. Test the language switching functionality by calling `bee.switchTemplateLanguage` with different language values, and make sure that the `onTemplateLanguageChange` callback responds correctly.
 
 ### Triggering the Translation Preview <a href="#triggering-the-translation-preview" id="triggering-the-translation-preview"></a>
 
 If you have a custom Preview, you can handle switching languages on the Preview.
 
-To open the Preview, you can call either of two methods: bee.togglePreview or bee.switchPreview.
+To open the Preview, you can call either of two methods: `bee.togglePreview` or `bee.switchPreview`.
 
 The methods perform the following tasks:
 
-* togglePreview: a toggle that opens and closes the Preview.
-* switchPreview: accepts a parameter to specify the language and get the HTML preview. It also opens the Preview if it’s closed.
+* `togglePreview`: a toggle that opens and closes the Preview.
+* `switchPreview`: accepts a parameter to specify the language and get the HTML preview. It also opens the Preview if it’s closed.
 
 The following code shows an example of the methods applied for the default language.
 
-```
+```javascript
 
 // Open the preview in the default language
 bee.togglePreview() or bee.switchPreview()
@@ -324,7 +316,7 @@ bee.togglePreview()
 
 The following code shows an example of the methods applied for a preview in French.
 
-```
+```javascript
 
 // Open the preview in French
 bee.switchPreview({ language: 'fr-FR' })
@@ -337,4 +329,4 @@ bee.togglePreview()
 
 ```
 
-Note: The language parameter is optional in switchPreview. Calling it without parameters will open the Preview with the default language selected. If the Preview is open, nothing will happen. The same behavior is applied when the language passed is not valid or doesn’t exist.
+**Note:** The language parameter is optional in `switchPreview`. Calling it without parameters will open the Preview with the default language selected. If the Preview is open, nothing will happen. The same behavior is applied when the language passed is not valid or doesn’t exist.

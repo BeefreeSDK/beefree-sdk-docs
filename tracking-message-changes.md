@@ -1,12 +1,8 @@
 # Tracking Message Changes
 
-1. [Overview](broken-reference)
-2. [Use cases](broken-reference)
-3. [How it works](broken-reference)
-4. [Callback Parameters](broken-reference)
-5. [Content Codes](broken-reference)
-6. [Common Actions](broken-reference)
-7. [Complete Event Chart](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+{% endhint %}
 
 ### Overview <a href="#overview" id="overview"></a>
 
@@ -17,7 +13,7 @@ We added a new function to track message changes in the builder. This powerful n
 
 When _onChange_ is enabled and your customers edit their message – the callback provides you valuable information on the new content or section, the kind of action that was performed on existing content, and the JSON update (as the entire page, as well as JSON patches).
 
-_onChange_ is also the foundation on which the [Undo, Redo & Edit History](https://docs.beefree.io/undo-changes-history/) feature was built on.
+_onChange_ is also the foundation on which the [Undo, Redo & Edit History](server-side-options/undo-and-changes-history.md) feature was built on.
 
 ### Use cases <a href="#use-cases" id="use-cases"></a>
 
@@ -35,11 +31,11 @@ You can use the _onChange_ callback to:
 
 **Autosave**
 
-So you might be asking: “Isn’t this similar to the existing [_Autosave_](https://docs.beefree.io/configuration-parameters/) feature?” The simple answer is “No!”.
+So you might be asking: “Isn’t this similar to the existing [Autosave](getting-started/installation/configuration-parameters/) feature?” The simple answer is “No!”.
 
-The [_Autosave_](https://docs.beefree.io/configuration-parameters/) function is triggered at regular intervals, whether anything has even changed since the last _Autosave_ event or not, which could result in the user seeing a ‘recovery dialog’ window even if there weren’t any changes between the previously saved message and the most recent automatically saved one.
+The [Autosave](getting-started/installation/configuration-parameters/) function is triggered at regular intervals, whether anything has even changed since the last _Autosave_ event or not, which could result in the user seeing a ‘recovery dialog’ window even if there weren’t any changes between the previously saved message and the most recent automatically saved one.
 
-Now you can invoke the _Autosave_ event only when something has been added or updated, resulting in a better message recovery experience.
+Now you can invoke the Autosave event only when something has been added or updated, resulting in a better message recovery experience.
 
 **History**
 
@@ -61,20 +57,18 @@ The use cases change from application-to-application, but the feature is flexibl
 
 ### How it works <a href="#how-it-works" id="how-it-works"></a>
 
-To enable changes tracking you need to add in [beeConfig](https://docs.beefree.io/configuration-parameters/):
+To enable changes tracking you need to add in [beeConfig](getting-started/installation/configuration-parameters/):
 
 * The configuration option
-* The _onChange_ callback, with the related response function
+* The `onChange` callback, with the related response function
 
 **Configuration**
 
 **Enable "onChange" Event**
 
-```
-
+```javascript
 
 trackChanges: true, // boolean
-
 
 ```
 
@@ -82,20 +76,17 @@ This parameter defines when the tracking is active in the builder.
 
 **onChange Event**
 
-```
-
+```javascript
 
 onChange: function (jsonFile, response) { // do something with response... },
 
-
 ```
 
-The _onChange_ callback is triggered every time the builder tracks a change in the message. It returns the message JSON and a response JSON which contains all the information needed to handle any of the use cases described above.
+The `onChange` callback is triggered every time the builder tracks a change in the message. It returns the message JSON and a response JSON which contains all the information needed to handle any of the use cases described above.
 
 **Callback response schema**
 
-```
-
+```javascript
 
 {
     "code": "01", // See content and action codes bellow
@@ -104,17 +95,11 @@ The _onChange_ callback is triggered every time the builder tracks a change in t
     "patches": {...} // JSON patch formatted object
 }
 
-
 ```
 
 ### Callback Parameters <a href="#callback-parameters" id="callback-parameters"></a>
 
-| Parameter   | Type   | Value                                                                                                                                                    |
-| ----------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| code        | string | Unique identifier for the event created by combining the content code with the action code.                                                              |
-| description | string | A text description of the event in the chosen language. (e.g. Image Block Padding Left: 5px)                                                             |
-| value       | string | If available, this is the new value. (e.g. If padding changes to 5px, then the value returned is “5px”)                                                  |
-| patches     | array  | An array of patches in the JSON Patch specification. JSON Patch is specified in [RFC 6902](https://datatracker.ietf.org/doc/html/rfc6902) from the IETF. |
+<table><thead><tr><th>Parameter</th><th width="155.33333333333331">Type</th><th>Value</th></tr></thead><tbody><tr><td>code</td><td>string</td><td>Unique identifier for the event created by combining the content code with the action code.</td></tr><tr><td>description</td><td>string</td><td>A text description of the event in the chosen language. (e.g. Image Block Padding Left: 5px)</td></tr><tr><td>value</td><td>string</td><td>If available, this is the new value. (e.g. If padding changes to 5px, then the value returned is “5px”)</td></tr><tr><td>patches</td><td>array</td><td>An array of patches in the JSON Patch specification. JSON Patch is specified in <a href="https://datatracker.ietf.org/doc/html/rfc6902">RFC 6902</a> from the IETF.</td></tr></tbody></table>
 
 ### Content Codes <a href="#content-codes" id="content-codes"></a>
 
@@ -211,150 +196,4 @@ The _onChange_ callback is triggered every time the builder tracks a change in t
 
 ### Complete Event Chart <a href="#complete-event-chart" id="complete-event-chart"></a>
 
-| Code      | Description                                  | Type    | Value                                                                 |
-| --------- | -------------------------------------------- | ------- | --------------------------------------------------------------------- |
-| **0100**  | Text dropped                                 | module  |                                                                       |
-| **0101**  | Text dragged                                 | module  |                                                                       |
-| **0102**  | Text deleted                                 | module  |                                                                       |
-| **0103**  | Text duplicated                              | module  |                                                                       |
-| **0120**  | Text color \{{value\}}                       | string  | Hex color code (e.g. #FFFFFF)                                         |
-| **0121**  | Link color \{{value\}}                       | string  | Hex color code (e.g. #FFFFFF)                                         |
-| **0123**  | Text edited                                  | string  | HTML                                                                  |
-| **0124**  | Line height \{{value\}}                      | string  | Value as percent (e.g. 150%)                                          |
-| **0130**  | Padding Add sides \{{value\}}                | string  | Value in pixels (e.g. 25px)                                           |
-| **0131**  | Padding Left \{{value\}}                     | string  | Value in pixels (e.g. 25px)                                           |
-| **0132**  | Padding Right \{{value\}}                    | string  | Value in pixels (e.g. 25px)                                           |
-| **0133**  | Padding Top \{{value\}}                      | string  | Value in pixels (e.g. 25px)                                           |
-| **0134**  | Padding Bottom \{{value\}}                   | string  | Value in pixels (e.g. 25px)                                           |
-| **0140**  | Hide on mobile                               | boolean | true \| false                                                         |
-| **0200**  | Image dropped                                | module  |                                                                       |
-| **0201**  | Image dragged                                | module  |                                                                       |
-| **0202**  | Image deleted                                | module  |                                                                       |
-| **0203**  | Image duplicated                             | module  |                                                                       |
-| **0230**  | Padding Add sides \{{value\}}                | string  | Value in pixels (e.g. 25px)                                           |
-| **0231**  | Padding Left \{{value\}}                     | string  | Value in pixels (e.g. 25px)                                           |
-| **0232**  | Padding Right \{{value\}}                    | string  | Value in pixels (e.g. 25px)                                           |
-| **0233**  | Padding Top \{{value\}}                      | string  | Value in pixels (e.g. 25px)                                           |
-| **0234**  | Padding Bottom \{{value\}}                   | string  | Value in pixels (e.g. 25px)                                           |
-| **0240**  | Hide on mobile                               | boolean | true \| false                                                         |
-| **0250**  | Align \{{value\}}                            | string  | left \| right \| center                                               |
-| **0251**  | Automatic image resizing                     | boolean | true \| false                                                         |
-| **0252**  | Full width on mobile                         | boolean | true \| false                                                         |
-| **0253**  | Image width \{{value\}}                      | string  | %                                                                     |
-| **0260**  | Alternate Text                               | string  | text value                                                            |
-| **0261**  | Dynamic image                                | string  | Image path                                                            |
-| **0262**  | Dynamic image toggle                         | boolean | false (only triggered when disabled)                                  |
-| **0263**  | Change image                                 | string  | Image path                                                            |
-| **0264**  | Image link                                   | string  | Url                                                                   |
-| **0300**  | Button dropped                               | module  |                                                                       |
-| **0301**  | Button dragged                               | module  |                                                                       |
-| **0302**  | Button deleted                               | module  |                                                                       |
-| **0303**  | Button duplicated                            | module  |                                                                       |
-| **0320**  | Text color \{{value\}}                       | string  | Hex color code (e.g. #FFFFFF)                                         |
-| **0324**  | Line height \{{value\}}                      | string  | Value as percent (e.g. 150%)                                          |
-| **0330**  | Padding Add sides \{{value\}}                | string  | Value in pixels (e.g. 25px)                                           |
-| **0331**  | Padding Left \{{value\}}                     | string  | Value in pixels (e.g. 25px)                                           |
-| **0332**  | Padding Right \{{value\}}                    | string  | Value in pixels (e.g. 25px)                                           |
-| **0333**  | Padding Top \{{value\}}                      | string  | Value in pixels (e.g. 25px)                                           |
-| **0334**  | Padding Bottom \{{value\}}                   | string  | Value in pixels (e.g. 25px)                                           |
-| **0340**  | Hide on mobile                               | boolean | true \| false                                                         |
-| **0370**  | Align \{{value\}}                            | string  | left \| right \| center                                               |
-| **0371**  | Link type \{{value\}}                        | string  | Url                                                                   |
-| **0372**  | Button width \{{value\}}                     | string  | %                                                                     |
-| **0373**  | Auto width                                   | boolean | true \| false                                                         |
-| **0374**  | Background color \{{value\}}                 | string  | Hex Color Code (e.g. #FFFFFF)                                         |
-| **0375**  | Border radius                                | string  | Value in pixels (e.g. 5px)                                            |
-| **0381**  | Border Add sides \{{value\}}                 | string  | Value in pixels \| Border Style \| Hex color (e.g. 1px solid #C7702E) |
-| **0382**  | Border Left \{{value\}}                      | string  | Value in pixels \| Border Style \| Hex color 1px solid #C7702E        |
-| **0383**  | Border Right \{{value\}}                     | string  | Value in pixels \| Border Style \| Hex color 1px solid #C7702E        |
-| **0384**  | Border Top \{{value\}}                       | string  | Value in pixels \| Border Style \| Hex color 1px solid #C7702E        |
-| **0385**  | Border Bottom \{{value\}}                    | string  | Value in pixels \| Border Style \| Hex color 1px solid #C7702E        |
-| **0400**  | Divider dropped                              | module  |                                                                       |
-| **0401**  | Divider dragged                              | module  |                                                                       |
-| **0402**  | Divider deleted                              | module  |                                                                       |
-| **0403**  | Divider duplicated                           | module  |                                                                       |
-| **0430**  | Padding Add sides \{{value\}}                | string  | Value in pixels (e.g. 25px)                                           |
-| **0431**  | Padding Left \{{value\}}                     | string  | Value in pixels (e.g. 25px)                                           |
-| **0432**  | Padding Right \{{value\}}                    | string  | Value in pixels (e.g. 25px)                                           |
-| **0433**  | Padding Top \{{value\}}                      | string  | Value in pixels (e.g. 25px)                                           |
-| **0434**  | Padding Bottom \{{value\}}                   | string  | Value in pixels (e.g. 25px)                                           |
-| **0440**  | Hide on mobile                               | boolean | true \| false                                                         |
-| **0490**  | Line                                         | string  | Value in pixels \| Border Style \| Hex color 1px solid #C7702E        |
-| **0491**  | Width \{{value\}}                            | string  | Value as percent (e.g. 150%)                                          |
-| **0492**  | Height \{{value\}}                           | string  | Value in pixels (e.g. 25px)                                           |
-| **0493**  | Align \{{value\}}                            | string  | left \| right \| center                                               |
-| **0500**  | Social dropped                               | module  |                                                                       |
-| **0501**  | Social dragged                               | module  |                                                                       |
-| **0502**  | Social deleted                               | module  |                                                                       |
-| **0503**  | Social duplicated                            | module  |                                                                       |
-| **0530**  | Padding Add sides \{{value\}}                | string  | Value in pixels (e.g. 25px)                                           |
-| **0531**  | Padding Left \{{value\}}                     | string  | Value in pixels (e.g. 25px)                                           |
-| **0532**  | Padding Right \{{value\}}                    | string  | Value in pixels (e.g. 25px)                                           |
-| **0533**  | Padding Top \{{value\}}                      | string  | Value in pixels (e.g. 25px)                                           |
-| **0534**  | Padding Bottom \{{value\}}                   | string  | Value in pixels (e.g. 25px)                                           |
-| **0540**  | Hide on mobile                               | boolean | true \| false                                                         |
-| **0595**  | Name \{{value\}}                             | string  | Icon Name                                                             |
-| **0596**  | Alternate Text \{{value\}}                   | string  | Icon Alternate text                                                   |
-| **0597**  | Image Url                                    | string  | Icon Url                                                              |
-| **0598**  | Icon spacing \{{value\}}                     | string  | Value in pixels (e.g. 0 0 5px 15px)                                   |
-| **0599**  | Align \{{value\}}                            | string  | left \| right \| center                                               |
-| **0600**  | Dynamic content dropped                      | module  |                                                                       |
-| **0601**  | Dynamic content dragged                      | module  |                                                                       |
-| **0602**  | Dynamic content deleted                      | module  |                                                                       |
-| **0603**  | Dynamic content duplicated                   | module  |                                                                       |
-| **0604**  | Dynamic content changed                      | string  | value                                                                 |
-| **0640**  | Hide on mobile                               | boolean | true \| false                                                         |
-| **0700**  | HTML dropped                                 | module  |                                                                       |
-| **0701**  | HTML dragged                                 | module  |                                                                       |
-| **0702**  | HTML deleted                                 | module  |                                                                       |
-| **0703**  | HTML duplicated                              | module  |                                                                       |
-| **0740**  | Hide on mobile                               | boolean | true \| false                                                         |
-| **0780**  | HTML edited                                  | string  | HTML                                                                  |
-| **0800**  | Video dropped                                | module  |                                                                       |
-| **0801**  | Video dragged                                | module  |                                                                       |
-| **0802**  | Video deleted                                | module  |                                                                       |
-| **0803**  | Video duplicated                             | module  |                                                                       |
-| **0830**  | Padding Add sides \{{value\}}                | string  | Value in pixels (e.g. 25px)                                           |
-| **0831**  | Padding Left \{{value\}}                     | string  | Value in pixels (e.g. 25px)                                           |
-| **0832**  | Padding Right \{{value\}}                    | string  | Value in pixels (e.g. 25px)                                           |
-| **0833**  | Padding Top \{{value\}}                      | string  | Value in pixels (e.g. 25px)                                           |
-| **0834**  | Padding Bottom \{{value\}}                   | string  | Value in pixels (e.g. 25px)                                           |
-| **0840**  | Hide on mobile                               | boolean | true \| false                                                         |
-| **0841**  | Video url                                    | string  | Video Url                                                             |
-| **0842**  | Play icon type \{{value\}}                   | string  | Play icon type (e.g. Round outline)                                   |
-| **0843**  | Play icon color \{{value\}}                  | string  | light \| dark                                                         |
-| **0844**  | Play icon size \{{value\}}                   | string  | Value in pixels (e.g. 25px)                                           |
-| **1400**  | Row dropped                                  | row     |                                                                       |
-| **1401**  | Row dragged                                  | row     |                                                                       |
-| **1402**  | Row deleted                                  | row     |                                                                       |
-| **1403**  | Row duplicated                               | row     |                                                                       |
-| **1410**  | Content background color \{{value\}}         | string  | Hex Color Code (e.g. #FFFFFF)                                         |
-| **1411**  | Do not stack on mobile                       | boolean | true \| false                                                         |
-| **1412**  | Row background image                         | string  | Image path                                                            |
-| **1413**  | Center                                       | boolean | true \| false                                                         |
-| **1414**  | Repeat                                       | boolean | true \| false                                                         |
-| **1415**  | Full width                                   | boolean | true \| false                                                         |
-| **1416**  | Display Condition                            | object  | Display condition object                                              |
-| **1417**  | Reverse stack order on mobile                | boolean | true \| false                                                         |
-| **1430**  | Padding Add sides \{{value\}}                | string  | Value in pixels (e.g. 25px)                                           |
-| **1431**  | Padding Left \{{value\}}                     | string  | Value in pixels (e.g. 25px)                                           |
-| **1432**  | Padding Right \{{value\}}                    | string  | Value in pixels (e.g. 25px)                                           |
-| **1433**  | Padding Top \{{value\}}                      | string  | Value in pixels (e.g. 25px)                                           |
-| **1434**  | Padding Bottom \{{value\}}                   | string  | Value in pixels (e.g. 25px)                                           |
-| **1474**  | Background color \{{value\}}                 | string  | Hex Color Code (e.g. #FFFFFF)                                         |
-| **1481**  | Border Add sides \{{value\}}                 | string  | Value in pixels \| Border Style \| Hex color 1px solid #C7702E        |
-| **1482**  | Border Left \{{value\}}                      | string  | Value in pixels \| Border Style \| Hex color 1px solid #C7702E        |
-| **1483**  | Border Right \{{value\}}                     | string  | Value in pixels \| Border Style \| Hex color 1px solid #C7702E        |
-| **1484**  | Border Top \{{value\}}                       | string  | Value in pixels \| Border Style \| Hex color 1px solid #C7702E        |
-| **1485**  | Border Bottom \{{value\}}                    | string  | Value in pixels \| Border Style \| Hex color 1px solid #C7702E        |
-| **1625**  | Content area width \{{value\}}               | string  | Value in pixels (e.g. 25px)                                           |
-| **1626**  | Background color \{{value\}}                 | string  | Hex Color Code (e.g. #FFFFFF)                                         |
-| **1627**  | Content area background color: \{{value\}}   | string  | Hex Color Code (e.g. #FFFFFF)                                         |
-| **1628**  | Default font                                 | string  | Font                                                                  |
-| **1529**  | Link color \{{value\}}                       | string  | Hex Color Code (e.g. #FFFFFF)                                         |
-| **1605**  | Message opened                               | page    | JSON template                                                         |
-| **1609**  | Message restored (e.g. undo or redo history) | page    | JSON template                                                         |
-| **13130** | Button Font Weight                           | string  |                                                                       |
-| **14128** | Row Background Video                         | string  | Video URL                                                             |
-|           |                                              |         |                                                                       |
-| **22130** | Paragraph Font Weight                        | string  | Font Weight value                                                     |
+<table><thead><tr><th width="139">Code</th><th>Description</th><th width="146">Type</th><th>Value</th></tr></thead><tbody><tr><td><strong>0100</strong></td><td>Text dropped</td><td>module</td><td></td></tr><tr><td><strong>0101</strong></td><td>Text dragged</td><td>module</td><td></td></tr><tr><td><strong>0102</strong></td><td>Text deleted</td><td>module</td><td></td></tr><tr><td><strong>0103</strong></td><td>Text duplicated</td><td>module</td><td></td></tr><tr><td><strong>0120</strong></td><td>Text color {{value}}</td><td>string</td><td>Hex color code (e.g. #FFFFFF)</td></tr><tr><td><strong>0121</strong></td><td>Link color {{value}}</td><td>string</td><td>Hex color code (e.g. #FFFFFF)</td></tr><tr><td><strong>0123</strong></td><td>Text edited</td><td>string</td><td>HTML</td></tr><tr><td><strong>0124</strong></td><td>Line height {{value}}</td><td>string</td><td>Value as percent (e.g. 150%)</td></tr><tr><td><strong>0130</strong></td><td>Padding Add sides {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0131</strong></td><td>Padding Left {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0132</strong></td><td>Padding Right {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0133</strong></td><td>Padding Top {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0134</strong></td><td>Padding Bottom {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0140</strong></td><td>Hide on mobile</td><td>boolean</td><td>true | false</td></tr><tr><td><strong>0200</strong></td><td>Image dropped</td><td>module</td><td></td></tr><tr><td><strong>0201</strong></td><td>Image dragged</td><td>module</td><td></td></tr><tr><td><strong>0202</strong></td><td>Image deleted</td><td>module</td><td></td></tr><tr><td><strong>0203</strong></td><td>Image duplicated</td><td>module</td><td></td></tr><tr><td><strong>0230</strong></td><td>Padding Add sides {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0231</strong></td><td>Padding Left {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0232</strong></td><td>Padding Right {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0233</strong></td><td>Padding Top {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0234</strong></td><td>Padding Bottom {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0240</strong></td><td>Hide on mobile</td><td>boolean</td><td>true | false</td></tr><tr><td><strong>0250</strong></td><td>Align {{value}}</td><td>string</td><td>left | right | center</td></tr><tr><td><strong>0251</strong></td><td>Automatic image resizing</td><td>boolean</td><td>true | false</td></tr><tr><td><strong>0252</strong></td><td>Full width on mobile</td><td>boolean</td><td>true | false</td></tr><tr><td><strong>0253</strong></td><td>Image width {{value}}</td><td>string</td><td>%</td></tr><tr><td><strong>0260</strong></td><td>Alternate Text</td><td>string</td><td>text value</td></tr><tr><td><strong>0261</strong></td><td>Dynamic image</td><td>string</td><td>Image path</td></tr><tr><td><strong>0262</strong></td><td>Dynamic image toggle</td><td>boolean</td><td>false (only triggered when disabled)</td></tr><tr><td><strong>0263</strong></td><td>Change image</td><td>string</td><td>Image path</td></tr><tr><td><strong>0264</strong></td><td>Image link</td><td>string</td><td>Url</td></tr><tr><td><strong>0300</strong></td><td>Button dropped</td><td>module</td><td></td></tr><tr><td><strong>0301</strong></td><td>Button dragged</td><td>module</td><td></td></tr><tr><td><strong>0302</strong></td><td>Button deleted</td><td>module</td><td></td></tr><tr><td><strong>0303</strong></td><td>Button duplicated</td><td>module</td><td></td></tr><tr><td><strong>0320</strong></td><td>Text color {{value}}</td><td>string</td><td>Hex color code (e.g. #FFFFFF)</td></tr><tr><td><strong>0324</strong></td><td>Line height {{value}}</td><td>string</td><td>Value as percent (e.g. 150%)</td></tr><tr><td><strong>0330</strong></td><td>Padding Add sides {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0331</strong></td><td>Padding Left {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0332</strong></td><td>Padding Right {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0333</strong></td><td>Padding Top {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0334</strong></td><td>Padding Bottom {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0340</strong></td><td>Hide on mobile</td><td>boolean</td><td>true | false</td></tr><tr><td><strong>0370</strong></td><td>Align {{value}}</td><td>string</td><td>left | right | center</td></tr><tr><td><strong>0371</strong></td><td>Link type {{value}}</td><td>string</td><td>Url</td></tr><tr><td><strong>0372</strong></td><td>Button width {{value}}</td><td>string</td><td>%</td></tr><tr><td><strong>0373</strong></td><td>Auto width</td><td>boolean</td><td>true | false</td></tr><tr><td><strong>0374</strong></td><td>Background color {{value}}</td><td>string</td><td>Hex Color Code (e.g. #FFFFFF)</td></tr><tr><td><strong>0375</strong></td><td>Border radius</td><td>string</td><td>Value in pixels (e.g. 5px)</td></tr><tr><td><strong>0381</strong></td><td>Border Add sides {{value}}</td><td>string</td><td>Value in pixels | Border Style | Hex color (e.g. 1px solid #C7702E)</td></tr><tr><td><strong>0382</strong></td><td>Border Left {{value}}</td><td>string</td><td>Value in pixels | Border Style | Hex color 1px solid #C7702E</td></tr><tr><td><strong>0383</strong></td><td>Border Right {{value}}</td><td>string</td><td>Value in pixels | Border Style | Hex color 1px solid #C7702E</td></tr><tr><td><strong>0384</strong></td><td>Border Top {{value}}</td><td>string</td><td>Value in pixels | Border Style | Hex color 1px solid #C7702E</td></tr><tr><td><strong>0385</strong></td><td>Border Bottom {{value}}</td><td>string</td><td>Value in pixels | Border Style | Hex color 1px solid #C7702E</td></tr><tr><td><strong>0400</strong></td><td>Divider dropped</td><td>module</td><td></td></tr><tr><td><strong>0401</strong></td><td>Divider dragged</td><td>module</td><td></td></tr><tr><td><strong>0402</strong></td><td>Divider deleted</td><td>module</td><td></td></tr><tr><td><strong>0403</strong></td><td>Divider duplicated</td><td>module</td><td></td></tr><tr><td><strong>0430</strong></td><td>Padding Add sides {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0431</strong></td><td>Padding Left {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0432</strong></td><td>Padding Right {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0433</strong></td><td>Padding Top {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0434</strong></td><td>Padding Bottom {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0440</strong></td><td>Hide on mobile</td><td>boolean</td><td>true | false</td></tr><tr><td><strong>0490</strong></td><td>Line</td><td>string</td><td>Value in pixels | Border Style | Hex color 1px solid #C7702E</td></tr><tr><td><strong>0491</strong></td><td>Width {{value}}</td><td>string</td><td>Value as percent (e.g. 150%)</td></tr><tr><td><strong>0492</strong></td><td>Height {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0493</strong></td><td>Align {{value}}</td><td>string</td><td>left | right | center</td></tr><tr><td><strong>0500</strong></td><td>Social dropped</td><td>module</td><td></td></tr><tr><td><strong>0501</strong></td><td>Social dragged</td><td>module</td><td></td></tr><tr><td><strong>0502</strong></td><td>Social deleted</td><td>module</td><td></td></tr><tr><td><strong>0503</strong></td><td>Social duplicated</td><td>module</td><td></td></tr><tr><td><strong>0530</strong></td><td>Padding Add sides {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0531</strong></td><td>Padding Left {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0532</strong></td><td>Padding Right {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0533</strong></td><td>Padding Top {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0534</strong></td><td>Padding Bottom {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0540</strong></td><td>Hide on mobile</td><td>boolean</td><td>true | false</td></tr><tr><td><strong>0595</strong></td><td>Name {{value}}</td><td>string</td><td>Icon Name</td></tr><tr><td><strong>0596</strong></td><td>Alternate Text {{value}}</td><td>string</td><td>Icon Alternate text</td></tr><tr><td><strong>0597</strong></td><td>Image Url</td><td>string</td><td>Icon Url</td></tr><tr><td><strong>0598</strong></td><td>Icon spacing {{value}}</td><td>string</td><td>Value in pixels (e.g. 0 0 5px 15px)</td></tr><tr><td><strong>0599</strong></td><td>Align {{value}}</td><td>string</td><td>left | right | center</td></tr><tr><td><strong>0600</strong></td><td>Dynamic content dropped</td><td>module</td><td></td></tr><tr><td><strong>0601</strong></td><td>Dynamic content dragged</td><td>module</td><td></td></tr><tr><td><strong>0602</strong></td><td>Dynamic content deleted</td><td>module</td><td></td></tr><tr><td><strong>0603</strong></td><td>Dynamic content duplicated</td><td>module</td><td></td></tr><tr><td><strong>0604</strong></td><td>Dynamic content changed</td><td>string</td><td>value</td></tr><tr><td><strong>0640</strong></td><td>Hide on mobile</td><td>boolean</td><td>true | false</td></tr><tr><td><strong>0700</strong></td><td>HTML dropped</td><td>module</td><td></td></tr><tr><td><strong>0701</strong></td><td>HTML dragged</td><td>module</td><td></td></tr><tr><td><strong>0702</strong></td><td>HTML deleted</td><td>module</td><td></td></tr><tr><td><strong>0703</strong></td><td>HTML duplicated</td><td>module</td><td></td></tr><tr><td><strong>0740</strong></td><td>Hide on mobile</td><td>boolean</td><td>true | false</td></tr><tr><td><strong>0780</strong></td><td>HTML edited</td><td>string</td><td>HTML</td></tr><tr><td><strong>0800</strong></td><td>Video dropped</td><td>module</td><td></td></tr><tr><td><strong>0801</strong></td><td>Video dragged</td><td>module</td><td></td></tr><tr><td><strong>0802</strong></td><td>Video deleted</td><td>module</td><td></td></tr><tr><td><strong>0803</strong></td><td>Video duplicated</td><td>module</td><td></td></tr><tr><td><strong>0830</strong></td><td>Padding Add sides {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0831</strong></td><td>Padding Left {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0832</strong></td><td>Padding Right {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0833</strong></td><td>Padding Top {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0834</strong></td><td>Padding Bottom {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>0840</strong></td><td>Hide on mobile</td><td>boolean</td><td>true | false</td></tr><tr><td><strong>0841</strong></td><td>Video url</td><td>string</td><td>Video Url</td></tr><tr><td><strong>0842</strong></td><td>Play icon type {{value}}</td><td>string</td><td>Play icon type (e.g. Round outline)</td></tr><tr><td><strong>0843</strong></td><td>Play icon color {{value}}</td><td>string</td><td>light | dark</td></tr><tr><td><strong>0844</strong></td><td>Play icon size {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>1400</strong></td><td>Row dropped</td><td>row</td><td></td></tr><tr><td><strong>1401</strong></td><td>Row dragged</td><td>row</td><td></td></tr><tr><td><strong>1402</strong></td><td>Row deleted</td><td>row</td><td></td></tr><tr><td><strong>1403</strong></td><td>Row duplicated</td><td>row</td><td></td></tr><tr><td><strong>1410</strong></td><td>Content background color {{value}}</td><td>string</td><td>Hex Color Code (e.g. #FFFFFF)</td></tr><tr><td><strong>1411</strong></td><td>Do not stack on mobile</td><td>boolean</td><td>true | false</td></tr><tr><td><strong>1412</strong></td><td>Row background image</td><td>string</td><td>Image path</td></tr><tr><td><strong>1413</strong></td><td>Center</td><td>boolean</td><td>true | false</td></tr><tr><td><strong>1414</strong></td><td>Repeat</td><td>boolean</td><td>true | false</td></tr><tr><td><strong>1415</strong></td><td>Full width</td><td>boolean</td><td>true | false</td></tr><tr><td><strong>1416</strong></td><td>Display Condition</td><td>object</td><td>Display condition object</td></tr><tr><td><strong>1417</strong></td><td>Reverse stack order on mobile</td><td>boolean</td><td>true | false</td></tr><tr><td><strong>1430</strong></td><td>Padding Add sides {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>1431</strong></td><td>Padding Left {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>1432</strong></td><td>Padding Right {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>1433</strong></td><td>Padding Top {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>1434</strong></td><td>Padding Bottom {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>1474</strong></td><td>Background color {{value}}</td><td>string</td><td>Hex Color Code (e.g. #FFFFFF)</td></tr><tr><td><strong>1481</strong></td><td>Border Add sides {{value}}</td><td>string</td><td>Value in pixels | Border Style | Hex color 1px solid #C7702E</td></tr><tr><td><strong>1482</strong></td><td>Border Left {{value}}</td><td>string</td><td>Value in pixels | Border Style | Hex color 1px solid #C7702E</td></tr><tr><td><strong>1483</strong></td><td>Border Right {{value}}</td><td>string</td><td>Value in pixels | Border Style | Hex color 1px solid #C7702E</td></tr><tr><td><strong>1484</strong></td><td>Border Top {{value}}</td><td>string</td><td>Value in pixels | Border Style | Hex color 1px solid #C7702E</td></tr><tr><td><strong>1485</strong></td><td>Border Bottom {{value}}</td><td>string</td><td>Value in pixels | Border Style | Hex color 1px solid #C7702E</td></tr><tr><td><strong>1625</strong></td><td>Content area width {{value}}</td><td>string</td><td>Value in pixels (e.g. 25px)</td></tr><tr><td><strong>1626</strong></td><td>Background color {{value}}</td><td>string</td><td>Hex Color Code (e.g. #FFFFFF)</td></tr><tr><td><strong>1627</strong></td><td>Content area background color: {{value}}</td><td>string</td><td>Hex Color Code (e.g. #FFFFFF)</td></tr><tr><td><strong>1628</strong></td><td>Default font</td><td>string</td><td>Font</td></tr><tr><td><strong>1529</strong></td><td>Link color {{value}}</td><td>string</td><td>Hex Color Code (e.g. #FFFFFF)</td></tr><tr><td><strong>1605</strong></td><td>Message opened</td><td>page</td><td>JSON template</td></tr><tr><td><strong>1609</strong></td><td>Message restored (e.g. undo or redo history)</td><td>page</td><td>JSON template</td></tr><tr><td><strong>13130</strong></td><td>Button Font Weight</td><td>string</td><td></td></tr><tr><td><strong>14128</strong></td><td>Row Background Video</td><td>string</td><td>Video URL</td></tr><tr><td><strong>22130</strong></td><td>Paragraph Font Weight</td><td>string</td><td>Font Weight value</td></tr></tbody></table>
