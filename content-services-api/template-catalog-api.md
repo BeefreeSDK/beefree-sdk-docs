@@ -401,7 +401,7 @@ The API is a read-only API. The only method is GET, so there are only a few poss
 | 404  | Not Found             |
 | 500  | Internal Server Error |
 
-## FAQd
+## FAQs
 
 Find answers to common queries related to the Template Catalog API, its features, and integration.
 

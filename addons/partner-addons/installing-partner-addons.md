@@ -4,7 +4,7 @@
 Visit our [Partner AddOn directory](partner-addons-directory.md) for a list of available and upcoming AddOns.
 {% endhint %}
 
-### Getting started <a href="#getting-started" id="getting-started"></a>
+## Getting started <a href="#getting-started" id="getting-started"></a>
 
 You can **use** ready-to-go AddOns to extend the functionality of Beefree SDK (you can also [build new AddOns](../custom-addons/)).
 
@@ -24,7 +24,7 @@ You will deal directly with those companies with regard to signing up for an acc
 
 You will instead click on _Create a Custom AddOn_ if you want to [build a new AddOn](https://docs.beefree.io/addon-development/) for Beefree SDK.
 
-### Installing an AddOn <a href="#installing-an-addon" id="installing-an-addon"></a>
+## Installing an AddOn <a href="#installing-an-addon" id="installing-an-addon"></a>
 
 When you click on the _Browse Partner AddOns_ button, a list of AddOns is displayed. You can browse them and select what you need to install.
 
@@ -55,23 +55,23 @@ With the following setup…
 
 … you would get the following outcome:
 
-**Title for the content tile**
+## **Title for the content tile**
 
 ![](https://docs.beefree.io/wp-content/uploads/2020/02/AddOn.tile\_.png)
 
-**Placeholder text and button**
+## **Placeholder text and button**
 
 It displays when the AddOn is added to the editing stage and invites the user to take the next step.
 
 ![](https://docs.beefree.io/wp-content/uploads/2020/02/AddOn.placeholder-1024x298.png)
 
-**AddOn selection button in content properties**
+## **AddOn selection button in content properties**
 
 When the AddOn content is selected, the same button is displayed in the content properties.
 
 <figure><img src="https://docs.beefree.io/wp-content/uploads/2020/02/AddOn.action.png" alt="" width="375"><figcaption></figcaption></figure>
 
-### Adding client-side configurations for AddOns <a href="#adding-client-side-configurations-for-addons" id="adding-client-side-configurations-for-addons"></a>
+## Adding client-side configurations for AddOns <a href="#adding-client-side-configurations-for-addons" id="adding-client-side-configurations-for-addons"></a>
 
 Once you have initialized Beefree SDK, you can pass a series of [configuration parameters](../../getting-started/installation/configuration-parameters/) to it.
 
@@ -83,7 +83,7 @@ For example:
 * You could change the language used for the AddOn text labels depending on the language used for the builder, for that user.
 * Etc.
 
-**Example**
+### **Example**
 
 ```javascript
 

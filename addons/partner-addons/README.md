@@ -1,18 +1,18 @@
 # Partner AddOns
 
-### Introduction <a href="#introduction" id="introduction"></a>
+## Introduction <a href="#introduction" id="introduction"></a>
 
 A Partner AddOn is an AddOn that you developed for any Beefree SDK customer that wishes to take advantage of it.
 
 You created it to provide end-users of any application that has embedded Beefree SDK with new features that extend the builder. Any Beefree SDK customer will see it and will be able to install it, as Partner AddOns are listed in the [Partner AddOn Directory](partner-addons-directory.md).
 
-### Getting started <a href="#getting-started" id="getting-started"></a>
+## Getting started <a href="#getting-started" id="getting-started"></a>
 
 A Partner AddOn starts as a [Custom AddOn](../custom-addons/), but is then listed in the Partner AddOn directory (see below for listing requirements). To get started, you will need to follow the [AddOn Development](../custom-addons/addon-development.md) documentation and create a Custom AddOn for a fictitious Web app that has embedded Beefree SDK.
 
 Please note that because Partner AddOns by definition live outside of the Beefree SDK application that will use them, you must select the **external iframe** method for development.
 
-### Listing in the partner directory <a href="#listing-in-the-partner-directory" id="listing-in-the-partner-directory"></a>
+## Listing in the partner directory <a href="#listing-in-the-partner-directory" id="listing-in-the-partner-directory"></a>
 
 You can submit your AddOn to be listed in the Beefree SDK Partner AddOn Directory, so that other applications that have embedded Beefree SDK can take advantage of it.
 

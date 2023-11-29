@@ -1,6 +1,6 @@
 # Testing and integrating
 
-### Creating an application <a href="#creating-an-application" id="creating-an-application"></a>
+## Creating an application <a href="#creating-an-application" id="creating-an-application"></a>
 
 When you log into the [Beefree SDK Console](https://dam.beefree.io/devmain) you can immediately see what type of applications you have already created under your Beefree SDK subscriptions.
 
@@ -37,13 +37,13 @@ For example, the host app can customize…
 
 Continue reading to learn more on how to customize the workspace, starting with the common settings and working up to a full custom layout.
 
-### HTML output <a href="#html-output" id="html-output"></a>
+## HTML output <a href="#html-output" id="html-output"></a>
 
 In Email and Page Builder, the Beefree SDK HTML parser service converts your template into an HTML document customized for email or pages, respectively. However, the Popup Builder will not return a full HTML page because the host application is the final destination. In addition, Beefree SDK Popup Builder doesn’t provide the scripts to control the popup’s behavior, such as opening and closing. Rather, Popup Builder provides the HTML “partials” to embed within your popup’s content area or body.
 
 The HTML partial will come with all the CSS required to look as it did in the preview mode. The parser service will wrap the content with a special container to clear all the host application styles and prevent style conflicts. The HTML output is designed to be embedded into any popup framework or application and still render the way it appears in the builder.
 
-### Developer resources <a href="#developer-resources" id="developer-resources"></a>
+## Developer resources <a href="#developer-resources" id="developer-resources"></a>
 
 Our Github account has some resources that might help you out when testing and integrating the Popup Builder.
 

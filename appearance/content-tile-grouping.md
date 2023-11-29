@@ -4,7 +4,7 @@
 This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Superpowers-level features.
 {% endhint %}
 
-### Grouping Content Tiles <a href="#grouping-content-tiles" id="grouping-content-tiles"></a>
+## Grouping Content Tiles <a href="#grouping-content-tiles" id="grouping-content-tiles"></a>
 
 The Content Tile Grouping option allows the host application to group content tiles in the editor’s sidebar. This allows the host application to display the content blocks into distinct groups.
 
@@ -63,7 +63,7 @@ Ungrouped tiles will be gathered at the bottom of the list under a group with no
 Duplicated tiles are not allowed, e.g., you can’t have a tile twice in the sidebar.\
 An `onWarning` notification is triggered whenever an unknown tile is added to the configuration.
 
-### Full List of Content Tiles <a href="#full-list-of-content-tiles" id="full-list-of-content-tiles"></a>
+## Full List of Content Tiles <a href="#full-list-of-content-tiles" id="full-list-of-content-tiles"></a>
 
 ```
 

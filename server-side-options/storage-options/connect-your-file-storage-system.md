@@ -10,7 +10,7 @@ It can be built with your preferred technology: just be sure to follow our instr
 
 Once successfully connected, when a user uploads a file or creates a new folder in the Beefree File Manager, this API will perform these actions in your storage, instead of our default cloud storage. Directories permissions, root directory to use, how thumbnails for images are generated, etc.: you decide.
 
-### Getting Started: data formats <a href="#getting-started-data-formats" id="getting-started-data-formats"></a>
+## Getting Started: data formats <a href="#getting-started-data-formats" id="getting-started-data-formats"></a>
 
 In order to let your Beefree application consume your FSP (File system provider) API, you will need to provide a Base URL to reach the API.
 
@@ -44,7 +44,7 @@ In case of an unexpected error occured during request processing (i.e. missing m
 
 In case of request failure, the API returns the error codes described in the error messages section.
 
-### Authentication <a href="#authentication" id="authentication"></a>
+## Authentication <a href="#authentication" id="authentication"></a>
 
 Authentication is managed using Basic Authentication type. The Beefree system’s resource server works as a proxy for FSP (File system provider) and consumes FSP API endpoints adding the following fields to HTTP Request Headers. Please note that  **the API must use HTTPS** to grant secure connections and safe data transfer.
 
@@ -72,11 +72,11 @@ The integrator must save…
 
 … in the **Configuration** section of the [Beefree SDK Console](https://developers.beefree.io/).
 
-### File System operations <a href="#file-system-operations" id="file-system-operations"></a>
+## File System operations <a href="#file-system-operations" id="file-system-operations"></a>
 
 This section will show samples of successful requests to FSP (File system provider) API. A response contains meta data about directory and files.
 
-#### Meta data
+### Meta data
 
 We can define:
 
@@ -84,7 +84,7 @@ We can define:
 * File-specific meta
 * Directory-specific meta
 
-**Common Meta**
+### **Common Meta**
 
 | Field           | Description                                                                                               | Type     | Example                                                                          |
 | --------------- | --------------------------------------------------------------------------------------------------------- | -------- | -------------------------------------------------------------------------------- |
@@ -96,22 +96,22 @@ We can define:
 | `permissions`   | defines the access grants to the resource, can be `ro` for read-only access or `rw` for read-write access | `string` | `ro` or `rw`                                                                     |
 | `extra`         | generic extra data (for future extensions)                                                                | `object` |                                                                                  |
 
-**File specific Meta**
+### **File specific Meta**
 
 | Field        | Description                              | Notes                                              | Type     |
 | ------------ | ---------------------------------------- | -------------------------------------------------- | -------- |
 | `public-url` | Public url of this file                  | This field **must** be url-encoded                 | `string` |
 | `thumbnail`  | Public url of the thumbnail of this file | This field is optional and **must** be url-encoded | `string` |
 
-**Directory specific Meta**
+### **Directory specific Meta**
 
 | Field        | Description                                     | Notes                                                                               | Type     |
 | ------------ | ----------------------------------------------- | ----------------------------------------------------------------------------------- | -------- |
 | `item-count` | number of contained items (directories + files) | This parameter is optional, if you don’t have this data, feel free to pass zero `0` | `string` |
 
-#### Listing Directories
+## Listing Directories
 
-**Request**
+### **Request**
 
 ```http
 
@@ -122,7 +122,7 @@ X-BEE-Uid: 1111-2222-333-444
 
 ```
 
-**Response**
+### **Response**
 
 ```json
 
@@ -134,7 +134,7 @@ X-BEE-Uid: 1111-2222-333-444
 
 Each resource returned by the API has a `meta` field with metadata. Directory content is returned into `items` field as array of metadata of contained resources.
 
-**Resource access notes**
+### **Resource access notes**
 
 Some notes about resources access management in the previous example:
 
@@ -143,9 +143,9 @@ Some notes about resources access management in the previous example:
 * user cannot “CRUD” resources in `/shared/`, because it is `ro`
 * user can “CRUD” resources in `/mydir/`, because it is `rw`
 
-#### Listing Directory content
+## Listing Directory content
 
-**Request**
+### **Request**
 
 ```http
 
@@ -156,7 +156,7 @@ X-BEE-Uid: 1111-2222-333-444
 
 ```
 
-**Response**
+### **Response**
 
 ```json
 
@@ -166,9 +166,9 @@ X-BEE-Uid: 1111-2222-333-444
 
 ```
 
-#### Creating a new directory
+## Creating a new directory
 
-**Request**
+### **Request**
 
 ```http
 
@@ -179,7 +179,7 @@ X-BEE-Uid: 1111-2222-333-444
 
 ```
 
-**Response**
+### **Response**
 
 ```json
 
@@ -189,16 +189,16 @@ X-BEE-Uid: 1111-2222-333-444
 
 ```
 
-**Create operation notes:**
+## **Create operation notes:**
 
 * in order for the create directory operation to succeed, the **containing** directory **must** exist, and the **contained** (new) directory **must not** exist
 * directory names will match the following regular expression: \[ a-zA-Z0-9.\_- \\(\\)]+
 
-#### Deleting a directory
+## Deleting a directory
 
 You can only delete empty directories.
 
-**Request**
+### **Request**
 
 ```http
 
@@ -209,7 +209,7 @@ X-BEE-Uid: 1111-2222-333-444
 
 ```
 
-**Response**
+### **Response**
 
 ```json
 
@@ -217,9 +217,9 @@ X-BEE-Uid: 1111-2222-333-444
 
 ```
 
-#### Uploading a file
+## Uploading a file
 
-**Request**
+### **Request**
 
 ```http
 
@@ -235,7 +235,7 @@ Content-Type: application/json
 
 ```
 
-**Response**
+### **Response**
 
 ```json
 
@@ -243,7 +243,7 @@ Content-Type: application/json
 
 ```
 
-**Upload operation notes**
+## **Upload operation notes**
 
 * in order for the upload file operation to succeed, the **containing** directory **must** exist
 * if the uploaded file already exists, it’s in charge of FSP API do decide if:
@@ -255,9 +255,9 @@ Content-Type: application/json
 * uploads from page builder favicons will be POSTed to “/favicon\_images/{filename}”
 * the name of files uploaded from stage will match the following regular expression: \[ a-zA-Z0-9.\_- \\(\\)]+
 
-#### Deleting a file
+## Deleting a file
 
-**Request**
+### **Request**
 
 ```http
 
@@ -268,7 +268,7 @@ X-BEE-Uid: 1111-2222-333-444
 
 ```
 
-**Response**
+### **Response**
 
 ```json
 
@@ -284,7 +284,7 @@ The FSP API uses the trailing slash (/) on the resource path to understand if th
 For example, if the FSP API receives a GET request for `/sample.jpg` it will return `sample.jpg` file metadata, whereas if it receives a GET request for `/sample.jpg/` it will return a list of the content located in the `sample.jpg` directory.
 {% endhint %}
 
-### Status codes <a href="#status-codes" id="status-codes"></a>
+## Status codes <a href="#status-codes" id="status-codes"></a>
 
 The FSP (File system provider) API uses standard HTTP status codes to manage success and error responses. Status codes include:
 
@@ -297,7 +297,7 @@ The FSP (File system provider) API uses standard HTTP status codes to manage suc
 | Upload file       | `201 Created` | `503 Service unavailable` | <p><code>401 Unauthorized</code><br><code>403 Forbidden</code>(if parent is read-only or non-existent)</p>                          |
 | Delete file       | `200 OK`      | `503 Service unavailable` | <p><code>401 Unauthorized</code><br><code>403 Forbidden</code>(if parent is read-only)<br><code>404 Not Found</code></p>            |
 
-### Error codes <a href="#error-codes" id="error-codes"></a>
+## Error codes <a href="#error-codes" id="error-codes"></a>
 
 In case of errors, the API returns a JSON object structured like this:
 
@@ -311,7 +311,7 @@ In case of errors, the API returns a JSON object structured like this:
 
 To read the full list of possible errors, please refer to [this page](../../error-management/file-system-provider-errors.md).
 
-### Displaying thumbnails <a href="#displaying-thumbnails" id="displaying-thumbnails"></a>
+## Displaying thumbnails <a href="#displaying-thumbnails" id="displaying-thumbnails"></a>
 
 Thumbnail generation is up to the developer of the file system provider.
 
@@ -323,6 +323,6 @@ The thumbnail image must be contained in a 200px by 200px virtual square (see pi
 
 ![](https://docs.beefree.io/wp-content/uploads/2017/09/thumb.png)
 
-### Sample code <a href="#sample-code" id="sample-code"></a>
+## Sample code <a href="#sample-code" id="sample-code"></a>
 
 In the [sample code page](../../sample-code.md), you can download an example file system provider API written in Python (Django).

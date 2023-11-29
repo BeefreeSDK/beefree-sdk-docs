@@ -1,6 +1,6 @@
 # FAQs
 
-### API billing: why we are charging for this API <a href="#api-billing-why-we-are-charging-for-this-api" id="api-billing-why-we-are-charging-for-this-api"></a>
+## API billing: why we are charging for this API <a href="#api-billing-why-we-are-charging-for-this-api" id="api-billing-why-we-are-charging-for-this-api"></a>
 
 The [Content Services API (CSAPI)](./) allows you to carry out a number of [useful tasks](content-services-api-reference.md), like converting an email or a page into a thumbnail image or a PDF document, or updating a footer into all the emails that use it (i.e. a [_saved row_](../saved-rows/)).
 
@@ -31,19 +31,19 @@ Most changes related to CSAPI will be in the background, but there will be some 
 
 * **Billing statement changes**: you will see new line items on your Beefree SDK invoice.
 
-### Can I try the service without paying? <a href="#can-i-try-the-service-without-paying" id="can-i-try-the-service-without-paying"></a>
+## Can I try the service without paying? <a href="#can-i-try-the-service-without-paying" id="can-i-try-the-service-without-paying"></a>
 
 You can by creating a **development application**, and then creating a new API key for that app, which will be used for development purposes. Reference our [Development Applications documentation to learn how to create one](../getting-started/development-applications.md).
 
-### How will charges appear on my bill? <a href="#how-will-charges-appear-on-my-bill" id="how-will-charges-appear-on-my-bill"></a>
+## How will charges appear on my bill? <a href="#how-will-charges-appear-on-my-bill" id="how-will-charges-appear-on-my-bill"></a>
 
 An additional charge, CSAPI, will be added to your current subscription plan invoice.
 
-### Can I use different payment methods for each app? <a href="#can-i-use-different-payment-methods-for-each-app" id="can-i-use-different-payment-methods-for-each-app"></a>
+## Can I use different payment methods for each app? <a href="#can-i-use-different-payment-methods-for-each-app" id="can-i-use-different-payment-methods-for-each-app"></a>
 
 The Content Services API is provided as a component for your current subscription and the charges will be applied to the subscription payment method. Currently, there is no option to use an alternative payment method specific to these charges.
 
-### How do you calculate request limits? <a href="#how-do-you-calculate-request-limits" id="how-do-you-calculate-request-limits"></a>
+## How do you calculate request limits? <a href="#how-do-you-calculate-request-limits" id="how-do-you-calculate-request-limits"></a>
 
 API requests rate limits exist independently of any API key’s monthly usage allowance.
 

@@ -32,7 +32,7 @@ In terms of packaging the final output, Beefree SDK takes care of the Popup desi
 
 The good thing: you can pass additional styles to your application, so they will reflect into the editing experience. You will then take the HTML produced by Beefree SDK and apply these styles for the final output.
 
-### Main features <a href="#main-features" id="main-features"></a>
+## Main features <a href="#main-features" id="main-features"></a>
 
 Our drag\&drop experience, loved by millions of users
 

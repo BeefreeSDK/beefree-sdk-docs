@@ -4,7 +4,7 @@
 This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
 {% endhint %}
 
-### The problem <a href="#the-problem" id="the-problem"></a>
+## The problem <a href="#the-problem" id="the-problem"></a>
 
 When designing a message or a landing page with Beefree’s editors, there might be cases in which users of your application insert a [merge tag](smart-merge-tags.md), add a link to an image, or apply a [conditional statement](content-dialog.md#display-conditions).
 
@@ -14,7 +14,7 @@ It’s all good until things scale up. For example…
 * What if it’s a 6,000 product database? How will they locate the right one? [Special Links](special-links-and-merge-tags.md) is not the right fit.
 * And what if a [display condition](content-dialog.md#display-conditions) needs to be built on-the-fly?
 
-### A flexible solution <a href="#a-flexible-solution" id="a-flexible-solution"></a>
+## A flexible solution <a href="#a-flexible-solution" id="a-flexible-solution"></a>
 
 Since the Beefree builders are used in hundreds of applications, and since each of them is facing different user experience challenges like the examples mentioned above, we decided that this was really a case where _one size does **not** fit all_.
 
@@ -26,7 +26,7 @@ We call this feature _Content Dialog_.
 
 ![Content Dialog](https://docs.beefree.io/wp-content/uploads/2018/02/bee\_plugin\_content\_dialog\_product\_search.png)
 
-### An interactive UI layer <a href="#an-interactive-ui-layer" id="an-interactive-ui-layer"></a>
+## An interactive UI layer <a href="#an-interactive-ui-layer" id="an-interactive-ui-layer"></a>
 
 _Content Dialog_ allows you to build user interfaces for your users to locate & insert merge tags, links, conditional statements, and more. It lets you establish an interaction layer between the editor and your application (e.g. you show a pop-up window) that allows your users to locate/build/insert specific content (merge tags, links, conditional statements, etc.). And you’re in full control of the UI.
 
@@ -45,7 +45,7 @@ The user experience in this interaction layer is entirely up to you. In the exam
 
 For each type of content, you can define the action that will be triggered in your application (e.g. display a modal window), and the text that will be displayed in the Beefree SDK editor’s UI to trigger that action (e.g. “Locate a merge tag”), keeping a consistent UX with other areas of your application.
 
-### What it does <a href="#what-it-does" id="what-it-does"></a>
+## What it does <a href="#what-it-does" id="what-it-does"></a>
 
 _Content Dialog_ introduces new call-to-actions in the editor UI.
 
@@ -70,7 +70,7 @@ The text for the action is defined by the host application, so you can use your 
 3. The editor receives the link and exits _waiting mode_
 4. The link is applied to the selected text
 
-### How it works <a href="#how-it-works" id="how-it-works"></a>
+## How it works <a href="#how-it-works" id="how-it-works"></a>
 
 To set up content dialogs you will need to add the `contentDialog` object to `beeConfig`:
 
@@ -131,11 +131,11 @@ You can add all the dialogs, some of them or only one. Is up to your application
 
 All the dialogs use the same pattern, but the returned object must match the element pattern (described in the following section).
 
-**label**
+### **label**
 
 Defines the text displayed in the editor UI.
 
-**handler**
+### **handler**
 
 Is a function with a [Promise](https://dam.beefree.io/mozillapromise)-like signature.\
 This function lets you use your own logic to retrieve the desired value.\
@@ -145,9 +145,9 @@ In case you want to cancel the operation, call the `reject()` function.
 A resolve or reject call is mandatory. If you miss this step, the editor will remain in waiting mode.\
 Error management on the host application must call the reject function to unblock the editor.
 
-**Examples**
+### **Examples**
 
-**Simple application of a link action**
+#### **Simple application of a link action**
 
 ```javascript
 
@@ -174,7 +174,7 @@ When the user clicks on Add an Example Link, the URL http://www.example.com is a
 
 The waiting mode will not be perceived, and there is no cancel action.
 
-**Apply a link with a delay**
+### **Apply a link with a delay**
 
 ```javascript
 
@@ -199,7 +199,7 @@ contentDialog: {
 
 Same as the previous example, but the waiting mode will display for two seconds before applying the URL.
 
-**Opening a dialog UI element**
+### **Opening a dialog UI element**
 
 ```javascript
 
@@ -224,7 +224,7 @@ The selection is then returned as the value of `specialLink` to the `resolve()` 
 
 A cancel action will trigger the `reject()` function instead.
 
-#### Returned value syntax
+## Returned value syntax
 
 Values must use the same pattern used in the `beeConfig` object.
 
@@ -236,7 +236,7 @@ E.g., `Error getting content rowDisplayConditions, the item is malformed.`
 
 These errors will not trigger any visible notification in the UI.
 
-**Configuration**
+## **Configuration**
 
 ```javascript
 
@@ -256,14 +256,14 @@ You can add a new action, available in the text toolbar, and associated with the
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/01/Screen-Shot-2018-01-23-at-17.10.43-1024x247.png)
 
-**Most common use cases:**
+### **Most common use cases:**
 
 * Your application has a high number of placeholders and needs to provide a categorization or search form
 * Placeholder availability depends on options that the user can select while building the message
 * You want to display the same UI your users already know and use in your application
 * You need to separate merge tags from other text placeholders
 
-**Value**
+### **Value**
 
 ```javascript
 {
@@ -274,9 +274,9 @@ You can add a new action, available in the text toolbar, and associated with the
 
 _The name parameter may be later displayed if the user selection is saved and loaded in beeConfig on subsequent requests._
 
-### Special links <a href="#special-links" id="special-links"></a>
+## Special links <a href="#special-links" id="special-links"></a>
 
-**Configuration**
+### **Configuration**
 
 ```javascript
 
@@ -300,13 +300,13 @@ An image or button action
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/01/Screen-Shot-2018-01-23-at-17.37.40.png)
 
-**Most common use cases:**
+### **Most common use cases:**
 
 * Apply links to products or news using a categories pattern, a search form, or a visual browser
 * Apply special parameters or configuration to certain links with a wizard or form
 * You want to display the same UI your users already know and use in your application
 
-**Value**
+### **Value**
 
 ```javascript
 {
@@ -318,9 +318,9 @@ An image or button action
 
 _The type parameter may be lately displayed if the user selection is saved and loaded in `beeConfig` on later requests._
 
-### Merge contents <a href="#merge-contents" id="merge-contents"></a>
+## Merge contents <a href="#merge-contents" id="merge-contents"></a>
 
-**Configuration**
+### **Configuration**
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>contentDialog: {
 </strong>	mergeContents: {
@@ -336,7 +336,7 @@ The content dialog adds a button to the merge content list:
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/01/Screen-Shot-2018-01-24-at-10.39.07.png)
 
-**Most common use cases:**
+### **Most common use cases:**
 
 * Set up the content and/or layout for a product recommendation
 * Set up the content and/or layout for a dynamic advertising
@@ -344,7 +344,7 @@ The content dialog adds a button to the merge content list:
 
 Notice that, to display the Dynamic content tile in the contents panel, you must configure [mergeContents](smart-merge-tags.md) in [beeConfig](../getting-started/installation/configuration-parameters/) with at least one predefined item.
 
-**Value**
+### **Value**
 
 ```javascript
 
@@ -355,9 +355,9 @@ Notice that, to display the Dynamic content tile in the contents panel, you must
 
 ```
 
-### Display conditions <a href="#display-conditions" id="display-conditions"></a>
+## Display conditions <a href="#display-conditions" id="display-conditions"></a>
 
-**Configuration**
+### **Configuration**
 
 ```javascript
 contentDialog: {
@@ -374,12 +374,12 @@ A new button will be available in the display condition widget. In this example,
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/01/Screen-Shot-2018-01-24-at-10.45.15.png)
 
-**Most common use cases:**
+### **Most common use cases:**
 
 * Display a condition builder or form to target a segment of recipients
 * Display a form to create a loop with the row dynamic contents, as product recommendations
 
-**Value**
+### **Value**
 
 ```javascript
 {
@@ -395,7 +395,7 @@ A new button will be available in the display condition widget. In this example,
 
 _The type parameter may be later displayed if the user selection is saved and loaded in `beeConfig` on subsequent requests._
 
-**An example**
+### **An example**
 
 In this example, a window is shown to users when they click on the button to open the builder.
 
@@ -411,9 +411,9 @@ Of course, it can be edited in the editor like any other _Display condition_, if
 
 ![Edit custom display condition](https://docs.beefree.io/wp-content/uploads/2018/02/edit.view\_.jpg)
 
-### Custom rows <a href="#custom-rows" id="custom-rows"></a>
+## Custom rows <a href="#custom-rows" id="custom-rows"></a>
 
-**Configuration**
+### **Configuration**
 
 ```javascript
 contentDialog: {
@@ -430,13 +430,13 @@ The content dialog adds a new item, using your text label, in the Rows drop-down
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/06/CustomRows\_ContentDialog\_01.jpg)
 
-**Most common use cases:**
+### **Most common use cases:**
 
 * Import a set of products or news, as custom rows, using a categories pattern, a search form, or a visual browser
 * Set up the row layout for a set of predefined contents
 * Set up rows with dynamic content to build dynamic sections that provide product recommendations, QR or bar codes, advertising content, etc.
 
-**Value**
+### **Value**
 
 ```javascript
 {
@@ -456,12 +456,12 @@ Notice that in the rows list, names returned by the content dialog display as hi
 
 The content dialog can be used as many times as the user needs and, depending on the response, the behavior may change:
 
-**1. Returning the same name**
+#### **1. Returning the same name**
 
 This overwrites the existing results, keeping the same name in the drop-down.\
 This behavior perfectly matches our example above, where the host application returns “Your search results” every time the content dialog is resolved.
 
-**2. Returning a new name**
+#### **2. Returning a new name**
 
 This creates a new drop-down choice, keeping the previous results as selectable elements. Previous results are available directly in the drop-down.\
 Usage example:
@@ -470,7 +470,7 @@ Usage example:
 
 ## Synced Rows
 
-**Configuration**
+### **Configuration**
 
 ```javascript
 contentDialog: {
@@ -502,9 +502,9 @@ And here’s an example of what `notPermittedDescription` would look like:
 
 ![synced\_rows\_2](https://docs.beefree.io/wp-content/uploads/2023/01/image2-300x171.png)
 
-### Save rows <a href="#save-rows" id="save-rows"></a>
+## Save rows <a href="#save-rows" id="save-rows"></a>
 
-**Configuration**
+### **Configuration**
 
 ```javascript
 contentDialog: {
@@ -526,7 +526,7 @@ The `resolve` function must return metadata for the selected row. The [_metadata
 
 The `args` object in the handler function returns to the host application metadata already applied to the selected row.
 
-**Value**
+### **Value**
 
 ```
 
@@ -550,9 +550,9 @@ The row name is the only required metadata and it’s displayed as the row title
 
 &#x20;Check the [Saved rows metadata section](../saved-rows/save-rows-overview.md) for further details on recommended metadata.
 
-### Forms <a href="#forms" id="forms"></a>
+## Forms <a href="#forms" id="forms"></a>
 
-**Configuration**
+### **Configuration**
 
 ```javascript
 manageForm: {
@@ -571,9 +571,9 @@ The `args` object in the handler function returns to the host application the fo
 
 To understand how this data is structured, refer to the [form structure page](../form-block/integrating-and-using-the-form-block/form-structure-and-parameters.md) on this website.
 
-### Custom attributes <a href="#custom-attributes" id="custom-attributes"></a>
+## Custom attributes <a href="#custom-attributes" id="custom-attributes"></a>
 
-**Configuration**
+### **Configuration**
 
 ```javascript
         customAttribute: {
@@ -591,9 +591,9 @@ To understand how this data is structured, refer to the [form structure page](..
 
 If your end users need to apply custom attributes to the links and images in their content, you can completely customize the user experience and workflow for adding those attributes with a Content Dialog that will take over the editor’s UI. The dialog will need to return the attribute to apply.
 
-### Custom video <a href="#custom-video" id="custom-video"></a>
+## Custom video <a href="#custom-video" id="custom-video"></a>
 
-**Configuration**
+### **Configuration**
 
 ```javascript
 addVideo: {

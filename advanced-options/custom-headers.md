@@ -4,7 +4,7 @@
 This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Superpowers-level features.
 {% endhint %}
 
-### When to use it <a href="#when-to-use-it" id="when-to-use-it"></a>
+## When to use it <a href="#when-to-use-it" id="when-to-use-it"></a>
 
 This feature allows the host application to pass custom headers when it triggers a call to their services. The custom headers are added to [FSP calls](../server-side-options/storage-options/connect-your-file-storage-system.md) and to [Custom Rows](../custom-rows/) calls.
 

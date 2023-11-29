@@ -1,6 +1,6 @@
 # Undo & Changes history
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 Your users will have the ability to rewind and fast-forward to any point in their recent edit history.  Once _Undo_ is enabled in the [Beefree SDK Console](https://dam.beefree.io/devmain), the application immediately begins tracking changes. Behind the scenes, this is accomplished via a new callback event – [called onChange](../tracking-message-changes.md) – which can also be used “stand-alone” without enabling _Undo_. No client-side configuration is required to use this feature. Continue reading to learn how to activate and use _Undo_. And if you can’t wait to try it yourself, you can immediately do so at [beefree.io](https://dam.beefree.io/beefreetemplates)
 
@@ -17,7 +17,7 @@ The widget displays 3 actions:
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/08/undo\_timeline-1024x954.jpg)
 
-**Timeline**
+### **Timeline**
 
 The timeline allows the user to browse through the most recent changes.
 

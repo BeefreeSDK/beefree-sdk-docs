@@ -12,8 +12,6 @@ Enterprise customers can request to inject external JavaScript libraries, like F
 
 Custom JavaScript requires a complete technical evaluation by the Beefree SDK development team. The assessment will undergo security, technical and compatibility assessments. &#x20;
 
-The enterprise agreement does not cover the integration of external JavaScript libraries. It requires an addendum part of our regular terms of service.
-
 ## How it Works
 
 Contact our Sales team and ask to run a script to get started with custom JS libraries injection. Once you contact us, we will take the following steps to complete your request:

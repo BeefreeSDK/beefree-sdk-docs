@@ -1,10 +1,10 @@
-# Content Services API
+# CSAPI Overview
 
 {% hint style="info" %}
 This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
 {% endhint %}
 
-### A richer content creation experience <a href="#a-richer-content-creation-experience" id="a-richer-content-creation-experience"></a>
+## A richer content creation experience <a href="#a-richer-content-creation-experience" id="a-richer-content-creation-experience"></a>
 
 Beefree SDK is a complete content design and creation platform for you to build upon. Our objective is to help you create a fantastic content creation experience for your customers inside your software applications.
 
@@ -12,7 +12,7 @@ As this may go beyond the interactions that happen within our email, page, and p
 
 <figure><img src="https://docs.beefree.io/wp-content/uploads/2020/04/CSAPI_800.jpg" alt=""><figcaption></figcaption></figure>
 
-### In a nutshell <a href="#in-a-nutshell" id="in-a-nutshell"></a>
+## In a nutshell <a href="#in-a-nutshell" id="in-a-nutshell"></a>
 
 The _Content Services API_ – or _CSAPI_ – helps you take care of five, important tasks (and more will be added in the future):
 
@@ -22,15 +22,15 @@ The _Content Services API_ – or _CSAPI_ – helps you take care of five, impor
 4. **Generating a PDF** from the HTML, as your users may want to share or print an email or a page, and PDF is great for that.
 5. **Merging shared content** ([saved rows](../saved-rows/)) into emails and pages that use it (e.g. update 30 emails that use the same footer).
 
-### More details
+## More details
 
-#### Getting the HTML from a message JSON <a href="#getting-the-html-from-a-message-json" id="getting-the-html-from-a-message-json"></a>
+### Getting the HTML from a message JSON <a href="#getting-the-html-from-a-message-json" id="getting-the-html-from-a-message-json"></a>
 
 This service allows the host application to build a custom workflow that doesn’t rely on the `onSave` callback in the editor ([list of available callbacks](../getting-started/installation/methods-and-events.md)). Check our [reference documentation on how to use the API to get the HTML from a JSON file](content-services-api-reference.md).
 
-**Common use cases**
+### **Common use cases**
 
-**Getting newer, better HTML**
+#### **Getting newer, better HTML**
 
 The first reason for this API to exist is a common use case: a transactional message was created months ago, it does not need to be edited in the editor, but its HTML code needs to be updated to benefit from fixes or changes that resolve rendering issues.
 
@@ -38,7 +38,7 @@ As you know, HTML for email is a mix of old markup – needed by email clients w
 
 Having the ability to update the HTML without user interaction in the editor means ensuring that your customers can take advantage of the latest fixes or improvements, even if the messages are transactional notifications created years ago and never edited.
 
-**Displaying the preview for incorrectly saved messages**
+#### **Displaying the preview for incorrectly saved messages**
 
 It’s not common, but it may happen that a browser crashes before the user saves a message they are working on. In this scenario, using the `autosave` or the `onChange` callbacks are enough to prevent any work loss. However, the host application ends up storing a message JSON without the HTML counterpart.
 
@@ -46,7 +46,7 @@ This presents the problem as the two files are out of sync, making things hard f
 
 Using the API the host application can generate an updated HTML from the latest JSON, solving the issue.
 
-**Eliminating the need for “Save” buttons**
+#### **Eliminating the need for “Save” buttons**
 
 A step further in the use case described above. Some modern applications remove any “Save” button from the UI, autosaving the work every time a change is applied (e.g. Google Docs). Through the `onChange` callback, your application can reproduce this behavior, and get the HTML from the saved JSON, when needed.
 
@@ -54,21 +54,21 @@ A step further in the use case described above. Some modern applications remove 
 
 The API provides some useful services that offer additional message formats, reducing the development effort in the host application.
 
-**Generating a PDF file from an HTML**
+#### **Generating a PDF file from an HTML**
 
 A dedicated endpoint that transforms an HTML into a PDF document and supports the following options:
 
-**Page orientation**\
-Landscape and portrait as available values.
+#### **Page orientation** Landscape and portrait as available values.
 
-**Page size**\
+#### **Page size**
+
 Letter, A4, A3, and Full as available values.
 
 While the other values split the message into pages, the Full option returns a single page using 900px as the page width and the proportional height.
 
 PDF is often used in most approval processes, but is also a perfect format for printers. Check our [reference documentation on how to use the API to get a PDF from an HTML file](content-services-api-reference.md).
 
-**Generating image files from an HTML**
+#### **Generating image files from an HTML**
 
 An endpoint that creates an image from an HTML source supporting the following options:
 

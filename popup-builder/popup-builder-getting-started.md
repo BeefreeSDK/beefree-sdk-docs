@@ -81,7 +81,7 @@ beeConfig: {
 
 If this option is not set, then we will provide a default skeleton layout.  It’s worth noting at this point that you can apply every setting for both desktop and mobile design modes. That means you can have a different background when editing in _Mobile Design Mode_. We’ll show you how later!&#x20;
 
-### Popup default layouts <a href="#popup-default-layouts" id="popup-default-layouts"></a>
+## Popup default layouts <a href="#popup-default-layouts" id="popup-default-layouts"></a>
 
 One of the most common needs is changing the popup’s default-centered position to better match the end-user’s use case. Out-of-the-box, the Popup Builder comes with many of the most common popup layouts preconfigured. You can use any available presets “as is” or use them as starting points that you can fine-tune to your satisfaction.
 
@@ -106,7 +106,7 @@ Here is a complete list of preset layouts:
 | Drawer or Slide-in panel | <p><code>drawer-left</code></p><p><code>drawer-right</code></p>                                                                                                                            | Side panels, or drawers, can be used to design menus or display ads.    |
 | Bar or Docker            | <p><code>bar-bottom</code></p><p><code>bar-top</code></p>                                                                                                                                  | This is great for cookie approval dialogs.                              |
 
-### Popup default themes <a href="#popup-default-themes" id="popup-default-themes"></a>
+## Popup default themes <a href="#popup-default-themes" id="popup-default-themes"></a>
 
 Another useful preset available is changing the popup’s styles from the default to better match the end-user’s use case. For example, if you’re using the popular Bootstrap CSS framework, you can select the “Bootstrap Theme” as your default. As with the default layouts, you can use any of the available preset themes “as is” or use them as starting points that you can fine-tune to your satisfaction.
 
@@ -132,7 +132,7 @@ Here is a complete list of preset themes:
 | jQuery    | `jQuery`    | This will be a popup that looks like the popular jQuery modal. Many of the latest CSS systems use a style similar to the original jQuery. |
 | Material  | `material`  | This will be a popup that looks like the popular Material CSS modal.                                                                      |
 
-### Content area width <a href="#content-area-width" id="content-area-width"></a>
+## Content area width <a href="#content-area-width" id="content-area-width"></a>
 
 As mentioned above, the content area’s width is tightly coupled to the layout, no one size fits all width is saved in the template. All Popup Builder preset layouts come with a default width, which you can override with the following configuration settings.
 

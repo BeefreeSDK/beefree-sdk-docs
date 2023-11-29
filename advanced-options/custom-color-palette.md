@@ -4,7 +4,7 @@
 This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
 {% endhint %}
 
-#### Color picker palette overview <a href="#color-picker-palette-overview" id="color-picker-palette-overview"></a>
+## Color picker palette overview <a href="#color-picker-palette-overview" id="color-picker-palette-overview"></a>
 
 The builder’s color palette gathers a list of the default colors to display from multiple sources in order to create a convenient palette of color selections when the editor loads.
 
@@ -16,7 +16,7 @@ Specifically, colors are gathered as follows:
 
 Use the options outlined below to customize the default color palette.
 
-#### Choosing the default colors in the color picker <a href="#choosing-the-default-colors-in-the-color-picker" id="choosing-the-default-colors-in-the-color-picker"></a>
+## Choosing the default colors in the color picker <a href="#choosing-the-default-colors-in-the-color-picker" id="choosing-the-default-colors-in-the-color-picker"></a>
 
 The builder allows you to configure a custom color palette (per user), by modifying the client-side configuration. This, for instance, allows you to provide users with easy access to their company’s brand colors.
 
@@ -31,7 +31,7 @@ var beeConfig = {
 
 ```
 
-#### Disabling the color history <a href="#disabling-the-color-history" id="disabling-the-color-history"></a>
+## Disabling the color history <a href="#disabling-the-color-history" id="disabling-the-color-history"></a>
 
 The builder will remember recently selected colors and add them to your color palette.  If the browser’s privacy settings allow it, the color picker history will be saved in the browser’s local storage.
 
@@ -46,7 +46,7 @@ var beeConfig = {
 
 ```
 
-#### Disabling the template's base colors <a href="#disabling-the-templates-base-colors" id="disabling-the-templates-base-colors"></a>
+## Disabling the template's base colors <a href="#disabling-the-templates-base-colors" id="disabling-the-templates-base-colors"></a>
 
 The builder by default adds colors found in the template’s body section to the color palette.
 

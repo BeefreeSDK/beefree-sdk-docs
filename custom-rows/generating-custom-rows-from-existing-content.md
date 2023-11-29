@@ -6,9 +6,9 @@ To make it possible, we built a **Simplified Row Schema**, a JSON that describes
 
 While the [Saved Rows](../saved-rows/) feature provides the complex and continuously evolving object used in the message page, the **Simplified Row Schema** makes it easy to build an API that feeds the editor with contents from different origins like e-commerce stores, blogs, or digital asset management systems.
 
-### Simplified Row Schema <a href="#simplified-row-schema" id="simplified-row-schema"></a>
+## Simplified Row Schema <a href="#simplified-row-schema" id="simplified-row-schema"></a>
 
-**General row schema**
+### **General row schema**
 
 The following is an example of four different row objects:
 
@@ -99,9 +99,9 @@ The following is an example of four different row objects:
 
 ```
 
-### General row parameters <a href="#general-row-parameters" id="general-row-parameters"></a>
+## General row parameters <a href="#general-row-parameters" id="general-row-parameters"></a>
 
-**name**
+### **name**
 
 The row’s name:
 
@@ -109,7 +109,7 @@ The row’s name:
 * Displayed in the row card when the row is shown in the _Rows_ panel.
 * Included in the textual content used in searches
 
-**background image**
+### **background image**
 
 Set a row background image.
 
@@ -120,7 +120,7 @@ Properties:
 * background-position: top | bottom + left | center | right
 * background-color: #c2c2c2 // CSS value
 
-**display conditions**
+### **display conditions**
 
 Set a row display condition.\
 Check the [display conditions documentation](../advanced-options/display-conditions.md) for further details.
@@ -134,13 +134,13 @@ Properties:
   * before
   * after
 
-**mobile**
+### **mobile**
 
 Disable stacking on mobile.  Set the value to “false” to disable stacking on mobile.  If the value is “true”, or not provided, the columns will stack on mobile.
 
 * colStackOnMobile: true | false
 
-**columns**
+### **columns**
 
 List of the row columns. Each column type is identified with a weight parameter to indicate how much horizontal space they fill.\
 We use a 12-column grid with the following values as available combinations:
@@ -161,11 +161,11 @@ All the columns weight inside a row must sum 12 as the total value.
 
 See the example above in _General Row Schema_.
 
-**modules**
+### **modules**
 
 List of content modules inside a column
 
-**type**
+### **type**
 
 Every module is identified by a type parameter. Available types are:
 
@@ -178,9 +178,9 @@ Every module is identified by a type parameter. Available types are:
 
 Each module type has a set of available options. If none is included, the editor will use the default values.
 
-### Content types scheme and parameters <a href="#content-types-scheme-and-parameters" id="content-types-scheme-and-parameters"></a>
+## Content types scheme and parameters <a href="#content-types-scheme-and-parameters" id="content-types-scheme-and-parameters"></a>
 
-**Text**
+### **Text**
 
 ```javascript
 
@@ -211,7 +211,7 @@ Each module type has a set of available options. If none is included, the editor
 * Quotation marks must be escaped to be compliant with the JSON format
 * If not included, a default “Loren Ipsum” text string will be used
 
-**Additional text parameters**
+## **Additional text parameters**
 
 ```javascript
 
@@ -225,7 +225,7 @@ Each module type has a set of available options. If none is included, the editor
 
 ```
 
-**Image**
+### **Image**
 
 ```javascript
 
@@ -247,7 +247,7 @@ Each module type has a set of available options. If none is included, the editor
 
 **dynamicSrc** when added, the content applies the dynamic image behavior and uses the value as dynamic URL
 
-**Button**
+### **Button**
 
 ```javascript
 
@@ -269,7 +269,7 @@ If not included, a default text string will be used
 
 **href** button action URL (link)
 
-**Additional button parameters**
+### **Additional button parameters**
 
 ```javascript
 
@@ -278,7 +278,7 @@ If not included, a default text string will be used
 
 ```
 
-**Divider**
+### **Divider**
 
 ```javascript
 
@@ -288,7 +288,7 @@ If not included, a default text string will be used
 
 Currently there are no additional parameters.
 
-**HTML**
+### **HTML**
 
 ```json
 

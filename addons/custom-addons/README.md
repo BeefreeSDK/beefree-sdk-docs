@@ -4,7 +4,7 @@
 This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../../getting-started/development-applications.md) for free to try this and other Superpowers-level features.
 {% endhint %}
 
-### Introduction <a href="#introduction" id="introduction"></a>
+## Introduction <a href="#introduction" id="introduction"></a>
 
 A Custom AddOn is an addon that you typically developed for your own use.
 
@@ -14,7 +14,7 @@ Most Custom AddOns do not become Partner AddOns and therefore are not published 
 
 An example to clarify what we mean.
 
-### Example of a Custom AddOn <a href="#example-of-a-custom-addon" id="example-of-a-custom-addon"></a>
+## Example of a Custom AddOn <a href="#example-of-a-custom-addon" id="example-of-a-custom-addon"></a>
 
 Let’s say you embedded our email editor in your **event engagement platform**, which has a feature that allows event marketers to insert an event ticket’s QR code in marketing campaigns sent to create more engagement around an event.
 
@@ -26,7 +26,7 @@ Let’s say you embedded our email editor in your **event engagement platform**,
 
 ![](https://docs.beefree.io/wp-content/uploads/2020/02/QRcode\_add2-1024x527.jpg)
 
-### Availability <a href="#availability" id="availability"></a>
+## Availability <a href="#availability" id="availability"></a>
 
 Custom AddOns are an advanced feature. As a result, the feature is available on the following [plans](https://dam.beefree.io/pluginpricing):
 
@@ -44,7 +44,7 @@ Of course, there are exceptions to this requirement.
   * You are not a Beefree SDK customer
   * [Learn more about Partner AddOns](../partner-addons/)
 
-### Getting started <a href="#getting-started" id="getting-started"></a>
+## Getting started <a href="#getting-started" id="getting-started"></a>
 
 Log into the [Beefree SDK Console](https://dam.beefree.io/devmain) and locate any application that is on the Superpowers or Enterprise plans. Click on _Details_ to navigate to the application details page. In the lower part of the page, locate the _Application configuration_ section and click on AddOns.
 

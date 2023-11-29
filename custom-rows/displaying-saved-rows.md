@@ -8,6 +8,8 @@ To do so, the host application must make them available in a reachable location 
 
 The rows are displayed based on your rows configuration, so you can categorize them, creating multiple lists of rows to improve the user experience.
 
+## Rows Configuration
+
 Here is an example of a rows configuration that displays saved items divided into usage categories:
 
 ```javascript
@@ -95,6 +97,6 @@ The following is an example of the response schema when the editor calls one of 
 
 ```
 
-**Loading External Rows with an Instance Method**
+## **Loading External Rows with an Instance Method**
 
 With the introduction of Saved Rows Management, we’ve also introduced the ability to load external rows with an instance method. See [here](../saved-rows/save-rows-overview.md) for more details.

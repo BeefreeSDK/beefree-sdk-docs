@@ -1,6 +1,6 @@
 # Methods and Events
 
-### Instance Methods <a href="#instance-methods" id="instance-methods"></a>
+## Instance Methods <a href="#instance-methods" id="instance-methods"></a>
 
 {% hint style="info" %}
 **Note:** If initializing a File Manager application, the only supported method is `beePluginInstance.start()` without parameters.
@@ -27,7 +27,7 @@ Here’s some useful methods for this scenario:
 | `beePluginInstance.send()`                    | Invokes the `onSend` callback function. The application will pass to the function a ready-to-send HTML file.                                                                           |
 | `beePluginInstance. toggleMergeTagsPreview()` | Controls the visibility of sample content for merge tags in the message editing portion of the builder.                                                                                |
 
-### Instance Events <a href="#instance-events" id="instance-events"></a>
+## Instance Events <a href="#instance-events" id="instance-events"></a>
 
 The top toolbar displayed by default within the builder contains buttons that trigger certain actions. These are the callbacks that are triggered when the buttons are clicked.
 

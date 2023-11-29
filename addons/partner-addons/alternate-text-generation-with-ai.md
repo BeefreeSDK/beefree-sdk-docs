@@ -1,23 +1,23 @@
 # Alternate Text Generation with AI
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 The Alternate Text Generation with AI AddOn enables host application end users to instantly generate alternate text for images using AI. This feature is only available for images.
 
 Visit the Alternate Text Generation with AI Knowledge Base article to learn more about the key benefits and use cases of this feature. Continue in this article to learn more about how to implement the Alternate Text Generation with AI AddOn in your host application.
 
-### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
+## Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 Prior to getting started with the configuration, ensure you have the following:
 
 * A working subscription with Azure
 * Superpower or Enterprise plan
 
-### Configuration Steps <a href="#configuration-steps" id="configuration-steps"></a>
+## Configuration Steps <a href="#configuration-steps" id="configuration-steps"></a>
 
 This section discusses the steps you need to take to configure alternate text generation in your host application.
 
-#### Developer Console <a href="#developer-console" id="developer-console"></a>
+### Developer Console <a href="#developer-console" id="developer-console"></a>
 
 To active alternate text generation with AI in your Beefree SDK Developer Console, take the following steps:
 
@@ -72,7 +72,7 @@ Take the following steps to configure Azure Computer Vision and successfully int
 
 For more information, visit the [Microsoft Azure Computer Vision documentation](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/quickstarts-sdk/image-analysis-client-library-40?tabs=visual-studio%2Clinux\&pivots=programming-language-rest-api).
 
-#### Limit the Usage <a href="#limit-the-usage" id="limit-the-usage"></a>
+## Limit the Usage <a href="#limit-the-usage" id="limit-the-usage"></a>
 
 After you complete the configuration, the Alternate Text Generation with AI tool will be available to your end users. At this point in the process, the tool is offered for free to your end users. If you’d like to limit the usage of the Alternate Text Generation with AI tool, follow these additional steps to configure usage limitations.
 
@@ -154,7 +154,7 @@ let imagesAvailable = 5
 
 ```
 
-#### Display the Usage Widget <a href="#display-the-usage-widget" id="display-the-usage-widget"></a>
+## Display the Usage Widget <a href="#display-the-usage-widget" id="display-the-usage-widget"></a>
 
 To display the widget usage, take the following steps:&#x20;
 
@@ -213,7 +213,7 @@ const beeConfig = {
 
 **Note:** If either of the settings imagesAvailable or imagesUsed are not sent, the application will not show the consumption.
 
-### Advanced Permissions <a href="#advanced-permissions" id="advanced-permissions"></a>
+## Advanced Permissions <a href="#advanced-permissions" id="advanced-permissions"></a>
 
 This section discusses advanced permissions for your application users. You can use the two settings `IsIconDisabled` and enabled to configure permissions for your end users. To configure both booleans, take the steps outlined in the subsequent sections.
 
@@ -245,7 +245,7 @@ Image 2.0 displays an example of the AI wand icon when the feature is active.
 
 <figure><img src="https://docs.beefree.io/wp-content/uploads/2023/11/image-1.png" alt="image test"><figcaption><p>Image 1.0 AI Wand as Active</p></figcaption></figure>
 
-#### Disable AddOn Per User <a href="#disable-addon-per-user" id="disable-addon-per-user"></a>
+## Disable AddOn Per User <a href="#disable-addon-per-user" id="disable-addon-per-user"></a>
 
 To disable the AddOn completely for an end user, perform the following:
 
@@ -267,7 +267,7 @@ const beeConfig = {
 
 ```
 
-### Feature Limitations <a href="#feature-limitations" id="feature-limitations"></a>
+## Feature Limitations <a href="#feature-limitations" id="feature-limitations"></a>
 
 Ensure you familiarize yourself with the following feature limitations to ensure this AddOn is suitable for your application’s needs:
 
@@ -279,7 +279,7 @@ Ensure you familiarize yourself with the following feature limitations to ensure
 * Only available for static images, not available for dynamic images
 * Not available for custom AddOn of image type
 
-### Billing <a href="#billing" id="billing"></a>
+## Billing <a href="#billing" id="billing"></a>
 
 Unlike the OpenAI AddOn, the Alternate Text Generation AddOn does not charge by tokens. Rather, the AddOn charges for each image caption you generate. Reference the [Microsoft Azure Pricing page](https://azure.microsoft.com/en-us/pricing/) for additional information.
 
@@ -287,17 +287,17 @@ If you want to know if you are being charged, and you have the usage widget enab
 
 Note: If an error occurs after the icon for the Alternate Text Generation AddOn is clicked by an end user, and text is not generated, you will not be charged. You will only be charged for instances when a caption is successfully generated.
 
-### Error Handling <a href="#error-handling" id="error-handling"></a>
+## Error Handling <a href="#error-handling" id="error-handling"></a>
 
 In the event an error occurs, the end user will see an alert and you will receive a message from the Azure API with additional details regarding the error.
 
 For more information on potential errors and error codes, reference the [Azure Cognitive Services REST API reference](https://learn.microsoft.com/en-us/rest/api/cognitiveservices/) or the [Computer Vision REST API reference – Azure Cognitive Services](https://learn.microsoft.com/en-us/rest/api/computer-vision/) depending on which service you opted in for to configure this feature.
 
-### Additional Considerations <a href="#additional-considerations" id="additional-considerations"></a>
+## Additional Considerations <a href="#additional-considerations" id="additional-considerations"></a>
 
 The AI Alternate Text Generator is compatible with token upselling. The token upselling feature notifies the end users when their token usage is running low and when it is completely out. Both notifications include an option for the end user to purchase more tokens. The appearance of these notifications are customizable. Read the [Token Upselling documentation](token-upselling.md) to learn more about configuring token upselling within your host application.
 
-### FAQs <a href="#faqs" id="faqs"></a>
+## FAQs <a href="#faqs" id="faqs"></a>
 
 **Q: Will Azure keep the photos used with this feature?**&#x20;
 

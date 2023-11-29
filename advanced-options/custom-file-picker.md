@@ -4,7 +4,7 @@
 This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Superpowers-level features.
 {% endhint %}
 
-#### Main concepts
+## Main concepts
 
 This feature allows you to have your own file picker for choosing files (images) in Beefree SDK's Editor, to make its integration in your platform look even more seamless. It leverages Beefree SDK’s [Content Dialog](content-dialog.md) feature. To set it up you will need to add the corresponding entry to the [configuration object](../getting-started/installation/configuration-parameters/):
 
@@ -43,7 +43,7 @@ Please note that **a `resolve` or `reject` call is mandatory**. If you miss this
 
 Images dragged onto an image block or edited via the “apply effects and more” button will be passed to the image storage per your app’s file storage settings. To prevent images from passing through Beefree SDK’s file storage, the file upload can be disabled via [advanced permissions](advanced-permissions.md).
 
-#### Returned value syntax
+## Returned value syntax
 
 Values must use the same pattern used in the [configuration object](../getting-started/installation/configuration-parameters/): the returned object is validated against the expected format. If the validation fails, an error will be returned to the browser console, eg: `Error getting content filePicker value, the item is malformed`
 
@@ -56,7 +56,7 @@ Values must use the same pattern used in the [configuration object](../getting-s
 
 ```
 
-#### A basic example
+### A basic example
 
 The following is the most basic example, which returns an image URL immediately after clicking the “Browse” button. This example does not open a file picker.
 
@@ -76,7 +76,7 @@ contentDialog: {
 
 ```
 
-#### List of modules
+## List of modules
 
 The following is a list of all modules that are sent as part of the _args_ parameter:
 

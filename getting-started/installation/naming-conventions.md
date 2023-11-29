@@ -1,10 +1,10 @@
 # Naming conventions
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 Here is a list of terms used frequently throughout the Beefree SDK technical documentation. Things can get a bit tricky when embedding a software application within another software application, so this page is an attempt to create as much clarity as possible. We hope we find it useful. If anything sounds confusing or if you have any suggestions for improvement, please [contact us](https://devportal.beefree.io/hc/en-us/requests/new).
 
-### Frequently used terms <a href="#frequently-used-terms" id="frequently-used-terms"></a>
+## Frequently used terms <a href="#frequently-used-terms" id="frequently-used-terms"></a>
 
 * **Beefree SDK**\
   A toolkit that includes white-label, no-code builders for emails, landing pages, and popups. The toolkit also provides a range of components, APIs, sample code, and support services to help you seamlessly integrate into your software a content creation workflow that your customers will love.

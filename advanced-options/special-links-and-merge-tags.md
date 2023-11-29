@@ -2,7 +2,7 @@
 
 The default configuration returned by the system can be extended by using additional configuration objects such as:
 
-### Special links <a href="#special-links" id="special-links"></a>
+## Special links <a href="#special-links" id="special-links"></a>
 
 Special links are links that your system generates dynamically when the message is sent, typically because they include the message ID, the recipient’s email, or some other variable. The most common one is probably the unsubscribe link.
 
@@ -31,7 +31,7 @@ and here’s an example of what the user will see in the builder UI, starting fr
 
 ![Grouped links in BEE](https://docs.beefree.io/wp-content/uploads/2017/08/group\_links\_in\_BEE.png)
 
-### Merge Tags & Merge Content <a href="#merge-tags-merge-content" id="merge-tags-merge-content"></a>
+## Merge Tags & Merge Content <a href="#merge-tags-merge-content" id="merge-tags-merge-content"></a>
 
 As mentioned above, when you initialize the application, in the configuration file you can submit both “merge tags” and “merge content”.
 
@@ -91,7 +91,7 @@ After inserting the merge tag, the text block now shows the placeholder for the 
 
 ![](https://docs.beefree.io/wp-content/uploads/2017/08/bee\_v2\_example\_mergeTags\_2.png)
 
-#### Ways to load Merge Tags
+## Ways to load Merge Tags
 
 You can load Merge Tags in the builder when it is initialized by adding a `mergeTags` node to the JSON configuration file. For example:
 
@@ -123,7 +123,7 @@ You can use a combination of both approaches, loading frequently used merge tags
 The syntax used for Merge Tags is entirely up to you. Curly brackets, square brackets, ... you name it. The builder is agnostic to the syntax that your system employs for these dynamic fields. The same is true for Merge Contents.
 {% endhint %}
 
-### Merge Content details <a href="#merge-content-details" id="merge-content-details"></a>
+## Merge Content details <a href="#merge-content-details" id="merge-content-details"></a>
 
 Merge content differs from merge tags in that it allows the user to drag and drop instances of it as a content element available in the _**Content**_** panel**.
 
@@ -151,7 +151,7 @@ To create another instance of merge content, the user can either drag and drop i
 
 … and then drag it elsewhere in the message.
 
-#### Ways to load Merge Content
+## Ways to load Merge Content
 
 Just like with Merge Tags, you can load Merge Content in the builder at the time it is initialized by adding a `mergeContents` node to the JSON configuration file. For example:
 
@@ -182,9 +182,9 @@ Here too, you can certainly use a combination of both approaches, loading freque
 NOTE: if what you need for your users is a way to load a **dynamic image** into the message or page (e.g. a countdown clock), you don't need to use Merge Content. Beefree SDK can handle dynamic images with a feature that was created specifically for that task. See: [letting your users add dynamic images](https://dam.beefree.io/dynamicimagescontent).
 {% endhint %}
 
-### Limitations to Merge Tags & Merge Content <a href="#limitations-to-merge-tags-merge-content" id="limitations-to-merge-tags-merge-content"></a>
+## Limitations to Merge Tags & Merge Content <a href="#limitations-to-merge-tags-merge-content" id="limitations-to-merge-tags-merge-content"></a>
 
-#### Merge tags limitations
+### Merge tags limitations
 
 **Merge tags** are meant to be placeholders that will be replaced at the time an email is sent, or the web content is generated for visitors.
 
@@ -194,7 +194,7 @@ Standard merge tags do not support sample placeholder content, for now. The synt
 
 If you want to provide a better experience when working with Merge tags, including using a friendly name instead of the syntax and generating sample content, we recommend to check out [Smart merge tags](smart-merge-tags.md)**.**
 
-#### Merge Content limitations
+### Merge Content limitations
 
 Additionally, there are some other limitations that are specific to the Merge Content feature. Among them:
 
@@ -205,6 +205,6 @@ Additionally, there are some other limitations that are specific to the Merge Co
 
 Due to these additional limitations, we now recommend an alternative approach to Merge Content in order to handle dynamic content in Beefree SDK: utilizing [Custom Rows](../custom-rows/) with Merge Content & Display Conditions.
 
-### Further extending the builder <a href="#further-extending-the-builder" id="further-extending-the-builder"></a>
+## Further extending the builder <a href="#further-extending-the-builder" id="further-extending-the-builder"></a>
 
 You can use the [Content Dialog](content-dialog.md) feature to introduce an interactive layer between the builder and your application, and through it extend Merge Tags, Merge Content, Special Links, and Display Conditions.

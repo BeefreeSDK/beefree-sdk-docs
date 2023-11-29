@@ -8,7 +8,7 @@ Custom S3 Bucket is a Beefree application configuration feature that allows you 
 
 By leveraging this feature, you will be able to store and manage your customers’ assets without having to build a new File System Provider, but rather by providing a compliant folder structure and filling out a simple form.
 
-### How are images stored? <a href="#how-are-images-stored" id="how-are-images-stored"></a>
+## How are images stored? <a href="#how-are-images-stored" id="how-are-images-stored"></a>
 
 Our default file system provider uses two first level folders to manage assets:
 
@@ -39,7 +39,7 @@ To use this option you need to set-up two additional folders:
   * Name: original\_image\_name.ext\_thumb.png (so the thumbnail for cat.jpg must be cat.jpg\_thumb.png)
   * PNG: use only PNG as image format
 
-### S3 configuration <a href="#s3-configuration" id="s3-configuration"></a>
+## S3 configuration <a href="#s3-configuration" id="s3-configuration"></a>
 
 To use an S3 bucket and configure a policy with the “Policy Generator,” follow these steps:
 
@@ -61,7 +61,7 @@ To use an S3 bucket and configure a policy with the “Policy Generator,” foll
 
 Test the configured policy by attempting to access objects within the bucket using both secure and non-secure connections to verify that the policy is working as intended. Once verified, you have successfully configured your Amazon S3 bucket with a policy using the “Policy Generator” in the AWS Management Console. This policy allows any AWS user or service to retrieve objects from the specified bucket under the specified conditions.
 
-**Example Bucket Policy**
+### **Example Bucket Policy**
 
 ```json
 {
@@ -113,7 +113,7 @@ The button will become active once all required fields have been correctly fille
 Remember to **save your changes** with the SAVE button at the top.
 {% endhint %}
 
-### Preparing thumbnails <a href="#preparing-thumbnails" id="preparing-thumbnails"></a>
+## Preparing thumbnails <a href="#preparing-thumbnails" id="preparing-thumbnails"></a>
 
 If you’ve just linked your custom bucket, you may find that you need to create your own thumbnails. Thankfully, this is an easy process.
 
@@ -150,6 +150,6 @@ And one more example:
 
 When uploading `image2.jpg` in `mydir` inside the root dir, this key is created in the custom bucket: `s3://my-custom-bucket/path/to/images/my-uid/mydir/image2.jpg`. Similarly to above, a thumbnail will be generated with name `image2.jpg_thumb.png` with key: `s3://my-custom-bucket/path/to/thumbnails/my-uid/mydir/image2.jpg_thumb.png`.
 
-### Moving from the default S3 bucket <a href="#moving-from-the-default-s3-bucket" id="moving-from-the-default-s3-bucket"></a>
+## Moving from the default S3 bucket <a href="#moving-from-the-default-s3-bucket" id="moving-from-the-default-s3-bucket"></a>
 
 If your Beefree application is currently using the default S3 bucket, you wish to switch to your own bucket, and you have files that you want to transfer between the two, please please [log into the Beefree SDK Console](https://dam.beefree.io/devmain) and submit a support ticket.

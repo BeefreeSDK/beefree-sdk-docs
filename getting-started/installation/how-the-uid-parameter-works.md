@@ -2,7 +2,7 @@
 
 [Pricing for Beefree SDK](https://dam.beefree.io/pluginpricing) is based on the concept of unique users of the editor. A unique user is one that is identified by a unique **UID**, as described below. The system counts unique UIDs within a billing period, and resets the count to zero at the start of the next billing period.
 
-### Properties
+## Properties
 
 The UID parameter:
 
@@ -12,14 +12,14 @@ The UID parameter:
 * Make sure that you pass a string, not a numeric value. So even if your UID is a number, pass `"12345"` and not `12345`.
 * The UID should not be Personal Data, as indicated in the Beefree SDK License Agreement. Further information about how your use of a Beefree SDK service relates to the EU’s General Data Protection Regulation (GDPR) may be found [here](https://beefree.io/gdpr/). Our Privacy Policy, which describes the processing activities carried out by Beefree SDK as Data Controller, is available [here](https://beefree.io/privacy-cookies-policy/).
 
-### Unique identifier
+## Unique identifier
 
 It uniquely identifies a user of the application. When we say “uniquely”, we mean that:
 
 1. It will be counted as a unique user for [monthly billing purposes](https://developers.beefree.io/pricing-plans).
 2. Images (and other files) used by the user when creating and editing messages will be associated with it and not visible to other users (when using the default storage).
 
-### Users, sub-users and client accounts
+## Users, sub-users and client accounts
 
 It’s entirely up to you – the application that has embedded BEE – when to use a new UID at the time you initialize the editor for your users. In 99% of the cases: one UID = one CLIENT ACCOUNT in your application. Sub-users of a client account typically share the same UID.
 

@@ -36,7 +36,7 @@ var beeConfig = {
 
 ```
 
-**Example: overriding the Help icon label in the default toolbar**
+### **Example: overriding the Help icon label in the default toolbar**
 
 ```javascript
 
@@ -53,7 +53,7 @@ var beeConfig = {
 
 ```
 
-**Example: overriding the Rows tab label in the sidebar**
+### **Example: overriding the Rows tab label in the sidebar**
 
 ```javascript
 
@@ -73,6 +73,6 @@ var beeConfig = {
 
 ```
 
-#### Sample language file <a href="#sample-language-file" id="sample-language-file"></a>
+## Sample language file <a href="#sample-language-file" id="sample-language-file"></a>
 
 _Check out our Github repository for_ [_starter language templates_](https://dam.beefree.io/beecustomlanguages) _in all supported languages._

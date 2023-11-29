@@ -19,11 +19,11 @@ layout:
 
 # Installation
 
-### Add JavaScript Library <a href="#add-javascript-library" id="add-javascript-library"></a>
+## Add JavaScript Library <a href="#add-javascript-library" id="add-javascript-library"></a>
 
 Congratulations on registering your first application!  Now it’s time to install it. The first step is to add the Beefree SDK library to your application. You can use plain HTML or [our convenient NPM module](https://dam.beefree.io/beepluginwrapper).
 
-**HTML**
+### **HTML**
 
 ```markup
 
@@ -33,7 +33,7 @@ Congratulations on registering your first application!  Now it’s time to insta
 
 ```
 
-**NPM**
+### **NPM**
 
 ```
 
@@ -41,9 +41,9 @@ npm i @mailupinc/bee-plugin
 
 ```
 
-### Initialize the application <a href="#initialize-the-application" id="initialize-the-application"></a>
+## Initialize the application <a href="#initialize-the-application" id="initialize-the-application"></a>
 
-#### Step 1. Create a container
+### Step 1. Create a container
 
 The embedded application (email builder, page builder, popup builder, file manager) will load into any HTML element on your page.
 
@@ -57,7 +57,7 @@ We recommend starting with an empty div, as follows:
 
 ```
 
-#### Step 2. Authentication
+### Step 2. Authentication
 
 Beefree cares about your security. This is why we use a standard JSON Web Token, or JWT, to authenticate your application.
 
@@ -65,7 +65,7 @@ To authenticate your application, pass your **Client ID** and **Client Secret** 
 
 We talk about this step in detail [here](authorization-process-in-detail.md), but here’s a quick example using jQuery:
 
-**jQuery**
+#### **jQuery**
 
 ```javascript
 
@@ -87,7 +87,7 @@ $.post(endpoint, payload)
 
 ```
 
-#### Step 3. Create an application
+### Step 3. Create an application
 
 Now that you have a token, you can initialize the application into your empty div.
 
@@ -129,7 +129,7 @@ The following table shows all of the required configuration settings:
 
 <table><thead><tr><th width="121">Attribute</th><th width="77">Type</th><th>Description</th></tr></thead><tbody><tr><td>uid</td><td>string</td><td><p>An alphanumeric string that identifies the user and allows the embedded application to load resources for that user (e.g. images).</p><ul><li>Min length: 3 characters</li><li>Can contain letters from a to z (uppercase or lowercase), numbers and the special characters _ (underscore) and – (dash)</li><li>It is a string and not a numeric value</li></ul><p>It uniquely identifies a user of the Beefree application. When we say “uniquely”, we mean that:</p><ul><li>It will be counted as a unique user for monthly billing purposes.</li><li>Images (and other files) used by the user when creating and editing messages will be associated with it and not visible to other users (when using the default storage).</li></ul></td></tr><tr><td>container</td><td>string</td><td>Identifies the id of div element that contains the application</td></tr></tbody></table>
 
-#### Step 4. Start the application
+### Step 4. Start the application
 
 The final step is to start the application, using the `start` method.
 

@@ -16,7 +16,7 @@ When Commenting is enabled, your end-users (or contributors, as we’ll call the
 * Automatically **highlight the row** where a thread is posted
 * **Receive a notification** straight in the builder when a new comment is added during a co-editing session (Superpowers users only).
 
-### Use cases <a href="#use-cases" id="use-cases"></a>
+## Use cases <a href="#use-cases" id="use-cases"></a>
 
 With Commenting,  you enable **asynchronous, visual collaboration** when multiple collaborators are creating, editing, and reviewing content in the Beefree builders. This collaborative feature can prove extremely beneficial in different contexts, regardless if contributors are in the same team, in separate teams, or even in different companies (e.g. digital marketing agencies collaborating with their clients):
 
@@ -24,7 +24,7 @@ With Commenting,  you enable **asynchronous, visual collaboration** when multipl
 * cut **time-to-publish**, reducing back and forth conversations, both online and offline;
 * get **sign-off** for going live for email and web campaigns more efficiently.
 
-### How to activate it <a href="#how-to-activate-it" id="how-to-activate-it"></a>
+## How to activate it <a href="#how-to-activate-it" id="how-to-activate-it"></a>
 
 **Commenting** – like most other features – is made available to Beefree SDK customers in an OFF state by default, and must be activated in the Beefree SDK Console.
 
@@ -51,9 +51,9 @@ const beeConfig = {
 }
 ```
 
-### How it works <a href="#how-it-works" id="how-it-works"></a>
+## How it works <a href="#how-it-works" id="how-it-works"></a>
 
-**Adding comments and starting threads**
+### **Adding comments and starting threads**
 
 When opening an email, a landing page or a popup, a contributor can add a new comment to a content block or a row by clicking the “Balloon” icon, available in two spots:
 
@@ -66,7 +66,7 @@ Clicking one of these two icons will activate the **commenting panel**, which ta
 
 ![Adding the first comment](https://docs.beefree.io/wp-content/uploads/2020/11/Adding-the-first-comment\_v2.png)
 
-**Mentioning someone in a comment**
+## **Mentioning someone in a comment**
 
 If you have implemented mentions, users can type @ to bring up a list of contributors and tag them in the comment. If the user starts typing, the list will be filtered  If you’ve built a notification system around Commenting, you can use this piece of information to trigger a notification towards the mentioned person.
 
@@ -76,7 +76,7 @@ If you added a Content dialog for mentions, the action will be triggered by the 
 
 ![Action for triggering mentions content dialog](https://docs.beefree.io/wp-content/uploads/2021/03/Content-dialog-action.png)
 
-**Interacting with threads**
+## **Interacting with threads**
 
 If there has already been some activity, the editing stage shows whether a content block or row has any comments by displaying a small comment icon. The sidebar instead indicates the number of existing comments for the selected row or content block, three in this case.
 
@@ -92,7 +92,7 @@ Improved accessibility to in-line threads. Hover the mouse over the comment icon
 
 ![](https://docs.beefree.io/wp-content/uploads/2022/04/commenting-mouse-hovering-single-user-view-high.gif)
 
-**Browsing threads and closing the commenting panel**
+## **Browsing threads and closing the commenting panel**
 
 Clicking on **< All comments** in the top section will bring up a list of all comment threads, indicating which ones have been resolved and which ones are still open. Contributors can search inside comments and filter out solved threads, or threads that were part of deleted content. Deleted and hidden comments will be filtered automatically.
 
@@ -104,13 +104,13 @@ Quickly reopen resolved threads by adding a new comment, expand threads with a c
 
 ![](https://docs.beefree.io/wp-content/uploads/2022/04/commenting\_resolve-high.gif)
 
-**Copy comment text and paste it to content area**
+## **Copy comment text and paste it to content area**
 
 Suggest edits in seconds, and save time with the copy/paste feature. Copy text from the comment body and paste it directly into the content area.
 
 ![](https://docs.beefree.io/wp-content/uploads/2022/04/CopyPaste\_Commenting\_hi.mp4-high-1-2.gif)
 
-**Real-time notifications when a new comment is added**
+## **Real-time notifications when a new comment is added**
 
 If you subscribed to a Superpowers plan, and have [co-editing](../collaborative-editing.md) enabled, your users will never lose a new comment again with the new notification system. Users will receive real-time notifications whenever a new comment is added to the document straight in the builder.
 
@@ -120,7 +120,7 @@ If you want to learn how to implement co-editing in your application, check the 
 
 ![](https://docs.beefree.io/wp-content/uploads/2022/04/commenting\_1-high.gif)
 
-### The Reviewer Role <a href="#the-reviewer-role" id="the-reviewer-role"></a>
+## The Reviewer Role <a href="#the-reviewer-role" id="the-reviewer-role"></a>
 
 With the **Reviewer** role, you can now allow users to collaborate on your projects without changing the design. This role helps provide peace of mind by allowing inexperienced users to work with the team on their designs, without fear of accidentally changing it.
 
@@ -185,7 +185,7 @@ const beeConfig = {
 
 ```
 
-### Managing notifications <a href="#managing-notifications" id="managing-notifications"></a>
+## Managing notifications <a href="#managing-notifications" id="managing-notifications"></a>
 
 You can build a **notification system** around commenting by triggering a callback for events in the Commenting layer. When these events happen, the Beefree system triggers the `onComment` callback.
 
@@ -199,7 +199,7 @@ You are free to define:
 
 Again, remember that the Beefree platform **only triggers the callback**, and it’s up to you to react, if you want. Below you can find the technical details on the comments schema and the `onComment` callback.
 
-### Sample code for email notifications <a href="#sample-code-for-email-notifications" id="sample-code-for-email-notifications"></a>
+## Sample code for email notifications <a href="#sample-code-for-email-notifications" id="sample-code-for-email-notifications"></a>
 
 We’ve put together a [sample code](https://dam.beefree.io/pluginsamplecode) that illustrates how to send email notifications, triggered by a mention in a comment. This code shows how to:
 
@@ -256,21 +256,21 @@ Comments can also be added dynamically, but it’s an advanced task, which requi
 
 When a thread or comment changes, the Beefree system triggers the `onComment` callback.  The callback returns the following details:
 
-**change**
+### **change**
 
 * JSON contains all the details on the change
 
-**comments**
+### **comments**
 
 * JSON array of the entire comments schema, as described in the previous section.
 
-**threadUsers**
+### **threadUsers**
 
 * JSON contains the `contributors` array with all users in a thread.
 
-### Change Schema
+## Change Schema
 
-**type**
+### **type**
 
 * `NEW_COMMENT`
 * `COMMENT_THREAD_RESOLVED`
@@ -278,11 +278,11 @@ When a thread or comment changes, the Beefree system triggers the `onComment` ca
 * `COMMENT_EDITED`
 * `COMMENT_DELETED`
 
-**payload**
+### **payload**
 
 JSON contains all the details of the change
 
-**example of new comment payload**
+### **Example of new comment payload**
 
 ```javascript
 
@@ -334,7 +334,7 @@ JSON contains all the details of the change
 
 ```
 
-### Adding mentions <a href="#adding-mentions" id="adding-mentions"></a>
+## Adding mentions <a href="#adding-mentions" id="adding-mentions"></a>
 
 You can activate a mention dialog for comments by adding a data source to the Beefree application configuration. You can use the “Hooks” data source method to fetch data from your application and pass it to the Beefree system in real-time.
 
@@ -392,7 +392,7 @@ var beeConfig = {
 
 You can generate a link to a specific comment, which can be used to notify the user. Common use cases include sending a link via email, Slack, API, or via in-app messaging. To implement this action use the `onComment` callback combined with a new instance method called `showComment`.
 
-**Here’s how it works:**
+### **Here’s how it works:**
 
 The `onComment` callback contains the comment’s id and a new section called “mentions” containing an array of mentioned users’ uid values.
 

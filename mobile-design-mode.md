@@ -1,6 +1,6 @@
 # Mobile Design Mode
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 Thanks to Mobile Design Mode, your customers can easily design responsive emails,  pages, and popups for mobile without switching between the builder stage and preview mode. When enabled, your customers will be able to:
 
@@ -9,7 +9,7 @@ Thanks to Mobile Design Mode, your customers can easily design responsive emails
 * Instantly display the results of [mobile optimization options](https://devportal.beefree.io/hc/en-us/articles/4408466433938) – such as _do not stack/reverse stack/hide on mobile_;
 * Extend Beefree SDK’s design flexibility and build mobile-first campaigns.
 
-#### Use cases
+### Use cases
 
 * **Mobile-first design**: Start the builder in Mobile view, and let the user switch as needed.
 * **Mobile-only editing**: Start the builder in Mobile view, and hide the widget to switch views.
@@ -35,13 +35,13 @@ bee.loadStageMode({
 
 ```
 
-### Demo <a href="#demo" id="demo"></a>
+## Demo <a href="#demo" id="demo"></a>
 
 Here is a video explaining **why we built Mobile design mode** and how it **enhances the design UX** of Beefree SDK.
 
 {% embed url="https://docs.beefree.io/wp-content/uploads/2021/03/Introducing-mobile-design-mode.mp4" %}
 
-### How to enable Mobile Design Mode <a href="#how-to-enable-mobile-design-mode" id="how-to-enable-mobile-design-mode"></a>
+## How to enable Mobile Design Mode <a href="#how-to-enable-mobile-design-mode" id="how-to-enable-mobile-design-mode"></a>
 
 If your application doesn’t have Mobile Design Mode enabled yet, you need to enable it. It takes just a few clicks:
 
@@ -55,7 +55,7 @@ If your application doesn’t have Mobile Design Mode enabled yet, you need to e
 
     Congrats! You’ve successfully enabled Mobile Design Mode!
 
-### How it works <a href="#how-it-works" id="how-it-works"></a>
+## How it works <a href="#how-it-works" id="how-it-works"></a>
 
 When Mobile Design Mode is enabled for an application at [developers.beefree.io](https://devportal.beefree.io/hc/en-us), the builder will display two new icons in the upper-left corner of the content area, as highlighted below.&#x20;
 
@@ -71,7 +71,7 @@ The _mobile view_ (mobile icon on the right) will resize the work area width to 
 **Note:** When Mobile design mode is enabled, users will work on a single template that will include both the desktop design and the mobile one. The template doesn’t require any duplicates. The mobile edits will be automatically saved and reflected in the templates.
 {% endhint %}
 
-#### Mobile optimization settings
+## Mobile optimization settings
 
 Beefree SDK provides settings both for rows and content blocks.&#x20;
 
@@ -86,7 +86,7 @@ To change how content behaves on mobile and create a mobile version of an email,
 
 These settings become more accessible with Mobile Design Mode, as users can immediately view the desktop vs. mobile design.
 
-#### Displaying hidden elements
+## Displaying hidden elements
 
 There is an additional setting to preview hidden elements included in a template. With the Hide-on enabled a “Visibility” icon will appear next to the Desktop vs. Mobile stage icons.
 
@@ -111,14 +111,14 @@ Here is how the Visibility toggle changes the experience when editing a recent B
 
 The device preview matches the stage selected when accessing the design preview. This doesn’t apply if you have implemented a custom-built preview.
 
-#### Builder limitations in mobile view
+## Builder limitations in mobile view
 
 When a user is working in the Mobile stage, the features available are the same as in the desktop stage, with a few exceptions:
 
 * The content area width cannot be scaled – it can only be changed in the desktop view;
 * Users can add or delete columns within a row, but they won’t be able to resize them.
 
-### Designing content for Mobile <a href="#designing-content-for-mobile" id="designing-content-for-mobile"></a>
+## Designing content for Mobile <a href="#designing-content-for-mobile" id="designing-content-for-mobile"></a>
 
 When designing content for Mobile, users may require more flexibility in the way they arrange or format elements to fit a smaller screen.&#x20;
 
@@ -156,7 +156,7 @@ When the pill is highlighted in light blue, it means the property has been edite
 
 Users can click on the x to revert the property back to the desktop.
 
-#### Editing Font Size on Mobile
+## Editing Font Size on Mobile
 
 We have also improved the user experience by moving the Font Size Controls, previously displayed in the formatting tiny menu available in the content area, to the Content Properties Tab in the sidebar menu.
 
@@ -164,13 +164,13 @@ We have also improved the user experience by moving the Font Size Controls, prev
 
 <figure><img src="https://docs.beefree.io/wp-content/uploads/2022/07/Screenshot-2022-07-04-at-15.35.39.png" alt="" width="375"><figcaption></figcaption></figure>
 
-#### Tracking changes in the history
+## Tracking changes in the history
 
 All the edits performed in the Mobile Stage are tracked and flagged in the history as _(Mobile)_ edits.
 
 ![](https://docs.beefree.io/wp-content/uploads/2022/07/Screenshot-2022-07-04-at-11.15.20.png)
 
-### Customization options <a href="#customization-options" id="customization-options"></a>
+## Customization options <a href="#customization-options" id="customization-options"></a>
 
 Mobile Design Mode can be considered a “plug-and-play” feature because it just needs to be enabled on the [Beefree SDK Console](http://developers.beefree.io/) and can be used by your users out of the box.
 

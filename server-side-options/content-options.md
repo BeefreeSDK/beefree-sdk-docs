@@ -6,6 +6,8 @@ In this box, you can enable additional content blocks that will appear in the Co
 
 Currently, you can manage these content blocks:
 
+## Available Content Blocks
+
 | Block         | Description                                                                                                                     | Availability              | User guide                                        |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | ------------------------------------------------- |
 | **HTML**      | Allows your users to include their own HTML code                                                                                | Paid plans only           | [More info](https://dam.beefree.io/htmlcontent)   |
@@ -18,7 +20,7 @@ Currently, you can manage these content blocks:
 | **Icons**     | Enables users to create icon-based layouts, such as _star ratings, bullet lists, properties_                                    | All plans, including free | [More info](https://dam.beefree.io/iconcontent)   |
 | **Spacer**    | Allows users to add a space between content                                                                                     | All plans, including free | [More info](https://dam.beefree.io/spacer)        |
 
-**Content options in Page Builder**
+## **Content options in Page Builder**
 
 If you’re configuring a Page Builder application, there are a few differences in what these blocks allow:
 
@@ -44,7 +46,7 @@ Please note that you need to implement one of the two methods indicated in this 
 * The [default form](../form-block/integrating-and-using-the-form-block/passing-forms-to-the-builder.md) method is available for all plans, including free
 * The [content dialog](../advanced-options/content-dialog.md) method is available for paid plans only.
 
-#### AMP Content <a href="#amp-content" id="amp-content"></a>
+## AMP Content <a href="#amp-content" id="amp-content"></a>
 
 In this section, you can enable AMP blocks that will be available in the “Content” tab of the Email Builder.
 

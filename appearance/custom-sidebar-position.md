@@ -4,7 +4,7 @@
 This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
 {% endhint %}
 
-#### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 You can choose whether to display the builder sidebar on the left or on the right side of the screen.
 

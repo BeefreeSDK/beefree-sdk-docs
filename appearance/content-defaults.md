@@ -4,7 +4,7 @@
 This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
 {% endhint %}
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 With Content Defaults, you can define how content looks when dragged into an email or page.
 
@@ -32,29 +32,29 @@ We’ve used a dark grey color (HEX code #555555), an Ubuntu font at 22px in Bol
 
 Content Defaults are part of the Configuration parameters passed to your Beefree application during startup, so you can have different sets of them for different users.
 
-### Use cases <a href="#use-cases" id="use-cases"></a>
+## Use cases <a href="#use-cases" id="use-cases"></a>
 
 By setting up your Content defaults, you’ll be able to address styling and branding needs for you and your customers.
 
-**Create a more consistent UX between your application and the editor**
+### **Create a more consistent UX between your application and the editor**
 
 If your application uses dark grey for the primary CTA, then you probably would want a default button in the Beefree builders to follow that style.
 
-**Match your customers’ branding**
+### **Match your customers’ branding**
 
 If your application has brand settings that are used for your app’s UI or for assets managed in your application, you may want those to apply also to default content in the Beefree editors.
 
-**Create a more consistent experience within the editor**
+### **Create a more consistent experience within the editor**
 
 If you’ve customized how the editor looks like, either through [Themes](themes.md) or [Custom CSS](custom-css.md), you may want default content to adhere to the same style.
 
-**Define custom social blocks**
+### **Define custom social blocks**
 
 Since the Social block is one of the available Content defaults, you can define what social platforms – either present in the Beefree editors or added by you – are included when a social block is added to a message or page. For example, you can have a default social block with three platforms defined in the Beefree system and a fourth, custom one (Messenger):
 
 ![](https://docs.beefree.io/wp-content/uploads/2020/05/Custom-social-block.png)
 
-### How it works <a href="#how-it-works" id="how-it-works"></a>
+## How it works <a href="#how-it-works" id="how-it-works"></a>
 
 To set up the content styles you will need to add the `contentDefaults` object to `beeConfig`:
 
@@ -80,13 +80,13 @@ beeConfig: {
 
 ```
 
-### Available content settings <a href="#available-content-settings" id="available-content-settings"></a>
+## Available content settings <a href="#available-content-settings" id="available-content-settings"></a>
 
 You can add all the content styles, some of them or just one. It is up to your application to create them for all the users or for a segment, as there are no related server-side settings; basically you can customize them each time the editor starts.
 
 All the contents use the same pattern, but the object must match the content schema for the type of content (described in the following section).
 
-**title**
+### **title**
 
 ```javascript
 
@@ -152,7 +152,7 @@ contentDefaults: {
 
 ```
 
-**text**
+### **text**
 
 {% hint style="info" %}
 Please note that the default text inside `html` is required.
@@ -186,7 +186,7 @@ text: {
 
 ```
 
-**image**
+### **image**
 
 ```javascript
 
@@ -214,7 +214,7 @@ image: {
 
 ```
 
-**button**
+### **button**
 
 ```javascript
 
@@ -259,7 +259,7 @@ button: {
 
 ```
 
-**divider**
+### **divider**
 
 ```javascript
 
@@ -283,7 +283,7 @@ divider: {
 
 ```
 
-**social**
+### **social**
 
 ```javascript
 
@@ -321,7 +321,7 @@ social: {
 
 ```
 
-**dynamic**
+### **dynamic**
 
 ```javascript
 
@@ -337,7 +337,7 @@ dynamic: {
 
 ```
 
-**video**
+### **video**
 
 ```javascript
 
@@ -359,7 +359,7 @@ video: {
 
 ```
 
-**form**
+### **form**
 
 ```javascript
 
@@ -438,7 +438,7 @@ form: {
 
 ```
 
-**icons**
+### **icons**
 
 ```javascript
 
@@ -491,7 +491,7 @@ icons: {
 
 ```
 
-**menu**
+### **menu**
 
 ```javascript
 
@@ -547,7 +547,7 @@ menu: {
 
 ```
 
-**spacer**
+### **spacer**
 
 ```javascript
 
@@ -560,7 +560,7 @@ spacer: {
 
 ```
 
-**paragraph**
+### **paragraph**
 
 ```javascript
 
@@ -595,7 +595,7 @@ paragraph: {
 
 ```
 
-**list**
+### **list**
 
 ```javascript
 
@@ -636,7 +636,7 @@ list: {
 
 Additionally, `listStyleType` supports the following: revert, auto, disc, circle, square, decimal, lower-alpha, upper-alpha, lower-roman, upper-roman.
 
-**carousel**
+### **carousel**
 
 ```javascript
 
@@ -658,7 +658,7 @@ carousel: {
 
 ```
 
-**general**
+### **general**
 
 ```javascript
 

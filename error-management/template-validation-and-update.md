@@ -8,7 +8,7 @@ This guarantees backward compatibility for older documents: any document (e.g., 
 
 Currently, this feature is working in test mode, tracking any issue with existing JSON documents and allowing us to improve this service. During this testing phase, the system does not stop the loading of the builder when an issue is found.
 
-#### Error response example
+## Error response example
 
 ```javascript
 

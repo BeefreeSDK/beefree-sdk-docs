@@ -1,6 +1,6 @@
 # AddOns Overview
 
-### Why AddOns? <a href="#why-addons" id="why-addons"></a>
+## Why AddOns? <a href="#why-addons" id="why-addons"></a>
 
 From the moment Beefree’s first email builder was released to the public, people started asking for new “things” to be available in the _Content_ tab, so that they would be able to do more with the drag-and-drop editor.
 
@@ -16,7 +16,7 @@ They wanted to be able to go from _this…_
 
 … so that additional features are available in Beefree’s editors to build richer emails, landing pages, popups, and other digital content.
 
-### Everybody wins <a href="#everybody-wins" id="everybody-wins"></a>
+## Everybody wins <a href="#everybody-wins" id="everybody-wins"></a>
 
 Beefree SDK is used by over 600 software companies in all kinds of industries. Through their applications, hundreds of thousands of marketers create countless emails and landing pages, which reach millions of people.
 
@@ -28,7 +28,7 @@ With AddOns, richer emails and landing pages can be created, and everybody wins:
 * The AddOn providers reach more marketers through those apps.
 * And all of the above creates an overall more successful community around Beefree.
 
-### Types of AddOns <a href="#types-of-addons" id="types-of-addons"></a>
+## Types of AddOns <a href="#types-of-addons" id="types-of-addons"></a>
 
 You can either [use AddOns](partner-addons/installing-partner-addons.md) that have been built by other companies or [build new ones](addons-overview.md#custom-addons).
 
@@ -50,7 +50,7 @@ For details on developing Custom AddOns, see [AddOn Development](custom-addons/a
 
 This is an advanced feature that requires the [Superpowers plan](https://developers.beefree.io/pricing-plans). Of course, you can test it in a development environment at no extra charge, if you wish to do so.
 
-#### Partner AddOns
+## Partner AddOns
 
 {% hint style="info" %}
 This feature is available on Beefree SDK's [paid plans](https://developers.beefree.io/pricing-plans) only.
@@ -60,9 +60,9 @@ There is a growing [library of Partner AddOns](partner-addons/partner-addons-dir
 
 Interested in partnering with us? Learn how to submit a [Partner AddOn](addons-overview.md#partner-addons).
 
-### Using vs. building AddOns <a href="#using-vs-building-addons" id="using-vs-building-addons"></a>
+## Using vs. building AddOns <a href="#using-vs-building-addons" id="using-vs-building-addons"></a>
 
-#### Using AddOns
+### Using AddOns
 
 Here is how you can locate and [install ready-to-go AddOns](partner-addons/installing-partner-addons.md):
 

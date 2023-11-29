@@ -16,9 +16,9 @@ These new, _custom rows_ can be dragged and dropped into the editing pane the sa
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/04/CR\_sample-574x1024.png)
 
-### Use cases <a href="#use-cases" id="use-cases"></a>
+## Use cases <a href="#use-cases" id="use-cases"></a>
 
-**User saved rows**
+### **User saved rows**
 
 Enabling the [Save Rows](../saved-rows/) feature, your users will be able to save into your application design elements that they want to use in other messages.
 
@@ -26,7 +26,7 @@ To display saved rows in the _Rows_ tab, add them to the list of rows available 
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/11/Saved\_Rows-1024x601.jpg)
 
-**Prebuilt rows**
+## **Prebuilt rows**
 
 When using the standard, empty rows, users are forced to start from scratch every time they introduce a new row.
 
@@ -38,7 +38,7 @@ Imagine, for example, the case of a CRM where customer success representatives c
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/04/CR\_text\_samples-1024x708.jpg)
 
-**Default rows**
+## **Default rows**
 
 In addition to the _empty rows_ that have always been part of the Beefree SDK system, we now provide a set of _default rows_ that you can add to your application with a simple configuration parameter.
 
@@ -50,7 +50,7 @@ For some users, they may work better than _empty rows_ as they allow them to imm
 
 Check how to configure these sample rows below under _Rows configuration > Parameters > Default rows_
 
-**User/campaign tailored contents**
+## **User/campaign tailored contents**
 
 Does your application onboard users asking for company or brand information?
 
@@ -67,7 +67,7 @@ Other common use cases:
 
 Check how to configure these sample rows below under _Rows configuration > Parameters > Default rows_
 
-**Blog updates and other news**
+## **Blog updates and other news**
 
 Create _custom rows_ with content from different sources like blogging platforms, content management systems, etc.
 
@@ -77,7 +77,7 @@ Additionally, this helps you ensure that only reviewed and approved contents, pr
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/04/CR\_blog\_example-1024x769.jpg)
 
-**E-commerce products**
+## **E-commerce products**
 
 Transform products from your e-commerce catalog into _custom rows_, using product images, text, and call to actions to create a promotional message with a few clicks.
 

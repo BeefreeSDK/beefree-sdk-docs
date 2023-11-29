@@ -1,6 +1,6 @@
 # Token Upselling
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 The Token Upselling feature is a notification banner that you can integrate within your OpenAI AddOn. This notification banner informs your application end users of when their available tokens are running low and when they are completely out. Both notification banners display an option for the end user to purchase additional tokens. These notification banners support a healthy token management workflow, and help avoid any potential interruptions in the end user’s workflow through transparently informing them about their available tokens.
 
@@ -17,14 +17,14 @@ The text inside the banner notifications is customizable. Reference the Customiz
 
 Read this article to learn more about configuring token upselling within your host application.
 
-### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
+## Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 Prior to getting started with the configuration, ensure you have the following:
 
 * Superpower or Enterprise plan
 * An OpenAI AddOn within your application
 
-### Configuration Steps <a href="#configuration-steps" id="configuration-steps"></a>
+## Configuration Steps <a href="#configuration-steps" id="configuration-steps"></a>
 
 This section discusses the configuration steps you need to follow to integrate the Token Upselling feature into your web application.
 
@@ -35,7 +35,7 @@ To integrate the Token Upselling feature into your application, take the followi
 3. [Content Dialog Config](token-upselling.md#content-dialog-config)
 4. [Configure Resolve](token-upselling.md#configure-resolve)
 
-#### Enable Token Upselling <a href="#enable-token-upselling" id="enable-token-upselling"></a>
+### Enable Token Upselling <a href="#enable-token-upselling" id="enable-token-upselling"></a>
 
 To enable Token Upselling, you need to pass your configuration code to the AI Integration AddOn within the Developer Console.
 
@@ -57,7 +57,7 @@ The purpose of the following code is to initialize and track the number of token
 
 ```
 
-#### Limit Usage <a href="#limit-usage" id="limit-usage"></a>
+### Limit Usage <a href="#limit-usage" id="limit-usage"></a>
 
 When you define `tokensAvailable` and `tokenCounter`, you limit the end user’s token usage.
 
@@ -83,7 +83,7 @@ addOns: [
 
 ```
 
-**onInfo Callback**
+#### **onInfo Callback**
 
 The purpose of the onInfo callback in the following code snippet is to handle information messages related to the usage of the ai-integration AddOn. It checks if the code of the infoMessage is 1000 and if the handle is “ai-integration”. If both conditions are met, it updates the AddOn settings and reloads the configuration.
 
@@ -131,7 +131,7 @@ The code works by:
 5. Creating a newConfig object with the updated tokenCounter and other settings.
 6. Reloading the configuration by calling bee.loadConfig(newConfig).
 
-**Trigger the Handler Function**
+#### **Trigger the Handler Function**
 
 The purpose of the “upsell” action is to trigger the handler function, which, based on the following code sample, increases the number of tokens available by 1000 and returns an object with updated settings for the “ai-integration” add-on.
 
@@ -159,7 +159,7 @@ The handler function is a function that is executed when the “upsell” action
 
 ```
 
-#### Content Dialog Config <a href="#content-dialog-config" id="content-dialog-config"></a>
+### Content Dialog Config <a href="#content-dialog-config" id="content-dialog-config"></a>
 
 Configure the content dialog and upgrade path to enable the token upselling notification banner. This configuration is important because it defines the steps the end user takes to purchase more tokens.&#x20;
 
@@ -188,17 +188,17 @@ contentDialog: {
 
 ```
 
-#### Configure Resolve <a href="#configure-resolve" id="configure-resolve"></a>
+### Configure Resolve <a href="#configure-resolve" id="configure-resolve"></a>
 
 Ensure you define how your host application will resolve the upsell feature. You can do this by returning the configuration on how to handle the content dialog within the addOn configuration. The code provided in the previous step displays an example of this.
 
-### Settings, Data Types, and Defaults <a href="#settings-data-types-and-defaults" id="settings-data-types-and-defaults"></a>
+## Settings, Data Types, and Defaults <a href="#settings-data-types-and-defaults" id="settings-data-types-and-defaults"></a>
 
 The following table shows a list of what your web application can pass to the Beefree SDK in the addOn configuration of ai-integration.
 
 <table><thead><tr><th width="259.3333333333333">Settings</th><th width="193">Data Type</th><th>Defaults</th></tr></thead><tbody><tr><td><code>tokenLabel</code></td><td>string</td><td>Default is “tokens”.</td></tr><tr><td><code>isPromptDisabled</code></td><td>boolean</td><td>Default is false. If changed to true, it can override tokens balance and disable the prompt.</td></tr><tr><td><code>isUpsellEnabled</code></td><td>boolean</td><td>Default is false. If changed to true, it enables the upsell.</td></tr><tr><td><code>tokensCounter</code></td><td>number</td><td>Tokens used, if not provided in the configuration, the user has unlimited tokens.</td></tr><tr><td><code>tokensAvailable</code></td><td>number</td><td>Tokens available to the end user. If not provided in the configuration, the user has unlimited tokens.</td></tr><tr><td><code>upsellTrigger</code></td><td>number</td><td>Default is 80 (%) of tokens available.</td></tr><tr><td><code>isSuggestionsDisabled</code></td><td>boolean</td><td>Default is false.</td></tr><tr><td><code>isRegenerateEnabled</code></td><td>boolean</td><td>Default is false.</td></tr></tbody></table>
 
-### Disable the Regenerate Button <a href="#disable-the-regenerate-button" id="disable-the-regenerate-button"></a>
+## Disable the Regenerate Button <a href="#disable-the-regenerate-button" id="disable-the-regenerate-button"></a>
 
 The regenerate button appears after an end user submits their first prompt to OpenAI through the OpenAI AddOn. This button enables the end user to resubmit the same prompt to OpenAI in order to receive a newly generated response. This is helpful when an end user may want a variety of prompt responses to select from. However, each regenerated response incurs additional token usage and costs. This section will discuss how to disable the regenerate button in the event you would like to remove it from your application’s user interface.
 
@@ -323,17 +323,17 @@ const notificationTextWithCustomCTA = customLanguageEntries[customLanguageId];
 
 ```
 
-### Feature Limitations <a href="#feature-limitations" id="feature-limitations"></a>
+## Feature Limitations <a href="#feature-limitations" id="feature-limitations"></a>
 
 This section discusses the Token Upselling feature limitations:
 
 * Customization features only extend to the text within the notification banner, and are _not_ available for the design of the notification banner.
 
-### Billing <a href="#billing" id="billing"></a>
+## Billing <a href="#billing" id="billing"></a>
 
 The only billing related to this feature is on OpenAI’s end with token purchasing through use of your OpenAI API key.
 
-### Error Handling <a href="#error-handling" id="error-handling"></a>
+## Error Handling <a href="#error-handling" id="error-handling"></a>
 
 This section discusses the error handling for token upselling. If an error occurs, end user’s will receive the following message:
 
@@ -343,6 +343,6 @@ The following image shows an example of how this message will appear within the 
 
 ![AI Prompt Request Error Message within the User Interface](https://docs.beefree.io/wp-content/uploads/2023/11/CleanShot-2023-11-07-at-15.07.13.png)
 
-### Additional Considerations <a href="#additional-considerations" id="additional-considerations"></a>
+## Additional Considerations <a href="#additional-considerations" id="additional-considerations"></a>
 
 For more information on how the Token Upselling feature will visually look to an end user within the user interface, visit the [OpenAI Feature Enhancements article](https://devportal.beefree.io/hc/en-us/articles/14935326915218/).

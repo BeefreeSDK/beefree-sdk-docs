@@ -4,7 +4,7 @@
 These AddOns need to be [installed from your Beefree SDK Console](installing-partner-addons.md). Some of them are offered by third-party providers, and they might require an active subscription with those providers in order to be used.
 {% endhint %}
 
-### OpenAI <a href="#openai" id="openai"></a>
+## OpenAI <a href="#openai" id="openai"></a>
 
 AI is currently the best way to gain a competitive advantage in the market. That’s why we did the heavy lifting for you and integrated the ChatGPT-3.5 OpenAI language model into Beefree SDK. This AddOn is a game-changer for SaaS businesses looking to improve customer engagement and stay ahead of the game.
 
@@ -12,7 +12,7 @@ AI is currently the best way to gain a competitive advantage in the market. That
 
 [How do I enable the OpenAI AddOn?](https://devportal.beefree.io/hc/en-us/articles/10838757053330-How-do-I-enable-the-OpenAI-AddOn-) | [Developer’s FAQ for OpenAI](https://devportal.beefree.io/hc/en-us/articles/10839177777810-Developer-s-FAQ-for-OpenAI) | [Webinar](https://app.livestorm.co/beefreeio/introducing-bee-plugin-openai-add-on-live-demo-and-q-and-a/live?s=7cef0fc7-d888-4627-a5c6-a3c4ed1c396d)
 
-### Countdown Timers by NiftyImages <a href="#countdown-timers-by-niftyimages" id="countdown-timers-by-niftyimages"></a>
+## Countdown Timers by NiftyImages <a href="#countdown-timers-by-niftyimages" id="countdown-timers-by-niftyimages"></a>
 
 ![](https://docs.beefree.io/wp-content/uploads/2020/10/nifty-300x200.png)
 
@@ -30,7 +30,7 @@ Email from your platform will come alive with this powerful set of dynamic-conte
 
 [Addon website](https://dam.beefree.io/visboxmain) | [Privacy Policy](https://dam.beefree.io/visboxtos) | [Support](https://dam.beefree.io/visboxsupport)
 
-### Countdown Timers by Sendtric <a href="#countdown-timers-by-sendtric" id="countdown-timers-by-sendtric"></a>
+## Countdown Timers by Sendtric <a href="#countdown-timers-by-sendtric" id="countdown-timers-by-sendtric"></a>
 
 ![](https://docs.beefree.io/wp-content/uploads/2020/10/sendtric-300x188.png)
 
@@ -40,7 +40,7 @@ Sendtric countdown timers are perfect for your customers to create urgency in th
 
 [Addon website](https://dam.beefree.io/sendtricmain) | [About the AddOn](https://dam.beefree.io/sendtricabout) | [Privacy Policy](https://www.sendtric.com/terms-of-service/) | [Support](mailto:support@sendtric.com)
 
-### Viewed <a href="#viewed" id="viewed"></a>
+## Viewed <a href="#viewed" id="viewed"></a>
 
 ![](https://docs.beefree.io/wp-content/uploads/2021/01/thumbnail\_viewed\_300.jpg)
 
@@ -50,7 +50,7 @@ It works with all email clients and devices. Get up to 90% of views on your open
 
 [Addon website](https://dam.beefree.io/viewedmain) | [About the AddOn](https://dam.beefree.io/viewedabout) | [Privacy Policy](https://www.viewed.video/privacy-policy/) | [Support](mailto:support@viewed.video)
 
-### Gifs <a href="#gifs" id="gifs"></a>
+## Gifs <a href="#gifs" id="gifs"></a>
 
 <figure><img src="https://docs.beefree.io/wp-content/uploads/2020/10/gifsbygiphy-300x188.png" alt=""><figcaption></figcaption></figure>
 
@@ -60,7 +60,7 @@ Once installed and configured, they will see a new content tile in the builder. 
 
 [Addon website](./) | [About the AddOn](./) | [Privacy Policy](https://beefree.io/privacy-policy/) | [Support](https://dam.beefree.io/devportal)
 
-### Stickers <a href="#stickers" id="stickers"></a>
+## Stickers <a href="#stickers" id="stickers"></a>
 
 ![](https://docs.beefree.io/wp-content/uploads/2020/10/stickerbygiphy-300x188.png)
 

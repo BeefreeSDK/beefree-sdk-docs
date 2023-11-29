@@ -4,7 +4,7 @@
 This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Superpowers-level features.
 {% endhint %}
 
-#### Defining a custom look & feel through a CSS stylesheet <a href="#defining-a-custom-look-feel-through-a-css-stylesheet" id="defining-a-custom-look-feel-through-a-css-stylesheet"></a>
+## Defining a custom look & feel through a CSS stylesheet <a href="#defining-a-custom-look-feel-through-a-css-stylesheet" id="defining-a-custom-look-feel-through-a-css-stylesheet"></a>
 
 ```javascript
 
@@ -12,7 +12,7 @@ customCss: 'https://yourdomain.com/stylesheet.css'
 
 ```
 
-#### Using different values for different users of the editor <a href="#using-different-values-for-different-users-of-the-editor" id="using-different-values-for-different-users-of-the-editor"></a>
+## Using different values for different users of the editor <a href="#using-different-values-for-different-users-of-the-editor" id="using-different-values-for-different-users-of-the-editor"></a>
 
 ```javascript
 
@@ -20,7 +20,7 @@ customCss: 'https://yourdomain.com/' + users[config.user].id + '.css'
 
 ```
 
-#### Best practices and risk management <a href="#best-practices-and-risk-management" id="best-practices-and-risk-management"></a>
+## Best practices and risk management <a href="#best-practices-and-risk-management" id="best-practices-and-risk-management"></a>
 
 Custom CSS is an advanced feature, which gives the host application great flexibility to customize the UI/UX of the editor.
 
@@ -51,7 +51,7 @@ Other selectors such as the following should be avoided as much as possible:
 * Classnames without –cs (e.g. `.icons__item)`
 * Prefixed classname selectors (e.g. `div[class^="StageModuleIcons_itemRow"]`)
 
-#### Sample Custom CSS Theme <a href="#sample-custom-css-theme" id="sample-custom-css-theme"></a>
+## Sample Custom CSS Theme <a href="#sample-custom-css-theme" id="sample-custom-css-theme"></a>
 
 ```url
 

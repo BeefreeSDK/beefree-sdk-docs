@@ -4,6 +4,8 @@
 Please note that server-side configurations are only available on [paid plans](https://dam.beefree.io/pluginpricing).
 {% endhint %}
 
+## Toolbar Options
+
 In the Toolbar Options tab you can:
 
 * control individual settings that affect the top toolbar in the builder
@@ -16,6 +18,8 @@ The toolbar contains all the actions not related directly with content edition, 
 You can decide the inner elements from it, from hiding our brand to removing the save button, to create the builder version that better fits in your application.
 
 Not enough? Remove the toolbar completely and offer all the actions with your own UI elements.
+
+## Remove Toolbar and Create Custom UI Elements
 
 For example, in our MailUp App for Shopify, we hide the toolbar completely and control the builder (Show preview, Send test, Save) from buttons in the app UI (not in the builder). Here is how it looks.
 

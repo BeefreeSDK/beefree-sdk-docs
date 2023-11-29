@@ -1,6 +1,6 @@
 # Passing forms to the builder
 
-### Providing forms <a href="#providing-forms" id="providing-forms"></a>
+## Providing forms <a href="#providing-forms" id="providing-forms"></a>
 
 You can load forms in the builder with two methods:
 
@@ -11,7 +11,7 @@ If you successfully implement either method, you’ll see a new Form content til
 
 Let’s see in detail how these methods work.
 
-### Default form in starting configuration <a href="#default-form-in-starting-configuration" id="default-form-in-starting-configuration"></a>
+## Default form in starting configuration <a href="#default-form-in-starting-configuration" id="default-form-in-starting-configuration"></a>
 
 Use this method to provide a default form in the [configuration parameters](../../getting-started/installation/configuration-parameters/) when the builder starts.
 
@@ -53,7 +53,7 @@ The flexibility of these properties allows you to cover multiple form building c
 
 For higher flexibility and better user experience, the form can be customized with the optional `canBeModified`, `canBeRemovedFromLayout`, and `removeFromLayout` attributes.
 
-#### Disable editing for a field
+### Disable editing for a field
 
 | Attribute       | Applies to                                                                                                                                   | Type    | Default value |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------- |
@@ -63,7 +63,7 @@ This attribute can be used to turn off the “Edit field” dialog for a field. 
 
 If unspecified, it will be applied as true, allowing the user to edit the field using the builder UI.
 
-#### Indicate when a field can be toggled off
+### Indicate when a field can be toggled off
 
 | Attribute                | Applies to | Type    | Default value |
 | ------------------------ | ---------- | ------- | ------------- |
@@ -73,7 +73,7 @@ This attribute indicates that a field can be toggled off by the user. If unspeci
 
 It’s a best practice to add `canBeRemovedFromLayout: false` to mandatory fields (e.g., the email address field in a sign-up form) so that they can’t be excluded in the HTML form.
 
-#### Toggle off a field when loading a form
+### Toggle off a field when loading a form
 
 | Attribute          | Applies to | Type    | Default value |
 | ------------------ | ---------- | ------- | ------------- |
@@ -85,7 +85,7 @@ This attribute indicates that a field is toggled off by default when the form is
 2. you can hide less common fields to load the most used combination at first, and keep the starting point simple, or even empty;
 3. the user than can explore available fields with the form properites and build their custom form
 
-Here is an example:
+#### Here is an example:
 
 ```javascript
 
@@ -150,7 +150,7 @@ but then, the user can toggle on the available fields to transform it:
 
 ![](https://docs.beefree.io/wp-content/uploads/2020/04/form\_complete\_2.png)
 
-### Implementing a content dialog <a href="#implementing-a-content-dialog" id="implementing-a-content-dialog"></a>
+## Implementing a content dialog <a href="#implementing-a-content-dialog" id="implementing-a-content-dialog"></a>
 
 {% hint style="info" %}
 The Content Dialog feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.

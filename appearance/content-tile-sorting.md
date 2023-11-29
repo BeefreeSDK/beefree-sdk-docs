@@ -5,7 +5,7 @@ This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/plug
 If you're on the Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Core-level features.
 {% endhint %}
 
-### Re-ordering Content Tiles <a href="#re-ordering-content-tiles" id="re-ordering-content-tiles"></a>
+## Re-ordering Content Tiles <a href="#re-ordering-content-tiles" id="re-ordering-content-tiles"></a>
 
 The Content Tile Sorting option allows the host application to change the order of the content tiles in the editor’s sidebar. This allows the host application to display the content blocks that are most important for their users first, and even provide additional visibility for a Custom Addon.
 
@@ -32,7 +32,7 @@ The host application can pass as many or as few content blocks as they want. If 
 
 For Custom/Partner AddOns, the host application passes the “Content Title” value found in the Addon section of the Beefree SDK Console Application Configuration.
 
-### Full List of Content Tiles <a href="#full-list-of-content-tiles" id="full-list-of-content-tiles"></a>
+## Full List of Content Tiles <a href="#full-list-of-content-tiles" id="full-list-of-content-tiles"></a>
 
 ```
 

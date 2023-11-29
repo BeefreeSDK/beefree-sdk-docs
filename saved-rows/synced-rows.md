@@ -5,43 +5,43 @@ This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/plug
 If you're on the Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Core-level features.
 {% endhint %}
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 **Synced Rows** expands on the foundational capabilities of [Save Rows](./) and [Single Row Edit Mode](edit-single-row-mode.md), helping users manage rows more effectively. Using the `merge` and `index` methods in the [Content Services API (CSAPI)](../content-services-api/), app developers can create a seamless row management workflow. This ensures that when users update content in one row marked as “synced,” those updates are reflected across all connected designs.
 
-#### Key features
+### Key features
 
 * **Cross-design synchronization**: Sync saved row contents across multiple linked designs.
 * **Design consistency**: Lock rows in linked designs to keep designs uniform.
 * **Editing flexibility**: Switch between synced and unsynced rows, making individual changes as needed.
 * **Intuitive edit indicator**: Look for the pencil icon at the top-right of synced rows, which provides access to editing options
 
-#### Example use cases
+### Example use cases
 
 * **Auto-updating contacts**: Change a contact in one email, and it updates across multiple campaigns.
 * **Effortless re-branding**: Edit your logo once and watch it reflect across all designs.
 * **Unified transactional footers**: Update details like copyright or social links, and it automatically updates in all relevant email templates.
 
-#### Elements that can be synchronized
+### Elements that can be synchronized
 
 * **Row details**: This includes structure, settings, and styles.
 * **Content details**: Settings and styles of individual content blocks.
 * **Metadata**: Any metadata tied to the saved row.
 
-### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
+## Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 Before diving into Synced Rows, we recommend reviewing the following features:
 
 1. [Save Rows](./): Implement this feature first, as it establishes the foundation for a row management workflow.
 2. [Single Row Edit Mode](edit-single-row-mode.md) & [Content Services API (CSAPI)](../content-services-api/): Familiarizing yourself with the Single Row Edit Mode and CSAPI will enhance your understanding of key concepts later. However, they are not strictly necessary to start with Synced Rows.
 
-### How it works <a href="#how-it-works" id="how-it-works"></a>
+## How it works <a href="#how-it-works" id="how-it-works"></a>
 
 When a row is saved with the `synced` property, it becomes a “synced row.” To maintain consistency, synced rows cannot be edited within a design. Instead, they function as reference points, ensuring uniformity across all linked designs. The host app must load the row’s JSON using Single Row Edit Mode to edit synced rows. Any modifications to synced rows can be propagated to all linked designs with the help of the CSAPI’s merge and index methods.
 
 Unsynced saved rows, in contrast, allow for edits that don’t impact other designs. They’re ideal for making design-specific changes without influencing other designs that might share the same base row.
 
-### Designating a row as "synced" <a href="#designating-a-row-as-synced" id="designating-a-row-as-synced"></a>
+## Designating a row as "synced" <a href="#designating-a-row-as-synced" id="designating-a-row-as-synced"></a>
 
 As previously mentioned, a synced row is a saved row designated  `synced` when saved. To set a row’s synced property, adjust the JSON response from the `saveRow` Content Dialog.
 
@@ -58,7 +58,7 @@ Here’s a **sample implementation for the Metadata Content Dialog**, offering t
 
 The JSON returned to the builder includes the user’s input and selections from the UI. The configuration below shows the new synced row setting applied to the options argument of the resolve method.
 
-**Example**
+### **Example**
 
 ```json
 
@@ -81,13 +81,13 @@ contentDialog: {
 
 ```
 
-### Identifying synced rows <a href="#identifying-synced-rows" id="identifying-synced-rows"></a>
+## Identifying synced rows <a href="#identifying-synced-rows" id="identifying-synced-rows"></a>
 
 Look for the pencil icon at the top-right of synced rows. Rows without this icon are standard saved rows. The icon provides a clear visual cue for quickly identifying and editing synced rows.
 
 ![](https://docs.beefree.io/wp-content/uploads/2023/08/sync\_row\_edit\_icon.png)
 
-### Editing synced rows <a href="#editing-synced-rows" id="editing-synced-rows"></a>
+## Editing synced rows <a href="#editing-synced-rows" id="editing-synced-rows"></a>
 
 To edit a synced row, click the pencil icon. Editing options appear in the sidebar panel. Inside, you’ll find a CTA button and optional text.
 
@@ -113,7 +113,7 @@ The second option, to unsync the row, converts the synced row into a standard sa
 
 The user’s selection from the above example `editSyncedRow`  content dialog UI is returned to the builder as a boolean value.  Below is an example of the `editSyncedRow` configuration for the UI above. Note the boolean value  `false` in the resolve method unlocks the row:
 
-**Example**
+### **Example**
 
 ```json
 
@@ -141,7 +141,7 @@ The following animation shows this **example of edit synced rows workflow** in a
 
 <figure><img src="https://docs.beefree.io/wp-content/uploads/2023/03/Edit_Synced_Row.gif" alt=""><figcaption></figcaption></figure>
 
-### Example synced rows workflow <a href="#example-synced-rows-workflow" id="example-synced-rows-workflow"></a>
+## Example synced rows workflow <a href="#example-synced-rows-workflow" id="example-synced-rows-workflow"></a>
 
 Suppose a user selects “Edit and update everywhere” from the content dialog. How does the host app ensure seamless editing and synchronization of the row?
 
@@ -154,7 +154,7 @@ Here’s a breakdown of the typical workflow the host app adopts:
 5. **Redirection & Synchronizing changes**: After editing a row, the host app usually performs a synchronous merge using the CSAPI. The user will then be redirected to their ongoing design, where they can see their edits reflected in the synced row.
 6. **Background syncing**: Given the possible existence of numerous linked designs, a background process is usually set in motion to update all other templates.
 
-### Synchronizing row changes <a href="#synchronizing-row-changes" id="synchronizing-row-changes"></a>
+## Synchronizing row changes <a href="#synchronizing-row-changes" id="synchronizing-row-changes"></a>
 
 In the fifth step of the sample workflow, the goal is to bring the user back to their ongoing design with the updated content. This is achieved using the CSAPI’s `merge` method.
 
@@ -183,7 +183,7 @@ Here’s an example of how to use the `merge` method. For more details check out
 
 </code></pre>
 
-### Efficient template updates <a href="#efficient-template-updates" id="efficient-template-updates"></a>
+## Efficient template updates <a href="#efficient-template-updates" id="efficient-template-updates"></a>
 
 To update rows across all designs, keeping track of the templates where rows have been dropped is crucial. There are two principal methods to associate rows with templates:
 

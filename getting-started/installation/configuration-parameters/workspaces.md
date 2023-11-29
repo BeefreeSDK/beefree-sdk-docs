@@ -1,6 +1,6 @@
 # Workspaces
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 In user interfaces, a workspace is a parameter that changes the appearance, settings, and widgets available in an builder, to help the user to focus on what matters.
 
@@ -16,7 +16,7 @@ Switching between workspaces might change:
 * outputs when saving a content
 * …and more!
 
-### Available workspaces <a href="#available-workspaces" id="available-workspaces"></a>
+## Available workspaces <a href="#available-workspaces" id="available-workspaces"></a>
 
 If no workspace is loaded at launch, the builder starts in its “Default” workspace.
 
@@ -38,7 +38,7 @@ Here is an overview of the different workspaces and their differences. Please [r
 | **Availability of the hide on AMP/HTML property** | Not available              | Yes                      | Yes                                       | Yes                                      |
 | **Behavior for hidden for HTML/AMP content**      | The onWarning is triggered | Both are visible         | Only “hidden for HTML” content is visible | Only “hidden for AMP” content is visible |
 
-### Starting the builder with a workspace <a href="#starting-the-builder-with-a-workspace" id="starting-the-builder-with-a-workspace"></a>
+## Starting the builder with a workspace <a href="#starting-the-builder-with-a-workspace" id="starting-the-builder-with-a-workspace"></a>
 
 Here is an example of loading Beefree SDK with a “mixed” workspace:
 
@@ -66,7 +66,7 @@ function BeePlugin.create(token, beeConfig, (beePluginInstance) => {
 
 ```
 
-### Switching workspaces <a href="#switching-workspaces" id="switching-workspaces"></a>
+## Switching workspaces <a href="#switching-workspaces" id="switching-workspaces"></a>
 
 You can implement a workspace selector within your application, so that users can switch between workspaces, by using the `loadWorkspace(type)` method.
 
@@ -102,11 +102,11 @@ And here is how to create a simple select to switch workspace:
 </select>
 ```
 
-### Workspace callbacks <a href="#workspace-callbacks" id="workspace-callbacks"></a>
+## Workspace callbacks <a href="#workspace-callbacks" id="workspace-callbacks"></a>
 
 After you load a workspace, the application will trigger one of these three callbacks:
 
-**Success**
+### **Success**
 
 ```javascript
 //SUCCESS 
@@ -115,7 +115,7 @@ onLoadWorkspace: function (workspace) {
 },
 ```
 
-**Failure**
+### **Failure**
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>//FAILURE
 </strong>onError: function (error) {
@@ -123,7 +123,7 @@ onLoadWorkspace: function (workspace) {
 },
 </code></pre>
 
-**Invalid workspace**
+### **Invalid workspace**
 
 ```javascript
 {
@@ -134,7 +134,7 @@ onLoadWorkspace: function (workspace) {
 }
 ```
 
-### Use cases <a href="#use-cases" id="use-cases"></a>
+## Use cases <a href="#use-cases" id="use-cases"></a>
 
 The additional workspaces for AMP (AMP-only and HTML-only) can become helpful if you want to tailor the user experience of creating AMP emails, by adding:
 

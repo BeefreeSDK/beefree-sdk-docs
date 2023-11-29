@@ -5,11 +5,11 @@ This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/plug
 If you're on the Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Core-level features.
 {% endhint %}
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 With **Custom Attributes**, your end users can easily append **additional information to HTML tags** in emails and web pages, at the same moment they are creating their content in Beefree SDK. These attributes can be **applied to links**, both in text blocks and buttons, **and images**, and they serve a variety of scenarios: personalization, segmentation, styling, accessibility, etc.
 
-### Use cases <a href="#use-cases" id="use-cases"></a>
+## Use cases <a href="#use-cases" id="use-cases"></a>
 
 Custom attributes enable a wide array of use cases, depending on your application’s capabilities and your users’ needs. Here are a few examples:
 
@@ -20,7 +20,7 @@ Custom attributes enable a wide array of use cases, depending on your applicatio
 * adding custom CSS classes for custom CSS;
 * adding WAI-ARIA attributes for accessibility requirements.
 
-### How it works <a href="#how-it-works" id="how-it-works"></a>
+## How it works <a href="#how-it-works" id="how-it-works"></a>
 
 The host application can provide the editor with a list of attributes that will be available to the user through the UI. How the attribute value is formatted impacts how the builder UI displays it and how the user interacts with it.
 
@@ -59,11 +59,11 @@ Regardless of how a custom attribute is added, it will be included in the `a` or
 
 ```
 
-### How to activate it <a href="#how-to-activate-it" id="how-to-activate-it"></a>
+## How to activate it <a href="#how-to-activate-it" id="how-to-activate-it"></a>
 
 Custom attributes are a client-side configuration that needs to be passed when initializing the editor. There are different shades of implementation complexity, based on the outcome you want to obtain. These approaches can be combined as preferred.
 
-#### Basic
+### Basic
 
 The easiest implementation is to just pass a simple configuration at startup:
 
@@ -77,7 +77,7 @@ customAttributes: {
 
 With this setup, users can indicate a “Custom” custom attribute by manually specifying Name and Value. Please note that users must know exactly what they are doing, as there will be no guidance in the editor.
 
-#### Standard
+### Standard
 
 You can pass the necessary custom attributes in the initial configuration. Those attributes will be available in the interface, and the user will be able to specify the value for these attributes, if possible.
 
@@ -118,6 +118,6 @@ The `Class` attribute has no defined value, so the user can enter anything in a 
 
 ![Custom attribute with undefined value](https://docs.beefree.io/wp-content/uploads/2021/01/Custom-attributes-undefined-value.png)
 
-#### Advanced
+### Advanced
 
 You can totally customize the UX of adding attributes by invoking a [Content Dialog](content-dialog.md) that will take over the editor’s UI. The dialog will need to return the attribute that needs to be applied.

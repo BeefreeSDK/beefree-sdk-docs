@@ -4,6 +4,8 @@
 This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
 {% endhint %}
 
+## Introduction
+
 You can now customize the list of fonts available in the editor’s text toolbar and the BODY settings panel.
 
 This new feature allows you (or users of your app) to:
@@ -23,7 +25,7 @@ For instance, in our hosted [email design suite](https://dam.beefree.io/beepro) 
 
 ![Selecting custom fonts in BEE Pro](https://docs.beefree.io/wp-content/uploads/2019/08/settings-new-fonts-cropped.png)
 
-### Adding the editorFonts object
+## Adding the editorFonts object
 
 This object, passed as part of the [builder configuration](../getting-started/installation/configuration-parameters/), tells the editor which fonts to load in any drop-down where a list of fonts is shown. It defines the availability of the default fonts and provides a list of additional, custom fonts.
 
@@ -48,11 +50,11 @@ In this example default fonts are loaded, and two new fonts are added: a web saf
 
 Here is a more detailed description on how the editorFonts object is built:
 
-#### Parameters
+### Parameters
 
 <table><thead><tr><th width="220">Parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>showDefaultsFonts</code></td><td>This boolean parameter indicates if the entire list of default fonts is available or not. When the value is false, only the fonts added as custom fonts will be active in the editor.</td></tr><tr><td><code>customFonts</code></td><td><p>When the default font parameter is true, the custom fonts declared inside this object will be added to the list of default fonts: both are loaded into the editor. Otherwise, only custom fonts will be shown.<br>Each <code>customFonts</code> element can have the following properties:</p><table><thead><tr><th width="100">Parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>name</code></td><td>This string will be shown in the font dropdown list. You can use the term you prefer and we suggest the usage of common font names, but you can go creative and use semantic names that fit on your application. Long strings may impact the interface, so we recommend to keep it short. The characters { } [ ] : ” / \ | ? * are invalid.</td></tr><tr><td><code>fontFamily</code></td><td>Describes the CSS font stack that will be applied to the final HTML. Is important that you provide at least one fallback font to ensure that the text is not displayed using an unwanted font family. Is important that you use single quote marks with the font names instead of double quotation marks to maintain a correct JSON syntax.</td></tr><tr><td><code>url</code></td><td>This parameter is used only when we work with web fonts. Is important that the URL points to a CSS file with the @font-face properties, and not directly to the font files. To work, the CSS must be hosted in HTTPS.</td></tr><tr><td><code>fontWeight</code></td><td>Adds a new option in the dropdown of the content block’s settings for title, button, paragraph, and list blocks (e.g. 100: Thin). If not defined, only Regular (400) and Bold (700) will be available.</td></tr></tbody></table></td></tr></tbody></table>
 
-### Working with custom fonts
+## Working with custom fonts
 
 When we add a set of custom fonts, we can decide between system fonts and web fonts. Let’s see some details on what you need to know:
 
@@ -60,7 +62,7 @@ System fonts are installed on the operative systems and don’t need any externa
 
 Web fonts are hosted online and need to be loaded by the email client when the email is opened. Beefree SDK accepts only the CSS font embedding method, and the CSS file must be hosted in HTTPS protocol. You can use services like Google fonts, that provides host, font stacks and a well formatted CSS file.
 
-#### Usage examples
+### Usage examples
 
 We want the editor to work with only 2 fonts when creating a message, we want that only Lobster and Cabin fonts are available when editing this message:
 
@@ -219,7 +221,7 @@ var editorFonts = {
 
 ```
 
-### Templates with unavailable fonts
+## Templates with unavailable fonts
 
 We open a saved template that uses fonts that are not available:
 

@@ -40,7 +40,7 @@ When you use the Beefree SDK S3 storage, your images are delivered via a Content
 
 If you exceed the 5TB monthly traffic allotment, we ask you to cover the cost of the service (for a few of our customers that generate a lot of image data traffic, that cost has grown to exceed their Beefree SDK subscription fee). Also, note that this scenario is quite rare: it applies to less than 3% of our customers.
 
-### **When does the traffic counter reset?**
+## **When does the traffic counter reset?**
 
 * If you’re on a paid plan, billed monthly, the counter will reset on the same days as your UIDs and CSAPI calls, i.e., on the day your subscription to Beefree SDK is renewed.
 * If you’re on a paid plan, billed yearly, the counter will reset on the 1st day of each month.

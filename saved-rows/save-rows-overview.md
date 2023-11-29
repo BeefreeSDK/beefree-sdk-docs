@@ -5,13 +5,13 @@ This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/plug
 If you're on the Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Core-level features.
 {% endhint %}
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 Save Rows allows users to select a row in a message and save it for later use. More specifically, it allows users to submit a request to the host application to save a piece of content and turn it into a reusable element. The host application, using the [Custom Rows](../custom-rows/) feature, can feed these saved elements back to the builder as rows that can be dragged into other messages.
 
-### How it works <a href="#how-it-works" id="how-it-works"></a>
+## How it works <a href="#how-it-works" id="how-it-works"></a>
 
-**The new Save icon**
+### **The new Save icon**
 
 When the feature is enabled, a new _Save_ icon is added to the action icons when a row is selected:
 
@@ -34,7 +34,7 @@ It is entirely up to the host application:
 * whether to allow users to edit them individually
 * when and how to feed them back to the builder, using the [Custom Rows](../custom-rows/) feature.
 
-**Enabling Save Rows in the Beefree SDK Console**
+## **Enabling Save Rows in the Beefree SDK Console**
 
 _Save Rows_ – as most Beefree SDK features – is made available to users in an off state and must be activated in the [Beefree SDK Console](https://developers.beefree.io/).
 
@@ -47,7 +47,7 @@ To do so:
 
 <figure><img src="https://docs.beefree.io/wp-content/uploads/2018/11/setup.png" alt="" width="563"><figcaption></figcaption></figure>
 
-**Making Save Rows available only to select users**
+## **Making Save Rows available only to select users**
 
 Once the feature has been turned on at the global level, in [Beefree SDK Console](https://developers.beefree.io/), you may want to disable _Save Rows_ on a per-user basis.  This can be accomplished via the client-side configuration document that you feed to an application when initializing the builder for a certain user.
 
@@ -66,7 +66,7 @@ Here’s how to do so:
 
 Here is a simple example:
 
-**Save Row Configuration**
+## **Save Row Configuration**
 
 ```javascript
 
@@ -80,7 +80,7 @@ const beeConfig = {
 
 ```
 
-**Understanding the end-user experience**
+## **Understanding the end-user experience**
 
 How does _Save Rows_ work from the end-user point of view? It’s in part based on the changes to the builder mentioned above, and in part affected by how you decide to implement the feature within your application.
 
@@ -110,7 +110,7 @@ Here is a visual example using our demo application:
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/11/saveRows.gif)
 
-**Saving rows workflow for developers**
+## **Saving rows workflow for developers**
 
 When the _save row_ action is triggered by the user, the builder starts the following sequence:
 
@@ -141,7 +141,7 @@ The following describes the recommended workflow to implement saved rows in a ho
 8. The application will refresh the Rows panel to reload the selected rows data feed.
 9. Host app will listen for _onSaveRows_ callback and update the previously saved records with the HTML preview.
 
-### Displaying rows <a href="#displaying-rows" id="displaying-rows"></a>
+## Displaying rows <a href="#displaying-rows" id="displaying-rows"></a>
 
 To display saved rows in the _Rows_ tab, add them to the list of rows available to users by leveraging the [Custom Rows feature](../custom-rows/).
 
@@ -211,23 +211,23 @@ rowsConfiguration: {
 
 ```
 
-### Saved Rows Management <a href="#saved-rows-management" id="saved-rows-management"></a>
+## Saved Rows Management <a href="#saved-rows-management" id="saved-rows-management"></a>
 
 Accessing, and organizing saved rows is now easier than ever with Saved Rows Management. With this feature, we’ve introduced a new action in the list of saved rows that your application can intercept to handle changes in this list itself. This means you can now delete, rename, or re-organize your saved rows, right inside the builder.
 
 ![](https://docs.beefree.io/wp-content/uploads/2021/11/savedrowsmanagement.gif)
 
-#### How to implement
+## How to implement
 
 Implementing this new feature requires some development effort from the host application.
 
 Here is what you need to know for each action.
 
-#### Saved Row Management Actions
+## Saved Row Management Actions
 
 In the section below you can learn how to configure the Saved Rows Management categories, and allow users to perform such actions straight from the builder.
 
-**Configure Delete Rows**
+## **Configure Delete Rows**
 
 To get started, you will need to create a content dialog in your application configuration parameters. The content dialog method should be named `onDeleteRow` and be nested under the `contentDialog` object, as follows:
 
@@ -276,7 +276,7 @@ rowsConfiguration: {
 
 When the `onDeleteRow` method is called, utilize the 3rd parameter to obtain an argument containing the handle value of the row being requested, as well as the row metadata. Use the handle and the row’s metadata to determine which row should be deleted.
 
-**Example** **args:**
+## **Example** **args:**
 
 ```json
 
@@ -297,7 +297,7 @@ When the `onDeleteRow` method is called, utilize the 3rd parameter to obtain an 
 
 Finally, we can call the `resolve` method, passing the value `true` if you want to refresh the rows, or `false` if you want to keep the side panel’s current listing.
 
-**Example onDeleteRow with args:**
+## **Example onDeleteRow with args:**
 
 ```javascript
 
@@ -320,7 +320,7 @@ beeConfig: {
 
 ```
 
-**Configure Edit Row Metadata**
+## **Configure Edit Row Metadata**
 
 To get started, much like with deleting rows, you will need to create a content dialog in your application configuration parameters. The content dialog method should be named `onEditRow` and be nested under the `contentDialog` object, as follows:
 
@@ -369,7 +369,7 @@ rowsConfiguration: {
 
 When the `onEditRow` method is called, utilize the 3rd parameter to obtain an argument containing the handle value of the row being requested, as well as the row metadata. Use the handle and the row’s metadata to determine which row should be edited.
 
-**Example** **args:**
+## **Example** **args:**
 
 ```javascript
 
@@ -390,7 +390,7 @@ When the `onEditRow` method is called, utilize the 3rd parameter to obtain an ar
 
 Finally, we can call the `resolve` method, passing the value `true` if you want to refresh the rows, or `false` if you want to keep the side panel’s current listing.
 
-**Example onEditRow with args:**
+## **Example onEditRow with args:**
 
 ```javascript
 
@@ -413,7 +413,7 @@ beeConfig: {
 
 ```
 
-**Errors and Warnings**
+## **Errors and Warnings**
 
 Saved Rows Management also provides errors and warnings for your application, so you can handle all cases gracefully.
 
@@ -430,7 +430,7 @@ Saved Rows Management also provides errors and warnings for your application, so
 
 ```
 
-**Sample error:**
+## **Sample error:**
 
 ```json
 
@@ -445,7 +445,7 @@ Saved Rows Management also provides errors and warnings for your application, so
 
 You can call the `reject` method, passing the message you want to display.
 
-**Example:**
+## **Example:**
 
 ```javascript
 
@@ -467,7 +467,7 @@ beeConfig: {
 
 ```
 
-#### Loading External Rows with an Instance Method <a href="#loading-external-rows-with-an-instance-method" id="loading-external-rows-with-an-instance-method"></a>
+## Loading External Rows with an Instance Method <a href="#loading-external-rows-with-an-instance-method" id="loading-external-rows-with-an-instance-method"></a>
 
 Saved Rows Management also comes with the ability to load any external rows via an instance method instead of an external URL. In addition, since you can now access rows through your application, you don’t need to perform authentication.
 
@@ -494,7 +494,7 @@ Following that, amend your `rowsConfiguration` object with the additional parame
 * The `handle` parameter to utilize in your `getRows` handler from the previous step
 * The `isLocal` parameter to let the application know to use the hook handler
 
-Here’s an example:
+### Here’s an example:
 
 ```json
 
@@ -513,7 +513,7 @@ rowsConfiguration: {
 
 When the getRows method is invoked, utilize the 3rd parameter to obtain an argument containing the handle value of the row being requested. Use the handle to determine which set of rows should be returned.
 
-**Example** **args:**
+### **Example** **args:**
 
 ```json
 
@@ -526,7 +526,7 @@ When the getRows method is invoked, utilize the 3rd parameter to obtain an argum
 
 Finally, we can call the resolve method, passing in an array of savedRows.
 
-**Example hook with args:**
+### **Example hook with args:**
 
 ```javascript
 
@@ -552,7 +552,7 @@ beeConfig: {
 If you are using a React application, be sure to pass a new rows array and not a reference to a row state. Otherwise, the rows state may be “stale” and won’t update in the side panel.
 {% endhint %}
 
-### Saved rows schema <a href="#saved-rows-schema" id="saved-rows-schema"></a>
+## Saved rows schema <a href="#saved-rows-schema" id="saved-rows-schema"></a>
 
 The following is the basic structure of the row’s JSON schema. Simply put, the schema is the structure of your saved rows data feed.
 
@@ -587,16 +587,15 @@ metadata: {
 
 ```
 
-**Required metadata**
+### **Required metadata**
 
-**name**\
-The saved row’s title displayed in the _Rows_ panel.
+#### **name** The saved row’s title displayed in the _Rows_ panel.
 
 * A string of plain text that identifies the row.
 * Displayed in the row card when the row is shown in the _Rows_ panel.
 * Used for text searches within the _Rows_ panel
 
-**Recommended metadata**
+#### **Recommended metadata**
 
 **category**\
 A category can be useful for organizing your feeds on the Rows tab.
@@ -619,7 +618,7 @@ To let your application decide whom can edit or save rows.
 **tags**\
 Useful to create filters, management, search, and in general to organize the content in your application.
 
-### Metadata Content Dialog <a href="#metadata-content-dialog" id="metadata-content-dialog"></a>
+## Metadata Content Dialog <a href="#metadata-content-dialog" id="metadata-content-dialog"></a>
 
 The metadata content dialog is triggered by the save icon in Beefree SDK. This step is required to provide Beefree SDK with information about the row, such as its name and/or id.  The Metadata Content Dialog is added in the same manner as other Content Dialogs, such as Merge Tags.  Please review the [Content Dialog](../advanced-options/content-dialog.md) section for more details about how to use Beefree SDK’s Content Dialog feature.
 
@@ -660,7 +659,7 @@ The metadata resolve function now accepts an `options` object in which you can p
 
 ```
 
-### Save Rows callback <a href="#save-rows-callback" id="save-rows-callback"></a>
+## Save Rows callback <a href="#save-rows-callback" id="save-rows-callback"></a>
 
 When the _Metadata Content Dialog_ is completed, the application triggers the _Save Rows callback_.  The callback returns the following details:
 
@@ -681,7 +680,7 @@ onSaveRow: function (rowJSON, rowHTML, pageJSON) {
 
 ```
 
-### Edit Saved Rows <a href="#edit-saved-rows" id="edit-saved-rows"></a>
+## Edit Saved Rows <a href="#edit-saved-rows" id="edit-saved-rows"></a>
 
 With [Edit Single Row](edit-single-row-mode.md) mode you can offer an easy way for your users to edit saved rows individually, using a tailored UI built to modify the row structure, content, and style settings without worrying about messing up with the overall design of the email campaign, landing page, or pop-up.
 

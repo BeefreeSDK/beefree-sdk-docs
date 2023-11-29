@@ -1,6 +1,6 @@
 # Form structure and parameters
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 A form is defined through the `structure` object, which includes its main properties.
 
@@ -24,7 +24,7 @@ Let’s now examine the anatomy of a Beefree SDK form structure.
 
 ```
 
-### Attributes <a href="#attributes" id="attributes"></a>
+## Attributes <a href="#attributes" id="attributes"></a>
 
 This object contains the general form attributes as strings: all of them are standard HTML5 attributes.
 
@@ -49,7 +49,7 @@ To see them in action, you can find a few examples on [our dedicated GitHub page
 
 If you want to use a single form, you can use the optional `canBeRemovedFromLayout` and `removeFromLayout` attributes to determine (respectively) if that specific field can be removed from the layout by the user, and if it should appear in the stage when the form is dragged in.
 
-**Indicate when a field can be toggled off**
+#### **Indicate when a field can be toggled off**
 
 | Attribute                | Applies to | Type    | Default value |
 | ------------------------ | ---------- | ------- | ------------- |
@@ -59,7 +59,7 @@ This attribute indicates that a field can be toggled off by the user. If unspeci
 
 It’s a best practice to add `canBeRemovedFromLayout: false` to mandatory fields (e.g., the email address field in a sign-up form) so that they can’t be excluded in the HTML form.
 
-**Toggle off a field when loading a form**
+#### **Toggle off a field when loading a form**
 
 | Attribute          | Applies to | Type    | Default value |
 | ------------------ | ---------- | ------- | ------------- |
@@ -67,7 +67,7 @@ It’s a best practice to add `canBeRemovedFromLayout: false` to mandatory field
 
 This attribute indicates that a field is toggled off by default when the form is loaded. This behavior is particularly useful to simplify the user experience when you implement forms in the builder through a [default form in the configuration parameters](passing-forms-to-the-builder.md).
 
-### Layout <a href="#layout" id="layout"></a>
+## Layout <a href="#layout" id="layout"></a>
 
 If you want to leverage the full power of Beefree SDK forms and use a content dialog to feed the form to the editor’s stage, the `layout` array will determine how the fields will appear to the user.
 
@@ -93,11 +93,11 @@ Probably the best way to represent this is with an example:
 
 <figure><img src="https://docs.beefree.io/wp-content/uploads/2020/03/forms-layout.png" alt=""><figcaption></figcaption></figure>
 
-### Title and description <a href="#title-and-description" id="title-and-description"></a>
+## Title and description <a href="#title-and-description" id="title-and-description"></a>
 
 The form **title** is a string value. It is not displayed to the user while working in the editor but provides extra information that can be used later for troubleshooting. Likewise, **description** as a string value that is not displayed to the user while working in the editor, but provides extra information that can be used later for troubleshooting or internal reference.
 
-### Using reCAPTCHA <a href="#using-recaptcha" id="using-recaptcha"></a>
+## Using reCAPTCHA <a href="#using-recaptcha" id="using-recaptcha"></a>
 
 reCAPTCHA is a free service from Google that helps protect websites from spam and abuse. To learn more about reCAPTCHA, visit the [official website](https://www.google.com/recaptcha/about/) or Google [technical documentation](https://developers.google.com/recaptcha/) site.
 

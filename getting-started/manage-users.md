@@ -4,7 +4,7 @@ description: Learn how to manage users within the Beefree SDK Developer Console.
 
 # Manage Users
 
-### Manage users in the Console <a href="#manage-users-in-the-console" id="manage-users-in-the-console"></a>
+## Manage users in the Console <a href="#manage-users-in-the-console" id="manage-users-in-the-console"></a>
 
 You can invite additional users to your Beefree SDK Console. To do so, go to _Manage users_ from the personal menu in the top right.
 

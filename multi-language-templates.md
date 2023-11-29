@@ -19,7 +19,7 @@ This Configuration Guide will help you get started with configuring the MLT feat
 
 If you are uncertain if your host application is a good candidate for this functionality, continue to the [Is MLT for Your Application?](multi-language-templates.md#is-mlt-for-your-application) section to learn more about this feature.
 
-#### Is MLT for Your Application? <a href="#is-mlt-for-your-application" id="is-mlt-for-your-application"></a>
+### Is MLT for Your Application? <a href="#is-mlt-for-your-application" id="is-mlt-for-your-application"></a>
 
 The Multi-language Templates (MLT) feature is an enhancement for companies working with end users who build emails that engage with international audiences.
 
@@ -35,7 +35,7 @@ To use Multi-language Templates, your host application only needs to store one J
 
 For more information on key benefits and features of Multi-language Templates, visit our [Multi-language Template Knowledge Base article](https://devportal.beefree.io/hc/en-us/articles/13704895899026).
 
-#### End User Functionality <a href="#end-user-functionality" id="end-user-functionality"></a>
+### End User Functionality <a href="#end-user-functionality" id="end-user-functionality"></a>
 
 Multi-language Templates (MLT) offers the following in-app features for an application end user:
 
@@ -50,7 +50,7 @@ Multi-language Templates (MLT) offers the following in-app features for an appli
 
 For more detailed information on the MLT feature offering, visit our Multi-language Knowledge Base article.
 
-### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
+## Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 Before proceeding with the configuration, ensure you have:
 
@@ -59,7 +59,7 @@ Before proceeding with the configuration, ensure you have:
 * Application Client ID
 * Application Client secret
 
-### Configuration Steps <a href="#configuration-steps" id="configuration-steps"></a>
+## Configuration Steps <a href="#configuration-steps" id="configuration-steps"></a>
 
 To use Multi-language Templates, your host application only needs to store one JSON file with the different languages you’d like to offer. Take the following steps to configure Multi-language Templates (MLT) in your application.
 
@@ -71,7 +71,7 @@ Enable multi-language templates
 4. Navigate to the multi-language template toggle.
 5. Toggle the feature to on.
 
-Initialize multi-language templates
+## Initialize multi-language templates
 
 1. Add the `templateLanguage` property to the config object. This property defines the default language for the template.
 2. Add the `templateLanguages` property to the config object. This property defines the list of language options for the template translations.
@@ -111,11 +111,11 @@ The following sample shows an example of a default language and three translatio
 Languages are defined with a value and a label. The label is what will be shown in the language drop-down inside the top bar. The value is a key that stores the translations in the JSON. It is used to set the corresponding language meta attribute for each translation.
 {% endhint %}
 
-#### Lang Attribute <a href="#lang-attribute" id="lang-attribute"></a>
+## Lang Attribute <a href="#lang-attribute" id="lang-attribute"></a>
 
 The lang attribute on the content modules helps with [hyphenation and screen readability](advanced-options/meta-tags.md).
 
-### Test the Configuration <a href="#test-the-configuration" id="test-the-configuration"></a>
+## Test the Configuration <a href="#test-the-configuration" id="test-the-configuration"></a>
 
 Once you have initialized multi-language templates, you can confirm that the configuration was successful by following these instructions:
 
@@ -138,11 +138,11 @@ If you see a drop-down, the configuration was successful. If you do not see a dr
 | Missing \`onSave\` Callbacks       | Implement \`onSave\` callbacks for each language to handle specific language-related data during export.                                                                | Create \`onSave\` callbacks for each language export to manage language-specific data appropriately.                 |
 | Language Change Problems           | When changing the template language, verify the existence of the specified language, and have an \`onTemplateLanguageChange\` callback to respond to language switches. | Confirm the language’s availability and define an \`onTemplateLanguageChange\` callback to handle language switches. |
 
-### Translation HTML
+## Translation HTML
 
 Multi-language Templates (MLT) offer the option to save and export translation HTML. This section outlines the steps you need to take to save or export a translation’s HTML.
 
-#### Save HTML
+### Save HTML
 
 To save the HTML output for a specific language take the following steps:
 
@@ -175,7 +175,7 @@ In the code above:
 
 If you want to use the default main language for generating HTML when the `bee.save` method is called without parameters, you don’t need to specify a language in the `bee.save method`. The default language will be used automatically.
 
-### Export Translations <a href="#export-translations" id="export-translations"></a>
+## Export Translations <a href="#export-translations" id="export-translations"></a>
 
 Take the steps outlined in this section to export the translation HTML.
 
@@ -252,7 +252,7 @@ The following sample code displays this:
 
 ```
 
-### Changing the Language <a href="#changing-the-language" id="changing-the-language"></a>
+## Changing the Language <a href="#changing-the-language" id="changing-the-language"></a>
 
 Follow the steps outlined in this section to create a specified functionality that allows the end user to change their template language when a custom top bar is enabled.
 
@@ -288,7 +288,7 @@ The `onTemplateLanguageChange` callback will receive an object (lang) containing
 
 5. Test the language switching functionality by calling `bee.switchTemplateLanguage` with different language values, and make sure that the `onTemplateLanguageChange` callback responds correctly.
 
-### Triggering the Translation Preview <a href="#triggering-the-translation-preview" id="triggering-the-translation-preview"></a>
+## Triggering the Translation Preview <a href="#triggering-the-translation-preview" id="triggering-the-translation-preview"></a>
 
 If you have a custom Preview, you can handle switching languages on the Preview.
 

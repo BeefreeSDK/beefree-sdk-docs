@@ -4,7 +4,7 @@
 This feature is available on Beefree SDK [Superpowers plan](https://beefree.io/bee-plugin/pricing/) and above. If you're on the Core or Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Superpowers-level features.
 {% endhint %}
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 With Advanced permissions, you can tailor permissions for users of your Beefree application by hiding or locking UI elements related to:
 
@@ -16,11 +16,11 @@ With Advanced permissions, you can tailor permissions for users of your Beefree 
 
 These advanced permissions grant total customization of the experience you want to present. Since you set them in the configuration parameters passed to your Beefree app after you’ve initialized it, they could be different each time the editor starts, and have different setups for different users.
 
-### Use cases <a href="#use-cases" id="use-cases"></a>
+## Use cases <a href="#use-cases" id="use-cases"></a>
 
 The absolute flexibility of these permissions makes it easy to address specific needs, not achievable with the [Roles and Permissions](roles-and-permissions.md) feature that is available in the Beefree SDK Console.
 
-**Create skill-based roles**
+## **Create skill-based roles**
 
 You can create roles that can act only on a content type. For example, you may want a “copywriter” role for people in an organization that only need to touch copy for editing or translation purposes. To do so, you can:
 
@@ -33,7 +33,7 @@ Here is a brief example of how a “copywriter” role built with Advanced permi
 
 {% embed url="https://docs.beefree.io/wp-content/uploads/2020/04/Advanced-permission-Copywriter.mp4" %}
 
-**Customize image & file management workflows**
+## **Customize image & file management workflows**
 
 You can limit how users upload and manage images and files inside the plugin; for example, you want some users – e.g., external collaborators – to select pre-approved images and files uploaded by “admin” users. You can do so by:
 
@@ -43,7 +43,7 @@ You can limit how users upload and manage images and files inside the plugin; fo
 Another interesting case for using advanced permissions is the possibility to set a **maximum size** **for uploads, per user**. The maximum size set per user must not exceed the **custom limitation** size set on the [Activate Custom Limitation on File Manager](../server-side-options/services-options.md). **The default limit is 20 Mb** unless otherwise stated.\
 When this permission is configured, the system will check if a file exceeds the set size before uploading it; if so, the plugin will return an error message, which you may customize using [Custom languages](custom-languages.md).
 
-**Create custom, secondary roles**
+## **Create custom, secondary roles**
 
 When customers of your applications are structured businesses, typically with a headquarter and a locally-deployed organization (e.g., Real Estate, Travel, Retail), their administrators can create custom, secondary roles to match any internal policy they might have. In this scenario, admins typically want to reduce disruptions of centrally-deployed templates for external communication, while allowing a specific degree of freedom.
 
@@ -111,17 +111,17 @@ beeConfig: {
 
 ```
 
-### Available permissions and behaviors <a href="#available-permissions-and-behaviors" id="available-permissions-and-behaviors"></a>
+## Available permissions and behaviors <a href="#available-permissions-and-behaviors" id="available-permissions-and-behaviors"></a>
 
 You can add all the permissions, some of them, or just one. It is up to your application to create them for all users or a segment, as there are no related server-side settings. You may have a different setup each time the editor starts.
 
 All the permissions use a similar pattern, but the object must match the content schema for the type of content (described in the following section).
 
-#### Defaults
+### Defaults
 
 Each content type below contains a parameter for “behaviors” and “properties”. The behaviors control what someone can, or can’t, do. The properties parameter is an array of sidebar property widgets (e.g., the width slider), and each widget has its default permissions.
 
-**Sidebar property widget permissions**
+### **Sidebar property widget permissions**
 
 All sidebar property widgets (e.g. width slider, alignment, color, etc.) accept the following basic permissions:
 
@@ -157,7 +157,7 @@ beeConfig: {
 
 ```
 
-**Default behaviors**
+### **Default behaviors**
 
 All contents and rows (e.g. image module, video module, stage row, etc.) accept the following basic behaviors:
 
@@ -194,7 +194,7 @@ beeConfig: {
 
 ## Components
 
-**filePicker**
+### **filePicker**
 
 ```javascript
 
@@ -214,7 +214,7 @@ filePicker: {
 
 ```
 
-#### rows
+### rows
 
 ```javascript
 
@@ -295,7 +295,7 @@ rows: {
 
 ```
 
-#### columns
+### columns
 
 ```javascript
 
@@ -311,7 +311,7 @@ rows: {
 
 ```
 
-#### tabs
+### tabs
 
 ```javascript
 
@@ -332,7 +332,7 @@ tabs: {
 
 ```
 
-#### settings
+### settings
 
 ```javascript
 
@@ -371,7 +371,7 @@ settings: {
 
 ## Content
 
-**title**
+### **title**
 
 ```javascript
 
@@ -442,7 +442,7 @@ title: {
 
 ```
 
-**text**
+### **text**
 
 ```javascript
 
@@ -489,7 +489,7 @@ text: {
 
 ```
 
-**image**
+### **image**
 
 ```javascript
 
@@ -537,7 +537,7 @@ image: {
 
 ```
 
-**button**
+### **button**
 
 ```javascript
 
@@ -607,7 +607,7 @@ button: {
 
 ```
 
-**divider**
+### **divider**
 
 ```javascript
 
@@ -647,7 +647,7 @@ divider: {
 
 ```
 
-**social**
+### **social**
 
 ```javascript
 
@@ -691,7 +691,7 @@ social: {
 
 ```
 
-**dynamic**
+### **dynamic**
 
 <pre class="language-javascript"><code class="lang-javascript">
 dynamic: {
@@ -718,7 +718,7 @@ dynamic: {
 <strong>
 </strong></code></pre>
 
-**html**
+### **html**
 
 ```javascript
 
@@ -746,7 +746,7 @@ html: {
 
 ```
 
-**video (email builder block)**
+### **video (email builder block)**
 
 ```javascript
 
@@ -786,7 +786,7 @@ video: {
 
 ```
 
-**form**
+### **form**
 
 ```javascript
 
@@ -804,7 +804,7 @@ form: {
 
 ```
 
-**icon**
+### **icon**
 
 ```javascript
 
@@ -834,7 +834,7 @@ icons: {
 
 ```
 
-**paragraph**
+### **paragraph**
 
 ```javascript
 
@@ -868,7 +868,7 @@ content: {
 
 ```
 
-**list**
+### **list**
 
 ```javascript
 
@@ -905,7 +905,7 @@ content: {
 
 ```
 
-**linktypes**
+### **linktypes**
 
 ```javascript
 
@@ -929,7 +929,7 @@ linkTypes: {
 
 ```
 
-**menu**
+### **menu**
 
 ```javascript
 
@@ -1009,7 +1009,7 @@ menu: {
 
 ```
 
-**addon**
+### **addon**
 
 To assign permissions, you can make use of the addon’s ID. Based on the type of addon, you can assign relevant permissions. For instance, if your addon is an image type, you can assign permissions specific to the image content block. The advanced permissions structure will be as follows:
 
@@ -1038,7 +1038,7 @@ addon: {
 
 Here’s an example of an addon with the id “widget-xyz” of type “image”:
 
-### Role templates <a href="#role-templates" id="role-templates"></a>
+## Role templates <a href="#role-templates" id="role-templates"></a>
 
 We’ve put together a few JSON templates of custom roles created with Advanced permissions, so you can get started experimenting with this powerful feature.
 

@@ -65,7 +65,7 @@ This section controls the appearance of the right panel’s top tabs. You can ad
 
 ![](https://docs.beefree.io/wp-content/uploads/2017/12/tabs-1024x72.png)
 
-#### Draggable tiles and Tile icons
+### Draggable tiles and Tile icons
 
 These sections will help you customize the tiles that are used for content items and row structures. Here is an example  (left: default theme, right: aubergine).
 
@@ -73,31 +73,31 @@ These sections will help you customize the tiles that are used for content items
 
 ![](https://docs.beefree.io/wp-content/uploads/2017/12/tiles2-1024x422.png)
 
-#### Properties top bar
+### Properties top bar
 
 This is the title bar that is displayed in the right side panel when you select an item on the editing stage. It displays important information and actions that can be performed on that item.
 
 ![](https://docs.beefree.io/wp-content/uploads/2017/12/row\_prop-1024x57.png)
 
-#### Widgets
+### Widgets
 
 All the properties displayed in the right side panel when you select an item in the editing stage are a mix of shared widgets.
 
 The following is a visual guide of the available customizations (left: default theme, right: aubergine).
 
-**Sections**
+### **Sections**
 
 ![](https://docs.beefree.io/wp-content/uploads/2017/12/section-1-1024x62.png)
 
-**Input fields**
+### **Input fields**
 
 ![](https://docs.beefree.io/wp-content/uploads/2017/12/inputs-1-1024x153.png)
 
-**Toggle control**
+### **Toggle control**
 
 ![](https://docs.beefree.io/wp-content/uploads/2017/12/toggle-1-1024x69.png)
 
-**Social icons**
+### **Social icons**
 
 ![](https://docs.beefree.io/wp-content/uploads/2017/12/icons\_1.png)
 

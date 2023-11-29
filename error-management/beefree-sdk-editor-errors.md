@@ -1,6 +1,6 @@
 # Beefree SDK Editor Errors
 
-#### Example Response
+## Example Response
 
 ```javascript
 
@@ -12,7 +12,7 @@
 
 ```
 
-#### Error codes <a href="#error-codes" id="error-codes"></a>
+## Error codes <a href="#error-codes" id="error-codes"></a>
 
 | Code   | Message                                                                 |
 | ------ | ----------------------------------------------------------------------- |

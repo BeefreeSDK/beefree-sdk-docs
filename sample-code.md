@@ -1,6 +1,6 @@
 # Sample Code
 
-### A prototype in 2 minutes <a href="#a-prototype-in-2-minutes" id="a-prototype-in-2-minutes"></a>
+## A prototype in 2 minutes <a href="#a-prototype-in-2-minutes" id="a-prototype-in-2-minutes"></a>
 
 Using this simple, client-side example, you can literally try out Beefree SDK in 2 minutes…
 
@@ -13,7 +13,7 @@ Using this simple, client-side example, you can literally try out Beefree SDK in
 7. Save the file
 8. Open it in your browser and get creative ![(smile)](https://mailup.atlassian.net/wiki/s/en\_GB/6105/7d738a52bdb6676b96419199dc18454c6082dfc5.26/\_/images/icons/emoticons/smile.png)
 
-### Embedding the builder <a href="#embedding-the-builder" id="embedding-the-builder"></a>
+## Embedding the builder <a href="#embedding-the-builder" id="embedding-the-builder"></a>
 
 Before using the code samples listed below in a production environment, please consider the following:
 
@@ -32,7 +32,7 @@ Before using the code samples listed below in a production environment, please c
 | PERL5, Dancer | Community contribution – Thanks! | [Visit Repository](https://github.com/connoryates/bee\_plugin)                            |
 | Node.js       | Community contribution – Thanks! | [Visit Repository](https://gist.github.com/andrei-tofan/aa8bd4910035d8fd8c780bb9db6f337b) |
 
-### File system provider <a href="#file-system-provider" id="file-system-provider"></a>
+## File system provider <a href="#file-system-provider" id="file-system-provider"></a>
 
 You can connect Beefree SDK to your own file system (e.g. to let users of your app find images where they already exist).
 

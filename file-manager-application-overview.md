@@ -1,6 +1,6 @@
 # File Manager application overview
 
-### Managing assets with File Manager <a href="#managing-assets-with-file-manager" id="managing-assets-with-file-manager"></a>
+## Managing assets with File Manager <a href="#managing-assets-with-file-manager" id="managing-assets-with-file-manager"></a>
 
 The File Manager can be launched as a standalone application. This means that users can access the File Manager directly, without having to first launch the builder application. This is useful for situations where a user needs to quickly upload or manage assets, but doesn’t need to create a full email, landing page, or popup.
 
@@ -8,7 +8,7 @@ The File Manager can be launched as a standalone application. This means that us
 
 Instead of having to switch between different applications or tools, they can access everything they need from one centralized location. This can make the asset management process more streamlined and efficient, which can ultimately help users be more productive.
 
-### Testing and integrating the File Manager <a href="#testing-and-integrating-the-file-manager" id="testing-and-integrating-the-file-manager"></a>
+## Testing and integrating the File Manager <a href="#testing-and-integrating-the-file-manager" id="testing-and-integrating-the-file-manager"></a>
 
 When you create an application in the [Beefree SDK Console](https://dam.beefree.io/devmain), you’ll have the option to create a File Manager application.
 

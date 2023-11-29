@@ -1,6 +1,6 @@
 # How it works
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 When the builder starts, you can feed to it multiple lists of _custom rows_, which will display in the rows selector:
 
@@ -17,7 +17,7 @@ If the URL is not available, a warning message will be displayed in the bottom r
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/04/Error-warning-300x61.jpg)
 
-**List limits**
+## **List limits**
 
 There is no limit to the number of rows passed to the builder in each array of _custom rows_.
 
@@ -27,7 +27,7 @@ The rest of them will not show until the user performs a search that matches the
 
 This filtering is applied to prevent performance degradation in the browser.
 
-**Search**
+## **Search**
 
 The search field allows users to narrow down the content shown after they select a list of _custom rows_.
 
@@ -37,7 +37,7 @@ All textual content included in the selected array – including image file name
 
 ![](https://docs.beefree.io/wp-content/uploads/2018/04/CR\_search.png)
 
-### Rows configuration <a href="#rows-configuration" id="rows-configuration"></a>
+## Rows configuration <a href="#rows-configuration" id="rows-configuration"></a>
 
 Defines the usage of _custom rows_ in the _beeConfig_ object when you start the builder:
 
@@ -57,9 +57,9 @@ rowsConfiguration: {
 
 ```
 
-**Parameters**
+## **Parameters**
 
-**emptyRows**
+### **emptyRows**
 
 Set of empty rows. The same rows available when no _rowsConfiguration_ is included.
 
@@ -73,7 +73,7 @@ They are presented as follows in the builder’s default theme (the screenshot s
 
 ![BEE rows - Empty](https://docs.beefree.io/wp-content/uploads/2020/01/rows\_empty.png)
 
-**defaultRows**
+## **defaultRows**
 
 A set of rows that contain sample contents. That’s why we also call them _sample rows_. They may be used as a supporting feature for starting templates or to speed up the process of building a message from scratch.
 
@@ -85,7 +85,7 @@ They are presented as follows in the builder’s default theme (the screenshot s
 
 ![BEE Rows - Default](https://docs.beefree.io/wp-content/uploads/2020/01/rows\_default.png)
 
-**externalContentURLs**
+## **externalContentURLs**
 
 Each item in this list defines an option available in the _Rows_ drop-down.
 
@@ -102,11 +102,11 @@ Here is an example of how the _Rows_ drop-down looks when the application config
 
 ![BEE Rows - Custom](https://docs.beefree.io/wp-content/uploads/2020/01/rows\_custom.png)
 
-**Display order**
+## **Display order**
 
 The order of the JSON nodes in _rowsConfiguration_ defines the order in which the lists of _custom rows_ will display in the drop-down. It also determines which list of rows will be used as default (selected) when the user clicks on the _Rows_ tab for the first time during the session.
 
-**Row type order**
+## **Row type order**
 
 The first ordering factor refers to the **type of row** (empty, default, custom). That’s defined by how the following parameters are listed in _rowsConfiguration_:
 
@@ -124,7 +124,7 @@ So obtain the order shown in this screenshot…
 * _emptyRows_
 * _externalContentURLs_
 
-**External content order**
+## **External content order**
 
 The order inside the _externalContentURLs_ node defines the order of the _Custom rows_.
 
@@ -136,7 +136,7 @@ In the above example configuration:
 
 It’s up to you – the host application – to decide what’s available and in which order.
 
-**Row type requirements**
+## **Row type requirements**
 
 * _emptyRows_ and _defaultRows_ are **not** required
 * this allows you to load just _Custom rows_, if needed, controlling which content users can drag and drop into the builder

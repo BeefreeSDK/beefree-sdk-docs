@@ -4,7 +4,7 @@
 This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
 {% endhint %}
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 We added a new function to track message changes in the builder. This powerful new feature answers two important questions:
 
@@ -15,9 +15,9 @@ When _onChange_ is enabled and your customers edit their message – the callbac
 
 _onChange_ is also the foundation on which the [Undo, Redo & Edit History](server-side-options/undo-and-changes-history.md) feature was built on.
 
-### Use cases <a href="#use-cases" id="use-cases"></a>
+## Use cases <a href="#use-cases" id="use-cases"></a>
 
-**Usage tracking**
+### **Usage tracking**
 
 In today’s software, knowing how customers use an application is essential if you want to provide a good user experience (UX) and eliminate friction points. It’s also a valuable resource to understand where to invest future development effort and build something that customers love.
 
@@ -29,7 +29,7 @@ You can use the _onChange_ callback to:
 * Discover if they are using one of the great new features that your team recently enabled.
 * Dismiss or confirm a bug by reproducing a customer’s steps.
 
-**Autosave**
+### **Autosave**
 
 So you might be asking: “Isn’t this similar to the existing [Autosave](getting-started/installation/configuration-parameters/) feature?” The simple answer is “No!”.
 
@@ -37,11 +37,11 @@ The [Autosave](getting-started/installation/configuration-parameters/) function 
 
 Now you can invoke the Autosave event only when something has been added or updated, resulting in a better message recovery experience.
 
-**History**
+### **History**
 
 Why is having a historical log of message changes so important? As with the previous cases, this will allow you to provide a better overall user experience. Creating a good email message or campaign typically involves input from several people or departments before it’s finally ready to send, but that can lead to inadvertent mistakes that might cause hours of work to be lost. Saving the differences between versions of a message created during the email production workflow – and allowing your users to compare & restore them – could be a huge time-saver in those cases.
 
-**Content check**
+### **Content check**
 
 When one of your users adds or updates text or images, the _onChange_ callback returns the new input to your application, allowing you to trigger a complementary function based on it.
 
@@ -55,16 +55,16 @@ The use cases change from application-to-application, but the feature is flexibl
 * Set up an alternative workflow when conditional syntax is applied
 * …
 
-### How it works <a href="#how-it-works" id="how-it-works"></a>
+## How it works <a href="#how-it-works" id="how-it-works"></a>
 
 To enable changes tracking you need to add in [beeConfig](getting-started/installation/configuration-parameters/):
 
 * The configuration option
 * The `onChange` callback, with the related response function
 
-**Configuration**
+## **Configuration**
 
-**Enable "onChange" Event**
+### **Enable "onChange" Event**
 
 ```javascript
 
@@ -74,7 +74,7 @@ trackChanges: true, // boolean
 
 This parameter defines when the tracking is active in the builder.
 
-**onChange Event**
+### **onChange Event**
 
 ```javascript
 
@@ -84,7 +84,7 @@ onChange: function (jsonFile, response) { // do something with response... },
 
 The `onChange` callback is triggered every time the builder tracks a change in the message. It returns the message JSON and a response JSON which contains all the information needed to handle any of the use cases described above.
 
-**Callback response schema**
+### **Callback response schema**
 
 ```javascript
 

@@ -4,7 +4,7 @@ description: Welcome to the Beefree SDK technical documentation for developers!
 
 # Getting Started
 
-### Welcome! <a href="#welcome" id="welcome"></a>
+## Welcome! <a href="#welcome" id="welcome"></a>
 
 Welcome to the Beefree SDK technical documentation!
 
@@ -20,7 +20,7 @@ Finally, the [Content Services API](content-services-api/) allows you to perform
 
 <figure><img src="https://docs.beefree.io/wp-content/uploads/2021/08/emailbuilder-e1629383000405.png" alt=""><figcaption></figcaption></figure>
 
-#### Beefree Email Builder
+## Beefree Email Builder
 
 An email editor that makes building gorgeous, mobile-ready emails a breeze.
 
@@ -28,17 +28,17 @@ An email editor that makes building gorgeous, mobile-ready emails a breeze.
 
 <figure><img src="https://docs.beefree.io/wp-content/uploads/2021/08/pagebuilder-e1629383020614.png" alt=""><figcaption></figcaption></figure>
 
-#### Beefree Page Builder
+## Beefree Page Builder
 
 A delightful tool to design beautiful, effective landing pages in minutes, without writing a single line of code.
 
 <figure><img src="https://docs.beefree.io/wp-content/uploads/2021/08/popupbuilder-e1629383038360.png" alt=""><figcaption></figcaption></figure>
 
-#### Beefree Popup Builder
+## Beefree Popup Builder
 
 An easy to deploy, true WYSIWYG solution for designing standout popups.
 
-#### Beefree File Manager
+## Beefree File Manager
 
 An image and document management UI that can be launched as a standalone application, in order to allow your customers to quickly upload or manage assets, without having to load one of the builders.
 

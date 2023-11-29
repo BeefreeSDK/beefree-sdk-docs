@@ -1,10 +1,10 @@
 # Open AI and Data Security
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 This document discusses the data flow of your OpenAI API key from the moment you activate the OpenAI AddOn within your Beefree SDK Developer Console. In this document, you learn more about Beefree SDK’s security practices, frameworks, and protocols in reference to protecting your sensitive data assets.
 
-### Data Flow Diagram <a href="#data-flow-diagram" id="data-flow-diagram"></a>
+## Data Flow Diagram <a href="#data-flow-diagram" id="data-flow-diagram"></a>
 
 The following diagram provides a visualization of the data flow for the OpenAI API key.
 
@@ -22,7 +22,7 @@ The following list shows each component within the data flow diagram along with 
 * **Proxy:** The proxy receives and forwards requests to the OpenAI API, and sends responses to the OpenAI AddOn within the host application.
 * **OpenAI API:** OpenAI API processes requests and provides responses.
 
-### Data Management Details <a href="#data-management-details" id="data-management-details"></a>
+## Data Management Details <a href="#data-management-details" id="data-management-details"></a>
 
 The flow and management of your OpenAI API key is designed to ensure its security. Security measures are implemented as soon as you enter your OpenAI API key into the Developer Console. Once you enter your API key, it is immediately encrypted over [TLS](https://www.internetsociety.org/deploy360/tls/basics/). From there, the encrypted API key is securely stored in the Beefree data store. Your API key remains encrypted both at rest and during transit.&#x20;
 

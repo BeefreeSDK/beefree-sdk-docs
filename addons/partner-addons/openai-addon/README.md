@@ -1,6 +1,6 @@
 # OpenAI AddOn
 
-### Overview <a href="#overview" id="overview"></a>
+## Overview <a href="#overview" id="overview"></a>
 
 The OpenAI AddOn is fully functional from the moment it’s enabled via the [Beefree SDK Console](https://developers.beefree.io/). For information about enabling OpenAI AddOn [click here](https://devportal.beefree.io/hc/en-us/articles/10838757053330-How-do-I-enable-the-OpenAI-AddOn-).
 
@@ -20,7 +20,7 @@ In certain scenarios, you may find the need to personalize both the user interfa
 
 We’ll cover all of these scenarios in the following sections as we discuss the settings and configuration options available for developers.
 
-### General Settings <a href="#general-settings" id="general-settings"></a>
+## General Settings <a href="#general-settings" id="general-settings"></a>
 
 Note: All settings are _optional_ and may be refreshed, in real-time, via the [configuration reload](../../../getting-started/installation/configuration-parameters/configuration-reload.md) instance method (e.g. `bee.loadConfig(settings)`) during the active session.
 
@@ -34,7 +34,7 @@ Currently, the following settings are supported:
 | `isPromptDisabled`        | boolean | Set to true to lock the prompt. The chat interface will be disabled but allow previous answers to be applied.                                                                                                                                                                               |
 | `isSuggestionsDisabled`   | boolean | Set to true to hide the suggestions popup                                                                                                                                                                                                                                                   |
 
-#### Example
+### Example
 
 ```javascript
 
@@ -58,11 +58,11 @@ const beeConfig = {
      
 ```
 
-### Monitor Usage <a href="#monitor-usage" id="monitor-usage"></a>
+## Monitor Usage <a href="#monitor-usage" id="monitor-usage"></a>
 
 With each prompt response, the addon will report the usage data provided by the OpenAI API via the editor’s `onInfo` callback without storing or tracking the data.
 
-#### Example
+### Example
 
 ```javascript
 
@@ -93,7 +93,7 @@ const beeConfig = {
 
 You may choose to track the end-user’s total usage through the aforementioned `onInfo` callback if desired. Additionally, you may choose to show the usage data to the user via the built-in display widget. To activate the display usage widget, provide the usage data via the addon settings.  Since the editor doesn’t track usage, you’ll need to refresh the values via the `bee.loadConfig` method to keep the display widget data current.
 
-#### Example
+### Example
 
 ```javascript
 
@@ -156,13 +156,13 @@ See below for an example of how the UI will render when provided with the option
 
 ![](https://docs.beefree.io/wp-content/uploads/2023/06/06e76ffc-23fc-46da-b433-609cabc86a9f-1024x549.png)
 
-### Disable Prompts Per User <a href="#disable-prompts-per-user" id="disable-prompts-per-user"></a>
+## Disable Prompts Per User <a href="#disable-prompts-per-user" id="disable-prompts-per-user"></a>
 
 To enable OpenAI AddOn, but disable the prompt per user, pass the `isPromptDisabled` boolean parameter as `true`.
 
 The following example will **disable** the prompts for the user with an `uid` of `inactive-user`.
 
-#### Example
+### Example
 
 ```json
 
@@ -182,7 +182,7 @@ const beeConfig = {
      
 ```
 
-### Disable AddOn Per User <a href="#disable-addon-per-user" id="disable-addon-per-user"></a>
+## Disable AddOn Per User <a href="#disable-addon-per-user" id="disable-addon-per-user"></a>
 
 ```json
 
@@ -200,7 +200,7 @@ const beeConfig = {
      
 ```
 
-### Disable AddOn Per Content Block Type <a href="#disable-addon-per-content-block-type" id="disable-addon-per-content-block-type"></a>
+## Disable AddOn Per Content Block Type <a href="#disable-addon-per-content-block-type" id="disable-addon-per-content-block-type"></a>
 
 The OpenAI AddOn is available for the following content blocks:
 
@@ -213,7 +213,7 @@ You may utilize the Advanced Permissions configuration to disable OpenAI AddOn p
 
 The following example will disable the addon for the paragraph block:
 
-#### Example
+### Example
 
 ```json
 
@@ -240,7 +240,7 @@ const beeConfig = {
      
 ```
 
-### Prompt Suggestions <a href="#prompt-suggestions" id="prompt-suggestions"></a>
+## Prompt Suggestions <a href="#prompt-suggestions" id="prompt-suggestions"></a>
 
 OpenAI AddOn includes preset prompt suggestions to facilitate the content creation process. These appear after the initial draft of your text has been formulated and whenever further refinement is needed. **Please note** that this function applies only when editing existing text through the AI prompt. The suggestions will not appear for placeholder text.
 
@@ -256,11 +256,11 @@ Here’s a simplified step-by-step guide on how to use suggestions, as shown bel
 
 The AI will then generate a revised version of your content, matching the tone you entered.
 
-### Customize Prompt Suggestions <a href="#customize-prompt-suggestions" id="customize-prompt-suggestions"></a>
+## Customize Prompt Suggestions <a href="#customize-prompt-suggestions" id="customize-prompt-suggestions"></a>
 
 Below are the preset prompt suggestions we have identified for the different content tiles, along with their corresponding translation key, incase you’d like to revise the prompt through our custom languages feature.
 
-#### Paragraph
+### Paragraph
 
 | Label                                                               | Key                                                   |
 | ------------------------------------------------------------------- | ----------------------------------------------------- |
@@ -272,7 +272,7 @@ Below are the preset prompt suggestions we have identified for the different con
 | Summarize the content                                               | mailup-bee-common-component-ai.summarize-text         |
 | Convert the content to the third person without changing the format | mailup-bee-common-component-ai.convert-third-person   |
 
-#### Button
+### Button
 
 | Label                            | Key                                             |
 | -------------------------------- | ----------------------------------------------- |
@@ -280,7 +280,7 @@ Below are the preset prompt suggestions we have identified for the different con
 | Make it \[tone]                  | mailup-bee-common-component-ai.make-it-tone     |
 | Use Active Voice                 | mailup-bee-common-component-ai.use-active-voice |
 
-#### List
+### List
 
 | Label                                           | Key                                                   |
 | ----------------------------------------------- | ----------------------------------------------------- |
@@ -290,7 +290,7 @@ Below are the preset prompt suggestions we have identified for the different con
 | Make it \[tone] without changing the format     | mailup-bee-common-component-ai.adjust-tone            |
 | Use Active Voice                                | mailup-bee-common-component-ai.use-active-voice       |
 
-#### Title
+### Title
 
 | Label                                       | Key                                                 |
 | ------------------------------------------- | --------------------------------------------------- |
