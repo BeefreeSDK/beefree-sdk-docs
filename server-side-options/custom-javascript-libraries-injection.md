@@ -17,5 +17,5 @@ Custom JavaScript requires a complete technical evaluation by the Beefree SDK de
 Contact our Sales team and ask to run a script to get started with custom JS libraries injection. Once you contact us, we will take the following steps to complete your request:
 
 1. Our representative will forward your request to our development team &#x20;
-2. The development team will review the script and approve it within five business days
+2. The development team will review the script and approve it
 3. The script is enabled by our development team
