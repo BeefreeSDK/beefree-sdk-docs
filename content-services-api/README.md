@@ -2,8 +2,8 @@
 
 Learn more about how to get started with the Content Services API in the following sections:
 
-{% content-ref url="./" %}
-[.](./)
+{% content-ref url="csapi-overview.md" %}
+[csapi-overview.md](csapi-overview.md)
 {% endcontent-ref %}
 
 {% content-ref url="template-catalog-api.md" %}

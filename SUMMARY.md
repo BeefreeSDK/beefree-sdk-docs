@@ -90,7 +90,7 @@
 * [Mobile Design Mode](mobile-design-mode.md)
 * [Tracking Message Changes](tracking-message-changes.md)
 * [Content Services API](content-services-api/README.md)
-  * [Content Services API](content-services-api/content-services-api.md)
+  * [CSAPI Overview](content-services-api/csapi-overview.md)
   * [Template Catalog API](content-services-api/template-catalog-api.md)
   * [Content Services API Reference](content-services-api/content-services-api-reference.md)
   * [FAQs](content-services-api/faqs.md)
