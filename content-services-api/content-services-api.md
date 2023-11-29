@@ -1,16 +1,16 @@
 # Content Services API
 
-1. [A richer content creation experience](broken-reference)
-2. [In a nutshell](broken-reference)
-3. [Getting the HTML from a message JSON](broken-reference)
-4. [Getting additional output formats](broken-reference)
-5. [Merging saved rows in existing messages](broken-reference)
+{% hint style="info" %}
+This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+{% endhint %}
 
 ### A richer content creation experience <a href="#a-richer-content-creation-experience" id="a-richer-content-creation-experience"></a>
 
 Beefree SDK is a complete content design and creation platform for you to build upon. Our objective is to help you create a fantastic content creation experience for your customers inside your software applications.
 
-As this may go beyond the interactions that happen within our email, page, and popup builders, we created an API to offer more assistance. We call it the _Content Services API_: it exposes a set of services that will help you provide a better experience with how emails, pages, and popups are created, updated, and transformed into different formats.![](https://docs.beefree.io/wp-content/uploads/2020/04/CSAPI\_800.jpg)
+As this may go beyond the interactions that happen within our email, page, and popup builders, we created an API to offer more assistance. We call it the _Content Services API_: it exposes a set of services that will help you provide a better experience with how emails, pages, and popups are created, updated, and transformed into different formats.
+
+<figure><img src="https://docs.beefree.io/wp-content/uploads/2020/04/CSAPI_800.jpg" alt=""><figcaption></figcaption></figure>
 
 ### In a nutshell <a href="#in-a-nutshell" id="in-a-nutshell"></a>
 
@@ -20,14 +20,13 @@ The _Content Services API_ – or _CSAPI_ – helps you take care of five, impor
 2. **Updating the HTML** of an email, page or popup created with a Beefree builder, without user interaction. Why? For example, the HTML of an email template might need to be updated (e.g. to resolve a newly discovered rendering issue in an email client), and you don’t want to ask your users to open the email with the builder and resave it.
 3. **Generating a thumbnail** from the HTML, because thumbnails are always nice to have, for all sorts of reasons 🙂
 4. **Generating a PDF** from the HTML, as your users may want to share or print an email or a page, and PDF is great for that.
-5. **Merging shared content** ([saved rows](https://docs.beefree.io/save-rows/)) into emails and pages that use it (e.g. update 30 emails that use the same footer).
+5. **Merging shared content** ([saved rows](../saved-rows/)) into emails and pages that use it (e.g. update 30 emails that use the same footer).
 
 ### More details
 
 #### Getting the HTML from a message JSON <a href="#getting-the-html-from-a-message-json" id="getting-the-html-from-a-message-json"></a>
 
-This service allows the host application to build a custom workflow that doesn’t rely on the `onSave` callback in the editor ([list of available callbacks](https://docs.beefree.io/methods-and-events/)).\
-Check our [reference documentation on how to use the API to get the HTML from a JSON file](https://docs.beefree.io/message-services-api-reference/#html).
+This service allows the host application to build a custom workflow that doesn’t rely on the `onSave` callback in the editor ([list of available callbacks](../getting-started/installation/methods-and-events.md)). Check our [reference documentation on how to use the API to get the HTML from a JSON file](content-services-api-reference.md).
 
 **Common use cases**
 
@@ -67,8 +66,7 @@ Letter, A4, A3, and Full as available values.
 
 While the other values split the message into pages, the Full option returns a single page using 900px as the page width and the proportional height.
 
-PDF is often used in most approval processes, but is also a perfect format for printers.\
-Check our [reference documentation on how to use the API to get a PDF from an HTML file](https://docs.beefree.io/message-services-api-reference/#pdf).
+PDF is often used in most approval processes, but is also a perfect format for printers. Check our [reference documentation on how to use the API to get a PDF from an HTML file](content-services-api-reference.md).
 
 **Generating image files from an HTML**
 
@@ -84,15 +82,15 @@ When the height is not provided, the API applies a proportional value based on t
 _If it’s higher:_ the proportional value applies\
 _If it’s lower:_ the image is cropped
 
-Check our [reference documentation on how to use the API to get images from an HTML file](https://docs.beefree.io/message-services-api-reference/#image).
+Check our [reference documentation on how to use the API to get images from an HTML file](content-services-api-reference.md).
 
 #### Merging saved rows in existing messages <a href="#merging-saved-rows-in-existing-messages" id="merging-saved-rows-in-existing-messages"></a>
 
-What if a footer is shared by 10 messages and needs to be updated in all of them? The [Synced Rows](https://docs.beefree.io/save-rows/synced-rows/) feature was created precisely to address the scenario of content that is shared across multiple emails, pages, or popups, and it is used in conjunction with the Content Services API.
+What if a footer is shared by 10 messages and needs to be updated in all of them? The [Synced Rows](../saved-rows/synced-rows.md) feature was created precisely to address the scenario of content that is shared across multiple emails, pages, or popups, and it is used in conjunction with the Content Services API.
 
-The [**Merge method**](https://docs.beefree.io/message-services-api-reference/) of the Content Services API allows you to update a row across multiple messages. More specifically, it allows the host application to update an element in an existing JSON document. This means that, for instance, you could create a feature that takes care of updating existing messages in the background, without any further action by your users.
+The [Merge method](content-services-api-reference.md) of the Content Services API allows you to update a row across multiple messages. More specifically, it allows the host application to update an element in an existing JSON document. This means that, for instance, you could create a feature that takes care of updating existing messages in the background, without any further action by your users.
 
-The [**Index method**](https://docs.beefree.io/message-services-api-reference/#index) of the Content Services API is a complementary method, designed to retrieve the assets which contain saved rows, so that you know which assets need update using the Merge method.
+The [Index method](content-services-api-reference.md) of the Content Services API is a complementary method, designed to retrieve the assets which contain saved rows, so that you know which assets need update using the Merge method.
 
 There are many use cases, including:
 

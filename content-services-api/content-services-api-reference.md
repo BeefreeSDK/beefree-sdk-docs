@@ -1,19 +1,32 @@
 # Content Services API Reference
 
-1. [API key](broken-reference)
-2. [Authorization](broken-reference)
-3. [Rate Limits](broken-reference)
-4. [HTTP Headers](broken-reference)
-5. [API Root](broken-reference)
-6. [HTML](broken-reference)
-7. [PDF](broken-reference)
-8. [Image](broken-reference)
-9. [Merge](broken-reference)
-10. [Index](broken-reference)
+```json
+{
+  beautifyHtmlEnabled: false,
+  page: {
+     body: { ... },
+     template: { ... },
+     rows: { ... },
+     title: '',
+     description: ''
+ }
+}{
+  beautifyHtmlEnabled: false,
+  page: {
+     body: { ... },
+     template: { ... },
+     rows: { ... },
+     title: '',
+     description: ''
+ }
+}
+```
 
-### API key <a href="#api-key" id="api-key"></a>
+## API Key
 
-To use the Content Services API you will need to obtain an API key. To do so:
+To use the Content Services API you will need to obtain an API key.&#x20;
+
+To obtain an API Key, take the following steps:
 
 1. Log into the [Beefree SDK Console](https://dam.beefree.io/devmain)
 2. Locate the application that you wish to work with, and click on _Details_
@@ -23,10 +36,12 @@ To use the Content Services API you will need to obtain an API key. To do so:
 
 ![](https://docs.beefree.io/wp-content/uploads/2020/03/CSAPI\_in\_dev\_portal.png)
 
-The Content Services API uses API Keys to authenticate requests for resources.  You can manage your API Keys within the Beefree SDK Console.  All requests must be made over HTTPS and contain the following HTTP Header:\
-**Authorization:** Bearer {token}
+The Content Services API uses API Keys to authenticate requests for resources.  You can manage your API Keys within the Beefree SDK Console.  All requests must be made over HTTPS and contain the following HTTP Header:
 
-### Rate Limits <a href="#rate-limits" id="rate-limits"></a>
+| **`Authorization:`**` ``Bearer {token}` |
+| --------------------------------------- |
+
+## Rate Limits
 
 API requests rate limits exist independently of API key’s monthly usage allowance.
 
@@ -39,19 +54,22 @@ By default, the API has the following rate limits:
 * **X-Rate-Limit-Reset:** A Unix timestamp representing the time the next cycle will begin, and the count will reset.
 * **Retry-After:** A Unix timestamp representing the time the application may resume submitting requests.
 
-### API Root <a href="#api-root" id="api-root"></a>
+## API Root
 
-All API access is over HTTPS, and accessed from the following URL:\
-https://api.getbee.io/{version}/{collection}/{resource}
+All API access is over HTTPS, and accessed from the following URL:
 
-**Versions**
+| API Root                                                  |
+| --------------------------------------------------------- |
+| `https://api.getbee.io/{version}/{collection}/{resource}` |
+
+### Versions
 
 | Version | Released on |
 | ------- | ----------- |
 | V1      | 4/25/2019   |
 | Beta    | 4/06/2019   |
 
-**Collections**
+### Collections
 
 | Collection | Available Resources            |
 | ---------- | ------------------------------ |
@@ -60,52 +78,81 @@ https://api.getbee.io/{version}/{collection}/{resource}
 | /popup     | html                           |
 | /amp       | html                           |
 
-**Example URLs**
+## Example URLs
 
-Request HTML for email:
+| Request HTML for email                  |
+| --------------------------------------- |
+| `https://api.getbee.io/v1/message/html` |
 
-https://api.getbee.io/v1/message/html
+## Example URLs
 
-Request HTML for a landing page:
+### Email
 
-https://api.getbee.io/v1/page/html
+| Request HTML for email                  |
+| --------------------------------------- |
+| `https://api.getbee.io/v1/message/html` |
 
-Request HTML for a popup:
+### Landing Page
 
-https://api.getbee.io/v1/popup/html
+| Request HTML for a landing page      |
+| ------------------------------------ |
+| `https://api.getbee.io/v1/page/html` |
 
-Request HTML for AMP:
+### Popup
 
-https://api.getbee.io/v1/amp/html
+| Request HTML for a popup              |
+| ------------------------------------- |
+| `https://api.getbee.io/v1/popup/html` |
 
-**Structure**
+### AMP
 
-| api.getbee.io |     |                                                                                                 |       | the api                                      |
-| ------------- | --- | ----------------------------------------------------------------------------------------------- | ----- | -------------------------------------------- |
-|               | /v1 |                                                                                                 |       | the version of the api                       |
-|               |     | <ul><li>/message</li></ul><ul><li>/page</li></ul><ul><li>/popup</li></ul><ul><li>/amp</li></ul> |       | the collection of services                   |
-|               |     |                                                                                                 | /html | the resource from the collection of services |
+| Request HTML for AMP                |
+| ----------------------------------- |
+| `https://api.getbee.io/v1/amp/html` |
 
-### Resources
+## Resources
 
-#### HTML <a href="#html" id="html"></a>
+### HTML
 
-**POST** /html
+{% swagger method="post" path=" " baseUrl="https://api.getbee.io/v1/{collection}/html" summary="" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="header" name="page" type="object" required="true" %}
+A Beefree template in JSON format
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="beautifulHtmlEnabled" type="boolean" required="true" %}
+This flag will force the API to return uncompressed HTML
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="429: Too Many Requests" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="500: Internal Server Error" description="" %}
+
+{% endswagger-response %}
+{% endswagger %}
 
 **Content-Type:** application/json
 
-**Request**
-
-**Parameters**
-
-| **page**                | object  | required | A Beefree template in JSON format                        |
-| ----------------------- | ------- | -------- | -------------------------------------------------------- |
-| **beautifyHtmlEnabled** | boolean | required | This flag will force the API to return uncompressed HTML |
-
 **Example**
 
-```
-
+```json
 
 {
   beautifyHtmlEnabled: false,
@@ -118,7 +165,6 @@ https://api.getbee.io/v1/amp/html
  }
 }
 
-
 ```
 
 **Response**
@@ -127,36 +173,63 @@ application/html
 
 The HTML message
 
-**Status Codes**
+### PDF
 
-| 200 | OK                |
-| --- | ----------------- |
-| 400 | Bad Request       |
-| 401 | Unauthorized      |
-| 429 | Too many requests |
-| 500 | Server error      |
+{% swagger method="post" path=" " baseUrl="https://api.getbee.io/v1/{collection}/pdf " summary="" %}
+{% swagger-description %}
 
-#### PDF <a href="#pdf" id="pdf"></a>
+{% endswagger-description %}
 
-**POST** /pdf
+{% swagger-parameter in="header" name="html" required="true" type="String" %}
+A full HTML document
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="page_size" type="String" %}
+Accepted values: letter (default), A4, A3, full
+
+**Full:** a single page using 900px as page width. The page\_orientation is always portrait when using this page size.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="page_orientation" type="String" %}
+Accepted values: landscape (default), portrait
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="file_type" type="String" %}
+Accepted values: PDF
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="beautifyHTMLEnabled" type="Boolean" required="true" %}
+This flag will force the API to return uncompressed HTML. Both page and popup endpoints do not compress HTML so will ignore this flag.
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="429: Too Many Requests" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="500: Internal Server Error" description="" %}
+
+{% endswagger-response %}
+{% endswagger %}
 
 **Content-Type:** application/json
 
 **Request**
 
-**Parameters**
-
-| **html**              | string | required | A full HTML document                                                                                                                                                                                                                  |
-| --------------------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **page\_size**        | string |          | <p>Accepted values:</p><ul><li>letter (default)</li><li>A4</li><li>A3</li><li>full</li></ul><p><strong>Full:</strong> a single page using 900px as page width. The page_orientation is always portrait when using this page size.</p> |
-| **page\_orientation** | string |          | <p>Accepted values:</p><ul><li>landscape (default)</li><li>portrait</li></ul>                                                                                                                                                         |
-| **file\_type**        | string |          | <p>Accepted values:</p><ul><li>pdf</li></ul>                                                                                                                                                                                          |
-
-```
-
+```json
 
 {"html":"a","file_type":"pdf","page_size":"full","page_orientation":"portrait"}
-
 
 ```
 
@@ -168,7 +241,7 @@ A JSON string that will contain the URL of the temporary location of the PDF doc
 
 The file is available for 24 hours.
 
-```
+```json
 
 
 {"statusCode":200,"body":{"url":"https:\/\/pro-bee-beepro-pdf.s3.amazonaws.com\/public\/pdf\/87ElCDpHHk.pdf","filename":"87ElCDpHHk.pdf","page_size":"full","page_orientation":"portrait","content_type":"application\/pdf"}}
@@ -176,44 +249,61 @@ The file is available for 24 hours.
 
 ```
 
-**Status Codes**
+### Image
 
-| 200 | OK                |
-| --- | ----------------- |
-| 400 | Bad Request       |
-| 401 | Unauthorized      |
-| 429 | Too many requests |
-| 500 | Server error      |
+{% swagger method="post" path="" baseUrl="https://api.getbee.io/v1/{collection}/image  " summary="" %}
+{% swagger-description %}
 
-**Request**
+{% endswagger-description %}
 
-**Parameters**
+{% swagger-parameter in="header" name="html" type="String" required="true" %}
+A Beefree HTML messag
+{% endswagger-parameter %}
 
-| **html**                | string  | required | A Beefree HTML message                                                                                                                 |
-| ----------------------- | ------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| **beautifyHtmlEnabled** | boolean | required | This flag will force the API to return uncompressed HTML. Both page and popup endpoints do not compress HTML so will ignore this flag. |
+{% swagger-parameter in="header" name="size" type="String" required="false" %}
+Use “size” instead of “width” and “height” when you only know the width and want the height automatically calculated. **Required** if width and height are not defined.
+{% endswagger-parameter %}
 
-#### Image <a href="#image" id="image"></a>
+{% swagger-parameter in="header" name="width" type="Integer" %}
+The image width in pixels. **Required** if size is not defined.
+{% endswagger-parameter %}
 
-**POST** /image
+{% swagger-parameter in="header" name="height" type="Integer" %}
+The image height in pixels.\
+D**efault** applies a proportional value based on the given width, keeping the image aspect ratio.\
+When the value is not proportional to the given width either will occur: If it’s higher, the proportional value applies, or, if it’s lower, the image is cropped. **Required** if size is not defined.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="file_type" type="String" required="true" %}
+Accepts jpg or png.
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="429: Too Many Requests" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="500: Internal Server Error" description="" %}
+
+{% endswagger-response %}
+{% endswagger %}
 
 **Content-Type:** application/json
 
-**Request**
-
-**Parameters**
-
-| **html**       | string  | required                        | A Beefree HTML message                                                                                                                                                                                                                                                                                                     |
-| -------------- | ------- | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **size**       | string  | required if no width and height | Use “size” instead of “width” and “height” when you only know the width and want the height automatically calculated.                                                                                                                                                                                                      |
-| **width**      | integer | required if no size             | The image width in pixels                                                                                                                                                                                                                                                                                                  |
-| **height**     | integer | required if no size             | <p>The image height in pixels<br><strong>default:</strong> applies a proportional value based on the given width, keeping the image aspect ratio<br>When the value is not proportional to the given width:</p><ul><li>If it’s higher: the proportional value applies</li><li>If it’s lower: the image is cropped</li></ul> |
-| **file\_type** | string  | required                        | <p>Accepted values:</p><ul><li>jpg</li><li>png</li></ul>                                                                                                                                                                                                                                                                   |
-
 **Example**
 
-```
-
+```json
 
 {
     "html": "<!DOCTYPE html><html><head><meta charset=\"UTF-8\" /></head><body><div style='width:900px; margin: 30px;'>Hello World!</div></body></html>",
@@ -221,7 +311,6 @@ The file is available for 24 hours.
     "height": 125,
     "file_type": "jpg"
 }
-
 
 ```
 
@@ -233,35 +322,42 @@ The raw image data
 
 Check out our [sample code for a JavaScript method to convert an image to data URI here](https://gist.github.com/BEE-Plugin/5913ffa1a649b923962d53946e552194).
 
-**Status Codes**
+### Merge
 
-| 200 | OK                |
-| --- | ----------------- |
-| 400 | Bad Request       |
-| 401 | Unauthorized      |
-| 429 | Too many requests |
-| 500 | Server error      |
+{% swagger method="post" path=" " baseUrl="https://api.getbee.io/v1/{collection}/merge  " summary="" %}
+{% swagger-description %}
 
-#### Merge <a href="#merge" id="merge"></a>
+{% endswagger-description %}
 
-**POST** /merge
+{% swagger-parameter in="header" name="source" type="Object" required="true" %}
+A Beefree template in JSON format.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="replace" type="Array" required="true" %}
+An array of objects that contain a JSON path and value to replace.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="value" type="String | Object" required="true" %}
+The value can be an object, such as a saved row. Or, it can be a string, such a hex color code. The value should be the same type as the value you want to match in your match expression.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="path" type="String" required="true" %}
+A JSON Path to the matching nodes in the source JSON.
+{% endswagger-parameter %}
+{% endswagger %}
 
 **Content-Type:** application/json
 
-**Request**
+#### Replace Array
 
-**Parameters**
-
-| **source**  | object           | required | A Beefree template in JSON format.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ----------- | ---------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **replace** | array            | required | <p>An array of objects that contain a JSON path and value to replace, as follows:</p><table data-header-hidden><thead><tr><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td><strong>value</strong></td><td>string | object</td><td>required</td><td>The value can be an object, such as a saved row. Or, it can be a string, such a hex color code. The value should be the same type as the value you want to match in your match expression.</td></tr><tr><td><strong>path</strong></td><td>string</td><td>required</td><td>A JSON Path to the matching nodes in the source JSON.</td></tr></tbody></table> |
-| **value**   | string \| object | required | The value can be an object, such as a saved row. Or, it can be a string, such a hex color code. The value should be the same type as the value you want to match in your match expression.                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| **path**    | string           | required | A JSON Path to the matching nodes in the source JSON.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| Parameters | Type             | Required or Optional | Description                                                                                                                                                                                |
+| ---------- | ---------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Value      | String \| Object | Required             | The value can be an object, such as a saved row. Or, it can be a string, such a hex color code. The value should be the same type as the value you want to match in your match expression. |
+| Path       | String           | Required             | A JSON Path to the matching nodes in the source JSON.                                                                                                                                      |
 
 **Example**
 
-```
-
+```json
 
 {
   "replace": [
@@ -276,7 +372,6 @@ Check out our [sample code for a JavaScript method to convert an image to data U
   ],
   "source": { "page": { ... }  }
 }
-
 
 ```
 

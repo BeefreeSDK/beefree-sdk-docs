@@ -31,7 +31,7 @@ Users that are already using the builder at the time a downtime starts (i.e. “
 
 To minimize impact and optimize their user experience, we recommend the following:
 
-1. Ensure your implementation of Beefree SDK takes advantage of the [auto-save feature](https://docs.beefree.io/configuration-parameters/) or [onChange callback](https://docs.beefree.io/tracking-message-changes/#how-it-works), so that the message is frequently auto-saved and no (or minimal) work is lost.
+1. Ensure your implementation of Beefree SDK takes advantage of the [auto-save feature](getting-started/installation/configuration-parameters/) or [onChange callback](tracking-message-changes.md), so that the message is frequently auto-saved and no (or minimal) work is lost.
 2. Notify users of your application in various ways (e.g. email, a courtesy message inside your application, etc.), informing them of the maintenance window and asking them not to create or edit messages/pages during that window. We recommend that you use a maintenance window that’s a bit larger than the one indicated at the top of this page.
 3. Remind them about it as the maintenance window approaches.
 

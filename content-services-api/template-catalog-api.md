@@ -1,27 +1,24 @@
 # Template Catalog API
 
-1. [Access the Template Catalog via API](broken-reference)
-2. [Getting Started](broken-reference)
-3. [Authorization](broken-reference)
-4. [API Root](broken-reference)
-5. [API Features and Functionality](broken-reference)
-6. [Best Practices](broken-reference)
-7. [FAQ](broken-reference)
-8. [Additional Resources](broken-reference)
+{% hint style="info" %}
+Access to this feature is available for purchase via your account manager. If you do not currently have an account manager, please contact our sales team for further details.
+{% endhint %}
 
-### Access the Template Catalog via API <a href="#access-the-template-catalog-via-api" id="access-the-template-catalog-via-api"></a>
+## Access the Template Catalog via API
 
 This documentation aims to guide you in creating a personalized template catalog for your SaaS applications. Leveraging our API, you can seamlessly integrate a diverse range of email and page templates, promoting enhanced user engagement while optimizing the design process within your platform.
 
 ![](https://docs.beefree.io/wp-content/uploads/2023/07/image1.png)
 
-### Getting Started <a href="#getting-started" id="getting-started"></a>
+## Getting Started
 
-#### Access and Subscription
+### Access and Subscription
 
-To access the Template Catalog API, you need a yearly subscription, which is available for Core plans and higher. The subscription fee is $2,000 per year. As a starting point, you can also explore a set of free-to-download templates available in our [GitHub repository](https://github.com/BEE-Plugin/BEE-FREE-templates); it doesn’t require access to the API.
+To start using the Template Catalog API, first activate your API key in the Beefree SDK Console. After activation, reach out to your dedicated Customer Success Manager (CSM) for further help and setup. Your CSM will guide you through the process and answer any questions you have.
 
-#### Activating the API
+For additional information, you can refer to [Content Services API key configuration](content-services-api-reference.md).
+
+### Activating the API
 
 Activate your API key through the Beefree SDK Console to begin using the Template Catalog API. Once your API key is activated, you can contact your dedicated Customer Success Manager (CSM) representative to request further assistance and enablement. They will be available to guide you through the process and address any additional inquiries.
 
@@ -31,42 +28,42 @@ To begin using the Template Catalog API, access it through the designated endpoi
 
 The Template Catalog API uses API Keys to authenticate requests for resources.  You can manage your API Keys within the Developer Portal.  All requests must be made over HTTPS and contain the following HTTP Header:
 
-```
-
+```http
 
 Authorization: Bearer {token}
 
-
 ```
 
-### API Root <a href="#api-root" id="api-root"></a>
+### API Root
 
 All API access is over HTTPS, and accessed from the following URL:
 
-https://api.getbee.io/v1/catalog/templates/?{parameter}={value}
+| API Root                                                          |
+| ----------------------------------------------------------------- |
+| `https://api.getbee.io/v1/catalog/templates/?{parameter}={value}` |
 
-#### Parameters
+### Parameters
 
-| **Parameter**     | **Description**                                         | **Example**    |
-| ----------------- | ------------------------------------------------------- | -------------- |
-| search            | List of terms to search, separated by comma             |                |
-| category          | Filter by category slug                                 | small-business |
-| collection        | Filter by collection slug                               | e-commerce     |
-| designer          | Filter by designer slug                                 |                |
-| tag               | Filter by tag name                                      |                |
-| template\_type    | Filter by template\_type. Choices are “email” or “page” |                |
-| pagesize          | Set the item number per page                            | 20             |
-| published\_after  | Filter by published\_at after given date                | 2022-01-01     |
-| published\_before | Filter by published\_at before given date               | 2022-01-01     |
+| Parameter          | Description                                             | Example        |
+| ------------------ | ------------------------------------------------------- | -------------- |
+| `search`           | List of terms to search, separated by comma             |                |
+| `category`         | Filter by category slug                                 | small-business |
+| `collection`       | Filter by collection slug                               | e-commerce     |
+| `designer`         | Filter by designer slug                                 |                |
+| `tag`              | Filter by tag name                                      |                |
+| `template_type`    | Filter by template\_type. Choices are “email” or “page” |                |
+| `pagesize`         | Set the item number per page                            | 20             |
+| `published_after`  | Filter by published\_at after given date                | 2022-01-01     |
+| `published_before` | Filter by published\_at before given date               | 2022-01-01     |
 
-### API Features and Functionality <a href="#api-features-and-functionality" id="api-features-and-functionality"></a>
+## API Features and Functionality
 
 Our Template Catalog API provides the following essential features to enable seamless integration into your application:&#x20;
 
 * Fetch templates from the Template Catalog API by applying filters like category, industry, etc.&#x20;
 * Sort and customize templates to match your application’s requirements and user preferences.
 
-#### Fetch a list of all Templates
+### Fetch a list of all Templates
 
 Retrieve a list of all the Templates within the catalog, applying filters based on request parameters.
 
@@ -76,23 +73,20 @@ The response will encompass a ‘facets’ field, outlining the count of existin
 
 The response is paginated, presenting 20 items per page by default. The ‘pagesize’ request parameter enables control over the page size.
 
-**Sample Request**
+#### Sample Request
 
-```
-
+```markup
 
 GET /v1/catalog/templates/?search=music HTTP/1.1
 Host: api.getbee.io
 Content-Type: application/json
 Authorization: Bearer •••••••
 
-
 ```
 
-**Sample Response**
+#### Sample Response
 
-```
-
+```json
 
 {
   "count": 1592,
@@ -127,31 +121,26 @@ Authorization: Bearer •••••••
         ]
 }
 
-
-
 ```
 
-#### Fetch a single Template
+### Fetch a single Template
 
 Dive into the details of making API requests to fetch a single template identified by its slug (in the URL).
 
-**Sample Request**
+#### Sample Request
 
-```
-
+```http
 
 GET /v1/catalog/templates/mens-fashion HTTP/1.1
 Host: api.getbee.io
 Content-Type: application/json
 Authorization: Bearer •••••••
 
-
 ```
 
-**Sample Response**
+#### Sample Response
 
-```
-
+```json
 
 {
 "categories": [
@@ -191,10 +180,9 @@ Authorization: Bearer •••••••
 "title": "Men's Fashion"
 }
 
-
 ```
 
-#### Fetch a list of all Categories
+### Fetch a list of all Categories
 
 You can extract a list of all the Categories present within the catalog. This comprehensive list includes all categories under which templates are classified.
 
@@ -202,23 +190,20 @@ The response that you receive is paginated for ease of reading and navigation. I
 
 However, if you wish to adjust the number of items shown on each page, you can use the ‘pagesize’ request parameter.
 
-**Sample Request**
+#### Sample Request
 
-```
-
+```http
 
 GET /v1/catalog/categories?search=fashion / HTTP/1.1
 Host: api.getbee.io
 Content-Type: application/json
 Authorization: Bearer •••••••
 
-
 ```
 
-**Sample Response**
+#### Sample Response
 
-```
-
+```json
 
 {
    "count": 114,
@@ -234,30 +219,26 @@ Authorization: Bearer •••••••
    ]	
 }
 
-
 ```
 
-#### Fetch a single Category
+### Fetch a single Category
 
 Retrieve detailed information about a specific Category using its unique identifier, or slug, which can be found in the URL. This method allows you to access in-depth data related to that particular category, such as its associated templates and related metadata.
 
-**Sample Request**
+#### Sample Request
 
-```
-
+```http
 
 GET /v1/catalog/categories/fashion-week / HTTP/1.1
 Host: api.getbee.io
 Content-Type: application/json
 Authorization: Bearer •••••••
 
-
 ```
 
-**Sample Response**
+#### Sample Response
 
-```
-
+```json
 
 {
 	"bg_color": "#F8F8F8",
@@ -271,32 +252,28 @@ Authorization: Bearer •••••••
 	"parent": "seasonal"
 }
 
-
 ```
 
-#### Fetch a List of Collections
+### Fetch a List of Collections
 
 You can pull up a full list of all Collections in the catalog. Collections are groups of templates with similar attributes or purposes. This overview can help you understand the types of template groupings available.
 
 The response will be paginated, with 200 items per page default for easy navigation. However, you can change this default by adjusting the ‘pagesize’ request parameter to suit your viewing preferences.
 
-**Sample Request**
+#### Sample Request
 
-```
-
+```http
 
 GET /v1/catalog/collections?pagesize=10/ HTTP/1.1
 Host: api.getbee.io
 Content-Type: application/json
 Authorization: Bearer •••••••
 
-
 ```
 
-**Sample Response**
+#### Sample Response
 
-```
-
+```json
 
 {
    "count": 19,
@@ -312,31 +289,26 @@ Authorization: Bearer •••••••
    ]
 }
 
-
-
 ```
 
-#### Fetch a single Collection
+### Fetch a single Collection
 
 Access a specific Collection using its unique slug found in the URL. This lets you view detailed information about this particular group of templates, including its associated templates and any related details.
 
-**Sample Request**
+#### Sample Request
 
-```
-
+```http
 
 GET /v1/catalog/collections/music / HTTP/1.1
 Host: api.getbee.io
 Content-Type: application/json
 Authorization: Bearer •••••••
 
-
 ```
 
-**Sample Response**
+#### Sample Response
 
-```
-
+```json
 
 {
 	"bg_color": "#76D3BA",
@@ -350,71 +322,64 @@ Authorization: Bearer •••••••
 	"order": "0"
 }
 
-
 ```
 
-#### Fetch a list of all Designers
+### Fetch a list of all Designers
 
 Access a complete list of all Designers in the catalog.
 
 The response is paginated, with a standard display of 200 items per page. You can manipulate the ‘pagesize’ request parameter to control the number of items shown per page.
 
-**Sample Request**
+#### Sample Request
 
-```
-
+```http
 
 GET /v1/catalog/designers/?pagesize=int HTTP/1.1
 Host: api.getbee.io
 Content-Type: application/json
 Authorization: Bearer •••••••
 
-
 ```
 
-#### Fetch a single Designer
+### Fetch a single Designer
 
 Retrieve detailed information for a specific Designer, identified by the unique slug present in the URL. This enables the procurement of comprehensive data pertaining to the particular designer, including their portfolio of templates and any associated metadata within the catalog.
 
-**Sample Request**
+#### Sample Request
 
-```
-
+```http
 
 GET /v1/catalog/designers/:slug/ HTTP/1.1
 Host: api.getbee.io
 Content-Type: application/json
 Authorization: Bearer •••••••
 
-
 ```
 
-#### Fetch a list of all Tags
+### Fetch a list of all Tags
 
 Retrieve a full list of all the Tags in the catalog. Tags are keywords tied to templates, helping you find and sort templates based on certain themes or attributes.
 
-**Sample Request**
+#### Sample Request
 
-```
-
+```http
 
 GET /v1/catalog/tags/?pagesize=int HTTP/1.1
 Host: api.getbee.io
 Content-Type: application/json
 Authorization: Bearer •••••••
 
-
 ```
 
-### Best Practices <a href="#best-practices" id="best-practices"></a>
+## Best Practices
 
 To enhance the performance and user experience of your template catalog, we recommend following these best practices.
 
-#### Optimize API Usage
+## Optimize API Usage
 
 Implement caching mechanisms to reduce API calls and minimize user loading times. Template data do not change often, so you can use a cache TTL of some minutes (10 for example, but even more) without issues.
 
-#### Rate Limits
+## Rate Limits
 
 Handle errors gracefully and provide clear error messages to assist in resolving any issues.\
 These endpoints have the following rate limits:
@@ -424,19 +389,19 @@ These endpoints have the following rate limits:
 
 Therefore, we recommend not enforcing excessive automatic tries when you get an error message, otherwise, you may exceed the limit and won’t be able to proceed with more requests.
 
-#### Status Codes
+## Status Codes
 
 The API is a read-only API. The only method is GET, so there are only a few possible errors. The main status codes are:
 
-| **Code** | **Message**           |
-| -------- | --------------------- |
-| 200      | OK                    |
-| 400      | Bad Request           |
-| 401      | Unauthorized          |
-| 404      | Not Found             |
-| 500      | Internal Server Error |
+| Code | Message               |
+| ---- | --------------------- |
+| 200  | OK                    |
+| 400  | Bad Request           |
+| 401  | Unauthorized          |
+| 404  | Not Found             |
+| 500  | Internal Server Error |
 
-### FAQ <a href="#faq" id="faq"></a>
+## FAQd
 
 Find answers to common queries related to the Template Catalog API, its features, and integration.
 
@@ -455,9 +420,3 @@ Storing the JSON Template source file is totally in your control, the media asse
 #### Do the API calls made to the Template Catalog contribute to the total CSAPI count?
 
 No, API calls made to the Template Catalog do not contribute to the total CSAPI count.
-
-### Additional Resources <a href="#additional-resources" id="additional-resources"></a>
-
-For more detailed information on API usage, please see:
-
-[Content Services API](https://docs.beefree.io/message-services-api/)
