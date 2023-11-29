@@ -39,6 +39,7 @@ What if you like most of the defaults but want to do some minor adjustments? We 
 You can easily change the background to make the workspace look like the destination page where your customer will embed the popup.
 
 ```markup
+
 beeConfig: {
   ...
   workspace: {
@@ -49,6 +50,7 @@ beeConfig: {
     }
   }
 }
+
 ```
 
 If this option is not set, then we will provide a default skeleton layout. It’s worth noting at this point that you can apply every setting for both desktop and mobile design modes. That means you can have a different background when editing in [Mobile Design Mode](../../mobile-design-mode.md).
@@ -58,6 +60,7 @@ If this option is not set, then we will provide a default skeleton layout. It’
 One of the most common needs is changing the popup’s default-centered position to better match the end-user’s use case. Out-of-the-box, the Popup Builder comes with many of the most common popup layouts preconfigured. You can use any available presets “as is” or use them as starting points that you can fine-tune to your satisfaction.
 
 ```json
+
 beeConfig: {
   ...
   workspace: {
@@ -66,6 +69,7 @@ beeConfig: {
     }
   }
 }
+
 ```
 
 Here is a complete list of preset layouts:

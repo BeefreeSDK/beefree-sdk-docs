@@ -19,7 +19,6 @@ You can load the configuration changes via a new instance event. Here’s an exa
 
 ```javascript
 
-
 var newConfig = {
   advancedPermissions: {
     // new permissions
@@ -27,6 +26,5 @@ var newConfig = {
 }
 
 bee.loadConfig(newConfig)
-
 
 ```

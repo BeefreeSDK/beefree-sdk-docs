@@ -3,7 +3,7 @@
 ### Instance Methods <a href="#instance-methods" id="instance-methods"></a>
 
 {% hint style="info" %}
-NOTE: if initializing a File Manager application, the only supported method is beePluginInstance.start() without parameters.
+**Note:** If initializing a File Manager application, the only supported method is `beePluginInstance.start()` without parameters.
 {% endhint %}
 
 Assuming that `beePluginInstance` is the instance of your embedded builder application, here are the methods you can call:

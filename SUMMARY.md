@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Getting Started](README.md)
-  * [Beefree Developer Console](getting-started/beefree-developer-console.md)
   * [Development Applications](getting-started/development-applications.md)
   * [Create an Application](getting-started/create-an-application.md)
   * [Manage Users](getting-started/manage-users.md)

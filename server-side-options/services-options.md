@@ -110,9 +110,7 @@ The client-side configuration exposes a parameter to override the global setting
 
 ```
 
-
 forceSanitizeHTML: true
-
 
 ```
 

@@ -63,7 +63,7 @@ Test the configured policy by attempting to access objects within the bucket usi
 
 **Example Bucket Policy**
 
-```
+```json
 {
    "Version": "2012-10-17",
    "Id": "Policy1678139645091",
@@ -121,12 +121,12 @@ For starters, the thumbnails in the File Manager are PNG files that are resized 
 
 Here is an example of thumbnail generation with image magick:
 
-```
+```markup
 # convert one file
 convert image1.jpg -resize 200x200 image1.jpg_thumb.png
 ```
 
-```
+```markup
 # resize many files (WARNING this command overwrite files)
 mogrify -resize 200x200  myimages/*jpg
 

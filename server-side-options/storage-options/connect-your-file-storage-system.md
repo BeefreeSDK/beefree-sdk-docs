@@ -4,7 +4,7 @@ As you may have noticed, when you create a new Beefree application, it comes wit
 
 If you do want users to be able to access the same image and file directories that they use elsewhere in your application, we have a solution.
 
-We created a way to connect to a custom file system provider, **allowing you to use your own file storage**, no matter which technology you use. A **custom file system provider** is an API that will allow the a Beefree application to perform actions with files outside of the Beefree system, connecting your file system to the [Beefree File Manager](https://docs.beefree.io/file-manager-overview/).
+We created a way to connect to a custom file system provider, **allowing you to use your own file storage**, no matter which technology you use. A **custom file system provider** is an API that will allow the a Beefree application to perform actions with files outside of the Beefree system, connecting your file system to the [Beefree File Manager](../../file-manager-application-overview.md).
 
 It can be built with your preferred technology: just be sure to follow our instructions to ensure successful communication between the two systems.
 
@@ -25,24 +25,20 @@ The API uses JSON as the input and output data format: Responses are [JSEND stan
 
 In case of a succesful response, the API returns a “success” status code (ex. `200 OK`) and a JSON object like this one:
 
-```
-
+```json
 
 {
   "status": "success",
   "data": { /* ... */ }
 }
 
-
 ```
 
 In case of an unexpected error occured during request processing (i.e. missing mandatory request data), the API returns an “error” status code and a JSON object like this one:
 
-```
-
+```json
 
 {"status":"error","message":"something went wrong accessing backend filesystem"}
-
 
 ```
 
@@ -54,7 +50,7 @@ Authentication is managed using Basic Authentication type. The Beefree system’
 
 User information is segmented by [UID parameter](../../getting-started/installation/how-the-uid-parameter-works.md).
 
-```
+```http
 
 Authorization: Basic base64(username:password)
 X-BEE-ClientId: ClientId
@@ -117,7 +113,7 @@ We can define:
 
 **Request**
 
-```
+```http
 
 GET /
 Authorization: Basic 5AMPL3
@@ -128,7 +124,7 @@ X-BEE-Uid: 1111-2222-333-444
 
 **Response**
 
-```
+```json
 
 
 {"status":"success","data":{"meta":{"mime-type":"application\/directory","name":"root","path":"\/","last-modified":1432982102000,"size":0,"permissions":"ro","item-count":2,"extra":[]},"items":[{"mime-type":"application\/directory","name":"shared","path":"\/shared\/","last-modified":1432984102000,"size":0,"permissions":"ro","item-count":13,"extra":[]},{"mime-type":"application\/directory","name":"mydir","path":"\/mydir\/","last-modified":1432982102000,"size":0,"permissions":"rw","item-count":3,"extra":[]}]}}
@@ -151,7 +147,7 @@ Some notes about resources access management in the previous example:
 
 **Request**
 
-```
+```http
 
 GET /mydir/
 Authorization: Basic 5AMPL3
@@ -162,7 +158,7 @@ X-BEE-Uid: 1111-2222-333-444
 
 **Response**
 
-```
+```json
 
 
 {"status":"success","data":{"meta":{"mime-type":"application\/directory","name":"mydir","path":"\/mydir\/","last-modified":1432982102000,"size":0,"permissions":"rw","item-count":3,"extra":[]},"items":[{"mime-type":"application\/directory","name":"docs","path":"\/mydir\/docs\/","last-modified":1432984102000,"size":0,"permissions":"rw","item-count":4,"extra":[]},{"mime-type":"image\/png","name":"my pic1.png","path":"\/mydir\/my pic1.png","last-modified":1432982102000,"size":100000,"permissions":"rw","public-url":"https:\/\/resources-bucket.s3.amazonaws.com\/1111-2222-333-444\/my%20pic1.png","thumbnail":"https:\/\/my-thumbnail-service.com\/my%20pic1.png","extra":[]},{"mime-type":"image\/png","name":"my pic2.png","path":"\/mydir\/my pic2.png","last-modified":1432982102000,"size":200000,"permissions":"rw","public-url":"https:\/\/resources-bucket.s3.amazonaws.com\/1111-2222-333-444\/my%20pic2.png","thumbnail":"https:\/\/my-thumbnail-service.com\/my%20pic2.png","extra":[]}]}}
@@ -174,7 +170,7 @@ X-BEE-Uid: 1111-2222-333-444
 
 **Request**
 
-```
+```http
 
 POST /mydir/new%20dir/
 Authorization: Basic 5AMPL3
@@ -185,7 +181,7 @@ X-BEE-Uid: 1111-2222-333-444
 
 **Response**
 
-```
+```json
 
 
 {"status":"success","data":{"meta":{"mime-type":"application\/directory","name":"new dir","path":"\/mydir\/new dir","last-modified":1432982102000,"size":0,"permissions":"rw","item-count":0,"extra":[]}}}
@@ -204,7 +200,7 @@ You can only delete empty directories.
 
 **Request**
 
-```
+```http
 
 DELETE /my%20dir/docs/
 Authorization: Basic 5AMPL3
@@ -215,11 +211,9 @@ X-BEE-Uid: 1111-2222-333-444
 
 **Response**
 
-```
-
+```json
 
 {"status":"success","data":null}
-
 
 ```
 
@@ -227,7 +221,7 @@ X-BEE-Uid: 1111-2222-333-444
 
 **Request**
 
-```
+```http
 
 POST /mydir/my%20pic3.png
 Authorization: Basic 5AMPL3
@@ -243,11 +237,9 @@ Content-Type: application/json
 
 **Response**
 
-```
-
+```json
 
 {"status":"success","data":{"meta":{"mime-type":"image\/png","name":"my pic3.png","path":"\/mydir\/my pic3.png","last-modified":1432982102000,"size":400000,"permissions":"rw","public-url":"https:\/\/resources-bucket.s3.amazonaws.com\/1111-2222-333-444\/my%20pic3.png","thumbnail":"https:\/\/my-thumbnail-service.com\/my%20pic3.png","extra":[]}}}
-
 
 ```
 
@@ -267,7 +259,7 @@ Content-Type: application/json
 
 **Request**
 
-```
+```http
 
 DELETE /mydir/my%20pic2.png
 Authorization: Basic 5AMPL3
@@ -278,11 +270,9 @@ X-BEE-Uid: 1111-2222-333-444
 
 **Response**
 
-```
-
+```json
 
 {"status":"success","data":null}
-
 
 ```
 

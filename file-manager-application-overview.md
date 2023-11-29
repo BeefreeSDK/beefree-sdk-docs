@@ -20,11 +20,11 @@ Paid applications also include the option to create child development applicatio
 
 The child applications can also be used for ongoing maintenance and updates. Instead of making changes directly to the production environment, developers can make updates and improvements in the child application, test them thoroughly, and then deploy the changes to the main application once they have been fully vetted. This can help to ensure that the main application remains stable and functional, even as new features and updates are introduced.
 
-File manager applications **share the same core functionalities** as all other builders. These functionalities include authentication and configuration, which are necessary for the development process. If you have already integrated another builder into your workflow, you can easily re-use most of your work by using **the same configuration** for the file manager application.
+File manager applications share the same core functionalities as all other builders. These functionalities include authentication and configuration, which are necessary for the development process. If you have already integrated another builder into your workflow, you can easily re-use most of your work by using the same configuration for the file manager application.
 
 For those who are new to our platform, our documentation includes a comprehensive [Getting Started](getting-started/installation/) section that provides detailed instructions on how to set up and use our builders. This section is applicable to all products.
 
-File Manager and all builders are available to  customers under the same [**all-in-one pricing.**](https://dam.beefree.io/pluginpricing) Please contact your Customer Success Manager for more details.
+File Manager and all builders are available to  customers under the same [all-in-one pricing.](https://dam.beefree.io/pluginpricing) Please contact your Customer Success Manager for more details.
 
 ## Create New Folders and Add Images
 
@@ -53,23 +53,25 @@ This section outlines steps to add the “Insert” and “X” buttons to your 
 Take the following steps to define the \`onFilePickerInsert\` and \`onFilePickerCancel\` properties to enable an “Insert” button and “X” button in the file manager user interface:
 
 1. Ensure that you have initialized the Beefree SDK and have a reference to the SDK instance (\`bee\`).
-2. Define the \`onFilePickerInsert\` property with a callback function that will be invoked when the user wants to insert a file. This function will receive the selected file data as the only parameter. You can use this data to perform any necessary actions, such as inserting the file into the editor or displaying a preview.&#x20;
+2. Define the `` `onFilePickerInsert` `` property with a callback function that will be invoked when the user wants to insert a file. This function will receive the selected file data as the only parameter. You can use this data to perform any necessary actions, such as inserting the file into the editor or displaying a preview.&#x20;
 
 Here is an example of how the callback function can be defined:
 
 ```javascript
+
 onFilePickerInsert: function (data) {
   // Handle the selected file data
   console.log("File Inserted:", data);
   // Perform any necessary actions with the file data
 },
+
 ```
 
 {% hint style="info" %}
 **IMPORTANT:** This callback provides the host application with the file’s metadata and URL. If this callback is not implemented, the “Insert” button will not be displayed.
 {% endhint %}
 
-3. Define the \`onFilePickerCancel\` property with a callback function that will be invoked when the user wants to cancel the file picker. This function does not receive any parameters. You can use this callback to perform any cleanup actions or provide feedback to the user.&#x20;
+3. Define the \``` onFilePickerCancel` `` property with a callback function that will be invoked when the user wants to cancel the file picker. This function does not receive any parameters. You can use this callback to perform any cleanup actions or provide feedback to the user.&#x20;
 
 Here’s an example of how the callback function can be defined:
 
@@ -87,12 +89,12 @@ onFilePickerCancel: function () {
 IMPORTANT: This callback provides the host application with the control to close the workflow. If the callback is not implemented, the “X” button will not be displayed.
 {% endhint %}
 
-4. Assign the defined \`onFilePickerInsert\` and \`onFilePickerCancel\` callbacks to the corresponding properties in the Beefree SDK configuration. Make sure to include these properties when initializing the Beefree SDK.&#x20;
+4. Assign the defined `` `onFilePickerInsert` `` and `` `onFilePickerCancel` `` callbacks to the corresponding properties in the Beefree SDK configuration. Make sure to include these properties when initializing the Beefree SDK.&#x20;
 
 Here is an example:
 
 ```javascript
- JAVASCRIPTCopy
+
 var beeConfig = {
   // Other configuration options...
   onFilePickerInsert: function (data) {
@@ -108,4 +110,4 @@ bee.start(beeConfig);
 
 ```
 
-By following these steps, you will be able to define the \`onFilePickerInsert\` and \`onFilePickerCancel\` properties in the Beefree SDK configuration and enable the “Insert” and “X” buttons in the file manager user interface. You can customize the callback functions to suit your specific needs and perform any desired actions with the selected file data or when the file picker is canceled.
+By following these steps, you will be able to define the `` `onFilePickerInsert` `` and `` `onFilePickerCancel` `` properties in the Beefree SDK configuration and enable the “Insert” and “X” buttons in the file manager user interface. You can customize the callback functions to suit your specific needs and perform any desired actions with the selected file data or when the file picker is canceled.

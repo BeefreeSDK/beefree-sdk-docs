@@ -19,5 +19,5 @@ Additional users will be identified as admins. The owner may limit access to cer
 The account owner has these additional privileges, compared to admins:
 
 * add, edit or delete users, as described above;
-* turn on [**two-factor authentication**](https://docs.beefree.io/set-up-two-factor-authentication/), using tokens provided by mobile apps like Google Authenticator or Authy. 2FA can be enabled either for specific users, or account-wide from the _Settings & Security_ section in the personal area [(learn how to set up 2FA for your account](https://docs.beefree.io/set-up-two-factor-authentication/));
+* turn on [**two-factor authentication**](installation/set-up-two-factor-authentication.md), using tokens provided by mobile apps like Google Authenticator or Authy. 2FA can be enabled either for specific users, or account-wide from the _Settings & Security_ section in the personal area ([learn how to set up 2FA for your account](installation/set-up-two-factor-authentication.md));
 * change the company’s name, also in _Settings & Security._

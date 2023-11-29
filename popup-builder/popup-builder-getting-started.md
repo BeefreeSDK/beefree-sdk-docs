@@ -2,18 +2,20 @@
 
 ## Overview <a href="#overview" id="overview"></a>
 
-This section provides the information you need to get started integrating [PopUp Builder](https://docs.beefree.io/popup-builder-overview/) in your SaaS applications. For more advanced settings, see [Popup Builder – Advanced Settings](https://docs.beefree.io/advanced-settings-popup-builder/).
+This section provides the information you need to get started integrating [PopUp Builder](./) in your SaaS applications. For more advanced settings, see [Popup Builder – Advanced Settings](popup-builder-getting-started.md#popup-default-layouts).
 
 ## Integration <a href="#integration" id="integration"></a>
 
 Out-of-the-box, the setup and configuration are the same as Email and Page Builder. This section will cover the settings specific to Popup Builder. Check out our [Getting Started guide](../getting-started/installation/) if you’re new to Beefree SDK or unfamiliar with the configuration basics (as seen in the example below).
 
 ```json
+
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
   container: 'bee-plugin-container', // [mandatory]
   ...
 }
+
 ```
 
 Loading Popup Builder with no additional settings will give the end-user a beautifully designed popup and workspace to design their content. However, Popup Builder comes with an additional, robust set of configuration options to customize the workspace.  This allows the host application to build a workspace that matches their popup’s look and feel and that of the destination page.
@@ -34,11 +36,11 @@ Let’s start by looking at some of the differences between Page Builder and Pop
 
 ### Content Width <a href="#content-width" id="content-width"></a>
 
-In Email and Page Builder, the content area width is saved in the template. For example, if you start with an empty template, a default width that works for most scenarios is chosen, but **the designer can adjust the message width slider**. If you start with an existing template, the content width was **chosen by the template’s designer** using the message width slider in the the builder’s _Settings_ tab.
+In Email and Page Builder, the content area width is saved in the template. For example, if you start with an empty template, a default width that works for most scenarios is chosen, but the designer can adjust the message width slider. If you start with an existing template, the content width was chosen by the template’s designer using the message width slider in the the builder’s _Settings_ tab.
 
 With Popup Builder, the same template may have multiple contexts, and each context will likely have specific size requirements. For example, an exit-intent popup may have a max-width of 600px on a desktop with a classical layout centered on the screen. On the other hand, the host app may display the same template on mobile in the bar style docked at the bottom of the screen with a restricted width of 300px.
 
-Since the content area’s width is tightly coupled to the context and layout, no one size fits all width is saved in the template. Instead, **the host app will specify the width settings** when the builder loads, based on the context of using the template.  You’ll find an example in the common settings section below.
+Since the content area’s width is tightly coupled to the context and layout, no one size fits all width is saved in the template. Instead, the host app will specify the width settings when the builder loads, based on the context of using the template.  You’ll find an example in the common settings section below.
 
 Popup Builder does not support fluid 100% width content.
 
@@ -56,13 +58,14 @@ As mentioned above in the Getting Started section, you will receive a ready-to-g
 
 If the default popup style and layout suit your needs, then you are all set to start designing! You can load the builder without additional configuration and use the same standard controls and callbacks to access the HTML and JSON template.
 
-**What if you like most of the defaults but want to make some minor adjustments? We have you covered!**
+What if you like most of the defaults but want to make some minor adjustments? We have you covered!
 
 ## Common settings <a href="#common-settings" id="common-settings"></a>
 
 Easily change the background to make the workspace look like the destination page where you’ll embed the popup.
 
 ```json
+
 beeConfig: {
   ...
   workspace: {
@@ -73,6 +76,7 @@ beeConfig: {
     }
   }
 }
+
 ```
 
 If this option is not set, then we will provide a default skeleton layout.  It’s worth noting at this point that you can apply every setting for both desktop and mobile design modes. That means you can have a different background when editing in _Mobile Design Mode_. We’ll show you how later!&#x20;
@@ -82,6 +86,7 @@ If this option is not set, then we will provide a default skeleton layout.  It�
 One of the most common needs is changing the popup’s default-centered position to better match the end-user’s use case. Out-of-the-box, the Popup Builder comes with many of the most common popup layouts preconfigured. You can use any available presets “as is” or use them as starting points that you can fine-tune to your satisfaction.
 
 ```json
+
 beeConfig: {
   ...
   workspace: {
@@ -90,6 +95,7 @@ beeConfig: {
     }
   }
 }
+
 ```
 
 Here is a complete list of preset layouts:
@@ -105,6 +111,7 @@ Here is a complete list of preset layouts:
 Another useful preset available is changing the popup’s styles from the default to better match the end-user’s use case. For example, if you’re using the popular Bootstrap CSS framework, you can select the “Bootstrap Theme” as your default. As with the default layouts, you can use any of the available preset themes “as is” or use them as starting points that you can fine-tune to your satisfaction.
 
 ```json
+
 beeConfig: {
   ...
   workspace: {
@@ -113,6 +120,7 @@ beeConfig: {
     }
   }
 }
+
 ```
 
 Here is a complete list of preset themes:
@@ -129,12 +137,14 @@ Here is a complete list of preset themes:
 As mentioned above, the content area’s width is tightly coupled to the layout, no one size fits all width is saved in the template. All Popup Builder preset layouts come with a default width, which you can override with the following configuration settings.
 
 ```json
+
 workspace: {
   popup: {
     contentWidth: 600,
     contentWidthMobile: 300
   }
 }
+
 ```
 
 Continue to [Popup Builder- Advanced Settings](setting-layout-and-size/advanced-settings.md) if you’d like to customize more than the position, background, and content area width.
