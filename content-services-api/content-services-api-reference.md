@@ -1,27 +1,5 @@
 # Content Services API Reference
 
-```json
-{
-  beautifyHtmlEnabled: false,
-  page: {
-     body: { ... },
-     template: { ... },
-     rows: { ... },
-     title: '',
-     description: ''
- }
-}{
-  beautifyHtmlEnabled: false,
-  page: {
-     body: { ... },
-     template: { ... },
-     rows: { ... },
-     title: '',
-     description: ''
- }
-}
-```
-
 ## API Key
 
 To use the Content Services API you will need to obtain an API key.&#x20;
@@ -344,6 +322,26 @@ The value can be an object, such as a saved row. Or, it can be a string, such a 
 {% swagger-parameter in="header" name="path" type="String" required="true" %}
 A JSON Path to the matching nodes in the source JSON.
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="429: Too Many Requests" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="500: Internal Server Error" description="" %}
+
+{% endswagger-response %}
 {% endswagger %}
 
 **Content-Type:** application/json
@@ -381,15 +379,11 @@ application/json
 
 The JSON object containing the following parameters:
 
-| **json**     | object | required | The updated Beefree template in JSON format. In the event of an error, the original source is returned.                                                 |
-| ------------ | ------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **html**     | string | required | The HTML message.                                                                                                                                       |
-| **warnings** | array  | optional | An array of objects containing information about issues that occurred during the merge. If no warnings exist, then it is safe to save the updated JSON. |
+<table><thead><tr><th width="126">Parameter</th><th width="85">Type</th><th>Required or Optional</th><th>Description</th></tr></thead><tbody><tr><td><strong>json</strong></td><td>object</td><td>required</td><td>The updated Beefree template in JSON format. In the event of an error, the original source is returned.</td></tr><tr><td><strong>html</strong></td><td>string</td><td>required</td><td>The HTML message.</td></tr><tr><td><strong>warnings</strong></td><td>array</td><td>optional</td><td>An array of objects containing information about issues that occurred during the merge. If no warnings exist, then it is safe to save the updated JSON.</td></tr></tbody></table>
 
 **Example**
 
-```
-
+```json
 
 {
     "html": "...",
@@ -410,41 +404,53 @@ The JSON object containing the following parameters:
     ]
 }
 
-
 ```
 
-**Status Codes**
+### Index
 
-| 200 | OK                         |
-| --- | -------------------------- |
-| 400 | Bad Request                |
-| 401 | Unauthorized               |
-| 422 | Entity cannot be processed |
-| 429 | Too many requests          |
-| 500 | Server error               |
+{% swagger method="post" path="" baseUrl="https://api.getbee.io/v1/{collection}/merge/index" summary="" %}
+{% swagger-description %}
 
-#### Index <a href="#index" id="index"></a>
+{% endswagger-description %}
 
-**Request**
+{% swagger-parameter in="header" name="source" type="object" required="true" %}
+A Beefree template in JSON format.
+{% endswagger-parameter %}
 
-**Parameters**
+{% swagger-response status="200: OK" description="" %}
 
-**POST** /merge/index
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="422: Unprocessable Entity" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="429: Too Many Requests" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="500: Internal Server Error" description="" %}
+
+{% endswagger-response %}
+{% endswagger %}
 
 **Content-Type:** application/json
 
-| **source** | object | required | A Beefree template in JSON format. |
-| ---------- | ------ | -------- | ---------------------------------- |
-
 **Example**
 
-```
-
+```json
 
 {
     "source": { "page": { ... }  }
 }
-
 
 ```
 
@@ -454,13 +460,11 @@ application/json
 
 The JSON object containing the following parameters:
 
-| **rows** | array | required | An array of metadata objects containing row details, which can be saved in a database to create a reference (or relational table) to the rows associated with your template. |
-| -------- | ----- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+<table><thead><tr><th width="123">Parameter</th><th width="80">Type</th><th width="184">Required or Optional</th><th>Description</th></tr></thead><tbody><tr><td><strong>rows</strong></td><td>array</td><td>required</td><td>An array of metadata objects containing row details, which can be saved in a database to create a reference (or relational table) to the rows associated with your template.</td></tr></tbody></table>
 
 **Example**
 
-```
-
+```json
 
 [
   {
@@ -473,15 +477,4 @@ The JSON object containing the following parameters:
   }
 ]
 
-
 ```
-
-**Status Codes**
-
-| 200 | OK                         |
-| --- | -------------------------- |
-| 400 | Bad Request                |
-| 401 | Unauthorized               |
-| 422 | Entity cannot be processed |
-| 429 | Too many requests          |
-| 500 | Server error               |
