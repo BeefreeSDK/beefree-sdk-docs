@@ -23,7 +23,7 @@ Once launched as Page Builder, an application will have a few but noticeable dif
 * the preview includes viewport resize, to test responsiveness on various screen sizes;
 * the HTML block allows using scripts, for improved compatibility with embedded content like surveys. This also includes Javascript, although it cannot be executed within the builder.
 
-{% embed url="https://drive.google.com/file/d/18jREB97yWPAikizf__pV25cxfmGVM8Fv/view" %}
+{% embed url="https://youtu.be/DD0gUoSxVH0" %}
 
 If you’re on a paid plan, you will also get support for forms and embedded videos.
 
