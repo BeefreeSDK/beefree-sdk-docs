@@ -2,7 +2,7 @@
 
 Beefree SDK started out in 2015 as an embeddable, drag-&-drop email editor. It was first embedded in [beefree.io](https://beefree.io/?utm\_source=docs\&utm\_medium=website\&utm\_campaign=building-emails-page) and then in hundreds of SaaS applications around the globe, across all sorts of industries: from marketing automation to event engagement; from restaurant management to a CRM for dentists 🙂
 
-![BEE Email Builder screenshot](https://docs.beefree.io/wp-content/uploads/2020/05/email\_builder\_2.png)
+<figure><img src=".gitbook/assets/email_builder_2.png" alt=""><figcaption></figcaption></figure>
 
 Beefree SDK Email Builder aims to be the best email editor on the market, ready to be embedded and bring awesome email creation inside web applications. It features a unique combination of design flexibility and ease of use, coupled with great freedom in how you can integrate it into your application.
 
