@@ -11,7 +11,7 @@ In the Toolbar Options tab you can:
 * control individual settings that affect the top toolbar in the builder
 * decide whether to hide the toolbar completely
 
-![](http://docs.beefree.io/wp-content/uploads/2017/08/bee\_plugin\_app\_config\_toolbar.png)
+<figure><img src="../.gitbook/assets/bee_plugin_app_config_toolbar.png" alt=""><figcaption></figcaption></figure>
 
 The toolbar contains all the actions not related directly with content edition, like save, send a test or preview.
 
@@ -23,7 +23,7 @@ Not enough? Remove the toolbar completely and offer all the actions with your ow
 
 For example, in our MailUp App for Shopify, we hide the toolbar completely and control the builder (Show preview, Send test, Save) from buttons in the app UI (not in the builder). Here is how it looks.
 
-![](http://docs.beefree.io/wp-content/uploads/2017/08/bee\_plugin\_embedded\_shopify2.jpg)
+<figure><img src="../.gitbook/assets/2bee_plugin_embedded_shopify2.jpeg" alt=""><figcaption></figcaption></figure>
 
 If you decide to go this route, use the [methods from this page](../getting-started/installation/methods-and-events.md) to control the builder from your UI.
 

@@ -10,7 +10,7 @@ To access server-side configurations, log into your [Beefree SDK Console](https:
 
 In the application’s details page, locate the area called _Application configuration._
 
-![](http://docs.beefree.io/wp-content/uploads/2017/08/bee\_plugin\_application\_configurations.png)
+<figure><img src="../.gitbook/assets/bee_plugin_application_configurations.png" alt=""><figcaption></figcaption></figure>
 
 _Manage roles_ is used to manage user roles. For details on this feature, see “user roles and permissions“.
 

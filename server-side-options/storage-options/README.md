@@ -9,7 +9,7 @@ When you configure a builder application, you have four options for image & file
 * **Your own AWS S3 bucket**: instead of using Beefree SDK’s AWS S3 bucket to store & deliver files, you can use your own. See [Configuring your own S3 bucket](configure-your-aws-s3-bucket.md).
 * **Your own file system**: if your application already has a place where images and other assets are stored, you can leverage it. This option is only available on Beefree SDK paid plans. See using [your file system](connect-your-file-storage-system.md).
 
-![storage options new 2](https://docs.beefree.io/wp-content/uploads/2023/01/87CAB3D3-C06A-4937-B79B-33EB8D659F9A\_1\_201\_a.jpeg)
+<figure><img src="../../.gitbook/assets/87CAB3D3-C06A-4937-B79B-33EB8D659F9A_1_201_a.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## Images vs. other files
 
@@ -48,7 +48,7 @@ If you exceed the 5TB monthly traffic allotment, we ask you to cover the cost of
 
 You can always see when the current period starts and ends in your application details, in the Statistics widget:
 
-![Bandwidth usage](https://docs.beefree.io/wp-content/uploads/2020/09/Bandwidth-usage.png)
+<figure><img src="../../.gitbook/assets/Bandwidth-usage.png" alt=""><figcaption></figcaption></figure>
 
 ### **I’m on an annual plan. If I exceed the traffic quota in a month, when will I be billed?**
 
