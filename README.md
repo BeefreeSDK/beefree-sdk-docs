@@ -16,21 +16,19 @@ In addition to our drag-and-drop editors, we also offer a standalone [File Manag
 
 Finally, the [Content Services API](content-services-api/) allows you to perform a number of tasks (e.g. refreshing the HTML for a certain asset) and add features to your application (e.g. converting an email to a PDF document). We continue to release new API methods to help you enrich and personalize the content design experience for your customers.
 
-<figure><img src="https://drive.google.com/file/d/1yNJX3vL9seHlvCKzz2zjz_ZYS0MYSHKy/view?usp=drive_link" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/emailbuilder-e1629383000405.png" alt=""><figcaption></figcaption></figure>
 
 ## Beefree Email Builder
 
 An email editor that makes building gorgeous, mobile-ready emails a breeze.
 
-&#x20;
-
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2021/08/pagebuilder-e1629383020614.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/pagebuilder-e1629383020614.png" alt=""><figcaption></figcaption></figure>
 
 ## Beefree Page Builder
 
 A delightful tool to design beautiful, effective landing pages in minutes, without writing a single line of code.
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2021/08/popupbuilder-e1629383038360.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/popupbuilder-e1629383038360.png" alt=""><figcaption></figcaption></figure>
 
 ## Beefree Popup Builder
 
