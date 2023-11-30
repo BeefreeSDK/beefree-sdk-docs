@@ -99,11 +99,11 @@ Please note that the **Custom url** configuration is not retroactive, so message
 
 Example using single folders in the bucket root:
 
-![](https://docs.beefree.io/wp-content/uploads/2018/05/custom\_bucket\_s3\_single\_directory.jpg)
+<figure><img src="../../.gitbook/assets/custom_bucket_s3_single_directory.jpg" alt=""><figcaption></figcaption></figure>
 
 Example using single nested folders:
 
-![](https://docs.beefree.io/wp-content/uploads/2018/05/custom\_bucket\_s3\_multi\_directories.jpg)
+<figure><img src="../../.gitbook/assets/2custom_bucket_s3_multi_directories.jpeg" alt=""><figcaption></figcaption></figure>
 
 ### Testing your settings <a href="#testing-your-settings" id="testing-your-settings"></a>
 

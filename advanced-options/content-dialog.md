@@ -24,7 +24,7 @@ If your users want to insert a merge tag or a display condition, you control how
 
 We call this feature _Content Dialog_.
 
-![Content Dialog](https://docs.beefree.io/wp-content/uploads/2018/02/bee\_plugin\_content\_dialog\_product\_search.png)
+<figure><img src="../.gitbook/assets/bee_plugin_content_dialog_product_search.png" alt=""><figcaption></figcaption></figure>
 
 ## An interactive UI layer <a href="#an-interactive-ui-layer" id="an-interactive-ui-layer"></a>
 
@@ -34,7 +34,7 @@ For example, imagine you want your customers to be able to quickly locate a link
 
 Here is a visual example of what you could accomplish in that _find a product link_ scenario.
 
-![Content Dialog feature in BEE Plugin](https://docs.beefree.io/wp-content/uploads/2018/01/Product\_Search.jpg)
+<figure><img src="../.gitbook/assets/2Product_Search.jpeg" alt=""><figcaption></figcaption></figure>
 
 The user experience in this interaction layer is entirely up to you. In the example above, the user clicked on “Find a product” (or alike) in the editor, and a modal window was shown, with a search box in it. Since you decide what the user experience will be like, you are fully in control of how users will select and insert:
 
@@ -254,7 +254,7 @@ contentDialog: {
 
 You can add a new action, available in the text toolbar, and associated with the merge tag element:
 
-![](https://docs.beefree.io/wp-content/uploads/2018/01/Screen-Shot-2018-01-23-at-17.10.43-1024x247.png)
+<figure><img src="../.gitbook/assets/3Screen-Shot-2018-01-23-at-17.10.43-1024x247.png" alt=""><figcaption></figcaption></figure>
 
 ### **Most common use cases:**
 
@@ -294,11 +294,11 @@ Links are applied to different contents, so, when you define a link dialog actio
 
 The text-toolbar, as happens with merge tags
 
-![](https://docs.beefree.io/wp-content/uploads/2018/01/Screen-Shot-2018-01-23-at-17.35.35-1024x245.png)
+<figure><img src="../.gitbook/assets/4Screen-Shot-2018-01-23-at-17.35.35-1024x245.png" alt=""><figcaption></figcaption></figure>
 
 An image or button action
 
-![](https://docs.beefree.io/wp-content/uploads/2018/01/Screen-Shot-2018-01-23-at-17.37.40.png)
+<figure><img src="../.gitbook/assets/5Screen-Shot-2018-01-23-at-17.37.40.png" alt=""><figcaption></figcaption></figure>
 
 ### **Most common use cases:**
 
@@ -334,7 +334,7 @@ _The type parameter may be lately displayed if the user selection is saved and l
 
 The content dialog adds a button to the merge content list:
 
-![](https://docs.beefree.io/wp-content/uploads/2018/01/Screen-Shot-2018-01-24-at-10.39.07.png)
+<figure><img src="../.gitbook/assets/6Screen-Shot-2018-01-24-at-10.39.07.png" alt=""><figcaption></figcaption></figure>
 
 ### **Most common use cases:**
 
@@ -372,7 +372,7 @@ contentDialog: {
 
 A new button will be available in the display condition widget. In this example, the button says “Open builder”, which is the `label` shown in the JSON configuration file shown above.
 
-![](https://docs.beefree.io/wp-content/uploads/2018/01/Screen-Shot-2018-01-24-at-10.45.15.png)
+<figure><img src="../.gitbook/assets/7Screen-Shot-2018-01-24-at-10.45.15 (1).png" alt=""><figcaption></figcaption></figure>
 
 ### **Most common use cases:**
 
@@ -399,17 +399,17 @@ _The type parameter may be later displayed if the user selection is saved and lo
 
 In this example, a window is shown to users when they click on the button to open the builder.
 
-![Custom builder of display conditions](https://docs.beefree.io/wp-content/uploads/2018/02/display.condition.dialog.jpg)
+<figure><img src="../.gitbook/assets/8display.condition.dialog.jpg" alt=""><figcaption></figcaption></figure>
 
 The UI is entirely up to the hosting application. Here, the developer decided to offer some fields at the top where the _Display Condition_ can be named and described, an area below it where parameters, values, and operators can be selected, and a preview on the right.
 
 When users click on “Confirm”, the information is passed back to the editor and shown in the properties panel.
 
-![Custom display condition](https://docs.beefree.io/wp-content/uploads/2018/02/after.confirm.jpg)
+<figure><img src="../.gitbook/assets/9after.confirm.jpg" alt=""><figcaption></figcaption></figure>
 
 Of course, it can be edited in the editor like any other _Display condition_, if the user has the [rights to do so](roles-and-permissions.md).
 
-![Edit custom display condition](https://docs.beefree.io/wp-content/uploads/2018/02/edit.view\_.jpg)
+<figure><img src="../.gitbook/assets/10edit.view_.jpg" alt=""><figcaption></figcaption></figure>
 
 ## Custom rows <a href="#custom-rows" id="custom-rows"></a>
 
@@ -428,7 +428,7 @@ contentDialog: {
 
 The content dialog adds a new item, using your text label, in the Rows drop-down:
 
-![](https://docs.beefree.io/wp-content/uploads/2018/06/CustomRows\_ContentDialog\_01.jpg)
+<figure><img src="../.gitbook/assets/11CustomRows_ContentDialog_01.jpeg" alt=""><figcaption></figcaption></figure>
 
 ### **Most common use cases:**
 
@@ -450,7 +450,7 @@ This response will:
 1. Create a new drop-down choice with the provided name
 2. Display the rows provided by the URL in the rows panel
 
-![](https://docs.beefree.io/wp-content/uploads/2018/06/results.jpg)
+<figure><img src="../.gitbook/assets/12results.jpeg" alt=""><figcaption></figcaption></figure>
 
 Notice that in the rows list, names returned by the content dialog display as highlighted elements to give them further visibility over starting choices.
 
@@ -466,7 +466,7 @@ This behavior perfectly matches our example above, where the host application re
 This creates a new drop-down choice, keeping the previous results as selectable elements. Previous results are available directly in the drop-down.\
 Usage example:
 
-![](https://docs.beefree.io/wp-content/uploads/2018/06/Search\_multiple.jpg)
+<figure><img src="../.gitbook/assets/13Search_multiple.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## Synced Rows
 
@@ -496,11 +496,11 @@ The `label`, `description` and `notPermittedDescription` fields handle the wordi
 
 Here’s an example of what `label` and `description` would look like:
 
-![synced\_rows\_1](https://docs.beefree.io/wp-content/uploads/2023/01/image-11-300x179.png)
+<figure><img src="../.gitbook/assets/14image-11-300x179.png" alt=""><figcaption></figcaption></figure>
 
 And here’s an example of what `notPermittedDescription` would look like:
 
-![synced\_rows\_2](https://docs.beefree.io/wp-content/uploads/2023/01/image2-300x171.png)
+<figure><img src="../.gitbook/assets/15image2-300x171.png" alt=""><figcaption></figcaption></figure>
 
 ## Save rows <a href="#save-rows" id="save-rows"></a>
 
@@ -518,7 +518,7 @@ contentDialog: {
 
 Unlike the rest of content dialog configurations, _Save rows_ doesn’t use the `label` parameter as the UI element is a save icon displayed on the selected row (and in the row’s properties panel):
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2018/11/saveicon-1024x134.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/16saveicon-1024x134.png" alt=""><figcaption></figcaption></figure>
 
 The _Save rows_ content dialog is a mandatory step in the [Save rows](../saved-rows/) workflow.
 

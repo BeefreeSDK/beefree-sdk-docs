@@ -2,7 +2,7 @@
 
 In this box, you can enable additional content blocks that will appear in the Content panel inside the editor.
 
-![](https://docs.beefree.io/wp-content/uploads/2022/08/new\_content\_options-300x70.png)
+<figure><img src="../.gitbook/assets/new_content_options-300x70.png" alt=""><figcaption></figcaption></figure>
 
 Currently, you can manage these content blocks:
 
@@ -39,7 +39,7 @@ If you’re configuring a Page Builder application, there are a few differences 
 
 There is also an additional option for turning on the **Form block**.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/06/Enable-form.png)
+<figure><img src="../.gitbook/assets/2Enable-form.png" alt=""><figcaption></figcaption></figure>
 
 Please note that you need to implement one of the two methods indicated in this article for the Form tile to appear in the Content tab of the editor:
 
@@ -50,7 +50,7 @@ Please note that you need to implement one of the two methods indicated in this 
 
 In this section, you can enable AMP blocks that will be available in the “Content” tab of the Email Builder.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/10/Dev-Portal-AMP-toggle.png)
+<figure><img src="../.gitbook/assets/3Dev-Portal-AMP-toggle.png" alt=""><figcaption></figcaption></figure>
 
 We currently provide an [AMP Carousel](../amp-for-email.md) content block. After enabling the toggle, you will need to configure an [AMP-compatible workspace](../amp-for-email.md).
 

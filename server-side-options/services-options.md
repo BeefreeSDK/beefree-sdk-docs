@@ -58,7 +58,7 @@ When enabled, the display conditions widget will show as a row option. The widge
 
 When enabled, it adds a new property in the “Content properties” section of any content block that supports it. This widget allows users to hide a content block either on mobile or on desktop devices.
 
-![Hide block on mobile](https://docs.beefree.io/wp-content/uploads/2021/04/hide-content-on.png)
+<figure><img src="../.gitbook/assets/hide-content-on.png" alt=""><figcaption></figcaption></figure>
 
 More on [hiding content on mobile or desktop devices.](https://dam.beefree.io/hideonmobile)
 
@@ -66,7 +66,7 @@ More on [hiding content on mobile or desktop devices.](https://dam.beefree.io/hi
 
 When you enable Custom Social Icons in the Social module, users will be able to upload their own social media icons as a new “Add a custom icon” feature will now be available in the Social content block’s property panel.
 
-![](https://docs.beefree.io/wp-content/uploads/2019/03/bee-plugin-custom-icon-social-module.png)
+<figure><img src="../.gitbook/assets/2bee-plugin-custom-icon-social-module.png" alt=""><figcaption></figcaption></figure>
 
 ## Undo and changes history <a href="#undo-and-changes-history" id="undo-and-changes-history"></a>
 
@@ -151,6 +151,6 @@ In this section, you can activate **restrictions for the file manager**:
 * Specify which **file formats** your users can upload in File Manager.
 * Set a **maximum allowed size**, different from the default of **20MB**.
 
-![File manager limitations](https://docs.beefree.io/wp-content/uploads/2020/09/File-manager-limitations.png)
+<figure><img src="../.gitbook/assets/3File-manager-limitations.png" alt=""><figcaption></figcaption></figure>
 
 Please note that the first option will not ask for file extensions, but will instead present file categories such as **image**, **video**, **text**, etc. We have mapped these categories to the most used MIME types that can be referenced in HTML documents.

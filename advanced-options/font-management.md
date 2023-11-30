@@ -23,7 +23,7 @@ This flexible approach will help you to use this feature in a variety of scenari
 
 For instance, in our hosted [email design suite](https://dam.beefree.io/beepro) (Beefree), we leveraged this Beefree SDK feature to create a “Brand styles > Brand fonts” area where an agency or marketing team can select which fonts have been approved by that brand. Only the selected fonts will be loaded in the builder when an application is initialized. Here is a screenshot.
 
-![Selecting custom fonts in BEE Pro](https://docs.beefree.io/wp-content/uploads/2019/08/settings-new-fonts-cropped.png)
+<figure><img src="../.gitbook/assets/settings-new-fonts-cropped.png" alt=""><figcaption></figcaption></figure>
 
 ## Adding the editorFonts object
 

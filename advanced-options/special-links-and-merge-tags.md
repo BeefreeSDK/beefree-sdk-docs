@@ -29,7 +29,7 @@ specialLinks: [
 
 and here’s an example of what the user will see in the builder UI, starting from the above code:
 
-![Grouped links in BEE](https://docs.beefree.io/wp-content/uploads/2017/08/group\_links\_in\_BEE.png)
+<figure><img src="../.gitbook/assets/group_links_in_BEE.png" alt=""><figcaption></figcaption></figure>
 
 ## Merge Tags & Merge Content <a href="#merge-tags-merge-content" id="merge-tags-merge-content"></a>
 
@@ -79,17 +79,17 @@ You can now use the [Content Dialog](content-dialog.md) feature to allow users t
 
 Merge tags can be inserted into a text block by clicking on the “Merge tags” button in the expanded text block toolbar. The button is not shown if no merge tags were submitted in the configuration file.
 
-![](https://docs.beefree.io/wp-content/uploads/2017/08/bee\_editor\_merge\_tags.png)
+<figure><img src="../.gitbook/assets/2bee_editor_merge_tags.png" alt=""><figcaption></figcaption></figure>
 
 Merge tags also become available to the user by pressing the @ key on the keyboard while editing a text block.
 
 Here is an example: the user wants the date of the last order to be inserted after “\[…] placing an order on …”, so he/she presses the @ key and selects “Last order date” from the list of merge tags found by the builder in the configuration file.
 
-![](https://docs.beefree.io/wp-content/uploads/2017/08/bee\_v2\_example\_mergeTags.png)
+<figure><img src="../.gitbook/assets/3bee_v2_example_mergeTags.png" alt=""><figcaption></figcaption></figure>
 
 After inserting the merge tag, the text block now shows the placeholder for the last order date.
 
-![](https://docs.beefree.io/wp-content/uploads/2017/08/bee\_v2\_example\_mergeTags\_2.png)
+<figure><img src="../.gitbook/assets/4bee_v2_example_mergeTags_2.png" alt=""><figcaption></figcaption></figure>
 
 ## Ways to load Merge Tags
 
@@ -131,11 +131,11 @@ For example, let’s say you have a section of an email where you want to displa
 
 When Merge Content elements are submitted to the builder in the configuration file, a new tile is displayed in the _Content_ panel.
 
-![](https://docs.beefree.io/wp-content/uploads/2022/01/Screen-Shot-2022-01-25-at-1.12.02-PM.png)
+<figure><img src="../.gitbook/assets/5Screen-Shot-2022-01-25-at-1.12.02-PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
 The user can drag and drop it into the message just like any other content element.
 
-![](https://docs.beefree.io/wp-content/uploads/2022/01/Screen-Shot-2022-01-25-at-3.55.37-PM.png)
+<figure><img src="../.gitbook/assets/6Screen-Shot-2022-01-25-at-3.55.37-PM (1).png" alt=""><figcaption></figcaption></figure>
 
 Once dropped in position, the settings panel will display the instances of merge content available for selection.
 
@@ -143,11 +143,11 @@ In the example below, the user wants to insert some banner ads into the email, u
 
 To create another instance of merge content, the user can either drag and drop it again from the _Content_ tab, or duplicate the existing content element…
 
-![](https://docs.beefree.io/wp-content/uploads/2022/01/Screen-Shot-2022-01-25-at-5.41.19-PM.png)
+<figure><img src="../.gitbook/assets/7Screen-Shot-2022-01-25-at-5.41.19-PM (1).png" alt=""><figcaption></figcaption></figure>
 
 … choose another instance of merge content from the available selections…
 
-![](https://docs.beefree.io/wp-content/uploads/2022/01/Screen-Shot-2022-01-25-at-5.43.41-PM.png)
+<figure><img src="../.gitbook/assets/8Screen-Shot-2022-01-25-at-5.43.41-PM.png" alt=""><figcaption></figcaption></figure>
 
 … and then drag it elsewhere in the message.
 

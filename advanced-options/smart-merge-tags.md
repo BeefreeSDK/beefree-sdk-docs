@@ -22,17 +22,17 @@ After enabling Smart merge tags, the builder will:
 * **highlight** merge tags with a dotted border
 * display the **tag name** you passed instead of the raw syntax
 
-![Example of smart merge tags inside an email](https://docs.beefree.io/wp-content/uploads/2021/07/Smart-merge-tags-outlined.png)
+<figure><img src="../.gitbook/assets/Smart-merge-tags-outlined.png" alt=""><figcaption></figcaption></figure>
 
 When users click on a tag, its border will become solid to signify that it has been selected. After selection, users can **style, replace, or delete** the merge tag with just one click.
 
-![Changing the style of a smart merge tag](https://docs.beefree.io/wp-content/uploads/2021/07/smart-merge-tags-styled.png)
+<figure><img src="../.gitbook/assets/2smart-merge-tags-styled (1).png" alt=""><figcaption></figcaption></figure>
 
 Smart merge tags are easier to identify inside the content you’ve created and will save users tons of time. Furthermore, hiding the syntax will make it impossible for a user to break it while interacting with the overall text element.
 
 On top of this, you can pass sample content for each merge tag, so that users can see an example of the data that will take the place of the merge tags when the web content is rendered:
 
-![Smart merge tags with sample content](https://docs.beefree.io/wp-content/uploads/2021/07/Smart-merge-tags-with-sample-content.png)
+<figure><img src="../.gitbook/assets/3Smart-merge-tags-with-sample-content.png" alt=""><figcaption></figcaption></figure>
 
 ## How to enable it <a href="#how-to-enable-it" id="how-to-enable-it"></a>
 
@@ -76,7 +76,7 @@ In this case, you can simply enable the option “Show ‘Merge tag preview’ i
 
 When this option is active, the toolbar displays a new action to the user:
 
-![New in action in BEE default toolbar](https://docs.beefree.io/wp-content/uploads/2021/08/smart-merge-tags-toolbar.png)
+<figure><img src="../.gitbook/assets/4smart-merge-tags-toolbar.png" alt=""><figcaption></figcaption></figure>
 
 The option works as a toggle that alternates between displaying the `previewValue` and the name parameter inside the merge tag UI.
 

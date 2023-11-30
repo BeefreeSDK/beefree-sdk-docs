@@ -321,7 +321,7 @@ The `thumbnail` field is optional, so if you don’t want a thumbnail for your f
 
 The thumbnail image must be contained in a 200px by 200px virtual square (see pictures below).
 
-![](https://docs.beefree.io/wp-content/uploads/2017/09/thumb.png)
+<figure><img src="../../.gitbook/assets/thumb.png" alt=""><figcaption></figcaption></figure>
 
 ## Sample code <a href="#sample-code" id="sample-code"></a>
 

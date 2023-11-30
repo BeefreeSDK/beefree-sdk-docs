@@ -8,7 +8,7 @@ Meta Tags are available for [Email Builder](../email-builder.md) and [Page Build
 
 With **Meta Tags**, you can now apply various tags to your HTML that can greatly benefit your SEO and accessibility needs. These include **Title Tags, Meta Description Tags,** and **Language attributes**. For the Email Builder, this means improved deliverability performance, and for the Page Builder, this means greater customization and improved search engine results.
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2021/10/image1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image1.png" alt=""><figcaption></figcaption></figure>
 
 A page title, also known as a **Title tag**, is a short description of a webpage that appears at the top of a browser window and in SERPs (Search engine results page). This is an important element of an optimized SEO page, as it affects the page ranking in search engines. The title tag will be located within the \<title> element of a page’s HTML output, and its value will be saved inside the JSON template.
 

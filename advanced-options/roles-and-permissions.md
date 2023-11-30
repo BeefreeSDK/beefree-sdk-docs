@@ -36,15 +36,15 @@ For example, a _Brand Manager_ all four permissions checked, whereas a _Senior E
 
 If the user has this permission, locking a row is very easy to do. That user will simply select the row they would like to lock and click on the lock/unlock radio button in the row properties panel.
 
-![](http://docs.beefree.io/wp-content/uploads/2017/08/lock-row.png)
+<figure><img src="../.gitbook/assets/lock-row.png" alt=""><figcaption></figcaption></figure>
 
 If a user does not have the permissions needed to edit a locked row, they will see a friendly error when they attempt to select the row, notifying them that the row can’t be edited:
 
-![](http://docs.beefree.io/wp-content/uploads/2017/08/locked-row-.png)
+<figure><img src="../.gitbook/assets/2locked-row-.png" alt=""><figcaption></figcaption></figure>
 
 Likewise, they will not be able to drag & drop any content blocks on the locked row, as shown here:
 
-![](http://docs.beefree.io/wp-content/uploads/2017/08/locked-drag-n-drop.png)
+<figure><img src="../.gitbook/assets/3locked-drag-n-drop.png" alt=""><figcaption></figcaption></figure>
 
 ## Rows vs content blocks <a href="#rows-vs-content-blocks" id="rows-vs-content-blocks"></a>
 
@@ -56,15 +56,15 @@ Or, as shown in the example below, the same user could update social media icons
 
 When users without the proper permissions try to edit, move or remove the row, they are told that they may not do so.
 
-![](https://docs.beefree.io/wp-content/uploads/2019/03/bee\_plugin\_user\_roles\_row\_locked.png)
+<figure><img src="../.gitbook/assets/4bee_plugin_user_roles_row_locked.png" alt=""><figcaption></figcaption></figure>
 
 Similarly, if they try to edit any content is the row that has not been specifically unlocked, they are told that they are not able to do so. In this case, for instance, the user is not able to edit the merge tags used in the footer of the email.
 
-![](https://docs.beefree.io/wp-content/uploads/2019/03/bee\_plugin\_user\_roles\_row\_content\_locked.png)
+<figure><img src="../.gitbook/assets/5bee_plugin_user_roles_row_content_locked.png" alt=""><figcaption></figcaption></figure>
 
 However, when they click on the social media icons, they are able to edit it.
 
-![](https://docs.beefree.io/wp-content/uploads/2019/03/bee\_plugin\_user\_roles\_row\_content\_not\_locked.png)
+<figure><img src="../.gitbook/assets/6bee_plugin_user_roles_row_content_not_locked.png" alt=""><figcaption></figcaption></figure>
 
 To accomplish the above, a user with higher permissions needs to:
 
@@ -76,15 +76,15 @@ To accomplish the above, a user with higher permissions needs to:
 
 Log into the [Beefree SDK Console](https://dam.beefree.io/devmain) and click on **Manage roles** under Application configuration for the selected application:
 
-![](https://docs.beefree.io/wp-content/uploads/2019/03/bee\_plugin\_user\_roles.png)
+<figure><img src="../.gitbook/assets/7bee_plugin_user_roles.png" alt=""><figcaption></figcaption></figure>
 
 In the Manage Roles section you’ll be able to create different user roles and set their permissions. For example, your user roles could be Brand Manager, Account Manager, Junior Editor, etc depending on your needs and nomenclature. For each user role you create, you can set and restrict editing permissions, such as the ability to lock or edit rows and content blocks, as you can see below:
 
-![](https://docs.beefree.io/wp-content/uploads/2019/03/bee\_plugin\_user\_roles\_permissions.png)
+<figure><img src="../.gitbook/assets/8bee_plugin_user_roles_permissions.png" alt=""><figcaption></figcaption></figure>
 
 Once you create your user roles you’ll be able to see them listed:
 
-![](http://docs.beefree.io/wp-content/uploads/2017/08/bee\_plugin\_roles.png)
+<figure><img src="../.gitbook/assets/9bee_plugin_roles.png" alt=""><figcaption></figcaption></figure>
 
 ## How to use the Role Hash parameter <a href="#how-to-use-the-role-hash-parameter" id="how-to-use-the-role-hash-parameter"></a>
 

@@ -35,12 +35,12 @@ For images and buttons, these attributes will be visible in the **editor sidebar
 \
 For links in text blocks, they will be part of the dialog window for creating a link.
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2021/01/Custom-Attributes-add-in-sidebar-zoom.gif" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Custom-Attributes-add-in-sidebar-zoom.gif" alt=""><figcaption></figcaption></figure>
 
 \
 You can provide the editor with a list of attributes that will be available to the user through the UI. How the attribute value is formatted impacts how the builder UI displays it and how the user interacts with it.
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2021/01/Custom-attributes-add-in-link-dialog.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/2Custom-attributes-add-in-link-dialog.png" alt=""><figcaption></figcaption></figure>
 
 Depending on how custom attributes are implemented, users may:
 
@@ -108,15 +108,15 @@ Let’s look through the attributes defined in the example above, and how they w
 
 The `Deeplink` attribute has a single, predefined value, so when added in the builder it will look like this:
 
-![Custom attribute with no value](https://docs.beefree.io/wp-content/uploads/2021/01/Custom-attribute-no-value.png)
+<figure><img src="../.gitbook/assets/3Custom-attribute-no-value.png" alt=""><figcaption></figcaption></figure>
 
 The `Segment` attribute has two possible values, which can be selected by the user:
 
-![Custom attributes with multiple values](https://docs.beefree.io/wp-content/uploads/2021/01/Custom-attributes-multiple-values.png)
+<figure><img src="../.gitbook/assets/4Custom-attributes-multiple-values.png" alt=""><figcaption></figcaption></figure>
 
 The `Class` attribute has no defined value, so the user can enter anything in a text input:
 
-![Custom attribute with undefined value](https://docs.beefree.io/wp-content/uploads/2021/01/Custom-attributes-undefined-value.png)
+<figure><img src="../.gitbook/assets/5Custom-attributes-undefined-value.png" alt=""><figcaption></figcaption></figure>
 
 ### Advanced
 

@@ -4,7 +4,7 @@
 
 With Commenting, teams using your application can **collaborate asynchronously** on the same email, page or popup, in order to **get their work done** more quickly and **reach approval** for going live more efficiently.
 
-![Leaving a comment in a thread](https://docs.beefree.io/wp-content/uploads/2020/09/Commenting\_10s.gif)
+<figure><img src="../.gitbook/assets/Commenting_10s.gif" alt=""><figcaption></figcaption></figure>
 
 When Commenting is enabled, your end-users (or contributors, as we’ll call them in this context) can:
 
@@ -60,37 +60,37 @@ When opening an email, a landing page or a popup, a contributor can add a new co
 * in the row or block outline, inside the editing stage
 * in the header of the Row properties or Content properties
 
-{% embed url="https://docs.beefree.io/wp-content/uploads/2020/09/Commenting-icons.mp4" %}
+{% embed url="https://youtu.be/6PFnTUsQwOg" %}
 
 Clicking one of these two icons will activate the **commenting panel**, which takes over the editor sidebar. From there, the user can insert a new comment. After the first comment, another contributor can start a thread by adding a second comment.
 
-![Adding the first comment](https://docs.beefree.io/wp-content/uploads/2020/11/Adding-the-first-comment\_v2.png)
+<figure><img src="../.gitbook/assets/3Adding-the-first-comment_v2.png" alt=""><figcaption></figcaption></figure>
 
 ## **Mentioning someone in a comment**
 
 If you have implemented mentions, users can type @ to bring up a list of contributors and tag them in the comment. If the user starts typing, the list will be filtered  If you’ve built a notification system around Commenting, you can use this piece of information to trigger a notification towards the mentioned person.
 
-![Mentioning someone with the @-type](https://docs.beefree.io/wp-content/uploads/2021/03/Mentioning-someone.gif)
+<figure><img src="../.gitbook/assets/4Mentioning-someone (1).gif" alt=""><figcaption></figcaption></figure>
 
 If you added a Content dialog for mentions, the action will be triggered by the button at the end of the list. You will define the CTA for this button as part of the Content dialog configuration (in this case, “Send an invite”).
 
-![Action for triggering mentions content dialog](https://docs.beefree.io/wp-content/uploads/2021/03/Content-dialog-action.png)
+<figure><img src="../.gitbook/assets/5Content-dialog-action.png" alt=""><figcaption></figcaption></figure>
 
 ## **Interacting with threads**
 
 If there has already been some activity, the editing stage shows whether a content block or row has any comments by displaying a small comment icon. The sidebar instead indicates the number of existing comments for the selected row or content block, three in this case.
 
-![Show comments in toolbar](https://docs.beefree.io/wp-content/uploads/2020/09/Show-comments-in-toolbar\_cropped.png)
+<figure><img src="../.gitbook/assets/6Show-comments-in-toolbar_cropped.png" alt=""><figcaption></figcaption></figure>
 
 Activating the Commenting panel will bring up the thread. In this case, it will show the three comments.
 
 **Existing comments** can be **edited** or **deleted** by the contributor that added them. Contributors may also **resolve comments** when they have reached a consensus and completed any pending task.
 
-![Commenting thread](https://docs.beefree.io/wp-content/uploads/2020/11/Commenting-thread\_v2.png)
+<figure><img src="../.gitbook/assets/7Commenting-thread_v2.png" alt=""><figcaption></figcaption></figure>
 
 Improved accessibility to in-line threads. Hover the mouse over the comment icon to see a preview of the last comment added.
 
-![](https://docs.beefree.io/wp-content/uploads/2022/04/commenting-mouse-hovering-single-user-view-high.gif)
+<figure><img src="../.gitbook/assets/8commenting-mouse-hovering-single-user-view-high.gif" alt=""><figcaption></figcaption></figure>
 
 ## **Browsing threads and closing the commenting panel**
 
@@ -108,7 +108,7 @@ Quickly reopen resolved threads by adding a new comment, expand threads with a c
 
 Suggest edits in seconds, and save time with the copy/paste feature. Copy text from the comment body and paste it directly into the content area.
 
-![](https://docs.beefree.io/wp-content/uploads/2022/04/CopyPaste\_Commenting\_hi.mp4-high-1-2.gif)
+<figure><img src="../.gitbook/assets/9CopyPaste_Commenting_hi.mp4-high-1-2.gif" alt=""><figcaption></figcaption></figure>
 
 ## **Real-time notifications when a new comment is added**
 
@@ -118,7 +118,7 @@ By clicking on the notification, they will be able to quickly open the comment, 
 
 If you want to learn how to implement co-editing in your application, check the related documentation article [here](../collaborative-editing.md).
 
-![](https://docs.beefree.io/wp-content/uploads/2022/04/commenting\_1-high.gif)
+<figure><img src="../.gitbook/assets/10commenting_1-high.gif" alt=""><figcaption></figcaption></figure>
 
 ## The Reviewer Role <a href="#the-reviewer-role" id="the-reviewer-role"></a>
 
