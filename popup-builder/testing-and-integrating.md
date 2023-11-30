@@ -1,14 +1,14 @@
-# Testing and integrating
+# Testing and Integrating
 
 ## Creating an application <a href="#creating-an-application" id="creating-an-application"></a>
 
 When you log into the [Beefree SDK Console](https://dam.beefree.io/devmain) you can immediately see what type of applications you have already created under your Beefree SDK subscriptions.
 
-![](https://docs.beefree.io/wp-content/uploads/2021/08/firefox\_2021-08-18\_19.05.33.png)
+<figure><img src="../.gitbook/assets/firefox_2021-08-18_19.05.33.png" alt=""><figcaption></figcaption></figure>
 
 Just head over to the “Popup Builder Application” section and click on Activate.
 
-![](https://docs.beefree.io/wp-content/uploads/2021/08/firefox\_2021-08-18\_19.07.52.png)
+<figure><img src="../.gitbook/assets/2firefox_2021-08-18_19.07.52 (1).png" alt=""><figcaption></figcaption></figure>
 
 Once created, head over to “Details” for all server-side configurations. Paid applications allow you to create child [development applications](../getting-started/development-applications.md), to ease new feature testing, development, and maintenance.
 

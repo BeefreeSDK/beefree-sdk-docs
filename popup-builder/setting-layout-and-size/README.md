@@ -28,7 +28,7 @@ Two final notes:
 
 As mentioned before, you will receive a ready-to-go design experience when no settings are provided. The default layout is a classic centered modal with a fixed width.
 
-![](https://docs.beefree.io/wp-content/uploads/2021/08/firefox\_2021-08-18\_19.29.18.png)
+<figure><img src="../../.gitbook/assets/firefox_2021-08-18_19.29.18.png" alt=""><figcaption></figcaption></figure>
 
 If the default popup style and layout suit your needs, then your customers are all set to start designing! You can load the builder without additional configuration and use the same standard controls and callbacks to access the HTML and JSON template.
 

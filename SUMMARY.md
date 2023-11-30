@@ -19,7 +19,7 @@
   * [Embedding videos in a page](page-builder/embedding-videos-in-a-page.md)
 * [Popup Builder](popup-builder/README.md)
   * [Popup Builder - Getting Started](popup-builder/popup-builder-getting-started.md)
-  * [Testing and integrating](popup-builder/testing-and-integrating.md)
+  * [Testing and Integrating](popup-builder/testing-and-integrating.md)
   * [Setting layout and size](popup-builder/setting-layout-and-size/README.md)
     * [Advanced settings](popup-builder/setting-layout-and-size/advanced-settings.md)
 * [File Manager application overview](file-manager-application-overview.md)
