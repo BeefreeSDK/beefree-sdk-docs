@@ -8,7 +8,7 @@ description: An overview of page builder within Beefree SDK.
 
 Beefree SDK Page Builder will help your customers create beautiful, responsive landing pages, complete with forms and embedded videos. Combined with our **Email Builder**, you’ll have the power to deliver to your customers a **single, optimized user experience** for designing both emails and web pages.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/03/Page-Builder.jpg)
+<figure><img src="../.gitbook/assets/Page-Builder.jpg" alt=""><figcaption></figcaption></figure>
 
 With the Page Builder, your customers can create landing pages and one page sites with
 

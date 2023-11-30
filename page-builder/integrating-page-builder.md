@@ -4,7 +4,7 @@
 
 When you create an application in the [Beefree SDK Console](https://dam.beefree.io/devmain), you’ll be asked to select either Page or Email Builder. Paid applications allow you to create child development applications, to ease new feature testing, development, and maintenance.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/03/Applications-in-Dev-portal.png)
+<figure><img src="../.gitbook/assets/Applications-in-Dev-portal.png" alt=""><figcaption></figcaption></figure>
 
 Page and Email builders **share the same core functionalities**, including authentication and configuration. If you already integrated our Email builder, you can re-use most of your work by using the **same configuration and callbacks**. If this is your first approach to our builders, just follow the [Installation section in our documentation](../getting-started/installation/). All the documentation in this site applies to both products, except where noted.
 
@@ -23,7 +23,7 @@ Once launched as Page Builder, an application will have a few but noticeable dif
 * the preview includes viewport resize, to test responsiveness on various screen sizes;
 * the HTML block allows using scripts, for improved compatibility with embedded content like surveys. This also includes Javascript, although it cannot be executed within the builder.
 
-{% embed url="https://docs.beefree.io/wp-content/uploads/2020/03/screencast_1.mp4" %}
+{% embed url="https://drive.google.com/file/d/18jREB97yWPAikizf__pV25cxfmGVM8Fv/view" %}
 
 If you’re on a paid plan, you will also get support for forms and embedded videos.
 
