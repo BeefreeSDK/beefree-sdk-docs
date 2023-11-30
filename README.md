@@ -16,7 +16,7 @@ In addition to our drag-and-drop editors, we also offer a standalone [File Manag
 
 Finally, the [Content Services API](content-services-api/) allows you to perform a number of tasks (e.g. refreshing the HTML for a certain asset) and add features to your application (e.g. converting an email to a PDF document). We continue to release new API methods to help you enrich and personalize the content design experience for your customers.
 
-{% embed url="https://drive.google.com/file/d/1yNJX3vL9seHlvCKzz2zjz_ZYS0MYSHKy/view?usp=sharing" %}
+<figure><img src="https://drive.google.com/file/d/1yNJX3vL9seHlvCKzz2zjz_ZYS0MYSHKy/view?usp=drive_link" alt=""><figcaption></figcaption></figure>
 
 ## Beefree Email Builder
 
