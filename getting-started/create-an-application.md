@@ -27,7 +27,7 @@ Whenever you create a new application, we will ask you to provide some general i
 
 For each application, we will also provide you with a **Client ID** and **Client secret**, which you will use for authentication when you initialize it.
 
-![BEE Plugin Development Portal - App details](https://docs.beefree.io/wp-content/uploads/2020/02/bee\_plugin\_dev\_portal\_app\_details-1024x876.png)
+<figure><img src="../.gitbook/assets/beefree_sdk_dev_portal_app_details-1024x876.png" alt=""><figcaption></figcaption></figure>
 
 Go ahead and create your first application in the [Beefree SDK Console](https://developers.beefree.io/subscriptions/).
 
