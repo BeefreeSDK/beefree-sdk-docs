@@ -38,34 +38,34 @@ Our drag\&drop experience, loved by millions of users
 
 There are over 4,500,000 sessions of our drag-n-drop email & landing page builders every month, across hundreds of applications around the world. Popup builder brings the same, great user experience that transforms non-designers in masterful content creators.
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2021/05/image4-e1621950566738.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/1image.png" alt=""><figcaption></figcaption></figure>
 
 #### What you see is what you get...finally for Popups
 
 You can load your customers' website home page as a background, so they can design a popup in the exact context where it will be used. And with Mobile design mode, your users are one click awaying to seeing and perfecting how the popup looks on mobile devices.
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2021/05/popup_1-e1621950375445.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/2image.png" alt=""><figcaption></figcaption></figure>
 
 #### Designed to fit any configuration workflow
 
 Position, size, background color, and more. Customize the builder each time to match how your customer configured their popup inside your application. What this means for you is flexibility, peace of mind, and implementation speed.
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2021/05/sticky-bar-e1622033098636.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/3image.png" alt=""><figcaption></figcaption></figure>
 
 #### Ready-to-go HTML output
 
 Get a solid HTML output ready to be injected on your customer’s website. Your application controls the display and behavior conditions, Beefree SDK takes care of the content.
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2021/05/image5-e1621951230653.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/4image.png" alt=""><figcaption></figcaption></figure>
 
 #### Drop personalized content in popups, in minutes
 
 Personalization is the secret weapon to attract any audience. With Merge tags and Display conditions your customers can show the right message at the right time, with use cases like product recommendations and personalized discount codes.
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2021/05/dynamicContent-e1622032904398.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/5image (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Speed up the creation process with shared and pre-made assets
 
 Your customers will never have to recreate the same content over and over again. They can apply the same saved rows already available for emails, landing pages or other popups. Plus, you may also provide custom rows with ready-made dynamic content like coupon codes and best-selling items.    &#x20;
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2021/05/customRows-e1622032874434.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/6image.png" alt=""><figcaption></figcaption></figure>
