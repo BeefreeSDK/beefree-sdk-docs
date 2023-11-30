@@ -33,16 +33,16 @@ To create a development application, take the following steps:
 3. Navigate to your dashboard where the new application is located
 4. Click the **+** next to **Add a development instance**
 
-<figure><img src="https://lh7-eu.googleusercontent.com/6KkTnU2JxZvYB0A7L9ghybO8ot76KbYWhkcxDQdkkyq0EqmAkiZbXFOhsrjioMz1z0YX4VeOQcEvT6CdFoNEIJIaDJvKOvibV-xXRuDeQvjfDce2We63qTi6Kdk7I8H_MsQZvdHJuvj2zPSXo_TEReg" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="https://lh7-eu.googleusercontent.com/6KkTnU2JxZvYB0A7L9ghybO8ot76KbYWhkcxDQdkkyq0EqmAkiZbXFOhsrjioMz1z0YX4VeOQcEvT6CdFoNEIJIaDJvKOvibV-xXRuDeQvjfDce2We63qTi6Kdk7I8H_MsQZvdHJuvj2zPSXo_TEReg" alt=""><figcaption></figcaption></figure>
 
 5. Type in the name of your development application, for example “development environment” or “QA environment”
 
-<figure><img src="https://lh7-eu.googleusercontent.com/QcYE8xd5XeiauNsKg3F5HfIO_sXVKRy-e8JwE67bqux7VUetAIp7o7uEwaeLLPVhOjexYj1Ey7d0jVvstVP038E0M3RmQxZJSivdwONpgXhJX6UEpY4zk-d5z4EBz4SZnYQgNdU1v8OXlseveQm532I" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="https://lh7-eu.googleusercontent.com/QcYE8xd5XeiauNsKg3F5HfIO_sXVKRy-e8JwE67bqux7VUetAIp7o7uEwaeLLPVhOjexYj1Ey7d0jVvstVP038E0M3RmQxZJSivdwONpgXhJX6UEpY4zk-d5z4EBz4SZnYQgNdU1v8OXlseveQm532I" alt=""><figcaption></figcaption></figure>
 
 6. Click **Create**
 7. View the new development application available in your Beefree SDK dashboard
 
-<figure><img src="https://lh7-eu.googleusercontent.com/NJWGo5Dc4yYgh0j5BdKP2BfEwheUzTtNdmlH8uHYhww4RpfC1VN6vZJtvHpMMMurOEergI0rxXqdZBHw5DMVghqLxp8iSRolX2Nwzmnq9htN6ZZvA__HqpCpqekwTT8vGM2-Jz5abT7WXlTTK7TIsKs" alt="Beefree SDK Console Dashboard with an Example QA Environment Development Application" width="563"><figcaption><p>Beefree SDK Console Dashboard with an Example QA Environment Development Application</p></figcaption></figure>
+<figure><img src="https://lh7-eu.googleusercontent.com/NJWGo5Dc4yYgh0j5BdKP2BfEwheUzTtNdmlH8uHYhww4RpfC1VN6vZJtvHpMMMurOEergI0rxXqdZBHw5DMVghqLxp8iSRolX2Nwzmnq9htN6ZZvA__HqpCpqekwTT8vGM2-Jz5abT7WXlTTK7TIsKs" alt="Beefree SDK Console Dashboard with an Example QA Environment Development Application"><figcaption><p>Beefree SDK Console Dashboard with an Example QA Environment Development Application</p></figcaption></figure>
 
 ## Benefits of Development Applications
 
@@ -61,4 +61,4 @@ Beefree SDK allows you to access next tier features within your development appl
 
 Development apps inherit the same plan that your production app is on. If you wish to test features that are available on a higher plan, go the application details and click “CHANGE PLAN” in the upper right.
 
-![Child application details](https://docs.beefree.io/wp-content/uploads/2020/12/child-app-screenshot-1024x333.png)
+<figure><img src="../.gitbook/assets/child-app-screenshot-1024x333.png" alt=""><figcaption></figcaption></figure>
