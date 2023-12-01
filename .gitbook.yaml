@@ -1,0 +1,4 @@
+root: ./
+
+redirects:
+  getting-started: README.md
