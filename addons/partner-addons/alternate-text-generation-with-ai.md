@@ -33,7 +33,7 @@ To active alternate text generation with AI in your Beefree SDK Developer Consol
 
 **Note:** If you do not yet have an Azure API Key and Endpoint, navigate to the [Microsoft Azure Configuration Steps](https://docs.google.com/document/d/1\_bToJB4U06SvsxphJHKUKsssz7hzoAE4Gbqfa76Mjbo/edit#heading=h.8k1sgzr7vogd) of this guide.
 
-![Image of API Key field and endpoint field inside the Beefree SDK Developer Console](https://docs.beefree.io/wp-content/uploads/2023/11/CleanShot-2023-11-03-at-12.26.07.png)
+<figure><img src="../../.gitbook/assets/CleanShot-2023-11-03-at-12.26.07.png" alt=""><figcaption></figcaption></figure>
 
 ### Microsoft Azure Configuration Steps <a href="#microsoft-azure-configuration-steps" id="microsoft-azure-configuration-steps"></a>
 
@@ -132,7 +132,7 @@ let imagesAvailable = 5
 
 **Note:** In this example, the end user can only make five requests in total, after the fifth request, the end user will no longer be able to generate alternate text. The number five is defined in the configuration and can be customized. For example, if imagesAvailable is set ten, the end user will be able to perform ten requests.
 
-3. In the AddOn settings, `isIconDisabled` is configured to automatically disable the Alternate Text Generation with AI feature when the counter reaches zero. However, through the [Token Upselling](token-upselling.md) notification banner, application end users will have the opportunity to purchase more images and regain access to the feature.
+3. In the AddOn settings, `isIconDisabled` is configured to automatically disable the Alternate Text Generation with AI feature when the counter reaches zero.&#x20;
 
 ```javascript
 
@@ -239,11 +239,11 @@ You can reference the difference in appearance in the following images.
 
 Image 1.0 displays an example of the wand when the feature is not active.&#x20;
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2023/11/image.png" alt="image test"><figcaption><p>Image 1.0 AI Wand as Not Active</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2image.png" alt=""><figcaption></figcaption></figure>
 
 Image 2.0 displays an example of the AI wand icon when the feature is active.
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2023/11/image-1.png" alt="image test"><figcaption><p>Image 1.0 AI Wand as Active</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/3image-1.png" alt=""><figcaption></figcaption></figure>
 
 ## Disable AddOn Per User <a href="#disable-addon-per-user" id="disable-addon-per-user"></a>
 
@@ -285,17 +285,13 @@ Unlike the OpenAI AddOn, the Alternate Text Generation AddOn does not charge by 
 
 If you want to know if you are being charged, and you have the usage widget enabled, you will only be charged if the counter goes down.
 
-Note: If an error occurs after the icon for the Alternate Text Generation AddOn is clicked by an end user, and text is not generated, you will not be charged. You will only be charged for instances when a caption is successfully generated.
+**Note:** If an error occurs after the icon for the Alternate Text Generation AddOn is clicked by an end user, and text is not generated, you will not be charged. You will only be charged for instances when a caption is successfully generated.
 
 ## Error Handling <a href="#error-handling" id="error-handling"></a>
 
 In the event an error occurs, the end user will see an alert and you will receive a message from the Azure API with additional details regarding the error.
 
 For more information on potential errors and error codes, reference the [Azure Cognitive Services REST API reference](https://learn.microsoft.com/en-us/rest/api/cognitiveservices/) or the [Computer Vision REST API reference – Azure Cognitive Services](https://learn.microsoft.com/en-us/rest/api/computer-vision/) depending on which service you opted in for to configure this feature.
-
-## Additional Considerations <a href="#additional-considerations" id="additional-considerations"></a>
-
-The AI Alternate Text Generator is compatible with token upselling. The token upselling feature notifies the end users when their token usage is running low and when it is completely out. Both notifications include an option for the end user to purchase more tokens. The appearance of these notifications are customizable. Read the [Token Upselling documentation](token-upselling.md) to learn more about configuring token upselling within your host application.
 
 ## FAQs <a href="#faqs" id="faqs"></a>
 

@@ -154,7 +154,7 @@ const beeConfig = {
 
 See below for an example of how the UI will render when provided with the optional display usage widget.
 
-![](https://docs.beefree.io/wp-content/uploads/2023/06/06e76ffc-23fc-46da-b433-609cabc86a9f-1024x549.png)
+<figure><img src="../../../.gitbook/assets/06e76ffc-23fc-46da-b433-609cabc86a9f-1024x549.png" alt=""><figcaption></figcaption></figure>
 
 ## Disable Prompts Per User <a href="#disable-prompts-per-user" id="disable-prompts-per-user"></a>
 

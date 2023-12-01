@@ -8,13 +8,13 @@ These AddOns need to be [installed from your Beefree SDK Console](installing-par
 
 AI is currently the best way to gain a competitive advantage in the market. That’s why we did the heavy lifting for you and integrated the ChatGPT-3.5 OpenAI language model into Beefree SDK. This AddOn is a game-changer for SaaS businesses looking to improve customer engagement and stay ahead of the game.
 
-![Preview](https://pro-bee-user-content-eu-west-1.s3-eu-west-1.amazonaws.com/public/addons/vendors/openai/thumbnail.png)
+<figure><img src="../../.gitbook/assets/thumbnail.png" alt=""><figcaption></figcaption></figure>
 
 [How do I enable the OpenAI AddOn?](https://devportal.beefree.io/hc/en-us/articles/10838757053330-How-do-I-enable-the-OpenAI-AddOn-) | [Developer’s FAQ for OpenAI](https://devportal.beefree.io/hc/en-us/articles/10839177777810-Developer-s-FAQ-for-OpenAI) | [Webinar](https://app.livestorm.co/beefreeio/introducing-bee-plugin-openai-add-on-live-demo-and-q-and-a/live?s=7cef0fc7-d888-4627-a5c6-a3c4ed1c396d)
 
 ## Countdown Timers by NiftyImages <a href="#countdown-timers-by-niftyimages" id="countdown-timers-by-niftyimages"></a>
 
-![](https://docs.beefree.io/wp-content/uploads/2020/10/nifty-300x200.png)
+<figure><img src="../../.gitbook/assets/2nifty-300x200.png" alt=""><figcaption></figcaption></figure>
 
 Create urgency with custom-designed countdown timers.
 
@@ -22,7 +22,7 @@ Give your users the ability to design fully customized countdown timers without 
 
 [Addon website](https://dam.beefree.io/beenifty) | [About the AddOn](https://dam.beefree.io/niftycontact) | [Setup instructions](https://dam.beefree.io/niftycontact) | [Privacy Policy](https://dam.beefree.io/niftytos) | [Support](mailto:support@niftyimages.com)
 
-![](https://docs.beefree.io/wp-content/uploads/2020/10/visualtoolbox-300x200.png)
+<figure><img src="../../.gitbook/assets/3visualtoolbox-300x200.png" alt=""><figcaption></figcaption></figure>
 
 Engage and inform with dynamic content, timers, and millions of visuals.
 
@@ -32,7 +32,7 @@ Email from your platform will come alive with this powerful set of dynamic-conte
 
 ## Countdown Timers by Sendtric <a href="#countdown-timers-by-sendtric" id="countdown-timers-by-sendtric"></a>
 
-![](https://docs.beefree.io/wp-content/uploads/2020/10/sendtric-300x188.png)
+<figure><img src="../../.gitbook/assets/4sendtric-300x188.png" alt=""><figcaption></figcaption></figure>
 
 Boost clickthrough rates with dynamic countdown timers.
 
@@ -42,7 +42,7 @@ Sendtric countdown timers are perfect for your customers to create urgency in th
 
 ## Viewed <a href="#viewed" id="viewed"></a>
 
-![](https://docs.beefree.io/wp-content/uploads/2021/01/thumbnail\_viewed\_300.jpg)
+<figure><img src="../../.gitbook/assets/5thumbnail_viewed_300.jpeg" alt=""><figcaption></figcaption></figure>
 
 Capture your customer’s attention and stand out from the competition with the use of autoplay video in email.
 
@@ -52,7 +52,7 @@ It works with all email clients and devices. Get up to 90% of views on your open
 
 ## Gifs <a href="#gifs" id="gifs"></a>
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2020/10/gifsbygiphy-300x188.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/7gifsbygiphy-300x188.png" alt=""><figcaption></figcaption></figure>
 
 The GIFs by GIPHY AddOn gives your customers the best source for GIFs, ready to use in their emails and pages, without leaving the application. This AddOn is developed by Beefree SDK and powered by GIPHY.
 
@@ -62,7 +62,7 @@ Once installed and configured, they will see a new content tile in the builder. 
 
 ## Stickers <a href="#stickers" id="stickers"></a>
 
-![](https://docs.beefree.io/wp-content/uploads/2020/10/stickerbygiphy-300x188.png)
+<figure><img src="../../.gitbook/assets/8stickerbygiphy-300x188.png" alt=""><figcaption></figcaption></figure>
 
 The Stickers by GIPHY AddOn gives your customers the best source for stickers, ready to use in their emails and pages, without leaving the application. This AddOn is developed by Beefree SDK and powered by GIPHY.
 

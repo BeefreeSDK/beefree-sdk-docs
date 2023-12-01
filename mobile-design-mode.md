@@ -39,7 +39,7 @@ bee.loadStageMode({
 
 Here is a video explaining **why we built Mobile design mode** and how it **enhances the design UX** of Beefree SDK.
 
-{% embed url="https://docs.beefree.io/wp-content/uploads/2021/03/Introducing-mobile-design-mode.mp4" %}
+{% embed url="https://youtu.be/1hP83GPcue8" %}
 
 ## How to enable Mobile Design Mode <a href="#how-to-enable-mobile-design-mode" id="how-to-enable-mobile-design-mode"></a>
 
@@ -59,13 +59,13 @@ If your application doesn’t have Mobile Design Mode enabled yet, you need to e
 
 When Mobile Design Mode is enabled for an application at [developers.beefree.io](https://devportal.beefree.io/hc/en-us), the builder will display two new icons in the upper-left corner of the content area, as highlighted below.&#x20;
 
-![the new icons visibile when mobile design mode is active](https://docs.beefree.io/wp-content/uploads/2021/03/new-mobile-design-mode-icons.png)
+<figure><img src=".gitbook/assets/new-mobile-design-mode-icons.png" alt=""><figcaption></figcaption></figure>
 
 The _desktop view (screen icon on the left)_ will leverage your browser’s full width.&#x20;
 
-The _mobile view_ (mobile icon on the right) will resize the work area width to 320px to simulate a mobile screen
+The _mobile view_ (mobile icon on the right) will resize the work area width to 320px to simulate a mobile screen.
 
-![Switching between desktop and mobile view](https://docs.beefree.io/wp-content/uploads/2021/03/Going-from-desktop-to-mobile\_450.gif)
+<figure><img src=".gitbook/assets/2Going-from-desktop-to-mobile_450.gif" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 **Note:** When Mobile design mode is enabled, users will work on a single template that will include both the desktop design and the mobile one. The template doesn’t require any duplicates. The mobile edits will be automatically saved and reflected in the templates.
@@ -90,7 +90,7 @@ These settings become more accessible with Mobile Design Mode, as users can imme
 
 There is an additional setting to preview hidden elements included in a template. With the Hide-on enabled a “Visibility” icon will appear next to the Desktop vs. Mobile stage icons.
 
-![Visibility icon when hiding blocks for mobile/desktop](https://docs.beefree.io/wp-content/uploads/2021/03/visibility-icon.png)
+<figure><img src=".gitbook/assets/3visibility-icon.png" alt=""><figcaption></figcaption></figure>
 
 When the Visibility button is ON (default behavior):
 
@@ -98,7 +98,7 @@ When the Visibility button is ON (default behavior):
 * Hidden elements will be blurred out;
 * A small icon in the outline of the block will appear whenever hovering with the mouse on the hidden element.
 
-![Button with hide on property applied, blurred.](https://docs.beefree.io/wp-content/uploads/2021/03/hidden-element.png)
+<figure><img src=".gitbook/assets/4hidden-element.png" alt=""><figcaption></figcaption></figure>
 
 When Visibility is OFF:
 
@@ -107,7 +107,7 @@ When Visibility is OFF:
 
 Here is how the Visibility toggle changes the experience when editing a recent Beefree SDK newsletter.
 
-![Using the visibility icon when editing a newsletter.](https://docs.beefree.io/wp-content/uploads/2021/03/Visibility-icon-in-a-newsletter.gif)
+<figure><img src=".gitbook/assets/5Visibility-icon-in-a-newsletter.gif" alt=""><figcaption></figcaption></figure>
 
 The device preview matches the stage selected when accessing the design preview. This doesn’t apply if you have implemented a custom-built preview.
 
@@ -148,11 +148,11 @@ They will find the Mobile-optimized properties in the sidebar menu, under the �
 
 Mobile-optimized elements are flagged with a clickable “Mobile” pill, as shown in the image below:
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2022/07/Screenshot-2022-07-04-at-15.35.39.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/6Screenshot-2022-07-04-at-15.35.39.png" alt=""><figcaption></figcaption></figure>
 
 When the pill is highlighted in light blue, it means the property has been edited and applied in the mobile stage. The mobile pill can be styled using [Custom CSS](appearance/custom-css.md) if covered by your [subscription plan](https://beefree.io/bee-plugin/pricing/).
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2022/07/Screenshot-2022-07-04-at-15.34.30.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/7Screenshot-2022-07-04-at-15.34.30.png" alt=""><figcaption></figcaption></figure>
 
 Users can click on the x to revert the property back to the desktop.
 
@@ -160,15 +160,15 @@ Users can click on the x to revert the property back to the desktop.
 
 We have also improved the user experience by moving the Font Size Controls, previously displayed in the formatting tiny menu available in the content area, to the Content Properties Tab in the sidebar menu.
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2022/07/Screenshot-2022-07-04-at-16.47.57.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/8Screenshot-2022-07-04-at-16.47.57.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2022/07/Screenshot-2022-07-04-at-15.35.39.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/9Screenshot-2022-07-04-at-15.35.39.png" alt=""><figcaption></figcaption></figure>
 
 ## Tracking changes in the history
 
 All the edits performed in the Mobile Stage are tracked and flagged in the history as _(Mobile)_ edits.
 
-![](https://docs.beefree.io/wp-content/uploads/2022/07/Screenshot-2022-07-04-at-11.15.20.png)
+<figure><img src=".gitbook/assets/10Screenshot-2022-07-04-at-11.15.20.png" alt=""><figcaption></figcaption></figure>
 
 ## Customization options <a href="#customization-options" id="customization-options"></a>
 

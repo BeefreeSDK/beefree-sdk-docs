@@ -8,7 +8,7 @@ This document discusses the data flow of your OpenAI API key from the moment you
 
 The following diagram provides a visualization of the data flow for the OpenAI API key.
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2023/10/diagram-export-10-26-2023-3_54_51-PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/diagram-export-10-26-2023-3_54_51-PM.png" alt=""><figcaption></figcaption></figure>
 
 This data flow diagram illustrates the flow of data and the key components involved in securing the API key from developer input to end user interaction.
 

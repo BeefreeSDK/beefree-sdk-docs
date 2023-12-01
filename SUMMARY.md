@@ -84,7 +84,6 @@
     * [OpenAI AddOn](addons/partner-addons/openai-addon/README.md)
       * [Open AI and Data Security](addons/partner-addons/openai-addon/open-ai-and-data-security.md)
     * [Alternate Text Generation with AI](addons/partner-addons/alternate-text-generation-with-ai.md)
-    * [Token Upselling](addons/partner-addons/token-upselling.md)
   * [AddOn FAQs](addons/addon-faqs.md)
 * [Collaborative Editing](collaborative-editing.md)
 * [Mobile Design Mode](mobile-design-mode.md)

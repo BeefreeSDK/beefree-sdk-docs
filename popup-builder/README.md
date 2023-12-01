@@ -44,7 +44,7 @@ There are over 4,500,000 sessions of our drag-n-drop email & landing page builde
 
 You can load your customers' website home page as a background, so they can design a popup in the exact context where it will be used. And with Mobile design mode, your users are one click awaying to seeing and perfecting how the popup looks on mobile devices.
 
-<figure><img src="../.gitbook/assets/2image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/2image (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Designed to fit any configuration workflow
 

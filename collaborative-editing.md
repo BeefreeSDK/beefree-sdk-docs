@@ -8,13 +8,13 @@ This feature is available on the Beefree SDK [Superpowers plan](https://dam.beef
 
 With Co-editing, multiple users can work on the same asset (email, page or popup) simultaneously. Co-editors can see what each other is doing, as their changes are synced to the stage in real-time.
 
-![Co-editing avatars](https://docs.beefree.io/wp-content/uploads/2020/11/Co-editing-avatars.png)
+<figure><img src=".gitbook/assets/Co-editing-avatars.png" alt=""><figcaption></figcaption></figure>
 
 Each user is represented by a round icon with the initial of the user, and hovering the mouse on the icon will show the full name for that user.
 
 When a user selects a row or a content block, other co-editors will see it highlighted with that user’s color. To avoid conflicting edits, only one user at a time can edit a row or block. A feedback message will guide users when this situation happens.
 
-![Content locked by another user](https://docs.beefree.io/wp-content/uploads/2020/11/Content-locked-by-another-user.gif)
+<figure><img src=".gitbook/assets/2Content-locked-by-another-user.gif" alt=""><figcaption></figcaption></figure>
 
 ## Use Cases
 
@@ -22,7 +22,7 @@ In many companies, it’s rare that someone works alone on everything related to
 
 When multiple people collaborate on creating content, co-editing is the logical solution for an authentic teamwork experience, Google-doc style.
 
-![Co-editing + Commenting](https://docs.beefree.io/wp-content/uploads/2020/11/coediting\_min.gif)
+<figure><img src=".gitbook/assets/3coediting_min.gif" alt=""><figcaption></figcaption></figure>
 
 If you add [Commenting](advanced-options/commenting.md) to the mix, Beefree SDK becomes an all-around, real-time, collaborative content creation platform to design and review emails, landing pages, and popups, unifying your customers’ workflow under one roof.
 

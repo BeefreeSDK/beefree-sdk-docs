@@ -63,11 +63,11 @@ Just remember that – technically speaking – you can only use the [iFrame Met
 
 As of January 2020, addons become visible as new _tiles_ in the _Content_ tab.
 
-![Beefree SDK editor with addons in Content tab](https://docs.beefree.io/wp-content/uploads/2020/02/BEE-AddOns-Yes-1024x460.png)
+<figure><img src="../.gitbook/assets/BEE-AddOns-Yes-1024x460.png" alt=""><figcaption></figcaption></figure>
 
 An example would be a [Giphy](https://giphy.com/) tile (you can see it in the _Content_ tab in the screenshot below) that can be dragged to the editing stage to allow a Beefree SDK user to search, find and insert a GIF animation into the message or page they are designing.
 
-![Giphy AddOn for Beefree SDK content editor](https://docs.beefree.io/wp-content/uploads/2020/02/BEE-AddOns-Giphy-1-1024x794.png)
+<figure><img src="../.gitbook/assets/2BEE-AddOns-Giphy-1-1024x794.png" alt=""><figcaption></figcaption></figure>
 
 In the future, we may develop new types of addons that may impact other areas of the editor. If you have specific ideas or requests, certainly let us know.
 

@@ -12,7 +12,7 @@ To browse and install existing AddOns, log into the [Beefree SDK Console](https:
 
 In the lower part of the page, locate the _Application configuration_ section and click on AddOns.
 
-![Configure AddOns](https://docs.beefree.io/wp-content/uploads/2020/02/Bee\_Dev\_Portal\_AddOns.png)
+<figure><img src="../../.gitbook/assets/Bee_Dev_Portal_AddOns.png" alt=""><figcaption></figcaption></figure>
 
 You will be taken to a page that lists the AddOns that have been installed for this application. If you are just getting started, the list will be empty.
 
@@ -20,7 +20,7 @@ Click on _Browse Partner AddOns_ to get the list of ready-to-install AddOns. We 
 
 You will deal directly with those companies with regard to signing up for an account, cost, support, etc.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/02/bee-plugin-addons-create-custom.png)
+<figure><img src="../../.gitbook/assets/2bee-plugin-addons-create-custom.png" alt=""><figcaption></figcaption></figure>
 
 You will instead click on _Create a Custom AddOn_ if you want to [build a new AddOn](https://docs.beefree.io/addon-development/) for Beefree SDK.
 
@@ -30,7 +30,7 @@ When you click on the _Browse Partner AddOns_ button, a list of AddOns is displa
 
 After installing a Partner AddOn, you will need to configure it by clicking on the _Edit_ action. A form will be displayed.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/02/partnerAddOnsetup-1024x741.png)
+<figure><img src="../../.gitbook/assets/3partnerAddOnsetup-1024x741.png" alt=""><figcaption></figcaption></figure>
 
 At the top of the form you will find the AddOn name and some links to the AddOn documentation. If any signup is required, that is the company that you will need to contact.
 
@@ -51,25 +51,25 @@ Below that, you will see the following form fields:
 
 With the following setup…
 
-![](https://docs.beefree.io/wp-content/uploads/2020/02/icon.labels.setup\_-1024x194.png)
+<figure><img src="../../.gitbook/assets/4icon.labels.setup_-1024x194.png" alt=""><figcaption></figcaption></figure>
 
 … you would get the following outcome:
 
 ## **Title for the content tile**
 
-![](https://docs.beefree.io/wp-content/uploads/2020/02/AddOn.tile\_.png)
+<figure><img src="../../.gitbook/assets/5AddOn.tile_.png" alt=""><figcaption></figcaption></figure>
 
 ## **Placeholder text and button**
 
 It displays when the AddOn is added to the editing stage and invites the user to take the next step.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/02/AddOn.placeholder-1024x298.png)
+<figure><img src="../../.gitbook/assets/6AddOn.placeholder-1024x298.png" alt=""><figcaption></figcaption></figure>
 
 ## **AddOn selection button in content properties**
 
 When the AddOn content is selected, the same button is displayed in the content properties.
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2020/02/AddOn.action.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/7AddOn.action.png" alt=""><figcaption></figcaption></figure>
 
 ## Adding client-side configurations for AddOns <a href="#adding-client-side-configurations-for-addons" id="adding-client-side-configurations-for-addons"></a>
 
