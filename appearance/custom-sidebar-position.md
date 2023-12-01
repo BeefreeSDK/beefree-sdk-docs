@@ -15,11 +15,11 @@ Available positions:
 
 Here is the same sample application, with the same template and same content element selected, and the sidebar displayed on the left…
 
-![BEE editor with sidebar on the left](https://docs.beefree.io/wp-content/uploads/2019/11/BEE-v3-sidebar-position-left.png)
+<figure><img src="../.gitbook/assets/BEE-v3-sidebar-position-left.png" alt=""><figcaption></figcaption></figure>
 
 … and on the right.
 
-![BEE editor with sidebar on the right](https://docs.beefree.io/wp-content/uploads/2019/11/BEE-v3-sidebar-position-right.png)
+<figure><img src="../.gitbook/assets/2BEE-v3-sidebar-position-right.png" alt=""><figcaption></figcaption></figure>
 
 The configuration document needs the following, new parameter:
 

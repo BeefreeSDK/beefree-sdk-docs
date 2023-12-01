@@ -26,7 +26,7 @@ To use this feature, the host application must simply pass in the preferred orde
 
 ```
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2021/10/image-5-e1634835450411.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image-5-e1634835450411 (1).png" alt=""><figcaption></figcaption></figure>
 
 The host application can pass as many or as few content blocks as they want. If only one content tile is specified, then only that content tile will be placed at the top, and the rest of the content tiles will follow the default order.
 

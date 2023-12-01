@@ -55,7 +55,7 @@ modulesGroups: [
 
 ```
 
-![](https://docs.beefree.io/wp-content/uploads/2022/09/Screenshot-2022-09-29-at-12.40.43.png)
+<figure><img src="../.gitbook/assets/Screenshot-2022-09-29-at-12.40.43.png" alt=""><figcaption></figcaption></figure>
 
 Custom groups can be collapsed and opened by default by changing the `collapsable` and `collapsedOnLoad` values.\
 Ungrouped tiles will be gathered at the bottom of the list under a group with no label.
@@ -91,4 +91,4 @@ If you want to organize or include AddOns, and Custom AddOns under a custom grou
 
 Please note, the AddOn needs to be enabled to appear in the sidebar.
 
-![](https://docs.beefree.io/wp-content/uploads/2022/09/Screenshot-2022-09-29-at-13.56.41.png)
+<figure><img src="../.gitbook/assets/2Screenshot-2022-09-29-at-13.56.41.png" alt=""><figcaption></figcaption></figure>

@@ -16,7 +16,7 @@ When adding new content elements through the Content tab, you may want a default
 
 For example, here is how a button dragged into the stage looks by default:
 
-![](https://docs.beefree.io/wp-content/uploads/2020/05/button\_default\_narrow.png)
+<figure><img src="../.gitbook/assets/button_default_narrow.png" alt=""><figcaption></figcaption></figure>
 
 * The background color is always light blue (HEX code #3AAEE0).
 * The font size is always 16px.
@@ -26,7 +26,7 @@ For example, here is how a button dragged into the stage looks by default:
 
 Instead, when applying Content defaults, the button dragged by your users could look out of the box like this:
 
-![](https://docs.beefree.io/wp-content/uploads/2020/05/button-and-content-default.png)
+<figure><img src="../.gitbook/assets/2button-and-content-default.png" alt=""><figcaption></figcaption></figure>
 
 We’ve used a dark grey color (HEX code #555555), an Ubuntu font at 22px in Bold, with a border radius of 10 and a nice “READ MORE” call-to-action.
 
@@ -52,7 +52,7 @@ If you’ve customized how the editor looks like, either through [Themes](themes
 
 Since the Social block is one of the available Content defaults, you can define what social platforms – either present in the Beefree editors or added by you – are included when a social block is added to a message or page. For example, you can have a default social block with three platforms defined in the Beefree system and a fourth, custom one (Messenger):
 
-![](https://docs.beefree.io/wp-content/uploads/2020/05/Custom-social-block.png)
+<figure><img src="../.gitbook/assets/3Custom-social-block.png" alt=""><figcaption></figcaption></figure>
 
 ## How it works <a href="#how-it-works" id="how-it-works"></a>
 
