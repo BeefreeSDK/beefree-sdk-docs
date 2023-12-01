@@ -2,3 +2,41 @@ root: ./
 
 redirects:
   getting-started: README.md
+  configuration-parameters: getting-started/installation/configuration-parameters/README.md
+  configuration-reload: getting-started/installation/configuration-parameters/configuration-reload.md
+  workspaces: getting-started/installation/configuration-parameters/workspaces.md
+  methods-and-events: getting-started/installation/methods-and-events.md
+  authorization-process: getting-started/installation/authorization-process-in-detail.md
+  how-the-uid-parameter-works: getting-started/installation/how-the-uid-parameters-works.md
+  set-up-two-factor-authentication: getting-started/installation/set-up-two-factor-authentication.md
+  naming-conventions: getting-started/installation/naming-conventions.md
+  building-emails: email-builder.md
+  page-builder-overview: page-builder/README.md
+  embedding-videos-in-a-page: page-builder/embedding-videos-in-a-page.md
+  popup-builder-overview: popup-builder/README.md
+  testing-and-integrating-popup-builder: popup-builder/testing-and-integrating.md
+  setting-layout-and-size-popup-builder: popup-builder/setting-layout-and-size/README.md
+  advanced-settings-popup-builder: popup-builder/setting-layout-and-size/advanced-settings.md
+  file-manager-overview: file-manager-application-overview.md
+  server-side-options: server-side-options/README.md
+  toolbar-options: server-side-options/toolbar-options.md
+  storage-options: server-side-options/storage-options/README.md
+  configure-your-aws-for-bee: server-side-options/storage-options/configure-your-aws-s3-bucket.md
+  connect-your-own-file-storage: server-side-options/storage-options/connect-your-file-storage-system.md
+  content-options: server-side-options/content-options.md
+  services-options: server-side-options/services-options.md
+  undo-changes-history: server-side-options/undo-and-changes-history.md
+  special-links-merge-tags: advanced-options/special-links-and-merge-tags.md
+  content-dialog: advanced-options/content-dialog.md
+  custom-color-palette: advanced-options/custom-color-palette.md
+  font-management: advanced-options/font-management.md
+  roles-and-permissions: advanced-options/roles-and-permissions.md
+  smart-merge-tags: advanced-options/smart-merge-tags.md
+  commenting: advanced-options/commenting.md
+  custom-attributes: advanced-options/custom-attributes.md
+  meta-tags: advanced-options/meta-tags.md
+  custom-languages: advanced-options/custom-languages.md
+  display-conditions: advanced-options/display-conditions.md
+  advanced-permissions: advanced-options/advanced-permissions.md
+  custom-file-picker: advanced-options/custom-file-picker.md
+  custom-headers: advanced-options/custom-headers.md
