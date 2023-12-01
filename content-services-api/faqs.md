@@ -23,7 +23,7 @@ Most changes related to CSAPI will be in the background, but there will be some 
   * **Regenerate**: Revokes the current key and creates a new one
   * **Disable and revoke**: Revokes the current key and disables the service, so you will not be charged for it\*
 
-![](https://docs.beefree.io/wp-content/uploads/2020/01/bee-plugin-developer-portal-msapi-1-20200128.png)
+<figure><img src="../.gitbook/assets/bee-plugin-developer-portal-msapi-1-20200128.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 **\*Note:** Extra API calls are charged at the end of the billing period. For this reason, the first invoice after cancellation may include CSAPI charges.

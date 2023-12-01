@@ -10,7 +10,7 @@ Beefree SDK is a complete content design and creation platform for you to build 
 
 As this may go beyond the interactions that happen within our email, page, and popup builders, we created an API to offer more assistance. We call it the _Content Services API_: it exposes a set of services that will help you provide a better experience with how emails, pages, and popups are created, updated, and transformed into different formats.
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2020/04/CSAPI_800.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/CSAPI_800.jpg" alt=""><figcaption></figcaption></figure>
 
 ## In a nutshell <a href="#in-a-nutshell" id="in-a-nutshell"></a>
 

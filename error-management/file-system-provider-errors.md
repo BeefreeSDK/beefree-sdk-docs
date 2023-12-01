@@ -30,4 +30,4 @@ An error sent with an error code number in this range displays the message as th
    **Details:** The file name is not allowed. Please make sure it does not contain one or more of these characters: \ / < > ? |
 4. The file manager inside the editor displays:
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2018/05/FSP_custom_error-300x68.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/FSP_custom_error-300x68.jpg" alt=""><figcaption></figcaption></figure>

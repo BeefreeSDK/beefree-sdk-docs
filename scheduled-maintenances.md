@@ -16,7 +16,7 @@ Services not directly related to the builder itself, such as delivery of images 
 
 Users that launch the builder during the period of downtime within a maintenance window will see a “We’ll be back soon!” service page, similar to the following.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/03/BEE-maintenance-sm.png)
+<figure><img src=".gitbook/assets/BEE-maintenance-sm.png" alt=""><figcaption></figcaption></figure>
 
 Note that:
 

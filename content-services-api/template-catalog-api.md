@@ -8,7 +8,7 @@ Access to this feature is available for purchase via your account manager. If yo
 
 This documentation aims to guide you in creating a personalized template catalog for your SaaS applications. Leveraging our API, you can seamlessly integrate a diverse range of email and page templates, promoting enhanced user engagement while optimizing the design process within your platform.
 
-![](https://docs.beefree.io/wp-content/uploads/2023/07/image1.png)
+<figure><img src="../.gitbook/assets/image1 (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Getting Started
 

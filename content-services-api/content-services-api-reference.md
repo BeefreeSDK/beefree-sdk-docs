@@ -12,7 +12,7 @@ To obtain an API Key, take the following steps:
 4. Acknowledge the message that reminds you that if you exceed the [number of API calls included in your plan](https://dam.beefree.io/devmain), you may be charged for overages and click on _Create Key_
 5. You’re done!
 
-![](https://docs.beefree.io/wp-content/uploads/2020/03/CSAPI\_in\_dev\_portal.png)
+<figure><img src="../.gitbook/assets/CSAPI_in_dev_portal.png" alt=""><figcaption></figcaption></figure>
 
 The Content Services API uses API Keys to authenticate requests for resources.  You can manage your API Keys within the Beefree SDK Console.  All requests must be made over HTTPS and contain the following HTTP Header:
 
