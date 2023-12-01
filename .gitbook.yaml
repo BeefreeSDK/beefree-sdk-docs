@@ -7,7 +7,7 @@ redirects:
   workspaces: getting-started/installation/configuration-parameters/workspaces.md
   methods-and-events: getting-started/installation/methods-and-events.md
   authorization-process: getting-started/installation/authorization-process-in-detail.md
-  how-the-uid-parameter-works: getting-started/installation/how-the-uid-parameters-works.md
+  how-the-uid-parameter-works: getting-started/installation/how-the-uid-parameter-works.md
   set-up-two-factor-authentication: getting-started/installation/set-up-two-factor-authentication.md
   naming-conventions: getting-started/installation/naming-conventions.md
   building-emails: email-builder.md
@@ -66,9 +66,9 @@ redirects:
   addons: addons/addons-overview.md
   custom-addons: addons/custom-addons/README.md
   addon-development: addons/custom-addons/addon-development.md
-  addon-development-vendor: addons/partner-addons.md
+  addon-development-vendor: addons/partner-addons/README.md
   partner-addons-directory: addons/partner-addons/partner-addons-directory.md
-  using-addons: addons/partner-addons/installing-partner-addons/README.md
+  using-addons: addons/partner-addons/installing-partner-addons.md
   openai-addon-customization: addons/partner-addons/openai-addon/README.md
   open-ai-and-data-security: addons/partner-addons/openai-addon/open-ai-and-data-security.md
   alternate-text-generation-with-ai: addons/partner-addons/alternate-text-generation-with-ai.md
