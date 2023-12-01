@@ -24,7 +24,7 @@ Let’s say you embedded our email editor in your **event engagement platform**,
 * The QR code is created dynamically by your platform, at the time the email is sent to a ticket buyer.
 * The feature is specific to your application.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/02/QRcode\_add2-1024x527.jpg)
+<figure><img src="../../.gitbook/assets/QRcode_add2-1024x527 (2).jpg" alt=""><figcaption></figcaption></figure>
 
 ## Availability <a href="#availability" id="availability"></a>
 
@@ -48,10 +48,10 @@ Of course, there are exceptions to this requirement.
 
 Log into the [Beefree SDK Console](https://dam.beefree.io/devmain) and locate any application that is on the Superpowers or Enterprise plans. Click on _Details_ to navigate to the application details page. In the lower part of the page, locate the _Application configuration_ section and click on AddOns.
 
-![Adding a Custom AddOn](https://docs.beefree.io/wp-content/uploads/2020/02/bee-plugin-addons-create-details-icon-1024x766.png)
+<figure><img src="../../.gitbook/assets/2bee-plugin-addons-create-details-icon-1024x766.png" alt=""><figcaption></figcaption></figure>
 
 You will be taken to a page that lists the addons that have been installed for this application. Since you are just getting started, the list is likely empty. Click on _Create a custom addon_ to start the process of creating a Custom AddOn.
 
-![Custom AddOns buttons](https://docs.beefree.io/wp-content/uploads/2022/06/Screenshot-2022-06-27-at-13.59.22.png)
+<figure><img src="../../.gitbook/assets/3Screenshot-2022-06-27-at-13.59.22.png" alt=""><figcaption></figcaption></figure>
 
 Refer to the [AddOn Development documentation](addon-development.md) for all the details on building your addon.

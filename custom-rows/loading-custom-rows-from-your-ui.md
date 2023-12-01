@@ -18,19 +18,19 @@ Here’s an example of our Beefree product, which integrates Beefree SDK, taking
 
 The toolbar in the application contains explicit call-to-action text links to load footers, which correspond to different categories of Custom Rows in the application.
 
-![](https://docs.beefree.io/wp-content/uploads/2021/07/CTAs-for-rows.jpg)
+<figure><img src="../.gitbook/assets/CTAs-for-rows.jpg" alt=""><figcaption></figcaption></figure>
 
 When users click on “Mailchimp Footers”, the Custom Rows Content Dialog is triggered, meaning that the builder opens a communication channel with your application. In this case, no additional UI will be displayed, as the host application provides the URL to the rows associated with that call-to-action. This way, the Rows tab will be immediately selected, with the “Mailchimp Footers” category already selected:
 
-![](https://docs.beefree.io/wp-content/uploads/2021/07/Showing-custom-rows.png)
+<figure><img src="../.gitbook/assets/2Showing-custom-rows.png" alt=""><figcaption></figcaption></figure>
 
 But what if you wanted users to select the email footers they need from a large catalog of pre-built content? In that scenario, you could have a more generic “Load footers” call-to-action in the toolbar.
 
-![](https://docs.beefree.io/wp-content/uploads/2021/07/Load-footers.jpg)
+<figure><img src="../.gitbook/assets/3Load-footers.jpeg" alt=""><figcaption></figcaption></figure>
 
 Clicking on “Load Footers” will once again trigger the _Custom Rows content dialog_, but this time the application could provide a dialog window where users can browse or search through available footers, and get some additional context on them. Here is a visual example of how it might look like, but as with all content dialogs you have complete freedom on what to show:
 
-![](https://docs.beefree.io/wp-content/uploads/2021/07/Footers-content-dialog\_s.jpg)
+<figure><img src="../.gitbook/assets/4Footers-content-dialog_s.jpeg" alt=""><figcaption></figcaption></figure>
 
 When users click on MailChimp, the modal window fades off, the builder switches to the “Rows” tab, and the MailChimp Footers are shown, ready to be dragged into the message.
 

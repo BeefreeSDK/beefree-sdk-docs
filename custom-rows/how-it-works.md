@@ -4,18 +4,18 @@
 
 When the builder starts, you can feed to it multiple lists of _custom rows_, which will display in the rows selector:
 
-![](https://docs.beefree.io/wp-content/uploads/2018/04/CR\_config\_list-1024x405.jpg)
+<figure><img src="../.gitbook/assets/CR_config_list-1024x405.jpg" alt=""><figcaption></figcaption></figure>
 
 Each list is an array of objects (JSON) describing the rows and must be returned by a URL that the builder will call when the user selects its name.\
 These objects may be [Saved Rows](../saved-rows/) or [Simplified Rows](generating-custom-rows-from-existing-content.md) (a JSON schema that allows you to generate rows from existing contents through an API).
 
 When the user selects the list name, the builder will call the given URL to retrieve the rows and display them:
 
-![](https://docs.beefree.io/wp-content/uploads/2018/04/rows\_displaying-442x1024.jpg)
+<figure><img src="../.gitbook/assets/2rows_displaying-442x1024.jpeg" alt=""><figcaption></figcaption></figure>
 
 If the URL is not available, a warning message will be displayed in the bottom right, and the builder will display the next set of rows or fallback to _empty rows_ or _default rows_(depending on your configuration):
 
-![](https://docs.beefree.io/wp-content/uploads/2018/04/Error-warning-300x61.jpg)
+<figure><img src="../.gitbook/assets/3Error-warning-300x61.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## **List limits**
 
@@ -35,7 +35,7 @@ The search is performed against all elements of the array (i.e., both visible an
 
 All textual content included in the selected array – including image file names – is used to find a match.
 
-![](https://docs.beefree.io/wp-content/uploads/2018/04/CR\_search.png)
+<figure><img src="../.gitbook/assets/4CR_search.png" alt=""><figcaption></figcaption></figure>
 
 ## Rows configuration <a href="#rows-configuration" id="rows-configuration"></a>
 
@@ -71,7 +71,7 @@ Will always be included as the last element if omitted in the configuration.
 
 They are presented as follows in the builder’s default theme (the screenshot shows the first 4 empty rows):
 
-![BEE rows - Empty](https://docs.beefree.io/wp-content/uploads/2020/01/rows\_empty.png)
+<figure><img src="../.gitbook/assets/5rows_empty.png" alt=""><figcaption></figcaption></figure>
 
 ## **defaultRows**
 
@@ -83,7 +83,7 @@ A set of rows that contain sample contents. That’s why we also call them _samp
 
 They are presented as follows in the builder’s default theme (the screenshot shows the first 2 default rows):
 
-![BEE Rows - Default](https://docs.beefree.io/wp-content/uploads/2020/01/rows\_default.png)
+<figure><img src="../.gitbook/assets/6rows_default.png" alt=""><figcaption></figcaption></figure>
 
 ## **externalContentURLs**
 
@@ -100,7 +100,7 @@ Here is an example of how the _Rows_ drop-down looks when the application config
 * **Saved** rows (l[earn about displaying Saved rows](displaying-saved-rows.md))
 * 3 additional arrays for **Custom** rows
 
-![BEE Rows - Custom](https://docs.beefree.io/wp-content/uploads/2020/01/rows\_custom.png)
+<figure><img src="../.gitbook/assets/7rows_custom.png" alt=""><figcaption></figcaption></figure>
 
 ## **Display order**
 
@@ -116,7 +116,7 @@ The first ordering factor refers to the **type of row** (empty, default, custom)
 
 So obtain the order shown in this screenshot…
 
-![BEE Rows - Custom](https://docs.beefree.io/wp-content/uploads/2020/01/rows\_custom.png)
+<figure><img src="../.gitbook/assets/8rows_custom.png" alt=""><figcaption></figcaption></figure>
 
 … you would list _defaultRows_ before _emptyRows_:
 

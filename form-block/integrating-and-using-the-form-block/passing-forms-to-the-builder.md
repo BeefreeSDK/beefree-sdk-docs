@@ -47,7 +47,7 @@ defaultForm: {
 
 The default form you pass to a Beefree SDK application may consist of a simple form (e.g., the most used one), or a longer form that the user can customize using the options in the form content properties, as pictured here:
 
-![](https://docs.beefree.io/wp-content/uploads/2021/01/Managing-fields\_2.png)
+<figure><img src="../../.gitbook/assets/Managing-fields_2 (1).png" alt=""><figcaption></figcaption></figure>
 
 The flexibility of these properties allows you to cover multiple form building capabilities, even when implementing just a default form. Let’s see how.
 
@@ -144,11 +144,11 @@ defaultForm: {
 
 When added, the form shows the minimum fields for submtting an email, e.g. for subscribing to a newsletter:
 
-![](https://docs.beefree.io/wp-content/uploads/2020/04/form\_minimal\_2.png)
+<figure><img src="../../.gitbook/assets/2form_minimal_2.png" alt=""><figcaption></figcaption></figure>
 
 but then, the user can toggle on the available fields to transform it:
 
-![](https://docs.beefree.io/wp-content/uploads/2020/04/form\_complete\_2.png)
+<figure><img src="../../.gitbook/assets/3form_complete_2.png" alt=""><figcaption></figcaption></figure>
 
 ## Implementing a content dialog <a href="#implementing-a-content-dialog" id="implementing-a-content-dialog"></a>
 
@@ -175,7 +175,7 @@ The object that defines the form content dialog is the following:
 
 As with most content dialog objects, the label is used within the interface to trigger the function:
 
-![](https://docs.beefree.io/wp-content/uploads/2020/04/change-form.png)
+<figure><img src="../../.gitbook/assets/4change-form.png" alt=""><figcaption></figcaption></figure>
 
 The resolve object in the handler function must return a form using the structure and parameters described in [this section](form-structure-and-parameters.md).
 

@@ -4,7 +4,7 @@
 
 [AMP](https://amp.dev/) is an open-source, web component framework, maintained by the OpenJS Foundation with significant support from Google. Its goal is to create great experiences across the web, focusing on interactivity and speed.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/10/AMP-Carousel-in-BEE.gif)
+<figure><img src=".gitbook/assets/AMP-Carousel-in-BEE.gif" alt=""><figcaption></figcaption></figure>
 
 AMP for Email features interactive elements that email readers can use to take action directly in the inbox. It can also be used to fetch up-to-date information and present it each time an email is opened.
 
@@ -33,7 +33,7 @@ To do so:
 * Click view more under **Application configuration**.
 * In the AMP Content section, toggle **Enable AMP Carousel** ON and click the **Save** button to activate Commenting for the application.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/10/Dev-Portal-AMP-toggle.png)
+<figure><img src=".gitbook/assets/2Dev-Portal-AMP-toggle.png" alt=""><figcaption></figcaption></figure>
 
 Next, to activate the AMP Carousel when launching the builder, you will need to initialize your Beefree application with an AMP-compatible workspace.
 
@@ -96,13 +96,13 @@ If you don’t set a workspace when loading the builder, AMP widgets are not vis
 
 The Carousel content tile will appear in the Content tab after enabling it in the Beefree SDK Console and loading the editor with an AMP-compatible workspace, as described above.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/10/Generic-screenshot.png)
+<figure><img src=".gitbook/assets/3Generic-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 To start creating a carousel, users need to drag and drop the carousel block to the stage. By clicking on “browse” or dropping an image file in the block, they can start adding images, or as we call them in this context, “slides”.
 
 The carousel looks best using images of the same size. However, it is possible to mix sizes in the slides: in that case, the logic that drives how the carousel is rendered is that the first slide will determine the carousel ratio. The slides that follow will be adapted to that ratio.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/10/Adding-slides.png)
+<figure><img src=".gitbook/assets/4Adding-slides.png" alt=""><figcaption></figcaption></figure>
 
 Beyond this, remember that images will be adapted to fill the carousel width, so if users choose an image less wide than the carousel, it will be stretched to fill it.
 
@@ -115,28 +115,28 @@ For each slide, users can:
 
 There are two additional properties for a carousel:
 
-![](https://docs.beefree.io/wp-content/uploads/2020/10/Additional-AMP-properties.png)
+<figure><img src=".gitbook/assets/5Additional-AMP-properties.png" alt=""><figcaption></figcaption></figure>
 
 * Autoplay, to enable automatic scrolling between slides, setting the interval in seconds between each slide (the autoplay stops if the recipient interacts with the carousel).
 * Dot navigation, to add a dot for each slide, so that the reader can jump to different images without scrolling with the arrows. The user can define the color of the dots.
 
 The carousel can be previewed right inside the editing stage, using the left and right arrows in the AMP carousel block:
 
-![](https://docs.beefree.io/wp-content/uploads/2020/10/Stage-preview.gif)
+<figure><img src=".gitbook/assets/6Stage-preview.gif" alt=""><figcaption></figcaption></figure>
 
 For a full preview, using real AMPHTML, users need to hit Preview, and they can switch between the AMP and the HTML version, both on mobile and desktop.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/10/Preview-mode\_resize.gif)
+<figure><img src=".gitbook/assets/7Preview-mode_resize.gif" alt=""><figcaption></figcaption></figure>
 
 ## Creating the HTML fallback <a href="#creating-the-html-fallback" id="creating-the-html-fallback"></a>
 
 When using AMP content, it’s essential to **create fallback** for email clients that **don’t support AMP**. The fallback can be easily obtained with the “Hide on AMP/HTML” widget, available on all blocks as a content property.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/10/hideon-amp-html-300x47.png)
+<figure><img src=".gitbook/assets/8hideon-amp-html-300x47.png" alt=""><figcaption></figcaption></figure>
 
 It is very similar to the “Hide on Desktop/Mobile” control. Users can add the content for the HTML fallback and mark it as “Hide on AMP”. Inside the stage, a visual cue in the block’s outline will identify the block as hidden on AMP.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/10/Hide-on-AMP.png)
+<figure><img src=".gitbook/assets/9Hide-on-AMP.png" alt=""><figcaption></figcaption></figure>
 
 Besides the carousel, users can mark any part of the email as AMP-only by applying the “Hide on HTML” property.
 

@@ -30,7 +30,7 @@ From the perspective of your users, this additional configuration adds a new ite
 
 Here is a visual example of how the “Search products” label will be shown, at the bottom of the _Rows_ drop-down.
 
-![](https://docs.beefree.io/wp-content/uploads/2018/06/CustomRows\_ContentDialog\_01.jpg)
+<figure><img src="../.gitbook/assets/CustomRows_ContentDialog_01.jpg" alt=""><figcaption></figcaption></figure>
 
 ## How it works <a href="#how-it-works" id="how-it-works"></a>
 
@@ -40,11 +40,11 @@ When the user clicks on the new menu item (e.g., “Search products” in the ex
 
 You can use this event to display a form where the user can search for new items to insert in the message. Here is a visual example:
 
-![](https://docs.beefree.io/wp-content/uploads/2018/06/productsearch-1024x992.jpg)
+<figure><img src="../.gitbook/assets/2productsearch-1024x992.jpeg" alt=""><figcaption></figcaption></figure>
 
 You could also ask the user to enter parameters that will affect the very structure of the rows (JSON documents) that will be imported into the editor, affecting the way they will display:
 
-![](https://docs.beefree.io/wp-content/uploads/2018/06/product\_layout.jpg)
+<figure><img src="../.gitbook/assets/3product_layout.jpeg" alt=""><figcaption></figcaption></figure>
 
 You can also mix both forms in a 2-step pattern.
 
@@ -65,7 +65,7 @@ This response will:
 1. Create a new drop-down choice with the provided name
 2. Display the rows provided by the URL in the rows panel
 
-![](https://docs.beefree.io/wp-content/uploads/2018/06/results.jpg)
+<figure><img src="../.gitbook/assets/4results.jpeg" alt=""><figcaption></figcaption></figure>
 
 Notice that in the rows list, names returned by the Content Dialog display as highlighted elements to give them further visibility over starting choices.
 
@@ -82,7 +82,7 @@ This creates a new drop-down choice, keeping the previous results as selectable 
 
 Here is a visual example:
 
-![](https://docs.beefree.io/wp-content/uploads/2018/06/Search\_multiple.jpg)
+<figure><img src="../.gitbook/assets/5Search_multiple.jpeg" alt=""><figcaption></figcaption></figure>
 
 ### **Live example**
 
@@ -90,6 +90,6 @@ In our example, we are using this event to display a search form and transfer th
 
 The form is part of the application, so we are using the same elements and styles that users of the application are used to.
 
-![](https://docs.beefree.io/wp-content/uploads/2018/06/example\_form-1024x939.jpg)
+<figure><img src="../.gitbook/assets/6example_form-1024x939 (1).jpeg" alt=""><figcaption></figcaption></figure>
 
-{% embed url="https://docs.beefree.io/wp-content/uploads/2018/06/content.dialog.w.history_2.mp4" %}
+{% embed url="https://youtu.be/oT2OGSr2v-s" %}

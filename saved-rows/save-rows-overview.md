@@ -15,11 +15,11 @@ Save Rows allows users to select a row in a message and save it for later use. M
 
 When the feature is enabled, a new _Save_ icon is added to the action icons when a row is selected:
 
-![](https://docs.beefree.io/wp-content/uploads/2018/11/saveicon-1024x134.png)
+<figure><img src="../.gitbook/assets/saveicon-1024x134.png" alt=""><figcaption></figcaption></figure>
 
 The same action is also available in the row properties panel when a row is selected:
 
-![](https://docs.beefree.io/wp-content/uploads/2018/11/saveicon\_properties-300x210.png)
+<figure><img src="../.gitbook/assets/2saveicon_properties-300x210.png" alt=""><figcaption></figcaption></figure>
 
 By clicking on this icon, users trigger a request to the host application to store the row’s JSON document, which includes:
 
@@ -45,7 +45,7 @@ To do so:
 3. Click the _view more_ link under the _Application configuration_ heading.
 4. Toggle _Enable saving rows_ on and click the _Save_ button to save the new setting.
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2018/11/setup.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/3setup.png" alt=""><figcaption></figcaption></figure>
 
 ## **Making Save Rows available only to select users**
 
@@ -108,7 +108,7 @@ Using a previously saved row:
 
 Here is a visual example using our demo application:
 
-![](https://docs.beefree.io/wp-content/uploads/2018/11/saveRows.gif)
+<figure><img src="../.gitbook/assets/4saveRows.gif" alt=""><figcaption></figcaption></figure>
 
 ## **Saving rows workflow for developers**
 
@@ -215,7 +215,7 @@ rowsConfiguration: {
 
 Accessing, and organizing saved rows is now easier than ever with Saved Rows Management. With this feature, we’ve introduced a new action in the list of saved rows that your application can intercept to handle changes in this list itself. This means you can now delete, rename, or re-organize your saved rows, right inside the builder.
 
-![](https://docs.beefree.io/wp-content/uploads/2021/11/savedrowsmanagement.gif)
+<figure><img src="../.gitbook/assets/5savedrowsmanagement.gif" alt=""><figcaption></figcaption></figure>
 
 ## How to implement
 
@@ -684,6 +684,6 @@ onSaveRow: function (rowJSON, rowHTML, pageJSON) {
 
 With [Edit Single Row](edit-single-row-mode.md) mode you can offer an easy way for your users to edit saved rows individually, using a tailored UI built to modify the row structure, content, and style settings without worrying about messing up with the overall design of the email campaign, landing page, or pop-up.
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2022/03/image1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/6image1.png" alt=""><figcaption></figcaption></figure>
 
 Enabling a more modular approach to saved rows simplifies how users can design and act on content: updating small details in a saved row, saving it, then deploying it to existing templates becomes a matter of minutes. If you want to learn more about how to leverage Edit Single Row mode to safely modify a Saved Row, take a look at the dedicated technical documentation.

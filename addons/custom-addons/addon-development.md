@@ -33,7 +33,7 @@ The process all starts in the [Beefree SDK Console](https://dam.beefree.io/devma
 
 When you create a new Custom AddOn, you will be prompted to enter some information through the AddOn setup form. Depending on the _method_ that you choose, the number of fields in the form will change.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/02/Custom-AddOn-setup-1024x743.png)
+<figure><img src="../../.gitbook/assets/Custom-AddOn-setup-1024x743.png" alt=""><figcaption></figcaption></figure>
 
 * **Name**:\
   The name of the AddOn is saved in the dashboard. This is not the name used for the _tile_ in the Beefree editor’s _Content_ tab but rather the internal name visible to other developers. In other words, it will not be shown to end-users of the editor.
@@ -66,7 +66,7 @@ When you create a new Custom AddOn, you will be prompted to enter some informati
 
 If you are using the **iFrame method**, some **additional fields** are shown on the form.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/02/iframeform-1024x787.png)
+<figure><img src="../../.gitbook/assets/2iframeform-1024x787.png" alt=""><figcaption></figcaption></figure>
 
 * **Iframe URL** – Required\
   The URL that will be loaded inside the Iframe.
@@ -142,7 +142,7 @@ Currently, you may choose between the following content types:
 
 Mixed Content AddOns are a new type of content tile that allows the host application to load multiple content modules at once. This grants you greater flexibility with how you want your custom AddOn to interact with your customers and data; for example, you could create a mixed content AddOn to drop a product image in your template, along with a title, description, and more.
 
-![](https://docs.beefree.io/wp-content/uploads/2022/07/image-1010x1024.png)
+<figure><img src="../../.gitbook/assets/3image-1010x1024.png" alt=""><figcaption></figcaption></figure>
 
 To utilize this feature:
 
@@ -409,7 +409,7 @@ This feature expands the capabilities of Custom AddOns by including:
 * domain-specific contents (e.g _Event Block_ for an application that offers event engagement)
 * .. and much more
 
-![](https://docs.beefree.io/wp-content/uploads/2022/10/Custom\_Addon\_final.gif)
+<figure><img src="../../.gitbook/assets/4Custom_Addon_final.gif" alt=""><figcaption></figcaption></figure>
 
 To take advantage of this new feature, you have to:
 

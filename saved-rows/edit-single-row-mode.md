@@ -47,7 +47,7 @@ When a builder application is initialized with this mode enabled the UI will sho
 * the _Settings tab_ is unavailable, as those properties are specific to the entire document,
 * when a row is selected on the editing stage, the action to _Delete, Duplicate, Comment, Save_ are not available.
 
-![](https://docs.beefree.io/wp-content/uploads/2022/03/image1.png)
+<figure><img src="../.gitbook/assets/image1 (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Implementing the Save action <a href="#implementing-the-save-action" id="implementing-the-save-action"></a>
 

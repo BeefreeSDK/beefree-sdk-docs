@@ -91,7 +91,7 @@ Probably the best way to represent this is with an example:
 </code></pre> |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2020/03/forms-layout.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/forms-layout.png" alt=""><figcaption></figcaption></figure>
 
 ## Title and description <a href="#title-and-description" id="title-and-description"></a>
 

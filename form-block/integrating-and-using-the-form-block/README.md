@@ -24,7 +24,7 @@ Your application passes a single JSON form, potentially including all the fields
 * renaming their labels
 * editing their type
 
-![Managing fields in a form block](https://docs.beefree.io/wp-content/uploads/2021/01/Managing-fields\_2.png)
+<figure><img src="../../.gitbook/assets/Managing-fields_2.png" alt=""><figcaption></figcaption></figure>
 
 This is the **quickest way** to get started using forms. You may also decide to include such forms inside templates provided by your application.
 
@@ -46,7 +46,7 @@ With a content dialog, you have full control over the experience of adding a for
 
 Here is an example of form selection built with a Content Dialog.
 
-![Content dialog to select form](https://docs.beefree.io/wp-content/uploads/2020/09/Content-dialog-to-select-form\_2.gif)
+<figure><img src="../../.gitbook/assets/2Content-dialog-to-select-form_2.gif" alt=""><figcaption></figcaption></figure>
 
 Once the content dialog returns a form to the application, users can then change the form content properties in the builder, by adding and removing fields, rearranging their order. and customizing their labels and style
 
@@ -56,7 +56,7 @@ Once the content dialog returns a form to the application, users can then change
 
 You may even want to go a step further and use the Content dialog to load your UI for form creation, on top of the builder; your users will be able to create a new form and add it to the web content they’re building, without interrupting their workflow.
 
-![](https://docs.beefree.io/wp-content/uploads/2020/03/mock-form-builder-with-content-dialog.png)
+<figure><img src="../../.gitbook/assets/3mock-form-builder-with-content-dialog.png" alt=""><figcaption></figcaption></figure>
 
 ## Embed a Third-Party Form
 
@@ -66,7 +66,7 @@ The HTML Block is available on Beefree SDK [paid plans](https://dam.beefree.io/p
 
 As an alternative to the above-mentioned methods, your users can add an **HTML block** and easily **embed forms** created with [any form builder](https://www.g2.com/categories/online-form-builder) available on the market (e.g. Typeform, JotForm, etc.).
 
-![](https://docs.beefree.io/wp-content/uploads/2020/03/firefox\_oDUJyfo03S.png)
+<figure><img src="../../.gitbook/assets/4firefox_oDUJyfo03S.png" alt=""><figcaption></figcaption></figure>
 
 Form builders typically offer different options to get an embed code:
 
@@ -83,7 +83,7 @@ Once a form is added to the web content, the user has these options to manage fi
 
 Besides, end users can [edit fields](form-structure-and-parameters.md), when the “edit” action is available.
 
-![Manage fields panel](https://docs.beefree.io/wp-content/uploads/2021/01/Icons.png)
+<figure><img src="../../.gitbook/assets/5Icons.png" alt=""><figcaption></figcaption></figure>
 
 Finally, users can apply various styling options to the form:
 
@@ -99,11 +99,11 @@ Finally, users can apply various styling options to the form:
 
 When managing fields in a form block, users can click on the “Edit” action to change field types and properties. To facilitate the user, the icon next to the label highlights the current field type.
 
-![Edit a field](https://docs.beefree.io/wp-content/uploads/2021/01/Edit-fields\_cropped.png)
+<figure><img src="../../.gitbook/assets/6Edit-fields_cropped (1).png" alt=""><figcaption></figcaption></figure>
 
 A modal window will pop up:
 
-![Edit field dialog](https://docs.beefree.io/wp-content/uploads/2021/01/Edit-field-dialog.png)
+<figure><img src="../../.gitbook/assets/7Edit-field-dialog.png" alt=""><figcaption></figcaption></figure>
 
 From this modal, users can:
 
@@ -116,7 +116,7 @@ From this modal, users can:
 
 Clicking on “Type” will open a dropdown with all the available field types:
 
-![Available type in the edit field dialog](https://docs.beefree.io/wp-content/uploads/2021/01/Edit-field-available-types.png)
+<figure><img src="../../.gitbook/assets/8Edit-field-available-types.png" alt=""><figcaption></figcaption></figure>
 
 All fields can be edited, unless:
 
@@ -139,7 +139,7 @@ The email and URL types will check at form submission, through HTML5 validation,
 
 Users need to enter the values that will be displayed to visitors. To do this, they will add those values under **Options**:
 
-![Configuring a dropdown field](https://docs.beefree.io/wp-content/uploads/2021/01/Dropdown-field.png)
+<figure><img src="../../.gitbook/assets/9Dropdown-field.png" alt=""><figcaption></figcaption></figure>
 
 They can either:
 
@@ -148,13 +148,13 @@ They can either:
 
 The Multiple choice type can also be used to create checkboxes, e.g. privacy policy acceptance. In this case, no value should be specified, and any external URL should be added in the field label, like in this example:
 
-![](https://docs.beefree.io/wp-content/uploads/2021/01/Using-multiple-choice-for-checkbox.png)
+<figure><img src="../../.gitbook/assets/10Using-multiple-choice-for-checkbox.png" alt=""><figcaption></figcaption></figure>
 
 **Date**
 
 This type has no additional properties. The date format of the value returned to the host app will be coherent with browser locale information.
 
-![Datepicker](https://docs.beefree.io/wp-content/uploads/2021/01/Datepicker.png)
+<figure><img src="../../.gitbook/assets/11Datepicker.png" alt=""><figcaption></figcaption></figure>
 
 Visitors will enter the date using the browser’s date picker. Otherwise, they can input the date directly, following the automatically generated placeholder for the expected date format.
 
@@ -164,13 +164,13 @@ This type has the option to enter a minimum and/or a maximum allowed value. If n
 
 Number fields have a “spinner” input that visitors can use to cycle through allowed values. Visitors can also input a number directly, but the HTML 5 validation will verify if the submitted number falls into the permitted interval.
 
-![Validating a number in a form](https://docs.beefree.io/wp-content/uploads/2021/01/Validating-a-number.png)
+<figure><img src="../../.gitbook/assets/12Validating-a-number.png" alt=""><figcaption></figcaption></figure>
 
 **Long text**
 
 This type is just like a text field, but it’s meant for longer inputs. It has an additional “row height” property to define the default height for the text area – which can be adjusted by the visitor by dragging the bottom right corner. Here is how a long text field looks like in a form:
 
-![](https://docs.beefree.io/wp-content/uploads/2021/01/Long-text-field.png)
+<figure><img src="../../.gitbook/assets/13Long-text-field.png" alt=""><figcaption></figcaption></figure>
 
 ### What happens after a form is submitted? <a href="#what-happens-after-a-form-is-submitted" id="what-happens-after-a-form-is-submitted"></a>
 

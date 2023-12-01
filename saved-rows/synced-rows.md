@@ -54,7 +54,7 @@ If you need a refresher, check out:
 
 Here’s a **sample implementation for the Metadata Content Dialog**, offering the synced row option:
 
-![](https://docs.beefree.io/wp-content/uploads/2023/08/synced\_rows\_cd\_choices.png)
+<figure><img src="../.gitbook/assets/synced_rows_cd_choices.png" alt=""><figcaption></figcaption></figure>
 
 The JSON returned to the builder includes the user’s input and selections from the UI. The configuration below shows the new synced row setting applied to the options argument of the resolve method.
 
@@ -85,13 +85,13 @@ contentDialog: {
 
 Look for the pencil icon at the top-right of synced rows. Rows without this icon are standard saved rows. The icon provides a clear visual cue for quickly identifying and editing synced rows.
 
-![](https://docs.beefree.io/wp-content/uploads/2023/08/sync\_row\_edit\_icon.png)
+<figure><img src="../.gitbook/assets/2sync_row_edit_icon.png" alt=""><figcaption></figcaption></figure>
 
 ## Editing synced rows <a href="#editing-synced-rows" id="editing-synced-rows"></a>
 
 To edit a synced row, click the pencil icon. Editing options appear in the sidebar panel. Inside, you’ll find a CTA button and optional text.
 
-![synced\_rows\_1](https://docs.beefree.io/wp-content/uploads/2023/01/image-11-300x179.png)
+<figure><img src="../.gitbook/assets/3image-11-300x179 (1).png" alt=""><figcaption></figcaption></figure>
 
 The CTA button opens the `editSyncedRow` Content Dialog, allowing the host application to interact with the end-user and receive their selection.
 
@@ -105,7 +105,7 @@ The host application has complete control over the content dialog and UX. Howeve
 1. Edit the row across all designs.
 2. Unsync the row, turning it into a standard saved row.
 
-![](https://docs.beefree.io/wp-content/uploads/2023/08/synced\_rows\_cd\_edit\_choices.png)
+<figure><img src="../.gitbook/assets/synced_rows_cd_edit_choices.png" alt=""><figcaption></figcaption></figure>
 
 The first option, to edit the row across all designs, allows users to make changes to the synced row that will be reflected in all designs that use it.
 
@@ -139,7 +139,7 @@ A comprehensive reference of the `editSyncedRow` Content Dialog settings, such a
 
 The following animation shows this **example of edit synced rows workflow** in action. We’ll dive into this process in the following sections.
 
-<figure><img src="https://docs.beefree.io/wp-content/uploads/2023/03/Edit_Synced_Row.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/5Edit_Synced_Row.gif" alt=""><figcaption></figcaption></figure>
 
 ## Example synced rows workflow <a href="#example-synced-rows-workflow" id="example-synced-rows-workflow"></a>
 

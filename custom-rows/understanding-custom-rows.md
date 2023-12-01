@@ -14,7 +14,7 @@ _Custom rows_ dramatically improves this area of the builder (now renamed simply
 
 These new, _custom rows_ can be dragged and dropped into the editing pane the same way users currently add other content elements.
 
-![](https://docs.beefree.io/wp-content/uploads/2018/04/CR\_sample-574x1024.png)
+<figure><img src="../.gitbook/assets/CR_sample-574x1024.png" alt="" width="431"><figcaption></figcaption></figure>
 
 ## Use cases <a href="#use-cases" id="use-cases"></a>
 
@@ -24,7 +24,7 @@ Enabling the [Save Rows](../saved-rows/) feature, your users will be able to sav
 
 To display saved rows in the _Rows_ tab, add them to the list of rows available to users by leveraging the [Custom Rows feature](displaying-saved-rows.md).
 
-![](https://docs.beefree.io/wp-content/uploads/2018/11/Saved\_Rows-1024x601.jpg)
+<figure><img src="../.gitbook/assets/2Saved_Rows-1024x601.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## **Prebuilt rows**
 
@@ -36,7 +36,7 @@ With _Custom rows_ you – the hosting application – are in control of the con
 
 Imagine, for example, the case of a CRM where customer success representatives can quickly build curated emails selecting from a number of pre-built text blocks.
 
-![](https://docs.beefree.io/wp-content/uploads/2018/04/CR\_text\_samples-1024x708.jpg)
+<figure><img src="../.gitbook/assets/3CR_text_samples-1024x708.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## **Default rows**
 
@@ -46,7 +46,7 @@ They feature a series of popular structures, filled with placeholder text, image
 
 For some users, they may work better than _empty rows_ as they allow them to immediately visualize what they can accomplish with a specific structure.
 
-![](https://docs.beefree.io/wp-content/uploads/2018/04/CR\_defaults-1024x653.jpg)
+<figure><img src="../.gitbook/assets/4CR_defaults-1024x653.jpeg" alt=""><figcaption></figcaption></figure>
 
 Check how to configure these sample rows below under _Rows configuration > Parameters > Default rows_
 
@@ -63,7 +63,7 @@ Other common use cases:
 * Advertising content
 * Product recommendation templates
 
-![](https://docs.beefree.io/wp-content/uploads/2018/04/CR\_contents-1024x541.jpg)
+<figure><img src="../.gitbook/assets/5CR_contents-1024x541.jpeg" alt=""><figcaption></figcaption></figure>
 
 Check how to configure these sample rows below under _Rows configuration > Parameters > Default rows_
 
@@ -75,7 +75,7 @@ This will allow your customers to save time and reduce errors by avoiding copyin
 
 Additionally, this helps you ensure that only reviewed and approved contents, provided by a common repository, are used in the message creation.
 
-![](https://docs.beefree.io/wp-content/uploads/2018/04/CR\_blog\_example-1024x769.jpg)
+<figure><img src="../.gitbook/assets/6CR_blog_example-1024x769.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## **E-commerce products**
 
@@ -85,4 +85,4 @@ You can divide the products into categories and feed them into the builder as di
 
 Or you can use different sets of _custom rows to_ provide different layout options in order to add design flexibility.
 
-![](https://docs.beefree.io/wp-content/uploads/2018/04/CR\_products\_example-1024x643.jpg)
+<figure><img src="../.gitbook/assets/7CR_products_example-1024x643.jpeg" alt=""><figcaption></figcaption></figure>
