@@ -93,7 +93,7 @@
   * [Template Catalog API](content-services-api/template-catalog-api.md)
   * [Content Services API Reference](content-services-api/content-services-api-reference.md)
   * [FAQs](content-services-api/faqs.md)
-  * [Brand Style API Endpoint Documentation](content-services-api/brand-style-api-endpoint-documentation.md)
+  * [Brand Style API Endpoint](content-services-api/brand-style-api-endpoint.md)
 * [Multi-Language Templates](multi-language-templates.md)
 * [Error Management](error-management/README.md)
   * [onWarning](error-management/onwarning.md)
