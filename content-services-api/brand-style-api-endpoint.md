@@ -1,4 +1,4 @@
-# Brand Style API Endpoint Documentation
+# Brand Style API Endpoint
 
 ### Overview <a href="#_e7tjitffe17" id="_e7tjitffe17"></a>
 
@@ -46,6 +46,7 @@ Example Request:
 POST / template / brand
 Content-Type: application / json
 Authorization: Bearer YOUR_API_KEY {
+
     "styles": {
         "general": {
             "background": "#eeeeee",
