@@ -45,8 +45,9 @@ Example Request:
 ```json
 POST / template / brand
 Content-Type: application / json
-Authorization: Bearer YOUR_API_KEY {
+Authorization: Bearer YOUR_API_KEY 
 
+{
     "styles": {
         "general": {
             "background": "#eeeeee",
