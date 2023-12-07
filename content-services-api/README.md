@@ -17,3 +17,7 @@ Learn more about how to get started with the Content Services API in the followi
 {% content-ref url="faqs.md" %}
 [faqs.md](faqs.md)
 {% endcontent-ref %}
+
+{% content-ref url="brand-style-api-endpoint-documentation.md" %}
+[brand-style-api-endpoint-documentation.md](brand-style-api-endpoint-documentation.md)
+{% endcontent-ref %}
