@@ -6,7 +6,7 @@ This section provides the information you need to get started integrating [PopUp
 
 ## Integration <a href="#integration" id="integration"></a>
 
-Out-of-the-box, the setup and configuration are the same as Email and Page Builder. This section will cover the settings specific to Popup Builder. Check out our [Getting Started guide](../getting-started/installation/) if you’re new to Beefree SDK or unfamiliar with the configuration basics (as seen in the example below).
+Out-of-the-box, the setup and configuration are the same as Email and Page Builder. This section will cover the settings specific to Popup Builder. Check out our [Getting Started guide](../readme/installation/) if you’re new to Beefree SDK or unfamiliar with the configuration basics (as seen in the example below).
 
 ```json
 

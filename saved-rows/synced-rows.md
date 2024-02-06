@@ -2,7 +2,7 @@
 
 {% hint style="info" %}
 This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.\
-If you're on the Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Core-level features.
+If you're on the Essentials plan, [upgrade a development application](../readme/development-applications.md) for free to try this and other Core-level features.
 {% endhint %}
 
 ## Overview <a href="#overview" id="overview"></a>

@@ -1,7 +1,7 @@
 # Collaborative Editing
 
 {% hint style="info" %}
-This feature is available on the Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. Additional limitations apply ([learn more](collaborative-editing.md#monitor-a-session)). If you're on the Essentials or Core plan, [upgrade a development application](getting-started/development-applications.md) for free to try this and other Superpowers-level features.
+This feature is available on the Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. Additional limitations apply ([learn more](collaborative-editing.md#monitor-a-session)). If you're on the Essentials or Core plan, [upgrade a development application](readme/development-applications.md) for free to try this and other Superpowers-level features.
 {% endhint %}
 
 ## Overview

@@ -13,7 +13,7 @@ This new feature allows you (or users of your app) to:
 * Expand the list of available fonts, adding web fonts from popular services, such as Google fonts, font library.org or alike.
 * Reduce the list of fonts to a limited number of options, removing some or all our default fonts.
 
-Unlike other premium features, fonts are part of the [client-side configuration](../getting-started/installation/configuration-parameters/), so they can be defined each time the editor is started.
+Unlike other premium features, fonts are part of the [client-side configuration](../readme/installation/configuration-parameters/), so they can be defined each time the editor is started.
 
 This flexible approach will help you to use this feature in a variety of scenarios. For example:
 
@@ -27,7 +27,7 @@ For instance, in our hosted [email design suite](https://dam.beefree.io/beepro) 
 
 ## Adding the editorFonts object
 
-This object, passed as part of the [builder configuration](../getting-started/installation/configuration-parameters/), tells the editor which fonts to load in any drop-down where a list of fonts is shown. It defines the availability of the default fonts and provides a list of additional, custom fonts.
+This object, passed as part of the [builder configuration](../readme/installation/configuration-parameters/), tells the editor which fonts to load in any drop-down where a list of fonts is shown. It defines the availability of the default fonts and provides a list of additional, custom fonts.
 
 ```javascript
 

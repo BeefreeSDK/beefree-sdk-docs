@@ -1,7 +1,7 @@
 # Custom Headers
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Superpowers-level features.
+This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../readme/development-applications.md) for free to try this and other Superpowers-level features.
 {% endhint %}
 
 ## When to use it <a href="#when-to-use-it" id="when-to-use-it"></a>
@@ -14,7 +14,7 @@ It may be also be used to protect application or customer-hosted content deliver
 
 ### How it works <a href="#how-it-works" id="how-it-works"></a>
 
-To activate this feature, the host application must add a specific element to the [Configuration object](../getting-started/installation/configuration-parameters/):
+To activate this feature, the host application must add a specific element to the [Configuration object](../readme/installation/configuration-parameters/):
 
 ```javascript
 

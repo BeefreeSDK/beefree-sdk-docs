@@ -2,7 +2,7 @@
 
 {% hint style="info" %}
 This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.\
-If you're on the Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Core-level features.
+If you're on the Essentials plan, [upgrade a development application](../readme/development-applications.md) for free to try this and other Core-level features.
 {% endhint %}
 
 ## Setting the default tab <a href="#setting-the-default-tab" id="setting-the-default-tab"></a>

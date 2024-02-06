@@ -48,7 +48,7 @@ Notice that, at this point, you will be prompted to enable the merge tag preview
 
 ## Configuring sample content <a href="#configuring-sample-content" id="configuring-sample-content"></a>
 
-After enabling Smart merge tags from your developer account, you need to apply a minor change to the merge tags’ [initial configuration](../getting-started/installation/configuration-parameters/).
+After enabling Smart merge tags from your developer account, you need to apply a minor change to the merge tags’ [initial configuration](../readme/installation/configuration-parameters/).
 
 ```javascript
 
@@ -82,7 +82,7 @@ The option works as a toggle that alternates between displaying the `previewValu
 
 ## **Toolbar disabled**
 
-As with all the actions available in the toolbar, [we provide methods](../getting-started/installation/methods-and-events.md) to control this option from your own UI:
+As with all the actions available in the toolbar, [we provide methods](../readme/installation/methods-and-events.md) to control this option from your own UI:
 
 ```javascript
 beePluginInstance.toggleMergeTagsPreview()

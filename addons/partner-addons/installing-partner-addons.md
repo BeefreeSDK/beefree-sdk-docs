@@ -73,7 +73,7 @@ When the AddOn content is selected, the same button is displayed in the content 
 
 ## Adding client-side configurations for AddOns <a href="#adding-client-side-configurations-for-addons" id="adding-client-side-configurations-for-addons"></a>
 
-Once you have initialized Beefree SDK, you can pass a series of [configuration parameters](../../getting-started/installation/configuration-parameters/) to it.
+Once you have initialized Beefree SDK, you can pass a series of [configuration parameters](../../readme/installation/configuration-parameters/) to it.
 
 The **AddOn section** of the configuration allows you to override the parameters you configured in the [Beefree SDK Console](https://dam.beefree.io/devmain), on a per-user basis.
 

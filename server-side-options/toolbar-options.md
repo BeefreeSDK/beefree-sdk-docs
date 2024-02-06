@@ -25,15 +25,16 @@ For example, in our MailUp App for Shopify, we hide the toolbar completely and c
 
 <figure><img src="../.gitbook/assets/2bee_plugin_embedded_shopify2.jpeg" alt=""><figcaption></figcaption></figure>
 
-If you decide to go this route, use the [methods from this page](../getting-started/installation/methods-and-events.md) to control the builder from your UI.
+If you decide to go this route, use the [methods from this page](../readme/installation/methods-and-events.md) to control the builder from your UI.
 
-| Option                    | Description                                                                 |
-| ------------------------- | --------------------------------------------------------------------------- |
-| **Show toolbar**          | Is the main option: if is not active, the elements listed bellow get hidden |
-| **Show Beefree SDK logo** | Show our logo and links our site                                            |
-| **Show preview**          | Trigger the preview window                                                  |
-| **Show send test**        | Trigger the function for sending a test                                     |
-| **Show save as template** | Is used to save only the editable version of the message                    |
-| **Show save button**      | If you don’t have a external one, better not to hide this 🙂                |
-| **Show auto-save icon**   | This tiny icon alert the user every time the auto-save works                |
-| **Show help link**        | This option is special, because you can also introduce your custom help URL |
+| Option                            | Description                                                                                                                                  |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Show toolbar**                  | Is the main option: if is not active, the elements listed bellow get hidden                                                                  |
+| **Show Beefree SDK logo**         | Show our logo and links our site                                                                                                             |
+| **Show preview**                  | Trigger the preview window                                                                                                                   |
+| **Show send test**                | Trigger the function for sending a test                                                                                                      |
+| **Show save as template**         | Is used to save only the editable version of the message                                                                                     |
+| **Show save button**              | If you don’t have a external one, better not to hide this 🙂                                                                                 |
+| **Show auto-save icon**           | This tiny icon alert the user every time the auto-save works                                                                                 |
+| **Show help link**                | This option is special, because you can also introduce your custom help URL                                                                  |
+| **Show Multi-Language Templates** | Use this to enable a custom top bar that allows the end user to [change the language](../multi-language-templates.md#changing-the-language). |

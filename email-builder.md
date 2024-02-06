@@ -8,4 +8,4 @@ Beefree SDK Email Builder aims to be the best email editor on the market, ready 
 
 In 2020, guided by the same principles, we launched [Page Builder](page-builder/), another embeddable product for creating beautiful, responsive landing pages, without writing a single line of code.
 
-Now Beefree SDK is both an Email and a Page Builder: as these two products share the same core capabilities and features, the documentation in this site applies to both, unless otherwise specified. If this is your first approach to our builders, just follow the [Installation section in our documentation](getting-started/installation/).
+Now Beefree SDK is both an Email and a Page Builder: as these two products share the same core capabilities and features, the documentation in this site applies to both, unless otherwise specified. If this is your first approach to our builders, just follow the [Installation section in our documentation](readme/installation/).

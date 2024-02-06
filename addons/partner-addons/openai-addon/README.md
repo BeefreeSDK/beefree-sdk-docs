@@ -22,7 +22,7 @@ We’ll cover all of these scenarios in the following sections as we discuss the
 
 ## General Settings <a href="#general-settings" id="general-settings"></a>
 
-Note: All settings are _optional_ and may be refreshed, in real-time, via the [configuration reload](../../../getting-started/installation/configuration-parameters/configuration-reload.md) instance method (e.g. `bee.loadConfig(settings)`) during the active session.
+Note: All settings are _optional_ and may be refreshed, in real-time, via the [configuration reload](../../../readme/installation/configuration-parameters/configuration-reload.md) instance method (e.g. `bee.loadConfig(settings)`) during the active session.
 
 Currently, the following settings are supported:
 
@@ -183,6 +183,8 @@ const beeConfig = {
 ```
 
 ## Disable AddOn Per User <a href="#disable-addon-per-user" id="disable-addon-per-user"></a>
+
+To disable the OpenAI AddOn for a particular user, use the following configuration. Ensure the `enabled` parameter is set to `false`. To turn the AddOn back on for a user, edit the parameter to `true`.
 
 ```json
 

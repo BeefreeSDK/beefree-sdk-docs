@@ -1,7 +1,7 @@
 # Advanced Permissions
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [Superpowers plan](https://beefree.io/bee-plugin/pricing/) and above. If you're on the Core or Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Superpowers-level features.
+This feature is available on Beefree SDK [Superpowers plan](https://beefree.io/bee-plugin/pricing/) and above. If you're on the Core or Essentials plan, [upgrade a development application](../readme/development-applications.md) for free to try this and other Superpowers-level features.
 {% endhint %}
 
 ## Overview <a href="#overview" id="overview"></a>

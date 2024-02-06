@@ -48,7 +48,7 @@ To build an addon, you need an eligible Beefree SDK subscription plan, including
 1. [Superpowers plan](https://dam.beefree.io/pluginpricing)
 2. [Enterprise plan](https://dam.beefree.io/pluginpricing)
 
-If you are on a lower-level plan and wish to test building an addon, you can simply [upgrade a development application](../getting-started/development-applications.md) for free.
+If you are on a lower-level plan and wish to test building an addon, you can simply [upgrade a development application](../readme/development-applications.md) for free.
 
 ## Can a Custom AddOn Become a Partner AddOn?
 
@@ -70,8 +70,6 @@ An example would be a [Giphy](https://giphy.com/) tile (you can see it in the _C
 <figure><img src="../.gitbook/assets/2BEE-AddOns-Giphy-1-1024x794.png" alt=""><figcaption></figcaption></figure>
 
 In the future, we may develop new types of addons that may impact other areas of the editor. If you have specific ideas or requests, certainly let us know.
-
-In the meantime, here is an [example of the end-user experience](https://docs.beefree.io/addon-end-user-experience/) with addons.
 
 ## What Kind of Content Block Can an AddOn Generate?
 

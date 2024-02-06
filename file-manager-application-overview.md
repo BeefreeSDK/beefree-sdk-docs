@@ -22,29 +22,9 @@ The child applications can also be used for ongoing maintenance and updates. Ins
 
 File manager applications share the same core functionalities as all other builders. These functionalities include authentication and configuration, which are necessary for the development process. If you have already integrated another builder into your workflow, you can easily re-use most of your work by using the same configuration for the file manager application.
 
-For those who are new to our platform, our documentation includes a comprehensive [Getting Started](getting-started/installation/) section that provides detailed instructions on how to set up and use our builders. This section is applicable to all products.
+For those who are new to our platform, our documentation includes a comprehensive [Getting Started](readme/installation/) section that provides detailed instructions on how to set up and use our builders. This section is applicable to all products.
 
 File Manager and all builders are available to  customers under the same [all-in-one pricing.](https://dam.beefree.io/pluginpricing) Please contact your Customer Success Manager for more details.
-
-## Create New Folders and Add Images
-
-You can create new folders and add images to them within the file manager.
-
-Take the following steps to add an image to a new folder within the file manager:
-
-1. Enter the file manager.
-2. Click the folder + icon on the upper left hand side of the screen.
-3. Name the new folder that appears.
-4.  Click the blue checkmark icon to confirm the name of your new folder.
-
-    This action creates the new folder.
-5.  Click the move button, which appears as a folder with an arrow in it, underneath the image you’d like to move.
-
-    A list of folders will appear.
-6. Select the destination folder from the list.
-7.  Click the Move button to confirm the action.
-
-    View the image in the destination folder.
 
 ## Configure "Insert" and "X" Buttons
 

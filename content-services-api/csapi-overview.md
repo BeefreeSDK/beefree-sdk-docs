@@ -26,7 +26,7 @@ The _Content Services API_ – or _CSAPI_ – helps you take care of five, impor
 
 ### Getting the HTML from a message JSON <a href="#getting-the-html-from-a-message-json" id="getting-the-html-from-a-message-json"></a>
 
-This service allows the host application to build a custom workflow that doesn’t rely on the `onSave` callback in the editor ([list of available callbacks](../getting-started/installation/methods-and-events.md)). Check our [reference documentation on how to use the API to get the HTML from a JSON file](content-services-api-reference.md).
+This service allows the host application to build a custom workflow that doesn’t rely on the `onSave` callback in the editor ([list of available callbacks](../readme/installation/methods-and-events.md)). Check our [reference documentation on how to use the API to get the HTML from a JSON file](content-services-api-reference.md).
 
 ### **Common use cases**
 

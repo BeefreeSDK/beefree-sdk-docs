@@ -12,6 +12,24 @@ AI is currently the best way to gain a competitive advantage in the market. That
 
 [How do I enable the OpenAI AddOn?](https://devportal.beefree.io/hc/en-us/articles/10838757053330-How-do-I-enable-the-OpenAI-AddOn-) | [Developer’s FAQ for OpenAI](https://devportal.beefree.io/hc/en-us/articles/10839177777810-Developer-s-FAQ-for-OpenAI) | [Webinar](https://app.livestorm.co/beefreeio/introducing-bee-plugin-openai-add-on-live-demo-and-q-and-a/live?s=7cef0fc7-d888-4627-a5c6-a3c4ed1c396d)
 
+## Azure AI Vision - Image Analysis <a href="#openai" id="openai"></a>
+
+Generate alt-text descriptions with the power of Computer Vision. Azure AI Vision is a unified service that offers innovative computer vision capabilities. Image analysis pulls from more than 10,000 concepts and objects to detect, and caption images.
+
+<figure><img src="../../.gitbook/assets/CleanShot 2024-01-12 at 10.04.58@2x.png" alt=""><figcaption></figcaption></figure>
+
+[How do I enable the Azure AI Vision - Image Analysis AddOn?](https://app.gitbook.com/s/xZgBDrdhQLtWmkGqVR59/) | [Azure Ai Vision FAQs](https://docs.beefree.io/beefree-sdk/addons/partner-addons/alternate-text-generation-with-ai#faqs) | [Data and Privacy](https://learn.microsoft.com/en-us/legal/cognitive-services/computer-vision/imageanalysis-data-privacy-security)
+
+## IO Monetizer <a href="#openai" id="openai"></a>
+
+For setup, please reach out to support@interactiveoffers.com, and we will provide you with an API key that identifies your application on our network.
+
+Over 600 digital publishers use Interactive Offers to help captivate new audiences and discover new monetization solutions. These programmatic email ad solutions provide a non-intrusive way to engage users with your content while earning revenue from every email you send.
+
+<figure><img src="../../.gitbook/assets/CleanShot 2024-01-12 at 10.21.48@2x.png" alt=""><figcaption></figcaption></figure>
+
+[AddOn website](https://www.interactiveoffers.com/) | [About Ads By Interactive Offers](https://www.interactiveoffers.com/publishers) | [Privacy Policy](https://app.gitbook.com/s/xZgBDrdhQLtWmkGqVR59/) | [Support](https://www.interactiveoffers.com/knowledgeBase)
+
 ## Countdown Timers by NiftyImages <a href="#countdown-timers-by-niftyimages" id="countdown-timers-by-niftyimages"></a>
 
 <figure><img src="../../.gitbook/assets/2nifty-300x200.png" alt=""><figcaption></figcaption></figure>

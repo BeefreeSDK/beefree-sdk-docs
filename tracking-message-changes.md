@@ -31,9 +31,9 @@ You can use the _onChange_ callback to:
 
 ### **Autosave**
 
-So you might be asking: “Isn’t this similar to the existing [Autosave](getting-started/installation/configuration-parameters/) feature?” The simple answer is “No!”.
+So you might be asking: “Isn’t this similar to the existing [Autosave](readme/installation/configuration-parameters/) feature?” The simple answer is “No!”.
 
-The [Autosave](getting-started/installation/configuration-parameters/) function is triggered at regular intervals, whether anything has even changed since the last _Autosave_ event or not, which could result in the user seeing a ‘recovery dialog’ window even if there weren’t any changes between the previously saved message and the most recent automatically saved one.
+The [Autosave](readme/installation/configuration-parameters/) function is triggered at regular intervals, whether anything has even changed since the last _Autosave_ event or not, which could result in the user seeing a ‘recovery dialog’ window even if there weren’t any changes between the previously saved message and the most recent automatically saved one.
 
 Now you can invoke the Autosave event only when something has been added or updated, resulting in a better message recovery experience.
 
@@ -57,7 +57,7 @@ The use cases change from application-to-application, but the feature is flexibl
 
 ## How it works <a href="#how-it-works" id="how-it-works"></a>
 
-To enable changes tracking you need to add in [beeConfig](getting-started/installation/configuration-parameters/):
+To enable changes tracking you need to add in [beeConfig](readme/installation/configuration-parameters/):
 
 * The configuration option
 * The `onChange` callback, with the related response function

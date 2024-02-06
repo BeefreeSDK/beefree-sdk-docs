@@ -10,13 +10,13 @@ Just head over to the “Popup Builder Application” section and click on Activ
 
 <figure><img src="../.gitbook/assets/2firefox_2021-08-18_19.07.52 (1).png" alt=""><figcaption></figcaption></figure>
 
-Once created, head over to “Details” for all server-side configurations. Paid applications allow you to create child [development applications](../getting-started/development-applications.md), to ease new feature testing, development, and maintenance.
+Once created, head over to “Details” for all server-side configurations. Paid applications allow you to create child [development applications](../readme/development-applications.md), to ease new feature testing, development, and maintenance.
 
 All builders share the same **core functionalities**, including authentication and configuration. If you have already integrated our Email builder, you can re-use most of your work using the same configuration and callbacks.
 
 ## Integrating the Popup Builder
 
-Out-of-the-box, the setup and configuration are the same as [Email and Page Builder](../getting-started/installation/). This section will cover the settings specific to Popup Builder. Check out our [Getting Started guide](../getting-started/installation/) if you’re new to Beefree SDK or unfamiliar with the configuration basics (as seen in the example below).
+Out-of-the-box, the setup and configuration are the same as [Email and Page Builder](../readme/installation/). This section will cover the settings specific to Popup Builder. Check out our [Getting Started guide](../readme/installation/) if you’re new to Beefree SDK or unfamiliar with the configuration basics (as seen in the example below).
 
 ```json
 

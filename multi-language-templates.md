@@ -26,7 +26,7 @@ The Multi-language Templates (MLT) feature is an enhancement for companies worki
 MLT adds the following extended functionality to your host application:
 
 * Add a new language for the content inside Beefree SDK
-* Activate the language configuration in the [Beefree SDK configuration file](getting-started/installation/configuration-parameters/)
+* Activate the language configuration in the [Beefree SDK configuration file](readme/installation/configuration-parameters/)
 * Customize a list of languages the user can choose from
 * Allow changes to the default language
 * Enable preview for templates in different language versions

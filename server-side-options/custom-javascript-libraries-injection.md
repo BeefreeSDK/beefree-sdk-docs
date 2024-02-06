@@ -8,7 +8,7 @@ description: >-
 
 ## Custom JavaScript
 
-Enterprise customers can request to inject external JavaScript libraries, like FullStory or Heap, into Beefree SDK when the integration is initialized as part of the [server-side configuration](../getting-started/installation/).&#x20;
+Enterprise customers can request to inject external JavaScript libraries, like FullStory or Heap, into Beefree SDK when the integration is initialized as part of the [server-side configuration](../readme/installation/).&#x20;
 
 Custom JavaScript requires a complete technical evaluation by the Beefree SDK development team. The assessment will undergo security, technical and compatibility assessments. &#x20;
 

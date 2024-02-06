@@ -1,7 +1,7 @@
 # Custom AddOns
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../../getting-started/development-applications.md) for free to try this and other Superpowers-level features.
+This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../../readme/development-applications.md) for free to try this and other Superpowers-level features.
 {% endhint %}
 
 ## Introduction <a href="#introduction" id="introduction"></a>
@@ -36,7 +36,7 @@ Custom AddOns are an advanced feature. As a result, the feature is available on 
 Of course, there are exceptions to this requirement.
 
 * **Testing**: if you are not yet on a Superpowers or Enterprise plan, and you want to test building a Custom AddOn:
-  * Create a [development application](../../getting-started/development-applications.md).
+  * Create a [development application](../../readme/development-applications.md).
   * Request an upgrade to the Superpowers plan.
   * Test as much as you want. If and when you decide that you wish to deploy your Custom AddOn in production, we will ask you to upgrade your production application to the Superpowers or Enterprise plan.
 * **Development of a Partner AddOn**:

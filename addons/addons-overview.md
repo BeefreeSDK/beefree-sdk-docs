@@ -37,7 +37,7 @@ If you wish to build an AddOn, you can either build an AddOn that’s just for y
 ## Custom AddOns
 
 {% hint style="info" %}
-This feature is available on Beefree SDK's [Superpowers plan](https://developers.beefree.io/pricing/) and above. If you're on the Core or Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Superpowers-level features.
+This feature is available on Beefree SDK's [Superpowers plan](https://developers.beefree.io/pricing/) and above. If you're on the Core or Essentials plan, [upgrade a development application](../readme/development-applications.md) for free to try this and other Superpowers-level features.
 {% endhint %}
 
 To add your own content tiles to the _Content_ tab in a Beefree editor, you will need to develop a **Custom AddOn**.

@@ -6,7 +6,7 @@ When you create an application in the [Beefree SDK Console](https://dam.beefree.
 
 <figure><img src="../.gitbook/assets/Applications-in-Dev-portal.png" alt=""><figcaption></figcaption></figure>
 
-Page and Email builders **share the same core functionalities**, including authentication and configuration. If you already integrated our Email builder, you can re-use most of your work by using the **same configuration and callbacks**. If this is your first approach to our builders, just follow the [Installation section in our documentation](../getting-started/installation/). All the documentation in this site applies to both products, except where noted.
+Page and Email builders **share the same core functionalities**, including authentication and configuration. If you already integrated our Email builder, you can re-use most of your work by using the **same configuration and callbacks**. If this is your first approach to our builders, just follow the [Installation section in our documentation](../readme/installation/). All the documentation in this site applies to both products, except where noted.
 
 All builders are available to Beefree SDK customers under the same [all-in-one pricing](https://developers.beefree.io/pricing-plans). Please contact your Customer Success Manager for more details.
 

@@ -33,7 +33,7 @@ Most changes related to CSAPI will be in the background, but there will be some 
 
 ## Can I try the service without paying? <a href="#can-i-try-the-service-without-paying" id="can-i-try-the-service-without-paying"></a>
 
-You can by creating a **development application**, and then creating a new API key for that app, which will be used for development purposes. Reference our [Development Applications documentation to learn how to create one](../getting-started/development-applications.md).
+You can by creating a **development application**, and then creating a new API key for that app, which will be used for development purposes. Reference our [Development Applications documentation to learn how to create one](../readme/development-applications.md).
 
 ## How will charges appear on my bill? <a href="#how-will-charges-appear-on-my-bill" id="how-will-charges-appear-on-my-bill"></a>
 

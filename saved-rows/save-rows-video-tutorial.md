@@ -1,11 +1,11 @@
-# Save Rows Video Tutorial
+# Saved Rows Video Tutorial
 
 {% hint style="info" %}
 This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.\
-On the Essentials plan? [Upgrade a dev application to Core](../getting-started/development-applications.md), free of charge, to try this and other premium features.
+On the Essentials plan? [Upgrade a dev application to Core](../readme/development-applications.md), free of charge, to try this and other premium features.
 {% endhint %}
 
-In this tutorial, you will learn how to implement Save Rows in an application that has embedded Beefree SDK.
+In this tutorial, you will learn how to implement Saved Rows in an application that has embedded Beefree SDK.
 
 {% embed url="https://youtu.be/OEn5DzW--Ns" %}
 

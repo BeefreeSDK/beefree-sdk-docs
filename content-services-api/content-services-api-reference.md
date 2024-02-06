@@ -176,10 +176,6 @@ Accepted values: landscape (default), portrait
 Accepted values: PDF
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="beautifyHTMLEnabled" type="Boolean" required="true" %}
-This flag will force the API to return uncompressed HTML. Both page and popup endpoints do not compress HTML so will ignore this flag.
-{% endswagger-parameter %}
-
 {% swagger-response status="200: OK" description="" %}
 
 {% endswagger-response %}

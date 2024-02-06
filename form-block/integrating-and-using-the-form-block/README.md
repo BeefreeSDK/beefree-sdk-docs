@@ -8,7 +8,7 @@ The Form block is available for the [Page Builder](../../page-builder/) and the 
 
 You can enable your users to add forms in Beefree SDK with two methods:
 
-* by passing in the [configuration parameters](../../getting-started/installation/configuration-parameters/) a single, **default JSON form**, potentially including all the fields your application supports, and then have **customers build and style forms** with our **form content block**.
+* by passing in the [configuration parameters](../../readme/installation/configuration-parameters/) a single, **default JSON form**, potentially including all the fields your application supports, and then have **customers build and style forms** with our **form content block**.
 * by implementing a [content dialog](../../advanced-options/content-dialog.md) on top of the form content block and building a user interface on top of the builder, so that your users can either **browse and select pre-built forms** or **build a new form.**
 
 {% hint style="info" %}

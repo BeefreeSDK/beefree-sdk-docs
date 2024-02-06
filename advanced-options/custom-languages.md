@@ -1,7 +1,7 @@
 # Custom Languages
 
 {% hint style="info" %}
-You can choose one of [20+ languages](../getting-started/installation/configuration-parameters/) for the visual builder's UI when initializing the builder. If you want to use custom language strings, however, you will need to use a Custom Language. This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Essentials plan, upgrade a [development application](../getting-started/development-applications.md#development-applications) for free to try this and other Core-level features.
+You can choose one of [20+ languages](../readme/installation/configuration-parameters/) for the visual builder's UI when initializing the builder. If you want to use custom language strings, however, you will need to use a Custom Language. This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Essentials plan, upgrade a [development application](../readme/development-applications.md#development-applications) for free to try this and other Core-level features.
 {% endhint %}
 
 ## Using a Translation URL

@@ -48,7 +48,7 @@ In case of request failure, the API returns the error codes described in the err
 
 Authentication is managed using Basic Authentication type. The Beefree system’s resource server works as a proxy for FSP (File system provider) and consumes FSP API endpoints adding the following fields to HTTP Request Headers. Please note that  **the API must use HTTPS** to grant secure connections and safe data transfer.
 
-User information is segmented by [UID parameter](../../getting-started/installation/how-the-uid-parameter-works.md).
+User information is segmented by [UID parameter](../../readme/installation/how-the-uid-parameter-works.md).
 
 ```http
 

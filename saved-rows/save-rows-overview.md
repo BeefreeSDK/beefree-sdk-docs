@@ -1,13 +1,13 @@
-# Save Rows Overview
+# Saved Rows Overview
 
 {% hint style="info" %}
 This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.\
-If you're on the Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Core-level features.
+If you're on the Essentials plan, [upgrade a development application](../readme/development-applications.md) for free to try this and other Core-level features.
 {% endhint %}
 
 ## Overview <a href="#overview" id="overview"></a>
 
-Save Rows allows users to select a row in a message and save it for later use. More specifically, it allows users to submit a request to the host application to save a piece of content and turn it into a reusable element. The host application, using the [Custom Rows](../custom-rows/) feature, can feed these saved elements back to the builder as rows that can be dragged into other messages.
+Saved Rows allows users to select a row in a message and save it for later use. More specifically, it allows users to submit a request to the host application to save a piece of content and turn it into a reusable element. The host application, using the [Custom Rows](../custom-rows/) feature, can feed these saved elements back to the builder as rows that can be dragged into other messages.
 
 ## How it works <a href="#how-it-works" id="how-it-works"></a>
 
@@ -34,9 +34,9 @@ It is entirely up to the host application:
 * whether to allow users to edit them individually
 * when and how to feed them back to the builder, using the [Custom Rows](../custom-rows/) feature.
 
-## **Enabling Save Rows in the Beefree SDK Console**
+## **Enabling Saved Rows in the Beefree SDK Console**
 
-_Save Rows_ – as most Beefree SDK features – is made available to users in an off state and must be activated in the [Beefree SDK Console](https://developers.beefree.io/).
+_Saved Rows_ – as most Beefree SDK features – is made available to users in an off state and must be activated in the [Beefree SDK Console](https://developers.beefree.io/).
 
 To do so:
 
@@ -47,9 +47,9 @@ To do so:
 
 <figure><img src="../.gitbook/assets/3setup.png" alt=""><figcaption></figcaption></figure>
 
-## **Making Save Rows available only to select users**
+## **Making Saved Rows available only to select users**
 
-Once the feature has been turned on at the global level, in [Beefree SDK Console](https://developers.beefree.io/), you may want to disable _Save Rows_ on a per-user basis.  This can be accomplished via the client-side configuration document that you feed to an application when initializing the builder for a certain user.
+Once the feature has been turned on at the global level, in [Beefree SDK Console](https://developers.beefree.io/), you may want to disable _Saved Rows_ on a per-user basis.  This can be accomplished via the client-side configuration document that you feed to an application when initializing the builder for a certain user.
 
 Why? Because you may decide to make the feature available to different users of your application:
 
@@ -62,11 +62,11 @@ Here’s how to do so:
 
 * Enable _Saved Rows_ in the [Beefree SDK Console](https://developers.beefree.io/). as mentioned above.
 * Add the configuration parameter _saveRows_ to the _beeConfig_ document:
-  * Set it to _false_ for all users that cannot save rows.
+  * Set it to _false_ for all users that cannot saved rows.
 
 Here is a simple example:
 
-## **Save Row Configuration**
+## **Saved Row Configuration**
 
 ```javascript
 
@@ -82,7 +82,7 @@ const beeConfig = {
 
 ## **Understanding the end-user experience**
 
-How does _Save Rows_ work from the end-user point of view? It’s in part based on the changes to the builder mentioned above, and in part affected by how you decide to implement the feature within your application.
+How does _Saved Rows_ work from the end-user point of view? It’s in part based on the changes to the builder mentioned above, and in part affected by how you decide to implement the feature within your application.
 
 Let’s review the various steps in the workflow to better understand what we mean.
 
@@ -112,17 +112,17 @@ Here is a visual example using our demo application:
 
 ## **Saving rows workflow for developers**
 
-When the _save row_ action is triggered by the user, the builder starts the following sequence:
+When the _saved row_ action is triggered by the user, the builder starts the following sequence:
 
 1. **Metadata Content dialog**\
    Used to collect data from the host application and add it to the row object.\
    Metadata helps your application to identify a row, overwrite a previously saved version, etc.
-2. **Save Rows Callback.**\
+2. **Saved Rows Callback.**\
    Function that returns the row to the host application.
 
 The following describes the recommended workflow to implement saved rows in a host SaaS application.
 
-1. Enable _Save Rows_ in the [Beefree SDK Console](https://developers.beefree.io/) as described above.
+1. Enable _Saved Rows_ in the [Beefree SDK Console](https://developers.beefree.io/) as described above.
 2. Load a [Beefree SDK template](https://dam.beefree.io/githhubtemplates).
 3. Select the row you want to save and make note of the new save icon.
 4. Click the save icon to trigger a Metadata Content Dialog.  To successfully handle this step, you must complete these tasks:
@@ -613,7 +613,7 @@ The date the row was created: useful for filtering/sorting rows for content mana
 The date a saved row was updated: useful for filtering/sorting rows for content management purposes in your application. It can also help with technical support tasks.
 
 **userId**\
-To let your application decide whom can edit or save rows.
+To let your application decide whom can edit or saved rows.
 
 **tags**\
 Useful to create filters, management, search, and in general to organize the content in your application.
@@ -659,9 +659,9 @@ The metadata resolve function now accepts an `options` object in which you can p
 
 ```
 
-## Save Rows callback <a href="#save-rows-callback" id="save-rows-callback"></a>
+## Saved Rows callback <a href="#save-rows-callback" id="save-rows-callback"></a>
 
-When the _Metadata Content Dialog_ is completed, the application triggers the _Save Rows callback_.  The callback returns the following details:
+When the _Metadata Content Dialog_ is completed, the application triggers the _Saved Rows callback_.  The callback returns the following details:
 
 **rowJSON**\
 JSON of the selected row.

@@ -12,7 +12,7 @@ Happy coding!
 
 ## Creating a development app <a href="#creating-a-development-app" id="creating-a-development-app"></a>
 
-First, [create a development application](../../getting-started/development-applications.md) so that you are not testing your new AddOn with a production application.
+First, [create a development application](../../readme/development-applications.md) so that you are not testing your new AddOn with a production application.
 
 Development applications inherit the plan of the production application to which they are connected. You can only build AddOns when you are on the [Superpowers plan or above](https://developers.beefree.io/pricing-plans). If you are **not** on one of those plans:
 
@@ -318,7 +318,7 @@ The following sample code defines a paragraph element with various attributes. T
 resolve({
   type: 'paragraph',
   value: {
-    html: 'My text,
+    html: 'My text',
     underline: true,
     italic: true,
     align: 'right',
@@ -334,17 +334,16 @@ resolve({
 
 The following table displays a list of properties in the resolve function, and each of its respective value types and whether or not they are mandatory.
 
-| Property     | Value        | Mandatory |
-| ------------ | ------------ | --------- |
-| image        | String (URL) | Yes       |
-| text         | String       | No        |
-| target       | String       | No        |
-| alt          | String       | No        |
-| title        | String       | No        |
-| href         | String (URL) | No        |
-| width        | String       | No        |
-| height       | String       | No        |
-| textPosition | String       | Yes       |
+| Property  | Value                 | Mandatory |
+| --------- | --------------------- | --------- |
+| html      | String (HTML content) | Yes       |
+| underline | Boolean               | No        |
+| italic    | Boolean               | No        |
+| align     | String                | No        |
+| size      | Number                | No        |
+| bold      | Boolean               | No        |
+| color     | String                | No        |
+| linkColor | String                | No        |
 
 ### **HTML**
 

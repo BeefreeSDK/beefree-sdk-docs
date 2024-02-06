@@ -342,7 +342,7 @@ The content dialog adds a button to the merge content list:
 * Set up the content and/or layout for a dynamic advertising
 * Set up the content and/or layout for another type of targeted content
 
-Notice that, to display the Dynamic content tile in the contents panel, you must configure [mergeContents](smart-merge-tags.md) in [beeConfig](../getting-started/installation/configuration-parameters/) with at least one predefined item.
+Notice that, to display the Dynamic content tile in the contents panel, you must configure [mergeContents](smart-merge-tags.md) in [beeConfig](../readme/installation/configuration-parameters/) with at least one predefined item.
 
 ### **Value**
 

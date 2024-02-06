@@ -1,7 +1,7 @@
 # Template Catalog API
 
 {% hint style="info" %}
-Access to this feature is available for purchase via your account manager. If you do not currently have an account manager, please contact our sales team for further details.
+Available for purchase with a **Core** plan or higher. Contact your account manager to purchase this feature. If you do not currently have an account manager, please contact our sales team for further details.
 {% endhint %}
 
 ## Access the Template Catalog via API

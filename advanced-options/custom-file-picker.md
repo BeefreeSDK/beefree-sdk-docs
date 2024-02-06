@@ -1,12 +1,12 @@
 # Custom File Picker
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Superpowers-level features.
+This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../readme/development-applications.md) for free to try this and other Superpowers-level features.
 {% endhint %}
 
 ## Main concepts
 
-This feature allows you to have your own file picker for choosing files (images) in Beefree SDK's Editor, to make its integration in your platform look even more seamless. It leverages Beefree SDK’s [Content Dialog](content-dialog.md) feature. To set it up you will need to add the corresponding entry to the [configuration object](../getting-started/installation/configuration-parameters/):
+This feature allows you to have your own file picker for choosing files (images) in Beefree SDK's Editor, to make its integration in your platform look even more seamless. It leverages Beefree SDK’s [Content Dialog](content-dialog.md) feature. To set it up you will need to add the corresponding entry to the [configuration object](../readme/installation/configuration-parameters/):
 
 ```
 
@@ -45,7 +45,7 @@ Images dragged onto an image block or edited via the “apply effects and more�
 
 ## Returned value syntax
 
-Values must use the same pattern used in the [configuration object](../getting-started/installation/configuration-parameters/): the returned object is validated against the expected format. If the validation fails, an error will be returned to the browser console, eg: `Error getting content filePicker value, the item is malformed`
+Values must use the same pattern used in the [configuration object](../readme/installation/configuration-parameters/): the returned object is validated against the expected format. If the validation fails, an error will be returned to the browser console, eg: `Error getting content filePicker value, the item is malformed`
 
 ```javascript
 

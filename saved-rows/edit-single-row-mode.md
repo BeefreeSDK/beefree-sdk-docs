@@ -2,14 +2,14 @@
 
 {% hint style="info" %}
 This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.\
-If you're on the Essentials plan, [upgrade a development application](../getting-started/development-applications.md) for free to try this and other Core-level features.
+If you're on the Essentials plan, [upgrade a development application](../readme/development-applications.md) for free to try this and other Core-level features.
 {% endhint %}
 
 ## How it works <a href="#how-it-works" id="how-it-works"></a>
 
 Our builders offer [ready-to-go rows to your end-users](../custom-rows/understanding-custom-rows.md), which provide both structure and content to create contents faster. With Edit Single Row mode you can offer an easier way for your users to modify a single row with a tailored UI built to edit the row structure, content, and style settings without worrying about messing up with the overall design of the email campaign, landing page, or pop-up.
 
-Edit Single Row mode complements the [Save Rows](./) as it allows a complete control over the content of individual rows (e.g. the footer that requires to be updated) without the need to intervene into a full template, this will help you in implementing a more effective way to manage libraries of Saved Rows with a streamlined design process.
+Edit Single Row mode complements the [Saved Rows](./) as it allows a complete control over the content of individual rows (e.g. the footer that requires to be updated) without the need to intervene into a full template, this will help you in implementing a more effective way to manage libraries of Saved Rows with a streamlined design process.
 
 ### **Initializing the editor in Edit Single Row Mode**
 
@@ -60,7 +60,7 @@ In case your application uses the default [Toolbar](../server-side-options/toolb
 
 In case your application doesn’t use the default Toolbar you will need to handle the row saving in a different way, following a couple of examples:
 
-* Calling the [save method](../getting-started/installation/methods-and-events.md). It will trigger the on [onSave](../getting-started/installation/methods-and-events.md) event with two arguments, one of them is the full message JSON that can be saved as a Saved Row (it’s the same JSON returned by the [onSaveRow](../getting-started/installation/methods-and-events.md) event).
+* Calling the [save method](../readme/installation/methods-and-events.md). It will trigger the on [onSave](../readme/installation/methods-and-events.md) event with two arguments, one of them is the full message JSON that can be saved as a Saved Row (it’s the same JSON returned by the [onSaveRow](../readme/installation/methods-and-events.md) event).
 
 ### Example:
 
@@ -75,7 +75,7 @@ onSave: function (json, html) {
 
 ```
 
-* Listening to the [onChange](../getting-started/installation/methods-and-events.md) event. It will receive the updated full message JSON which again can be saved as a Saved Row.
+* Listening to the [onChange](../readme/installation/methods-and-events.md) event. It will receive the updated full message JSON which again can be saved as a Saved Row.
 
 ### Example:
 

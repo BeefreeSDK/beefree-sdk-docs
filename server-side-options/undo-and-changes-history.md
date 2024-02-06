@@ -50,4 +50,4 @@ The option to enable this widget is available in the _Services_ list:
 
 <figure><img src="../.gitbook/assets/5enableUNDO-300x42.png" alt=""><figcaption></figcaption></figure>
 
-The widget uses the [onChange callback](../tracking-message-changes.md) information to work. However, it doesn’t need a client-side configuration for the callback: once _Undo_ is enabled, the application starts tracking changes even if the [_trackChanges_ parameter](../tracking-message-changes.md) is not set in [_beeConfig_](../getting-started/installation/configuration-parameters/).
+The widget uses the [onChange callback](../tracking-message-changes.md) information to work. However, it doesn’t need a client-side configuration for the callback: once _Undo_ is enabled, the application starts tracking changes even if the [_trackChanges_ parameter](../tracking-message-changes.md) is not set in [_beeConfig_](../readme/installation/configuration-parameters/).

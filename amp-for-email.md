@@ -86,11 +86,11 @@ onLoadWorkspace: function (workspace) {
 
 ```
 
-Visit [Workspaces](getting-started/installation/configuration-parameters/workspaces.md) to learn more about what workspaces are and the additional workspaces you can use for AMP content.
+Visit [Workspaces](readme/installation/configuration-parameters/workspaces.md) to learn more about what workspaces are and the additional workspaces you can use for AMP content.
 
 ## Loading a template with AMP content
 
-If you don’t set a workspace when loading the builder, AMP widgets are not visible in the Content tab. However, if a message or template containing AMP is loaded, the builder will send an [`onWarning`](https://about/error-management/#warning-codes) [callback](error-management/onwarning.md) to your application. At that point, you may decide to switch to an AMP-compatible workspace, using the [`loadWorkspace`](https://about/workspaces/#switching-workspaces) [method](getting-started/installation/configuration-parameters/workspaces.md).
+If you don’t set a workspace when loading the builder, AMP widgets are not visible in the Content tab. However, if a message or template containing AMP is loaded, the builder will send an [`onWarning`](https://about/error-management/#warning-codes) [callback](error-management/onwarning.md) to your application. At that point, you may decide to switch to an AMP-compatible workspace, using the [`loadWorkspace`](https://about/workspaces/#switching-workspaces) [method](readme/installation/configuration-parameters/workspaces.md).
 
 ## How to use the AMP carousel <a href="#how-to-use-the-amp-carousel" id="how-to-use-the-amp-carousel"></a>
 
@@ -177,7 +177,7 @@ Why? Because you may decide to make the feature available to your customers:
 Here’s how to do so:
 
 * Enable AMP Carousel in the Beefree SDK Console, as mentioned above.
-* Configure the ‘default’ workspace in the beeConfig document, so that AMP cannot be used ([more details here](getting-started/installation/configuration-parameters/workspaces.md)). As an alternative, if you don’t configure a workspace, the Beefree application will be loaded with the default workspace.
+* Configure the ‘default’ workspace in the beeConfig document, so that AMP cannot be used ([more details here](readme/installation/configuration-parameters/workspaces.md)). As an alternative, if you don’t configure a workspace, the Beefree application will be loaded with the default workspace.
 
 ## What you need to do to send AMP emails <a href="#what-you-need-to-do-to-send-amp-emails" id="what-you-need-to-do-to-send-amp-emails"></a>
 

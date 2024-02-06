@@ -100,7 +100,7 @@ for each of the user, depending on its role. For example, if the Role Hash for a
 
 `roleHash: "juniorEditor"`
 
-Please refer to [configuring the builder](../getting-started/installation/configuration-parameters/) for more details.
+Please refer to [configuring the builder](../readme/installation/configuration-parameters/) for more details.
 
 ## Combination of user roles and permissions <a href="#combination-of-user-roles-and-permissions" id="combination-of-user-roles-and-permissions"></a>
 

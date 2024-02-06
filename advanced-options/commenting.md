@@ -33,7 +33,7 @@ To do so:
 * [Login into the Beefree SDK Console](https://dam.beefree.io/devmain)
 * Click **Details** next to the application you want to configure
   * We recommend you first familiarize with Commenting in a Development or QA application
-  * Learn more about [Production vs. Development application here](../getting-started/development-applications.md)
+  * Learn more about [Production vs. Development application here](../readme/development-applications.md)
 * Click **view more** under Application configuration.
 * Toggle **Enable commenting** ON and click the **Save** button to activate Commenting for the application.
 
