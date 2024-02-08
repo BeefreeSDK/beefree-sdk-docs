@@ -322,7 +322,8 @@ _The type parameter may be lately displayed if the user selection is saved and l
 
 ### **Configuration**
 
-<pre class="language-javascript"><code class="lang-javascript"><strong>contentDialog: {
+<pre class="language-javascript"><code class="lang-javascript"><strong>
+</strong><strong>contentDialog: {
 </strong>	mergeContents: {
 		label: 'Set up a new product recommendation',
 		handler: function(resolve, reject) {
@@ -330,6 +331,7 @@ _The type parameter may be lately displayed if the user selection is saved and l
 		}
 	},
 },
+
 </code></pre>
 
 The content dialog adds a button to the merge content list:

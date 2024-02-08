@@ -29,10 +29,6 @@ You can create roles that can act only on a content type. For example, you may w
   * locking/hiding the side tab;
   * hiding specific settings in the text toolbar.
 
-Here is a brief example of how a “copywriter” role built with Advanced permission could look like:
-
-{% embed url="https://docs.beefree.io/wp-content/uploads/2020/04/Advanced-permission-Copywriter.mp4" %}
-
 ## **Customize image & file management workflows**
 
 You can limit how users upload and manage images and files inside the plugin; for example, you want some users – e.g., external collaborators – to select pre-approved images and files uploaded by “admin” users. You can do so by:
@@ -1036,7 +1032,26 @@ addon: {
 
 ```
 
-Here’s an example of an addon with the id “widget-xyz” of type “image”:
+## Add Condition and Edit Condition Buttons
+
+You can choose to display or hide the "Add Condition" and "Edit Condition" buttons when using the [Content Dialog](content-dialog.md) with [Display Conditions](display-conditions.md).
+
+The following code shows an example config for how you can display or hide these buttons using advanced permissions.
+
+```json
+{
+...
+  rows: {
+    displayConditions: {
+      CanEditDisplayConditions: false,
+      CanSelectDisplayConditions: false,
+    },
+  },
+...
+}
+```
+
+To hide the buttons, set the `CanEditDisplayConditions` and `CanSelectDisplayConditions` parameters to `false`.&#x20;
 
 ## Role templates <a href="#role-templates" id="role-templates"></a>
 
