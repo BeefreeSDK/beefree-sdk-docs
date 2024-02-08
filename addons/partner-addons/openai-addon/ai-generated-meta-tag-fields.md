@@ -20,12 +20,18 @@ AI addresses common issues in crafting effective subject lines, pre-headers, and
 
 ### Activation Steps
 
+Learn more about how activate this feature for email and page builder respectively.
+
+#### Email Builder
+
 To activate AI Generated Meta tag fields for your email builder application, take the following steps:
 
 1. Sign into your [Beefree SDK Developer Console](https://developers.beefree.io/)
 2. Navigate to your application’s settings
 3. Toggle on Enable Subject - Meta tag
 4. Toggle on Enable Preheader - Meta tag
+
+#### Page Builder
 
 To activate AI Generated Meta tag fields for your page builder application, take the following steps:
 
