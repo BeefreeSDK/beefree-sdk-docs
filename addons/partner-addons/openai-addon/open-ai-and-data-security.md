@@ -30,4 +30,4 @@ When the end user types a prompt into the OpenAI AddOn, their prompt is forwarde
 
 **Note:** The proxy _does not_ log any personal data and only facilitates secure communication from request to response. Throughout this process, the API key remains in the backend, preserving its security and ensuring no personal data is processed by the application. This approach is [GDPR compliant](https://beefree.io/gdpr-compliance).
 
-For additional information, we recommend you reference our [Terms of Service](https://sdkwebflow.beefree.io/terms-of-service) and our [AIF third-party providers' policies](https://sdkwebflow.beefree.io/aif-third-party-providers).&#x20;
+For additional information, we recommend you reference our [Terms of Service](https://sdkwebflow.beefree.io/terms-of-service) and our [AIF third-party providers' policies](https://developers.beefree.io/aif-third-party-providers).&#x20;
