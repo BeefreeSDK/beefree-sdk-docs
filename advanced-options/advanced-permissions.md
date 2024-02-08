@@ -1051,7 +1051,7 @@ The following code shows an example config for how you can display or hide these
 }
 ```
 
-To hide the buttons, set the `CanEditDisplayConditions` and `CanSelectDisplayConditions` parameters to `false`.&#x20;
+To hide the buttons, set the `CanEditDisplayConditions` and `CanSelectDisplayConditions` properties to `false`.&#x20;
 
 ## Role templates <a href="#role-templates" id="role-templates"></a>
 
