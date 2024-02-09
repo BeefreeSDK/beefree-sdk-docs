@@ -413,6 +413,8 @@ Of course, it can be edited in the editor like any other _Display condition_, if
 
 <figure><img src="../.gitbook/assets/10edit.view_.jpg" alt=""><figcaption></figcaption></figure>
 
+Reference our [Advanced Permissions documentation](advanced-permissions.md#add-condition-and-edit-condition-buttons) to learn more about managing the visibility of the Add Condition and Edit Condition buttons.&#x20;
+
 ## Custom rows <a href="#custom-rows" id="custom-rows"></a>
 
 ### **Configuration**
