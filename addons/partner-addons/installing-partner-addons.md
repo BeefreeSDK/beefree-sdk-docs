@@ -71,45 +71,4 @@ When the AddOn content is selected, the same button is displayed in the content 
 
 <figure><img src="../../.gitbook/assets/7AddOn.action.png" alt=""><figcaption></figcaption></figure>
 
-## Adding client-side configurations for AddOns <a href="#adding-client-side-configurations-for-addons" id="adding-client-side-configurations-for-addons"></a>
-
-Once you have initialized Beefree SDK, you can pass a series of [configuration parameters](../../readme/installation/configuration-parameters/) to it.
-
-The **AddOn section** of the configuration allows you to override the parameters you configured in the [Beefree SDK Console](https://dam.beefree.io/devmain), on a per-user basis.
-
-For example:
-
-* You can have an AddOn enabled at the application level, but disabled for users on a lower plan (so they have to upgrade to a higher plan in your app to get it).
-* You could change the language used for the AddOn text labels depending on the language used for the builder, for that user.
-* Etc.
-
-### **Example**
-
-```javascript
-
-addOns: [
-  {
-    enabled: true,
-    id: "", 
-    label: 'Default title label override',
-    ctaLabel: 'Default CTA label override',
-    placeholder: 'Default stage placeholder override',       
-  },
-  {
-    enabled: false,
-    id: "",
-  }
-]
-
-```
-
-## Parameters
-
-| Parameter     | Type        | Description                                                                                                                                                                                                            |
-| ------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `enabled`     | Boolean     | When false, the AddOn content is not displayed in the _Content_ tab.                                                                                                                                                   |
-| `id`          | Number      | Identifies the AddOn by using the _handle_ provided in the configuration form.                                                                                                                                         |
-| `label`       | Text String | The text string displayed for the AddOn tile in the _Content_ tab                                                                                                                                                      |
-| `ctaLabel`    | Text String | <p>The text string displayed in the button that triggers the AddOn action.</p><p></p><p>It’s displayed in:</p><ul><li>The content placeholder (before any content is applied)</li><li>The content properties</li></ul> |
-| `placeholder` | Text        | Text displayed in the content placeholder to provide further information about the content.                                                                                                                            |
-| `editable`    | Boolean     | A boolean with a default value of **false**. If this boolean is set to **true**, the content related to that content AddOn will become editable.                                                                       |
+Visit our [AddOns Configuration](../addons-configuration.md) to learn more about how to configure custom and partner addons.

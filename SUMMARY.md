@@ -89,6 +89,7 @@
       * [Open AI and Data Security](addons/partner-addons/openai-addon/open-ai-and-data-security.md)
       * [AI-Generated Meta Tag Fields](addons/partner-addons/openai-addon/ai-generated-meta-tag-fields.md)
       * [Token Upselling](addons/partner-addons/openai-addon/token-upselling.md)
+  * [AddOns Configuration](addons/addons-configuration.md)
   * [AddOn FAQs](addons/addon-faqs.md)
 * [Collaborative Editing](collaborative-editing.md)
 * [Mobile Design Mode](mobile-design-mode.md)

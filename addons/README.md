@@ -14,6 +14,10 @@ Beefree SDK includes Partner AddOns and Custom AddOns. Learn more about the curr
 [partner-addons](partner-addons/)
 {% endcontent-ref %}
 
+{% content-ref url="addons-configuration.md" %}
+[addons-configuration.md](addons-configuration.md)
+{% endcontent-ref %}
+
 {% content-ref url="addon-faqs.md" %}
 [addon-faqs.md](addon-faqs.md)
 {% endcontent-ref %}
