@@ -21,23 +21,3 @@ Before using the code samples listed below in a production environment, please c
 2. The client-side sample is not safe for a production environment (it was conceived as a quick way for you to test the application). Someone would be able to easily steal your application credentials (just viewing the source code of the page). To keep those credentials safe, authorization must be managed sever-side, as the .NET sample does.
 3. These code samples use a limited set of features and configurations: they can be a good starting point to start developing around Beefree SDK, but they are not an exhaustive showcase of everything you can do.
 4. All sample code is provided “as is”: it may contain defects, it may not follow best practices (although we try to!), and it should only be considered as point of reference.
-
-| Language      | Author                           | Download                                                                                  |
-| ------------- | -------------------------------- | ----------------------------------------------------------------------------------------- |
-| HTML/JS       | Beefree SDK Team                 | [Visit Repository](https://github.com/BeefreeSDK/beefree-sdk-sample-client)               |
-| ASP.NET       | Beefree SDK Team                 | [Visit Repository](https://github.com/BeefreeSDK/beefree-sdk-demo-aspnet)                 |
-| npm package   | Beefree SDK Team                 | [Visit Repository](https://github.com/BeefreeSDK/beefree-sdk-npm-official)                |
-| Rails App     | Community contribution – Thanks! | [Visit Repository](https://github.com/mailup/bee-rails-app-example)                       |
-| PHP           | Community contribution – Thanks! | [Visit Repository](https://github.com/ProdigyView/beefree)                                |
-| PERL5, Dancer | Community contribution – Thanks! | [Visit Repository](https://github.com/connoryates/bee\_plugin)                            |
-| Node.js       | Community contribution – Thanks! | [Visit Repository](https://gist.github.com/andrei-tofan/aa8bd4910035d8fd8c780bb9db6f337b) |
-
-## File system provider <a href="#file-system-provider" id="file-system-provider"></a>
-
-You can connect Beefree SDK to your own file system (e.g. to let users of your app find images where they already exist).
-
-| Language              | Author           | Download                                                                                                                |
-| --------------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Python (Django) / AWS | Beefree SDK Team | [Download File](https://drive.google.com/file/d/0B0SbqoCsbrNMV1RvR1YxLVBGRUk/view?resourcekey=0-QaiBTvDoECpIR1B2q9gcYw) |
-
-Other languages coming soon!
