@@ -294,8 +294,6 @@ application/jpg
 
 The raw image data
 
-Check out our [sample code for a JavaScript method to convert an image to data URI here](https://gist.github.com/BEE-Plugin/5913ffa1a649b923962d53946e552194).
-
 ### Merge
 
 {% swagger method="post" path=" " baseUrl="https://api.getbee.io/v1/{collection}/merge  " summary="" %}
