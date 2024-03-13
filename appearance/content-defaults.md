@@ -658,6 +658,71 @@ carousel: {
 
 ```
 
+### **table**
+
+```javascript
+{
+   ...
+   table: {
+      rows: [{
+        cells: [
+          {html: "new-default-text"},{html: "second text"}
+        ]
+      }, {
+        cells: [
+          {html: "third"}, {html: "last text"}
+        ]
+      }],
+      headers: [{
+        cells: [{html: "header 1"},{html: "header 2"}]
+      }],
+      styles: {
+        color: "red",
+        fontFamily: "'Merriweather', serif",
+        fontWeight: "700",
+        fontSize: "17px",
+        textAlign: "right",
+        lineHeight: "200%",
+        letterSpacing: "8px",
+        direction: "rtl",
+        linkColor: "yellow",
+        backgroundColor: "blue",
+        border: "11px solid green",
+        alternateRowBackgroundColor: "yellow",
+        headersFontSize: "30px",
+        headersFontWeight: "400",
+        headersTextAlign: "center",
+        headersBackgroundColor: "red",
+        headersColor: "green",
+      },
+      blockOptions: {
+        paddingBottom: "17px",
+        paddingLeft: "15px",
+        paddingRight: "14px",
+        paddingTop: "13px",
+      }
+    },
+}
+```
+
+**Note:** If  **content defaults** are incorrectly formatted, the following **onWarning** will be triggered and the default table will be used instead:
+
+```javascript
+{code: 1730, message: 'Content defaults for [Table] module is not valid'}
+```
+
+If the user tries to load a template that contains a malformed Table (for example if a row in it does not contain all its cells), the template is _not_ loaded, and the **onError** is triggered.&#x20;
+
+The following code displays an example error for this scenario.
+
+```javascript
+{ 
+   code: 2250,
+   message: 'Bump template validation error',
+   detail: 'page/rows/0/columns/0/modules/0/descriptor/table/rows: malformed field (each row must contain the same number of cells)',   
+}
+```
+
 ### **general**
 
 ```javascript

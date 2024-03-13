@@ -1005,6 +1005,86 @@ menu: {
 
 ```
 
+### table
+
+```javascript
+content: { 
+   ...
+   table: {
+      behaviors: {
+         canSelect: true,
+         canAdd: true,
+         canViewSidebar: true,
+         canClone: false,
+         canMove: false,
+         canDelete: true,
+         canResetMobile: false,
+      },
+      properties: {
+         rows: {
+            locked: false,
+            show: true,
+          },
+          columns: {
+            show: true,
+          },
+          textColor: {
+            locked: true,
+          },
+          fontFamily: {
+            locked: true,
+          },
+          fontWeight: {
+            locked: true
+          }, 
+          fontSize: {
+            locked: true
+          },
+          textAlign: {
+            locked: true,
+          },
+          lineHeight: {
+            locked: true,
+          },
+          letterSpacing: {
+            locked: true,
+          },
+          direction: {
+            locked: true,
+          },
+          linkColor: {
+            locked: true,
+          },
+          padding: {
+            locked: true,
+          },
+          hideOnMobile: {
+            locked: true,
+          },
+          hideOnAmp: {
+            locked: true
+          },
+          id: {
+            locked: true,
+          },
+          backgroundColor: {
+            locked: true,
+          },
+          border: {
+            locked: true,
+          },
+          alternateRowBackgroundColor: {
+            locked: true,
+          },
+          headers: {
+            locked: true,
+          }
+        }
+      },
+...
+}
+```
+
 ### **addon**
 
 To assign permissions, you can make use of the addon’s ID. Based on the type of addon, you can assign relevant permissions. For instance, if your addon is an image type, you can assign permissions specific to the image content block. The advanced permissions structure will be as follows:

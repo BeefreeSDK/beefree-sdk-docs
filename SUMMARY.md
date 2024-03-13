@@ -1,8 +1,8 @@
 # Table of contents
 
 * [Getting Started](README.md)
-  * [Development Applications](readme/development-applications.md)
   * [Create an Application](readme/create-an-application.md)
+  * [Development Applications](readme/development-applications.md)
   * [Manage Users](readme/manage-users.md)
   * [Manage Subscriptions](readme/manage-subscriptions.md)
   * [Installation](readme/installation/README.md)
