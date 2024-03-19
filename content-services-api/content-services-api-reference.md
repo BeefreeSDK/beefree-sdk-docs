@@ -92,39 +92,36 @@ All API access is over HTTPS, and accessed from the following URL:
 
 ### HTML
 
-{% swagger method="post" path=" " baseUrl="https://api.getbee.io/v1/{collection}/html" summary="" %}
-{% swagger-description %}
+<mark style="color:green;">`POST`</mark> `https://api.getbee.io/v1/{collection}/html`&#x20;
 
-{% endswagger-description %}
+#### Headers
 
-{% swagger-parameter in="header" name="page" type="object" required="true" %}
-A Beefree template in JSON format
-{% endswagger-parameter %}
+| Name                                                   | Type    | Description                                              |
+| ------------------------------------------------------ | ------- | -------------------------------------------------------- |
+| page<mark style="color:red;">\*</mark>                 | object  | A Beefree template in JSON format                        |
+| beautifulHtmlEnabled<mark style="color:red;">\*</mark> | boolean | This flag will force the API to return uncompressed HTML |
 
-{% swagger-parameter in="header" name="beautifulHtmlEnabled" type="boolean" required="true" %}
-This flag will force the API to return uncompressed HTML
-{% endswagger-parameter %}
+{% tabs %}
+{% tab title="200: OK " %}
 
-{% swagger-response status="200: OK" description="" %}
+{% endtab %}
 
-{% endswagger-response %}
+{% tab title="400: Bad Request " %}
 
-{% swagger-response status="400: Bad Request" description="" %}
+{% endtab %}
 
-{% endswagger-response %}
+{% tab title="401: Unauthorized " %}
 
-{% swagger-response status="401: Unauthorized" description="" %}
+{% endtab %}
 
-{% endswagger-response %}
+{% tab title="429: Too Many Requests " %}
 
-{% swagger-response status="429: Too Many Requests" description="" %}
+{% endtab %}
 
-{% endswagger-response %}
+{% tab title="500: Internal Server Error " %}
 
-{% swagger-response status="500: Internal Server Error" description="" %}
-
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 **Content-Type:** application/json
 
@@ -153,49 +150,38 @@ The HTML message
 
 ### PDF
 
-{% swagger method="post" path=" " baseUrl="https://api.getbee.io/v1/{collection}/pdf " summary="" %}
-{% swagger-description %}
+<mark style="color:green;">`POST`</mark> `https://api.getbee.io/v1/{collection}/pdf` &#x20;
 
-{% endswagger-description %}
+#### Headers
 
-{% swagger-parameter in="header" name="html" required="true" type="String" %}
-A full HTML document
-{% endswagger-parameter %}
+| Name                                   | Type   | Description                                                                                                                                                                                     |
+| -------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| html<mark style="color:red;">\*</mark> | String | A full HTML document                                                                                                                                                                            |
+| page\_size                             | String | <p>Accepted values: letter (default), A4, A3, full</p><p><strong>Full:</strong> a single page using 900px as page width. The page_orientation is always portrait when using this page size.</p> |
+| page\_orientation                      | String | Accepted values: landscape (default), portrait                                                                                                                                                  |
+| file\_type                             | String | Accepted values: PDF                                                                                                                                                                            |
 
-{% swagger-parameter in="header" name="page_size" type="String" %}
-Accepted values: letter (default), A4, A3, full
+{% tabs %}
+{% tab title="200: OK " %}
 
-**Full:** a single page using 900px as page width. The page\_orientation is always portrait when using this page size.
-{% endswagger-parameter %}
+{% endtab %}
 
-{% swagger-parameter in="header" name="page_orientation" type="String" %}
-Accepted values: landscape (default), portrait
-{% endswagger-parameter %}
+{% tab title="400: Bad Request " %}
 
-{% swagger-parameter in="header" name="file_type" type="String" %}
-Accepted values: PDF
-{% endswagger-parameter %}
+{% endtab %}
 
-{% swagger-response status="200: OK" description="" %}
+{% tab title="401: Unauthorized " %}
 
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="" %}
+{% tab title="429: Too Many Requests " %}
 
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="" %}
+{% tab title="500: Internal Server Error " %}
 
-{% endswagger-response %}
-
-{% swagger-response status="429: Too Many Requests" description="" %}
-
-{% endswagger-response %}
-
-{% swagger-response status="500: Internal Server Error" description="" %}
-
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 **Content-Type:** application/json
 
@@ -225,53 +211,39 @@ The file is available for 24 hours.
 
 ### Image
 
-{% swagger method="post" path="" baseUrl="https://api.getbee.io/v1/{collection}/image  " summary="" %}
-{% swagger-description %}
+<mark style="color:green;">`POST`</mark> `https://api.getbee.io/v1/{collection}/image` &#x20;
 
-{% endswagger-description %}
+#### Headers
 
-{% swagger-parameter in="header" name="html" type="String" required="true" %}
-A Beefree HTML messag
-{% endswagger-parameter %}
+| Name                                         | Type    | Description                                                                                                                                                                                                                                                                                                                                                                  |
+| -------------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| html<mark style="color:red;">\*</mark>       | String  | A Beefree HTML messag                                                                                                                                                                                                                                                                                                                                                        |
+| size                                         | String  | Use “size” instead of “width” and “height” when you only know the width and want the height automatically calculated. **Required** if width and height are not defined.                                                                                                                                                                                                      |
+| width                                        | Integer | The image width in pixels. **Required** if size is not defined.                                                                                                                                                                                                                                                                                                              |
+| height                                       | Integer | <p>The image height in pixels.<br>D<strong>efault</strong> applies a proportional value based on the given width, keeping the image aspect ratio.<br>When the value is not proportional to the given width either will occur: If it’s higher, the proportional value applies, or, if it’s lower, the image is cropped. <strong>Required</strong> if size is not defined.</p> |
+| file\_type<mark style="color:red;">\*</mark> | String  | Accepts jpg or png.                                                                                                                                                                                                                                                                                                                                                          |
 
-{% swagger-parameter in="header" name="size" type="String" required="false" %}
-Use “size” instead of “width” and “height” when you only know the width and want the height automatically calculated. **Required** if width and height are not defined.
-{% endswagger-parameter %}
+{% tabs %}
+{% tab title="200: OK " %}
 
-{% swagger-parameter in="header" name="width" type="Integer" %}
-The image width in pixels. **Required** if size is not defined.
-{% endswagger-parameter %}
+{% endtab %}
 
-{% swagger-parameter in="header" name="height" type="Integer" %}
-The image height in pixels.\
-D**efault** applies a proportional value based on the given width, keeping the image aspect ratio.\
-When the value is not proportional to the given width either will occur: If it’s higher, the proportional value applies, or, if it’s lower, the image is cropped. **Required** if size is not defined.
-{% endswagger-parameter %}
+{% tab title="400: Bad Request " %}
 
-{% swagger-parameter in="header" name="file_type" type="String" required="true" %}
-Accepts jpg or png.
-{% endswagger-parameter %}
+{% endtab %}
 
-{% swagger-response status="200: OK" description="" %}
+{% tab title="401: Unauthorized " %}
 
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="" %}
+{% tab title="429: Too Many Requests " %}
 
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="" %}
+{% tab title="500: Internal Server Error " %}
 
-{% endswagger-response %}
-
-{% swagger-response status="429: Too Many Requests" description="" %}
-
-{% endswagger-response %}
-
-{% swagger-response status="500: Internal Server Error" description="" %}
-
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 **Content-Type:** application/json
 
@@ -296,47 +268,38 @@ The raw image data
 
 ### Merge
 
-{% swagger method="post" path=" " baseUrl="https://api.getbee.io/v1/{collection}/merge  " summary="" %}
-{% swagger-description %}
+<mark style="color:green;">`POST`</mark> `https://api.getbee.io/v1/{collection}/merge`  &#x20;
 
-{% endswagger-description %}
+#### Headers
 
-{% swagger-parameter in="header" name="source" type="Object" required="true" %}
-A Beefree template in JSON format.
-{% endswagger-parameter %}
+| Name                                      | Type             | Description                                                                                                                                                                                |
+| ----------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| source<mark style="color:red;">\*</mark>  | Object           | A Beefree template in JSON format.                                                                                                                                                         |
+| replace<mark style="color:red;">\*</mark> | Array            | An array of objects that contain a JSON path and value to replace.                                                                                                                         |
+| value<mark style="color:red;">\*</mark>   | String \| Object | The value can be an object, such as a saved row. Or, it can be a string, such a hex color code. The value should be the same type as the value you want to match in your match expression. |
+| path<mark style="color:red;">\*</mark>    | String           | A JSON Path to the matching nodes in the source JSON.                                                                                                                                      |
 
-{% swagger-parameter in="header" name="replace" type="Array" required="true" %}
-An array of objects that contain a JSON path and value to replace.
-{% endswagger-parameter %}
+{% tabs %}
+{% tab title="200: OK " %}
 
-{% swagger-parameter in="header" name="value" type="String | Object" required="true" %}
-The value can be an object, such as a saved row. Or, it can be a string, such a hex color code. The value should be the same type as the value you want to match in your match expression.
-{% endswagger-parameter %}
+{% endtab %}
 
-{% swagger-parameter in="header" name="path" type="String" required="true" %}
-A JSON Path to the matching nodes in the source JSON.
-{% endswagger-parameter %}
+{% tab title="400: Bad Request " %}
 
-{% swagger-response status="200: OK" description="" %}
+{% endtab %}
 
-{% endswagger-response %}
+{% tab title="401: Unauthorized " %}
 
-{% swagger-response status="400: Bad Request" description="" %}
+{% endtab %}
 
-{% endswagger-response %}
+{% tab title="429: Too Many Requests " %}
 
-{% swagger-response status="401: Unauthorized" description="" %}
+{% endtab %}
 
-{% endswagger-response %}
+{% tab title="500: Internal Server Error " %}
 
-{% swagger-response status="429: Too Many Requests" description="" %}
-
-{% endswagger-response %}
-
-{% swagger-response status="500: Internal Server Error" description="" %}
-
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 **Content-Type:** application/json
 
@@ -402,39 +365,39 @@ The JSON object containing the following parameters:
 
 ### Index
 
-{% swagger method="post" path="" baseUrl="https://api.getbee.io/v1/{collection}/merge/index" summary="" %}
-{% swagger-description %}
+<mark style="color:green;">`POST`</mark> `https://api.getbee.io/v1/{collection}/merge/index`
 
-{% endswagger-description %}
+#### Headers
 
-{% swagger-parameter in="header" name="source" type="object" required="true" %}
-A Beefree template in JSON format.
-{% endswagger-parameter %}
+| Name                                     | Type   | Description                        |
+| ---------------------------------------- | ------ | ---------------------------------- |
+| source<mark style="color:red;">\*</mark> | object | A Beefree template in JSON format. |
 
-{% swagger-response status="200: OK" description="" %}
+{% tabs %}
+{% tab title="200: OK " %}
 
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="" %}
+{% tab title="400: Bad Request " %}
 
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="" %}
+{% tab title="401: Unauthorized " %}
 
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="422: Unprocessable Entity" description="" %}
+{% tab title="429: Too Many Requests " %}
 
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="429: Too Many Requests" description="" %}
+{% tab title="422: Unprocessable Entity " %}
 
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="500: Internal Server Error" description="" %}
+{% tab title="500: Internal Server Error " %}
 
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 **Content-Type:** application/json
 

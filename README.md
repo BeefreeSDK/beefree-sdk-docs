@@ -12,7 +12,7 @@ We’re thrilled that you’re interested in integrating our embeddable builders
 
 The builders include an [Email Builder](email-builder.md), a [Page Builder](page-builder/), and a [Popup Builder](popup-builder/). Each of these builders is designed to meet specific content creation needs, allowing you to offer a tailored content creation experience to your customers. They can be easily integrated into your application in a matter of minutes.
 
-In addition to our drag-and-drop editors, we also offer a standalone [File Manager](file-manager-application-overview.md) application, which can be used alongside any of the builders. The File Manager is specifically designed to simplify the organization and management of digital assets, which might happen outside of a content editing session.
+In addition to our drag-and-drop editors, we also offer a standalone [File Manager](file-manager-application-overview/) application, which can be used alongside any of the builders. The File Manager is specifically designed to simplify the organization and management of digital assets, which might happen outside of a content editing session.
 
 Finally, the [Content Services API](content-services-api/) allows you to perform a number of tasks (e.g. refreshing the HTML for a certain asset) and add features to your application (e.g. converting an email to a PDF document). We continue to release new API methods to help you enrich and personalize the content design experience for your customers.
 

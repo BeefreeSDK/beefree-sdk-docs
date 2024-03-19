@@ -13,11 +13,11 @@ When you configure a builder application, you have four options for image & file
 
 ## Images vs. other files
 
-End users of the builder can upload not just images, but also PDF files and other documents via [File Manager](../../file-manager-application-overview.md). For example, they could link a button to downloading a PDF report.
+End users of the builder can upload not just images, but also PDF files and other documents via [File Manager](../../file-manager-application-overview/). For example, they could link a button to downloading a PDF report.
 
 End-user documentation on the File Manager can be found [here](https://dam.beefree.io/pluginkbfilemanager).
 
-If you need more control on what files users should be able to upload, you may activate [file manager limitations](../../file-manager-application-overview.md) in the **Privacy & Security** section of your app’s configuration. In alternative, you may consider [connecting the builder to your file system](connect-your-file-storage-system.md).
+If you need more control on what files users should be able to upload, you may activate [file manager limitations](../../file-manager-application-overview/) in the **Privacy & Security** section of your app’s configuration. In alternative, you may consider [connecting the builder to your file system](connect-your-file-storage-system.md).
 
 ## About Beefree SDK storage
 

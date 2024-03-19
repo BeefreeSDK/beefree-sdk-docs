@@ -4,7 +4,7 @@ As you may have noticed, when you create a new Beefree application, it comes wit
 
 If you do want users to be able to access the same image and file directories that they use elsewhere in your application, we have a solution.
 
-We created a way to connect to a custom file system provider, **allowing you to use your own file storage**, no matter which technology you use. A **custom file system provider** is an API that will allow the a Beefree application to perform actions with files outside of the Beefree system, connecting your file system to the [Beefree File Manager](../../file-manager-application-overview.md).
+We created a way to connect to a custom file system provider, **allowing you to use your own file storage**, no matter which technology you use. A **custom file system provider** is an API that will allow the a Beefree application to perform actions with files outside of the Beefree system, connecting your file system to the [Beefree File Manager](../../file-manager-application-overview/).
 
 It can be built with your preferred technology: just be sure to follow our instructions to ensure successful communication between the two systems.
 
