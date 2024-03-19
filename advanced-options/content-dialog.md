@@ -98,7 +98,7 @@ contentDialog: {
 	},
 	rowDisplayConditions: {
 		label: 'Custom text for display conditions',
-		handler: function(resolve, reject) {
+		handler: function(resolve, reject, currentCondition) {
 			// Your function
 		}
 	},
@@ -126,6 +126,14 @@ contentDialog: {
 
 
 ```
+
+For `rowDisplayConditions`, there is a third parameter called `currentCondition`. Use this parameter to return a row's current display condition. This parameter returns an object with the following format:&#x20;
+
+```
+{label: '', description: '', before: '', after: '', type: 'BEE_CUSTOM_DISPLAY_CONDITION'}
+```
+
+**Note:** You do not have to name the parameter `currentCondition`. You can use any name that works best for your application and workflow.
 
 You can add all the dialogs, some of them or only one. Is up to your application to create them for all the users or a segment, as there are no related server-side settings, you can customize them for each editor start.
 
