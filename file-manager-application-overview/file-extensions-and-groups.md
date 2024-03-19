@@ -23,7 +23,7 @@ xml:
 zip:
     application/zip
 epub:
-    application/epub\+zip
+    application/epub+zip
 pdf:
     application/pdf
 postscript:
