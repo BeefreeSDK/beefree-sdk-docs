@@ -65,19 +65,25 @@ beeConfig: {
   container: 'bee-plugin-container', // [mandatory]
   ...
   contentDefaults: {
-    button: { ... },
-    buttonsOptions: { ... },
-    image: { ... },
+    title: { ... },
     text: { ... },
+    image: { ... },
+    button: { ... },
     divider: { ... },
     social: { ... },
     dynamic: { ... },
     video: { ... },
-    general: { ... },
     form: { ... },
+    icons: { ... },
+    menu: { ... },
+    spacer: { ... },
+    paragraph: { ... },
+    list: { ... },
+    carousel: { ... },
+    table: { ... },
+    general: { ... },
   }
 }
-
 ```
 
 ## Available content settings <a href="#available-content-settings" id="available-content-settings"></a>
