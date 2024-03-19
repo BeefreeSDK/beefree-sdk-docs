@@ -129,8 +129,14 @@ contentDialog: {
 
 For `rowDisplayConditions`, there is a third parameter called `currentCondition`. Use this parameter to return a row's current display condition. This parameter returns an object with the following format:&#x20;
 
-```
-{label: '', description: '', before: '', after: '', type: 'BEE_CUSTOM_DISPLAY_CONDITION'}
+```javascript
+{
+    label: '',
+    description: '',
+    before: '',
+    after: '',
+    type: 'BEE_CUSTOM_DISPLAY_CONDITION'
+}
 ```
 
 **Note:** You do not have to name the parameter `currentCondition`. You can use any name that works best for your application and workflow.
