@@ -1,6 +1,8 @@
-# File Extensions and Groups
+# Mime Types and Groups
 
-The following list shows which specific file extensions are mapped to specific mime types for the File manager.&#x20;
+The following list shows which specific mime types are mapped to our group names for custom limitations on File manager.
+
+Learn more about [how to activate custom limitations for the File manager](../server-side-options/services-options.md#activate-custom-limitations-on-file-manager).
 
 ```
 image:
