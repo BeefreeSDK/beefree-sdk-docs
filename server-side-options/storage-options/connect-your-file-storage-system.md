@@ -322,7 +322,3 @@ The `thumbnail` field is optional, so if you don’t want a thumbnail for your f
 The thumbnail image must be contained in a 200px by 200px virtual square (see pictures below).
 
 <figure><img src="../../.gitbook/assets/thumb.png" alt=""><figcaption></figcaption></figure>
-
-## Sample code <a href="#sample-code" id="sample-code"></a>
-
-In the [sample code page](../../sample-code.md), you can download an example file system provider API written in Python (Django).
