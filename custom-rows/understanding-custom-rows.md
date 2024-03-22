@@ -48,7 +48,7 @@ For some users, they may work better than _empty rows_ as they allow them to imm
 
 <figure><img src="../.gitbook/assets/4CR_defaults-1024x653.jpeg" alt=""><figcaption></figcaption></figure>
 
-Check how to configure these sample rows below under _Rows configuration > Parameters > Default rows_
+Reference [Rows Configuration](https://docs.beefree.io/beefree-sdk/custom-rows/displaying-saved-rows#rows-configuration) to learn more about how to configure these sample rows.
 
 ## **User/campaign tailored contents**
 
