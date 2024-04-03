@@ -446,7 +446,7 @@ Prior to getting started with the resources in this collection, ensure you have 
 **Note:** OpenAI billing costs apply in addition to the Content Services API billing.
 {% endhint %}
 
-### Metadata (Preheader and Subject) <a href="#metadata-plain-text" id="metadata-plain-text"></a>
+### Metadata (Preheader and Subject) <a href="#metadata" id="metadata"></a>
 
 `v1/ai/metadata`
 
@@ -510,7 +510,7 @@ The following section shows an example response with the preheader and subject m
 }
 ```
 
-### SMS <a href="#sms-plain-text" id="sms-plain-text"></a>
+### SMS <a href="#sms" id="sms"></a>
 
 `v1/ai/sms`
 
