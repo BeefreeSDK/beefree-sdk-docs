@@ -104,7 +104,6 @@ The following JSON displays an example request.
 
 The following HTML displays an example response.
 
-````html
 ```html
 <!DOCTYPE html>
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
@@ -128,7 +127,6 @@ The following HTML displays an example response.
             padding: 0;
         }
 ```
-````
 
 ### Plain Text
 
@@ -140,7 +138,7 @@ The following HTML displays an example response.
 
 #### Request Parameters <a href="#request-parameters" id="request-parameters"></a>
 
-`page` (JSON): The JSON template to convert to plain text.
+`page` (JSON): The email JSON template to create the plain text for.
 
 #### Request Parameters <a href="#request-parameters" id="request-parameters"></a>
 
@@ -156,7 +154,34 @@ The following section shows an example request:
 
 ```json
 {
-    "page": { },
+    "page": {
+        "body": {
+            "container": {
+                "style": {
+                    "background-color": "#fff",
+                    "background-image": "none",
+                    "background-position": "top left",
+                    "background-repeat": "no-repeat",
+                    "background-size": "auto"
+                }
+            },
+            "content": {
+                "style": {
+                    "color": "#000000",
+                    "font-family": "Lato, Tahoma, Verdana, Segoe, sans-serif"
+                }
+            },
+            "type": "mailup-bee-page-properties",
+            "webFonts": [
+                {
+                    "fontFamily": "'Lato', Tahoma, Verdana, Segoe, sans-serif",
+                    "name": "Lato",
+                    "url": "https://fonts.googleapis.com/css?family=Lato"
+                }
+            ]
+        },
+        "description": ""
+    }
 }
 ```
 
@@ -225,13 +250,13 @@ The following code sample shows an examples response.
 
 The following table lists the headers applicable for this request.
 
-| Name          | Type    | Description                                                                                                                                                                                                                                                                                                                           |
-| ------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `html`\*      | String  | A Beefree HTML messag                                                                                                                                                                                                                                                                                                                 |
-| `size`        | String  | Use “size” instead of “width” and “height” when you only know the width and want the height automatically calculated. **Required** if width and height are not defined.                                                                                                                                                               |
-| `width`       | Integer | The image width in pixels. **Required** if size is not defined.                                                                                                                                                                                                                                                                       |
-| `height`      | Integer | The image height in pixels. D**efault** applies a proportional value based on the given width, keeping the image aspect ratio. When the value is not proportional to the given width either will occur: If it’s higher, the proportional value applies, or, if it’s lower, the image is cropped. **Required** if size is not defined. |
-| `file_type`\* | String  | Accepts jpg or png.                                                                                                                                                                                                                                                                                                                   |
+| Name          | Type    | Description                                                                                                                                                                                                                                                                                                                       |
+| ------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `html`\*      | String  | A Beefree HTML messag                                                                                                                                                                                                                                                                                                             |
+| `size`        | String  | Use “size” instead of “width” and “height” when you only know the width and want the height automatically calculated. **Required** if width and height are not defined.                                                                                                                                                           |
+| `width`       | Integer | The image width in pixels. **Required** if size is not defined.                                                                                                                                                                                                                                                                   |
+| `height`      | Integer | The image height in pixels. Default applies a proportional value based on the given width, keeping the image aspect ratio. When the value is not proportional to the given width either will occur: If it’s higher, the proportional value applies, or, if it’s lower, the image is cropped. **Required** if size is not defined. |
+| `file_type`\* | String  | Accepts jpg or png.                                                                                                                                                                                                                                                                                                               |
 
 **Content-Type:** application/json
 
@@ -253,7 +278,7 @@ The following code sample shows an example response.
 
 The following image is an example response.
 
-![](https://docs.beefree.io/\~gitbook/image?url=https:%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FkDdzcsKD8qmgDgxlVZr8%252Fexample\_response.png%3Falt=media%26token=4882919f-52c6-40d3-b65d-e2a0959b246a\&width=768\&dpr=4\&quality=100\&sign=ea83a15a236a33920b9a59629385308fd7bda12c4c5054c9515afe59391fafe3)
+<figure><img src="../.gitbook/assets/CleanShot 2024-04-03 at 15.45.11@2x.png" alt="" width="320"><figcaption></figcaption></figure>
 
 application/jpg
 

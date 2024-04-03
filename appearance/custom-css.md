@@ -408,8 +408,6 @@ Content Area Alight
 {% endtab %}
 
 {% tab title="Font Style" %}
-Font Style and Dnd widgets...
-
 This section covers widget classnames for content in the sidebar, and lists the classnames for the following widgets:
 
 * Font Style
@@ -543,12 +541,7 @@ This section will cover button classnames for the following sidebar areas:
 
 This section lists the classnames for sliders within the Content tab.
 
-| Entity         | Sidebar Widget                               | Deprecated                                                                                                                | New Classnames                                                                    | Data-QA                                   | Notes                                                    |
-| -------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ----------------------------------------- | -------------------------------------------------------- |
-| Add-On (Image) | <ul><li>Width</li></ul>                      | <ul><li><code>BeeImageWidth_*</code></li><li><code>BeeWidthSlider_*</code></li><li><code>rc-slider*</code></li></ul>      | <ul><li><code>slider--cs</code></li><li><code>slider-wrapper--cs</code></li></ul> | <ul><li><code>slider-btn</code></li></ul> | data-qa was moved from a div to the actual input element |
-| Button         | <ul><li>Width</li></ul>                      | <ul><li><code>BeeImageWidth_*</code></li><li><code>BeeWidthSlider_*</code></li><li><code>rc-slider*</code></li></ul>      | <ul><li><code>slider--cs</code></li><li><code>slider-wrapper--cs</code></li></ul> | <ul><li><code>slider-btn</code></li></ul> | data-qa was moved from a div to the actual input element |
-| Form           | <ul><li>Width</li><li>Button Width</li></ul> | <ul><li><code>BeeWidthSlider_*</code></li><li><code>rc-slider*</code></li><li><code>widget-BeeImageWidth</code></li></ul> | <ul><li><code>slider--cs</code></li><li><code>slider-wrapper--cs</code></li></ul> | <ul><li><code>slider-btn</code></li></ul> | data-qa was moved from a div to the actual input element |
-| Image          | <ul><li>Width</li></ul>                      | <ul><li><code>BeeImageWidth_*</code></li><li><code>BeeWidthSlider_*</code></li><li><code>rc-slider*</code></li></ul>      | <ul><li><code>slider--cs</code></li><li><code>slider-wrapper--cs</code></li></ul> | <ul><li><code>slider-btn</code></li></ul> | data-qa was moved from a div to the actual input element |
+<table><thead><tr><th width="89">Entity</th><th width="72">Sidebar Widget</th><th>Deprecated</th><th>New Classnames</th><th>Data-QA</th><th>Notes</th></tr></thead><tbody><tr><td>Add-On (Image)</td><td><ul><li>Width</li></ul></td><td><ul><li><code>BeeImageWidth_*</code></li><li><code>BeeWidthSlider_*</code></li><li><code>rc-slider*</code></li></ul></td><td><ul><li><code>slider--cs</code></li><li><code>slider-wrapper--cs</code></li></ul></td><td><ul><li><code>slider-btn</code></li></ul></td><td>data-qa was moved from a div to the actual input element</td></tr><tr><td>Button</td><td><ul><li>Width</li></ul></td><td><ul><li><code>BeeImageWidth_*</code></li><li><code>BeeWidthSlider_*</code></li><li><code>rc-slider*</code></li></ul></td><td><ul><li><code>slider--cs</code></li><li><code>slider-wrapper--cs</code></li></ul></td><td><ul><li><code>slider-btn</code></li></ul></td><td>data-qa was moved from a div to the actual input element</td></tr><tr><td>Form</td><td><ul><li>Width</li><li>Button Width</li></ul></td><td><ul><li><code>BeeWidthSlider_*</code></li><li><code>rc-slider*</code></li><li><code>widget-BeeImageWidth</code></li></ul></td><td><ul><li><code>slider--cs</code></li><li><code>slider-wrapper--cs</code></li></ul></td><td><ul><li><code>slider-btn</code></li></ul></td><td>data-qa was moved from a div to the actual input element</td></tr><tr><td>Image</td><td><ul><li>Width</li></ul></td><td><ul><li><code>BeeImageWidth_*</code></li><li><code>BeeWidthSlider_*</code></li><li><code>rc-slider*</code></li></ul></td><td><ul><li><code>slider--cs</code></li><li><code>slider-wrapper--cs</code></li></ul></td><td><ul><li><code>slider-btn</code></li></ul></td><td>data-qa was moved from a div to the actual input element</td></tr></tbody></table>
 
 ## Settings
 
