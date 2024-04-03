@@ -8,29 +8,27 @@ This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/plu
 
 Beefree SDK is a complete content design and creation platform for you to build upon. Our objective is to help you create a fantastic content creation experience for your customers inside your software applications.
 
-As this may go beyond the interactions that happen within our email, page, and popup builders, we created an API to offer more assistance. We call it the Content Services API: it exposes a set of services that will help you provide a better experience with how emails, pages, and popups are created, updated, and transformed into different formats.
+As this may go beyond the interactions that happen within our email, page, and popup builders, we created an API to offer more assistance. We call it the _Content Services API_: it exposes a set of services that will help you provide a better experience with how emails, pages, and popups are created, updated, and transformed into different formats.
+
+<figure><img src="../.gitbook/assets/CSAPI_800.jpg" alt=""><figcaption></figcaption></figure>
 
 ## In a nutshell <a href="#in-a-nutshell" id="in-a-nutshell"></a>
 
-The Content Services API (CSAPI) – helps you achieve the following:
+The _Content Services API_ – or _CSAPI_ – helps you take care of five, important tasks (and more will be added in the future):
 
-* Retrieving the HTML of an email, page or popup created with a Beefree builder, so you can build a custom UX flow for saving messages. With the CSAPI, you can ask the Beefree system for the HTML whenever you need it.
-* Updating the HTML of an email, page or popup created with a Beefree builder, without user interaction. Why? For example, the HTML of an email template might need to be updated (e.g. to resolve a newly discovered rendering issue in an email client), and you don’t want to ask your users to open the email with the builder and resave it.
-* Outputting partial HTML that enables you to reuse code, increase consistency across your templates, and easily maintain your code.
-* Generating a thumbnail from the HTML, because thumbnails are always nice to have, for all sorts of reasons 🙂
-* Generating a PDF from the HTML, as your[^1] users may want to share or print an email or a page, and PDF is great for that.
-* Merging shared content ([saved rows](../saved-rows/)) into emails and pages that use it (e.g. update 30 emails that use the same footer).
-* Use [Brand Style Management](brand-style-management.md) to make template-wide design changes to existing templates quickly and easily. &#x20;
-* Generate [plain text](content-services-api-reference.md#plain-text) versions of emails from JSON templates, ensuring emails look sharp and easy to read on any device.
-* [Leverage AI](content-services-api-reference.md#prerequisites) to generate SMS, Metadata (Preheader and Subject), or Summary text from JSON templates.
+1. **Retrieving the HTML** of an email, page or popup created with a Beefree builder, so you can build a custom UX flow for saving messages. With the CSAPI, you can ask the Beefree system for the HTML whenever you need it.
+2. **Updating the HTML** of an email, page or popup created with a Beefree builder, without user interaction. Why? For example, the HTML of an email template might need to be updated (e.g. to resolve a newly discovered rendering issue in an email client), and you don’t want to ask your users to open the email with the builder and resave it.
+3. **Generating a thumbnail** from the HTML, because thumbnails are always nice to have, for all sorts of reasons 🙂
+4. **Generating a PDF** from the HTML, as your users may want to share or print an email or a page, and PDF is great for that.
+5. **Merging shared content** ([saved rows](../saved-rows/)) into emails and pages that use it (e.g. update 30 emails that use the same footer).
+
+## More details
 
 ### Getting the HTML from a message JSON <a href="#getting-the-html-from-a-message-json" id="getting-the-html-from-a-message-json"></a>
 
 This service allows the host application to build a custom workflow that doesn’t rely on the `onSave` callback in the editor ([list of available callbacks](../readme/installation/methods-and-events.md)). Check our [reference documentation on how to use the API to get the HTML from a JSON file](content-services-api-reference.md).
 
-### **A few common use cases**
-
-In the following section we explore common use cases of when the Content Services API is particularly helpful.&#x20;
+### **Common use cases**
 
 #### **Getting newer, better HTML**
 
@@ -60,9 +58,7 @@ The API provides some useful services that offer additional message formats, red
 
 A dedicated endpoint that transforms an HTML into a PDF document and supports the following options:
 
-#### **Page orientation**
-
-Landscape and portrait as available values.
+#### **Page orientation** Landscape and portrait as available values.
 
 #### **Page size**
 
@@ -102,5 +98,3 @@ There are many use cases, including:
 * changing the expiration date in a seasonal offer;
 * making price changes, link changes, etc. in content that otherwise can be re-used “as is”
 * etc.
-
-[^1]: this is a test
