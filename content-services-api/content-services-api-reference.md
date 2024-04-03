@@ -1,23 +1,25 @@
 # Content Services API Reference
 
+The Content Services API Reference provides a comprehensive guide to utilizing the Content Services API, which leverages the REST architecture and HTTP protocol for making API calls. This reference document outlines the available collections, including `/message`, `/page`, `/popup`, `/amp`, `/template`, and `/ai`, detailing the resources for each collection. For every resource, this document includes its description, parameters, and example responses and requests.
+
 ## API Key
 
-To use the Content Services API you will need to obtain an API key.&#x20;
+To use the Content Services API you will first need to obtain a your API Key from the Beefree SDK Console.&#x20;
 
 To obtain an API Key, take the following steps:
 
 1. Log into the [Beefree SDK Console](https://dam.beefree.io/devmain)
-2. Locate the application that you wish to work with, and click on _Details_
-3. Locate the Content Services API section and click on _Create New API Key_
-4. Acknowledge the message that reminds you that if you exceed the [number of API calls included in your plan](https://dam.beefree.io/devmain), you may be charged for overages and click on _Create Key_
-5. You’re done!
+2. Locate the application that you wish to work with, and click on **Details**
+3. Locate the Content Services API section and click **Create New API Key**
+4. Acknowledge the message that reminds you that if you exceed the [number of API calls included in your plan](https://dam.beefree.io/devmain), you may be charged for overages and click **Create Key**
+
+Your API key will appear under the **Content services API** section of your application details.
 
 <figure><img src="../.gitbook/assets/CSAPI_in_dev_portal.png" alt=""><figcaption></figcaption></figure>
 
 The Content Services API uses API Keys to authenticate requests for resources.  You can manage your API Keys within the Beefree SDK Console.  All requests must be made over HTTPS and contain the following HTTP Header:
 
-| **`Authorization:`**` ``Bearer {token}` |
-| --------------------------------------- |
+**`Authorization:`**` ``Bearer {token}`
 
 ## Rate Limits
 
@@ -36,96 +38,53 @@ By default, the API has the following rate limits:
 
 All API access is over HTTPS, and accessed from the following URL:
 
-| API Root                                                  |
-| --------------------------------------------------------- |
-| `https://api.getbee.io/{version}/{collection}/{resource}` |
+`https://api.getbee.io/v1/{collection}/{resource}`
 
-### Versions
+## Collections
 
-| Version | Released on |
-| ------- | ----------- |
-| V1      | 4/25/2019   |
-| Beta    | 4/06/2019   |
+The following table lists the available collection option and corresponding resources for each collection.
 
-### Collections
+| Collection  | Available Resources                                   |
+| ----------- | ----------------------------------------------------- |
+| `/message`  | `html`, `pdf`, `images`, `merge`, `index, plain-text` |
+| `/page`     | `html`, `pdf`, `images`, `merge`, `index`             |
+| `/popup`    | `html`                                                |
+| `/amp`      | `html`                                                |
+| `/template` | `brand`                                               |
+| `/ai`       | `metadata`, `sms`, `summary`                          |
 
-| Collection | Available Resources            |
-| ---------- | ------------------------------ |
-| /message   | html, pdf, images, merge,index |
-| /page      | html, pdf, images, merge,index |
-| /popup     | html                           |
-| /amp       | html                           |
+### Example URLs
 
-## Example URLs
+The following table provides a few examples of URLs you can use to make specific types of requests.
 
-| Request HTML for email                  |
-| --------------------------------------- |
-| `https://api.getbee.io/v1/message/html` |
-
-## Example URLs
-
-### Email
-
-| Request HTML for email                  |
-| --------------------------------------- |
-| `https://api.getbee.io/v1/message/html` |
-
-### Landing Page
-
-| Request HTML for a landing page      |
-| ------------------------------------ |
-| `https://api.getbee.io/v1/page/html` |
-
-### Popup
-
-| Request HTML for a popup              |
-| ------------------------------------- |
-| `https://api.getbee.io/v1/popup/html` |
-
-### AMP
-
-| Request HTML for AMP                |
-| ----------------------------------- |
-| `https://api.getbee.io/v1/amp/html` |
+<table><thead><tr><th width="160">Type</th><th>Action</th><th>Example URL</th></tr></thead><tbody><tr><td>Email</td><td>Request HTML for email</td><td><code>https://api.getbee.io/v1/message/html</code></td></tr><tr><td>Landing Page</td><td>Request HTML for a landing page</td><td><code>https://api.getbee.io/v1/page/html</code></td></tr><tr><td>Popup</td><td>Request HTML for a popup</td><td><code>https://api.getbee.io/v1/popup/html</code></td></tr><tr><td>AMP</td><td>Request HTML for AMP</td><td><code>https://api.getbee.io/v1/amp/html</code></td></tr></tbody></table>
 
 ## Resources
 
-### HTML
+The following section provides detailed information for each of the resources associated with each collection mentioned in the previous section.
 
-<mark style="color:green;">`POST`</mark> `https://api.getbee.io/v1/{collection}/html`&#x20;
+### HTML <a href="#html" id="html"></a>
 
-#### Headers
+**URL:** `https://api.getbee.io/v1/{collection}/html`
 
-| Name                                                   | Type    | Description                                              |
-| ------------------------------------------------------ | ------- | -------------------------------------------------------- |
-| page<mark style="color:red;">\*</mark>                 | object  | A Beefree template in JSON format                        |
-| beautifulHtmlEnabled<mark style="color:red;">\*</mark> | boolean | This flag will force the API to return uncompressed HTML |
+**HTTP Method:** `POST`
 
-{% tabs %}
-{% tab title="200: OK " %}
+**Description:** Transform JSON template to HTML.
 
-{% endtab %}
+#### Request Parameters <a href="#request-parameters" id="request-parameters"></a>
 
-{% tab title="400: Bad Request " %}
+The following table lists the parameters applicable for this request.
 
-{% endtab %}
-
-{% tab title="401: Unauthorized " %}
-
-{% endtab %}
-
-{% tab title="429: Too Many Requests " %}
-
-{% endtab %}
-
-{% tab title="500: Internal Server Error " %}
-
-{% endtab %}
-{% endtabs %}
+| Name                     | Type    | Description                                              |
+| ------------------------ | ------- | -------------------------------------------------------- |
+| `page`\*                 | object  | A Beefree template in JSON format                        |
+| `beautifulHtmlEnabled`\* | boolean | This flag will force the API to return uncompressed HTML |
 
 **Content-Type:** application/json
 
-**Example**
+#### **Example** <a href="#example" id="example"></a>
+
+The following JSON displays an example request.
 
 ```json
 
@@ -139,115 +98,146 @@ All API access is over HTTPS, and accessed from the following URL:
      description: ''
  }
 }
-
 ```
 
-**Response**
+#### **Response** <a href="#response" id="response"></a>
 
-application/html
+The following HTML displays an example response.
 
-The HTML message
+````html
+```html
+<!DOCTYPE html>
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
 
-### PDF
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]-->
+    <!--[if !mso]><!-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet"
+        type="text/css">
+    <!--<![endif]-->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-<mark style="color:green;">`POST`</mark> `https://api.getbee.io/v1/{collection}/pdf` &#x20;
+        body {
+            margin: 0;
+            padding: 0;
+        }
+```
+````
 
-#### Headers
+### Plain Text
 
-| Name                                   | Type   | Description                                                                                                                                                                                     |
-| -------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| html<mark style="color:red;">\*</mark> | String | A full HTML document                                                                                                                                                                            |
-| page\_size                             | String | <p>Accepted values: letter (default), A4, A3, full</p><p><strong>Full:</strong> a single page using 900px as page width. The page_orientation is always portrait when using this page size.</p> |
-| page\_orientation                      | String | Accepted values: landscape (default), portrait                                                                                                                                                  |
-| file\_type                             | String | Accepted values: PDF                                                                                                                                                                            |
+**Endpoint:** `/message/plain-text`
 
-{% tabs %}
-{% tab title="200: OK " %}
+**HTTP Method:** `POST`
 
-{% endtab %}
+**Description:** The endpoint accepts a JSON template and returns a plain text document.
 
-{% tab title="400: Bad Request " %}
+#### Request Parameters <a href="#request-parameters" id="request-parameters"></a>
 
-{% endtab %}
+`page` (JSON): The JSON template to convert to plain text.
 
-{% tab title="401: Unauthorized " %}
+#### Request Parameters <a href="#request-parameters" id="request-parameters"></a>
 
-{% endtab %}
+The following table lists the parameters for this endpoint.
 
-{% tab title="429: Too Many Requests " %}
+| Name | Type | Required | Description                                                                        |
+| ---- | ---- | -------- | ---------------------------------------------------------------------------------- |
+| page | JSON | Yes      | The template's JSON. This is the template used to create the plain text document.  |
 
-{% endtab %}
+#### Example Request <a href="#example-request" id="example-request"></a>
 
-{% tab title="500: Internal Server Error " %}
+The following section shows an example request:
 
-{% endtab %}
-{% endtabs %}
+```json
+{
+    "page": { },
+}
+```
+
+#### Example Response <a href="#example-response" id="example-response"></a>
+
+The following section shows an example response:
+
+```
+[BeeFree Logo](https://beefree.io/)
+*****************************
+Hello there!
+**Would you be interested in participating in a user research project with us?**
+The research will consist of a video call. It usually takes 30 to 45 minutes maximum... more plain text.
+```
+
+### PDF <a href="#pdf" id="pdf"></a>
+
+**URL:** `https://api.getbee.io/v1/{collection}/pdf`
+
+**Method:** `POST`
+
+**Description:** Transform HTML and PDF settings to a JSON object with a PDF url.
+
+#### Request Parameters <a href="#request-parameters" id="request-parameters"></a>
+
+The following table lists the parameters applicable for this request.
+
+| Name               | Data Type | Description                                                                                                                                                                                     |
+| ------------------ | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `html`\*           | String    | A full HTML document                                                                                                                                                                            |
+| `page_size`        | String    | <p>Accepted values: letter (default), A4, A3, full</p><p><strong>Full:</strong> a single page using 900px as page width. The page_orientation is always portrait when using this page size.</p> |
+| `page_orientation` | String    | Accepted values: landscape (default), portrait                                                                                                                                                  |
+| `file_type`        | String    | Accepted values: PDF                                                                                                                                                                            |
 
 **Content-Type:** application/json
 
-**Request**
+#### **Request** <a href="#request" id="request"></a>
+
+The following code sample shows an examples request with HTML and PDF settings.
 
 ```json
-
 {"html":"a","file_type":"pdf","page_size":"full","page_orientation":"portrait"}
-
 ```
 
-**Response**
+#### **Response** <a href="#response" id="response"></a>
 
-application/json
-
-A JSON string that will contain the URL of the temporary location of the PDF document.
-
-The file is available for 24 hours.
+The following code sample shows an examples response.
 
 ```json
-
-
 {"statusCode":200,"body":{"url":"https:\/\/pro-bee-beepro-pdf.s3.amazonaws.com\/public\/pdf\/87ElCDpHHk.pdf","filename":"87ElCDpHHk.pdf","page_size":"full","page_orientation":"portrait","content_type":"application\/pdf"}}
-
-
 ```
 
-### Image
+{% hint style="info" %}
+**Note:** The response is a JSON string that will contain the URL of the temporary location of the PDF document. The file is available for 24 hours.
+{% endhint %}
 
-<mark style="color:green;">`POST`</mark> `https://api.getbee.io/v1/{collection}/image` &#x20;
+### Image <a href="#image" id="image"></a>
 
-#### Headers
+**URL:** `https://api.getbee.io/v1/{collection}/image`
 
-| Name                                         | Type    | Description                                                                                                                                                                                                                                                                                                                                                                  |
-| -------------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| html<mark style="color:red;">\*</mark>       | String  | A Beefree HTML messag                                                                                                                                                                                                                                                                                                                                                        |
-| size                                         | String  | Use “size” instead of “width” and “height” when you only know the width and want the height automatically calculated. **Required** if width and height are not defined.                                                                                                                                                                                                      |
-| width                                        | Integer | The image width in pixels. **Required** if size is not defined.                                                                                                                                                                                                                                                                                                              |
-| height                                       | Integer | <p>The image height in pixels.<br>D<strong>efault</strong> applies a proportional value based on the given width, keeping the image aspect ratio.<br>When the value is not proportional to the given width either will occur: If it’s higher, the proportional value applies, or, if it’s lower, the image is cropped. <strong>Required</strong> if size is not defined.</p> |
-| file\_type<mark style="color:red;">\*</mark> | String  | Accepts jpg or png.                                                                                                                                                                                                                                                                                                                                                          |
+**HTTP Method:** `POST`
 
-{% tabs %}
-{% tab title="200: OK " %}
+**Description:** Transform HTML and image settings into an image.
 
-{% endtab %}
+#### Request Parameters <a href="#request-parameters" id="request-parameters"></a>
 
-{% tab title="400: Bad Request " %}
+The following table lists the headers applicable for this request.
 
-{% endtab %}
-
-{% tab title="401: Unauthorized " %}
-
-{% endtab %}
-
-{% tab title="429: Too Many Requests " %}
-
-{% endtab %}
-
-{% tab title="500: Internal Server Error " %}
-
-{% endtab %}
-{% endtabs %}
+| Name          | Type    | Description                                                                                                                                                                                                                                                                                                                           |
+| ------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `html`\*      | String  | A Beefree HTML messag                                                                                                                                                                                                                                                                                                                 |
+| `size`        | String  | Use “size” instead of “width” and “height” when you only know the width and want the height automatically calculated. **Required** if width and height are not defined.                                                                                                                                                               |
+| `width`       | Integer | The image width in pixels. **Required** if size is not defined.                                                                                                                                                                                                                                                                       |
+| `height`      | Integer | The image height in pixels. D**efault** applies a proportional value based on the given width, keeping the image aspect ratio. When the value is not proportional to the given width either will occur: If it’s higher, the proportional value applies, or, if it’s lower, the image is cropped. **Required** if size is not defined. |
+| `file_type`\* | String  | Accepts jpg or png.                                                                                                                                                                                                                                                                                                                   |
 
 **Content-Type:** application/json
 
-**Example**
+#### **Example Request** <a href="#example-request" id="example-request"></a>
+
+The following code sample shows an example response.
 
 ```json
 
@@ -257,60 +247,51 @@ The file is available for 24 hours.
     "height": 125,
     "file_type": "jpg"
 }
-
 ```
 
-**Response**
+#### **Example Response** <a href="#example-response" id="example-response"></a>
+
+The following image is an example response.
+
+![](https://docs.beefree.io/\~gitbook/image?url=https:%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FkDdzcsKD8qmgDgxlVZr8%252Fexample\_response.png%3Falt=media%26token=4882919f-52c6-40d3-b65d-e2a0959b246a\&width=768\&dpr=4\&quality=100\&sign=ea83a15a236a33920b9a59629385308fd7bda12c4c5054c9515afe59391fafe3)
 
 application/jpg
 
-The raw image data
+The response includes the raw image data.
 
-### Merge
+### Merge <a href="#merge" id="merge"></a>
 
-<mark style="color:green;">`POST`</mark> `https://api.getbee.io/v1/{collection}/merge`  &#x20;
+**URL:** `https://api.getbee.io/v1/{collection}/merge`
 
-#### Headers
+**HTTP Method:** `POST`
 
-| Name                                      | Type             | Description                                                                                                                                                                                |
-| ----------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| source<mark style="color:red;">\*</mark>  | Object           | A Beefree template in JSON format.                                                                                                                                                         |
-| replace<mark style="color:red;">\*</mark> | Array            | An array of objects that contain a JSON path and value to replace.                                                                                                                         |
-| value<mark style="color:red;">\*</mark>   | String \| Object | The value can be an object, such as a saved row. Or, it can be a string, such a hex color code. The value should be the same type as the value you want to match in your match expression. |
-| path<mark style="color:red;">\*</mark>    | String           | A JSON Path to the matching nodes in the source JSON.                                                                                                                                      |
+**Description:** Replace a Beefree template in JSON format.
 
-{% tabs %}
-{% tab title="200: OK " %}
+#### Request Parameters <a href="#request-parameters" id="request-parameters"></a>
 
-{% endtab %}
+The following table lists the request parameters.
 
-{% tab title="400: Bad Request " %}
-
-{% endtab %}
-
-{% tab title="401: Unauthorized " %}
-
-{% endtab %}
-
-{% tab title="429: Too Many Requests " %}
-
-{% endtab %}
-
-{% tab title="500: Internal Server Error " %}
-
-{% endtab %}
-{% endtabs %}
+| Name      | Type             | Description                                                                                                                                                                                |
+| --------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| source\*  | Object           | A Beefree template in JSON format.                                                                                                                                                         |
+| replace\* | Array            | An array of objects that contain a JSON path and value to replace.                                                                                                                         |
+| value\*   | String \| Object | The value can be an object, such as a saved row. Or, it can be a string, such a hex color code. The value should be the same type as the value you want to match in your match expression. |
+| path\*    | String           | A JSON Path to the matching nodes in the source JSON.                                                                                                                                      |
 
 **Content-Type:** application/json
 
-#### Replace Array
+#### Replace Array <a href="#replace-array" id="replace-array"></a>
+
+The following table lists the request parameters for the replace array and whether or not they are optional.
 
 | Parameters | Type             | Required or Optional | Description                                                                                                                                                                                |
 | ---------- | ---------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Value      | String \| Object | Required             | The value can be an object, such as a saved row. Or, it can be a string, such a hex color code. The value should be the same type as the value you want to match in your match expression. |
 | Path       | String           | Required             | A JSON Path to the matching nodes in the source JSON.                                                                                                                                      |
 
-**Example**
+#### **Example Request** <a href="#example-request" id="example-request"></a>
+
+The following code displays an example request of the "replace" array.
 
 ```json
 
@@ -327,18 +308,23 @@ The raw image data
   ],
   "source": { "page": { ... }  }
 }
-
 ```
 
-**Response**
+#### **Response** <a href="#response" id="response"></a>
 
 application/json
 
 The JSON object containing the following parameters:
 
-<table><thead><tr><th width="126">Parameter</th><th width="85">Type</th><th>Required or Optional</th><th>Description</th></tr></thead><tbody><tr><td><strong>json</strong></td><td>object</td><td>required</td><td>The updated Beefree template in JSON format. In the event of an error, the original source is returned.</td></tr><tr><td><strong>html</strong></td><td>string</td><td>required</td><td>The HTML message.</td></tr><tr><td><strong>warnings</strong></td><td>array</td><td>optional</td><td>An array of objects containing information about issues that occurred during the merge. If no warnings exist, then it is safe to save the updated JSON.</td></tr></tbody></table>
+| Parameter    | Type   | Required or Optional | Description                                                                                                                                             |
+| ------------ | ------ | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **json**     | object | required             | The updated Beefree template in JSON format. In the event of an error, the original source is returned.                                                 |
+| **html**     | string | required             | The HTML message.                                                                                                                                       |
+| **warnings** | array  | optional             | An array of objects containing information about issues that occurred during the merge. If no warnings exist, then it is safe to save the updated JSON. |
 
-**Example**
+#### **Example Response** <a href="#example-response" id="example-response"></a>
+
+The following code displays an example response.
 
 ```json
 
@@ -360,66 +346,50 @@ The JSON object containing the following parameters:
         }
     ]
 }
-
 ```
 
-### Index
+### Index <a href="#index" id="index"></a>
 
-<mark style="color:green;">`POST`</mark> `https://api.getbee.io/v1/{collection}/merge/index`
+**URL:** `https://api.getbee.io/v1/{collection}/merge/index`
 
-#### Headers
+**HTTP Method:** `POST`
 
-| Name                                     | Type   | Description                        |
-| ---------------------------------------- | ------ | ---------------------------------- |
-| source<mark style="color:red;">\*</mark> | object | A Beefree template in JSON format. |
+**Description:** Reference an array of metadata objects from a Beefree template in JSON format.
 
-{% tabs %}
-{% tab title="200: OK " %}
+#### Request Parameters <a href="#request-parameters" id="request-parameters"></a>
 
-{% endtab %}
+The following table lists the request parameters.
 
-{% tab title="400: Bad Request " %}
-
-{% endtab %}
-
-{% tab title="401: Unauthorized " %}
-
-{% endtab %}
-
-{% tab title="429: Too Many Requests " %}
-
-{% endtab %}
-
-{% tab title="422: Unprocessable Entity " %}
-
-{% endtab %}
-
-{% tab title="500: Internal Server Error " %}
-
-{% endtab %}
-{% endtabs %}
+| Name     | Type   | Description                        |
+| -------- | ------ | ---------------------------------- |
+| source\* | object | A Beefree template in JSON format. |
 
 **Content-Type:** application/json
 
-**Example**
+#### **Example** <a href="#example" id="example"></a>
+
+The following JSON shows an example request.
 
 ```json
 
 {
     "source": { "page": { ... }  }
 }
-
 ```
 
-**Response**
+#### **Response** <a href="#response" id="response"></a>
 
 application/json
 
 The JSON object containing the following parameters:
 
-<table><thead><tr><th width="123">Parameter</th><th width="80">Type</th><th width="184">Required or Optional</th><th>Description</th></tr></thead><tbody><tr><td><strong>rows</strong></td><td>array</td><td>required</td><td>An array of metadata objects containing row details, which can be saved in a database to create a reference (or relational table) to the rows associated with your template.</td></tr></tbody></table>
+| Parameter | Type  | Required or Optional | Description                                                                                                                                                                  |
+| --------- | ----- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **rows**  | array | required             | An array of metadata objects containing row details, which can be saved in a database to create a reference (or relational table) to the rows associated with your template. |
 
-**Example**
+#### **Example** <a href="#example-1" id="example-1"></a>
+
+The following JSON shows an example response.
 
 ```json
 
@@ -433,5 +403,214 @@ The JSON object containing the following parameters:
     "guid": "some unique value"
   }
 ]
+```
 
+### AI Collection
+
+The resources in the AI collection accept your template JSON and use generative AI to return text within a JSON object to you.
+
+### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
+
+Prior to getting started with the resources in this collection, ensure you have the following:
+
+* <mark style="background-color:purple;">Superpowers</mark> subscription or higher
+* <mark style="background-color:green;">OpenAI AddOn</mark> installed and configured in your Beefree Developer Console
+* Content Services <mark style="background-color:purple;">API key</mark>
+
+{% hint style="info" %}
+**Note:** OpenAI billing costs apply in addition to the Content Services API billing.
+{% endhint %}
+
+### Metadata (Preheader and Subject) <a href="#metadata-plain-text" id="metadata-plain-text"></a>
+
+`v1/ai/metadata`
+
+**HTTP Method:** `POST`
+
+**Description:** The endpoint accepts a JSON template and returns a JSON object with metadata (preheader and subject).
+
+#### Request Parameters <a href="#request-parameters" id="request-parameters"></a>
+
+The following table lists the parameters for this endpoint.
+
+| Name       | Type | Required | Description                                                                          |
+| ---------- | ---- | -------- | ------------------------------------------------------------------------------------ |
+| `template` | JSON | Yes      | The template's JSON. This is the template used to create the AI-generated metadata.  |
+| `options`  | JSON | No       | Optional settings that instruct the output.**\***                                    |
+
+{% hint style="info" %}
+**\*Note:** Reference the optional parameters for the `options` JSON in the following section.
+{% endhint %}
+
+#### Optional parameters <a href="#optional-parameters" id="optional-parameters"></a>
+
+The following table lists the optional parameters for making this request.
+
+| Name           | Type    | Description                                                                                                                                                                       |
+| -------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `toneOfVoice`  | string  | Use this parameter to define a tone of voice for the response output. For example, you can include words such "Formal", "Humorous", or "Business" to instruct the AI's response.  |
+| `instructions` | string  | Use this parameter to include extra instructions and fine tune the AI's response.                                                                                                 |
+| `reportUsage`  | boolean | Use this parameter to return the usage data from OpenAI. Set this boolean to true or false.                                                                                       |
+
+#### Example Request <a href="#example-request" id="example-request"></a>
+
+The following section shows an example request:
+
+```json
+{
+    "options": {
+        "toneOfVoice": "",
+        "instructions": "Try to use a pun.",
+        "reportUsage": true
+    },
+    "template": {
+        "page": {}
+    }
+}
+```
+
+#### Example Response <a href="#example-response" id="example-response"></a>
+
+The following section shows an example response with the preheader and subject metadata in the JSON object:
+
+```json
+{
+    "preheader": "Ready to Beefree a part of our user research project? Schedule your video call now!",
+    "subject": "Beefree SDK: Let's Pollinate Ideas Together! 🐝🌼",
+    "usage": {
+        "prompt_tokens": 417,
+        "completion_tokens": 48,
+        "total_tokens": 465
+    }
+}
+```
+
+### SMS <a href="#sms-plain-text" id="sms-plain-text"></a>
+
+`v1/ai/sms`
+
+**HTTP Method:** `POST`
+
+**Description:** The endpoint accepts a JSON template and returns a JSON object with the SMS text. Use this endpoint for summaries geared toward SMS.
+
+#### Request Parameters <a href="#request-parameters" id="request-parameters"></a>
+
+The following table lists the parameters for this endpoint.
+
+| Name       | Type | Required | Description                                                                          |
+| ---------- | ---- | -------- | ------------------------------------------------------------------------------------ |
+| `template` | JSON | Yes      | The template's JSON. This is the template used to create the AI-generated SMS text.  |
+| `options`  | JSON | No       | Optional settings that instruct the output.**\***                                    |
+
+{% hint style="info" %}
+**\*Note:** Reference the optional parameters for the `options` JSON in the following section.
+{% endhint %}
+
+#### Options parameters <a href="#options-parameters" id="options-parameters"></a>
+
+The following table lists the optional parameters for making this request.
+
+| Name           | Type    | Description                                                                                                                                                                       |
+| -------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `toneOfVoice`  | string  | Use this parameter to define a tone of voice for the response output. For example, you can include words such "Formal", "Humorous", or "Business" to instruct the AI's response.  |
+| `length`       | string  | Must be one of the following options: "Concise", "Standard", or "Detailed".                                                                                                       |
+| `instructions` | string  | Use this parameter to include extra instructions and fine tune the AI's response.                                                                                                 |
+| `reportUsage`  | boolean | Use this parameter to return the usage data from OpenAI. Set this boolean to true or false.                                                                                       |
+
+#### Example Request <a href="#example-request" id="example-request"></a>
+
+The following code sample shows an example request.
+
+```json
+{
+    "options": {
+        "toneOfVoice": "",
+        "length": "detailed",
+        "instructions": "Use hello instead of hi",
+        "reportUsage": true
+    },
+    "template": {
+        "page": {}
+    }
+}
+```
+
+#### Example Response <a href="#example-response" id="example-response"></a>
+
+The following code sample shows an example response.
+
+```json
+{
+    "sms": "Hello 🙂 Would you be interested in participating in a user research project with us? The survey will be conducted via video call, lasting a maximum of 30-45 minutes. Book an appointment here: calendly.com/beepro-product-team/beepro-interview?month=2022-06. We look forward to your response. Best regards, Dalila from the Product Team 💜",
+    "usage": {
+        "prompt_tokens": 484,
+        "completion_tokens": 102,
+        "total_tokens": 586
+    }
+}
+```
+
+### Summary
+
+`v1/ai/summary`
+
+**HTTP Method:** `POST`
+
+**Description:** The text endpoint accepts a JSON template and returns a JSON object with the summary text. This endpoint is for generating general summaries that can have multi-purpose use.
+
+#### Request Parameters <a href="#request-parameters" id="request-parameters"></a>
+
+The following table lists the parameters for this endpoint.
+
+| Name       | Type | Required | Description                                                                              |
+| ---------- | ---- | -------- | ---------------------------------------------------------------------------------------- |
+| `template` | JSON | Yes      | The template's JSON. This is the template used to create the AI-generated summary text.  |
+| `options`  | JSON | No       | Optional settings that instruct the output.**\***                                        |
+
+{% hint style="info" %}
+**\*Note:** Reference the optional parameters for the `options` JSON in the following section.
+{% endhint %}
+
+#### Options parameters <a href="#options-parameters" id="options-parameters"></a>
+
+The following table lists the optional parameters for making this request.
+
+| Name           | Type    | Description                                                                                                                                                                       |
+| -------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `toneOfVoice`  | string  | Use this parameter to define a tone of voice for the response output. For example, you can include words such "Formal", "Humorous", or "Business" to instruct the AI's response.  |
+| `length`       | string  | Must be one of the following options: "Concise", "Standard", or "Detailed".                                                                                                       |
+| `instructions` | string  | Use this parameter to return the usage data from OpenAI. Set this boolean to true or false.                                                                                       |
+| `reportUsage`  | boolean | Use this parameter to return the usage data from OpenAI. Set this boolean to true or false.                                                                                       |
+
+#### Example Request <a href="#example-request" id="example-request"></a>
+
+The following section shows an example request:
+
+```json
+{
+    "options": {
+        "toneOfVoice": "Formal",
+        "length": "concise",
+        "instructions": "include a call to action",
+        "reportUsage": true
+    },
+    "template": {
+        "page": {}
+    }
+}
+```
+
+#### Example Response <a href="#example-response" id="example-response"></a>
+
+The following section shows an example response:
+
+```json
+{
+    "summary": "Join us in a user research project to share your experience with BEE Pro. Schedule a 30-45 min video call to help us understand how BEE Pro fits into your workflow.",
+    "usage": {
+        "prompt_tokens": 431,
+        "completion_tokens": 42,
+        "total_tokens": 473
+    }
+}
 ```

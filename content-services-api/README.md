@@ -2,22 +2,4 @@
 
 Learn more about how to get started with the Content Services API in the following sections:
 
-{% content-ref url="csapi-overview.md" %}
-[csapi-overview.md](csapi-overview.md)
-{% endcontent-ref %}
-
-{% content-ref url="template-catalog-api.md" %}
-[template-catalog-api.md](template-catalog-api.md)
-{% endcontent-ref %}
-
-{% content-ref url="content-services-api-reference.md" %}
-[content-services-api-reference.md](content-services-api-reference.md)
-{% endcontent-ref %}
-
-{% content-ref url="faqs.md" %}
-[faqs.md](faqs.md)
-{% endcontent-ref %}
-
-{% content-ref url="brand-style-management.md" %}
-[brand-style-management.md](brand-style-management.md)
-{% endcontent-ref %}
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td><strong>CSAPI Overview:</strong> Learn about the services available through our Content Services API</td><td></td><td><a href="csapi-overview.md">csapi-overview.md</a></td></tr><tr><td></td><td><strong>Content Service API Reference:</strong> Explore our REST API collections and resources</td><td></td><td><a href="content-services-api-reference.md">content-services-api-reference.md</a></td></tr><tr><td><p></p><p><strong>Brand Style Management:</strong> Make template-wide design changes to existing templates quickly</p></td><td></td><td></td><td><a href="brand-style-management.md">brand-style-management.md</a></td></tr><tr><td><p></p><p><strong>FAQs:</strong> Reference answers to our mostly commonly asked questions</p></td><td></td><td></td><td><a href="faqs.md">faqs.md</a></td></tr></tbody></table>

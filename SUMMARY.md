@@ -100,7 +100,7 @@
   * [Content Services API Reference](content-services-api/content-services-api-reference.md)
   * [Brand Style Management](content-services-api/brand-style-management.md)
   * [FAQs](content-services-api/faqs.md)
-  * [Template Catalog API](content-services-api/template-catalog-api.md)
+* [Template Catalog API](template-catalog-api.md)
 * [Multi-Language Templates](multi-language-templates.md)
 * [Error Management](error-management/README.md)
   * [onWarning](error-management/onwarning.md)

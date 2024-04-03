@@ -8,7 +8,7 @@ Available for purchase with a **Core** plan or higher. Contact your account mana
 
 This documentation aims to guide you in creating a personalized template catalog for your SaaS applications. Leveraging our API, you can seamlessly integrate a diverse range of email and page templates, promoting enhanced user engagement while optimizing the design process within your platform.
 
-<figure><img src="../.gitbook/assets/image1 (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image1 (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Getting Started
 
@@ -16,7 +16,7 @@ This documentation aims to guide you in creating a personalized template catalog
 
 To start using the Template Catalog API, first activate your API key in the Beefree SDK Console. After activation, reach out to your dedicated Customer Success Manager (CSM) for further help and setup. Your CSM will guide you through the process and answer any questions you have.
 
-For additional information, you can refer to [Content Services API key configuration](content-services-api-reference.md).
+For additional information, you can refer to [Content Services API key configuration](content-services-api/content-services-api-reference.md).
 
 ### Activating the API
 

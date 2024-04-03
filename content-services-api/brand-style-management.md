@@ -32,7 +32,7 @@ Authorization: Bearer YOUR_API_KEY
 
 **Description:** Apply brand styles to a template, ensuring a consistent visual identity.
 
-Request Parameters:
+**Request Parameters:**
 
 * `styles` (JSON): The brand styles to apply to the template.
 * `template` (JSON): The JSON template to be updated with the brand styles.
