@@ -144,9 +144,9 @@ The following HTML displays an example response.
 
 The following table lists the parameters for this endpoint.
 
-| Name | Type | Required | Description                                                                        |
-| ---- | ---- | -------- | ---------------------------------------------------------------------------------- |
-| page | JSON | Yes      | The template's JSON. This is the template used to create the plain text document.  |
+| Name   | Type | Required | Description                                                                        |
+| ------ | ---- | -------- | ---------------------------------------------------------------------------------- |
+| `page` | JSON | Yes      | The template's JSON. This is the template used to create the plain text document.  |
 
 #### Example Request <a href="#example-request" id="example-request"></a>
 
@@ -438,9 +438,9 @@ The resources in the AI collection accept your template JSON and use generative 
 
 Prior to getting started with the resources in this collection, ensure you have the following:
 
-* <mark style="background-color:purple;">Superpowers</mark> subscription or higher
-* <mark style="background-color:green;">OpenAI AddOn</mark> installed and configured in your Beefree Developer Console
-* Content Services <mark style="background-color:purple;">API key</mark>
+* **Superpowers** subscription or higher
+* **OpenAI AddOn** installed and configured in your Beefree Developer Console
+* Content Services **API key**
 
 {% hint style="info" %}
 **Note:** OpenAI billing costs apply in addition to the Content Services API billing.
