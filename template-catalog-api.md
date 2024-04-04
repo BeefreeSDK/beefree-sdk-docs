@@ -4,13 +4,15 @@
 Available for purchase with a **Core** plan or higher. Contact your account manager to purchase this feature. If you do not currently have an account manager, please contact our sales team for further details.
 {% endhint %}
 
-## Access the Template Catalog via API
+## Overview of Template Catalog API
 
-This documentation aims to guide you in creating a personalized template catalog for your SaaS applications. Leveraging our API, you can seamlessly integrate a diverse range of email and page templates, promoting enhanced user engagement while optimizing the design process within your platform.
+In this Template Catalog Reference, you will learn more about how to a personalized template catalog for your SaaS applications. Through this API, you can integrate a diverse range of email and page templates, promoting enhanced user engagement while optimizing the design process within your platform.
 
 <figure><img src=".gitbook/assets/image1 (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Getting Started
+
+Learn more about how to get started with the Template Catalog API in this section.
 
 ### Access and Subscription
 
@@ -69,7 +71,9 @@ Therefore, we recommend not enforcing excessive automatic tries when you get an 
 
 The API is a read-only API. The only method is `GET`.
 
-The main status codes are:
+## HTTP Status Code Errors
+
+The main HTTP status code errors are:
 
 * `200 OK` - The request has succeeded. The client can read the result of the request in the body and the headers of the response.
 * `400 Bad Request` - The server could not understand the request due to invalid syntax.
@@ -79,6 +83,12 @@ The main status codes are:
 * `429 Too Many Requests` - The user has sent too many requests in a given amount of time which has led to throttling their request until the window resets.
 * `500 Internal Server Error` - The server has encountered a situation it doesn't know how to handle.
 * `503 Service Unavailable` - The server is not ready to handle the request. Common causes are a server that is down for maintenance or that is overloaded.
+
+## Headers
+
+The following table displays the headers you need to complete your API request.
+
+<table><thead><tr><th width="358">Key</th><th>Value</th></tr></thead><tbody><tr><td>Content-type</td><td>application/json</td></tr><tr><td>Authorization</td><td>Bearer{{key}}</td></tr></tbody></table>
 
 ## Fetch a list of all Templates
 
@@ -94,13 +104,7 @@ The response will encompass a ‘facets’ field, outlining the count of existin
 
 The response is paginated, presenting 20 items per page by default. The ‘pagesize’ request parameter enables control over the page size.
 
-## Headers
-
-The following table displays the headers you need to complete your API request.
-
-<table><thead><tr><th width="358">Key</th><th>Value</th></tr></thead><tbody><tr><td>Content-type</td><td>application/json</td></tr><tr><td>Authorization</td><td>Bearer{{key}}</td></tr></tbody></table>
-
-## Request Parameters
+### Request Parameters
 
 The following table displays a list of request parameters.
 
@@ -247,7 +251,7 @@ The response that you receive is paginated for ease of reading and navigation. I
 
 However, if you wish to adjust the number of items shown on each page, you can use the ‘pagesize’ request parameter.
 
-## Request Parameters
+### Request Parameters
 
 The following table displays request parameters.
 
@@ -339,7 +343,7 @@ The following code displays a sample response.
 
 The response will be paginated, with 200 items per page default for easy navigation. However, you can change this default by adjusting the ‘pagesize’ request parameter to suit your viewing preferences.
 
-## Request Parameters
+### Request Parameters
 
 The following table displays request parameters.
 
@@ -428,7 +432,7 @@ The following code displays a sample response.
 
 The response is paginated, with a standard display of 200 items per page. You can manipulate the ‘pagesize’ request parameter to control the number of items shown per page.
 
-## Request Parameters
+### Request Parameters
 
 The following table displays request parameters.
 
@@ -537,7 +541,7 @@ The following code displays a sample response.
 
 **Description:** Retrieve a full list of all the Tags in the catalog. Tags are keywords tied to templates, helping you find and sort templates based on certain themes or attributes.
 
-## Request Parameters
+### Request Parameters
 
 The following table displays request parameters.
 
@@ -579,22 +583,22 @@ The following code displays a sample response.
 ]
 ```
 
-## FAQs
+### FAQs
 
 Find answers to common queries related to the Template Catalog API, its features, and integration.
 
-### Do I need to pay extra for new templates?
+#### Do I need to pay extra for new templates?
 
 No, they are included in your subscription. The catalog will be updated with the latest trends at no extra charge.
 
-### How frequently are new templates available?
+#### How frequently are new templates available?
 
 We are committed to making fresh new templates available every quarter.
 
-### Where are the image and media assets stored?
+#### Where are the image and media assets stored?
 
 Storing the JSON Template source file is totally in your control, the media assets referenced inside the template are kept in the Beefree SDK S3 Bucket and provisioned using the our CDN.
 
-### Do the API calls made to the Template Catalog contribute to the total CSAPI count?
+#### Do the API calls made to the Template Catalog contribute to the total CSAPI count?
 
 No, API calls made to the Template Catalog do not contribute to the total CSAPI count.

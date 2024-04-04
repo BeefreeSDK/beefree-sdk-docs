@@ -144,9 +144,10 @@ The following HTML displays an example response.
 
 The following table lists the parameters for this endpoint.
 
-| Name   | Type | Required | Description                                                                        |
-| ------ | ---- | -------- | ---------------------------------------------------------------------------------- |
-| `page` | JSON | Yes      | The template's JSON. This is the template used to create the plain text document.  |
+| Name       | Type | Required | Description                                                                                                       |
+| ---------- | ---- | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| `page`     | JSON | Yes      | The template's JSON. This is the template used to create the plain text document.                                 |
+| `language` | JSON | Optional | For [multi-language templates](../multi-language-templates.md), any valid language code sets the output language. |
 
 #### Example Request <a href="#example-request" id="example-request"></a>
 
@@ -181,6 +182,7 @@ The following section shows an example request:
             ]
         },
         "description": ""
+    "language": "it-IT"
     }
 }
 ```
@@ -476,6 +478,7 @@ The following table lists the optional parameters for making this request.
 | `toneOfVoice`  | string  | Use this parameter to define a tone of voice for the response output. For example, you can include words such "Formal", "Humorous", or "Business" to instruct the AI's response.  |
 | `instructions` | string  | Use this parameter to include extra instructions and fine tune the AI's response.                                                                                                 |
 | `reportUsage`  | boolean | Use this parameter to return the usage data from OpenAI. Set this boolean to true or false.                                                                                       |
+| `language`     | string  | A Beefree SDK language code. [Multi-language templates](../multi-language-templates.md) only.                                                                                     |
 
 #### Example Request <a href="#example-request" id="example-request"></a>
 
@@ -486,7 +489,8 @@ The following section shows an example request:
     "options": {
         "toneOfVoice": "",
         "instructions": "Try to use a pun.",
-        "reportUsage": true
+        "reportUsage": true,
+        "language": "en-US"
     },
     "template": {
         "page": {}
@@ -541,6 +545,7 @@ The following table lists the optional parameters for making this request.
 | `length`       | string  | Must be one of the following options: "Concise", "Standard", or "Detailed".                                                                                                       |
 | `instructions` | string  | Use this parameter to include extra instructions and fine tune the AI's response.                                                                                                 |
 | `reportUsage`  | boolean | Use this parameter to return the usage data from OpenAI. Set this boolean to true or false.                                                                                       |
+| `language`     | string  | A Beefree SDK language code. [Multi-language templates](../multi-language-templates.md) only.                                                                                     |
 
 #### Example Request <a href="#example-request" id="example-request"></a>
 
@@ -552,7 +557,8 @@ The following code sample shows an example request.
         "toneOfVoice": "",
         "length": "detailed",
         "instructions": "Use hello instead of hi",
-        "reportUsage": true
+        "reportUsage": true,
+        "language": "en-US"
     },
     "template": {
         "page": {}
@@ -606,6 +612,7 @@ The following table lists the optional parameters for making this request.
 | `length`       | string  | Must be one of the following options: "Concise", "Standard", or "Detailed".                                                                                                       |
 | `instructions` | string  | Use this parameter to return the usage data from OpenAI. Set this boolean to true or false.                                                                                       |
 | `reportUsage`  | boolean | Use this parameter to return the usage data from OpenAI. Set this boolean to true or false.                                                                                       |
+| `language`     | string  | A Beefree SDK language code. [Multi-language templates](../multi-language-templates.md) only.                                                                                     |
 
 #### Example Request <a href="#example-request" id="example-request"></a>
 
@@ -617,7 +624,8 @@ The following section shows an example request:
         "toneOfVoice": "Formal",
         "length": "concise",
         "instructions": "include a call to action",
-        "reportUsage": true
+        "reportUsage": true,
+        "language": "en-US"
     },
     "template": {
         "page": {}
