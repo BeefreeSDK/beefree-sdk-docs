@@ -6,7 +6,7 @@ Available for purchase with a **Core** plan or higher. Contact your account mana
 
 ## Overview of Template Catalog API
 
-In this Template Catalog Reference, you will learn more about how to a personalized template catalog for your SaaS applications. Through this API, you can integrate a diverse range of email and page templates, promoting enhanced user engagement while optimizing the design process within your platform.
+In this Template Catalog Reference, you will learn more about a personalized template catalog for your SaaS applications. Through this API, you can integrate a diverse range of email and page templates, promoting enhanced user engagement while optimizing the design process within your platform.
 
 <figure><img src=".gitbook/assets/image1 (2).png" alt=""><figcaption></figcaption></figure>
 
