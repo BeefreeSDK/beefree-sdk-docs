@@ -182,7 +182,7 @@ The following section shows an example request:
             ]
         },
         "description": ""
-    "language": "it-IT"
+    "language": "en-US"
     }
 }
 ```
