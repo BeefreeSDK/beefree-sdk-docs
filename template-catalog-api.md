@@ -42,20 +42,6 @@ All API access is over HTTPS, and accessed from the following URL:
 | ----------------------------------------------------------------- |
 | `https://api.getbee.io/v1/catalog/templates/?{parameter}={value}` |
 
-### Parameters
-
-| Parameter          | Description                                             | Example        |
-| ------------------ | ------------------------------------------------------- | -------------- |
-| `search`           | List of terms to search, separated by comma             |                |
-| `category`         | Filter by category slug                                 | small-business |
-| `collection`       | Filter by collection slug                               | e-commerce     |
-| `designer`         | Filter by designer slug                                 |                |
-| `tag`              | Filter by tag name                                      |                |
-| `template_type`    | Filter by template\_type. Choices are “email” or “page” |                |
-| `pagesize`         | Set the item number per page                            | 20             |
-| `published_after`  | Filter by published\_at after given date                | 2022-01-01     |
-| `published_before` | Filter by published\_at before given date               | 2022-01-01     |
-
 ## API Features and Functionality
 
 Our Template Catalog API provides the following essential features to enable seamless integration into your application:&#x20;
