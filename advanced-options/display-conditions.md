@@ -6,7 +6,7 @@ This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/plug
 
 ## How they work <a href="#how-they-work" id="how-they-work"></a>
 
-Display conditions allow you to change the content that is shown to recipient of an email depending on who the recipient is.
+Display conditions allow you to change the content that is shown to a recipient of an email depending on who the recipient is.
 
 <figure><img src="../.gitbook/assets/display_conditions_row_example_children.png" alt=""><figcaption></figcaption></figure>
 
