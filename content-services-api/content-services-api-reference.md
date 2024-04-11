@@ -375,6 +375,163 @@ The following code displays an example response.
 }
 ```
 
+### Merge Rows <a href="#merge" id="merge"></a>
+
+**URL:** `https://api.getbee.io/v1/{collection}/merge-rows`
+
+**HTTP Method:** `POST`
+
+**Description:** The Merge Rows endpoint enables you to integrate custom fonts and resized images into your designs. It saves custom fonts within the template's JSON, ensuring the the correct font is displayed. It also handles image resizing, particularly when the image's initial template width is narrower than the saved row's destination template. To use this endpoint, send your template and rows in JSON format. You will receive a response with an updated template. The rows requiring an update are identified by their `rowIdentifier` values.
+
+#### Request Parameters <a href="#request-parameters" id="request-parameters"></a>
+
+The following table lists the request parameters.
+
+| Name                 | Type   | Description                                                                                                                                                                                                                                                                                                                                                                      |
+| -------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `rows`               | Array  | An array of Beefree rows in JSON format. The array accepts the following format: `rows: [{row1json}, {row2json}]`                                                                                                                                                                                                                                                                |
+| `template`           | JSON   | A Beefree template in JSON format.                                                                                                                                                                                                                                                                                                                                               |
+| `webFonts`           |        | This facilitates the addition of missing webfonts for messages associated with synced or saved rows. It allows you to provide a list of webfonts available in your host application to the editor. This information enables the editor to rectify missing webfonts during the merge process, ensuring consistent and accurate rendering of messages across synced or saved rows. |
+| `rowIdentifierLabel` | String | The label used for identifying the rows added to the metadata key usually is guid.                                                                                                                                                                                                                                                                                               |
+
+**Content-Type:** application/json
+
+#### **Example Request** <a href="#example-request" id="example-request"></a>
+
+The following code displays an example request.
+
+```json
+{
+  "rows": [
+    {
+      "columns": [
+        {
+          "grid-columns": 12,
+          "modules": []
+        }
+      ]
+    }
+  ],
+  "template": {
+    "page": {
+      "body": {
+        "container": {}
+      },
+      "content": {}
+    }
+  },
+  "webFonts": [
+    {
+      "fontFamily": "'Arvo', 'Courier New', Courier, monospace",
+      "name": "Arvo",
+      "url": "https://fonts.googleapis.com/css2?family=Arvo:wght@100;200;300;400;500;600;700;800;900"
+    }
+  ],
+  "rowIdentifierLabel": "guid"
+}
+```
+
+#### **Example Response** <a href="#example-response" id="example-response"></a>
+
+The following code displays an example response.
+
+```json
+{
+  "template": {
+    "page": {
+      "body": {
+        "container": {
+          "style": {
+            "background-color": "#ffffff"
+          }
+        },
+        "content": {
+          "description": "",
+          "rows": [
+            {
+              "columns": [
+                {
+                  "grid-columns": 12,
+                  "modules": [
+                    {
+                      "descriptor": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "title": ""
+  }
+}
+
+```
+
+{% hint style="info" %}
+When utilizing this feature, it's important to consider adding a handle to the metadata. This handle serves a crucial role in functions such as `onDeleteRow` and `onEditRow`. In our provided example, we use a handle named `guid`. However, users have the flexibility to choose their own handle name according to their preferences and requirements. When selecting a handle name, we recommend you choose something descriptive and meaningful for ease of identification and management within your workflow.
+{% endhint %}
+
+### Synced Rows <a href="#merge" id="merge"></a>
+
+**URL:** `https://api.getbee.io/v1/{collection}/synced-rows`
+
+**HTTP Method:** `POST`
+
+**Description:** Get a list of all the synced rows inside a template with their corresponding `rowIdentifier` values.
+
+#### Request Parameters <a href="#request-parameters" id="request-parameters"></a>
+
+The following table lists the request parameters.
+
+| Name                 | Type   | Description                                                                        |
+| -------------------- | ------ | ---------------------------------------------------------------------------------- |
+| `rowIdentifierLabel` | String | The label used for identifying the rows added to the metadata key usually is guid. |
+| `template`           | Array  | The JSON of a template.                                                            |
+
+**Content-Type:** application/json
+
+#### **Example Request** <a href="#example-request" id="example-request"></a>
+
+The following code displays an example request.
+
+```json
+{
+  "rowIdentifierLabel": "guid",
+  "template": {**The JSON of the Template**}
+}
+```
+
+#### **Example Response** <a href="#example-response" id="example-response"></a>
+
+The following code displays an example response.
+
+```json
+{
+	"syncedRows": [
+		{
+			"rowIndex": 0,
+			"rowIdentifier": "96b19ad9-268c-43a0-a4fb-a2b02635e9e6"
+		},
+		{
+			"rowIndex": 2,
+			"rowIdentifier": "96b19ad9-268c-43a0-a4fb-a2b02635e9e6"
+		}
+	]
+}
+```
+
+#### Response Elements <a href="#index" id="index"></a>
+
+The following table provides the name, type, and description for the response elements within the returned `syncedRows` array.
+
+| Name            | Type   | Description                                                                  |
+| --------------- | ------ | ---------------------------------------------------------------------------- |
+| `rowIndex`      | Number | The index of the row in the array of rows inside the Template.               |
+| `rowIdentifier` | String | The value of the `rowIdentifier` (guid in most cases) for that specific row. |
+
 ### Index <a href="#index" id="index"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/merge/index`
