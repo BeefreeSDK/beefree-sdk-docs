@@ -62,7 +62,7 @@ addOns:
         tokenLabel: 'tokens',
         isPromptDisabled: (tokenCounter >= tokensAvailable) ? true : false,
         isSuggestionsDisabled: false,
-        isUpsellEnabled: isUpsellEnabled,
+        isUpsellEnabled: true,
         metadataGeneration: true  // Enabled by default
     }
 }, ],
@@ -83,7 +83,7 @@ addOns: [{
         tokenLabel: 'tokens',
         isPromptDisabled: (tokenCounter >= tokensAvailable) ? true : false,
         isSuggestionsDisabled: false,
-        isUpsellEnabled: isUpsellEnabled,
+        isUpsellEnabled: true,
         metadataGeneration: false
     }
 }, ]

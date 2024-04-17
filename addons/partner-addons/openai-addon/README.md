@@ -26,13 +26,7 @@ Note: All settings are _optional_ and may be refreshed, in real-time, via the [c
 
 Currently, the following settings are supported:
 
-| Setting                   | Type    | Description                                                                                                                                                                                                                                                                                 |
-| ------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `tokensAvailable`         | number  | Display only value for the optional [Display Usage Widget](./): The total tokens available for the user to consume during the session. If provided, `tokensUsed` and `tokenLabel` are required.                                                                                             |
-| `tokensUsed`              | number  | Display only value for the optional [Display Usage Widget](./): The number of tokens that the addon user has consumed during the current session. If provided, `tokensAvailable` and `tokenLabel` are required.                                                                             |
-| `tokenLabel`              | string  | Display only value for the optional [Display Usage Widget](./): The API reports token usage, but the host app may refer to tokens as words or any other nomenclature that makes sense to its users. Required when providing usage limits via `tokensAvailable` and `tokensUsed` parameters. |
-| `isPromptDisabled`        | boolean | Set to true to lock the prompt. The chat interface will be disabled but allow previous answers to be applied.                                                                                                                                                                               |
-| `isSuggestionsDisabled`   | boolean | Set to true to hide the suggestions popup                                                                                                                                                                                                                                                   |
+<table><thead><tr><th>Setting</th><th width="249.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tokensAvailable</code></td><td>number</td><td>Display only value for the optional <a href="./">Display Usage Widget</a>: The total tokens available for the user to consume during the session. If provided, <code>tokensUsed</code> and <code>tokenLabel</code> are required.</td></tr><tr><td><code>tokensUsed</code></td><td>number</td><td>Display only value for the optional <a href="./">Display Usage Widget</a>: The number of tokens that the addon user has consumed during the current session. If provided, <code>tokensAvailable</code> and <code>tokenLabel</code> are required.</td></tr><tr><td><code>tokenLabel</code></td><td>string</td><td>Display only value for the optional <a href="./">Display Usage Widget</a>: The API reports token usage, but the host app may refer to tokens as words or any other nomenclature that makes sense to its users. Required when providing usage limits via <code>tokensAvailable</code> and <code>tokensUsed</code> parameters.</td></tr><tr><td><code>isPromptDisabled</code></td><td>boolean</td><td>Set to true to lock the prompt. The chat interface will be disabled but allow previous answers to be applied.</td></tr><tr><td><code>isSuggestionsDisabled</code>  </td><td>boolean</td><td>Set to true to hide the suggestions popup. Set this to <code>false</code> to disable the prompt presets. </td></tr><tr><td><code>isUpsellEnabled</code>  </td><td>boolean</td><td>A boolean that confirms whether or not the <a href="token-upselling.md">Token Upsell</a> feature is enabled.</td></tr><tr><td><code>metadataGeneration</code>  </td><td>boolean</td><td>A boolean that confirms whether or not the <a href="ai-generated-meta-tag-fields.md">AI-Generated Meta Tag fields feature</a> is enabled</td></tr></tbody></table>
 
 ### Example
 
@@ -50,6 +44,8 @@ const beeConfig = {
           tokenLabel: 'tokens',
           isPromptDisabled: false,
           isSuggestionsDisabled: false,
+          isUpsellEnabled: true,
+          metadataGeneration: true  // Enabled by default
         }
       },
     ],
