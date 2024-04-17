@@ -87,7 +87,7 @@
       * [Alternate Text Generation with AI](addons/partner-addons/azure-ai-vision-image-analysis/alternate-text-generation-with-ai.md)
       * [AI Alt Text Bulk Generation](addons/partner-addons/azure-ai-vision-image-analysis/ai-alt-text-bulk-generation.md)
     * [OpenAI AddOn](addons/partner-addons/openai-addon/README.md)
-      * [Open AI and Data Security](addons/partner-addons/openai-addon/open-ai-and-data-security.md)
+      * [OpenAI and Data Security](addons/partner-addons/openai-addon/open-ai-and-data-security.md)
       * [AI-Generated Meta Tag Fields](addons/partner-addons/openai-addon/ai-generated-meta-tag-fields.md)
       * [Token Upselling](addons/partner-addons/openai-addon/token-upselling.md)
   * [AddOns Configuration](addons/addons-configuration.md)
