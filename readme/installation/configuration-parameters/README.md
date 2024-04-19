@@ -12,12 +12,12 @@ The following code displays an example of a default configuration:
 
 {% code fullWidth="false" %}
 ```javascript
-beeConfig: {
+var beeConfig = {
     uid: 'CmsUserName', // [mandatory]
     container: 'bee-plugin-container', // [mandatory]
     autosave: 30, // [optional, default:false]
     language: 'en-US', // [optional, default:'en-US']
-    trackChanges: true or false, // [optional, default: false] 
+    trackChanges: true, // [optional, default: false] 
     specialLinks: specialLinks, // [optional, default:[]] 
     mergeTags: mergeTags, // [optional, default:[]]
     mergeContents: mergeContents, // [optional, default:[]]
@@ -27,8 +27,9 @@ beeConfig: {
     defaultForm : {}, // [optional, default: {}]
     roleHash : "", // [optional, default: ""]
     rowDisplayConditions : {}, // [optional, default: {}]
-    workspace: {  // [optional, default: {type : 'default'}]
+    workspace: { // [optional, default: {type : 'default'}]
         editSingleRow: false // [optional, default: false]},
+    },
     commenting: false, // [optional, default: false]}
     commentingThreadPreview: true, // [optional, default: true]}
     commentingNotifications: true, // [optional, default: true]}
@@ -41,9 +42,16 @@ beeConfig: {
     onAutoSave: function(jsonFile) { /* Implements function for auto save */ }, // [optional]
     onSend: function(htmlFile) { /* Implements function to send the message */ }, // [optional]
     onLoad: function(jsonFile) { /* Implements function to perform an action once the template is loaded */}, // [optional]
-    onError: function(errorMessage) { /* Implements function to handle error messages */ } // [optional]
-    onWarning: function(alertMessage) { /* Implements function to handle error messages */ } // [optional]
-}
+    onError: function(errorMessage) { /* Implements function to handle error messages */ }, // [optional]
+    onWarning: function(alertMessage) { /* Implements function to handle error messages */ }, // [optional]
+    translations: {
+        'bee-common-widget-bar': {
+            content: 'MODULES',
+        },
+        // additional translations...
+    },
+    // other properties...
+};
 ```
 {% endcode %}
 

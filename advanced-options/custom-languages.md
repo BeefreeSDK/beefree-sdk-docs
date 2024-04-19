@@ -21,19 +21,21 @@ var beeConfig = {
 
 ## Using a JSON Object
 
-The easiest method to override specific text labels is to pass a JSON object in your beeConfig, which contains the segments of the language file you want to override.
+The easiest method to override specific text labels is to [pass a JSON object in your `beeConfig`](../readme/installation/configuration-parameters/#passing-configurations-to-beefree-sdk), which contains the segments of the language file you want to override.
 
 ```javascript
-
 var beeConfig = {
-      uid: config.uid,
-      ...
-      translations: {
-         ...
-      }
-      ...
-}
-
+    uid: config.uid,
+    // additional configuration properties...
+    language: 'en-US',
+    translations: {
+        'bee-common-widget-bar': {
+            content: 'MODULES',
+        },
+        // additional translations...
+    },
+    // other properties...
+};
 ```
 
 ### **Example: overriding the Help icon label in the default toolbar**
