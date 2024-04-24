@@ -19,10 +19,10 @@ The Content Services API (CSAPI) – helps you achieve the following:
 * Outputting partial HTML that enables you to reuse code, increase consistency across your templates, and easily maintain your code.
 * Generating a thumbnail from the HTML, because thumbnails are always nice to have, for all sorts of reasons 🙂
 * Generating a PDF from the HTML, as your1 users may want to share or print an email or a page, and PDF is great for that.
-* Merging shared content ([saved rows](https://github.com/mailupinc/beefreeSDKdocs/blob/aca37d2e5be3ba072320a2b696ba6ed9e1c2979a/saved-rows)) into emails and pages that use it (e.g. update 30 emails that use the same footer).
-* Use [Brand Style Management](https://github.com/mailupinc/beefreeSDKdocs/blob/aca37d2e5be3ba072320a2b696ba6ed9e1c2979a/content-services-api/brand-style-management.md) to make template-wide design changes to existing templates quickly and easily.
-* Generate [plain text](https://github.com/mailupinc/beefreeSDKdocs/blob/aca37d2e5be3ba072320a2b696ba6ed9e1c2979a/content-services-api/content-services-api-reference.md#plain-text) versions of emails from JSON templates, ensuring emails look sharp and easy to read on any device.
-* [Leverage AI](https://github.com/mailupinc/beefreeSDKdocs/blob/aca37d2e5be3ba072320a2b696ba6ed9e1c2979a/content-services-api/content-services-api-reference.md#prerequisites) to generate SMS, Metadata (Preheader and Subject), or Summary text from JSON templates.
+* Merging shared content ([saved rows](../saved-rows/)) into emails and pages that use it (e.g. update 30 emails that use the same footer).
+* Use [Brand Style Management](brand-style-management.md) to make template-wide design changes to existing templates quickly and easily.
+* Generate [plain text](content-services-api-reference.md#plain-text) versions of emails from JSON templates, ensuring emails look sharp and easy to read on any device.
+* [Leverage AI](content-services-api-reference.md#ai-collection) to generate SMS, Metadata (Preheader and Subject), or Summary text from JSON templates.
 
 ### Getting the HTML from a message JSON <a href="#getting-the-html-from-a-message-json" id="getting-the-html-from-a-message-json"></a>
 
