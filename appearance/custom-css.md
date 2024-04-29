@@ -407,6 +407,14 @@ Content Area Alight
 | NA      | <ul><li><code>tgl-container</code></li><li><code>tgl-container--cs</code></li><li><code>item_1-2</code></li><li><code>widget__label</code></li><li><code>btn-group</code></li><li><code>number-selector</code></li><li><code>number-selector--cs</code></li><li><code>tgl_bgd</code></li><li><code>active</code></li><li><code>btn</code></li><li><code>multiToggle_option_content_computedStyle_align_0</code></li><li><code>multiToggle_option_content_computedStyle_align_1</code></li><li><code>btn-primary static-label</code></li><li><code>tgl-label</code></li></ul> | <p></p><ul><li><code>radiogroup--cs</code></li><li><code>radiogroup-button--cs</code></li><li><code>active--cs</code></li></ul> |
 {% endtab %}
 
+{% tab title="Columns" %}
+This section covers classnames for the column structure widget.
+
+| Sidebar Tab | Deprecated Classnames | New Classnames                                                                                                                                                                            |
+| ----------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Rows        | `PanelGroup_handle*`  | <ul><li><code>panel-group-dragging--cs</code></li><li><code>column-manager-delete--cs</code></li><li><code>column-manager-add--cs</code></li><li><code>panel-divider--cs</code></li></ul> |
+{% endtab %}
+
 {% tab title="Font Style" %}
 This section covers widget classnames for content in the sidebar, and lists the classnames for the following widgets:
 
@@ -422,9 +430,10 @@ This section covers widget classnames for content in the sidebar, and lists the 
 
 #### Configure Icon Collection
 
-| Content | Deprecated                                                                                                                                                                                                         | New Classnames                                  |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------- |
-| Social  | <ul><li><code>title_icon</code></li><li><code>icon-organizer__panel</code></li><li><code>panel__icon-preview-wrapper</code></li><li><code>panel__title</code></li><li><code>comp-tree-placeholder</code></li></ul> | <ul><li><code>panel__title--cs</code></li></ul> |
+| Content | Deprecated                                                                                                                                                                                                                                                                          | New Classnames                                                                                        |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Social  | <ul><li><code>item_1-2</code></li><li><code>widget__label</code></li><li><code>title_icon</code></li><li><code>icon-organizer__panel</code></li><li><code>panel__icon-preview-wrapper</code></li><li><code>panel__title</code></li><li><code>comp-tree-placeholder</code></li></ul> | <ul><li><code>social-collection-list--cs</code></li><li><code>panel__title--cs</code></li></ul>       |
+| Icons   | <ul><li><code>item_1-2</code></li><li><code>widget__label</code></li><li><code>icon-organizer__panel</code></li><li><code>panel__icon-preview-wrapper</code></li><li><code>panel__title</code></li><li><code>comp-tree-placeholder</code></li></ul>                                 | <p></p><ul><li><code>icons-collection-list--cs</code></li><li><code>panel__title--cs</code></li></ul> |
 {% endtab %}
 
 {% tab title="Input Text" %}
