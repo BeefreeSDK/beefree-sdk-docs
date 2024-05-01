@@ -77,7 +77,7 @@ redirects:
   mobile-design-mode: mobile-design-mode.md
   tracking-message-changes: tracking-message-changes.md
   message-services-api: content-services-api/csapi-overview.md
-  template-catalog-api: content-services-api/template-catalog-api.md
+  template-catalog-api: template-catalog-api.md
   message-services-api-reference: content-services-api/content-services-api-reference.md
   msapi-pricing-faqs: content-services-api/faqs.md
   multilanguage-templates: multi-language-templates.md
