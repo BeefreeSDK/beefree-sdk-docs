@@ -113,8 +113,15 @@ The `onChange` callback is triggered every time the builder tracks a change in t
 | **06** | Dynamic Content Block |
 | **07** | HTML Block            |
 | **08** | Video Block           |
+| **09** | Form                  |
+| **10** | Icons                 |
+| **11** | Menu                  |
 | **14** | Row                   |
 | **16** | Message               |
+| **18** | Spacer                |
+| **22** | Paragraph             |
+| **23** | List                  |
+| **26** | Table                 |
 
 ### Common Actions <a href="#common-actions" id="common-actions"></a>
 
