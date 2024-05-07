@@ -286,16 +286,41 @@ The following sample code defines a button element with various attributes.
 ```javascript
 
 resolve({
-  type: 'button',
-  value: {
-    label: 'Button',
-    href: 'https://beefree.io',
-    target: '_self',
-    color: 'pink',
-    'background-color': 'yellow',
-  },
-  mergeTags: [...],
-})
+  "type" : "mixed",
+  "value" : [
+    {
+      "type" : "button",
+      "value" : {
+        "label" : "Click here",
+        "font-family" : "inherit",
+        "font-size" : "14px",
+        "background-color" : "#7747FF",
+        "border-radius" : "4px",
+        "color" : "#81A07B",
+        "line-height" : "200%",
+        "padding-top" : "5px",
+        "padding-right" : "20px",
+        "padding-bottom" : "5px",
+        "padding-left" : "20px",
+        "width" : "80%",
+        "max-width" : "100%",
+        "direction" : "ltr",
+      }
+    }
+  ],
+  "mergeTags" : [
+    {
+      "name" : "First Name",
+      "value" : "@first_name",
+      "previewValue" : "First Name Preview"
+    },
+    {
+      "name" : "Address",
+      "value" : "@address",
+      "previewValue" : "Address Preview"
+    }
+  ]
+});
 
 ```
 
@@ -316,19 +341,33 @@ The following sample code defines a paragraph element with various attributes. T
 ```javascript
 
 resolve({
-  type: 'paragraph',
-  value: {
-    html: 'My text',
-    underline: true,
-    italic: true,
-    align: 'right',
-    size: '48',
-    bold: true,
-    color: 'pink',
-    linkColor: 'green',
-  },
-  mergeTags: [...],
-})
+  "type" : "mixed",
+  "value" : [
+    {
+      "type" : 'paragraph',
+      "value" : {
+        "html" : "<p>Hello @first_name,</p><p>Your address of @address was recently updated...</p>",
+        "underline" : true,
+        "italic" : true,
+        "bold" : true,
+        "color" : "pink",
+        "linkColor" : "green",
+      }
+    }
+  ],
+  "mergeTags" : [
+    {
+      "name" : "First Name",
+      "value" : "@first_name",
+      "previewValue" : "First Name Preview"
+    },
+    {
+      "name" : "Address",
+      "value" : "@address",
+      "previewValue" : "Address Preview"
+    }
+  ]
+});
 
 ```
 
