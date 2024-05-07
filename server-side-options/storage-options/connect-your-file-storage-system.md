@@ -154,7 +154,7 @@ The following code shows an example response for listing directories.
             "size": 0,
             "permissions": "ro",
             "item-count": 2,
-            "extra": []
+            "extra": {}, // if null, please use empty object
         },
         "items": [
             {
@@ -165,7 +165,7 @@ The following code shows an example response for listing directories.
                 "size": 0,
                 "permissions": "ro",
                 "item-count": 13,
-                "extra": []
+                "extra": {}, // if null, please use empty object
             },
             {
                 "mime-type": "application/directory",
@@ -175,7 +175,7 @@ The following code shows an example response for listing directories.
                 "size": 0,
                 "permissions": "rw",
                 "item-count": 3,
-                "extra": []
+                "extra": {}, // if null, please use empty object
             }
         ]
     }
@@ -311,7 +311,7 @@ The following code shows an example response for creating a new directory.
             "size": 0,
             "permissions": "rw",
             "item-count": 0,
-            "extra": []
+            "extra": {}, // if null, please use empty object
         }
     }
 }
@@ -389,7 +389,7 @@ The following code shows an example response for uploading a file.
             "permissions": "rw",
             "public-url": "https://resources-bucket.s3.amazonaws.com/1111-2222-333-444/my%20pic3.png",
             "thumbnail": "https://my-thumbnail-service.com/my%20pic3.png",
-            "extra": []
+            "extra": {}, // if null, please use empty object
         }
     }
 }
