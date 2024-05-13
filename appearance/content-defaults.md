@@ -512,7 +512,7 @@ menu: {
       }
     }
   ],
-  style: {
+  styles: {
     color: "#000000",
     linkColor: "#0068A5",
     fontSize: "14px",
