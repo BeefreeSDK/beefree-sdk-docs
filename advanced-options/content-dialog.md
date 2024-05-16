@@ -470,7 +470,7 @@ In the following code snippet, the properties perform the following tasks:
 
 ```
 
-## Display conditions <a href="#display-conditions" id="display-conditions"></a>
+## Display Conditions <a href="#display-conditions" id="display-conditions"></a>
 
 Display conditions allow you to control when specific content is shown based on predefined criteria. This section will cover how to configure display conditions in your application and common use cases.
 
