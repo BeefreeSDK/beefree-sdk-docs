@@ -161,7 +161,7 @@ Error management on the host application must call the reject function to unbloc
 
 ### **Examples**
 
-#### **Simple application of a link action**
+The following code snippet displays and example of applying a link action.
 
 ```javascript
 
@@ -182,13 +182,15 @@ contentDialog: {
 
 ```
 
-A very simple example of how to apply a Special link.
+The above code snippet is an example of how to apply a [Special link](content-dialog.md#special-links).
 
-When the user clicks on Add an Example Link, the URL http://www.example.com is applied to the selection (a button, an image or a text).
+When the user clicks on **Add an Example Link**, the URL <mark style="color:blue;">http://www.example.com</mark> is applied to the selection (a button, an image or a text).
 
 The waiting mode will not be perceived, and there is no cancel action.
 
 ### **Apply a link with a delay**
+
+The following code snippet displays and example of applying a link with a delay.
 
 ```javascript
 
@@ -211,12 +213,13 @@ contentDialog: {
 
 ```
 
-Same as the previous example, but the waiting mode will display for two seconds before applying the URL.
+The `setTimeout` function in the above code sample is used to delay the execution of the enclosed code. It delays the call to the `resolve` function by 2000 milliseconds, or 2 seconds. This means that after initiating the special link dialog process, the application will wait for 2 seconds before adding and displaying the specified special link with the label 'external special link' and the URL 'http://www.example.com'.
 
 ### **Opening a dialog UI element**
 
-```javascript
+The following code snippet displays and example of opening a dialog UI element.
 
+```javascript
 
 contentDialog: {
   specialLinks: {
@@ -228,7 +231,6 @@ contentDialog: {
     }
   },
 },
-
 
 ```
 
@@ -250,11 +252,45 @@ E.g., `Error getting content rowDisplayConditions, the item is malformed.`
 
 These errors will not trigger any visible notification in the UI.
 
-## **Configuration**
+## Merge Tags
 
-```javascript
+Merge tags allow you to dynamically insert values into your content, such as user information or other variables. This section will guide you on how to configure merge tags in your host application. See the following section for sample code on setting up merge tags in your content dialog configuration.
 
+### **Merge Tags Configuration**
 
+Take the following steps to configure [merge tags](content-dialog.md#merge-tags) in your application:
+
+1.  **Open your content dialog configuration file:**
+
+    Locate the file where you configure your application's content dialog.
+2.  **Add the `contentDialog` object:**
+
+    If it doesn't already exist, add the `contentDialog` object into your configuration file.
+3.  **Configure the `mergeTags` property:**
+
+    Inside the `contentDialog` object, insert the `mergeTags` property as shown below:
+
+    ```javascript
+    contentDialog: {
+        mergeTags: {
+            label: 'Apply dynamic syntax',
+            handler: function(resolve, reject) {
+                //your function goes here
+            }
+        },
+    },
+    ```
+4.  **Define the handler function:**
+
+    Within the `handler` function, write your logic to dynamically insert values into the content.
+5.  **Add a corresponding action in the text toolbar:**
+
+    Ensure that the text toolbar includes an action for the merge tag element, allowing users to apply dynamic syntax easily.
+6.  **Test your implementation:**
+
+    Validate that the merge tags are working correctly within the UI, ensuring that the dynamic values are properly inserted.
+
+<pre class="language-javascript"><code class="lang-javascript">
 contentDialog: {
 	mergeTags: {
 		label: 'Apply dynamic syntax',
@@ -263,14 +299,16 @@ contentDialog: {
 		}
 	},
 },
-
-```
+<strong>
+</strong></code></pre>
 
 You can add a new action, available in the text toolbar, and associated with the merge tag element:
 
 <figure><img src="../.gitbook/assets/3Screen-Shot-2018-01-23-at-17.10.43-1024x247.png" alt=""><figcaption></figcaption></figure>
 
-### **Most common use cases:**
+### **Most common use cases**
+
+A few of the most common use case for [merge tags](content-dialog.md#merge-tags) are the following:
 
 * Your application has a high number of placeholders and needs to provide a categorization or search form
 * Placeholder availability depends on options that the user can select while building the message
@@ -279,6 +317,8 @@ You can add a new action, available in the text toolbar, and associated with the
 
 ### **Value**
 
+The following code snippet defines an object with `name` and `value` parameters meant for handling placeholders in an application. The `name` parameter, although not immediately displayed, is useful for later reference if the user selection is saved and reloaded. The `value` parameter contains a text string with specific syntax. This is for inserting dynamic content. This setup is important for applications to manage many placeholders or custom text fields efficiently.
+
 ```javascript
 {
 	name: 'Placeholder name', // Will not be shown
@@ -286,11 +326,42 @@ You can add a new action, available in the text toolbar, and associated with the
 }
 ```
 
-_The name parameter may be later displayed if the user selection is saved and loaded in beeConfig on subsequent requests._
+{% hint style="info" %}
+**Important:** The name parameter may be later displayed if the user selection is saved and loaded in `beeConfig` on subsequent requests.
+{% endhint %}
 
-## Special links <a href="#special-links" id="special-links"></a>
+## Special Links <a href="#special-links" id="special-links"></a>
 
-### **Configuration**
+Special links are dynamic URLs embedded within emails to execute predefined actions, such as:
+
+* **Unsubscribing a recipient:** Allowing users to easily opt-out from mailing lists.
+* **Loading a Web version of an email:** Enabling recipients to view the email content in a browser.
+* **Sending the email to a friend:** Facilitating users to share the email with others.
+
+A few end user benefits of using special links are the following:
+
+* **User Convenience:** Simplifies adding recurring URLs and actions to designs, which increases efficiency throughout the design creation process.
+* **Consistent Implementation:** Ensures URLs and actions are consistent and accessible across various platforms.
+
+{% hint style="info" %}
+**Important:** Special links are inserted as code and treated as such during export, ensuring they populate in the HTML as-is. This prevents encoding issues and guarantees that the syntax is validated by the sending platform.&#x20;
+{% endhint %}
+
+By incorporating special links, end users benefit from the ease of managing various links efficiently across diverse platforms.
+
+This section will explain how to configure special links with steps and provide a code sample to help get you started.
+
+### **Special Links Configuration**
+
+Take the following steps to configure special links in your application:
+
+1. Define a `contentDialog` object within your configuration or settings file.
+2. Add a `specialLinks` property to the `contentDialog` object.
+3. Set the `label` property to the desired name for your link, for example, 'Search a post link'.
+4. Create a `handler` function within the `specialLinks` object where you will define the custom logic for handling the link.
+5. Ensure this `handler` function takes `resolve` and `reject` parameters to manage its behavior.
+
+The following code snippet provides an example of how you can configure special links.
 
 ```javascript
 
@@ -304,23 +375,29 @@ contentDialog: {
 },
 ```
 
-Links are applied to different contents, so, when you define a link dialog action, it will be displayed in:
-
-The text-toolbar, as happens with merge tags
+Links can be applied to different [content types](../server-side-options/content-options.md). When you define a link dialog action, it will be displayed in the text-toolbar, which is the same behavior for merge tags, as shown in the following image.
 
 <figure><img src="../.gitbook/assets/4Screen-Shot-2018-01-23-at-17.35.35-1024x245.png" alt=""><figcaption></figcaption></figure>
 
-An image or button action
+The following image shows an example action that applies to image or button content types.
 
 <figure><img src="../.gitbook/assets/5Screen-Shot-2018-01-23-at-17.37.40.png" alt=""><figcaption></figcaption></figure>
 
 ### **Most common use cases:**
+
+A few of the most common use case for [special links](content-dialog.md#special-links) are the following:
 
 * Apply links to products or news using a categories pattern, a search form, or a visual browser
 * Apply special parameters or configuration to certain links with a wizard or form
 * You want to display the same UI your users already know and use in your application
 
 ### **Value**
+
+In the following code sample, the parameters serve the following purposes:
+
+* **type**: Represents the type of link but will not be shown to the user directly.
+* **label**: Provides default text for the link if no specific text is selected.
+* **link**: Contains the URL that will be applied when creating the link, with the possibility of using placeholders.
 
 ```javascript
 {
@@ -330,11 +407,24 @@ An image or button action
 }
 ```
 
-_The type parameter may be lately displayed if the user selection is saved and loaded in `beeConfig` on later requests._
+{% hint style="info" %}
+**Important:** The type parameter will be displayed later if the user selection is saved and loaded in `beeConfig` during subsequent requests.
+{% endhint %}
 
-## Merge contents <a href="#merge-contents" id="merge-contents"></a>
+## Merge Contents <a href="#merge-contents" id="merge-contents"></a>
 
-### **Configuration**
+Merge contents is a feature that allows you to consolidate multiple content sources into a unified display. This section will cover how to configure this feature and its most common use cases.
+
+### **Merge Contents Configuration**
+
+1. Access the configuration file of your application.
+2. Locate the `contentDialog` object within the file.
+3. Add a `mergeContents` property to the `contentDialog` object.
+4. Inside the `mergeContents` property, set a `label` with the description you want to appear, such as 'Set up a new product recommendation'.
+5. Implement a `handler` function that will process your custom logic. This function should accept two parameters: `resolve` and `reject`.
+6. Insert your specific code inside the `handler` function where indicated.
+
+Your configuration should look like the following:
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>
 </strong><strong>contentDialog: {
@@ -348,19 +438,28 @@ _The type parameter may be lately displayed if the user selection is saved and l
 
 </code></pre>
 
-The content dialog adds a button to the merge content list:
+The content dialog adds a button to the merge content list as shown in the following image.
 
 <figure><img src="../.gitbook/assets/6Screen-Shot-2018-01-24-at-10.39.07.png" alt=""><figcaption></figcaption></figure>
 
-### **Most common use cases:**
+### **Most common use cases**
+
+A few of the most common use case for merge contents are the following:
 
 * Set up the content and/or layout for a product recommendation
 * Set up the content and/or layout for a dynamic advertising
 * Set up the content and/or layout for another type of targeted content
 
-Notice that, to display the Dynamic content tile in the contents panel, you must configure [mergeContents](smart-merge-tags.md) in [beeConfig](../readme/installation/configuration-parameters/) with at least one predefined item.
+{% hint style="info" %}
+**Important:** To display the Dynamic content tile in the contents panel, you must configure [mergeContents](smart-merge-tags.md) in [beeConfig](../readme/installation/configuration-parameters/) with at least one predefined item.
+{% endhint %}
 
 ### **Value**
+
+In the following code snippet, the properties perform the following tasks:
+
+* **name**: This property specifies the display name of the content. It appears in the editor UI and helps users identify the content item within the messaging interface.
+* **value**: This property represents the actual content that will be injected into the HTML output, shown in the preview. The `{{ syntax }}` is typically used for dynamic content insertion.
 
 ```javascript
 
@@ -373,18 +472,87 @@ Notice that, to display the Dynamic content tile in the contents panel, you must
 
 ## Display conditions <a href="#display-conditions" id="display-conditions"></a>
 
-### **Configuration**
+Display conditions allow you to control when specific content is shown based on predefined criteria. This section will cover how to configure display conditions in your application and common use cases.
 
-```javascript
-contentDialog: {
-	rowDisplayConditions: {
-		label: 'Open builder',
-        handler: function(resolve, reject) {
-			//your function goes here
-        }
+### **Display Conditions Configuration**
+
+To configure display conditions in your host application, take the following steps:
+
+1.  **Define the `contentDialog` Object**: Start by defining an object called `contentDialog` in your code. This object will hold the configuration for the display conditions.
+
+    ```javascript
+    contentDialog: {
+        // Configuration properties go here
     },
-},
-```
+    ```
+2.  **Add the `rowDisplayConditions` Property**: Within the `contentDialog` object, add a property named `rowDisplayConditions`. This property will specify the conditions under which a particular row is displayed.
+
+    ```javascript
+    contentDialog: {
+        rowDisplayConditions: {
+            // Properties for display conditions go here
+        },
+    },
+    ```
+3.  **Set the `label` Property**: Inside the `rowDisplayConditions` object, define a `label` property. This property sets the text label for the display condition. For example, to set the label as "Open builder":
+
+    ```javascript
+    contentDialog: {
+        rowDisplayConditions: {
+            label: 'Open builder',
+        },
+    },
+    ```
+4.  **Define the `handler` Function**: Add a `handler` property inside the `rowDisplayConditions` object. This property is a function that determines the logic for your display conditions. It accepts two parameters: `resolve` and `reject`, which are typically used for promise handling.
+
+    ```javascript
+    contentDialog: {
+        rowDisplayConditions: {
+            label: 'Open builder',
+            handler: function(resolve, reject) {
+                // Your function goes here
+            }
+        },
+    },
+    ```
+5.  **Implement the Display Logic**: Within the `handler` function, implement the logic to determine whether the row should be displayed. Use the `resolve` function to indicate the conditions are met, and the `reject` function to indicate they are not.
+
+    ```javascript
+    contentDialog: {
+        rowDisplayConditions: {
+            label: 'Open builder',
+            handler: function(resolve, reject) {
+                // Your custom logic to determine display conditions
+                if (/* condition */) {
+                    resolve();
+                } else {
+                    reject();
+                }
+            }
+        },
+    },
+    ```
+6.  **Complete the Configuration**: Make sure your configuration object is properly closed and integrated into your application. Ensure that all necessary conditions and logic are correctly defined within the `handler` function.
+
+    ```javascript
+    contentDialog: {
+        rowDisplayConditions: {
+            label: 'Open builder',
+            handler: function(resolve, reject) {
+                // Your custom logic to determine display conditions
+                if (/* condition */) {
+                    resolve();
+                } else {
+                    reject();
+                }
+            }
+        },
+    },
+    ```
+
+{% hint style="success" %}
+Customize the logic within the `handler` function to meet your specific needs.
+{% endhint %}
 
 A new button will be available in the display condition widget. In this example, the button says “Open builder”, which is the `label` shown in the JSON configuration file shown above.
 
@@ -392,10 +560,14 @@ A new button will be available in the display condition widget. In this example,
 
 ### **Most common use cases:**
 
+A few of the most common use case for display conditions are the following:
+
 * Display a condition builder or form to target a segment of recipients
 * Display a form to create a loop with the row dynamic contents, as product recommendations
 
 ### **Value**
+
+The following code snippet configures a display condition with a specific label, description, and delimiters that define the start and end of the condition block in the template. This will be shown in the editor UI and inserted around the selected row based on the specified conditions.
 
 ```javascript
 {
@@ -409,7 +581,9 @@ A new button will be available in the display condition widget. In this example,
 }
 ```
 
-_The type parameter may be later displayed if the user selection is saved and loaded in `beeConfig` on subsequent requests._
+{% hint style="info" %}
+**Important:** The type parameter may be later displayed if the user selection is saved and loaded in `beeConfig` on subsequent requests.
+{% endhint %}
 
 ### **An example**
 
@@ -429,9 +603,13 @@ Of course, it can be edited in the editor like any other _Display condition_, if
 
 Reference our [Advanced Permissions documentation](advanced-permissions.md#add-condition-and-edit-condition-buttons) to learn more about managing the visibility of the Add Condition and Edit Condition buttons.&#x20;
 
-## Custom rows <a href="#custom-rows" id="custom-rows"></a>
+## Custom Rows <a href="#custom-rows" id="custom-rows"></a>
 
-### **Configuration**
+Custom rows allow you to import products or news using various patterns, set up predefined content layouts, and create dynamic sections for recommendations, codes, and advertisements. This section will discuss how to configure custom rows in your host application.
+
+### **Custom Rows Configuration**
+
+The following code snippet displays an example of how to configure custom row.
 
 ```javascript
 contentDialog: {
@@ -448,13 +626,17 @@ The content dialog adds a new item, using your text label, in the Rows drop-down
 
 <figure><img src="../.gitbook/assets/11CustomRows_ContentDialog_01.jpeg" alt=""><figcaption></figcaption></figure>
 
-### **Most common use cases:**
+### **Most common use cases**
+
+A few of the most common use case for custom rows are the following:
 
 * Import a set of products or news, as custom rows, using a categories pattern, a search form, or a visual browser
 * Set up the row layout for a set of predefined contents
 * Set up rows with dynamic content to build dynamic sections that provide product recommendations, QR or bar codes, advertising content, etc.
 
 ### **Value**
+
+The following code snippet configures a custom row with a specific name and value. This will be shown in the editor UI in reference to a specific custom row based on the specified conditions.&#x20;
 
 ```javascript
 {
@@ -488,7 +670,11 @@ Usage example:
 
 ## Synced Rows
 
-### **Configuration**
+[Synced rows](../saved-rows/synced-rows.md) are rows that are used across multiple designs, ensuring consistency when updates to a row are made. This section will cover how to configure synced rows in your application.
+
+### **Synced Rows Configuration**
+
+The following code snippet displays an example of how to configure [synced rows](../saved-rows/synced-rows.md).
 
 ```javascript
 contentDialog: {
@@ -520,9 +706,13 @@ And here’s an example of what `notPermittedDescription` would look like:
 
 <figure><img src="../.gitbook/assets/15image2-300x171.png" alt=""><figcaption></figcaption></figure>
 
-## Save rows <a href="#save-rows" id="save-rows"></a>
+## Save Rows <a href="#save-rows" id="save-rows"></a>
 
-### **Configuration**
+**Save rows** refer to the functionality that allows users to save changes made to specific rows in a data table. This section will discuss how to configure the **Save rows** feature in your host application.
+
+### **Saved Rows Configuration**
+
+The following code snippet displays an example of how to configure [save rows](../saved-rows/).
 
 ```javascript
 contentDialog: {
@@ -546,15 +736,15 @@ The `args` object in the handler function returns to the host application metada
 
 ### **Value**
 
-```
+The following code snippet configures a save row with a specific name and category. This will be shown in the editor UI in reference to a specific saved row.
 
+```javascript
 
 {
     "name":"Row name", // Mandatory metadata
     "Category":"A row category" // If you provide category management for saved rows
     "...":"..." // You can add as metadata as your application needs
 }
-
 
 ```
 
@@ -570,7 +760,11 @@ The row name is the only required metadata and it’s displayed as the row title
 
 ## Forms <a href="#forms" id="forms"></a>
 
-### **Configuration**
+Forms are interactive elements that allow users to input and submit data. This section will discuss how to configure forms to meet specific requirements in your host application.
+
+### **Forms Configuration**
+
+The following code snippet displays an example of how to configure [forms](../form-block/).
 
 ```javascript
 manageForm: {
@@ -581,17 +775,21 @@ manageForm: {
 },
 ```
 
-If you want to have total control on the forms that a Beefree application displays and renders, you can use this _forms_ Content Dialog rather than passing a single form to the Beefree application.
+If you want to have total control on the forms that a Beefree SDK application displays and renders, you can use this _forms_ Content Dialog rather than passing a single form to the Beefree SDK application.
 
-The **forms** Content Dialog works the same way as the previous Content Dialog for the **saved rows –** but in this case, the `resolve` function should return the structure for the desired form.
+The [forms](../form-block/) Content Dialog works the same way as the previous Content Dialog for [save rows](content-dialog.md#save-rows) **–** but in this case, the `resolve` function should return the structure for the desired form.
 
 The `args` object in the handler function returns to the host application the form object already applied. With this information, the application can decide what to display to the user (e.g., edit the current form, suggest a similar form, etc.).
 
 To understand how this data is structured, refer to the [form structure page](../form-block/integrating-and-using-the-form-block/form-structure-and-parameters.md) on this website.
 
-## Custom attributes <a href="#custom-attributes" id="custom-attributes"></a>
+## Custom Attributes <a href="#custom-attributes" id="custom-attributes"></a>
 
-### **Configuration**
+Custom attributes are user-defined metadata that can be added to links and images within an editor. This section will discuss how to configure custom attributes in your host application.
+
+### **Custom Attributes Configuration**
+
+The following code snippet displays an example of how to configure [custom attributes](custom-attributes.md).
 
 ```javascript
         customAttribute: {
@@ -609,9 +807,13 @@ To understand how this data is structured, refer to the [form structure page](..
 
 If your end users need to apply custom attributes to the links and images in their content, you can completely customize the user experience and workflow for adding those attributes with a Content Dialog that will take over the editor’s UI. The dialog will need to return the attribute to apply.
 
-## Custom video <a href="#custom-video" id="custom-video"></a>
+## Custom Video <a href="#custom-video" id="custom-video"></a>
 
-### **Configuration**
+Custom video allows you to integrate and configure videos from custom sources other than standard platforms like YouTube and Vimeo. This section will discuss how to configure custom video for your host application.
+
+### **Custom Video Configuration**
+
+The following code snippet displays an example of how to configure custom video.
 
 ```javascript
 addVideo: {
