@@ -40,7 +40,6 @@ font:
 When working with files, mime types and groups, ensure you consider the following:
 
 * The default maximum file size you can upload is 20MB.
-* SDK subscribers can set custom upload limits on file size and type.
 * If you upload an image wider than 1920 pixels, when the image is uploaded or imported, it will be resized to fit within 1920px. This may cause issues with the image's appearance, including colors that change and GIFs that lose frames. Ensure your images are no wider than 1920px to avoid these issues.
 
 Learn more about [how to activate custom limitations for the File manager](../server-side-options/services-options.md#activate-custom-limitations-on-file-manager).
