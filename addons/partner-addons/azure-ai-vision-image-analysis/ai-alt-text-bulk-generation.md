@@ -30,7 +30,7 @@ If you do have a default value set, you can delete it one of the following ways:
 * Set the alt property as an empty string
 * Delete the line of code from your `defaultContents`
 
-The following code shows an example of the alt property within the `defaultContents`. In the scenario presented in the following code, we recommend deleting the Default alt value set within the alt property.
+The following code shows an example of the `alt` property within the `defaultContents`. In the scenario presented in the following code, we recommend deleting the Default `alt` value set within the `alt` property.
 
 ```javascript
 var beeConfig = {
@@ -47,7 +47,7 @@ var beeConfig = {
 };
 ```
 
-The following code shows an example of the alt property set as an empty string. This is how we recommend you set your code for this feature to work best.
+The following code shows an example of the `alt` property set as an empty string. This is how we recommend you set your code for this feature to work best.
 
 ```javascript
 var beeConfig = {
@@ -64,7 +64,7 @@ var beeConfig = {
 };
 ```
 
-**Note:** You can still use the defaultContents alt value and the AI-generated Alt text in Bulk at the same time. However, it will require the end user to delete the default alt text prior to using the AI-generation tool for that particular image module.
+**Note:** You can still use the `defaultContents` `alt` value and the AI-generated Alt text in Bulk at the same time. However, it will require the end user to delete the default alt text prior to using the AI-generation tool for that particular image module.
 
 ## Configuration Steps
 
@@ -72,7 +72,7 @@ To configure Bulk Alt Text Generation with AI for your application, take the Con
 
 ## Token Upselling Compatibility
 
-This feature is compatible with [Token Upselling](https://docs.beefree.io/beefree-sdk/addons/partner-addons/openai-addon/token-upselling). Through Token Upselling, you can configure your application to verify that end users have enough tokens to generate alt-text for multiple images at once.&#x20;
+AI Alt Text Generation in Bulk is compatible with [Token Upselling](https://docs.beefree.io/beefree-sdk/addons/partner-addons/openai-addon/token-upselling). Through Token Upselling, you can configure your application to verify that end users have enough tokens to generate alt-text for multiple images at once.&#x20;
 
 The type of images they can create alt-text for are the following:
 
