@@ -72,7 +72,7 @@ Take the following steps to configure Azure Computer Vision and successfully int
 
 For more information, visit the [Microsoft Azure Computer Vision documentation](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/quickstarts-sdk/image-analysis-client-library-40?tabs=visual-studio%2Clinux\&pivots=programming-language-rest-api).
 
-## Properties and Parameters <a href="#limit-the-usage" id="limit-the-usage"></a>
+## Properties and Parameters <a href="#properties-and-parameters" id="properties-and-parameters"></a>
 
 | Properties and Parameters             | Data Type | Example                                  | Description                                                                                                                                                     |
 | ------------------------------------- | --------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
