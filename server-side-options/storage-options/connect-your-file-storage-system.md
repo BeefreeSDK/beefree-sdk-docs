@@ -403,9 +403,10 @@ The FSP must decide how to manage this conflict:
 
 * Complete the upload using a different name (usually appending a suffix). In this case returned metadata must be coherent with the new file created;
 * Overwrite the old file with the new one;
-* Return an error;
 * Ask the user what to do;
+* Return an error;
 
+**Ask the user what to do**:  
 The FSP can ask the user what to do only when the `conflict_strategy` field is set to `ask`.
 In this case the FSP must return a `3400` error code to instruct the Builder to show a dialog to the user.
 
@@ -420,8 +421,8 @@ Example response:
 
 When the user clicks on the *keep* or *replace* buttons, a new upload request is sent to the FSP with the `conflict_strategy` field set to `keep` or `replace`.
 
-
-Any other error code, e.g., `3401`, will be considered as a failure and will be shown to the user with the usual toast.
+**Don't manage the filename conflict**:
+The FSP must return a `3401` error code to instruct the Builder to show a toast to the user, and now dialog to prompt the user.
 
 ## **Upload operation notes**
 
