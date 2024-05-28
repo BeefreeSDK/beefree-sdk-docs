@@ -19,7 +19,7 @@ Thanks to Mobile Design Mode, your customers can easily design responsive emails
 ```javascript
 
 bee.loadStageMode({
-  type: 'mobile',
+  mode: 'mobile',
   display: 'hide',
 })
 
@@ -30,7 +30,7 @@ You can also use the loadStageMode method to disable Mobile editing mode.
 ```javascript
 
 bee.loadStageMode({
-  type: 'global',
+  mode: 'global',
 })
 
 ```
