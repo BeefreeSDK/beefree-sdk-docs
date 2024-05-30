@@ -215,7 +215,13 @@ rowsConfiguration: {
 
 The `maxRowsDisplayed` parameter enables you to define the number of rows displayed under each user-created category in the application's sidebar, without affecting the "Empty" and "Default" categories. It directly influences the number of saved rows an end user sees when they click on a category in the sidebar.
 
-You can set the `maxRowsDisplayed` parameter in your [Beefree SDK configuration.](../readme/installation/configuration-parameters/#parameters)
+You can set the `maxRowsDisplayed` parameter in the `rowsConfiguration` object in the Beefree SDK Configuration as follows:
+
+```javascript
+rowsConfiguration: {
+  maxRowsDisplayed: 50
+}
+```
 
 ## Saved Rows Management <a href="#saved-rows-management" id="saved-rows-management"></a>
 
@@ -275,7 +281,8 @@ rowsConfiguration: {
         canDeleteSyncedRows: false,
       },
     }
-  ]
+  ],
+  maxRowsDisplayed: 50
 }
 
 ```
