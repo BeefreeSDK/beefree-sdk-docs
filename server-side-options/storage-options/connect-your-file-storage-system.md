@@ -46,7 +46,7 @@ In the event a request fails, the API returns the error codes described in the [
 
 ## Authentication <a href="#authentication" id="authentication"></a>
 
-Authentication is managed using Basic Authentication type. The Beefree SDK system’s resource server works as a proxy for FSP (File system provider) and consumes FSP API endpoints adding the following fields to HTTP Request Headers. Please note that  **the API must use HTTPS** to grant secure connections and safe data transfer.
+Authentication is managed using Basic Authentication type. The Beefree SDK system’s resource server works as a proxy for FSP (File system provider) and consumes FSP API endpoints adding the following fields to HTTP Request Headers. Please note that **the API must use HTTPS** to grant secure connections and safe data transfer.
 
 User information is segmented by [UID parameter](../../readme/installation/how-the-uid-parameter-works.md).
 
@@ -199,11 +199,11 @@ Some notes about resources access management in the previous example:
 
 ### Display the Move Icon
 
-The `can-move` property controls whether or not the move button is visible within the user interface (UI).&#x20;
+The `can-move` property controls whether or not the move button is visible within the user interface (UI).
 
 Take the following steps to display the move icon for file within the File manager:
 
-1. In the response of the listing endpoint, add a new field named `can-move` within the `extra` object for each file item.&#x20;
+1. In the response of the listing endpoint, add a new field named `can-move` within the `extra` object for each file item.
 2. The `can-move` field has a boolean value indicating whether the file can be moved. You can set this value to `true` or `false`.
 
 #### **Request**
@@ -221,7 +221,7 @@ X-BEE-Uid: 1111-2222-333-444
 
 #### **Response**
 
-The following code snippet shows an example of the `can-move` property set to  true.
+The following code snippet shows an example of the `can-move` property set to true.
 
 ```json
 {
@@ -243,18 +243,18 @@ The following code snippet shows an example of the `can-move` property set to  t
 
 The following table shows the response metadata and its corresponding type and description.
 
-| Metadata        | Type    | Description                                                                                                            |
-| --------------- | ------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `name`          | string  | File name.                                                                                                             |
-| `path`          | string  | File path.                                                                                                             |
-| `last-modified` | number  | The date that the file was last modified.                                                                              |
-| `permissions`   | string  | The permissions for the file.                                                                                          |
-| `mime-type`     | string  | The file mime type.                                                                                                    |
-| `size`          | number  | The size of the file.                                                                                                  |
-| `public-url`    | string  | The public-url to access the file.                                                                                     |
-| `thumbnail`     | string  | The thumbnail URL.                                                                                                     |
-| `extra`         | object  | The object that contains the `can-move` property to true or false.                                                     |
-| `can-move`      | boolean | A boolean key within the extra object that displays the move button on a file in the File manager when set to `true`.  |
+| Metadata        | Type    | Description                                                                                                           |
+| --------------- | ------- | --------------------------------------------------------------------------------------------------------------------- |
+| `name`          | string  | File name.                                                                                                            |
+| `path`          | string  | File path.                                                                                                            |
+| `last-modified` | number  | The date that the file was last modified.                                                                             |
+| `permissions`   | string  | The permissions for the file.                                                                                         |
+| `mime-type`     | string  | The file mime type.                                                                                                   |
+| `size`          | number  | The size of the file.                                                                                                 |
+| `public-url`    | string  | The public-url to access the file.                                                                                    |
+| `thumbnail`     | string  | The thumbnail URL.                                                                                                    |
+| `extra`         | object  | The object that contains the `can-move` property to true or false.                                                    |
+| `can-move`      | boolean | A boolean key within the extra object that displays the move button on a file in the File manager when set to `true`. |
 
 ## Listing for Move Dialog
 
@@ -276,7 +276,7 @@ X-BEE-fsp-flags: move
 
 The move dialog only shows folders. The `GET` request will return the full response, including the folders and the files. However, the response will only show items with `"mime-type": "application/directory"` . The File System Provider recognizes this call by the `x-bee-fsp-flags: move` header.
 
-For the move dialog to work effectively, it is important that you limit the size of the response. Ensure that the response to this request only contains folders and not any files.&#x20;
+For the move dialog to work effectively, it is important that you limit the size of the response. Ensure that the response to this request only contains folders and not any files.
 
 ## Create a new directory
 
@@ -396,19 +396,18 @@ The following code shows an example response for uploading a file.
 }
 ```
 
-#### **Managin file name conflict**
+## **Managing a File Name Conflict**
 
-An upload can have a name conflict with an existing file with the same name in the target folder.  
-The FSP must decide how to manage this conflict:  
+An upload can have a name conflict with an existing file with the same name in the target folder.\
+The FSP must decide how to manage this conflict:
 
 * Complete the upload using a different name (usually appending a suffix). In this case returned metadata must be coherent with the new file created;
 * Overwrite the old file with the new one;
 * Ask the user what to do;
 * Return an error;
 
-**Ask the user what to do**:  
-The FSP can ask the user what to do only when the `conflict_strategy` field is set to `ask`.
-In this case the FSP must return a `3400` error code to instruct the Builder to show a dialog to the user.
+**Ask the user what to do**:\
+The FSP can ask the user what to do only when the `conflict_strategy` field is set to `ask`. In this case the FSP must return a `3400` error code to instruct the Builder to show a dialog to the user.
 
 Example response:
 
@@ -419,10 +418,9 @@ Example response:
 }
 ```
 
-When the user clicks on the *keep* or *replace* buttons, a new upload request is sent to the FSP with the `conflict_strategy` field set to `keep` or `replace`.
+When the user clicks on the _keep_ or _replace_ buttons, a new upload request is sent to the FSP with the `conflict_strategy` field set to `keep` or `replace`.
 
-**Don't manage the filename conflict**:
-The FSP must return a `3401` error code to instruct the Builder to show a toast to the user, and now dialog to prompt the user.
+**Don't manage the filename conflict**: The FSP must return a `3401` error code to instruct the Builder to show a toast to the user, and now dialog to prompt the user.
 
 ## **Upload operation notes**
 
@@ -510,12 +508,12 @@ This is the response you will see in the event that a file was _not_ successfull
 }
 ```
 
-In the event a name conflict occurs, the File manager displays a dialog to the user. You have three options to select from to resolve this conflict using the `conflict_strategy` which is passed to the FSP.&#x20;
+In the event a name conflict occurs, the File manager displays a dialog to the user. You have three options to select from to resolve this conflict using the `conflict_strategy` which is passed to the FSP.
 
 These three conflict resolution options are the following:
 
 * cancel ( "conflict\_strategy": "" ): nothing happens
-* keep both ( "conflict\_strategy": "keep" ): move the file, in order to keep both files our implementation appends a suffix to the new one. For example, the pizza.jpg file will become pizza\_1.jpg ( \_2 , \_3 , ...)&#x20;
+* keep both ( "conflict\_strategy": "keep" ): move the file, in order to keep both files our implementation appends a suffix to the new one. For example, the pizza.jpg file will become pizza\_1.jpg ( \_2 , \_3 , ...)
 * replace ( "conflict\_strategy": "replace" ): move the file, it overwrites the old file with the new one
 
 {% hint style="info" %}
