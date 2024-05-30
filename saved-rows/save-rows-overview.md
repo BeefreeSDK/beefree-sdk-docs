@@ -211,6 +211,18 @@ rowsConfiguration: {
 
 ```
 
+## Setting a Category's Maximum Rows <a href="#saved-rows-management" id="saved-rows-management"></a>
+
+The `maxRowsDisplayed` parameter enables you to define the number of rows displayed under each user-created category in the application's sidebar, without affecting the "Empty" and "Default" categories. It directly influences the number of saved rows an end user sees when they click on a category in the sidebar.
+
+You can set the `maxRowsDisplayed` parameter in the `rowsConfiguration` object in the Beefree SDK Configuration as follows:
+
+```javascript
+rowsConfiguration: {
+  maxRowsDisplayed: 50
+}
+```
+
 ## Saved Rows Management <a href="#saved-rows-management" id="saved-rows-management"></a>
 
 Accessing, and organizing saved rows is now easier than ever with Saved Rows Management. With this feature, we’ve introduced a new action in the list of saved rows that your application can intercept to handle changes in this list itself. This means you can now delete, rename, or re-organize your saved rows, right inside the builder.
@@ -269,7 +281,8 @@ rowsConfiguration: {
         canDeleteSyncedRows: false,
       },
     }
-  ]
+  ],
+  maxRowsDisplayed: 50
 }
 
 ```

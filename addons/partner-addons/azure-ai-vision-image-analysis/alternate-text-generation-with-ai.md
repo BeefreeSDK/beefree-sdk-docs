@@ -72,56 +72,57 @@ Take the following steps to configure Azure Computer Vision and successfully int
 
 For more information, visit the [Microsoft Azure Computer Vision documentation](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/quickstarts-sdk/image-analysis-client-library-40?tabs=visual-studio%2Clinux\&pivots=programming-language-rest-api).
 
+## Properties and Parameters <a href="#properties-and-parameters" id="properties-and-parameters"></a>
+
+| Properties and Parameters             | Data Type | Example                                  | Description                                                                                                                                                     |
+| ------------------------------------- | --------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **handle**                            | String    | '`ai-alt-text`'                          | Represents the identifier for the specific add-on handling alt text generation.                                                                                 |
+| **infoMessage.detail.consumedImages** | Number    | 5                                        | Indicates the number of images processed by the bulk alt text generation call.                                                                                  |
+| **imagesCounter**                     | Number    | 10                                       | Keeps a running total of the number of images that have been processed for alt text generation.                                                                 |
+| **imagesAvailable**                   | Number    | 100                                      | Indicates the total number of images available for alt text generation based on the user's subscription or quota.                                               |
+| **isIconDisabled**                    | Boolean   | `true`                                   | Determines whether the icon for the add-on is disabled, based on whether the `imagesCounter` has reached the `imagesAvailable` limit. Default value is `false`. |
+| **isUpsellEnabled**                   | Boolean   | `true`                                   | Determines whether upsell options or notifications should be enabled for the user.                                                                              |
+| **refreshedUsageSettings**            | Object    | `{ addOns: [...] }`                      | Contains the updated configuration settings for the add-on, including the current usage metrics and state settings.                                             |
+| **bee.loadConfig**                    | Function  | `bee.loadConfig(refreshedUsageSettings)` | Responsible for reloading the configuration settings for the add-on to reflect the latest usage metrics and states.                                             |
+
 ## Limit the Usage <a href="#limit-the-usage" id="limit-the-usage"></a>
 
-After you complete the configuration, the Alternate Text Generation with AI tool will be available to your end users. At this point in the process, the tool is offered for free to your end users. If you’d like to limit the usage of the Alternate Text Generation with AI tool, follow these additional steps to configure usage limitations.
+After you complete the configuration, the Alternate Text Generation with AI tool will be available to your end users. At this point in the process, the tool is offered for free to your end users. Take the steps outlined in this section to limit the usage of this feature for your end users.
+
+The `onInfo` call in the following code snippet updates the usage limits for the Alternate Text Generation with AI feature. When AI-generated alternate text is used, the `infoMessage.detail.consumedImages` field indicates how many images were processed. This number is added to `imagesCounter`, which keeps track of the total images used so far. The backend processes images in bulk, so `imagesCounter` reflects the cumulative count of `consumedImages` from a single backend call. The refreshed settings ensure that the `isIconDisabled` property is updated if the image usage limit (`imagesAvailable`) is reached, and the settings are reloaded with `bee.loadConfig(refreshedUsageSettings)`.
+
+If you’d like to limit the usage of the Alternate Text Generation with AI tool, take the following steps to configure usage limitations.
 
 1. Implement the `onInfo` call
 
-Sample code onInfo call:
+Sample code `onInfo` call:
 
 ```javascript
 
-const beeConfig = {
-    uid: 'string',
-    ... 
-    onInfo: function (data) {
-
-        // Check information is addon
-       if (data.code === 1000) {
-
-        // Check which addon
-        const handle = data.detail.handle
-        if (handle === 'ai-alt-text') {
-          imagesCounter++
-          const refreshedUsageSettings = {
-            addOns: [
-              {
-                id: "ai-alt-text",
-                settings: {
-                  imagesAvailable: imagesAvailable,
-                  imagesUsed: imagesCounter,
-                }
-              },
-            ],
+else if (handle === 'ai-alt-text') {
+            imagesCounter += infoMessage.detail.consumedImages
+            const refreshedUsageSettings = {
+              addOns: [
+                {
+                  id: "ai-alt-text",
+                  settings: {
+                    imagesAvailable: imagesAvailable,
+                    imagesUsed: imagesCounter,
+                    isIconDisabled: (imagesCounter >= imagesAvailable) ? true : false,
+                    isUpsellEnabled: isUpsellEnabled,
+                  }
+                },
+              ],
+            }
+            // Reload Config
+            bee.loadConfig(refreshedUsageSettings)
           }
-          // Reload Config
-          bee.loadConfig(refreshedUsageSettings)
-        }
-      }
-    },
-    ...
-}
 
 ```
 
-2. Confirm the AddOn handle is “ai-alt-text”
+2. Confirm the AddOn handle is `ai-alt-text`
 
-{% hint style="info" %}
-**IMPORTANT:** You consume one image for each request.
-{% endhint %}
-
-The following sample code shows imagesCounter and imagesAvailable, which determine how many images you have used, and the image limit the host application setup for users, respectively.
+The following sample code shows `imagesCounter` and `imagesAvailable`, which determine how many images you have used, and the image limit the host application setup for users, respectively.
 
 ```javascript
 
@@ -130,7 +131,7 @@ let imagesAvailable = 5
 
 ```
 
-**Note:** In this example, the end user can only make five requests in total, after the fifth request, the end user will no longer be able to generate alternate text. The number five is defined in the configuration and can be customized. For example, if imagesAvailable is set ten, the end user will be able to perform ten requests.
+**Note:** In this example, the end user can only make five requests in total, after the fifth request, the end user will no longer be able to generate alternate text. The number five is defined in the configuration and can be customized. For example, if `imagesAvailable` is set ten, the end user will be able to perform ten requests.
 
 3. In the AddOn settings, `isIconDisabled` is configured to automatically disable the Alternate Text Generation with AI feature when the counter reaches zero. However, through the [Token Upselling](../openai-addon/token-upselling.md) notification banner, application end users will have the opportunity to purchase more images and regain access to the feature.&#x20;
 
@@ -139,7 +140,7 @@ let imagesAvailable = 5
   // Check which addon
         const handle = data.detail.handle
         if (handle === 'ai-alt-text') {
-          imagesCounter++
+          imagesCounter += infoMessage.detail.consumedImages || 1
           const refreshedUsageSettings = {
             addOns: [
               {
@@ -147,10 +148,14 @@ let imagesAvailable = 5
                 settings: {
                   imagesAvailable: imagesAvailable,
                   imagesUsed: imagesCounter,
+                  isIconDisabled: imagesCounter >= imagesAvailable,
+                  isUpsellEnabled: isUpsellEnabled,
                 }
               },
             ],
           }
+          bee.loadConfig(refreshedUsageSettings)
+        }
 
 ```
 
@@ -158,60 +163,56 @@ let imagesAvailable = 5
 
 To display the widget usage, take the following steps:&#x20;
 
-1. The call looks for imagesAvailable value and ImagesUsed value
-2. To activate the display usage widget, provide the usage data via the addon settings.  Since the editor doesn’t track usage, you’ll need to refresh the values via the bee.loadConfig method to keep the display widget data current
+1. The call looks for `imagesAvailable` value and `imagesUsed` value
+2. To activate the display usage widget, provide the usage data via the AddOn settings.  Since the editor doesn’t track usage, you’ll need to refresh the values via the `bee.loadConfig` method to keep the display widget data current
 
 ```javascript
-
 let imagesCounter = 0
 let imagesAvailable = 1000
+let isUpsellEnabled = true
 
 const beeConfig = {
-    uid: 'string',
-    ...
-    // Initial AddOn configuration
-    addOns: [
-      {
-        id: "ai-alt-text",
-        settings: {
-          imagesAvailable: imagesAvailable,
-          imagesUsed: imagesCounter
-        }
-      },
-    ],
-    ...
-    // Monitor for information
-    onInfo: function (data) {
-
-      // Check information is addon
-      if (data.code === 1000) {
-
-        // Check which addon
-        const handle = data.detail.handle
-        if (handle === 'ai-alt-text') {
-          imagesCounter++
-          const refreshedUsageSettings = {
-            addOns: [
-              {
-                id: "ai-alt-text",
-                settings: {
-                  imagesAvailable: imagesAvailable,
-                  imagesUsed: imagesCounter,
-                }
-              },
-            ],
-          }
-          // Reload Config
-          bee.loadConfig(refreshedUsageSettings)
-        }
+  uid: 'string',
+  ...
+  addOns: [
+    {
+      id: "ai-alt-text",
+      settings: {
+        imagesAvailable: imagesAvailable,
+        imagesUsed: imagesCounter,
+        isIconDisabled: false,
+        isUpsellEnabled: isUpsellEnabled,
       }
     },
+  ],
+  ...
+  onInfo: function (data) {
+    if (data.code === 1000) {
+      const handle = data.detail.handle
+      
+      if (handle === 'ai-alt-text') {
+        imagesCounter += data.detail.consumedImages
+        const refreshedUsageSettings = {
+          addOns: [
+            {
+              id: "ai-alt-text",
+              settings: {
+                imagesAvailable: imagesAvailable,
+                imagesUsed: imagesCounter,
+                isIconDisabled: (imagesCounter >= imagesAvailable),
+                isUpsellEnabled: isUpsellEnabled,
+              }
+            },
+          ],
+        }
+        bee.loadConfig(refreshedUsageSettings)
+      }
+    }
+  },
 }
-
-
 ```
 
-**Note:** If either of the settings imagesAvailable or imagesUsed are not sent, the application will not show the consumption.
+**Note:** If either of the settings `imagesAvailable` or `imagesUsed` are not sent, the application will not show the consumption.
 
 ## Advanced Permissions <a href="#advanced-permissions" id="advanced-permissions"></a>
 
@@ -249,7 +250,7 @@ Image 2.0 displays an example of the AI wand icon when the feature is active.
 
 To disable the AddOn completely for an end user, perform the following:
 
-1. Set the `enabled` field to false
+1. Set the `enabled` field to `false`
 
 ```javascript
 

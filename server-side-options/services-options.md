@@ -155,4 +155,4 @@ In this section, you can activate **restrictions for the file manager**:
 
 Please note that the first option will not ask for file extensions, but will instead present file categories such as **image**, **video**, **text**, etc. We have mapped these categories to the most used MIME types that can be referenced in HTML documents.
 
-Learn more about [Mime Types and Groups](../file-manager-application-overview/file-extensions-and-groups.md) for custom limitations on File manager.
+Learn more about [Mime Types and Groups](../file-manager-application-overview/mime-types-and-groups.md) for custom limitations on File manager.
