@@ -367,7 +367,8 @@ X-BEE-Uid: 1111-2222-333-444
 Content-Type: application/json
  
 {
-  "source": "http://www.remotehost.com/remotepic.png"
+  "source": "http://www.remotehost.com/remotepic.png",
+  "conflict_strategy": "keep"
 }
 
 ```
@@ -395,17 +396,40 @@ The following code shows an example response for uploading a file.
 }
 ```
 
+#### **Managin file name conflict**
+
+An upload can have a name conflict with an existing file with the same name in the target folder.  
+The FSP must decide how to manage this conflict:  
+
+* Complete the upload using a different name (usually appending a suffix). In this case returned metadata must be coherent with the new file created;
+* Overwrite the old file with the new one;
+* Ask the user what to do;
+* Return an error;
+
+**Ask the user what to do**:  
+The FSP can ask the user what to do only when the `conflict_strategy` field is set to `ask`.
+In this case the FSP must return a `3400` error code to instruct the Builder to show a dialog to the user.
+
+Example response:
+
+```json
+{
+  "code": 3400,
+  "message": "Resource Already Present"
+}
+```
+
+When the user clicks on the *keep* or *replace* buttons, a new upload request is sent to the FSP with the `conflict_strategy` field set to `keep` or `replace`.
+
+**Don't manage the filename conflict**:
+The FSP must return a `3401` error code to instruct the Builder to show a toast to the user, and now dialog to prompt the user.
+
 ## **Upload operation notes**
 
-* in order for the upload file operation to succeed, the **containing** directory **must** exist
-* if the uploaded file already exists, it’s in charge of FSP API do decide if:
-  * silently overwrite old file with the new one;
-  * create a new file with a different name, in this case returned metadata must be coherent with the new file created;
-  * return a 403 FORBIDDEN error;
-* uploads are proxied by Beefree’s resource APIs, which are in charge of enforcing the maximum file size (20 Mb) and the maximum image size.
+* uploads are proxied by Beefree’s resource APIs, which are in charge of enforcing the maximum file size (configured by the Console)
 * uploads from stage will be POSTed to “/editor\_images/{filename}”
 * uploads from page builder favicons will be POSTed to “/favicon\_images/{filename}”
-* the name of files uploaded from stage will match the following regular expression: \[ a-zA-Z0-9.\_- \\(\\)]+
+* uploads from the image editor will be POSTed to “/editor\_images/{filename}”, filename will be an UUID
 
 ## Deleting a file
 
