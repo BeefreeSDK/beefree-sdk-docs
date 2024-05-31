@@ -27,6 +27,7 @@ var beeConfig = {
     defaultForm : {}, // [optional, default: {}]
     roleHash : "", // [optional, default: ""]
     rowDisplayConditions : {}, // [optional, default: {}]
+    rowsConfiguration: {},
     workspace: { // [optional, default: {type : 'default'}]
         editSingleRow: false // [optional, default: false]},
     },
