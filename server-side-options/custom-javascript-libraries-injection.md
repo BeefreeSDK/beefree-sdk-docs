@@ -6,6 +6,10 @@ description: >-
 
 # Custom JavaScript Libraries Injection
 
+{% hint style="info" %}
+This feature is available on the [Beefree SDK Enterprise plan](https://developers.beefree.io/pricing-plans).
+{% endhint %}
+
 ## Custom JavaScript
 
 Enterprise customers can request to inject external JavaScript libraries, like FullStory or Heap, into Beefree SDK when the integration is initialized as part of the [server-side configuration](../readme/installation/).&#x20;
