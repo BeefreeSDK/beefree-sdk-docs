@@ -524,8 +524,20 @@ The FSP API uses the trailing slash (/) on the resource path to understand if th
 For example, if the FSP API receives a `GET` request for `/sample.jpg` it will return `sample.jpg` file metadata, whereas if it receives a GET request for `/sample.jpg/` it will return a list of the content located in the `sample.jpg` directory.
 {% endhint %}
 
+## Status codes <a href="#status-codes" id="status-codes"></a>
 
-## Status codes and Error codes <a href="#status-codes" id="status-codes"></a><a href="#error-codes" id="error-codes"></a>
+The FSP (File system provider) API uses standard HTTP status codes to manage success and error responses. Status codes include:
+
+| Action            | On success    | On error                  | On failure                                                                                                                          |
+| ----------------- | ------------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| List directory    | `200 OK`      | `503 Service unavailable` | <p><code>401 Unauthorized</code><br><code>404 Not Found</code></p>                                                                  |
+| Create directory  | `201 Created` | `503 Service unavailable` | <p><code>401 Unauthorized</code><br><code>403 Forbidden</code><br>(parent is read-only or non-existent; new dir already exists)</p> |
+| Delete directory  | `200 OK`      | `503 Service unavailable` | <p><code>401 Unauthorized</code><br><code>403 Forbidden</code>(if parent is read-only)<br><code>404 Not Found</code></p>            |
+| Get file metadata | `200 OK`      | `503 Service unavailable` | <p><code>401 Unauthorized</code><br><code>404 Not Found</code></p>                                                                  |
+| Upload file       | `201 Created` | `503 Service unavailable` | <p><code>401 Unauthorized</code><br><code>403 Forbidden</code>(if parent is read-only or non-existent)</p>                          |
+| Delete file       | `200 OK`      | `503 Service unavailable` | <p><code>401 Unauthorized</code><br><code>403 Forbidden</code>(if parent is read-only)<br><code>404 Not Found</code></p>            |
+
+## Error codes <a href="#error-codes" id="error-codes"></a>
 
 In case of errors, the API returns a JSON object structured like this:
 
