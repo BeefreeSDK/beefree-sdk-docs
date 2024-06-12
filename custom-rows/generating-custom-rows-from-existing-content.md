@@ -99,7 +99,7 @@ The following is an example of four different row objects:
 
 ```
 
-## Simplified Row JSON Schema <a href="#general-row-parameters" id="general-row-parameters"></a>
+## Simplified Row JSON Schema <a href="#simplified-row-json-schema" id="simplified-row-json-schema"></a>
 
 The updated Beefree SDK simplified row schema provides more flexibility for creating Custom Addons and Rows, enhancing control over permissions to ensure critical content remains unchanged by end users. Synchronization of data between the row's content and metadata and your application allows dynamic responses to user changes, eliminating the need to restart when reopening [content dialogs](../advanced-options/content-dialog.md). Visit the [Row Simplified Schema section](../addons/custom-addons/addon-development.md#row-simplified-schema) of the [AddOn Development page](../addons/custom-addons/addon-development.md) to learn more about the benefits of this feature and how to use them.&#x20;
 
