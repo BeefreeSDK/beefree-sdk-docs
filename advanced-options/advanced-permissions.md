@@ -102,6 +102,14 @@ beeConfig: {
       contentBorder: { ... },
       roundedCorners: { ... },
       verticalAlign: { ... },
+       columnsSpacing: {
+        show: true,
+        locked: false
+      },
+      columnsBorderRadius: {
+        show: true,
+        locked: false
+      }
   }
 }
 
@@ -287,9 +295,26 @@ rows: {
         show: true,
         locked: false,
     },
+    columnsSpacing: {
+        show: true,
+        locked: false
+    },
+    columnsBorderRadius: {
+        show: true,
+        locked: false
+    }
 }
 
 ```
+
+#### Row parameters
+
+The following table displays the row parameters and their corresponding data types and descriptions.
+
+| Parameter             | Data Type | Example | Description                                                                            |
+| --------------------- | --------- | ------- | -------------------------------------------------------------------------------------- |
+| `columnSpacing`       | Boolean   | true    | Determines whether the `columnsSpacing` attribute is displayed and can be edited.      |
+| `columnsBorderRadius` | Boolean   | true    | Determines whether the `columnsBorderRadius` attribute is displayed and can be edited. |
 
 ### columns
 
@@ -528,10 +553,18 @@ image: {
       show: true,
       locked: false
     },
+    borderRadius: {
+      show: true,
+      locked: false
+    }
   }
 }
 
 ```
+
+| Parameter      | Data Type | Example | Description                                                                     |
+| -------------- | --------- | ------- | ------------------------------------------------------------------------------- |
+| `borderRadius` | Boolean   | true    | Determines whether the `borderRadius` attribute is displayed and can be edited. |
 
 ### **button**
 
@@ -1085,29 +1118,47 @@ content: {
 }
 ```
 
-### **addon**
+### **Addon**
 
-To assign permissions, you can make use of the addon’s ID. Based on the type of addon, you can assign relevant permissions. For instance, if your addon is an image type, you can assign permissions specific to the image content block. The advanced permissions structure will be as follows:
+In this section, we will explore how to assign advanced permissions and behaviors for various addon types, specifically focusing on how to customize permissions for custom addons and row addons. These permissions can override default settings to provide granular control. For instance, an image addon can have specific permissions different from the default image block permissions.
 
-```javascript
+To successfully use this feature, follow these steps:
 
-image: { /**/ },
-button: { /**/ },
-social: { /**/ },
-addon: {
-  'addons-id': { /**/ },
+1. **Identify the Addon ID:** Obtain the unique ID of the addon you wish to assign permissions to.
+2. **Define Custom Permissions:** Based on the type of addon, assign relevant permissions in your configuration file.
+3. **Override Default Permissions:** Specify advanced permissions for the addon, ensuring they override the default ones if needed.
+4. **Set Specific Behaviors:** For row addons, include permissions for individual modules like image blocks inside the row addon.
+5. **Apply Global Restrictions:** Optionally, set global restrictions for all mixed and row content addons for consistent behavior.
+
+By following these steps, you can effectively manage and customize addon permissions.
+
+The following code provides an example of the different content modules and the `addons-id`.
+
+```json
+
+content: {
+  image: { /**/ },
+  button: { /**/ },
+  social: { /**/ },
+  addon: {
+    'addons-id': { /**/ },
+  }
 }
 
 ```
 
-```javascript
+The following code shows an example addon with the `canViewSidebar` behavior set to `true`.
 
-addon: {
-  'b17dc240-b226-415c-af71-246fc51bd088': { /**/ 
-    behaviors: {
-      canViewSidebar: true,
+```json
+
+content: {
+  addon: {
+    'b17dc240-b226-415c-af71-246fc51bd088': { /**/ 
+      behaviors: {
+        canViewSidebar: true,
+      },
     },
-  },
+  }
 }
 
 ```

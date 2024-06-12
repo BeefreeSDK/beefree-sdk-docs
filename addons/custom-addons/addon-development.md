@@ -250,6 +250,65 @@ The following table displays a list of properties in the resolve function, and e
 | color     | String  | No        |
 | linkColor | String  | No        |
 
+#### Title Simplified Schema
+
+{% code overflow="wrap" %}
+```javascript
+{
+  $schema: 'http://json-schema.org/draft-07/schema',
+  $id: 'BEE-simplified-title-single',
+  type: 'object',
+  required: ['text'],
+  properties: {
+    type: {
+      enum: ['title', 'heading'],
+    },
+    underline: {
+      type: 'boolean',
+    },
+    italic: {
+      type: 'boolean',
+    },
+    bold: {
+      type: 'boolean',
+    },
+    html: {
+      type: 'string',
+    },
+    text: {
+      type: 'string',
+    },
+    align: {
+      enum: [
+        'left',
+        'center',
+        'right',
+      ],
+    },
+    title: {
+      enum: [
+        'h1',
+        'h2',
+        'h3',
+      ],
+    },
+    size: {
+      type: 'integer',
+    },
+    color: {
+      type: 'string',
+    },
+    linkColor: {
+      type: 'string',
+    },
+    customFields: {
+      type: 'object',
+    },
+  },
+}
+```
+{% endcode %}
+
 ### **Image**
 
 The following sample code defines an image element with various attributes.
@@ -278,6 +337,48 @@ The following table displays a list of properties in the resolve function, and e
 | src        | String (URL) | Yes       |
 | dynamicSrc | String (URL) | No        |
 | target     | String       | No        |
+
+#### Image Simplified Schema
+
+{% code overflow="wrap" %}
+```javascript
+{
+  $schema: 'http://json-schema.org/draft-07/schema',
+  $id: 'BEE-simplified-image-single',
+  type: 'object',
+  required: ['src', 'alt', 'href'],
+  properties: {
+    type: {
+      const: 'image',
+    },
+    alt: {
+      type: 'string',
+    },
+    href: {
+      type: 'string',
+      format: 'urlOrMergeTags',
+    },
+    src: {
+      type: 'string',
+      format: 'urlOrMergeTags',
+    },
+    dynamicSrc: {
+      type: 'string',
+    },
+    target: {
+      enum: [
+        '_blank',
+        '_self',
+        '_top',
+      ],
+    },
+    customFields: {
+      type: 'object',
+    },
+  },
+}
+```
+{% endcode %}
 
 ### **Button**
 
@@ -334,6 +435,56 @@ The following table displays a list of properties in the resolve function, and e
 | color            | String       | No        |
 | background-color | String       | No        |
 
+#### Button Simplified Schema
+
+{% code overflow="wrap" %}
+```javascript
+{
+  $schema: 'http://json-schema.org/draft-07/schema',
+  $id: 'BEE-simplified-button-single',
+  type: 'object',
+  anyOf: [{
+    required: ['label'],
+  }, {
+    required: ['text'],
+  }],
+  properties: {
+    type: {
+      const: 'button',
+    },
+    label: {
+      type: 'string',
+      format: 'noAnchorTags',
+    },
+    text: {
+      type: 'string',
+      format: 'noAnchorTags',
+    },
+    href: {
+      type: 'string',
+      format: 'urlOrMergeTags',
+    },
+    target: {
+      enum: [
+        '_blank',
+        '_self',
+        '_top',
+      ],
+    },
+    color: {
+      type: 'string',
+    },
+    'background-color': {
+      type: 'string',
+    },
+    customFields: {
+      type: 'object',
+    },
+  },
+}
+```
+{% endcode %}
+
 ### **Paragraph**
 
 The following sample code defines a paragraph element with various attributes. The mergeTags property contains a list of merge tags, which can be used for dynamic content insertion.
@@ -384,6 +535,58 @@ The following table displays a list of properties in the resolve function, and e
 | color     | String                | No        |
 | linkColor | String                | No        |
 
+#### Paragraph Simplified Schema
+
+{% code overflow="wrap" %}
+```javascript
+{
+  $schema: 'http://json-schema.org/draft-07/schema',
+  $id: 'BEE-simplified-paragraph-single',
+  type: 'object',
+  required: ['html'],
+  properties: {
+    type: {
+      const: 'paragraph',
+    },
+    underline: {
+      type: 'boolean',
+    },
+    italic: {
+      type: 'boolean',
+    },
+    bold: {
+      type: 'boolean',
+    },
+    html: {
+      type: 'string',
+    },
+    text: {
+      type: 'string',
+    },
+    align: {
+      enum: [
+        'left',
+        'center',
+        'right',
+      ],
+    },
+    size: {
+      type: 'integer',
+    },
+    color: {
+      type: 'string',
+    },
+    linkColor: {
+      type: 'string',
+    },
+    customFields: {
+      type: 'object',
+    },
+  },
+}
+```
+{% endcode %}
+
 ### **HTML**
 
 The following sample code defines an HTML element with various attributes.
@@ -402,6 +605,30 @@ The following table displays a list of properties in the resolve function, and e
 | Property | Value                 | Mandatory |
 | -------- | --------------------- | --------- |
 | html     | String (HTML content) | Yes       |
+
+#### HTML Simplified Schema
+
+{% code overflow="wrap" %}
+```javascript
+{
+  $schema: 'http://json-schema.org/draft-07/schema',
+  $id: 'BEE-simplified-html-single',
+  type: 'object',
+  required: ['html'],
+  properties: {
+    type: {
+      const: 'html',
+    },
+    html: {
+      type: 'string',
+    },
+    customFields: {
+      type: 'object',
+    },
+  },
+}
+```
+{% endcode %}
 
 ### **Menu**
 
@@ -438,6 +665,261 @@ The following table displays a list of properties in the resolve function, and e
 | title    | String           | No        |
 | href     | String (URL)     | No        |
 | target   | String           | No        |
+
+#### Menu Simplified Schema
+
+{% code overflow="wrap" %}
+```javascript
+{
+  $schema: 'http://json-schema.org/draft-07/schema',
+  $id: 'BEE-simplified-menu-single',
+  type: 'object',
+  required: ['items'],
+  properties: {
+    type: {
+      const: 'menu',
+    },
+    items: {
+      type: 'array',
+      items: {
+        type: 'object',
+        additionalProperties: false,
+        properties: {
+          type: {
+            const: 'menu-item',
+          },
+          text: {
+            type: 'string',
+          },
+          link: {
+            type: 'object',
+            additionalProperties: false,
+            properties: {
+              title: {
+                type: 'string',
+              },
+              href: {
+                type: 'string',
+                format: 'urlOrMergeTags',
+              },
+              target: {
+                type: 'string',
+                enum: [
+                  '_blank',
+                  '_self',
+                  '_top',
+                ],
+              },
+            },
+          },
+        },
+      },
+    },
+    customFields: {
+      type: 'object',
+    },
+  },
+}
+```
+{% endcode %}
+
+### **List**
+
+[Zair](https://app.gitbook.com/u/Vl3arAFVzoVyQLPyU6mwKlGP30j1 "mention") the type List was missing here, please fill in the correct copy
+
+```javascript
+
+resolve({
+  type: 'menu',
+  value: {
+    items: [
+      {
+        text: 'Menu item',
+        link: {
+          title: 'Link',
+          href: 'https://beefree.io',
+          target: '_self'
+        }
+      },
+      ...
+    ],
+  }
+})
+
+```
+
+The following table displays a list of properties in the resolve function, and each of its respective value types and whether or not they are mandatory.
+
+| Property  | Value                                | Mandatory |
+| --------- | ------------------------------------ | --------- |
+| html      | String (HTML content)                | Yes       |
+| tag       | String ('ol' or 'ul')                | No        |
+| underline | Boolean                              | No        |
+| italic    | Boolean                              | No        |
+| align     | String ('left', 'center' or 'right') | No        |
+| size      | Number                               | No        |
+| bold      | Boolean                              | No        |
+| color     | String                               | No        |
+| linkColor | String                               | No        |
+
+#### List Simplified Schema
+
+{% code overflow="wrap" %}
+```javascript
+{
+  $schema: 'http://json-schema.org/draft-07/schema',
+  $id: 'BEE-simplified-list-single',
+  type: 'object',
+  required: ['html'],
+  properties: {
+    type: {
+      const: 'list',
+    },
+    underline: {
+      type: 'boolean',
+    },
+    italic: {
+      type: 'boolean',
+    },
+    bold: {
+      type: 'boolean',
+    },
+    html: {
+      type: 'string',
+    },
+    text: {
+      type: 'string',
+    },
+    align: {
+      enum: [
+        'left',
+        'center',
+        'right',
+      ],
+    },
+    tag: {
+      enum: [
+        'ol',
+        'ul',
+      ],
+    },
+    size: {
+      type: 'integer',
+    },
+    color: {
+      type: 'string',
+    },
+    linkColor: {
+      type: 'string',
+    },
+    customFields: {
+      type: 'object',
+    },
+  },
+}
+```
+{% endcode %}
+
+### **Icons**
+
+[Zair](https://app.gitbook.com/u/Vl3arAFVzoVyQLPyU6mwKlGP30j1 "mention") the type Icons was missing here, please fill in the correct copy
+
+```javascript
+
+resolve({
+  type: 'menu',
+  value: {
+    icons: [
+      {
+        image: 'https://beefree.io/image.png',
+        width: '32px',
+        height: '32px',
+        textPosition: 'left',
+      },
+      ...
+    ],
+  }
+})
+
+```
+
+The following table displays a list of properties in the resolve function, and each of its respective value types and whether or not they are mandatory.
+
+<table><thead><tr><th>Property</th><th width="316.3333333333333">Value</th><th>Mandatory</th></tr></thead><tbody><tr><td>icons</td><td>Array of objects</td><td>Yes</td></tr><tr><td>image</td><td>String (URL)</td><td>Yes</td></tr><tr><td>width</td><td>String</td><td>Yes</td></tr><tr><td>height</td><td>String</td><td>Yes</td></tr><tr><td>textPosition</td><td>String ('left', 'right', 'top', or 'bottom')</td><td>Yes</td></tr><tr><td>text</td><td>String</td><td>No</td></tr><tr><td>title</td><td>String</td><td>No</td></tr><tr><td>alt</td><td>String</td><td>No</td></tr><tr><td>href</td><td>String (URL)</td><td>No</td></tr><tr><td>target</td><td>String (<code>_blank</code>, <code>_self</code>, or <code>_top</code>)</td><td>No</td></tr></tbody></table>
+
+#### Icons Simplified Schema
+
+{% code overflow="wrap" %}
+```javascript
+{
+  $schema: 'http://json-schema.org/draft-07/schema',
+  $id: 'BEE-simplified-icons-single',
+  type: 'object',
+  required: ['icons'],
+  properties: {
+    type: {
+      const: 'icons',
+    },
+    icons: {
+      type: 'array',
+      items: {
+        type: 'object',
+        additionalProperties: false,
+        required: [
+          'image',
+          'textPosition',
+          'width',
+          'height',
+        ],
+        properties: {
+          alt: {
+            type: 'string',
+          },
+          text: {
+            type: 'string',
+          },
+          title: {
+            type: 'string',
+          },
+          image: {
+            type: 'string',
+            format: 'urlOrMergeTags',
+          },
+          href: {
+            type: 'string',
+            format: 'urlOrMergeTags',
+          },
+          height: {
+            type: 'string',
+          },
+          width: {
+            type: 'string',
+          },
+          target: {
+            enum: [
+              '_blank',
+              '_self',
+              '_top',
+            ],
+          },
+          textPosition: {
+            enum: [
+              'left',
+              'right',
+              'top',
+              'bottom',
+            ],
+          },
+        },
+      },
+    },
+    customFields: {
+      type: 'object',
+    },
+  },
+}
+```
+{% endcode %}
 
 ## Custom AddOn - Row <a href="#custom-addon-row" id="custom-addon-row"></a>
 
@@ -636,6 +1118,509 @@ resolve (
 )
 
 ```
+
+#### Row Simplified Schema
+
+{% code overflow="wrap" %}
+```javascript
+{
+  $schema: 'http://json-schema.org/draft-07/schema',
+  $id: 'BEE-simplified-row',
+  type: 'object',
+  required: [
+    'name',
+    'columns',
+  ],
+  definitions: {
+    padding: {
+      type: 'integer',
+      minimum: 0,
+      maximum: 60,
+    },
+  },
+  properties: {
+    name: {
+      type: 'string',
+    },
+    colStackOnMobile: {
+      type: 'boolean',
+    },
+    rowReverseColStackOnMobile: {
+      type: 'boolean',
+    },
+    contentAreaBackgroundColor: {
+      type: 'string',
+    },
+    'background-color': {
+      type: 'string',
+    },
+    'background-image': {
+      type: 'string',
+    },
+    'background-position': {
+      type: 'string',
+    },
+    'background-repeat': {
+      type: 'string',
+    },
+    customFields: {
+      type: 'object',
+    },
+    'display-condition': {
+      type: 'object',
+      properties: {
+        type: {
+          type: 'string',
+        },
+        label: {
+          type: 'string',
+        },
+        description: {
+          type: 'string',
+        },
+        before: {
+          type: 'string',
+        },
+        after: {
+          type: 'string',
+        },
+      },
+    },
+    metadata: {
+      type: 'object',
+    },
+    columns: {
+      type: 'array',
+      minItems: 1,
+      items: {
+        type: 'object',
+        required: [
+          'weight',
+          'modules',
+        ],
+        additionalProperties: false,
+        properties: {
+          weight: {
+            type: 'integer',
+            minimum: 1,
+            maximum: 12,
+          },
+          'background-color': {
+            type: 'string',
+          },
+          'padding-top': {
+            $ref: '#/definitions/padding',
+          },
+          'padding-right': {
+            $ref: '#/definitions/padding',
+          },
+          'padding-bottom': {
+            $ref: '#/definitions/padding',
+          },
+          'padding-left': {
+            $ref: '#/definitions/padding',
+          },
+          modules: {
+            type: 'array',
+            items: {
+              type: 'object',
+              discriminator: {
+                propertyName: 'type',
+              },
+              required: [
+                'type',
+              ],
+              properties: {
+                type: {
+                  enum: [
+                    'button',
+                    'divider',
+                    'heading',
+                    'html',
+                    'icons',
+                    'image',
+                    'list',
+                    'menu',
+                    'paragraph',
+                    'title',
+                  ],
+                },
+              },
+              oneOf: [
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-button',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      const: 'button',
+                    },
+                    label: {
+                      type: 'string',
+                      format: 'noAnchorTags',
+                    },
+                    text: {
+                      type: 'string',
+                      format: 'noAnchorTags',
+                    },
+                    href: {
+                      type: 'string',
+                      format: 'urlOrMergeTags',
+                    },
+                    target: {
+                      enum: [
+                        '_blank',
+                        '_self',
+                        '_top',
+                      ],
+                    },
+                    color: {
+                      type: 'string',
+                    },
+                    'background-color': {
+                      type: 'string',
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-divider',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      const: 'divider',
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-icons',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      const: 'icons',
+                    },
+                    icons: {
+                      type: 'array',
+                      items: {
+                        type: 'object',
+                        additionalProperties: false,
+                        required: [
+                          'image',
+                          'textPosition',
+                          'width',
+                          'height',
+                        ],
+                        properties: {
+                          alt: {
+                            type: 'string',
+                          },
+                          text: {
+                            type: 'string',
+                          },
+                          title: {
+                            type: 'string',
+                          },
+                          image: {
+                            type: 'string',
+                            format: 'urlOrMergeTags',
+                          },
+                          href: {
+                            type: 'string',
+                            format: 'urlOrMergeTags',
+                          },
+                          height: {
+                            type: 'string',
+                          },
+                          width: {
+                            type: 'string',
+                          },
+                          target: {
+                            enum: [
+                              '_blank',
+                              '_self',
+                              '_top',
+                            ],
+                          },
+                          textPosition: {
+                            enum: [
+                              'left',
+                              'right',
+                              'top',
+                              'bottom',
+                            ],
+                          },
+                        },
+                      },
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-image',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      const: 'image',
+                    },
+                    alt: {
+                      type: 'string',
+                    },
+                    href: {
+                      type: 'string',
+                      format: 'urlOrMergeTags',
+                    },
+                    src: {
+                      type: 'string',
+                      format: 'urlOrMergeTags',
+                    },
+                    dynamicSrc: {
+                      type: 'string',
+                    },
+                    target: {
+                      enum: [
+                        '_blank',
+                        '_self',
+                        '_top',
+                      ],
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-html',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      const: 'html',
+                    },
+                    html: {
+                      type: 'string',
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-list',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      const: 'list',
+                    },
+                    underline: {
+                      type: 'boolean',
+                    },
+                    italic: {
+                      type: 'boolean',
+                    },
+                    bold: {
+                      type: 'boolean',
+                    },
+                    html: {
+                      type: 'string',
+                    },
+                    text: {
+                      type: 'string',
+                    },
+                    align: {
+                      enum: [
+                        'left',
+                        'center',
+                        'right',
+                      ],
+                    },
+                    tag: {
+                      enum: [
+                        'ol',
+                        'ul',
+                      ],
+                    },
+                    size: {
+                      type: 'integer',
+                    },
+                    color: {
+                      type: 'string',
+                    },
+                    linkColor: {
+                      type: 'string',
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-menu',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      const: 'menu',
+                    },
+                    items: {
+                      type: 'array',
+                      items: {
+                        type: 'object',
+                        additionalProperties: false,
+                        properties: {
+                          type: {
+                            const: 'menu-item',
+                          },
+                          text: {
+                            type: 'string',
+                          },
+                          link: {
+                            type: 'object',
+                            additionalProperties: false,
+                            properties: {
+                              title: {
+                                type: 'string',
+                              },
+                              href: {
+                                type: 'string',
+                                format: 'urlOrMergeTags',
+                              },
+                              target: {
+                                type: 'string',
+                                enum: [
+                                  '_blank',
+                                  '_self',
+                                  '_top',
+                                ],
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-paragraph',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      const: 'paragraph',
+                    },
+                    underline: {
+                      type: 'boolean',
+                    },
+                    italic: {
+                      type: 'boolean',
+                    },
+                    bold: {
+                      type: 'boolean',
+                    },
+                    html: {
+                      type: 'string',
+                    },
+                    text: {
+                      type: 'string',
+                    },
+                    align: {
+                      enum: [
+                        'left',
+                        'center',
+                        'right',
+                      ],
+                    },
+                    size: {
+                      type: 'integer',
+                    },
+                    color: {
+                      type: 'string',
+                    },
+                    linkColor: {
+                      type: 'string',
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-title',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      enum: ['title', 'heading'],
+                    },
+                    underline: {
+                      type: 'boolean',
+                    },
+                    italic: {
+                      type: 'boolean',
+                    },
+                    bold: {
+                      type: 'boolean',
+                    },
+                    html: {
+                      type: 'string',
+                    },
+                    text: {
+                      type: 'string',
+                    },
+                    align: {
+                      enum: [
+                        'left',
+                        'center',
+                        'right',
+                      ],
+                    },
+                    title: {
+                      enum: [
+                        'h1',
+                        'h2',
+                        'h3',
+                      ],
+                    },
+                    size: {
+                      type: 'integer',
+                    },
+                    color: {
+                      type: 'string',
+                    },
+                    linkColor: {
+                      type: 'string',
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+              ],
+            },
+          },
+          customFields: {
+            type: 'object',
+          },
+        },
+      },
+    },
+  },
+}
+```
+{% endcode %}
 
 ## The Iframe method <a href="#the-iframe-method" id="the-iframe-method"></a>
 

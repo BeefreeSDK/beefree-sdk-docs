@@ -68,6 +68,7 @@ beeConfig: {
     title: { ... },
     text: { ... },
     image: { ... },
+    row: { ... },
     button: { ... },
     divider: { ... },
     social: { ... },
@@ -92,7 +93,9 @@ You can add all the content styles, some of them or just one. It is up to your a
 
 All the contents use the same pattern, but the object must match the content schema for the type of content (described in the following section).
 
-### **title**
+### **Title**
+
+The `title` content default inside the `beeConfig` sets default properties and styling for title elements in the editor. It includes heading levels, alignment, padding, and mobile-specific styles to ensure consistency and responsiveness across different devices.
 
 ```javascript
 
@@ -158,7 +161,9 @@ contentDefaults: {
 
 ```
 
-### **text**
+### **Text**
+
+The `text` content default within the `beeConfig` provides a default HTML string and sets the styles for text blocks, including color, font, and line height. It also includes options for padding and visibility on mobile devices to ensure a consistent appearance across different screen sizes.
 
 {% hint style="info" %}
 Please note that the default text inside `html` is required.
@@ -192,7 +197,9 @@ text: {
 
 ```
 
-### **image**
+### **Image**
+
+The image content defaults in the BeeConfig define the properties for images, including attributes like `alt`, `src`, and `href`, as well as styling details such as dimensions, border radius, and padding. It also specifies mobile-specific styles to ensure proper alignment and spacing on different devices.
 
 ```javascript
 
@@ -201,6 +208,7 @@ image: {
   href: "http://www.google.com",
   src: "https://react.semantic-ui.com/images/wireframe/white-image.png",
   width: "250px" // optional - 100% default
+  borderRadius: "30px",
   blockOptions: {
     paddingBottom: "0px",
     paddingLeft: "0px",
@@ -220,9 +228,44 @@ image: {
 
 ```
 
-### **button**
+**Image Parameters**
 
-```javascript
+| Parameter      | Data Type | Example | Description                                 |
+| -------------- | --------- | ------- | ------------------------------------------- |
+| `borderRadius` | String    | 30px    | Defines the roundness of the image corners. |
+
+### **Row**
+
+The `row` content default in the BeeConfig specifies various styling properties for rows, including background colors, vertical alignment, border radius, and spacing. It also includes options for mobile-specific styles, such as stacking and padding configurations.
+
+```json
+  row: {
+    styles: {
+      backgroundColor: "red",
+      contentAreaBackgroundColor: "green",
+      verticalAlign: "bottom",
+      columnsBorderRadius: "10px",
+      columnsSpacing: "20px",
+      columnsStackOnMobile: false,
+      columnsReverseStackOnMobile: true,
+      columnsPadding: "42px",
+      columnsBackgroundColor: "yellow",
+    }
+  },
+}
+```
+
+**Row Parameters**
+
+The following table lists the row content default parameters and their corresponding descriptions and data types.
+
+<table><thead><tr><th width="218">Parameter</th><th>Data Type</th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>backgroundColor</code></td><td>String</td><td>Red</td><td>Sets the background color of the row.</td></tr><tr><td><code>contentAreaBackgroundColor</code></td><td>String</td><td>Green</td><td>Sets the background color of the content area within the row.</td></tr><tr><td><code>verticalAlign</code></td><td>String</td><td>bottom</td><td>Specifies the vertical alignment of the row content.</td></tr><tr><td><code>columnsBorderRadius</code></td><td>String</td><td>10px</td><td>Defines the roundness of the column corners.</td></tr><tr><td><code>columnsSpacing</code></td><td>String</td><td>20px</td><td>Sets the spacing between columns.</td></tr><tr><td><p></p><p><code>columnsStackOnMobile</code></p><p></p></td><td>Boolean</td><td>false</td><td>Determines if columns should stack on mobile devices.</td></tr><tr><td><code>columnsReverseStackOnMobile</code></td><td>Boolean</td><td>true</td><td>Specifies if the order of stacked columns should be reversed on mobile devices.</td></tr><tr><td><code>columnsPadding</code></td><td>String</td><td>42px</td><td>Defines the padding inside each column.</td></tr><tr><td><code>columnsBackgroundColor</code></td><td>String</td><td>Yellow</td><td>Sets the background color for each column.</td></tr></tbody></table>
+
+### **Button**
+
+The button content default in the BeeConfig specifies the appearance and behavior of buttons, including attributes such as label, hyperlink, width, and styles like font, color, and padding. It also defines block options for padding and alignment, as well as mobile-specific styles for responsiveness.
+
+```json
 
 button: {
   label: "My New Label",
@@ -265,9 +308,11 @@ button: {
 
 ```
 
-### **divider**
+### **Divider**
 
-```javascript
+The divider content default in the BeeConfig specifies the appearance of dividers, including properties such as width, line style, and alignment. It also defines block options for padding and visibility on mobile, as well as mobile-specific styles for alignment and padding.
+
+```json
 
 divider: {
   width: '50%',
@@ -289,9 +334,11 @@ divider: {
 
 ```
 
-### **social**
+### **Social**
 
-```javascript
+The social content default in the BeeConfig specifies the display of social media icons, including their type, name, image properties, and link. It also defines the block options for alignment and padding, with specific styles for mobile devices.
+
+```json
 
 social: {
   icons: [
@@ -327,9 +374,11 @@ social: {
 
 ```
 
-### **dynamic**
+### **Dynamic**
 
-```javascript
+The dynamic content default in the BeeConfig specifies the block options, including padding and the ability to hide content on mobile. This ensures a consistent design by managing spacing and visibility across different devices.
+
+```json
 
 dynamic: {
     blockOptions: {
@@ -343,9 +392,11 @@ dynamic: {
 
 ```
 
-### **video**
+### **Video**
 
-```javascript
+The video content default in the BeeConfig specifies block options, including padding and the ability to hide content on mobile devices, ensuring a consistent appearance across different platforms. Additionally, it defines mobile-specific styles to enhance the user experience on smaller screens.
+
+```json
 
 video: {
   blockOptions: {
@@ -365,9 +416,11 @@ video: {
 
 ```
 
-### **form**
+### **Form**
 
-```javascript
+The form content default in the BeeConfig defines the structure and styling for form elements, including fonts, colors, alignments, and padding, ensuring a consistent layout across different devices. It also includes options for mobile-specific styles to improve usability on smaller screens.
+
+```json
 
 form: {
   structure: {...}, // see form docs
@@ -444,9 +497,11 @@ form: {
 
 ```
 
-### **icons**
+### **Icons**
 
-```javascript
+The icons content default in the BeeConfig specifies the properties for displaying icon items, such as the image source, text, size, and link attributes. It also includes styles for the icon's appearance and mobile-specific configurations to ensure proper alignment and padding across devices.
+
+```json
 
 icons: {
   items: [
@@ -497,9 +552,11 @@ icons: {
 
 ```
 
-### **menu**
+### **Menu**
 
-```javascript
+The menu content default in the BeeConfig defines the properties for menu items, including text, links, and target attributes. It also sets the styles for the menu's appearance and behavior, such as font styles, colors, spacing, and mobile-specific configurations like hamburger icon settings.
+
+```json
 
 menu: {
   items: [
@@ -553,9 +610,11 @@ menu: {
 
 ```
 
-### **spacer**
+### **Spacer**
 
-```javascript
+The spacer content in the BeeConfig is used to add vertical spacing between elements in the layout. It allows for hiding the spacer on mobile devices through the `hideContentOnMobile` option.
+
+```json
 
 spacer: {
   height: "60px",
@@ -566,9 +625,11 @@ spacer: {
 
 ```
 
-### **paragraph**
+### **Paragraph**
 
-```javascript
+The paragraph content configuration in BeeConfig specifies the default styles such as color, font size, alignment, line height, and spacing for paragraphs. It also defines block options and mobile styles to ensure consistent rendering on different devices.
+
+```json
 
 paragraph: {
   styles: {
@@ -601,9 +662,11 @@ paragraph: {
 
 ```
 
-### **list**
+### **List**
 
-```javascript
+The list content default in BeeConfig sets the basic styling for list elements, including options like color, font size, alignment, and list type. It also ensures consistent spacing and padding across devices by defining both block options and mobile-specific styles.
+
+```json
 
 list: {
   styles: {
@@ -642,9 +705,11 @@ list: {
 
 Additionally, `listStyleType` supports the following: revert, auto, disc, circle, square, decimal, lower-alpha, upper-alpha, lower-roman, upper-roman.
 
-### **carousel**
+### **Carousel**
 
-```javascript
+The carousel content default in BeeConfig sets the basic padding for carousel elements and provides an option to hide content on mobile devices. It also defines mobile-specific padding to ensure a consistent appearance across different screen sizes.
+
+```json
 
 carousel: {
   blockOptions: {
@@ -664,9 +729,11 @@ carousel: {
 
 ```
 
-### **table**
+### **Table**
 
-```javascript
+The table content default in BeeConfig specifies the initial styling and layout properties for table elements, including rows, cells, and headers. It sets text styles, colors, padding, alignment, and optional alternate row and header styles to ensure consistency across different table instances.
+
+```json
 {
    ...
    table: {
@@ -729,7 +796,9 @@ The following code displays an example error for this scenario.
 }
 ```
 
-### **general**
+### **General**
+
+The `general` content default in the BeeConfig specifies the overall styling for the email template, such as background color, content area width, and default font. These settings help maintain a consistent look and feel throughout the template.
 
 ```javascript
 

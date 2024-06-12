@@ -17,7 +17,7 @@ The following is an example of four different row objects:
 * **Third:** A row with a background image on it.
 * **Four:** A row with a display condition.
 
-```javascript
+```json
 
 [{
     "name": "First item", // Identifies the row
@@ -98,6 +98,509 @@ The following is an example of four different row objects:
  }]
 
 ```
+
+## Simplified Row JSON Schema <a href="#general-row-parameters" id="general-row-parameters"></a>
+
+{% code overflow="wrap" %}
+```javascript
+{
+  $schema: 'http://json-schema.org/draft-07/schema',
+  $id: 'BEE-simplified-row',
+  type: 'object',
+  required: [
+    'name',
+    'columns',
+  ],
+  definitions: {
+    padding: {
+      type: 'integer',
+      minimum: 0,
+      maximum: 60,
+    },
+  },
+  properties: {
+    name: {
+      type: 'string',
+    },
+    colStackOnMobile: {
+      type: 'boolean',
+    },
+    rowReverseColStackOnMobile: {
+      type: 'boolean',
+    },
+    contentAreaBackgroundColor: {
+      type: 'string',
+    },
+    'background-color': {
+      type: 'string',
+    },
+    'background-image': {
+      type: 'string',
+    },
+    'background-position': {
+      type: 'string',
+    },
+    'background-repeat': {
+      type: 'string',
+    },
+    customFields: {
+      type: 'object',
+    },
+    'display-condition': {
+      type: 'object',
+      properties: {
+        type: {
+          type: 'string',
+        },
+        label: {
+          type: 'string',
+        },
+        description: {
+          type: 'string',
+        },
+        before: {
+          type: 'string',
+        },
+        after: {
+          type: 'string',
+        },
+      },
+    },
+    metadata: {
+      type: 'object',
+    },
+    columns: {
+      type: 'array',
+      minItems: 1,
+      items: {
+        type: 'object',
+        required: [
+          'weight',
+          'modules',
+        ],
+        additionalProperties: false,
+        properties: {
+          weight: {
+            type: 'integer',
+            minimum: 1,
+            maximum: 12,
+          },
+          'background-color': {
+            type: 'string',
+          },
+          'padding-top': {
+            $ref: '#/definitions/padding',
+          },
+          'padding-right': {
+            $ref: '#/definitions/padding',
+          },
+          'padding-bottom': {
+            $ref: '#/definitions/padding',
+          },
+          'padding-left': {
+            $ref: '#/definitions/padding',
+          },
+          modules: {
+            type: 'array',
+            items: {
+              type: 'object',
+              discriminator: {
+                propertyName: 'type',
+              },
+              required: [
+                'type',
+              ],
+              properties: {
+                type: {
+                  enum: [
+                    'button',
+                    'divider',
+                    'heading',
+                    'html',
+                    'icons',
+                    'image',
+                    'list',
+                    'menu',
+                    'paragraph',
+                    'title',
+                  ],
+                },
+              },
+              oneOf: [
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-button',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      const: 'button',
+                    },
+                    label: {
+                      type: 'string',
+                      format: 'noAnchorTags',
+                    },
+                    text: {
+                      type: 'string',
+                      format: 'noAnchorTags',
+                    },
+                    href: {
+                      type: 'string',
+                      format: 'urlOrMergeTags',
+                    },
+                    target: {
+                      enum: [
+                        '_blank',
+                        '_self',
+                        '_top',
+                      ],
+                    },
+                    color: {
+                      type: 'string',
+                    },
+                    'background-color': {
+                      type: 'string',
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-divider',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      const: 'divider',
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-icons',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      const: 'icons',
+                    },
+                    icons: {
+                      type: 'array',
+                      items: {
+                        type: 'object',
+                        additionalProperties: false,
+                        required: [
+                          'image',
+                          'textPosition',
+                          'width',
+                          'height',
+                        ],
+                        properties: {
+                          alt: {
+                            type: 'string',
+                          },
+                          text: {
+                            type: 'string',
+                          },
+                          title: {
+                            type: 'string',
+                          },
+                          image: {
+                            type: 'string',
+                            format: 'urlOrMergeTags',
+                          },
+                          href: {
+                            type: 'string',
+                            format: 'urlOrMergeTags',
+                          },
+                          height: {
+                            type: 'string',
+                          },
+                          width: {
+                            type: 'string',
+                          },
+                          target: {
+                            enum: [
+                              '_blank',
+                              '_self',
+                              '_top',
+                            ],
+                          },
+                          textPosition: {
+                            enum: [
+                              'left',
+                              'right',
+                              'top',
+                              'bottom',
+                            ],
+                          },
+                        },
+                      },
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-image',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      const: 'image',
+                    },
+                    alt: {
+                      type: 'string',
+                    },
+                    href: {
+                      type: 'string',
+                      format: 'urlOrMergeTags',
+                    },
+                    src: {
+                      type: 'string',
+                      format: 'urlOrMergeTags',
+                    },
+                    dynamicSrc: {
+                      type: 'string',
+                    },
+                    target: {
+                      enum: [
+                        '_blank',
+                        '_self',
+                        '_top',
+                      ],
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-html',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      const: 'html',
+                    },
+                    html: {
+                      type: 'string',
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-list',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      const: 'list',
+                    },
+                    underline: {
+                      type: 'boolean',
+                    },
+                    italic: {
+                      type: 'boolean',
+                    },
+                    bold: {
+                      type: 'boolean',
+                    },
+                    html: {
+                      type: 'string',
+                    },
+                    text: {
+                      type: 'string',
+                    },
+                    align: {
+                      enum: [
+                        'left',
+                        'center',
+                        'right',
+                      ],
+                    },
+                    tag: {
+                      enum: [
+                        'ol',
+                        'ul',
+                      ],
+                    },
+                    size: {
+                      type: 'integer',
+                    },
+                    color: {
+                      type: 'string',
+                    },
+                    linkColor: {
+                      type: 'string',
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-menu',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      const: 'menu',
+                    },
+                    items: {
+                      type: 'array',
+                      items: {
+                        type: 'object',
+                        additionalProperties: false,
+                        properties: {
+                          type: {
+                            const: 'menu-item',
+                          },
+                          text: {
+                            type: 'string',
+                          },
+                          link: {
+                            type: 'object',
+                            additionalProperties: false,
+                            properties: {
+                              title: {
+                                type: 'string',
+                              },
+                              href: {
+                                type: 'string',
+                                format: 'urlOrMergeTags',
+                              },
+                              target: {
+                                type: 'string',
+                                enum: [
+                                  '_blank',
+                                  '_self',
+                                  '_top',
+                                ],
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-paragraph',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      const: 'paragraph',
+                    },
+                    underline: {
+                      type: 'boolean',
+                    },
+                    italic: {
+                      type: 'boolean',
+                    },
+                    bold: {
+                      type: 'boolean',
+                    },
+                    html: {
+                      type: 'string',
+                    },
+                    text: {
+                      type: 'string',
+                    },
+                    align: {
+                      enum: [
+                        'left',
+                        'center',
+                        'right',
+                      ],
+                    },
+                    size: {
+                      type: 'integer',
+                    },
+                    color: {
+                      type: 'string',
+                    },
+                    linkColor: {
+                      type: 'string',
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+                {
+                  $schema: 'http://json-schema.org/draft-07/schema',
+                  $id: 'BEE-simplified-title',
+                  type: 'object',
+                  properties: {
+                    type: {
+                      enum: ['title', 'heading'],
+                    },
+                    underline: {
+                      type: 'boolean',
+                    },
+                    italic: {
+                      type: 'boolean',
+                    },
+                    bold: {
+                      type: 'boolean',
+                    },
+                    html: {
+                      type: 'string',
+                    },
+                    text: {
+                      type: 'string',
+                    },
+                    align: {
+                      enum: [
+                        'left',
+                        'center',
+                        'right',
+                      ],
+                    },
+                    title: {
+                      enum: [
+                        'h1',
+                        'h2',
+                        'h3',
+                      ],
+                    },
+                    size: {
+                      type: 'integer',
+                    },
+                    color: {
+                      type: 'string',
+                    },
+                    linkColor: {
+                      type: 'string',
+                    },
+                    customFields: {
+                      type: 'object',
+                    },
+                  },
+                },
+              ],
+            },
+          },
+          customFields: {
+            type: 'object',
+          },
+        },
+      },
+    },
+  },
+}
+```
+{% endcode %}
 
 ## General row parameters <a href="#general-row-parameters" id="general-row-parameters"></a>
 
