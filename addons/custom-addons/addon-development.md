@@ -725,24 +725,22 @@ The following table displays a list of properties in the resolve function, and e
 
 ### **List**
 
-[Zair](https://app.gitbook.com/u/Vl3arAFVzoVyQLPyU6mwKlGP30j1 "mention") the type List was missing here, please fill in the correct copy
+The following code snippet calls the `resolve` function to generate a list element defined by the `type` property set to `'list'`. The `value` object specifies the list's characteristics, including the list tag (`'ol'`), HTML content, alignment, text formatting options like underline, italic, bold, and colors for text and links. This configuration allows you to customize list elements when creating custom addons for your host application using Beefree SDK.
 
 ```javascript
 
 resolve({
-  type: 'menu',
+  type: 'list',
   value: {
-    items: [
-      {
-        text: 'Menu item',
-        link: {
-          title: 'Link',
-          href: 'https://beefree.io',
-          target: '_self'
-        }
-      },
-      ...
-    ],
+    tag: 'ol',
+    html: `<ul><li>1 item</li></ul>`,
+    align: 'right',
+    size: '48',
+    underline: true,
+    italic: true,
+    bold: true,
+    color: 'pink',
+    linkColor: 'green',
   }
 })
 
@@ -822,21 +820,25 @@ The following table displays a list of properties in the resolve function, and e
 
 ### **Icons**
 
-[Zair](https://app.gitbook.com/u/Vl3arAFVzoVyQLPyU6mwKlGP30j1 "mention") the type Icons was missing here, please fill in the correct copy
+The following code snippet defines an `icons` component for your application using Beefree SDK. It specifies an array of icon objects, including properties such as image URL, text, dimensions, and positioning. You can customize each icon with optional attributes like `alt`, `title`, and hyperlink details.
 
 ```javascript
 
 resolve({
-  type: 'menu',
+  type: 'icons',
   value: {
     icons: [
       {
-        image: 'https://beefree.io/image.png',
-        width: '32px',
-        height: '32px',
-        textPosition: 'left',
-      },
-      ...
+        image: 'https://link.to.my/icon.png',
+        text: 'Icon text',
+        target: '_self',
+        alt: 'Image alt',
+        title: 'Image title',
+        href: 'https://beefree.io',
+        width: '50px',
+        height: '50px',
+        textPosition: 'top'
+      }
     ],
   }
 })
@@ -1119,7 +1121,11 @@ resolve (
 
 ```
 
-#### Row Simplified Schema
+### Row Simplified Schema
+
+The updated Beefree SDK simplified row schema offers significant benefits to developers working with Custom Addons. With the simplified row schema properties, you have more flexibility for creating Custom Addons and [Rows](../../custom-rows/generating-custom-rows-from-existing-content.md#general-row-parameters). This added flexibility allows you to control permissions more granularly, ensuring that critical content, like Button URLs, remains unchanged by end users.
+
+When a user opens the Custom Addon content dialog, the Beefree SDK sends the row's content along with the associated metadata to your application. This continuous synchronization of data allows you to listen to the changes your end users make, and eliminates the need to start over each time the dialog is reopened, enabling your application to monitor and respond to user changes dynamically.
 
 {% code overflow="wrap" %}
 ```javascript
