@@ -102,6 +102,7 @@
   * [FAQs](content-services-api/faqs.md)
 * [Template Catalog API](template-catalog-api.md)
 * [Multi-Language Templates](multi-language-templates.md)
+* [Cards Style and Image Round Corners](cards-style-and-image-round-corners.md)
 * [Error Management](error-management/README.md)
   * [onWarning](error-management/onwarning.md)
   * [Beefree SDK Editor Errors](error-management/beefree-sdk-editor-errors.md)
