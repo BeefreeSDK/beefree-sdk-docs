@@ -102,7 +102,7 @@ beeConfig: {
       contentBorder: { ... },
       roundedCorners: { ... },
       verticalAlign: { ... },
-       columnsSpacing: {
+      columnsSpacing: {
         show: true,
         locked: false
       },
@@ -315,6 +315,34 @@ The following table displays the row parameters and their corresponding data typ
 | --------------------- | --------- | ------- | -------------------------------------------------------------------------------------- |
 | `columnSpacing`       | Boolean   | true    | Determines whether the `columnsSpacing` attribute is displayed and can be edited.      |
 | `columnsBorderRadius` | Boolean   | true    | Determines whether the `columnsBorderRadius` attribute is displayed and can be edited. |
+
+### rows addon
+
+The following code demonstrates how to specify behavior settings for individual row addons. A custom row addon can have its behaviors set independently from the global row settings.
+
+```javascript
+rows: {
+    behaviors: {
+        canSelect: true,
+        canAdd: false,
+        canViewSidebar: true,
+        canClone: true,
+        canMove: true,
+        canDelete: true,
+        canViewComments: true,
+        canResetMobile: false,
+    },
+    // ROW ADDON SPECIFIC PERMISSIONS
+    addon: {
+        rowAddonId: {
+            behaviors: {
+                canMove: false
+            }
+        }
+    }
+} 
+
+```
 
 ### columns
 
@@ -1134,14 +1162,30 @@ By following these steps, you can effectively manage and customize addon permiss
 
 The following code provides an example of the different content modules and the `addons-id`.
 
-```json
+[Zair](https://app.gitbook.com/u/Vl3arAFVzoVyQLPyU6mwKlGP30j1 "mention") NOTE: we need to specify that addon specific permissions (also row addon ones) are an override to the default ones. Eg. if you set advanced permissions to image blocks, addons of type image are going to inherit them and they can be overridden by the following
 
+
+
+```javascript
 content: {
   image: { /**/ },
   button: { /**/ },
   social: { /**/ },
   addon: {
     'addons-id': { /**/ },
+  }
+}
+```
+
+```javascript
+
+content: {
+  addon: {
+    'b17dc240-b226-415c-af71-246fc51bd088': { /**/ 
+      behaviors: {
+        canViewSidebar: true,
+      },
+    },
   }
 }
 
@@ -1162,6 +1206,52 @@ content: {
 }
 
 ```
+
+## Add Condition and Edit Condition Buttons
+
+### module inside row addon
+
+<pre class="language-javascript"><code class="lang-javascript">content: {
+  addon: {
+    'b17dc240-b226-415c-af71-246fc51bd088': {
+      behaviors: {
+        canViewSidebar: true,
+      },
+    },
+    rowAddonId: {
+      // BEHAVIORS SPECIFIC TO "rowAddonId" ROW ADDON
+      behaviors: {
+        canAdd: true,
+        canClone: false,
+        canDelete: false
+      },
+      // PERMISSIONS SPECIFIC TO IMAGES MODULES INSIDE "rowAddonId" ROW ADDON
+      image: {
+        behaviors: {
+          canSelect: true
+        },
+        properties: {
+          textAlign: {
+            show: false
+          }
+        }
+      }
+    },
+    // PERMISSIONS SPECIFIC TO ALL MIXED CONTENT ADDON INDEPENDENTLY BY THE ID
+    mixed: {
+      behaviors: {
+        canAdd: false
+      }
+    },
+    <a data-footnote-ref href="#user-content-fn-1">// PERMISSIONS SPECIFIC TO ALL ROW CONTENT ADDON INDEPENDENTLY BY THE I</a>D
+    rowAddon: {
+      behaviors: {
+        canAdd: false
+      }
+    }
+  }
+}
+</code></pre>
 
 ## Add Condition and Edit Condition Buttons
 
@@ -1189,3 +1279,5 @@ To hide the buttons, set the `CanEditDisplayConditions` and `CanSelectDisplayCon
 We’ve put together a few JSON templates of custom roles created with Advanced permissions, so you can get started experimenting with this powerful feature.
 
 You can find them in our [GitHub account.](https://github.com/BEE-Plugin/bee-advanced-permissions)
+
+[^1]: [Zair](https://app.gitbook.com/u/Vl3arAFVzoVyQLPyU6mwKlGP30j1 "mention")these two comments here mean that these will be overridden by specific addon-id ones.\
