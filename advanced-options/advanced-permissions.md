@@ -1191,7 +1191,7 @@ content: {
 
 ### Module inside row addon
 
-The following code defines specific permissions and behaviors for different content modules and addons within a row addon.&#x20;
+The following code defines specific permissions and behaviors for different modules within a row addon.&#x20;
 
 <pre class="language-javascript"><code class="lang-javascript">content: {
   addon: {
