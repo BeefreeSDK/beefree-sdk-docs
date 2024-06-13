@@ -1162,10 +1162,6 @@ By following these steps, you can effectively manage and customize addon permiss
 
 The following code provides an example of the different content modules and the `addons-id`.
 
-[Zair](https://app.gitbook.com/u/Vl3arAFVzoVyQLPyU6mwKlGP30j1 "mention") NOTE: we need to specify that addon specific permissions (also row addon ones) are an override to the default ones. Eg. if you set advanced permissions to image blocks, addons of type image are going to inherit them and they can be overridden by the following
-
-
-
 ```javascript
 content: {
   image: { /**/ },
@@ -1177,6 +1173,8 @@ content: {
 }
 ```
 
+The following code shows an example addon with the `canViewSidebar` behavior set to `true`.
+
 ```javascript
 
 content: {
@@ -1191,25 +1189,9 @@ content: {
 
 ```
 
-The following code shows an example addon with the `canViewSidebar` behavior set to `true`.
+### Module inside row addon
 
-```json
-
-content: {
-  addon: {
-    'b17dc240-b226-415c-af71-246fc51bd088': { /**/ 
-      behaviors: {
-        canViewSidebar: true,
-      },
-    },
-  }
-}
-
-```
-
-## Add Condition and Edit Condition Buttons
-
-### module inside row addon
+The following code defines specific permissions and behaviors for different content modules and addons within a row addon.&#x20;
 
 <pre class="language-javascript"><code class="lang-javascript">content: {
   addon: {
