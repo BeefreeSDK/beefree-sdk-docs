@@ -6,6 +6,10 @@ description: >-
 
 # AI-Generated Meta Tag Fields
 
+{% hint style="info" %}
+This is available for Superpowers or Enterprise plan subscriptions.
+{% endhint %}
+
 Read this technical documentation to learn more about how to configure AI [generated titles, meta descriptions for pages, preheaders, and subject lines for emails](https://docs.beefree.io/beefree-sdk/advanced-options/meta-tags) within your host application.
 
 ### Overview

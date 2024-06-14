@@ -1,5 +1,9 @@
 # OpenAI AddOn
 
+{% hint style="info" %}
+The OpenAI AddOn is only available for Superpower and Enterprise plans.
+{% endhint %}
+
 ## Overview <a href="#overview" id="overview"></a>
 
 The OpenAI AddOn is fully functional from the moment it’s enabled via the [Beefree SDK Console](https://developers.beefree.io/). For information about enabling OpenAI AddOn [click here](https://devportal.beefree.io/hc/en-us/articles/10838757053330-How-do-I-enable-the-OpenAI-AddOn-).
