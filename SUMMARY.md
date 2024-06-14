@@ -14,6 +14,7 @@
     * [How the UID parameter works](readme/installation/how-the-uid-parameter-works.md)
     * [Set up two-factor authentication](readme/installation/set-up-two-factor-authentication.md)
     * [Naming conventions](readme/installation/naming-conventions.md)
+* [Sample Code](sample-code.md)
 * [Email Builder](email-builder.md)
 * [Page Builder](page-builder/README.md)
   * [Integrating Page Builder](page-builder/integrating-page-builder.md)
@@ -110,5 +111,4 @@
   * [JSON Parser errors](error-management/json-parser-errors.md)
   * [Template Validation and Update](error-management/template-validation-and-update.md)
   * [Template validation and update errors](error-management/template-validation-and-update-errors.md)
-* [Sample Code](sample-code.md)
 * [Scheduled maintenances](scheduled-maintenances.md)
