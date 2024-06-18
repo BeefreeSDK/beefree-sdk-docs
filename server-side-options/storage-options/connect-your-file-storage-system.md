@@ -398,16 +398,17 @@ The following code shows an example response for uploading a file.
 
 ## **Managing a File Name Conflict**
 
-An upload can have a name conflict with an existing file with the same name in the target folder.\
-The FSP must decide how to manage this conflict:
+#### Handling Upload Conflicts
 
-* Complete the upload using a different name (usually appending a suffix). In this case returned metadata must be coherent with the new file created;
-* Overwrite the old file with the new one;
-* Ask the user what to do;
-* Return an error;
+If an upload has a name conflict with an existing file in the target folder, the FSP must decide how to manage this conflict:
+
+1. **Return an Error**: Notify the user about the conflict and do not proceed with the upload.
+2. **Ask the User**: Prompt the user for instructions on how to handle the conflict.
+3. **Overwrite File**: Replace the existing file with the new upload.
+4. **Rename and Complete**: Complete the upload using a different name, usually by appending a suffix. Ensure the metadata is consistent with the newly created file.
 
 **Ask the user what to do**:\
-The FSP can ask the user what to do only when the `conflict_strategy` field is set to `ask`. In this case the FSP must return a `3400` error code to instruct the Builder to show a dialog to the user.
+The FSP can prompt the user for action only if the `conflict_strategy` field is set to `ask`. In this scenario, the FSP must return a `3400` error code, instructing the Builder to display a dialog to the user.
 
 Example response:
 
@@ -418,16 +419,17 @@ Example response:
 }
 ```
 
-When the user clicks on the _keep_ or _replace_ buttons, a new upload request is sent to the FSP with the `conflict_strategy` field set to `keep` or `replace`.
+When the user clicks the _keep_ or _replace_ buttons, a new upload request is sent to the FSP with the `conflict_strategy` field set to either `keep` or `replace`.
 
-**Don't manage the filename conflict**: The FSP must return a `3401` error code to instruct the Builder to show a toast to the user, and now dialog to prompt the user.
+If there's a filename conflict, the FSP should return a `3401` error code. This instructs the Builder to show a toast notification to the user and prompt them with a dialog.
 
-## **Upload operation notes**
+### Upload Operation Notes
 
-* uploads are proxied by Beefree’s resource APIs, which are in charge of enforcing the maximum file size (configured by the Console)
-* uploads from stage will be POSTed to “/editor\_images/{filename}”
-* uploads from page builder favicons will be POSTed to “/favicon\_images/{filename}”
-* uploads from the image editor will be POSTed to “/editor\_images/{filename}”, filename will be an UUID
+Uploads are proxied by Beefree’s resource APIs, which enforce the maximum file size configured by the Console. Uploads from various sources are handled as follows:
+
+* **Image Editor**: POST to `/editor_images/{filename}`. Filename is a UUID.
+* **Page Builder Favicons**: POST to `/favicon_images/{filename}`.
+* **Stage**: POST to `/editor_images/{filename}`.
 
 ## Deleting a file
 
@@ -524,7 +526,7 @@ The FSP API uses the trailing slash (/) on the resource path to understand if th
 For example, if the FSP API receives a `GET` request for `/sample.jpg` it will return `sample.jpg` file metadata, whereas if it receives a GET request for `/sample.jpg/` it will return a list of the content located in the `sample.jpg` directory.
 {% endhint %}
 
-## Status codes and Error codes <a href="#status-codes" id="status-codes"></a><a href="#error-codes" id="error-codes"></a>
+## Status codes and Error codes <a href="#status-codes" id="status-codes"></a>
 
 In case of errors, the API returns a JSON object structured like this:
 
