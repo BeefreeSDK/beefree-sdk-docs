@@ -30,9 +30,7 @@ The Move Feature will be available in your application.
 
 ### Using Your Own AWS S3 Bucket
 
-### Determining Impact of the New File Writing Process
-
-Follow these steps to determine how the new file writing process will impact your implementation:
+If you are using your own AWS S3 bucket, it is important that you determine the impact of the new file writing process on your application. Follow these steps to implement the new Move File feature in your application:
 
 1. **Understand the Changes**: The file paths will change from `/your-path/UID/user-path/filename.jpg` to `/your-path/new-internal-id/random-path/filename.jpg`.
 2. **Check Timeline**: You have two months to assess the impact, starting now until Monday, September 2, 2024.
