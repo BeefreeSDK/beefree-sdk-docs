@@ -218,6 +218,8 @@ filePicker: {
 
 ```
 
+## Rows
+
 ### rows addon
 
 The following code demonstrates how to specify behavior settings for individual row addons. A custom row addon can have its behaviors set independently from the global row settings.
@@ -258,7 +260,6 @@ rows: {
       canResetMobile: false,
     }
   },
-},
 
 ```
 
@@ -267,19 +268,19 @@ rows: {
 ```javascript
 
 tabs: {
-    rows: {
-      show: true,
-      locked: false
-    },
-    settings: {
-      show: true,
-      locked: false
-    },
-    content: {
-      show: true,
-      locked: false
-    },
+  rows: {
+    show: true,
+    locked: false
   },
+  settings: {
+    show: true,
+    locked: false
+  },
+  content: {
+    show: true,
+    locked: false
+  },
+},
 
 ```
 
@@ -763,35 +764,97 @@ form: {
 
 ```
 
-### **icon**
+### **Icon**
 
+You should use the Icon object to set advanced permissions when you need granular control over the display and behavior of icon elements. This allows you to lock certain properties, such as the visibility and font weight, ensuring consistency across different devices and user interactions. Additionally, setting these permissions helps in maintaining a cohesive design by managing how icons respond to mobile and AMP environments.
+
+{% tabs %}
+{% tab title="JavaScript" %}
 ```javascript
-
 icons: {
-  icons: { 
-    show: true,
-     locked: true
-   },
- properties: {
-   fontWeight: {
-    show: true,
-    locked: false
-   },
-  align : { ... },
-  fontFamily: { ... },
-  fontSize: { ... },
-  textColor: { ... },
-  iconSize: { ... },
-  itemsSpacing: { ... },
-  iconSpacing: { ... },
-  padding : { ... },
-  hideOnMobile: { ... },
-  hideOnAmp: { ... },
-  id: { ... },
-  letterSpacing: { ... },
+  behaviors: {
+    canResetMobile: false,
+  },
+  properties: {
+    icons: {
+      show: true,
+      locked: true
+    },
+    fontWeight: {
+      show: true,
+      locked: false
+    },
+    align: { ... },
+    fontFamily: { ... },
+    fontSize: { ... },
+    textColor: { ... },
+    iconSize: { ... },
+    itemsSpacing: { ... },
+    iconSpacing: { ... },
+    padding: { ... },
+    hideOnMobile: { ... },
+    hideOnAmp: { ... },
+    id: { ... },
+    letterSpacing: { ... }
+  }
 }
 
 ```
+{% endtab %}
+
+{% tab title="JSON" %}
+```json
+{
+  "icons": {
+    "behaviors": {
+      "canResetMobile": false
+    },
+    "properties": {
+      "icons": {
+        "show": true,
+        "locked": true
+      },
+      "fontWeight": {
+        "show": true,
+        "locked": false
+      },
+      "align": {},
+      "fontFamily": {},
+      "fontSize": {},
+      "textColor": {},
+      "iconSize": {},
+      "itemsSpacing": {},
+      "iconSpacing": {},
+      "padding": {},
+      "hideOnMobile": {},
+      "hideOnAmp": {},
+      "id": {},
+      "letterSpacing": {}
+    }
+  }
+}
+
+```
+{% endtab %}
+{% endtabs %}
+
+#### Icon Configuration Elements
+
+In the given icon code, the structure is defined using objects, properties, and parameters to represent a detailed configuration. The main object, `icons`, encompasses two primary properties: `behaviors` and `properties`, each of which is an object itself. The `behaviors` object contains a property `canResetMobile` with a boolean parameter set to `false`, indicating a specific behavior setting. The `properties` object holds various properties such as `icons`, `fontWeight`, `align`, and more, each representing different characteristics and settings for the icons. Each of these properties has parameters assigned to them; for instance, the `icons` property has `show` and `locked` parameters set to `true`, determining the visibility and lock status of the icons. This nested structure using objects and properties with defined parameters represent the configuration settings in the code.
+
+#### Behaviors Object
+
+The table below outlines the configuration elements, their data types, descriptions, and default values for the behaviors object used in the icon configuration.
+
+<table><thead><tr><th width="224">Configuration Elements</th><th>Data Type</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td><strong>canResetMobile</strong></td><td>boolean</td><td>Indicates whether icons can reset to default settings on mobile devices.</td><td>false</td></tr></tbody></table>
+
+#### Properties Object
+
+The table below outlines the configuration elements, their data types, descriptions, and default values for the properties object used in the icon configuration.
+
+<table><thead><tr><th width="228">Configuration Elements</th><th>Data Type</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td><code>icons</code></td><td>object</td><td></td><td></td></tr><tr><td><code>show</code></td><td>boolean</td><td>Determines if the icons are visible.</td><td>true</td></tr><tr><td><code>locked</code></td><td>boolean</td><td>Indicates if the icons' visibility setting is locked.</td><td>true</td></tr><tr><td><code>fontWeight</code></td><td>object</td><td></td><td></td></tr><tr><td><code>show</code></td><td>boolean</td><td>Determines if the font weight option is visible for icons.</td><td>true</td></tr><tr><td><code>locked</code></td><td>boolean</td><td>Indicates if the font weight option is locked.</td><td>false</td></tr><tr><td><code>align</code></td><td>object</td><td>Aligns icons within their container.</td><td>NA</td></tr><tr><td><code>fontFamily</code></td><td>object</td><td>Sets the font family for icon labels.</td><td>NA</td></tr><tr><td><code>fontSize</code></td><td>object</td><td>Sets the font size for icon labels.</td><td>NA</td></tr><tr><td><code>textColor</code></td><td>object</td><td>Sets the text color for icon labels.</td><td>NA</td></tr><tr><td><code>iconSize</code></td><td>object</td><td>Sets the size of the icons.</td><td>NA</td></tr><tr><td><code>itemsSpacing</code></td><td>object</td><td>Sets the spacing between multiple icons.</td><td>NA</td></tr><tr><td><code>iconSpacing</code></td><td>object</td><td>Sets the spacing around individual icons.</td><td>NA</td></tr><tr><td><code>padding</code></td><td>object</td><td>Sets the padding around icons.</td><td>NA</td></tr><tr><td><code>hideOnMobile</code></td><td>object</td><td>Hides icons on mobile devices.</td><td>NA</td></tr><tr><td><code>hideOnAmp</code></td><td>object</td><td>Hides icons on AMP-format pages.</td><td>NA</td></tr><tr><td><code>id</code></td><td>object</td><td>Sets a unique identifier for icons.</td><td>NA</td></tr><tr><td><code>letterSpacing</code></td><td>object</td><td>Sets the space between letters in icon labels.</td><td>NA</td></tr></tbody></table>
+
+
 
 ### **paragraph**
 
