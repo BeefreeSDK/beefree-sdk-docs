@@ -218,6 +218,30 @@ filePicker: {
 
 ```
 
+### **linktypes**
+
+```javascript
+
+linkTypes: {
+      webAddress: {
+        show: true,
+      },
+      emailAddress: {
+        show: true,
+      },
+      telephone: {
+        show: false,
+      },
+      text: {
+        show: false,
+      },
+      anchor: {
+        show: false,
+      },
+    },
+
+```
+
 ## Rows
 
 ### rows addon
@@ -927,30 +951,6 @@ content: {
 
 ```
 
-### **linktypes**
-
-```javascript
-
-linkTypes: {
-      webAddress: {
-        show: true,
-      },
-      emailAddress: {
-        show: true,
-      },
-      telephone: {
-        show: false,
-      },
-      text: {
-        show: false,
-      },
-      anchor: {
-        show: false,
-      },
-    },
-
-```
-
 ### **menu**
 
 ```javascript
@@ -1111,7 +1111,7 @@ content: {
 }
 ```
 
-### **Addon**
+## **Addon**
 
 In this section, we will explore how to assign advanced permissions and behaviors for various addon types, specifically focusing on how to customize permissions for custom addons and row addons. These permissions can override default settings to provide granular control. For instance, an image addon can have specific permissions different from the default image block permissions.
 
