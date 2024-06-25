@@ -1123,9 +1123,7 @@ resolve (
 
 ### Row Simplified Schema
 
-The updated Beefree SDK simplified row schema offers significant benefits to developers working with Custom Addons. With the simplified row schema properties, you have more flexibility for creating Custom Addons and [Rows](../../custom-rows/generating-custom-rows-from-existing-content.md#general-row-parameters). This added flexibility allows you to control permissions more granularly, ensuring that critical content, like Button URLs, remains unchanged by end users.
-
-When a user opens the Custom Addon content dialog, the Beefree SDK sends the row's content along with the associated metadata to your application. This continuous synchronization of data allows you to listen to the changes your end users make, and eliminates the need to start over each time the dialog is reopened, enabling your application to monitor and respond to user changes dynamically.
+Your application receives the full schema, but we expect it to provide the Simplified Schema. When an end user reopens the Custom AddOn Content Dialog, the Beefree SDK sends your application the row's content and metadata. This feature allows your application to track user changes without needing a restart each time the dialog is reopened. The new properties in the Simplified Schema enhance the flexibility for designing Custom Rows and AddOns.
 
 {% code overflow="wrap" %}
 ```javascript
