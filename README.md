@@ -1,16 +1,22 @@
 ---
-description: Welcome to the Beefree SDK technical documentation for developers!
+description: Welcome to the Beefree SDK technical documentation!
 ---
 
 # Getting Started
 
-## Welcome! <a href="#welcome" id="welcome"></a>
+## Overview of Beefree SDK <a href="#welcome" id="welcome"></a>
 
-Welcome to the Beefree SDK technical documentation!
+Beefree SDK is a toolkit that offers a comprehensive set of features that enable your application's end users to achieve their design goals. Through embedding Beefree SDK into your application, you'll provide your end users with access to a full suite of design features that include the following and more:
 
-We’re thrilled that you’re interested in integrating our embeddable builders into your software. Beefree SDK is a versatile content creation platform that includes **three distinct visual content builders**, a file management UI, and a series of APIs that help you create engaging, delightful, productive content creation experiences for your customers.
+* **Email builder:** A no-code interactive and guided experience that supports your end users in creating beautiful and stunning [emails](email-builder.md) quickly.
+* **Page builder:** A no-code intuitive experience that guides your end users through how to create visually stunning [landing pages](page-builder/) they can use to present information, [embed forms](form-block/), and capture critical data points to make data-driven decisions.
+* **Popup builder:** A unique no-code experience that provides your end users with the fundamentals of [creating popups](popup-builder/) that grab and maintain attention.
+* **File manager:** A tool to manage [media assets](file-manager-application-overview/) (images, PDFs, and so on).
+* **Template catalog:** A [catalog of design templates](template-catalog-api.md) that integrate industry best practices to support end users in getting across the finish line with their creations fast, and supports them in achieving quick design wins.
+* **Custom AddOns:** Expand your application's offering by developing your own [Custom AddOns](addons/custom-addons/) on top of our comprehensive suite of features.
+* **AI Writing Assistant:** A helpful [AI assistant](addons/partner-addons/openai-addon/) to help end users write their design content.
 
-The builders include an [Email Builder](email-builder.md), a [Page Builder](page-builder/), and a [Popup Builder](popup-builder/). Each of these builders is designed to meet specific content creation needs, allowing you to offer a tailored content creation experience to your customers. They can be easily integrated into your application in a matter of minutes.
+These builders can easily integrate into your application in a matter of minutes. Browse the latest [sample code](https://www.npmjs.com/package/@beefree.io/sdk), implementation guides, and other available features in this documentation.&#x20;
 
 ## Beefree SDK's Embeddable Builders <a href="#welcome" id="welcome"></a>
 
@@ -56,8 +62,8 @@ Get your free Client ID and Client Secret in the [Developer Console](https://dev
 
 ### About this documentation <a href="#about-this-documentation" id="about-this-documentation"></a>
 
-These products share the same, unique combination of **design flexibility** and **ease of use**. Please note that all of the **documentation** in this site **applies to all builders** (and in many cases to the File Manger too), unless otherwise specified.
+These products share the same, unique combination of design flexibility and ease of use. Note that the majority of the documentation applies to all builders (and in many cases to the File Manger too), unless otherwise specified.
 
-As you will gradually discover, Beefree SDK also offers great liberty in how you can integrate it with your application, and we are here to support you along the way.
-
-Let’s get started!
+{% hint style="info" %}
+If you need support at any point throughout your integration, [contact us](https://devportal.beefree.io/hc/en-us/requests/new). We are here to support you along the way.
+{% endhint %}
