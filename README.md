@@ -6,13 +6,13 @@ description: Welcome to the Beefree SDK technical documentation!
 
 ## Overview of Beefree SDK <a href="#welcome" id="welcome"></a>
 
-Beefree SDK is a toolkit that offers a comprehensive set of features that enable your application's end users to achieve their design goals. Through embedding Beefree SDK into your application, you'll provide your end users with access to a full suite of design features that include the following and more:
+Beefree SDK is a toolkit that offers a comprehensive set of features to enable your application's end users to achieve their design goals. Through embedding Beefree SDK into your application, you'll provide your end users with access to a full suite of design features that include the following and more:
 
 * **Email builder:** A no-code interactive and guided experience that supports your end users in creating beautiful and stunning [emails](email-builder.md) quickly.
 * **Page builder:** A no-code intuitive experience that guides your end users through how to create visually stunning [landing pages](page-builder/) they can use to present information, [embed forms](form-block/), and capture critical data points to make data-driven decisions.
 * **Popup builder:** A unique no-code experience that provides your end users with the fundamentals of [creating popups](popup-builder/) that grab and maintain attention.
 * **File manager:** A tool to manage [media assets](file-manager-application-overview/) (images, PDFs, and so on).
-* **Template catalog:** A [catalog of design templates](template-catalog-api.md) that integrate industry best practices to support end users in getting across the finish line with their creations fast, and supports them in achieving quick design wins.
+* **Template catalog:** A [catalog of design templates](template-catalog-api.md) that integrate industry best practices to support end users in getting across the finish line with their creations fast, and achieving quick design wins.
 * **Custom AddOns:** Expand your application's offering by developing your own [Custom AddOns](addons/custom-addons/) on top of our comprehensive suite of features.
 * **AI Writing Assistant:** A helpful [AI assistant](addons/partner-addons/openai-addon/) to help end users write their design content.
 
