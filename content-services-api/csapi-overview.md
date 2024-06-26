@@ -18,7 +18,7 @@ The Content Services API (CSAPI) – helps you achieve the following:
 * Updating the HTML of an email, page or popup created with a Beefree builder, without user interaction. Why? For example, the HTML of an email template might need to be updated (e.g. to resolve a newly discovered rendering issue in an email client), and you don’t want to ask your users to open the email with the builder and resave it.
 * Outputting partial HTML that enables you to reuse code, increase consistency across your templates, and easily maintain your code.
 * Generating a thumbnail from the HTML, because thumbnails are always nice to have, for all sorts of reasons 🙂
-* Generating a PDF from the HTML, as your1 users may want to share or print an email or a page, and PDF is great for that.
+* Generating a PDF from the HTML, as your users may want to share or print an email or a page, and PDF is great for that.
 * Merging shared content ([saved rows](../saved-rows/)) into emails and pages that use it (e.g. update 30 emails that use the same footer).
 * Use [Brand Style Management](brand-style-management.md) to make template-wide design changes to existing templates quickly and easily.
 * Generate [plain text](content-services-api-reference.md#plain-text) versions of emails from JSON templates, ensuring emails look sharp and easy to read on any device.
