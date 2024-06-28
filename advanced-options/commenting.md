@@ -1,5 +1,9 @@
 # Commenting
 
+{% hint style="info" %}
+The Commenting feature is available for [Core plan or higher](https://developers.beefree.io/pricing-plans).
+{% endhint %}
+
 ## Overview
 
 With Commenting, teams using your application can **collaborate asynchronously** on the same email, page or popup, in order to **get their work done** more quickly and **reach approval** for going live more efficiently.
