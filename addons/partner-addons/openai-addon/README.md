@@ -4,7 +4,21 @@
 The OpenAI AddOn is only available for Superpower and Enterprise plans.
 {% endhint %}
 
-## Overview <a href="#overview" id="overview"></a>
+## AI Writing Assistant Overview <a href="#overview" id="overview"></a>
+
+Use this AddOn to enable the AI Writing Assistant for your end users. This AddOn allows users to generate text within their designs using AI, helping them complete their designs faster and more efficiently. This AddOn integrates with OpenAI as the provider for this feature.
+
+With this feature, your end users will see a “Write with AI” button for Title, Paragraph, List, and Button content blocks. Beefree SDK processes your end users' prompts, sends them to your AI provider, and returns the response to the end user. They can then decide to apply or regenerate the response.
+
+By integrating the AI Writing Assistant, you provide your end users with a powerful tool to complete their designs quickly, which helps them maintain a competitive edge. This AddOn is quick and simple to integrate.
+
+The following image provides an example of how the AI Writing Assistant looks to your end user:
+
+<figure><img src="../../../.gitbook/assets/CleanShot 2024-06-28 at 16.08.31@2x.png" alt="Write with AI button highlighted inside the panel on the right side of the screen after dragging and dropping a paragraph block on to the builder stage"><figcaption><p>Write with AI button within the builder</p></figcaption></figure>
+
+Visit our [Integrated AI Assistant White label end user guide](https://docs.beefree.io/end-user-guide/integrated-ai-assistant) to learn more about how this feature works on the frontend for your application's end users.
+
+## How to enable the OpenAI AddOn
 
 The OpenAI AddOn is fully functional from the moment it’s enabled via the [Beefree SDK Console](https://developers.beefree.io/). For information about enabling OpenAI AddOn [click here](https://devportal.beefree.io/hc/en-us/articles/10838757053330-How-do-I-enable-the-OpenAI-AddOn-).
 
@@ -15,12 +29,15 @@ Once enabled, the OpenAI AddOn is available in the side panel for the following 
 * List
 * Button
 
+## Customize the AddOn's Configuration
+
 In certain scenarios, you may find the need to personalize both the user interface (UI) and the operational features of the OpenAI AddOn. This is particularly applicable when you want to achieve objectives such as:
 
 1. **Monitoring Token Usage for Cost Management:** By tracking the number of tokens being used, you can effectively manage and regulate your expenses related to using the OpenAI AddOn. This becomes important when your usage is high, and you must keep a budget check. [Learn more about tokens.](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them)
 2. **Controlling Access to the Prompt:** You might want to limit who can access and manipulate the prompt. In a shared environment, for instance, you may want to restrict certain users from altering the prompt, which is crucial for maintaining consistency and avoiding unwanted changes.
 3. **Enabling Per User or Per Content Type:** You might want to limit who can access the AI so you can up-sell the feature to end-users. Or, you may only want to enable the AI capability for specific content types, such as paragraphs vs. buttons.
 4. **Disabling Automatic Suggestions:** The OpenAI AddOn can generate automatic suggestions at the prompt, which may not always be desirable. In such cases, you might want to disable this feature to have more control over the input and output at the prompt.
+5. **Token Upselling:** The OpenAI AddOn can be configured to guide your end users to purchase additional tokens when they run out of available tokens. This feature is called [Token Upselling](token-upselling.md).
 
 We’ll cover all of these scenarios in the following sections as we discuss the settings and configuration options available for developers.
 
@@ -258,7 +275,7 @@ The AI will then generate a revised version of your content, matching the tone y
 
 ## Customize Prompt Suggestions <a href="#customize-prompt-suggestions" id="customize-prompt-suggestions"></a>
 
-Below are the preset prompt suggestions we have identified for the different content tiles, along with their corresponding translation key, incase you’d like to revise the prompt through our custom languages feature.
+Below are the preset prompt suggestions we have identified for the different content tiles, along with their corresponding translation key, in case you’d like to revise the prompt through our custom languages feature.
 
 ### Paragraph
 
@@ -299,3 +316,51 @@ Below are the preset prompt suggestions we have identified for the different con
 | Make it \[number] words long                | mailup-bee-common-component-ai.characters-length    |
 | Make it \[tone] without changing the format | mailup-bee-common-component-ai.adjust-tone          |
 | Translate it to \[language]                 | mailup-bee-common-component-ai.translate-heading    |
+
+## Additional considerations
+
+Prior to configuring the OpenAI AddOn, consider the following:
+
+* Scrolling behavior
+* [OpenAI and data security](./#openai-and-data-security)
+
+### Scrolling Behavior
+
+This section will discuss how to manage an odd scrolling behavior related to the OpenAI AddOn. At times, the AI Writing Assistant side panel opens and requires the end user to scroll down to reach the prompting area.
+
+The following image shows an example of this behavior:
+
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-04-16 at 10.49.05 AM.png" alt=""><figcaption></figcaption></figure>
+
+If you encounter this behavior, take the following steps to avoid the need for scrolling to access the prompting area:
+
+1. Navigate to your CSS code.
+2. Change the height of your container using the `calc()` function as shown in the following examples:
+
+```css
+Example A:
+height: calc(100% - 100px); // offset for 100px footer
+```
+
+This sets the height of the element to be the full height of its parent (`100%`) minus `100px`, which accounts for an offset such as a footer.
+
+```css
+Example B:
+height: calc(100%);  // no offset needed
+```
+
+This sets the height of the element to be exactly `100%` of its parent's height with no offset.
+
+The `calc()` function allows for mathematical expressions in CSS values, making it versatile for dynamic layouts.
+
+3. Save your updated CSS.
+
+You can now access the prompting section of the AI Writing Assistant on the front end without scrolling down the side panel.
+
+The following image shows an example of this result:&#x20;
+
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-04-16 at 10.53.17 AM.png" alt=""><figcaption></figcaption></figure>
+
+### OpenAI and Data Security
+
+Visit our [OpenAI and Data Security page ](open-ai-and-data-security.md)to learn more about the flow of your end user's information from prompt creation to generated response.
