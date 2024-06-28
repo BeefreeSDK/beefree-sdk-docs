@@ -18,11 +18,19 @@ This guide explains how to enable the Image Rounded Corners and Cards Style feat
 
 The **Cards Style** feature allows users to transform ordinary messages into visually appealing layouts that grab their audience’s attention effortlessly. By incorporating stylish cards, users can effectively highlight product features, display customer testimonials, promote special offers, and present news updates in a structured and eye-catching manner. This not only enhances the readability and engagement of emails, pages, and popups but also ensures that important information stands out and resonates with viewers, providing significant value to the end-users and enriching their design experience within your application.
 
+{% embed url="https://beefree.screencasthost.com/watch/cZ1uqcV803R" %}
+
+Reference the [Column Management article in the White label end user guide](https://docs.beefree.io/end-user-guide/column-management#cards-style) to learn more about how your application's end users can use this feature.
+
 ### Image Round Corners
 
 The **Image Round Corners** feature allows your application's end users to easily add rounded corners to images from the side panel, enhancing the visuals of emails, pages, and popups. This built-in tool offers a sleek and professional design option, ensuring a modern look.
 
 Together, these features empower your application’s end-users to create more compelling and attractive designs effortlessly. Users can employ these stylistic options to make their content more engaging and easier to scan.
+
+{% embed url="https://beefree.screencasthost.com/watch/cZ1uqiV800C" %}
+
+Reference the [Images article in the White label end user guide](https://docs.beefree.io/end-user-guide/images#image-rounded-corners) to learn more about how your application's end users can use this feature.
 
 ## Prerequisites
 
