@@ -96,8 +96,11 @@ beeConfig: {
       backgroundColorRow: { ... },
       backgroundColorContent: { ... },
       doNotStackOnMobile: { ... },
+      hideOnMobile: { ... },
       backgroundImage: { ... },
+      backgroundVideo: { ... },
       displayConditions: { ... },
+      rowLayout: { ... },
       columnTabs: { ... },
       contentBorder: { ... },
       roundedCorners: { ... },
@@ -110,6 +113,7 @@ beeConfig: {
         show: true,
         locked: false
       }
+    }
   }
 }
 
