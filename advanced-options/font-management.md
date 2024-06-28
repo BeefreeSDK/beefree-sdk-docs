@@ -6,16 +6,16 @@ This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/plu
 
 ## Introduction
 
-You can now customize the list of fonts available in the editor’s text toolbar and the BODY settings panel.
+You can customize the list of fonts available in the editor’s text toolbar and the body settings panel.
 
-This new feature allows you (or users of your app) to:
+This feature allows you (or users of your app) to:
 
 * Expand the list of available fonts, adding web fonts from popular services, such as Google fonts, font library.org or alike.
 * Reduce the list of fonts to a limited number of options, removing some or all our default fonts.
 
 Unlike other premium features, fonts are part of the [client-side configuration](../readme/installation/configuration-parameters/), so they can be defined each time the editor is started.
 
-This flexible approach will help you to use this feature in a variety of scenarios. For example:
+This flexible approach will help you use this feature in a variety of scenarios. A few example scenarios are the following:
 
 * You want your users to customize the list of fonts loaded in the builder when they edit designs. You can now create an interface in your app to do so, and instruct the editor accordingly (see below).
 * You have multiple levels of users, and you want “contributors” to only see a subset of approved fonts, while “editors” have access to a larger list.
@@ -132,7 +132,7 @@ This is the complete list of the default fonts in the application and its config
     name: "Georgia",
     fontFamily: "Georgia, Times, 'Times New Roman', serif"
   }, {
-    name: "Helvetica",
+    name: "Helvetica Neue",
     fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif"
   }, {
     name: "Lucida Sans",
