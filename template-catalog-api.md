@@ -597,7 +597,7 @@ We are committed to making fresh new templates available every quarter.
 
 #### Where are the image and media assets stored?
 
-Storing the JSON Template source file is totally in your control, the media assets referenced inside the template are kept in the Beefree SDK S3 Bucket and provisioned using the our CDN.
+Storing the JSON Template source file is totally in your control, the media assets referenced inside the template are kept in the Beefree SDK S3 Bucket and provisioned using the CDN.
 
 #### Do the API calls made to the Template Catalog contribute to the total CSAPI count?
 
