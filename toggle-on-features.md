@@ -251,41 +251,5 @@ The File Manager has the following toggle on features for privacy and security:
 
 The features listed in the following table require development time to be implemented within your host application.
 
-| Features Requiring Development   |
-| -------------------------------- |
-| Email Builder                    |
-| Landing Page Builder             |
-| Popup Builder                    |
-| Custom Fonts                     |
-| File Manager                     |
-| Template Catalog API             |
-| Content Services API             |
-| Custom CSS                       |
-| Advanced Permissions             |
-| Custom File Picker               |
-| Custom AddOns                    |
-| Unlimited UIDs                   |
-| Custom Headers                   |
-| Collaborative Editing            |
-| Themes                           |
-| Custom Languages                 |
-| Display Conditions               |
-| Custom Rows                      |
-| Saved Rows                       |
-| Synced Rows                      |
-| Commenting                       |
-| Custom Attributes                |
-| Content Dialog                   |
-| AI AddOns                        |
-| OpenAI AddOn                     |
-| Title                            |
-| Paragraph                        |
-| List                             |
-| Button                           |
-| Subject Line & Preheader         |
-| Title & Meta description         |
-| Tokens Upselling                 |
-| Azure AI Vision - Image Analysis |
-| Single generation                |
-| Bulk generation                  |
+<table data-full-width="false"><thead><tr><th width="312">Features Requiring Development</th></tr></thead><tbody><tr><td>Email Builder</td></tr><tr><td>Landing Page Builder</td></tr><tr><td>Popup Builder</td></tr><tr><td>Custom Fonts</td></tr><tr><td>File Manager</td></tr><tr><td>Template Catalog API</td></tr><tr><td>Content Services API</td></tr><tr><td>Custom CSS</td></tr><tr><td>Advanced Permissions</td></tr><tr><td>Custom File Picker</td></tr><tr><td>Custom AddOns</td></tr><tr><td>Unlimited UIDs</td></tr><tr><td>Custom Headers</td></tr><tr><td>Collaborative Editing</td></tr><tr><td>Themes</td></tr><tr><td>Custom Languages</td></tr><tr><td>Display Conditions</td></tr><tr><td>Custom Rows</td></tr><tr><td>Saved Rows</td></tr><tr><td>Synced Rows</td></tr><tr><td>Commenting</td></tr><tr><td>Custom Attributes</td></tr><tr><td>Content Dialog</td></tr><tr><td>AI AddOns</td></tr><tr><td>OpenAI AddOn</td></tr><tr><td>Title</td></tr><tr><td>Paragraph</td></tr><tr><td>List</td></tr><tr><td>Button</td></tr><tr><td>Subject Line &#x26; Preheader</td></tr><tr><td>Title &#x26; Meta description</td></tr><tr><td>Tokens Upselling</td></tr><tr><td>Azure AI Vision - Image Analysis</td></tr><tr><td>Single generation</td></tr><tr><td>Bulk generation</td></tr></tbody></table>
 
