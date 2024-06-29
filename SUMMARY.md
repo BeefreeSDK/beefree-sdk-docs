@@ -26,6 +26,7 @@
     * [Advanced settings](popup-builder/setting-layout-and-size/advanced-settings.md)
 * [File Manager application overview](file-manager-application-overview/README.md)
   * [Mime Types and Groups](file-manager-application-overview/file-extensions-and-groups.md)
+* [Toggle On Features](toggle-on-features.md)
 * [Server-side options](server-side-options/README.md)
   * [Toolbar options](server-side-options/toolbar-options.md)
   * [Storage options](server-side-options/storage-options/README.md)
