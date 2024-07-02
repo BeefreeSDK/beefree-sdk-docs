@@ -11,9 +11,9 @@ Here is a quick summary:
 | Plan        | Included API calls | Cost per extra API call |
 | ----------- | ------------------ | ----------------------- |
 | Essentials  | 15,000             | $0.01                   |
-| Core        | 100,000            | $0.006                  |
+| Core        | 50,000             | $0.01                   |
 | Superpowers | 250,000            | $0.003                  |
-| Enterprise  | 1,000,000          | $0.003                  |
+| Enterprise  | Custom             | Custom                  |
 
 There will be no changes to the functionality of the CSAPI, except that we’ve added a really useful Merge API that allows you to update saved rows in the documents that use them. You can find complete [technical documentation on the new “merge” method here](content-services-api-reference.md).
 
