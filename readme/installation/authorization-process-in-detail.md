@@ -1,6 +1,6 @@
-# Authorization v2 Process
+# Authorization Process
 
-## Auth v2 Overview
+## Auth Overview
 
 Beefree SDK Authorization v2 is nearly the same as v1, with an improved endpoint and an extra security layer.\
 \

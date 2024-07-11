@@ -10,7 +10,7 @@
       * [Configuration Reload](readme/installation/configuration-parameters/configuration-reload.md)
       * [Workspaces](readme/installation/configuration-parameters/workspaces.md)
     * [Methods and Events](readme/installation/methods-and-events.md)
-    * [Authorization v2 Process](readme/installation/authorization-process-in-detail.md)
+    * [Authorization Process](readme/installation/authorization-process-in-detail.md)
     * [How the UID parameter works](readme/installation/how-the-uid-parameter-works.md)
     * [Set up two-factor authentication](readme/installation/set-up-two-factor-authentication.md)
     * [Naming conventions](readme/installation/naming-conventions.md)
