@@ -735,7 +735,7 @@ resolve({
     tag: 'ol',
     html: `<ul><li>1 item</li></ul>`,
     align: 'right',
-    size: '48',
+    size: 48,
     underline: true,
     italic: true,
     bold: true,
@@ -755,7 +755,7 @@ The following table displays a list of properties in the resolve function, and e
 | underline | Boolean                              | No        |
 | italic    | Boolean                              | No        |
 | align     | String ('left', 'center' or 'right') | No        |
-| size      | Number                               | No        |
+| size      | Integer                              | No        |
 | bold      | Boolean                              | No        |
 | color     | String                               | No        |
 | linkColor | String                               | No        |
