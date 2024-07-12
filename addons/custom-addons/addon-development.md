@@ -229,7 +229,7 @@ resolve({
     title: 'h3',
     text: 'Title',
     align: 'right',
-    size: '48',
+    size: 48,
     bold: true,
     color: 'pink',
     linkColor: 'green',
@@ -245,7 +245,7 @@ The following table displays a list of properties in the resolve function, and e
 | title     | String  | No        |
 | text      | String  | Yes       |
 | align     | String  | No        |
-| size      | String  | No        |
+| size      | Integer | No        |
 | bold      | Boolean | No        |
 | color     | String  | No        |
 | linkColor | String  | No        |
