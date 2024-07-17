@@ -21,27 +21,21 @@ layout:
 
 ## Add JavaScript Library <a href="#add-javascript-library" id="add-javascript-library"></a>
 
-Congratulations on registering your first application!  Now it’s time to install it. The first step is to add the Beefree SDK library to your application. You can use plain HTML or [our convenient NPM module](https://dam.beefree.io/beepluginwrapper).
-
-### **HTML**
-
-```markup
-
-
-<script src="https://app-rsrc.getbee.io/plugin/BeePlugin.js" type="text/javascript"></script>
-
-
-```
+Congratulations on [creating your first application](../create-an-application.md)!  Now it’s time to install it. The first step is to add the Beefree SDK library to your application. You can use [our convenient NPM module](https://dam.beefree.io/beepluginwrapper) to add it .
 
 ### **NPM**
 
+Use the command `npm i @beefree.io/sdk` to install the Beefree SDK library into your project.
+
 ```
 
-npm i @mailupinc/bee-plugin
+npm i @beefree.io/sdk
 
 ```
 
 ## Initialize the application <a href="#initialize-the-application" id="initialize-the-application"></a>
+
+Take the steps outlined in this section to initialize your application.
 
 ### Step 1. Create a container
 
@@ -51,9 +45,7 @@ We recommend starting with an empty div, as follows:
 
 ```markup
 
-
 <div id="bee-plugin-container"></div>
-
 
 ```
 
@@ -63,28 +55,40 @@ Beefree cares about your security. This is why we use a standard JSON Web Token,
 
 To authenticate your application, pass your **Client ID** and **Client Secret** to our authorization service, and we’ll send your unique token back to you.
 
-We talk about this step in detail [here](authorization-process-in-detail.md), but here’s a quick example using jQuery:
+We talk about this step in detail [here](authorization-process-in-detail.md), but here’s a quick example:
 
-#### **jQuery**
+#### Authentication Code Samples
 
 ```javascript
 
-
-var endpoint = "https://auth.getbee.io/apiauth";
- 
-var payload = {
-  client_id: "string", // Enter your client id
-  client_secret: "string", // Enter your secret key
-  grant_type: "password" // Do not change
+var req = new XMLHttpRequest();
+req.onreadystatechange = function() {
+  if (req.readyState === 4 && req.status === 200) {
+    // Obtain token
+    var token = req.responseText;
+    // Call create method and pass token and beeConfig to obtain an instance of BEE Plugin
+    BeePlugin.create(token, beeConfig, function(beePluginInstance) {
+	// Call start method of bee plugin instance
+	beePluginInstance.start(template); // template is the json to be loaded in BEE
+    });
+  }
 };
- 
-$.post(endpoint, payload)
-  .done(function(data) {
-    var token = data;
-    // continue initialization here...
-  });
 
+// This is a sample call to YOUR server side application that calls the loginV2 endpoint on BEE the side
+req.open(
+	'POST', 	// Method
+	'/YOUR_BACKEND_TOKEN_ENDPOINT', // your server endpoint
+	false 		// sync request
+);
+```
 
+#### JSON Authorization Response
+
+```json
+{
+    "access_token": "...",
+    "v2": true
+}
 ```
 
 ### Step 3. Create an application
@@ -109,7 +113,7 @@ Here is an example in plain JavaScript:
 // Tip: Later, you can call API methods on this instance, e.g. bee.load(template)
 var bee;
  
-// Define a simple Beefree application configuration...
+// Define a simple Beefree SDK application configuration...
 var config = {
     uid: 'string',
     container: 'string'
@@ -125,7 +129,7 @@ window.BeePlugin.create(token, config, function(instance) {
 
 ```
 
-The following table shows all of the required configuration settings:
+The following table shows all of the required [configuration settings](configuration-parameters/):
 
 <table><thead><tr><th width="121">Attribute</th><th width="77">Type</th><th>Description</th></tr></thead><tbody><tr><td>uid</td><td>string</td><td><p>An alphanumeric string that identifies the user and allows the embedded application to load resources for that user (e.g. images).</p><ul><li>Min length: 3 characters</li><li>Can contain letters from a to z (uppercase or lowercase), numbers and the special characters _ (underscore) and – (dash)</li><li>It is a string and not a numeric value</li></ul><p>It uniquely identifies a user of the Beefree application. When we say “uniquely”, we mean that:</p><ul><li>It will be counted as a unique user for monthly billing purposes.</li><li>Images (and other files) used by the user when creating and editing messages will be associated with it and not visible to other users (when using the default storage).</li></ul></td></tr><tr><td>container</td><td>string</td><td>Identifies the id of div element that contains the application</td></tr></tbody></table>
 
@@ -138,7 +142,7 @@ The final step is to start the application, using the `start` method.
 
 Call the `start` method as follows:
 
-```
+```javascript
 
 var template = { ... }; // Any valid template, as JSON object
  

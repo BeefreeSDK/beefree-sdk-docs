@@ -12,11 +12,13 @@
 
 ### Authentication errors
 
-| Code   | Message              | HTTP Status      | Details                          |
-| ------ | -------------------- | ---------------- | -------------------------------- |
-| `4001` | Authentication error | 401 Unauthorized | Authentication header is missing |
-| `4005` | Authentication error | 401 Unauthorized | Bearer token format is invalid   |
-| `4010` | Authentication error | 401 Unauthorized | Token expired                    |
+| Code   | Message                                             | HTTP Status      | Details                                                                                                                                                                                                               |
+| ------ | --------------------------------------------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `4001` | Authentication error                                | 401 Unauthorized | Authentication header is missing                                                                                                                                                                                      |
+| `4005` | Authentication error                                | 401 Unauthorized | Bearer token format is invalid                                                                                                                                                                                        |
+| `4010` | Authentication error                                | 401 Unauthorized | Token expired                                                                                                                                                                                                         |
+| `5101` | Expired token is no longer refreshable              |                  | You need to create a new login. With the new token you can update the token in the current Builder instance or create a new Builder instance using the new token and the current JSON template present in this event. |
+| `5102` | The token can't be updated in this builder instance |                  | Create a new login and a new Builder instance using the new token and the current JSON template from this event.                                                                                                      |
 
 ## Preliminary JSON parsing errors
 
