@@ -61,6 +61,32 @@ To use an S3 bucket and configure a policy with the “Policy Generator,” foll
 
 Test the configured policy by attempting to access objects within the bucket using both secure and non-secure connections to verify that the policy is working as intended. Once verified, you have successfully configured your Amazon S3 bucket with a policy using the “Policy Generator” in the AWS Management Console. This policy allows any AWS user or service to retrieve objects from the specified bucket under the specified conditions.
 
+### **Example Bucket Policy**
+
+```json
+{
+   "Version": "2012-10-17",
+   "Id": "Policy1678139645091",
+   "Statement": [
+       {
+           "Sid": "Stmt1678139640090",
+           "Effect": "Allow",
+           "Principal": "*",
+           "Action": "s3:GetObject",
+           "Resource": "arn:aws:s3:::myBucketName/*",
+           "Condition": {
+               "Bool": {
+                   "aws:SecureTransport": "true"
+               },
+               "NumericGreaterThanEquals": {
+                   "s3:TlsVersion": "1.2"
+               }
+           }
+       }
+   ]
+}
+```
+
 ### Filling out the form to connect your AWS S3 bucket <a href="#filling-out-the-form-to-connect-your-aws-s3-bucket" id="filling-out-the-form-to-connect-your-aws-s3-bucket"></a>
 
 Once you have set up a compliant folder structure, you can use the form in the [Beefree SDK Console](https://developers.beefree.io/) to connect your application. It’s one of the available server-side configurations for your Beefree application (Application details > Open configuration > Storage options).
