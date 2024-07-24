@@ -87,7 +87,37 @@ Test the configured policy by attempting to access objects within the bucket usi
 }
 ```
 
-### Filling out the form to connect your AWS S3 bucket <a href="#filling-out-the-form-to-connect-your-aws-s3-bucket" id="filling-out-the-form-to-connect-your-aws-s3-bucket"></a>
+## Enabling the Move File Feature for Your File Manager
+
+You can enable the move icon for files within the File manager. This move icon allows your end users to move their files between folders, locations, and so on within the File manger. They can access the move icon directly on the file within the File manager. The move icon is a folder with an arrow pointing right inside it. End users click this icon to initiate the process of relocating the corresponding file to a new destination.
+
+If you are using a Custom AWS S3 Bucket, take the following steps to enable this feature for your File manager.
+
+### Using a Custom AWS S3 Bucket
+
+To implement the new Move File feature in your application, follow these steps to change your file path from the old format to the new format. This change is important because it allows the host application to enable the Move File feature within the File Manager without breaking old URLs. Here's how to make the transition:
+
+1. **Understand the Changes**: The file paths will change from `/your-path/UID/user-path/filename.jpg` to `/your-path/new-internal-id/random-path/filename.jpg`. This new structure decouples the logical path you see in the File Manager from the physical path in the storage, supporting the "move file" feature. For example, you can move the file in the File Manager, and the URL will remain the same.
+2. **Activate Move Feature**: Once you are onboarded, activate the Move Feature inside your SDK Console to utilize the new file paths. Follow the steps outlined in the previous section to complete this process.
+
+#### Why This Change is Important
+
+* **Decoupling Logical and Physical Paths**: The new path structure separates the logical path (what you see in the File Manager) from the physical path (where the file is stored). This allows for more flexibility and new opportunities for future features.
+* **Enable the Move File Feature**: By adopting the new path structure, you can use the Move File feature in the File Manager, which allows you to move files without changing their URLs.
+
+#### Impact on Existing Data
+
+* **Existing Paths**: Existing paths are not affected. The task done was to collect paths in the new database and keep files where they are.
+* **Newly Uploaded Files**: New uploaded files will be stored using the new path structure.
+
+#### About the New Path
+
+* **Logical and Physical Path Separation**: The new path structure decouples the logical path you see in the File Manager from the physical path in the storage. This supports the "move file" feature, allowing you to move files in the File Manager without changing their URLs.
+* **Changes:** The key difference between the two paths is that the new path uses a random part to enhance security and reduce predictability, making it harder for unauthorized users to guess the URLs of stored files.
+
+By following these steps, you can ensure a smooth transition to the new file paths and take full advantage of the Move File feature in your application.
+
+## Filling out the form to connect your AWS S3 bucket <a href="#filling-out-the-form-to-connect-your-aws-s3-bucket" id="filling-out-the-form-to-connect-your-aws-s3-bucket"></a>
 
 Once you have set up a compliant folder structure, you can use the form in the [Beefree SDK Console](https://developers.beefree.io/) to connect your application. It’s one of the available server-side configurations for your Beefree application (Application details > Open configuration > Storage options).
 
@@ -105,7 +135,7 @@ Example using single nested folders:
 
 <figure><img src="../../.gitbook/assets/2custom_bucket_s3_multi_directories.jpeg" alt=""><figcaption></figcaption></figure>
 
-### Testing your settings <a href="#testing-your-settings" id="testing-your-settings"></a>
+## Testing your settings <a href="#testing-your-settings" id="testing-your-settings"></a>
 
 The button will become active once all required fields have been correctly filled out. It allows you to test your settings before saving the updated configuration. We recommend that you do so before saving any changes.
 

@@ -1,4 +1,4 @@
-# OpenAI AddOn
+# AI Writing Assistant
 
 {% hint style="info" %}
 The OpenAI AddOn is only available for Superpower and Enterprise plans.
@@ -361,6 +361,6 @@ The following image shows an example of this result:&#x20;
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-04-16 at 10.53.17 AM.png" alt=""><figcaption></figcaption></figure>
 
-### OpenAI and Data Security
+### AI Providers and Data Security
 
-Visit our [OpenAI and Data Security page ](open-ai-and-data-security.md)to learn more about the flow of your end user's information from prompt creation to generated response.
+Visit our [AI Providers and Data Security page](open-ai-and-data-security.md) to learn more about the flow of your end user's information from prompt creation to generated response.

@@ -320,7 +320,7 @@ resolve({
   value: {
     alt: 'Alternative desc',
     href: 'http://www.example.com/',
-    src: 'https://url.to.myimage.com,
+    src: 'https://url.to.myimage.com',
     dynamicSrc: '{{any-merge-tag}}',
     target: '_self',
   }
@@ -356,7 +356,6 @@ The following table displays a list of properties in the resolve function, and e
     },
     href: {
       type: 'string',
-      format: 'urlOrMergeTags',
     },
     src: {
       type: 'string',

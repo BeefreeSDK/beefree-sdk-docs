@@ -11,32 +11,6 @@ When you configure a builder application, you have four options for image & file
 
 <figure><img src="../../.gitbook/assets/87CAB3D3-C06A-4937-B79B-33EB8D659F9A_1_201_a.jpeg" alt=""><figcaption></figcaption></figure>
 
-## Enabling the Move File Feature for Your File Manager
-
-You can enable the move icon for files within the File manager. This move icon allows your end users to move their files between folders, locations, and so on within the File manger. They can access the move icon directly on the file within the File manager. The move icon is a folder with an arrow pointing right inside it. End users click this icon to initiate the process of relocating the corresponding file to a new destination.
-
-To enable this feature for your File manager, you need to take the corresponding steps based on your File manager's storage options. In the following section, you will find steps to take to enable this feature based on your storage option. Ensure you follow these steps accordingly to activate the feature successfully.
-
-### Using the Beefree AWS S3 Bucket
-
-If you are using your own AWS S3 bucket, take the following steps to activate the Move File feature:
-
-1. Ensure that your FSP is updated to the latest version.&#x20;
-2. Navigate to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu).
-3. Locate the Move File configuration toggle
-4. Toggle the feature on
-
-The Move Feature will be available in your application.
-
-### Using Your Own AWS S3 Bucket
-
-If you are using your own AWS S3 bucket, it is important that you determine the impact of the new file writing process on your application. Follow these steps to implement the new Move File feature in your application:
-
-1. **Understand the Changes**: The file paths will change from `/your-path/UID/user-path/filename.jpg` to `/your-path/new-internal-id/random-path/filename.jpg`.
-2. **Check Timeline**: You have two months to assess the impact, starting now until Monday, September 2, 2024.
-3. **Monitor Onboarding**: On September 2nd, you will progressively be onboarded to the upgraded FSP version.
-4. **Activate Move Feature**: Once you are onboarded, activate the Move Feature inside your SDK Console to utilize the new file paths following the same steps outlined in the previous section.
-
 ### Custom File System Provider&#x20;
 
 When working with your own custom file system provider, there are many considerations to keep in mind. Follow the steps outlined in the[ Move Files in the File Manager](connect-your-file-storage-system.md#move-files-in-the-file-manager) documentation to ensure you configure this feature successfully for this storage option.
@@ -61,6 +35,23 @@ By default, images used in emails and pages created with the builder are stored 
 * There are no charges for delivering images & other documents up to a total of 5TB of delivery traffic per 30-day period.
 * Above 5TB of data traffic recorded in a 30-day period, you will be billed $0.01 per GB of data transferred.
 * Beefree SDK customers that exceed 50 GB of image data traffic on the Free plan in a given month will be moved to our [Essentials plan](https://beefree.io/bee-plugin/pricing/).
+
+### Enabling the Move File Feature for Your File Manager
+
+You can enable the move icon for files within the File manager. This move icon allows your end users to move their files between folders, locations, and so on within the File manger. They can access the move icon directly on the file within the File manager. The move icon is a folder with an arrow pointing right inside it. End users click this icon to initiate the process of relocating the corresponding file to a new destination.
+
+If you are using the Beefree AWS S3 Bucket, take the following steps to enable this feature for your File manager.
+
+#### Using the Beefree AWS S3 Bucket
+
+If you are using your own AWS S3 bucket, take the following steps to activate the **Move File** feature:
+
+1. Ensure that your FSP is updated to the latest version.&#x20;
+2. Navigate to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu).
+3. Locate the **Move File** configuration toggle.
+4. Toggle the feature on.
+
+The **Move Feature** will be available in your application.
 
 ## **FAQs on Beefree SDK Storage fees**
 
