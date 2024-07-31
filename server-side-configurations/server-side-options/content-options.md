@@ -1,0 +1,56 @@
+# Content options
+
+In this box, you can enable additional content blocks that will appear in the Content panel inside the editor.
+
+<figure><img src="../../.gitbook/assets/CleanShot 2024-03-12 at 11.48.22@2x.png" alt=""><figcaption></figcaption></figure>
+
+Currently, you can manage these content blocks:
+
+## Available Content Blocks
+
+| Block         | Description                                                                                                                     | Availability              | User guide                                                                                                    |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| **HTML**      | Allows your users to include their own HTML code                                                                                | Paid plans only           | [More info](https://dam.beefree.io/htmlcontent)                                                               |
+| **Menu**      | Allows users to create simple, text-based navigation elements                                                                   | All plans, including free | [More info](https://dam.beefree.io/menucontent)                                                               |
+| **Title**     | Allows users to add text with H1,H2,H3 tags, for email and web accessibility, and for SEO on web pages.                         | All plans, including free | [More info](https://dam.beefree.io/titlecontent)                                                              |
+| **List**      | Allows users to create easy numbered and bullet lists with Paragraph’s upgrades and list type, spacing, and identation support. | All plans, including free | [More info](https://dam.beefree.io/newtextblocks)                                                             |
+| **Paragraph** | Allows users to write text with support for multiple font weights, copy/paste support, easier reformatting, and more.           | All plans, including free | [More info](https://dam.beefree.io/newtextblocks)                                                             |
+| **Text**      | Legacy text block. Please refer to title, paragraph and list.                                                                   | All plans, including free | [More info](https://dam.beefree.io/textcontent)                                                               |
+| **Video**     | Helps users include a visual link to video content                                                                              | Paid plans only           | [More info](https://dam.beefree.io/videocontent)                                                              |
+| **Icons**     | Enables users to create icon-based layouts, such as _star ratings, bullet lists, properties_                                    | All plans, including free | [More info](https://dam.beefree.io/iconcontent)                                                               |
+| **Spacer**    | Allows users to add a space between content                                                                                     | All plans, including free | [More info](https://dam.beefree.io/spacer)                                                                    |
+| **Table**     | Allows users to add a table to their design                                                                                     | All plans                 | [More info](https://devportal.beefree.io/hc/en-us/articles/17612251428114-Product-Update-Table-Content-Block) |
+
+## **Content options in Page Builder**
+
+If you’re configuring a Page Builder application, there are a few differences in what these blocks allow:
+
+* the **HTML Block** also allows **script and iframe tags;**
+* the **Video block** allows for video playback, either embedding a YouTube, YouTube Shorts, or Vimeo video or pointing to a hosted video ([read more](../../visual-builders/page-builder/embedding-videos-in-a-page.md)). Supported video formats are:
+  * YouTube (16:9 aspect ratio)
+    * Public Videos
+    * Unlisted Videos
+    * Videos starting at a certain time
+  * YouTube Shorts (16:9 aspect ratio)
+  * Vimeo
+    * Public Videos
+    * Unlisted Videos
+    * Cinemascope (21:9 aspect ratio)
+* the **Menu block** allows menu items to be set as “internal links,” pointing to any content block in the page that is configured as a “block identifier.”
+
+There is also an additional option for turning on the **Form block**.
+
+Please note that you need to implement one of the two methods indicated in this article for the Form tile to appear in the Content tab of the editor:
+
+* The [default form](../../visual-builders/form-block/integrating-and-using-the-form-block/passing-forms-to-the-builder.md) method is available for all plans, including free
+* The [content dialog](../../other-customizations/advanced-options/content-dialog.md) method is available for paid plans only.
+
+## AMP Content <a href="#amp-content" id="amp-content"></a>
+
+You can enable AMP blocks that will become available in the “Content” tab of your application's Email Builder. To enable this feature, toggle on **Enable AMP Carousel** in the **AMP Content** section of your application's configuration options.
+
+<figure><img src="../../.gitbook/assets/CleanShot 2024-03-12 at 12.23.01@2x (1).png" alt=""><figcaption></figcaption></figure>
+
+We currently provide an [AMP Carousel](../../other-customizations/amp-for-email.md) content block. After enabling the toggle, you will need to configure an [AMP-compatible workspace](../../other-customizations/amp-for-email.md).
+
+Please note that AMP content is not available for Page Builder.
