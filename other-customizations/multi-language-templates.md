@@ -33,7 +33,7 @@ MLT adds the following extended functionality to your host application:
 
 To use Multi-language Templates, your host application only needs to store one JSON file with the languages. For more information on this, visit the [Configuration Steps section](multi-language-templates.md#configuration-steps).
 
-For more information on key benefits and features of Multi-language Templates, visit our [Multi-language Template Knowledge Base article](https://devportal.beefree.io/hc/en-us/articles/13704895899026).
+For more information on the end user experience for Multi-language Templates, visit our [Multi-language Templates white label end user documentation](https://docs.beefree.io/end-user-guide/multi-language-templates).
 
 ### End User Functionality <a href="#end-user-functionality" id="end-user-functionality"></a>
 

@@ -63,6 +63,27 @@
   * [FAQs](apis/content-services-api/faqs.md)
 * [Template Catalog API](apis/template-catalog-api.md)
 
+## Builder AddOns
+
+* [AddOns](builder-addons/addons/README.md)
+  * [AddOns Overview](builder-addons/addons/addons-overview.md)
+  * [Custom AddOns](builder-addons/addons/custom-addons/README.md)
+    * [AddOn Development](builder-addons/addons/custom-addons/addon-development.md)
+  * [Partner AddOns](builder-addons/addons/partner-addons/README.md)
+    * [Partner AddOns directory](builder-addons/addons/partner-addons/partner-addons-directory.md)
+    * [Installing Partner AddOns](builder-addons/addons/partner-addons/installing-partner-addons.md)
+    * [DeepL](builder-addons/addons/partner-addons/deepl.md)
+    * [Stability AI](builder-addons/addons/partner-addons/stability-ai.md)
+    * [Azure AI Vision - Image Analysis](builder-addons/addons/partner-addons/azure-ai-vision-image-analysis/README.md)
+      * [Alternate Text Generation with AI](builder-addons/addons/partner-addons/azure-ai-vision-image-analysis/alternate-text-generation-with-ai.md)
+      * [AI Alt Text Bulk Generation](builder-addons/addons/partner-addons/azure-ai-vision-image-analysis/ai-alt-text-bulk-generation.md)
+    * [AI Writing Assistant](builder-addons/addons/partner-addons/openai-addon/README.md)
+      * [AI Providers and Data Security](builder-addons/addons/partner-addons/openai-addon/open-ai-and-data-security.md)
+      * [AI-Generated Meta Tag Fields](builder-addons/addons/partner-addons/openai-addon/ai-generated-meta-tag-fields.md)
+      * [Token Upselling](builder-addons/addons/partner-addons/openai-addon/token-upselling.md)
+  * [AddOns Configuration](builder-addons/addons/addons-configuration.md)
+  * [AddOn FAQs](builder-addons/addons/addon-faqs.md)
+
 ## Rows
 
 * [Custom Rows](rows/custom-rows/README.md)
@@ -109,27 +130,6 @@
 * [Mobile Design Mode](other-customizations/mobile-design-mode.md)
 * [Multi-Language Templates](other-customizations/multi-language-templates.md)
 * [Cards Style and Image Round Corners](other-customizations/cards-style-and-image-round-corners.md)
-
-## Builder AddOns
-
-* [AddOns](builder-addons/addons/README.md)
-  * [AddOns Overview](builder-addons/addons/addons-overview.md)
-  * [Custom AddOns](builder-addons/addons/custom-addons/README.md)
-    * [AddOn Development](builder-addons/addons/custom-addons/addon-development.md)
-  * [Partner AddOns](builder-addons/addons/partner-addons/README.md)
-    * [Partner AddOns directory](builder-addons/addons/partner-addons/partner-addons-directory.md)
-    * [Installing Partner AddOns](builder-addons/addons/partner-addons/installing-partner-addons.md)
-    * [DeepL](builder-addons/addons/partner-addons/deepl.md)
-    * [Stability AI](builder-addons/addons/partner-addons/stability-ai.md)
-    * [Azure AI Vision - Image Analysis](builder-addons/addons/partner-addons/azure-ai-vision-image-analysis/README.md)
-      * [Alternate Text Generation with AI](builder-addons/addons/partner-addons/azure-ai-vision-image-analysis/alternate-text-generation-with-ai.md)
-      * [AI Alt Text Bulk Generation](builder-addons/addons/partner-addons/azure-ai-vision-image-analysis/ai-alt-text-bulk-generation.md)
-    * [AI Writing Assistant](builder-addons/addons/partner-addons/openai-addon/README.md)
-      * [AI Providers and Data Security](builder-addons/addons/partner-addons/openai-addon/open-ai-and-data-security.md)
-      * [AI-Generated Meta Tag Fields](builder-addons/addons/partner-addons/openai-addon/ai-generated-meta-tag-fields.md)
-      * [Token Upselling](builder-addons/addons/partner-addons/openai-addon/token-upselling.md)
-  * [AddOns Configuration](builder-addons/addons/addons-configuration.md)
-  * [AddOn FAQs](builder-addons/addons/addon-faqs.md)
 
 ## Resources
 

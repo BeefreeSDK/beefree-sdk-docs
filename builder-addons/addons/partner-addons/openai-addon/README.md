@@ -18,23 +18,23 @@ The following image provides an example of how the AI Writing Assistant looks to
 
 Visit our [Integrated AI Assistant White label end user guide](https://docs.beefree.io/end-user-guide/integrated-ai-assistant) to learn more about how this feature works on the frontend for your application's end users.
 
-## OpenAI AddOn Becomes AI Writing Assistant AddOn
-
-The OpenAI AddOn is now the AI Writing Assistant AddOn with the addition of a new provider: Azure OpenAI. You can use either [OpenAI](https://openai.com/) or [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service) to activate the AI Writing Assistant.
-
-<figure><img src="../../../../.gitbook/assets/ezgif.com-animated-gif-maker.gif" alt=""><figcaption></figcaption></figure>
+{% hint style="info" %}
+**Important:** The OpenAI AddOn is now the AI Writing Assistant AddOn with the addition of a new provider: Azure OpenAI. You can use either [OpenAI](https://openai.com/) or [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service) to activate the AI Writing Assistant.
+{% endhint %}
 
 ## What is Azure OpenAI?
 
-Azure OpenAI is a service offered by Microsoft Azure that provides access to OpenAI's language models, such as GPT-4, integrated within the Azure ecosystem. This integration allows users to leverage the robust cloud infrastructure, security, compliance, and scalability features of Azure, making it an attractive choice for enterprises seeking a seamless and secure AI solution.&#x20;
+[Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service) is a service offered by Microsoft Azure that provides access to OpenAI's language models, such as GPT-4, integrated within the Azure ecosystem. This integration allows users to leverage the robust cloud infrastructure, security, compliance, and scalability features of Azure, making it an attractive choice for enterprises seeking a seamless and secure AI solution.&#x20;
 
 ### How is it different from OpenAI?
 
-OpenAI directly offers its models through its own API, which may be more straightforward for developers and small businesses looking for a quick, standalone implementation. The primary difference between the two lies in the integration and additional features provided by Azure, such as enhanced data privacy and the ability to easily combine with other Azure services. However, Azure OpenAI may require more familiarity with the Azure platform and potentially higher costs, whereas OpenAI's direct API can be more accessible and cost-effective for smaller projects or individual developers.
+[OpenAI](https://openai.com/) directly offers its models through its own API, which may be more straightforward for developers and small businesses looking for a quick, standalone implementation. The primary difference between the two lies in the integration and additional features provided by Azure, such as enhanced data privacy and the ability to easily combine with other Azure services. However, Azure OpenAI may require more familiarity with the [Azure platform](https://learn.microsoft.com/en-us/azure/?product=popular).
 
 ### How to activate the AI Writing Assistant
 
-This section discusses the prerequisites and steps you need to take to get started with this feature.
+This section discusses the prerequisites and steps you need to take to get started with this feature. You can watch the following [How to change your AI provider | Beefree SDK video](https://www.youtube.com/watch?v=\_FybVH28DR4) for visual steps on how to activate the AddOn and add or change providers. Or, you can continue reading the documentation in this section for a step-by-step breakdown of how to activate the AddOn and add or change providers. &#x20;
+
+{% embed url="https://www.youtube.com/watch?v=_FybVH28DR4" %}
 
 #### Prerequisites
 
@@ -89,7 +89,7 @@ We’ll cover all of these scenarios in the following sections as we discuss the
 
 ## General Settings <a href="#general-settings" id="general-settings"></a>
 
-Note: All settings are _optional_ and may be refreshed, in real-time, via the [configuration reload](../../../../getting-started/readme/installation/configuration-parameters/configuration-reload.md) instance method (e.g. `bee.loadConfig(settings)`) during the active session.
+**Note:** All settings are _optional_ and may be refreshed, in real-time, via the [configuration reload](../../../../getting-started/readme/installation/configuration-parameters/configuration-reload.md) instance method (e.g. `bee.loadConfig(settings)`) during the active session.
 
 Currently, the following settings are supported:
 

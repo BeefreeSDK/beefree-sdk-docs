@@ -2,7 +2,7 @@
 
 ## AI Stable Diffusion XL AddOn Text-to-Image
 
-The Stability AI AddOn converts text to images. This feature allows your end users to submit descriptions of what they would like to see in their AI-generated images, and to also submit negative prompts of what they do not want to see in their image. Once they submit the prompt and negative prompt, they'll receive an AI-generated image that they can use directly within their designs.&#x20;
+The Stability AI AddOn converts text to images. This feature allows your end users to submit descriptions of what they would like to see in their AI-generated images, and to also submit negative prompts of what they do not want to see in their image. Once they submit the prompt and negative prompt, they'll receive an AI-generated image that they can use directly within their designs. Visit the [AI-generated white label end user guide](https://docs.beefree.io/end-user-guide/ai-generated-images) to learn more about how this feature works for your application's end users.
 
 {% embed url="https://drive.google.com/file/d/1waaMV9dDwUqpIOcDzEnJC5PfzQgElK6l/view?usp=sharing" %}
 

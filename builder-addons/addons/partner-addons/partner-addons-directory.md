@@ -6,23 +6,27 @@ These AddOns need to be [installed from your Beefree SDK Console](installing-par
 
 ## Stability AI <a href="#openai" id="openai"></a>
 
-The Stability AI AddOn converts text to images. This feature allows your end users to submit descriptions of what they would like to see in their AI-generated images, and to also submit negative prompts of what they do not want to see in their image. Once they submit the prompt and negative prompt, they'll receive an AI-generated image that they can use directly within their designs. &#x20;
+The Stability AI AddOn converts text to images. This feature allows your end users to submit descriptions of what they would like to see in their AI-generated images, and to also submit negative prompts of what they do not want to see in their image. Once they submit the prompt and negative prompt, they'll receive an AI-generated image that they can use directly within their designs.
+
+<figure><img src="../../../.gitbook/assets/CleanShot 2024-07-31 at 15.32.58.png" alt=""><figcaption><p><a href="https://stability.ai/stable-image">Stability AI</a></p></figcaption></figure>
+
+[How do I enable the Stability AI AddOn?](partner-addons-directory.md#openai) | [AI Providers and Data Security](openai-addon/open-ai-and-data-security.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)&#x20;
 
 ## DeepL  <a href="#openai" id="openai"></a>
 
-Through this AddOn and [Multi-language templates](../../../other-customizations/multi-language-templates.md), you can empower your end users to create up to six different language versions of a single design. Once your end users create their new language versions, they can click the **Translate** button to automatically translate all the translatable content within their designs.&#x20;
+Through this AddOn and [Multi-language templates](../../../other-customizations/multi-language-templates.md), you can empower your end users to create up to six different language versions of a single design. Once your end users create their new language versions, they can click the **Translate** button to automatically translate all the translatable content within their designs.
+
+<figure><img src="../../../.gitbook/assets/CleanShot 2024-07-31 at 15.28.23.png" alt=""><figcaption><p><a href="https://www.deepl.com/en/products/api">DeepL</a></p></figcaption></figure>
+
+[How do I enable the DeepL AddOn?](deepl.md) | [AI Providers and Data Security](openai-addon/open-ai-and-data-security.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)&#x20;
 
 ## AI Writing Assistant <a href="#openai" id="openai"></a>
 
-Empower users to generate text quickly with AI.
+Empower users to generate text quickly with AI. With this AddOn, your end users will see a new “Write with AI” button for Title, Paragraph, List, and Button content blocks. Beefree SDK processes your end users' prompts, sends them to your AI provider, and returns the response to the end user. They can then decide to apply or regenerate the response. By integrating the AI Writing Assistant, you provide your end users with a powerful tool to complete their designs quickly, which helps them maintain a competitive edge. Choose between [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service/?ef\_id=\_k\_Cj0KCQjwwae1BhC\_ARIsAK4JfrxKm9iAYpFxdsG338x\_u9X0GZpyFYL2a4lsLLy4Kib2MTsseC7Qpz0aAoPKEALw\_wcB\_k\_\&OCID=AIDcmm5edswduu\_SEM\_\_k\_Cj0KCQjwwae1BhC\_ARIsAK4JfrxKm9iAYpFxdsG338x\_u9X0GZpyFYL2a4lsLLy4Kib2MTsseC7Qpz0aAoPKEALw\_wcB\_k\_\&gad\_source=1\&gclid=Cj0KCQjwwae1BhC\_ARIsAK4JfrxKm9iAYpFxdsG338x\_u9X0GZpyFYL2a4lsLLy4Kib2MTsseC7Qpz0aAoPKEALw\_wcB) or [OpenAI](https://openai.com/) as providers for this feature, our AddOn is quick and simple to integrate.
 
-With this AddOn, your end users will see a new “Write with AI” button for Title, Paragraph, List, and Button content blocks. Beefree SDK processes your end users' prompts, sends them to your AI provider, and returns the response to the end user. They can then decide to apply or regenerate the response. By integrating the AI Writing Assistant, you provide your end users with a powerful tool to complete their designs quickly, which helps them maintain a competitive edge. Choose between Azure OpenAI or OpenAI as providers for this feature, our AddOn is quick and simple to integrate.
+<figure><img src="../../../.gitbook/assets/CleanShot 2024-07-31 at 15.25.31.png" alt=""><figcaption></figcaption></figure>
 
-### OpenAI
-
-<figure><img src="../../../.gitbook/assets/thumbnail.png" alt=""><figcaption></figcaption></figure>
-
-[How do I enable the OpenAI AddOn?](https://devportal.beefree.io/hc/en-us/articles/10838757053330-How-do-I-enable-the-OpenAI-AddOn-) | [Developer’s FAQ for OpenAI](https://devportal.beefree.io/hc/en-us/articles/10839177777810-Developer-s-FAQ-for-OpenAI) | [Webinar](https://app.livestorm.co/beefreeio/introducing-bee-plugin-openai-add-on-live-demo-and-q-and-a/live?s=7cef0fc7-d888-4627-a5c6-a3c4ed1c396d)
+[How do I enable the AI Writing Assistant AddOn?](https://devportal.beefree.io/hc/en-us/articles/10838757053330-How-do-I-enable-the-OpenAI-AddOn-) | [Developer’s FAQ for OpenAI](https://devportal.beefree.io/hc/en-us/articles/10839177777810-Developer-s-FAQ-for-OpenAI) | [Webinar](https://app.livestorm.co/beefreeio/introducing-bee-plugin-openai-add-on-live-demo-and-q-and-a/live?s=7cef0fc7-d888-4627-a5c6-a3c4ed1c396d)
 
 ## Azure AI Vision - Image Analysis <a href="#openai" id="openai"></a>
 
