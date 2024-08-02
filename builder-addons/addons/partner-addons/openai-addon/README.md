@@ -1,7 +1,7 @@
 # AI Writing Assistant
 
 {% hint style="info" %}
-The AI Writing Assistant AddOn is only available for Superpower and Enterprise plans.
+The AI Writing Assistant AddOn is only available for [Superpowers](https://developers.beefree.io/pricing-plans) and [Enterprise](https://developers.beefree.io/pricing-plans) plans.
 {% endhint %}
 
 ## AI Writing Assistant Overview <a href="#overview" id="overview"></a>

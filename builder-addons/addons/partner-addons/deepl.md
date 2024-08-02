@@ -6,17 +6,189 @@ description: >-
 
 # DeepL
 
+{% hint style="info" %}
+The DeepL AddOn is only available for [Superpowers](https://developers.beefree.io/pricing-plans) and [Enterprise](https://developers.beefree.io/pricing-plans) plans.
+{% endhint %}
+
 ## MLT Automatic Bulk Translation with DeepL
 
 The new [DeepL](https://www.deepl.com/en/translator) addOn available in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu) empowers your end users to translate all the translatable content within their designs using the new translate button. This feature requires that you have [Multi-language templates](../../../other-customizations/multi-language-templates.md) configured for your application, and that you have a DeepL API key. Once you configure both within your host application, your end users will be able to automatically translate the translatable content within the different language versions of their designs. Also, now your end users can have up to six different language versions of their designs. Visit the [Automatic Translations white label end user documentation](https://docs.beefree.io/end-user-guide/multi-language-templates/automatic-translations) to learn more about how this feature works for your application's end users.
 
 The following content types qualify as translatable content:
 
-| Modules (and translatable property)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Header Meta information                                                       |
+| Modules and translatable properties                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Header Meta information                                                       |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| <ul><li><strong>Button</strong>: <code>label</code> - The text displayed on the button.</li><li><strong>Paragraph</strong>: <code>html</code> - The HTML content of the paragraph.</li><li><strong>Heading/Title</strong>: <code>text</code> - The textual content of the heading or title.</li><li><strong>List</strong>: <code>html</code> - The HTML content of the list.</li><li><strong>Image</strong>: <code>alt</code> - The alternative text for the image.</li><li><strong>Video</strong>: <code>thumbAlt</code> - The alternative text for the video's thumbnail.</li><li><strong>Icon</strong>: <code>text</code>, <code>alt</code>, <code>title</code> - The textual content, alternative text, and title of the icon.</li><li><strong>Menu</strong>: <code>text</code>, <code>title</code> - The textual content and title of the menu.</li></ul> | <ul><li>title</li><li>description</li><li>subject</li><li>preheader</li></ul> |
+| <ul><li><strong>Button</strong>: <code>label</code> - The text displayed on the button.</li><li><strong>Paragraph</strong>: <code>html</code> - The HTML content of the paragraph.</li><li><strong>Heading/Title</strong>: <code>text</code> - The textual content of the heading or title.</li><li><strong>List</strong>: <code>html</code> - The HTML content of the list.</li><li><strong>Image</strong>: <code>alt</code> - The alternative text for the image.</li><li><strong>Video</strong>: <code>thumbAlt</code> - The alternative text for the video's thumbnail.</li><li><strong>Icon</strong>: <code>text</code>, <code>alt</code>, <code>title</code> - The textual content, alternative text, and title of the icon.</li><li><strong>Menu</strong>: <code>text</code>, <code>title</code> - The textual content and title of the menu.</li></ul> | <ul><li>Title</li><li>Description</li><li>Subject</li><li>Preheader</li></ul> |
 
-{% embed url="https://drive.google.com/file/d/1J0mi-SUwdo9mGnSm4-cs7rIxnqm3TgUR/view?usp=sharing" %}
+The HTML translatable property refers to the text within the HTML tags of the element itself. For the "Button" module, the translatable property is "label," which specifies the text displayed on the button. In the "Paragraph" module, the translatable property is "html," indicating the HTML content within the paragraph tags. For "Heading/Title," the property is "text," representing the textual content of the heading or title. The "List" module also uses "html," referring to the HTML content within the list tags. The "Image" module has the "alt" property, which provides alternative text for the image. In the "Video" module, "thumbAlt" denotes the alternative text for the video's thumbnail. The "Icon" module includes "text," "alt," and "title," covering the textual content, alternative text, and title of the icon, respectively. Lastly, the "Menu" module uses "text" and "title" for its textual content and title.
+
+The following video shows a template with Heading, Paragraph, and List modules. When the **Translate** button is clicked, the text within the translatable properties for those modules are translated. The following section displays a JSON example with a translation in Spanish.
+
+{% embed url="https://drive.google.com/file/d/1Z0FnlCE0DwvWUZMXnVeg66LFF4ow4YmU/view?usp=sharing" %}
+
+### Example JSON Translation
+
+<details>
+
+<summary>Example JSON with Spanish Translation</summary>
+
+In the following JSON, English is the primary language and Spanish is set as the translation language.
+
+```json
+{
+  "page": {
+    "body": {
+      "container": {
+        "style": {
+          "background-color": "#FFFFFF"
+        }
+      },
+      "content": {
+        "computedStyle": {
+          "linkColor": "#0068A5",
+          "messageBackgroundColor": "transparent",
+          "messageWidth": "500px"
+        },
+        "style": {
+          "color": "#000000",
+          "font-family": "Arial, Helvetica, sans-serif"
+        },
+        "type": "page-properties",
+        "webFonts": []
+      },
+      "description": "Empty template for BEE",
+      "head": {
+        "meta": {
+          "description": "Enjoy a heartwarming moment with your furry friends while savoring your morning coffee. Learn about life's lessons and the importance of hard work together.",
+          "subject": "Morning Coffee Conversations with Pets",
+          "title": "Morning Coffee Conversations with Pets",
+          "translations": {
+            "es-ES": {
+              "title": "Café matinal Conversaciones con mascotas",
+              "description": "Disfrute de un momento entrañable con sus amigos peludos mientras saborea su café matutino. Aprendan juntos las lecciones de la vida y la importancia del trabajo duro.",
+              "subject": "Café matinal Conversaciones con mascotas"
+            }
+          }
+        }
+      },
+      "language": {
+        "label": "English",
+        "value": "en-US"
+      },
+      "rows": [
+        {
+          "columns": [
+            {
+              "grid-columns": 12,
+              "modules": [
+                {
+                  "descriptor": {
+                    "computedStyle": {
+                      "hideContentOnDesktop": false,
+                      "hideContentOnMobile": false
+                    },
+                    "heading": {
+                      "prompt": "00000000-0000-0000-0000-000000000000",
+                      "style": {
+                        "color": "#555555",
+                        "direction": "ltr",
+                        "font-family": "inherit",
+                        "font-size": "23px",
+                        "font-weight": "700",
+                        "letter-spacing": "0px",
+                        "line-height": "120%",
+                        "link-color": "#E01253",
+                        "text-align": "center"
+                      },
+                      "text": "Morning Coffee Conversations with Pets",
+                      "title": "h1",
+                      "translations": {
+                        "es-ES": {
+                          "text": "Café matinal Conversaciones con mascotas"
+                        }
+                      }
+                    },
+                    "style": {
+                      "padding-bottom": "0px",
+                      "padding-left": "0px",
+                      "padding-right": "0px",
+                      "padding-top": "0px",
+                      "text-align": "center",
+                      "width": "100%"
+                    }
+                  },
+                  "locked": false,
+                  "type": "newsletter-modules-heading",
+                  "uuid": "11111111-1111-1111-1111-111111111111"
+                },
+                {
+                  "descriptor": {
+                    "computedStyle": {
+                      "align": "center",
+                      "hideContentOnMobile": false
+                    },
+                    "divider": {
+                      "style": {
+                        "border-top": "1px solid #BBBBBB",
+                        "width": "100%"
+                      }
+                    },
+                    "style": {
+                      "padding-bottom": "10px",
+                      "padding-left": "10px",
+                      "padding-right": "10px",
+                      "padding-top": "10px"
+                    }
+                  },
+                  "locked": false,
+                  "type": "newsletter-modules-divider",
+                  "uuid": "22222222-2222-2222-2222-222222222222"
+                },
+                {
+                  "descriptor": {
+                    "computedStyle": {
+                      "hideContentOnAmp": false,
+                      "hideContentOnDesktop": false,
+                      "hideContentOnHtml": false,
+                      "hideContentOnMobile": false
+                    },
+                    "paragraph": {
+                      "computedStyle": {
+                        "linkColor": "#0068a5",
+                        "paragraphSpacing": "16px"
+                      },
+                      "html": "<p>Once upon a time, a man sat at his kitchen table, enjoying his morning coffee as his two dogs and one cat gathered around him. With a warm cup in hand, he began to share with his furry companions the harsh reality of life after school. \"You see,\" he explained, \"we have to work every day to earn money so we can afford simple pleasures like pizza.\"</p>\n<p>The man's pets listened intently, their eyes filled with curiosity as he continued to elaborate on the importance of hard work and dedication. \"It may seem daunting at first,\" he reassured them, \"but with perseverance and a positive attitude, we can achieve our goals.\" The dogs wagged their tails in agreement, while the cat purred softly in approval.</p>\n<p>As the morning sun streamed through the windows, casting a warm glow over the kitchen, the man smiled at his beloved pets. \"Remember,\" he said affectionately, \"life is full of challenges, but as long as we stick together and work hard, we can enjoy the simple pleasures that make it all worthwhile.\" And with that heartwarming sentiment, they continued their morning ritual of coffee and conversation, grateful for each other's company.</p>",
+                      "prompt": "33333333-3333-3333-3333-333333333333",
+                      "style": {
+                        "color": "#000000",
+                        "direction": "ltr",
+                        "font-family": "inherit",
+                        "font-size": "14px",
+                        "font-weight": "400",
+                        "letter-spacing": "0px",
+                        "line-height": "120%",
+                        "text-align": "left"
+                      },
+                      "translations": {
+                        "es-ES": {
+                          "html": "<p>Érase una vez un hombre sentado a la mesa de su cocina, disfrutando de su café matutino mientras sus dos perros y un gato se reunían a su alrededor. Con una taza caliente en la mano, empezó a compartir con sus peludos compañeros la dura realidad de la vida después de la escuela. \"Veréis\", explicó, \"tenemos que trabajar todos los días para ganar dinero y poder permitirnos placeres sencillos como la pizza\"</p>\n<p>Las mascotas del hombre escuchaban atentamente, con los ojos llenos de curiosidad, mientras él seguía explicando la importancia del trabajo duro y la dedicación. \"Al principio puede parecer desalentador\", les tranquilizó, \"pero con perseverancia y una actitud positiva, podemos conseguir nuestros objetivos\" Los perros movieron la cola en señal de acuerdo, mientras el gato ronroneaba suavemente en señal de aprobación.</p>\n<p>Mientras el sol de la mañana se colaba por las ventanas, arrojando un cálido resplandor sobre la cocina, el hombre sonrió a sus queridas mascotas. \"Recordad\", les dijo cariñosamente, \"la vida está llena de retos, pero mientras permanezcamos unidos y trabajemos duro, podremos disfrutar de los placeres sencillos que hacen que todo merezca la pena\" Y con ese sentimiento reconfortante, continuaron su ritual matutino de café y conversación, agradecidos por la compañía mutua.</p>"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+
+```
+
+</details>
 
 ## How to activate
 
