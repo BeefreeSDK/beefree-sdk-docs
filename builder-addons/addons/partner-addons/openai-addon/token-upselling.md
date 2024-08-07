@@ -323,98 +323,118 @@ The following code shows an example of a Token Upselling configuration for both 
 
 ```javascript
 // AddOns configuration
-
-addOns: [{
-            id: "ai-integration",
-            settings: {
-                tokensAvailable: tokensAvailable,
-                tokensUsed: tokenCounter,
-                tokenLabel: 'tokens',
-                isPromptDisabled: false,
-                isSuggestionsDisabled: false,
-                isUpsellEnabled: isUpsellEnabled,
-            }
-        },
-        {
-            id: "ai-alt-text",
-            settings: {
-                imagesAvailable: imagesAvailable,
-                imagesUsed: imagesCounter,
-                isPromptDisabled: (imagesCounter >= imagesAvailable) ? true : false,
-                isUpsellEnabled: isUpsellEnabled,
-            }
-        },
-    ],
-
-    // onInfo callback
-
-    onInfo: function(infoMessage) {
-
-        if (infoMessage.code === 1000) {
-            var handle = infoMessage.detail.handle
-            if (handle === 'ai-integration') {
-                var totalTokens = infoMessage.detail.usage.total_tokens
-                tokenCounter = tokenCounter + totalTokens
-
-                // Update AddOn Settings
-                var newConfig = {
-                    addOns: [{
-                        id: "ai-integration",
-                        settings: {
-                            tokensAvailable: tokensAvailable,
-                            tokensUsed: tokenCounter,
-                            tokenLabel: 'tokens',
-                            isPromptDisabled: (tokenCounter >= tokensAvailable) ? true : false,
-                            isUpsellEnabled: isUpsellEnabled
-                        }
-                    }, ],
-                }
-                // Reload Config
-                bee.loadConfig(newConfig)
-            } else if (handle === 'ai-alt-text') {
-                imagesCounter++
-                const refreshedUsageSettings = {
-                    addOns: [{
-                        id: "ai-alt-text",
-                        settings: {
-                            imagesAvailable: imagesAvailable,
-                            imagesUsed: imagesCounter,
-                            isPromptDisabled: (imagesCounter >= imagesAvailable) ? true : false,
-                            isUpsellEnabled: isUpsellEnabled,
-                        }
-                    }, ],
-                }
-                // Reload Config
-                bee.loadConfig(refreshedUsageSettings)
-            }
+// This section configures the available add-ons and their settings.
+addOns: [
+    {
+        id: "ai-integration",  // Unique identifier for the AI integration add-on
+        settings: {
+            tokensAvailable: tokensAvailable,  // Total tokens available for AI usage
+            tokensUsed: tokenCounter,  // Counter for tokens used so far
+            tokenLabel: 'tokens',  // Label for the tokens
+            isPromptDisabled: false,  // Flag to disable prompt if needed
+            isSuggestionsDisabled: false,  // Flag to disable suggestions if needed
+            isUpsellEnabled: isUpsellEnabled,  // Flag to enable upsell functionality
         }
     },
+    {
+        id: "ai-alt-text",  // Unique identifier for the AI alt text add-on
+        settings: {
+            imagesAvailable: imagesAvailable,  // Total images available for alt text generation
+            imagesUsed: imagesCounter,  // Counter for images used so far
+            isPromptDisabled: (imagesCounter >= imagesAvailable) ? true : false,  // Disable prompt if images limit is reached
+            isUpsellEnabled: isUpsellEnabled,  // Flag to enable upsell functionality
+        }
+    }
+],
 
-    // content dialog
+// onInfo callback
+// This callback function handles various info messages received during the operation.
+onInfo: function(infoMessage) {
+    if (infoMessage.code === 1000) {  // Check if the info message code is 1000
+        var handle = infoMessage.detail.handle;  // Get the handle from the message details
+        if (handle === 'ai-integration') {  // Check if the handle is for AI integration
+            var totalTokens = infoMessage.detail.usage.total_tokens;  // Get total tokens used from message details
+            tokenCounter = tokenCounter + totalTokens;  // Update the token counter
 
-    upsell: {
-        label: 'upsell',
-        handler: (resolve, reject, args) => {
-                if (args.handle === 'ai-integration') {
-                    tokensAvailable += 1000
-                    resolve({
-                        addOns: [{
-                            id: "ai-integration",
-                            settings: {
-                                tokensAvailable: tokensAvailable,
-                                tokensUsed: tokenCounter,
-                                tokenLabel: 'tokens',
-                                isPromptDisabled: false,
-                                isUpsellEnabled: isUpsellEnabled
-                            }
-                        }]
-                    })
-                } else if (args.handle === 'ai-alt-text') {
-                    imagesAvailable += 5
-                    resolve({
-                                addOns: [{
-                                            id: "ai-alt
+            // Update AddOn Settings for AI Integration
+            var newConfig = {
+                addOns: [{
+                    id: "ai-integration",
+                    settings: {
+                        tokensAvailable: tokensAvailable,  // Update available tokens
+                        tokensUsed: tokenCounter,  // Update used tokens
+                        tokenLabel: 'tokens',  // Token label
+                        isPromptDisabled: (tokenCounter >= tokensAvailable) ? true : false,  // Disable prompt if token limit is reached
+                        isUpsellEnabled: isUpsellEnabled  // Maintain upsell enabled status
+                    }
+                }]
+            };
+            // Reload Config
+            bee.loadConfig(newConfig);  // Reload the configuration with updated settings
+        } else if (handle === 'ai-alt-text') {  // Check if the handle is for AI alt text
+            imagesCounter++;  // Increment the images counter
+
+            // Update AddOn Settings for AI Alt Text
+            const refreshedUsageSettings = {
+                addOns: [{
+                    id: "ai-alt-text",
+                    settings: {
+                        imagesAvailable: imagesAvailable,  // Update available images
+                        imagesUsed: imagesCounter,  // Update used images
+                        isPromptDisabled: (imagesCounter >= imagesAvailable) ? true : false,  // Disable prompt if images limit is reached
+                        isUpsellEnabled: isUpsellEnabled  // Maintain upsell enabled status
+                    }
+                }]
+            };
+            // Reload Config
+            bee.loadConfig(refreshedUsageSettings);  // Reload the configuration with updated settings
+        }
+    }
+},
+
+// content dialog
+// This section handles the upsell dialog interactions.
+upsell: {
+    label: 'upsell',  // Label for the upsell dialog
+    handler: (resolve, reject, args) => {
+        if (args.handle === 'ai-integration') {  // Check if the handle is for AI integration
+            tokensAvailable += 1000;  // Add 1000 tokens to the available tokens
+            resolve({
+                addOns: [{
+                    id: "ai-integration",
+                    settings: {
+                        tokensAvailable: tokensAvailable,  // Update available tokens
+                        tokensUsed: tokenCounter,  // Maintain the used tokens count
+                        tokenLabel: 'tokens',  // Token label
+                        isPromptDisabled: false,  // Ensure prompt is not disabled
+                        isUpsellEnabled: isUpsellEnabled  // Maintain upsell enabled status
+                    }
+                }]
+            });
+        } else if (args.handle === 'ai-alt-text') {  // Check if the handle is for AI alt text
+            imagesAvailable += 5;  // Add 5 images to the available images
+            resolve({
+                addOns: [{
+                    id: "ai-alt-text",
+                    settings: {
+                        imagesAvailable: imagesAvailable,  // Update available images
+                        imagesUsed: imagesCounter,  // Maintain the used images count
+                        isPromptDisabled: false,  // Ensure prompt is not disabled
+                        isUpsellEnabled: isUpsellEnabled  // Maintain upsell enabled status
+                    }
+                }]
+            });
+        }
+    }
+}
+
 ```
+
+### Code Explanation
+
+1. **AddOns Configuration**: This section defines the available add-ons, each with a unique identifier and specific settings related to tokens and images.
+2. **onInfo Callback**: This function handles info messages (with code 1000) and updates the settings for the relevant add-on based on usage.
+3. **Content Dialog (Upsell)**: This section manages upsell interactions, increasing the available tokens or images and updating the settings accordingly.
 
 ## Feature Limitations
 
