@@ -75,6 +75,20 @@ var beeConfig = {
 
 ```
 
+### **Example: overriding the Preheader**
+
+```json
+{
+    "translations": {
+        "bee-head-meta-preheader": {
+            "name": "New Preheader",
+            "placeholder": "New Enter Preheader"
+        }
+    }
+}
+
+```
+
 ## Sample language file <a href="#sample-language-file" id="sample-language-file"></a>
 
 _Check out our Github repository for_ [_starter language templates_](https://dam.beefree.io/beecustomlanguages) _in all supported languages._
