@@ -89,6 +89,20 @@ var beeConfig = {
 
 ```
 
+### Example: Defining or adding a translation for "email" <a href="#sample-language-file" id="sample-language-file"></a>
+
+The following code defines a translation object where the title for "bee-settings-details" is set to "New Email Details" specifically for the "email" field.
+
+```json
+translations: {
+    "bee-settings-details": {
+        "title": {
+            "email": "New Email Details"
+        }
+    }
+}
+```
+
 ## Sample language file <a href="#sample-language-file" id="sample-language-file"></a>
 
 _Check out our Github repository for_ [_starter language templates_](https://dam.beefree.io/beecustomlanguages) _in all supported languages._
