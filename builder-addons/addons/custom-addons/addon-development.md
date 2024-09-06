@@ -426,13 +426,13 @@ resolve({
 
 The following table displays a list of properties in the resolve function, and each of its respective value types and whether or not they are mandatory.
 
-| Property         | Value        | Mandatory |
-| ---------------- | ------------ | --------- |
-| label            | String       | Yes       |
-| href             | String (URL) | No        |
-| target           | String       | No        |
-| color            | String       | No        |
-| background-color | String       | No        |
+| Property         | Value  | Mandatory |
+| ---------------- | ------ | --------- |
+| label            | String | Yes       |
+| href             | String | No        |
+| target           | String | No        |
+| color            | String | No        |
+| background-color | String | No        |
 
 #### Button Simplified Schema
 
@@ -440,13 +440,8 @@ The following table displays a list of properties in the resolve function, and e
 ```javascript
 {
   $schema: 'http://json-schema.org/draft-07/schema',
-  $id: 'BEE-simplified-button-single',
+  $id: 'BEE-simplified-button',
   type: 'object',
-  anyOf: [{
-    required: ['label'],
-  }, {
-    required: ['text'],
-  }],
   properties: {
     type: {
       const: 'button',
@@ -461,7 +456,6 @@ The following table displays a list of properties in the resolve function, and e
     },
     href: {
       type: 'string',
-      format: 'urlOrMergeTags',
     },
     target: {
       enum: [
