@@ -41,49 +41,53 @@ To use this option you need to set-up two additional folders:
 
 ## S3 configuration <a href="#s3-configuration" id="s3-configuration"></a>
 
-To use an S3 bucket and configure a policy with the “Policy Generator,” follow these steps:
+This section discusses how you can configure your own custom S3 bucket within the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu), and also provides an example JSON of the Permission policy.&#x20;
 
-1. Configure Bucket Policy using the “Policy Generator”:
-   1. In the S3 bucket dashboard, click on the “Permissions” tab.
-   2. Under the “Bucket policy” section, click on the “Edit” button.
-   3. In the “Edit bucket policy” dialog box, click on the “Policy Generator” button.
-2. Set Policy Generator Options:
-   1. Type: Set the type to “s3 Bucket Policy.”
-   2. Effect: Set the effect to “Allow.”
-   3. Principal: Set the principal to “”, allowing any AWS user or service to access the resources.
-   4. AWS Service: Set AWS service to “Amazon S3.”
-   5. Actions: Set Action to “GetObject.”
-   6. Amazon Resource Name (ARN): Set the ARN to “arn:aws:s3:::myBucketName/” (Replace “myBucketName” with your actual bucket name).
-   7. Conditions: Add specific conditions under “Conditions”, such as requiring secure transport and TLS version 1.2.
-3. Review and Generate Policy: After configuring the policy parameters in the “Policy Generator,” review the generated policy to ensure it matches your requirements.
-4. Add the Generated Policy: Click on the “Add Statement” button to add the generated policy to your bucket’s policy.
-5. Save Changes: After adding the statement, click the “Save changes” button to apply the updated policy to your S3 bucket.
+### Configure Access keys in the Developer Console
 
-Test the configured policy by attempting to access objects within the bucket using both secure and non-secure connections to verify that the policy is working as intended. Once verified, you have successfully configured your Amazon S3 bucket with a policy using the “Policy Generator” in the AWS Management Console. This policy allows any AWS user or service to retrieve objects from the specified bucket under the specified conditions.
+Prior to configuring your custom S3 bucket, ensure you configure Access keys in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu).&#x20;
 
-### **Example Bucket Policy**
+Take the following steps to configure Access keys in the Developer Console:
+
+1. Log in to the [Developer Console](https://developers.beefree.io).
+2. Navigate to the application you'd like to configure a custom S3 bucket for.
+3. Click the **Details** button for that application.
+4.  Navigate to **Application configuration** and click **View more.**
+
+    You will be redirected to **Storage options**.
+5. Toggle on **Configure your own S3 storage system** to enable the option.
+6. Complete the required fields.\*
+7. Click the **Test S3 settings** button.
+
+\*The following image shows an example of the required fields within the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu) for configuring your own S3 bucket:
+
+<figure><img src="../../../.gitbook/assets/CleanShot 2024-09-06 at 14.14.27@2x.png" alt=""><figcaption><p>Image of required fields to configure your own S3 bucket within the Developer Console.</p></figcaption></figure>
+
+### JSON of the Permissions policy
+
+The following JSON is of the Permissions policy assigned to the AWS user.
 
 ```json
 {
-   "Version": "2012-10-17",
-   "Id": "Policy1678139645091",
-   "Statement": [
-       {
-           "Sid": "Stmt1678139640090",
-           "Effect": "Allow",
-           "Principal": "*",
-           "Action": "s3:GetObject",
-           "Resource": "arn:aws:s3:::myBucketName/*",
-           "Condition": {
-               "Bool": {
-                   "aws:SecureTransport": "true"
-               },
-               "NumericGreaterThanEquals": {
-                   "s3:TlsVersion": "1.2"
-               }
-           }
-       }
-   ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "CustomBucket01",
+            "Effect": "Allow",
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::the-bucket-name"
+        },
+        {
+            "Sid": "CustomBucket02",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": "arn:aws:s3:::the-bucket-name/content-path/*"
+        }
+    ]
 }
 ```
 
