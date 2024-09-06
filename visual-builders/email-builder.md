@@ -1,8 +1,8 @@
 # Email Builder
 
-## Overview
+## Introduction
 
-Email marketing remains one of the highest-performing digital marketing channels, with an [ROI of 3600%](https://www.litmus.com/blog/infographic-the-roi-of-email-marketing)—for every $1 spent, businesses see an average return of $36. Personalized and targeted campaigns further [boost click-through rates by 28.57%](https://www.sender.net/blog/email-marketing-statistics/), driving engagement and conversions. In a world where agility and design precision are key, Beefree SDK’s email builder offers a no-code solution that empowers creators to design visually striking, high-converting emails effortlessly. By removing technical barriers, it enables teams to build, customize, and launch campaigns faster, maximizing results without relying on developer resources. &#x20;
+Email marketing remains one of the highest-performing digital marketing channels, with an [ROI of 3600%](https://www.litmus.com/blog/infographic-the-roi-of-email-marketing)—for every $1 spent, businesses see an average return of $36. Personalized and targeted campaigns further [boost click-through rates by 28.57%](https://www.sender.net/blog/email-marketing-statistics/), driving engagement and conversions. In a world where agility and design precision are key, Beefree SDK’s email builder offers a no-code solution that empowers creators to design visually striking, high-converting emails effortlessly. By removing technical barriers, it enables teams to build, customize, and launch campaigns faster, maximizing results without relying on hard coding emails. &#x20;
 
 ### What is the Email builder?
 
@@ -42,7 +42,7 @@ The following resources are a great start to learn more:
 * [Coral Demo](https://bee-plugin-demos.getbee.io/#/)
   * You do not need a Client ID or Client Secret to experiment with the Email builder in this environment.
 * [GitHub Repository](https://github.com/BeefreeSDK/beefree-sdk-sample-client)
-  * You do need a [Client ID or Client Secre](https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application)t to experiment with the Email builder in this environment.
+  * You do need a [Client ID or Client Secret](https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application) to experiment with the Email builder in this environment.
 
 ### Integrate the Email builder
 
