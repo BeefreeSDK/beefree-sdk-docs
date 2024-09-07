@@ -31,13 +31,13 @@ You can create roles that can act only on a content type. For example, you may w
 
 ## **Customize image & file management workflows**
 
-You can limit how users upload and manage images and files inside the plugin; for example, you want some users – e.g., external collaborators – to select pre-approved images and files uploaded by “admin” users. You can do so by:
+You can limit how users upload and manage images and files inside Beefree SDK; for example, you want some users – e.g., external collaborators – to select pre-approved images and files uploaded by “admin” users. You can do so by:
 
 * disabling drag-and-drop of images onto the stage;
 * limit actions in the file manager (either the built-in one or your [custom file picker](custom-file-picker.md)) by disabling actions like upload, import, and create a folder.
 
 Another interesting case for using advanced permissions is the possibility to set a **maximum size** **for uploads, per user**. The maximum size set per user must not exceed the **custom limitation** size set on the [Activate Custom Limitation on File Manager](../../server-side-configurations/server-side-options/services-options.md). **The default limit is 20 Mb** unless otherwise stated.\
-When this permission is configured, the system will check if a file exceeds the set size before uploading it; if so, the plugin will return an error message, which you may customize using [Custom languages](custom-languages.md).
+When this permission is configured, the system will check if a file exceeds the set size before uploading it; if so, Beefree SDK will return an error message, which you may customize using [Custom languages](custom-languages.md).
 
 ## **Create custom, secondary roles**
 
@@ -45,7 +45,7 @@ When customers of your applications are structured businesses, typically with a 
 
 **Initialize different versions of the editor**
 
-By combining multiple permissions, you can load the plugin with radically different experiences, based on the user that starts it. For example:
+By combining multiple permissions, you can load Beefree SDK with radically different experiences, based on the user that starts it. For example:
 
 * a “stripped-down” version of the content builder for lower-level subscribers;
 * a “simplified” version of the builder for new users of an account.
@@ -238,7 +238,7 @@ The following table provides the name, data type, description, and an example va
 | Name                   | Data Type | Description                                                                      | Example Value                                  |
 | ---------------------- | --------- | -------------------------------------------------------------------------------- | ---------------------------------------------- |
 | `uid`                  | `string`  | Unique identifier for the CMS user (mandatory).                                  | `'CmsUserName'`                                |
-| `container`            | `string`  | HTML container element ID for embedding the BEE plugin (mandatory).              | `'bee-plugin-container'`                       |
+| `container`            | `string`  | HTML container element ID for embedding Beefree SDK (mandatory).                 | `'bee-plugin-container'`                       |
 | `advanced permissions` | `object`  | Contains settings for content elements, rows, settings, and tabs configurations. | See configuration object for details.          |
 | `components`           | `object`  | Specifies available components like file picker and link types.                  | `{ filePicker: {...}, linkTypes: {...} }`      |
 | `rowAddOn`             | `object`  | Settings for custom row add-ons, such as custom behaviors.                       | `{ customRowAddonHandle: {...} }`              |
