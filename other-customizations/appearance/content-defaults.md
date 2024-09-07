@@ -778,22 +778,23 @@ The table content default in BeeConfig specifies the initial styling and layout 
 }
 ```
 
-**Note:** If  **content defaults** are incorrectly formatted, the following **onWarning** will be triggered and the default table will be used instead:
+**Note:** If `contentDefault` values for the Table module are incorrectly formatted, the following `onWarning` will be triggered (this applies to incorrect values for rows and headers, not all `contentDefaults`), and the default table will be used instead:
 
 ```javascript
-{code: 1730, message: 'Content defaults for [Table] module is not valid'}
+{code: 1730, message: 'Content defaults for [Table] module are not valid'}
 ```
 
-If the user tries to load a template that contains a malformed Table (for example if a row in it does not contain all its cells), the template is _not_ loaded, and the **onError** is triggered.&#x20;
+If the user tries to load a template that contains an improperly structured Table (for example, if a row does not contain all of its cells), the template will not load, and the `onError` will be triggered.
 
-The following code displays an example error for this scenario.
+The following code displays an example error for this scenario:
 
 ```javascript
 { 
    code: 2250,
    message: 'Bump template validation error',
-   detail: 'page/rows/0/columns/0/modules/0/descriptor/table/rows: malformed field (each row must contain the same number of cells)',   
+   detail: 'page/rows/0/columns/0/modules/0/descriptor/table/rows: improperly structured field (each row must contain the same number of cells)',   
 }
+
 ```
 
 ### **General**
