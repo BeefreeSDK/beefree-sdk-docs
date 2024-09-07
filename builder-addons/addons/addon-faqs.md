@@ -1,4 +1,10 @@
-# AddOn FAQs
+---
+description: >-
+  Reference frequently asked questions about Beefree SDK's Custom and Partner
+  AddOns.
+---
+
+# ❓ AddOn FAQs
 
 ## What is an AddOn?
 

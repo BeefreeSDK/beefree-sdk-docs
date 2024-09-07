@@ -1,8 +1,8 @@
 ---
-description: Learn how to configure Custom and Partner AddOns.
+description: Learn more about client-side configuration for Custom and Partner AddOns.
 ---
 
-# AddOns Configuration
+# 🎨 AddOns Configuration
 
 ## Adding client-side configurations for AddOns <a href="#adding-client-side-configurations-for-addons" id="adding-client-side-configurations-for-addons"></a>
 

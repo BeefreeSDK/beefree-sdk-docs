@@ -66,10 +66,11 @@
 ## Builder AddOns
 
 * [AddOns](builder-addons/addons/README.md)
-  * [AddOns Overview](builder-addons/addons/addons-overview.md)
-  * [Custom AddOns](builder-addons/addons/custom-addons/README.md)
+  * [🔍 AddOns Overview](builder-addons/addons/addons-overview.md)
+  * [🛠️ Custom AddOns](builder-addons/addons/custom-addons/README.md)
     * [AddOn Development](builder-addons/addons/custom-addons/addon-development.md)
-  * [Partner AddOns](builder-addons/addons/partner-addons/README.md)
+    * [Contribute to the Partner AddOn Marketplace](builder-addons/addons/custom-addons/contribute-to-the-partner-addon-marketplace.md)
+  * [🤝 Partner AddOns](builder-addons/addons/partner-addons/README.md)
     * [Partner AddOns directory](builder-addons/addons/partner-addons/partner-addons-directory.md)
     * [Installing Partner AddOns](builder-addons/addons/partner-addons/installing-partner-addons.md)
     * [DeepL](builder-addons/addons/partner-addons/deepl.md)
@@ -81,8 +82,8 @@
       * [AI Providers and Data Security](builder-addons/addons/partner-addons/openai-addon/open-ai-and-data-security.md)
       * [AI-Generated Meta Tag Fields](builder-addons/addons/partner-addons/openai-addon/ai-generated-meta-tag-fields.md)
       * [Token Upselling](builder-addons/addons/partner-addons/openai-addon/token-upselling.md)
-  * [AddOns Configuration](builder-addons/addons/addons-configuration.md)
-  * [AddOn FAQs](builder-addons/addons/addon-faqs.md)
+  * [🎨 AddOns Configuration](builder-addons/addons/addons-configuration.md)
+  * [❓ AddOn FAQs](builder-addons/addons/addon-faqs.md)
 
 ## Rows
 

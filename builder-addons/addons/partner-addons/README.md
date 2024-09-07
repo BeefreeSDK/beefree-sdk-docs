@@ -1,30 +1,42 @@
-# Partner AddOns
+---
+description: >-
+  Learn more about Partner AddOns that are available within the Beefree SDK
+  Developer Console, and how to integrate them into your application.
+---
 
-## Introduction <a href="#introduction" id="introduction"></a>
+# 🤝 Partner AddOns
 
-A Partner AddOn is an AddOn that you developed for any Beefree SDK customer that wishes to take advantage of it.
+{% hint style="info" %}
+Partner AddOns are available for [Beefree SDK paid plan types](https://developers.beefree.io/pricing-plans).
+{% endhint %}
 
-You created it to provide end-users of any application that has embedded Beefree SDK with new features that extend the builder. Any Beefree SDK customer will see it and will be able to install it, as Partner AddOns are listed in the [Partner AddOn Directory](partner-addons-directory.md).
+## What are Partner AddOns? <a href="#introduction" id="introduction"></a>
 
-## Getting started <a href="#getting-started" id="getting-started"></a>
+Partner AddOns can easily be integrated with your application in a matter of minutes by installing them inside of the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu). You can reference available Partner AddOns inside of the [Partner AddOn Directory](partner-addons-directory.md). If the AddOn with the functionality you are looking for is not offered within the Partner Directory, you also have the option to create your own [Custom AddOn](../custom-addons/).
 
-A Partner AddOn starts as a [Custom AddOn](../custom-addons/), but is then listed in the Partner AddOn directory (see below for listing requirements). To get started, you will need to follow the [AddOn Development](../custom-addons/addon-development.md) documentation and create a Custom AddOn for a fictitious Web app that has embedded Beefree SDK.
+At a high-level, these AddOns enable you to add extended functionality and capabilities to your application. These extended functionalities empower you to customize your end users' experience based on their interests and the desired tasks they are trying to perform with your app. The AddOns work as additional features you can opt in for on top of the base features that come with your [Beefree SDK plan type](https://developers.beefree.io/pricing-plans).
 
-Please note that because Partner AddOns by definition live outside of the Beefree SDK application that will use them, you must select the **external iframe** method for development.
+## Where can I find the Partner AddOns Marketplace?
 
-## Listing in the partner directory <a href="#listing-in-the-partner-directory" id="listing-in-the-partner-directory"></a>
+You can find the Partner AddOns Marketplace within the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu).
 
-You can submit your AddOn to be listed in the Beefree SDK Partner AddOn Directory, so that other applications that have embedded Beefree SDK can take advantage of it.
+Take the following steps to access the Partner AddOns Marketplace:
 
-You will be completely in charge of the business relationship with those companies, who will become your customers. We are not part of that relationship, other than being an enabler of it.
+1. Log in to your [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu).
+2. Navigate to the application you'd like to add a Partner AddOn to.
+3. Click on the **Details** button.
+4.  Navigate to **AddOns** and click **View more**.
 
-The following is a list of requirements for getting an AddOn listed in the Partner AddOn Directory:
+    You'll be redirected to the AddOns page.
+5. Click on the **Browse AddOns** button.
+6. You'll be redirected to the Marketplace with the available AddOns.
 
-1. You have signed the Beefree SDK AddOn License and Distribution Agreement. Contact your Account Manager or log in to the [Beefree SDK Console](https://dam.beefree.io/devmain) and submit a ticket for details.
-2. You have built an AddOn that:
-   1. uses the External iFrame Method (see [AddOn Development](../custom-addons/addon-development.md))
-   2. uses the optional health check endpoint
-3. You have thoroughly tested the AddOn before submitting to our test for final review.
-4. You have a demo of the AddOn that we can access.
+{% hint style="info" %}
+**Note:** Partner AddOns are very intutive and quick to install. For steps on how to install a Partner AddOn, navigate to [Installing Partner AddOns](installing-partner-addons.md).
+{% endhint %}
 
-When you have checked off all of the above, contact your Account Manager or log in to the [Developer Portal](https://dam.beefree.io/devmain) and submit a ticket to complete the review and approval process.
+<figure><img src="../../../.gitbook/assets/CleanShot 2024-09-06 at 15.42.09@2x.png" alt=""><figcaption><p>Image of Partner AddOns within the Partner AddOn Marketplace.</p></figcaption></figure>
+
+## How soon is the functionality available to my end users?
+
+Once you successfully install a Partner AddOn following the steps outlined in [Installing Partner AddOns](installing-partner-addons.md), it will be available to your application's end users. Depending on the AddOn, you may or may not apply configuration settings to manage the functionality of the AddOn. For example, you may want to apply configurations to AI-related AddOns to control tokens and associated costs.&#x20;

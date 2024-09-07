@@ -1,4 +1,10 @@
-# Custom AddOns
+---
+description: >-
+  Learn more about Custom AddOns, and how to develop and implement your own
+  custom built AddOn.
+---
+
+# 🛠️ Custom AddOns
 
 {% hint style="info" %}
 This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../../../getting-started/readme/development-applications.md) for free to try this and other Superpowers-level features.
@@ -6,13 +12,7 @@ This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.
 
 ## Introduction <a href="#introduction" id="introduction"></a>
 
-A Custom AddOn is an addon that you typically developed for your own use.
-
-[Partner AddOns](../partner-addons/) start as Custom AddOns, but are then published to the Partner AddOn Directory, becoming available to all applications that have embedded Beefree SDK.
-
-Most Custom AddOns do not become Partner AddOns and therefore are not published to the Directory. That’s because, in most cases, you create a Custom AddOn to satisfy a use case that is specific to your application.
-
-An example to clarify what we mean.
+Custom AddOns are useful when there is a feature you'd like to offer within your application that is not available in our AddOn Marketplace within the Developer Console. In these instances, you can develop your own Custom AddOns for your application's end users.
 
 ## Example of a Custom AddOn <a href="#example-of-a-custom-addon" id="example-of-a-custom-addon"></a>
 

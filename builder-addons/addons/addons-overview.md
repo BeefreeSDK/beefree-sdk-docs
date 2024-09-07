@@ -1,4 +1,8 @@
-# AddOns Overview
+---
+description: Learn more about AddOns at a high-level.
+---
+
+# 🔍 AddOns Overview
 
 ## Why AddOns? <a href="#why-addons" id="why-addons"></a>
 

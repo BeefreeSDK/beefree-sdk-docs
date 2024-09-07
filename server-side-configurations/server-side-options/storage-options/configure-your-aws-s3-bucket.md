@@ -91,6 +91,10 @@ The following JSON is of the Permissions policy assigned to the AWS user.
 }
 ```
 
+{% hint style="info" %}
+**Note: Images path** and **Thumbs path** must be valid directories in the bucket.
+{% endhint %}
+
 ## Enabling the Move File Feature for Your File Manager
 
 You can enable the move icon for files within the File manager. This move icon allows your end users to move their files between folders, locations, and so on within the File manger. They can access the move icon directly on the file within the File manager. The move icon is a folder with an arrow pointing right inside it. End users click this icon to initiate the process of relocating the corresponding file to a new destination.
