@@ -76,53 +76,38 @@ onError: function(errorMessage) { /* Implements function to handle error message
 
 ```
 
-## onInfo callback <a href="#oninfo-callback" id="oninfo-callback"></a>
+## OnInfo Callback
 
-This callback relates specifically to the [OpenAI AddOn](../../builder-addons/addons/partner-addons/openai-addon/). The AddOn will transmit the usage data provided by OpenAI with each prompt response, without storing or tracking the data.
+The `onInfo` callback notifies your application when a user clicks on **Apply** for any AI-generated text suggestion. This feature is specifically designed for the AI Writing Assistant AddOn and provides real-time usage data with each response, without storing or tracking the information.
 
-## Configuration
+To configure this in your app, add the `onInfo` callback to your `beeConfig`:
 
-To handle these errors, add the onInfo callback to [beeConfig](../../getting-started/readme/installation/configuration-parameters/):
-
-```javascript
-
-onInfo: function(information) { 
-/* Implements function to handle warning responses */ 
+```json
+onInfo: function (information) { 
+  /* Implement function to handle info events such as when AI-generated text is applied */ 
 }
-
 ```
 
-### Response
+### Example Response
 
-```javascript
+Here’s an example of the data you can expect when the user applies AI-generated content:
 
+```json
 {
-  code: number,
-  message: `string’,
-  detail: object,
+    "code": 1001,
+    "message": "Prompt '60bcc837-674c-4226-adad-91ee2a603b57' has been applied",
+    "detail": {
+      "handle": "ai-integration",
+      "promptId": "60bcc837-674c-4226-adad-91ee2a603b57",
+      "moduleId": "9c2c6e63-f9c3-4e8d-9e3e-f9a658fefe46",
+      "content": "Discover the Best Email Editor"
+    }
 }
-
 ```
 
-### **Example**
+## OnInfo Benefits and Use Cases
 
-```javascript
-
-AddOn Information
-{
-  code: 1000,
-message: `Token usage for addon handle: ai-integration’,
-  detail: {
-    handle: ‘ai-integration’,
-    promptId: ‘60bcc837-674c-4226-adad-91ee2a603b57’,
-    usage: {
-      prompt_tokens: 50,
-      completion_tokens: 100,
-      total_tokens: 150,
-      uid: ‘string’
-    },
-  },
-}
-
-```
-
+* **Enhanced Regeneration**: The `onInfo` callback provides more accurate AI-generated text when users click "Regenerate." For example, if a user is editing an email and the first AI suggestion isn’t quite right, they can click "Regenerate" and receive a more relevant version that better matches the tone of the email campaign.
+* **Context Awareness**: When AI responses are applied, the `onInfo` callback ensures that context is preserved. Imagine a user is working on a long-form blog post with multiple sections. The callback helps maintain consistency in style and tone even as the user generates new content for each section.
+* **Submit via Enter Key**: With the `submitOnEnterKey` configuration, users can submit AI-generated content quickly by pressing the **Enter** key. For instance, when filling out product descriptions in an e-commerce platform, users can simply hit **Enter** to accept the AI's suggestions, speeding up the process without having to manually click a button.
+* **Multilingual Template Support**: The `onInfo` callback ensures that AI-generated text adapts well to multilingual templates. For instance, a marketing team working on a bilingual campaign can trust that the AI suggestions will correctly switch between languages, making it easier to localize content for different markets.
