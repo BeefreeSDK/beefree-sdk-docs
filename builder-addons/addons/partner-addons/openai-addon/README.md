@@ -132,6 +132,8 @@ const beeConfig = {
 
 With each prompt response, the addon will report the usage data provided by Azure OpenAI or OpenAI API via the editor’s `onInfo` callback without storing or tracking the data.
 
+You can also monitor when the user applies a prompt response.
+
 <details>
 
 <summary>Monitor Usage Example</summary>
@@ -145,16 +147,28 @@ const beeConfig = {
     ... 
     onInfo: function (data) {
 
-        // Check information is addon
-        if (data.code === 1000) {
+        // Check which addon
+        const handle = data.detail.handle
+        if (handle === 'ai-integration') 
+            switch(data.code) {
+                // Token usage
+                case 1000:
+                    // Get the total tokens
+                    const totalTokens = data.detail.usage.total_tokens
+                    // Update running total in database
+                    // --> host app code goes here
+                    break
 
-            // Check which addon
-            const handle = data.detail.handle
-            if (handle === 'ai-integration') {
-                // Get the total tokens
-                const totalTokens = data.detail.usage.total_tokens
-                // Update running total in database
-                // --> host app code goes here
+                // User applied prompt
+                case 1001:
+                    // Get the prompt id
+                    const promptId = data.detail.promptId
+                    // Get the module id the prompt was applied to
+                    const moduleId = data.detail.moduleId
+                    // Get the content of the prompt response
+                    const content = data.detail.content
+                    
+                    // --> Add logic to handle data here
             }
         }
     },
