@@ -30,6 +30,6 @@ Beefree SDK enables you to customize the appearance of a variety of elements. Re
 [themes.md](themes.md)
 {% endcontent-ref %}
 
-{% content-ref url="custom-css.md" %}
-[custom-css.md](custom-css.md)
+{% content-ref url="custom-css/" %}
+[custom-css](custom-css/)
 {% endcontent-ref %}

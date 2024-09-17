@@ -150,7 +150,7 @@ Mobile-optimized elements are flagged with a clickable “Mobile” pill, as sho
 
 <figure><img src="../.gitbook/assets/6Screenshot-2022-07-04-at-15.35.39.png" alt=""><figcaption></figcaption></figure>
 
-When the pill is highlighted in light blue, it means the property has been edited and applied in the mobile stage. The mobile pill can be styled using [Custom CSS](appearance/custom-css.md) if covered by your [subscription plan](https://beefree.io/bee-plugin/pricing/).
+When the pill is highlighted in light blue, it means the property has been edited and applied in the mobile stage. The mobile pill can be styled using [Custom CSS](appearance/custom-css/) if covered by your [subscription plan](https://beefree.io/bee-plugin/pricing/).
 
 <figure><img src="../.gitbook/assets/7Screenshot-2022-07-04-at-15.34.30.png" alt=""><figcaption></figcaption></figure>
 

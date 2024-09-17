@@ -118,7 +118,7 @@ Suggest edits in seconds, and save time with the copy/paste feature. Copy text f
 
 If you subscribed to a Superpowers plan, and have [co-editing](../collaborative-editing.md) enabled, your users will never lose a new comment again with the new notification system. Users will receive real-time notifications whenever a new comment is added to the document straight in the builder.
 
-By clicking on the notification, they will be able to quickly open the comment, and highlight the element where the conversation is taking place. The toast notification can be styled with [custom CSS](../appearance/custom-css.md) to match your application look-and-feel.
+By clicking on the notification, they will be able to quickly open the comment, and highlight the element where the conversation is taking place. The toast notification can be styled with [custom CSS](../appearance/custom-css/) to match your application look-and-feel.
 
 If you want to learn how to implement co-editing in your application, check the related documentation article [here](../collaborative-editing.md).
 

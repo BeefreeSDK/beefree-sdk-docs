@@ -46,7 +46,7 @@ If your application has brand settings that are used for your app’s UI or for 
 
 ### **Create a more consistent experience within the editor**
 
-If you’ve customized how the editor looks like, either through [Themes](themes.md) or [Custom CSS](custom-css.md), you may want default content to adhere to the same style.
+If you’ve customized how the editor looks like, either through [Themes](themes.md) or [Custom CSS](custom-css/), you may want default content to adhere to the same style.
 
 ### **Define custom social blocks**
 
