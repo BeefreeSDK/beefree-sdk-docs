@@ -77,7 +77,7 @@ Reference the following page for more information on classnames for custom CSS.
 * [Button Sidebar](classnames/button-sidebar.md)
 * [Radio Group](classnames/radio-group.md)
 * [Column Structure Widget](classnames/column-structure-widget.md)
-* [Font Style](classnames/font-style.md)
+* [Font Style](classnames/font-style-drag-and-drop-widgets.md)
 * [Input Text](classnames/input-text.md)
 * [Slider](classnames/slider.md)
 * [Add New Social and Form](classnames/add-new-social-and-form.md)

@@ -1,11 +1,11 @@
-# Font Style
+# Font Style Drag-and-Drop Widgets
 
 This page covers widget classnames for content in the sidebar, and lists the classnames for the following widgets:
 
-* [Font Style](font-style.md#font-style)
-* [Configure Icon Collection](font-style.md#configure-icon-collection)
-* [Manage Fields](font-style.md#manage-fields)
-* [Configure Carousel](font-style.md#configure-carousel)
+* [Font Style](font-style-drag-and-drop-widgets.md#font-style)
+* [Configure Icon Collection](font-style-drag-and-drop-widgets.md#configure-icon-collection)
+* [Manage Fields](font-style-drag-and-drop-widgets.md#manage-fields)
+* [Configure Carousel](font-style-drag-and-drop-widgets.md#configure-carousel)
 
 ## **Font Style**
 

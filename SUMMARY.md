@@ -130,7 +130,7 @@
       * [Button Sidebar](other-customizations/appearance/custom-css/classnames/button-sidebar.md)
       * [Radio Group](other-customizations/appearance/custom-css/classnames/radio-group.md)
       * [Column Structure Widget](other-customizations/appearance/custom-css/classnames/column-structure-widget.md)
-      * [Font Style](other-customizations/appearance/custom-css/classnames/font-style.md)
+      * [Font Style Drag-and-Drop Widgets](other-customizations/appearance/custom-css/classnames/font-style-drag-and-drop-widgets.md)
       * [Input Text](other-customizations/appearance/custom-css/classnames/input-text.md)
       * [Slider](other-customizations/appearance/custom-css/classnames/slider.md)
       * [Add New Social and Form](other-customizations/appearance/custom-css/classnames/add-new-social-and-form.md)

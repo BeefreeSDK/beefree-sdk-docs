@@ -17,7 +17,7 @@ The following pages list both the deprecated and new classnames for Beefree SDK.
 * [Button Sidebar](button-sidebar.md)
 * [Radio Group](radio-group.md)
 * [Column Structure Widget](column-structure-widget.md)
-* [Font Style](font-style.md)
+* [Font Style](font-style-drag-and-drop-widgets.md)
 * [Input Text](input-text.md)
 * [Slider](slider.md)
 * [Add New Social and Form](add-new-social-and-form.md)
