@@ -12,8 +12,6 @@ This page will cover button classnames for the following sidebar areas:
 
 The tables in this section list the classnames for buttons within the content area of the sidebar.
 
-<figure><img src="../../../../.gitbook/assets/CleanShot 2024-09-16 at 17.55.32.png" alt=""><figcaption></figcaption></figure>
-
 ### Add-on <a href="#add-on" id="add-on"></a>
 
 This section lists the Add-on sidebar widget sub-elements and classnames.
