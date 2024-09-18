@@ -10,7 +10,7 @@ description: >-
 This AddOn is available on Beefree SDK [Enterprise plans only](https://developers.beefree.io/pricing-plans).
 {% endhint %}
 
-## Overview of the Custom AI Writing Assistant
+## Overview
 
 The Custom AI Writing Assistant AddOn enables host applications to integrate their own LLM models with Beefree SDK. This allows host applications to provide their end users with advanced AI writing capabilities that are specific to their domains. Using the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md), this AddOn employs the same entry points as the [AI writing assistant](openai-addon/), allowing full control over the AI experience within your application. Once your Custom AI Writing Assistant AddOn is fully configured, the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md) displays the modal you created within the user interface when end users click the **Write with AI** button in the sidebar.&#x20;
 
