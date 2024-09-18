@@ -16,7 +16,7 @@ The Custom AI Writing Assistant AddOn enables host applications to integrate the
 
 The Stability AI AddOn converts text to images. This feature allows your end users to submit descriptions of what they would like to see in their AI-generated images, and to also submit negative prompts of what they do not want to see in their image. Once they submit the prompt and negative prompt, they'll receive an AI-generated image that they can use directly within their designs.
 
-<figure><img src="../../../.gitbook/assets/CleanShot 2024-07-31 at 15.32.58.png" alt=""><figcaption><p><a href="https://stability.ai/stable-image">Stability AI</a></p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2024-09-18 at 11.01.46.png" alt=""><figcaption></figcaption></figure>
 
 [How do I enable the Stability AI AddOn?](partner-addons-directory.md#openai) | [AI Providers and Data Security](openai-addon/open-ai-and-data-security.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)&#x20;
 
@@ -24,7 +24,7 @@ The Stability AI AddOn converts text to images. This feature allows your end use
 
 Through this AddOn and [Multi-language templates](../../../other-customizations/multi-language-templates.md), you can empower your end users to create up to six different language versions of a single design. Once your end users create their new language versions, they can click the **Translate** button to automatically translate all the translatable content within their designs.
 
-<figure><img src="../../../.gitbook/assets/CleanShot 2024-07-31 at 15.28.23.png" alt=""><figcaption><p><a href="https://www.deepl.com/en/products/api">DeepL</a></p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2024-09-18 at 11.02.26.png" alt=""><figcaption></figcaption></figure>
 
 [How do I enable the DeepL AddOn?](deepl.md) | [AI Providers and Data Security](openai-addon/open-ai-and-data-security.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)&#x20;
 

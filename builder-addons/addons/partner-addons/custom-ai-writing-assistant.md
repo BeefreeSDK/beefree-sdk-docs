@@ -7,7 +7,7 @@ description: >-
 # Custom AI Writing Assistant
 
 {% hint style="info" %}
-This AddOn is available on Beefree SDK [Enterprise plans only](https://developers.beefree.io/pricing-plans).
+This AddOn is available on Beefree SDK [Enterprise](https://developers.beefree.io/pricing-plans) and VPC plans.
 {% endhint %}
 
 ## Overview
@@ -29,31 +29,9 @@ The following video displays an example of a [Content Dialog](../../../other-cus
 
 {% embed url="https://drive.google.com/file/d/1RQo5AwHK9SYLC6u9varViKoxYovHXI6a/view?t=4" %}
 
-## Requirements
-
-To get started with the Custom AI Writing Assistnat AddOn, you will need to fulfill the requirements outlined in the following sections.&#x20;
-
-### **Provide Required Endpoints**
-
-Developers must provide the following endpoints for their custom LLM models:
-
-* Health Check Endpoint
-* Authentication Endpoint
-* Functional Endpoint(s)
-
-### **Validate Endpoints**
-
-The system validates the provided endpoints.
-
-You will be responsible for developing the UI of the AI Writing Assistant in the builder. You can use the Content Dialog to achieve this.
-
-{% hint style="info" %}
-**Note:** The requirements in this section must be met prior to activating the Custom LLM AddOn in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu) and implementing the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md).
-{% endhint %}
-
 ## Prerequisites
 
-Before getting started with the configuration, ensure you have the following:
+Prior to getting started with the configuration, ensure you have the following:
 
 * Enterprise plan
 * A custom LLM service to call from within the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md)
@@ -66,8 +44,8 @@ This section outlines the steps you need to take to integrate the Custom AI Writ
 These steps are the following:
 
 1. [Install and enable the AddOn](custom-ai-writing-assistant.md#install-and-enable-the-addon)
-2. Configure the Content Dialog
-3. Manage Advanced Permissions&#x20;
+2. [Configure the Content Dialog](custom-ai-writing-assistant.md#content-dialog-configuration)
+3. [Manage Advanced Permissions](custom-ai-writing-assistant.md#advanced-permission-management)&#x20;
 
 ### **Install and Enable the AddOn**
 
@@ -81,6 +59,10 @@ Take the following steps to install and enable the AddOn:
 6. After installation, toggle the **Enable** button and save your changes.&#x20;
 
 **Note:** You can revisit this page in the future by clicking **Edit** in the AddOn card to turn the AddOn on or off as needed.
+
+{% hint style="warning" %}
+Once you activate the **Custom AI Writing Assistant AddOn** with your own LLM, you cannot activate the [AI Writing Assistant AddOn](openai-addon/), which uses either OpenAI or Azure OpenAI models. Only one of these two AddOns can be active.&#x20;
+{% endhint %}
 
 ### **Content Dialog Configuration**&#x20;
 
@@ -114,7 +96,7 @@ contentDialog: {
     }
     ```
 
-    * **Handling Lists**: If you are working with a list, ensure the generated text separates each item with a line break (). The text will then be split on each line break to construct the list in the stage.
+    * **Handling Lists**: If you are working with a list, ensure the generated text separates each item with a line break. The text will then be split on each line break to construct the list in the stage. The syntax for a line breaks is `\n`.
 
 ### **Advanced Permission Management**&#x20;
 
@@ -135,6 +117,24 @@ addOns: [
 ]
 ```
 
+#### **Disable the AddOn for Specific Blocks**
+
+You can disable the Custom AI Writing Assistant for specific content blocks using [Advanced Permissions](https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/advanced-permissions#addon). As a reminder, this AddOn is compatible with the following content blocks:
+
+* [Button](https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/advanced-permissions#button)
+* [List](https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/advanced-permissions#list)
+* [Paragraph](https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/advanced-permissions#paragraph)
+* [Title](https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/advanced-permissions#title)
+
+&#x20;You can use [Advanced Permissions](https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/advanced-permissions#addon) to disable access to a specific block using the following:
+
+```typescript
+aiIntegration: {
+            locked: false,
+            show: true
+          }
+```
+
 ## **Settings**
 
 The table below outlines the settings available for the **ai-integration** AddOn in the Beefree SDK:
@@ -143,6 +143,37 @@ The table below outlines the settings available for the **ai-integration** AddOn
 | ------------------ | --------- | ------- | ------------------------------------------------------------- |
 | `enabled`          | boolean   | `true`  | If `false`, the “Write with AI” button is hidden              |
 | `isButtonDisabled` | boolean   | `false` | If `true`, the “Write with AI” button is visible but disabled |
+
+## **Edit the Button Label**
+
+After your activate and configure this AddOn, a **Write with AI** button will appear to your application's end users for the applicable content blocks.
+
+The following video displays how the **Write with AI** button inside the Content Properties once a content block is dragged and dropped onto the stage.&#x20;
+
+{% embed url="https://drive.google.com/file/d/1THXsWzi0pzQPY97iuIC5aY3Zw3wHQDro/view?usp=sharing" %}
+
+The following section provides an example of changing the Write with AI button text to "Generate copy". You can follow the same approach in the following example, but replace "Generate copy" with the text you'd like to use for your label.
+
+### Edit Label Example
+
+To change the "Write with AI" button label to "Generate copy" using the `mailup-bee-common-component-ai.config-label`, follow these steps:
+
+1. **Set up the BeeFree SDK**: Initialize your `beeConfig` object as usual.
+2. **Add the translations object**: In your `beeConfig`, include the `translations` object where you will specify the label override.
+3. **Override the label**: Inside the `translations` object, add the `"mailup-bee-common-component-ai.config-label"` key and set its value to `"Generate copy"`.
+
+```javascript
+var beeConfig = {
+    uid: config.uid,
+    // additional configuration properties...
+    translations: {
+        "mailup-bee-common-component-ai.config-label": "Generate copy"
+    },
+    // other properties...
+};
+```
+
+This will update the button text from "Write with AI" to "Generate copy."
 
 ## Additional Considerations
 
