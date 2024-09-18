@@ -4,6 +4,14 @@
 These AddOns need to be [installed from your Beefree SDK Console](installing-partner-addons.md). Some of them are offered by third-party providers, and they might require an active subscription with those providers in order to be used.
 {% endhint %}
 
+## Custom AI Writing Assistant <a href="#openai" id="openai"></a>
+
+The Custom AI Writing Assistant AddOn enables host applications to integrate their own LLM models with Beefree SDK. This allows host applications to provide their end users with advanced AI writing capabilities that are specific to their domains. Using the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md), this AddOn employs the same entry points as the [AI writing assistant](openai-addon/), allowing full control over the AI experience within your application. Once your Custom AI Writing Assistant AddOn is fully configured, the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md) displays the modal you created within the user interface when end users click the **Write with AI** button in the sidebar.&#x20;
+
+<figure><img src="../../../.gitbook/assets/CleanShot 2024-09-17 at 22.22.54@2x.png" alt=""><figcaption></figcaption></figure>
+
+[How do I enable the Custom AI Writing Assistant AddOn?](custom-ai-writing-assistant.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)&#x20;
+
 ## Stability AI <a href="#openai" id="openai"></a>
 
 The Stability AI AddOn converts text to images. This feature allows your end users to submit descriptions of what they would like to see in their AI-generated images, and to also submit negative prompts of what they do not want to see in their image. Once they submit the prompt and negative prompt, they'll receive an AI-generated image that they can use directly within their designs.
