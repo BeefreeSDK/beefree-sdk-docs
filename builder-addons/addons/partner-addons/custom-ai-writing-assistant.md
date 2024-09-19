@@ -131,9 +131,11 @@ You can disable the Custom AI Writing Assistant for specific content blocks usin
 ```typescript
 aiIntegration: {
             locked: false,
-            show: true
+            show: false
           }
 ```
+
+To hide the AddOn for a specific module, the `show` property should be set to `false`.
 
 ## **Settings**
 
