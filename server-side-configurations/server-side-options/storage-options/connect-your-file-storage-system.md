@@ -544,7 +544,7 @@ To read the full list of possible errors, please refer to [this page](../../../r
 
 Thumbnail generation is up to the developer of the file system provider.
 
-In case you don’t want to develop your own thumbnail generation procedure, you can use a service like [http://rethumb.com](http://rethumb.com/) to create a thumbnail URL.
+In case you don’t want to develop your own thumbnail generation procedure, you can use a service like [rethumb by Rapid](https://rapidapi.com/pmav/api/rethumb) to create a thumbnail URL.
 
 The `thumbnail` field is optional, so if you don’t want a thumbnail for your file, do not pass the field and the Beefree system will show you a generic icon based on the mime type you passed.
 
