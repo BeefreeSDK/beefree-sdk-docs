@@ -1,4 +1,4 @@
-# Synced Rows
+# 📄 Synced Rows
 
 {% hint style="info" %}
 This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.\

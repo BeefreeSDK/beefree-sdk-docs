@@ -1,31 +1,5 @@
 # Custom Rows
 
-Beefree SDK offers the ability to customize rows. Learn more about what this feature is and what it offers in the following sections:
+Beefree SDK offers the ability to customize rows. Learn more about what this feature is and what it offers in the following sections.
 
-{% content-ref url="understanding-custom-rows.md" %}
-[understanding-custom-rows.md](understanding-custom-rows.md)
-{% endcontent-ref %}
-
-{% content-ref url="how-it-works.md" %}
-[how-it-works.md](how-it-works.md)
-{% endcontent-ref %}
-
-{% content-ref url="loading-custom-rows-from-your-ui.md" %}
-[loading-custom-rows-from-your-ui.md](loading-custom-rows-from-your-ui.md)
-{% endcontent-ref %}
-
-{% content-ref url="displaying-saved-rows.md" %}
-[displaying-saved-rows.md](displaying-saved-rows.md)
-{% endcontent-ref %}
-
-{% content-ref url="displaying-saved-rows.md" %}
-[displaying-saved-rows.md](displaying-saved-rows.md)
-{% endcontent-ref %}
-
-{% content-ref url="generating-custom-rows-from-existing-content.md" %}
-[generating-custom-rows-from-existing-content.md](generating-custom-rows-from-existing-content.md)
-{% endcontent-ref %}
-
-{% content-ref url="extending-custom-rows-with-content-dialog.md" %}
-[extending-custom-rows-with-content-dialog.md](extending-custom-rows-with-content-dialog.md)
-{% endcontent-ref %}
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><span data-gb-custom-inline data-tag="emoji" data-code="1f914">🤔</span> Understanding Custom Rows</td><td></td><td></td><td><a href="understanding-custom-rows.md">understanding-custom-rows.md</a></td></tr><tr><td><span data-gb-custom-inline data-tag="emoji" data-code="1f9f0">🧰</span> How it works</td><td></td><td></td><td><a href="how-it-works.md">how-it-works.md</a></td></tr><tr><td><span data-gb-custom-inline data-tag="emoji" data-code="1f4bb">💻</span> Loading Custom Rows from your UI</td><td></td><td></td><td><a href="loading-custom-rows-from-your-ui.md">loading-custom-rows-from-your-ui.md</a></td></tr><tr><td><span data-gb-custom-inline data-tag="emoji" data-code="1f5bc">🖼️</span> Displaying Saved Rows</td><td></td><td></td><td><a href="../../other-customizations/advanced-options/display-conditions.md">display-conditions.md</a></td></tr><tr><td><span data-gb-custom-inline data-tag="emoji" data-code="1f3d7">🏗️</span> Generating Custom Rows from existing content</td><td></td><td></td><td><a href="generating-custom-rows-from-existing-content.md">generating-custom-rows-from-existing-content.md</a></td></tr><tr><td><span data-gb-custom-inline data-tag="emoji" data-code="1f3d3">🏓</span> Extending Custom Rows with content dialog</td><td></td><td></td><td><a href="extending-custom-rows-with-content-dialog.md">extending-custom-rows-with-content-dialog.md</a></td></tr></tbody></table>

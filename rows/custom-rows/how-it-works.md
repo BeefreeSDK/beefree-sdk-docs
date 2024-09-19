@@ -1,4 +1,4 @@
-# How it works
+# 🧰 How it works
 
 ## Overview <a href="#overview" id="overview"></a>
 
@@ -41,23 +41,36 @@ All textual content included in the selected array – including image file name
 
 Defines the usage of _custom rows_ in the _beeConfig_ object when you start the builder:
 
-```javascript
+```json
 
 rowsConfiguration: {
-            emptyRows: true,
-            defaultRows: true,         
-            externalContentURLs: [{
-                name: "Rows list 01",
-                value: "https://URL-01"
-                },{
-                name: "Rows list 02",
-                value: "https://URL-02"
-            }]         
-        },
+  emptyRows: true,
+  defaultRows: true,
+  selectedRowType: 'my_saved_rows', // pre-select this item in the Rows select
+  externalContentURLs: [
+    {
+      name: "Rows list 01",
+      value: "https://URL-01"
+    },
+    {
+      name: "Rows list 02",
+      value: "https://URL-02"
+    }
+  ]
+}
 
 ```
 
-## **Parameters**
+## **Rows Configuration Parameters**
+
+This section explains each of the parameters listed in the JSON `rowConfiguration` code snippet displayed in the previous section.
+
+These parameters are the following:
+
+* [`emptyRows`](how-it-works.md#emptyrows):
+* [`defaultRows`](how-it-works.md#defaultrows):
+* [`selectedRowType`](how-it-works.md#selectedrowtype):
+* [`externalContentURLs`](how-it-works.md#externalcontenturls):
 
 ### **emptyRows**
 
@@ -73,7 +86,7 @@ They are presented as follows in the builder’s default theme (the screenshot s
 
 <figure><img src="../../.gitbook/assets/5rows_empty.png" alt=""><figcaption></figcaption></figure>
 
-## **defaultRows**
+### **defaultRows**
 
 A set of rows that contain sample contents. That’s why we also call them _sample rows_. They may be used as a supporting feature for starting templates or to speed up the process of building a message from scratch.
 
@@ -85,7 +98,40 @@ They are presented as follows in the builder’s default theme (the screenshot s
 
 <figure><img src="../../.gitbook/assets/6rows_default.png" alt=""><figcaption></figcaption></figure>
 
-## **externalContentURLs**
+### **selectedRowType**
+
+This parameter is used to specify which type of row should be pre-selected when the end user opens the Rows selection in the content builder. You have several options for what value to assign to this parameter, and its role is to simplify the end user's interaction with the builder by focusing their attention on a specific type of row by default.
+
+**Possible values for `selectedRowType`:**
+
+1. **`'defaultRows'`**:
+   * This value will automatically select the default rows that come with the builder, which usually contain pre-designed content that users can easily modify and adapt. It helps users start with a pre-configured structure and quickly adjust it to meet their needs.
+2. **`'emptyRows'`**:
+   * This value pre-selects an option for the user to start with empty rows. This is useful for users who prefer to build their layouts entirely from scratch, without any predefined content or structure.
+3. **The handle of a row in `externalContentURLs`**:
+   * You can also pass the handle of a row that is listed in `externalContentURLs` to pre-select a row from an external source. A **handle** in this context refers to the **unique identifier** or **name** used to reference a specific row from an external list. Think of it as a unique key that allows the system to identify which external row to load or pre-select.
+   * For example, if you have external content rows listed in `externalContentURLs`, such as "Rows list 01" or "Rows list 02," you can pass their respective handle (typically a string like `"Rows list 01"`) as the value for `selectedRowType`. This will automatically load and pre-select that specific external row, saving the user the step of manually selecting it from the list.
+
+#### **How a Handle Works**
+
+A **handle** acts like a reference key to point to a specific row in an external list. Handles are typically unique names or identifiers that can be used to quickly access specific rows from an external content source, ensuring that the correct row is fetched and displayed to the user. For instance, in the following configuration:
+
+```json
+externalContentURLs: [
+  {
+    name: "Rows list 01",
+    value: "https://URL-01"
+  },
+  {
+    name: "Rows list 02",
+    value: "https://URL-02"
+  }
+]
+```
+
+If you want to pre-select "Rows list 01" from the external content list, you would set `selectedRowType: 'Rows list 01'`, where `'Rows list 01'` is the handle of that specific external content row. The handle here refers to the **name** or a unique identifier that the system recognizes and uses to select the correct row from the external content list.
+
+### **externalContentURLs**
 
 Each item in this list defines an option available in the _Rows_ drop-down.
 

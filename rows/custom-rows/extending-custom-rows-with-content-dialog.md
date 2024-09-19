@@ -1,4 +1,4 @@
-# Extending Custom Rows with content dialog
+# 🏓 Extending Custom Rows with content dialog
 
 ## Overview <a href="#overview" id="overview"></a>
 

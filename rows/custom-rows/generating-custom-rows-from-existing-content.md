@@ -1,4 +1,4 @@
-# Generating Custom Rows from existing content
+# 🏗️ Generating Custom Rows from existing content
 
 Custom Rows allows you to easily generate draggable rows from your application content, or other application content, without any design process or complex user interaction.
 

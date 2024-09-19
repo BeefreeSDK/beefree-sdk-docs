@@ -89,17 +89,17 @@
 ## Rows
 
 * [Custom Rows](rows/custom-rows/README.md)
-  * [Understanding Custom Rows](rows/custom-rows/understanding-custom-rows.md)
-  * [How it works](rows/custom-rows/how-it-works.md)
-  * [Loading Custom Rows from your UI](rows/custom-rows/loading-custom-rows-from-your-ui.md)
-  * [Displaying Saved Rows](rows/custom-rows/displaying-saved-rows.md)
-  * [Generating Custom Rows from existing content](rows/custom-rows/generating-custom-rows-from-existing-content.md)
-  * [Extending Custom Rows with content dialog](rows/custom-rows/extending-custom-rows-with-content-dialog.md)
+  * [🤔 Understanding Custom Rows](rows/custom-rows/understanding-custom-rows.md)
+  * [🧰 How it works](rows/custom-rows/how-it-works.md)
+  * [💻 Loading Custom Rows from your UI](rows/custom-rows/loading-custom-rows-from-your-ui.md)
+  * [🖼️ Displaying Saved Rows](rows/custom-rows/displaying-saved-rows.md)
+  * [🏗️ Generating Custom Rows from existing content](rows/custom-rows/generating-custom-rows-from-existing-content.md)
+  * [🏓 Extending Custom Rows with content dialog](rows/custom-rows/extending-custom-rows-with-content-dialog.md)
 * [Saved Rows](rows/saved-rows/README.md)
-  * [Saved Rows Overview](rows/saved-rows/save-rows-overview.md)
-  * [Saved Rows Video Tutorial](rows/saved-rows/save-rows-video-tutorial.md)
-  * [Edit Single Row Mode](rows/saved-rows/edit-single-row-mode.md)
-  * [Synced Rows](rows/saved-rows/synced-rows.md)
+  * [💾 Saved Rows Overview](rows/saved-rows/save-rows-overview.md)
+  * [📹 Saved Rows Video Tutorial](rows/saved-rows/save-rows-video-tutorial.md)
+  * [📙 Edit Single Row Mode](rows/saved-rows/edit-single-row-mode.md)
+  * [📄 Synced Rows](rows/saved-rows/synced-rows.md)
 
 ## Other Customizations
 

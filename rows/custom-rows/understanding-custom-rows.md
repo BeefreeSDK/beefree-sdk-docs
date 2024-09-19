@@ -1,18 +1,33 @@
-# Understanding Custom Rows
+# 🤔 Understanding Custom Rows
 
 {% hint style="info" %}
 This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.\
 If you're on the Essentials plan, [upgrade a development application](../../getting-started/readme/development-applications.md) for free to try this and other Core-level features.
 {% endhint %}
 
-_Custom rows_ dramatically improves this area of the builder (now renamed simply _Rows_):
+## Introduction
 
-1. Introducing the concept of ready-to-go rows, which provide both structure & content.
-2. Allowing you – the hosting application – to pass that _ready-to-go_ content to the builder.
-3. Maintaining the existing, empty structures, for continuity of the current user experience.
-4. Allowing you to turn off empty structures, if you want to, and only provide _custom rows_.
+Rows are a core feature of the visual builders within Beefree SDK. They provide a structured method to house various types of content such as headers, paragraphs, images, and buttons. These rows allow end users to either add their own content or use pre-designed rows with ready-made content that can be easily customized to fit their design needs. This approach increases flexibility and efficiency by allowing end users to customize content quickly without starting from scratch. It ensures that designs remain visually cohesive and well-organized, balancing creative freedom with structure.
 
-These new, _custom rows_ can be dragged and dropped into the editing pane the same way users currently add other content elements.
+### End User Benefits
+
+The following lists shares a few of the end user benefits of Rows:
+
+* **Pre-designed and customizable content**: End users can select from rows that already contain content, making it easy to modify and adapt for their specific needs.
+* **Flexible structure**: Rows help organize different content types in a structured layout, promoting clean and efficient design.
+* **Drag-and-drop functionality**: Rows can be easily dragged and dropped onto the stage, making the design process intuitive and user-friendly.
+* **Continuity with current user experience**: The option to add empty structures is still available, preserving the familiar workflow for users who prefer to build from scratch.
+* **Option to disable empty rows**: Users can opt to work solely with pre-made rows, focusing on content customization without the need to build layouts from the ground up.
+
+### Host Application Benefits
+
+The following lists shares a few of the host application benefits of Rows:
+
+* **Ready-to-go content delivery**: The host application can pass pre-built, ready-to-go rows directly into the builder, reducing the need for end users to create content from scratch.
+* **Customization control**: Host applications can offer a variety of customizable rows, ensuring users follow design guidelines while still providing creative freedom.
+* **Improved user experience**: Pre-designed rows simplify the user interface, making the builder more intuitive and less complex for users.
+* **Optional removal of empty structures**: Host applications can disable empty row options if desired, encouraging users to focus on modifying pre-existing content.
+* **Efficient content management**: Rows enable the host to provide consistent, reusable content blocks that can be updated globally, streamlining content management and maintaining design consistency across the platform.
 
 <figure><img src="../../.gitbook/assets/CR_sample-574x1024.png" alt="" width="431"><figcaption></figcaption></figure>
 
@@ -20,7 +35,7 @@ These new, _custom rows_ can be dragged and dropped into the editing pane the sa
 
 ### **User saved rows**
 
-Enabling the [Save Rows](../saved-rows/) feature, your users will be able to save into your application design elements that they want to use in other messages.
+By enabling the [Save Rows](../saved-rows/) feature, your end users will be able to save design elements that they want to use in other messages in the future.
 
 To display saved rows in the _Rows_ tab, add them to the list of rows available to users by leveraging the [Custom Rows feature](displaying-saved-rows.md).
 
@@ -32,7 +47,7 @@ When using the standard, empty rows, users are forced to start from scratch ever
 
 A set of pre-built rows may accelerate message construction, providing users with commonly used structures filled with sample content. For example, a set of headers, footers, news sections, etc.
 
-With _Custom rows_ you – the hosting application – are in control of the content that is included. In some cases, providing canned text can speed up the email creation process and provide consistency across all the communications.
+With _Custom rows_ you – the host application – are in control of the content that is included. In some cases, providing canned text can speed up the email creation process and provide consistency across all the communications.
 
 Imagine, for example, the case of a CRM where customer success representatives can quickly build curated emails selecting from a number of pre-built text blocks.
 
