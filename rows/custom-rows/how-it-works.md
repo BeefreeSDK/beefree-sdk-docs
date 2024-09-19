@@ -67,10 +67,10 @@ This section explains each of the parameters listed in the JSON `rowConfiguratio
 
 These parameters are the following:
 
-* [`emptyRows`](how-it-works.md#emptyrows):
-* [`defaultRows`](how-it-works.md#defaultrows):
-* [`selectedRowType`](how-it-works.md#selectedrowtype):
-* [`externalContentURLs`](how-it-works.md#externalcontenturls):
+* [`emptyRows`](how-it-works.md#emptyrows): Set of empty rows. The same rows available when no _rowsConfiguration_ is included.
+* [`defaultRows`](how-it-works.md#defaultrows): A set of rows that contain sample content.
+* [`selectedRowType`](how-it-works.md#selectedrowtype): Specify which type of row should be pre-selected when the end user opens the Rows selection in the visual builder.&#x20;
+* [`externalContentURLs`](how-it-works.md#externalcontenturls): Each item in this list defines an option available in the _Rows_ drop-down.
 
 ### **emptyRows**
 
@@ -88,7 +88,7 @@ They are presented as follows in the builder’s default theme (the screenshot s
 
 ### **defaultRows**
 
-A set of rows that contain sample contents. That’s why we also call them _sample rows_. They may be used as a supporting feature for starting templates or to speed up the process of building a message from scratch.
+A set of rows that contain sample content. That’s why we also call them _sample rows_. They may be used as a supporting feature for starting templates or to speed up the process of building a message from scratch.
 
 **Allowed values:** true / false
 
@@ -100,7 +100,7 @@ They are presented as follows in the builder’s default theme (the screenshot s
 
 ### **selectedRowType**
 
-This parameter is used to specify which type of row should be pre-selected when the end user opens the Rows selection in the content builder. You have several options for what value to assign to this parameter, and its role is to simplify the end user's interaction with the builder by focusing their attention on a specific type of row by default.
+This parameter is used to specify which type of row should be pre-selected when the end user opens the Rows selection in the visual builder. You have several options for what value to assign to this parameter, and its role is to simplify the end user's interaction with the builder by focusing their attention on a specific type of row by default.
 
 **Possible values for `selectedRowType`:**
 
