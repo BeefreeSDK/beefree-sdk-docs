@@ -22,8 +22,6 @@ A few notes and recommendations:
 * These folders should not be parents/children between themselves.
 * Their name is restricted by [AWS standard naming restrictions](https://dam.beefree.io/awsnames).
 * For performance reasons, you should use a dedicated bucket and place these folders in the root.
-* The S3 bucket must be publicly accessible.
-* The S3 bucket Access Control List (ACL) should ensure “List objects, Write objects, and Write bucket permissions” are **disabled** for the _Everyone_ user.
 
 ## Shared Assets
 
@@ -63,7 +61,7 @@ Take the following steps to configure Access keys in the Developer Console:
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2024-09-06 at 14.14.27@2x.png" alt=""><figcaption><p>Image of required fields to configure your own S3 bucket within the Developer Console.</p></figcaption></figure>
 
-### JSON of the Permissions policy
+### Configure Access keys policy in AWS
 
 The following JSON is of the Permissions policy assigned to the AWS user.
 
@@ -94,6 +92,34 @@ The following JSON is of the Permissions policy assigned to the AWS user.
 {% hint style="info" %}
 **Note: Images path** and **Thumbs path** must be valid directories in the bucket.
 {% endhint %}
+
+### Configure bucket permissions
+
+#### File URL Generation Based on "Custom URL" Parameter
+
+The URLs for accessing files in your S3 bucket vary depending on whether the "Custom URL" field is set in the Developer Console:
+
+*   **If "Custom URL" is empty**:\
+    URLs will follow this format:
+
+    ```
+    https://<bucket-name>.s3.<region>.amazonaws.com/path/to/file.png
+    ```
+*   **If "Custom URL" is set** (e.g., `https://my-cdn/`):\
+    URLs will be generated like this:
+
+    ```
+    https://<custom-url>/path/to/file.png
+    ```
+
+#### Important Configuration Notes
+
+1. **Public Access**:
+   * For the generated URLs to work, the bucket’s permissions should allow public access to the files.
+2. **Using a CDN as "Custom URL"**:
+   * If you’re using a CDN (e.g., CloudFront) in the "Custom URL" field, you can restrict the bucket's access to only the CDN. In this case, the bucket itself doesn't need to be publicly accessible, as access is controlled through the CDN.
+
+Ensure that bucket permissions are configured appropriately based on the type of URL being generated.
 
 ## Enabling the Move File Feature for Your File Manager
 
