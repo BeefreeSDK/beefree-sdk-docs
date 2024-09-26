@@ -2,34 +2,4 @@
 
 Beefree SDK enables you to customize the appearance of a variety of elements. Reference the following sections to learn more about how you can customize appearance:
 
-{% content-ref url="content-defaults.md" %}
-[content-defaults.md](content-defaults.md)
-{% endcontent-ref %}
-
-{% content-ref url="custom-sidebar-position.md" %}
-[custom-sidebar-position.md](custom-sidebar-position.md)
-{% endcontent-ref %}
-
-{% content-ref url="content-tile-sorting.md" %}
-[content-tile-sorting.md](content-tile-sorting.md)
-{% endcontent-ref %}
-
-{% content-ref url="content-tile-grouping.md" %}
-[content-tile-grouping.md](content-tile-grouping.md)
-{% endcontent-ref %}
-
-{% content-ref url="loading-spinner-theme.md" %}
-[loading-spinner-theme.md](loading-spinner-theme.md)
-{% endcontent-ref %}
-
-{% content-ref url="custom-tab-layout.md" %}
-[custom-tab-layout.md](custom-tab-layout.md)
-{% endcontent-ref %}
-
-{% content-ref url="themes.md" %}
-[themes.md](themes.md)
-{% endcontent-ref %}
-
-{% content-ref url="custom-css/" %}
-[custom-css](custom-css/)
-{% endcontent-ref %}
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Content Defaults: D</strong>efine how content looks when dragged into an email or page.</td><td></td><td></td><td><a href="content-defaults.md">content-defaults.md</a></td></tr><tr><td><strong>Custom Sidebar Position:</strong> Choose whether to display the builder sidebar on the left or on the right side of the screen.</td><td></td><td></td><td><a href="custom-sidebar-position.md">custom-sidebar-position.md</a></td></tr><tr><td><strong>Content Title Sorting:</strong> Change the order of the content tiles in the editor’s sidebar.</td><td></td><td></td><td><a href="content-tile-sorting.md">content-tile-sorting.md</a></td></tr><tr><td><strong>Content Title Grouping:</strong> Group content tiles in the editor’s sidebar.</td><td></td><td></td><td><a href="content-tile-grouping.md">content-tile-grouping.md</a></td></tr><tr><td><strong>Loading Spinner Theme:</strong> Choose between a dark and light theme for the loading animation</td><td></td><td></td><td><a href="loading-spinner-theme.md">loading-spinner-theme.md</a></td></tr><tr><td><strong>Custom Tab Layout:</strong> Re-organize the way tabs are ordered.</td><td></td><td></td><td><a href="custom-tab-layout.md">custom-tab-layout.md</a></td></tr><tr><td><strong>Themes:</strong> Change the builder’s appearance when rendered within your application</td><td></td><td></td><td><a href="themes.md">themes.md</a></td></tr><tr><td><strong>Custom CSS:</strong> Define a custom look and feel through a CSS stylesheet</td><td></td><td></td><td><a href="custom-css/">custom-css</a></td></tr></tbody></table>

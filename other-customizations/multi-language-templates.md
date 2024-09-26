@@ -1,17 +1,18 @@
 # Multi-Language Templates
 
 {% hint style="info" %}
-Multi-language Templates are only available for Superpower and Enterprise plans.
+Multi-language Templates are only available for [Superpower and Enterprise plans](https://developers.beefree.io/pricing-plans).
 {% endhint %}
 
 ## Overview
 
-Multi-language Templates (MLT) empower your end users to design customized experiences for their international audiences. Through the use of this feature, your end users will be able to select one default language, and up to three translations reflected in the top bar of their builder. Keep in mind that Multi-language Templates provide you with a means to translate template content, but _does not_ automatically translate the content for you.
+Multi-language Templates (MLT) empower your end users to design customized experiences for their international audiences. Through the use of this feature, your end users will be able to select one default language, and up to six translations reflected in the top bar of their builder. Keep in mind that Multi-language Templates provide you with a means to translate template content, but _does not_ automatically translate the content for you.
 
-MLT provides a translation infrastructure. You can integrate translations into your application using one of the following two methods:
+MLT provides a translation infrastructure, but does not perform the translation for each language version of your template. You can integrate translations into your application for each language version using one of the following two methods:
 
-* Enable translations through the [Beefree SDK OpenAI AddOn](../builder-addons/addons/partner-addons/openai-addon/)
-* Type the translations manually
+* Enable the [DeepL AddOn](../builder-addons/addons/partner-addons/deepl.md), which gives your end users access to a **Translate** button within the builder. When your end users click this button, all the translatable fields will automatically translate to the language corresponding with the template's language version. **Note:** MLT is a prerequisite for enabling the [DeepL AddOn](../builder-addons/addons/partner-addons/deepl.md).
+* Enable the [AI Writing Assistant AddOn](../builder-addons/addons/partner-addons/openai-addon/) to allow your end users to translate their template language version's content with the [AI Writing Assistant](../builder-addons/addons/partner-addons/openai-addon/).
+* End users can type the translations manually for each template language version.
 
 **Note:** The style of your templates stays the same across the language version while MLT is in use. The only change that will occur is the language of the text for the relevant components.
 
@@ -88,6 +89,9 @@ templateLanguages: [
   { value: 'es-ES', label: 'Español' },
   { value: 'de-DE', label: 'Deutsch' },
   { value: 'pt-BR', label: 'Português' },
+  { value: 'fr-FR', label: 'Français' },
+  { value: 'it-IT', label: 'Italiano' },
+  { value: 'nl-NL', label: 'Nederlands' },
 ],
 
 ```
@@ -96,12 +100,15 @@ The following sample shows an example of a default language and three translatio
 
 ```json
 
-  templateLanguage: { value: 'fa-IR', label: 'فارسی' },
-  templateLanguages: [
-    { value: 'ja-JP', label: '日本語' },
-    { value: 'ar-SA', label: 'العربية' },
-    { value: 'tr-TR', label: 'Türkçe' },
-  ],
+templateLanguage: { value: 'fa-IR', label: 'فارسی' },
+templateLanguages: [
+  { value: 'ja-JP', label: '日本語' },
+  { value: 'ar-SA', label: 'العربية' },
+  { value: 'tr-TR', label: 'Türkçe' },
+  { value: 'dv-MV', label: 'ދިވެހި' }, 
+  { value: 'ur-PK', label: 'اردو' },  
+  { value: 'ku-IQ', label: 'کوردی' }, 
+],
 
 ```
 
@@ -238,7 +245,7 @@ function exportAllTranslations() {
 
 ```
 
-To get HTML in a specific language by our [CSAPI](../apis/content-services-api/content-services-api-reference.md#html), ensure you include a “language” key/value pair to the body of your request.
+To get HTML in a specific language by our [CSAPI](../apis/content-services-api/content-services-api-reference.md#html), ensure you include a “language” key/value pair to the body of your request. Ensure you reference the instructions for using the [`/html` endpoint section](../apis/content-services-api/content-services-api-reference.md#html) of the [Content Services API Reference](../apis/content-services-api/content-services-api-reference.md) to learn more about exporting template HTML. &#x20;
 
 The following sample code displays this:
 

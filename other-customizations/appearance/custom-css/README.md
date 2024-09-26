@@ -67,17 +67,4 @@ https://gist.github.com/44daee53546a9f48ecad7f52784efa55.git
 
 ## Classnames <a href="#sample-custom-css-theme" id="sample-custom-css-theme"></a>
 
-Classnames in CSS are identifiers used to define and apply specific styles to HTML elements. They enable you to target elements more efficiently and apply styles across multiple elements consistently. Classnames make it easier to manage and control the appearance of web pages through styling.
-
-<figure><img src="../../../.gitbook/assets/CleanShot 2024-09-16 at 17.48.44 (1).png" alt=""><figcaption></figcaption></figure>
-
-Reference the following page for more information on classnames for custom CSS.
-
-* [Classnames](classnames/)
-* [Button Sidebar](classnames/button-sidebar.md)
-* [Radio Group](classnames/radio-group.md)
-* [Column Structure Widget](classnames/column-structure-widget.md)
-* [Font Style](classnames/font-style-drag-and-drop-widgets.md)
-* [Input Text](classnames/input-text.md)
-* [Slider](classnames/slider.md)
-* [Add New Social and Form](classnames/add-new-social-and-form.md)
+Reference the [Classnames page](classnames/) for more information on classnames for custom CSS.

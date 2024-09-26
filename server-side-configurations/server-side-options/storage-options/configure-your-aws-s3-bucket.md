@@ -109,7 +109,7 @@ The URLs for accessing files in your S3 bucket vary depending on whether the "Cu
     URLs will be generated like this:
 
     ```
-    https://<custom-url>/path/to/file.png
+    <custom-url>/path/to/file.png
     ```
 
 #### Important Configuration Notes

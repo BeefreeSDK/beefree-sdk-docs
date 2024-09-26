@@ -1,23 +1,23 @@
+---
+description: Reference current classnames, deprecated classnames, and CSS and HTML samples.
+---
+
 # Classnames
 
-## Classnames Overview <a href="#sample-custom-css-theme" id="sample-custom-css-theme"></a>
+## Classnames Overview
 
-Classnames are identifiers applied to HTML elements that help you target them for styling, functionality, or accessibility. When you assign a classname to an element, it allows you to customize its appearance using CSS or interact with it through JavaScript. This separation of structure and styling is a key principle of web development, enabling you to build flexible and maintainable code. By organizing your styles through classnames, you can ensure consistency across your site or application, and quickly make updates without touching the HTML structure.
+Classnames play a crucial role in web development by allowing you to apply and manipulate CSS styles in HTML elements effectively. They are essential for maintaining accessibility, creating custom CSS, and ensuring your HTML is organized and semantic.
 
-Using classnames for custom CSS is a powerful way to control the visual presentation of your web application. You can define how elements like buttons, forms, or menus look across various devices and screen sizes. Classnames give you granular control over design details like colors, spacing, and fonts, allowing for a cohesive user experience. Beyond aesthetics, proper use of classnames can enhance the performance of your site by minimizing the need for inline styling, making it easier to manage and maintain.
+#### Importance of Classnames
 
-Classnames also play a critical role in making your web application accessible. By combining CSS classnames with semantic HTML elements, you can create user-friendly experiences for diverse audiences. Screen readers and other assistive technologies rely on well-structured HTML and accessible classnames to interpret content correctly. This ensures that your application is usable by a wider audience, improving your reach and inclusivity. Accessible web design not only benefits users but also contributes to better SEO and legal compliance, making it a vital aspect of modern web development.
+* **Accessibility:** Proper use of classnames ensures that assistive technologies can parse and navigate your site more efficiently.
+* **Custom CSS:** Classnames allow for the targeted application of CSS rules, enabling unique style customizations to enhance user experience.
+* **HTML Semantics:** Meaningful classnames enhance the readability and maintainability of your code, making it easier for other developers to understand and modify.
 
-<figure><img src="../../../../.gitbook/assets/CleanShot 2024-09-16 at 17.48.44.png" alt=""><figcaption></figcaption></figure>
+Knowing the latest classnames is essential for staying updated with new standards and best practices. Updating deprecated classnames prevents your site from breaking and ensures continued compatibility.
 
-## Classnames for Beefree SDK
+## Change Log
 
-The following pages list both the deprecated and new classnames for Beefree SDK. Ensure you reference the following pages for the most accurate classnames.
+The following table provides a detailed overview of updates made to the documentation, including the date of the change, a brief description of the modifications, and links to the relevant sections with updated information.
 
-* [Button Sidebar](button-sidebar.md)
-* [Radio Group](radio-group.md)
-* [Column Structure Widget](column-structure-widget.md)
-* [Font Style](font-style-drag-and-drop-widgets.md)
-* [Input Text](input-text.md)
-* [Slider](slider.md)
-* [Add New Social and Form](add-new-social-and-form.md)
+<table><thead><tr><th width="205">Date</th><th width="210">Description of Changes</th><th>Resources</th></tr></thead><tbody><tr><td>September 26, 2024</td><td>CSS and HTML samples added as an addition reference to classname pages.</td><td><p>Published the following new pages with classname reference information:</p><ul><li><a href="sidebar-widgets-classnames/form-and-input-widgets.md">Form and Input Widgets</a></li><li><a href="sidebar-widgets-classnames/icon-and-social-widgets.md">Icon and Social Widgets</a></li><li><a href="sidebar-widgets-classnames/button-and-action-widgets.md">Button and Action Widgets</a></li><li><a href="sidebar-widgets-classnames/layout-and-structure-widgets.md">Layout and Structure Widgets</a></li><li><a href="sidebar-widgets-classnames/typography-and-font-style-widgets.md">Typography and Font Style Widgets</a></li><li><a href="sidebar-widgets-classnames/additional-classname-reference.md">Additional Classname Reference</a></li></ul></td></tr></tbody></table>
