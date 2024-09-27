@@ -1,137 +1,231 @@
-components: {}
-info:
-  description: API for transforming a JSON template into HTML
-  title: HTML Transformation API
-  version: 1.0.0
 openapi: 3.0.0
+info:
+  title: HTML Transformation API
+  description: API for transforming a JSON template into HTML
+  version: 1.0.0
+servers:
+  - url: https://api.getbee.io/v1/{collection}
+    description: Base URL for the API
+components: {}
 paths:
-  /v1/{collection}/html:
+  /html:
     post:
+      summary: Transform JSON Template to HTML
       description: Transform a JSON template into an HTML response.
       parameters:
-      - description: The collection ID or name
-        in: path
-        name: collection
-        required: true
-        schema:
-          type: string
+        - name: collection
+          in: path
+          required: true
+          description: The collection ID or name
+          schema:
+            type: string
       requestBody:
+        required: true
+        description: JSON payload with the template
         content:
           application/json:
-            example:
-              beautifyHtmlEnabled: true
-              page:
-                body:
-                  container:
-                    style:
-                      background-color: '#FFFFFF'
-                  content:
-                    computedStyle:
-                      linkColor: '#FF819C'
-                      messageBackgroundColor: transparent
-                      messageWidth: 675px
-                    style:
-                      color: '#000000'
-                      font-family: Arial, Helvetica Neue, Helvetica, sans-serif
-                  type: page-properties
-                  webFonts:
-                  - fontFamily: '''Montserrat'', ''Trebuchet MS'', ''Lucida Grande'',
-                      ''Lucida Sans Unicode'', ''Lucida Sans'', Tahoma, sans-serif'
-                    name: Montserrat
-                    url: https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap
-                description: BF-ecommerce-template
-                rows:
-                - columns:
-                  - grid-columns: 6
-                    modules:
-                    - descriptor:
-                        computedStyle:
-                          class: left fixedwidth
-                          width: 287px
-                        image:
-                          alt: Image
-                          height: 142px
-                          href: https://beefree.io
-                          src: https://ih1.redbubble.net/image.4902607927.7016/flat,750x,075,f-pad,750x1000,f8f8f8.jpg
-                          width: 546px
-                        style:
-                          padding-bottom: 0px
-                          padding-left: 15px
-                          padding-right: 15px
-                          padding-top: 5px
-                          width: 100%
-                      type: newsletter-modules-image
-                  container:
-                    style:
-                      background-color: '#3f005a'
-                template:
-                  name: template-base
-                  type: basic
-                  version: 2.0.0
-                title: BF-ecommerce-template
             schema:
+              type: object
+              required:
+                - page
               properties:
                 beautifyHtmlEnabled:
-                  description: Flag to return beautified HTML
                   type: boolean
+                  description: Flag to return beautified HTML
                 language:
-                  description: For multi-language templates, sets the output language
-                    using a valid language code
                   type: string
+                  description: For multi-language templates, sets the output language using a valid language code
                 page:
-                  description: A Beefree template in JSON format
                   type: object
-              required:
-              - page
-              type: object
-        description: JSON payload with the template
-        required: true
+                  description: A BeeFree template in JSON format
+                  properties:
+                    body:
+                      type: object
+                      description: The main structure of the template page
+                      properties:
+                        container:
+                          type: object
+                          description: Defines the style and structure of the container for the page.
+                          properties:
+                            style:
+                              type: object
+                              description: The CSS style attributes for the container.
+                              properties:
+                                background-color:
+                                  type: string
+                                  format: color
+                                  example: '#FFFFFF'
+                        content:
+                          type: object
+                          description: Content and styling for the page.
+                          properties:
+                            computedStyle:
+                              type: object
+                              description: Contains computed styles for different elements on the page.
+                              properties:
+                                linkColor:
+                                  type: string
+                                  format: color
+                                  example: '#FF819C'
+                                messageBackgroundColor:
+                                  type: string
+                                  format: color
+                                  example: 'transparent'
+                                messageWidth:
+                                  type: string
+                                  description: The width of the message area.
+                                  example: '675px'
+                            style:
+                              type: object
+                              description: General styling for text and fonts.
+                              properties:
+                                color:
+                                  type: string
+                                  format: color
+                                  example: '#000000'
+                                font-family:
+                                  type: string
+                                  example: 'Arial, Helvetica Neue, Helvetica, sans-serif'
+                    webFonts:
+                      type: array
+                      description: List of external web fonts used in the template.
+                      items:
+                        type: object
+                        properties:
+                          fontFamily:
+                            type: string
+                            description: The font-family definition for the web font.
+                            example: "'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif"
+                          name:
+                            type: string
+                            description: Name of the web font.
+                            example: Montserrat
+                          url:
+                            type: string
+                            description: The URL to the web font.
+                            example: https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap
+                    description:
+                      type: string
+                      description: A description of the template.
+                      example: BF-ecommerce-template
+                    rows:
+                      type: array
+                      description: Contains all the rows in the page layout.
+                      items:
+                        type: object
+                        properties:
+                          columns:
+                            type: array
+                            description: Defines the columns in each row.
+                            items:
+                              type: object
+                              properties:
+                                grid-columns:
+                                  type: integer
+                                  description: Number of grid columns in the row.
+                                  example: 6
+                                modules:
+                                  type: array
+                                  description: Content modules within the column.
+                                  items:
+                                    type: object
+                                    properties:
+                                      descriptor:
+                                        type: object
+                                        description: Descriptor for module styles and attributes.
+                                        properties:
+                                          computedStyle:
+                                            type: object
+                                            description: Computed styles specific to this module.
+                                            properties:
+                                              class:
+                                                type: string
+                                                description: CSS class for the module.
+                                                example: left fixedwidth
+                                              width:
+                                                type: string
+                                                description: Width of the module.
+                                                example: 287px
+                                          image:
+                                            type: object
+                                            description: Image properties.
+                                            properties:
+                                              alt:
+                                                type: string
+                                                description: Alternative text for the image.
+                                                example: Image
+                                              height:
+                                                type: string
+                                                description: Height of the image.
+                                                example: 142px
+                                              href:
+                                                type: string
+                                                description: Hyperlink for the image.
+                                                example: https://beefree.io
+                                              src:
+                                                type: string
+                                                description: Source URL of the image.
+                                                example: https://ih1.redbubble.net/image.4902607927.7016/flat,750x,075,f-pad,750x1000,f8f8f8.jpg
+                                              width:
+                                                type: string
+                                                description: Width of the image.
+                                                example: 546px
+                                        style:
+                                          type: object
+                                          description: Additional styles for the image module.
+                                          properties:
+                                            padding-top:
+                                              type: string
+                                              description: Top padding for the image.
+                                              example: 5px
+                                            padding-left:
+                                              type: string
+                                              description: Left padding for the image.
+                                              example: 15px
+                                            padding-right:
+                                              type: string
+                                              description: Right padding for the image.
+                                              example: 15px
+                                            padding-bottom:
+                                              type: string
+                                              description: Bottom padding for the image.
+                                              example: 0px
+                    template:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          description: Template name.
+                          example: template-base
+                        type:
+                          type: string
+                          description: Template type.
+                          example: basic
+                        version:
+                          type: string
+                          description: Template version.
+                          example: 2.0.0
+                    title:
+                      type: string
+                      description: Title of the template.
+                      example: BF-ecommerce-template
       responses:
         '200':
+          description: The HTML response
           content:
             text/html:
-              example: "\n                                    <!DOCTYPE html>\n  \
-                \                                  <html xmlns:v=\"urn:schemas-microsoft-com:vml\"\
-                \ xmlns:o=\"urn:schemas-microsoft-com:office:office\" lang=\"en\"\
-                >\n                                    <head>\n                  \
-                \                      <title></title>\n                         \
-                \               <meta charset=\"utf-8\">\n                       \
-                \                 <meta name=\"viewport\" content=\"width=device-width,\
-                \ initial-scale=1.0\">\n                                        <link\
-                \ href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap\"\
-                \ rel=\"stylesheet\">\n                                        <style>\n\
-                \                                            body { margin: 0; padding:\
-                \ 0; background-color: #FFFFFF; }\n                              \
-                \              .row-content { width: 675px; margin: 0 auto; background-color:\
-                \ #3f005a; }\n                                            .column\
-                \ { width: 50%; padding: 30px 0; vertical-align: top; }\n        \
-                \                                    .image_block img { max-width:\
-                \ 100%; }\n                                            .text_block\
-                \ { color: #ffffff; font-family: Montserrat, Arial, sans-serif; font-size:\
-                \ 18px; }\n                                        </style>\n    \
-                \                                </head>\n                       \
-                \             <body>\n                                        <table\
-                \ class=\"nl-container\" width=\"100%\" cellpadding=\"0\" cellspacing=\"\
-                0\" style=\"background-color: #FFFFFF;\">\n                      \
-                \                      <tr>\n                                    \
-                \            <td>\n                                              \
-                \      <table class=\"row-content\" align=\"center\">\n          \
-                \                                              <tr>\n            \
-                \                                                <td class=\"column\"\
-                >\n                                                              \
-                \  <img src=\"https://ih1.redbubble.net/image.4902607927.7016/flat,750x,075,f-pad,750x1000,f8f8f8.jpg\"\
-                \ alt=\"Image\">\n                                               \
-                \             </td>\n                                            \
-                \                <td class=\"column\">\n                         \
-                \                                       <p class=\"text_block\">The\
-                \ Cat King is a majestic and enigmatic figure...</p>\n           \
-                \                                                 </td>\n        \
-                \                                                </tr>\n         \
-                \                                           </table>\n           \
-                \                                     </td>\n                    \
-                \                        </tr>\n                                 \
-                \       </table>\n                                    </body>\n  \
-                \                                  </html>\n                     \
-                \           "
-          description: The HTML response
-      summary: Transform JSON Template to HTML
+              schema:
+                type: string
+              example: |
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                <title></title>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <style>/* Styles here */</style>
+                </head>
+                <body>
+                <!-- HTML content here -->
+                </body>
+                </html>

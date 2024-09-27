@@ -5,6 +5,9 @@ info:
   description: |
     This API endpoint generates a summary based on a provided template and additional options.
   version: 1.0.0
+servers:
+  - url: https://api.getbee.io/v1/{collection}
+    description: Base URL for the API
 paths:
   /v1/ai/summary:
     post:

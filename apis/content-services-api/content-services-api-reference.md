@@ -67,7 +67,7 @@ The following section provides detailed information for each of the resources as
 
 **URL:** `https://api.getbee.io/v1/{collection}/html`
 
-{% swagger src="../../.gitbook/assets/live_html_endpoint.yaml" path="/v1/{collection}/html" method="post" %}
+{% swagger src="../../.gitbook/assets/live_html_endpoint.yaml" path="/html" method="post" %}
 [live_html_endpoint.yaml](../../.gitbook/assets/live_html_endpoint.yaml)
 {% endswagger %}
 
@@ -99,13 +99,7 @@ The following section provides detailed information for each of the resources as
 [live_image_endpoint.yaml](../../.gitbook/assets/live_image_endpoint.yaml)
 {% endswagger %}
 
-#### **Example Response** <a href="#example-response" id="example-response"></a>
-
-The following image is an example response.
-
-<figure><img src="../../.gitbook/assets/CleanShot 2024-04-03 at 15.45.11@2x.png" alt="" width="320"><figcaption></figcaption></figure>
-
-application/jpg
+**Response:** application/jpg
 
 The response includes the raw image data.
 
