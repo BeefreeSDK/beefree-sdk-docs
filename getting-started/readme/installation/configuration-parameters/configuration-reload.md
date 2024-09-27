@@ -9,9 +9,9 @@ When you load a Beefree application inside the host application, you pass a [con
 With this event, you can make on-the-fly changes to the user experience. For example:
 
 * Updating available categories for [Saved rows](../../../../rows/saved-rows/)
-* Refreshing a [Custom header](../../../../configure/advanced-options/custom-headers.md) for authorization
-* Changing [Advanced permissions](../../../../configure/advanced-options/advanced-permissions.md) for the current user
-* Updating settings for the editor’s [Content defaults](../../../../configure/appearance/content-defaults.md)
+* Refreshing a [Custom header](../../../../other-customizations/advanced-options/custom-headers.md) for authorization
+* Changing [Advanced permissions](../../../../other-customizations/advanced-options/advanced-permissions.md) for the current user
+* Updating settings for the editor’s [Content defaults](../../../../other-customizations/appearance/content-defaults.md)
 
 ## How it works <a href="#how-it-works" id="how-it-works"></a>
 

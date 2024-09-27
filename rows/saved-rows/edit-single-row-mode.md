@@ -53,7 +53,7 @@ When a builder application is initialized with this mode enabled the UI will sho
 
 The following describes the recommended workflow to implement the Save action in your host SaaS application when the Single Edit Row mode is enabled.
 
-In case your application uses the default [Toolbar](../../dev-console-settings/server-side-options/toolbar-options.md), you can leverage the save button to trigger the sequence of action to correctly save the row, the workflow is the same as the one documented in [saving-rows-workflow-for-developers](save-rows-overview.md), in short :
+In case your application uses the default [Toolbar](../../server-side-configurations/server-side-options/toolbar-options.md), you can leverage the save button to trigger the sequence of action to correctly save the row, the workflow is the same as the one documented in [saving-rows-workflow-for-developers](save-rows-overview.md), in short :
 
 1. The user clicks on the save button
 2. A contentDialog of type saveRow will be triggered.

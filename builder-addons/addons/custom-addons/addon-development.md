@@ -1016,13 +1016,13 @@ A valid response that the hosting application should send to the Beefree app whe
 
 ```
 
-The content dialog configuration, required for this custom AddOn is the same configuration used by the other AddOns. Please see the [Content Dialog method](../../../configure/advanced-options/content-dialog.md) paragraph.
+The content dialog configuration, required for this custom AddOn is the same configuration used by the other AddOns. Please see the [Content Dialog method](../../../other-customizations/advanced-options/content-dialog.md) paragraph.
 
 ## The Content dialog method <a href="#the-content-dialog-method" id="the-content-dialog-method"></a>
 
 The purpose of the contentDialog object in the code snippet is to handle different types of content that can be added to a dialog. It has a handler function that resolves with an image or HTML content based on the provided contentDialogId.
 
-To set up the content dialogs you will need to add the _contentDialog_ object to _beeConfig._ For more details about the content dialog, please review [Content Dialog: How it works](../../../configure/advanced-options/content-dialog.md).
+To set up the content dialogs you will need to add the _contentDialog_ object to _beeConfig._ For more details about the content dialog, please review [Content Dialog: How it works](../../../other-customizations/advanced-options/content-dialog.md).
 
 ### Configure content dialog in beeConfig
 

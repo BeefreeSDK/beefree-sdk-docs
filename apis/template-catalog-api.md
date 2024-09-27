@@ -18,7 +18,7 @@ Learn more about how to get started with the Template Catalog API in this sectio
 
 To start using the Template Catalog API, first activate your API key in the Beefree SDK Console. After activation, reach out to your dedicated Customer Success Manager (CSM) for further help and setup. Your CSM will guide you through the process and answer any questions you have.
 
-For additional information, you can refer to [Content Services API key configuration](content-services-api/content-services-api-reference/).
+For additional information, you can refer to [Content Services API key configuration](content-services-api/content-services-api-reference.md).
 
 ### Activating the API
 

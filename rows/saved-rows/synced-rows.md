@@ -134,7 +134,7 @@ contentDialog: {
 ```
 
 {% hint style="info" %}
-A comprehensive reference of the `editSyncedRow` Content Dialog settings, such as the CTA button label and optional text, can be found in our [Content Dialog docs](../../configure/appearance/content-defaults.md).
+A comprehensive reference of the `editSyncedRow` Content Dialog settings, such as the CTA button label and optional text, can be found in our [Content Dialog docs](../../other-customizations/appearance/content-defaults.md).
 {% endhint %}
 
 The following animation shows this **example of edit synced rows workflow** in action. We’ll dive into this process in the following sections.
@@ -151,7 +151,7 @@ Here’s a breakdown of the typical workflow the host app adopts:
 2. **User edits**: Users generally hit ‘Save’ to confirm their edits once they modify the synchronized row. Simultaneously, the host app can proactively track these edits using the `onChange` method.
 3. **Synchronization timing**: The decision on when to synchronize changes across all designs rests with the host application. Given the potential need to propagate edits to multiple designs, holding off until the user indicates their wish to exit is customary.
 4. **Initiation of synchronization**: The synchronization is initiated as soon as the user signifies their satisfaction with the edits, either through the ‘Save’ or ‘Save & Exit’ options.
-5. **Redirection & Synchronizing changes**: After editing a row, the host app usually performs a synchronous [merge rows using the CSAPI](../../apis/content-services-api/content-services-api-reference/#merge-1). The user will then be redirected to their ongoing design, where they can see their edits reflected in the synced row.
+5. **Redirection & Synchronizing changes**: After editing a row, the host app usually performs a synchronous [merge rows using the CSAPI](../../apis/content-services-api/content-services-api-reference.md#merge-1). The user will then be redirected to their ongoing design, where they can see their edits reflected in the synced row.
 6. **Background syncing**: Given the possible existence of numerous linked designs, a background process is usually set in motion to update all other templates.
 
 ## Synchronizing row changes <a href="#synchronizing-row-changes" id="synchronizing-row-changes"></a>
@@ -162,7 +162,7 @@ The `merge-rows` method functions as a sophisticated “find and replace.”
 
 * i.e., To synchronize content, the host app forwards a request comprising the outdated template, the newly edited row, and a succinct query detailing which row(s) the API should target for replacement.  The “query” is a standards-based JSON Path query typically referencing a globally unique identifier that was added to the saved row during the Metadata Content Dialog step.
 
-For an example on how to use the `merge-rows` method, [visit our Content Services API Reference on Merge Rows](../../apis/content-services-api/content-services-api-reference/#merge-1).
+For an example on how to use the `merge-rows` method, [visit our Content Services API Reference on Merge Rows](../../apis/content-services-api/content-services-api-reference.md#merge-1).
 
 ## Efficient template updates <a href="#efficient-template-updates" id="efficient-template-updates"></a>
 

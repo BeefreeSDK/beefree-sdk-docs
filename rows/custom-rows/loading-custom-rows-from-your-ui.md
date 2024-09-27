@@ -46,5 +46,5 @@ bee.loadRows()
 
 Once the Content Dialog is triggered, you have two options, as explained in the How it works section:
 
-* Interact with the end user, as described in our [Content Dialog](../../configure/advanced-options/content-dialog.md) documentation, and eventually return a URL of custom rows.
+* Interact with the end user, as described in our [Content Dialog](../../other-customizations/advanced-options/content-dialog.md) documentation, and eventually return a URL of custom rows.
 * Immediately return the rows URL, without displaying the Content Dialog. This is useful if you have a menu and already know which rows to load based on the interaction by the end user with you application’s UI.

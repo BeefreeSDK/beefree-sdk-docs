@@ -375,7 +375,7 @@ contentDialog: {
 },
 ```
 
-Links can be applied to different [content types](../../dev-console-settings/server-side-options/content-options.md). When you define a link dialog action, it will be displayed in the text-toolbar, which is the same behavior for merge tags, as shown in the following image.
+Links can be applied to different [content types](../../server-side-configurations/server-side-options/content-options.md). When you define a link dialog action, it will be displayed in the text-toolbar, which is the same behavior for merge tags, as shown in the following image.
 
 <figure><img src="../../.gitbook/assets/4Screen-Shot-2018-01-23-at-17.35.35-1024x245.png" alt=""><figcaption></figcaption></figure>
 

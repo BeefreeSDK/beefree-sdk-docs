@@ -2,7 +2,7 @@
 
 ## API billing: why we are charging for this API <a href="#api-billing-why-we-are-charging-for-this-api" id="api-billing-why-we-are-charging-for-this-api"></a>
 
-The [Content Services API (CSAPI)](./) allows you to carry out a number of [useful tasks](content-services-api-reference/), like converting an email or a page into a thumbnail image or a PDF document, or updating a footer into all the emails that use it (i.e. a [_saved row_](../../rows/saved-rows/)).
+The [Content Services API (CSAPI)](./) allows you to carry out a number of [useful tasks](content-services-api-reference.md), like converting an email or a page into a thumbnail image or a PDF document, or updating a footer into all the emails that use it (i.e. a [_saved row_](../../rows/saved-rows/)).
 
 These tasks consume resources in our Amazon Web Services environment, so we have to account for that. We did extensive research to define pricing that is consistent with other APIs.
 
@@ -15,7 +15,7 @@ Here is a quick summary:
 | Superpowers | 250,000            | $0.003                  |
 | Enterprise  | Custom             | Custom                  |
 
-There will be no changes to the functionality of the CSAPI, except that we’ve added a really useful Merge API that allows you to update saved rows in the documents that use them. You can find complete [technical documentation on the new “merge” method here](content-services-api-reference/).
+There will be no changes to the functionality of the CSAPI, except that we’ve added a really useful Merge API that allows you to update saved rows in the documents that use them. You can find complete [technical documentation on the new “merge” method here](content-services-api-reference.md).
 
 Most changes related to CSAPI will be in the background, but there will be some changes in the Beefree SDK Console, and in terms of billing.
 

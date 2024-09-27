@@ -24,7 +24,7 @@ We currently offer 3 additional workspaces, and we are planning to launch more a
 
 These 3 workspaces revolve around the use of **AMP content**, and are provided so that you can tailor the experience of creating AMP emails in Beefree SDK.
 
-Here is an overview of the different workspaces and their differences. Please [refer to this page](../../../../configure/amp-for-email.md) for more information on using AMP in Beefree SDK.
+Here is an overview of the different workspaces and their differences. Please [refer to this page](../../../../other-customizations/amp-for-email.md) for more information on using AMP in Beefree SDK.
 
 |                                                   | default                    | mixed                    | amp\_only                                 | html\_only                               |
 | ------------------------------------------------- | -------------------------- | ------------------------ | ----------------------------------------- | ---------------------------------------- |

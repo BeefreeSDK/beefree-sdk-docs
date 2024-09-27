@@ -5,7 +5,7 @@
 You can load forms in the builder with two methods:
 
 * by passing in the [configuration parameters](../../../getting-started/readme/installation/configuration-parameters/) a single, **default JSON form**, potentially including all the fields your application supports;
-* by implementing a [content dialog](../../../configure/advanced-options/content-dialog.md) and building a user interface on top of the builder, so that your users can **browse and select forms**.
+* by implementing a [content dialog](../../../other-customizations/advanced-options/content-dialog.md) and building a user interface on top of the builder, so that your users can **browse and select forms**.
 
 If you successfully implement either method, you’ll see a new Form content tile in the builder Content tab.
 

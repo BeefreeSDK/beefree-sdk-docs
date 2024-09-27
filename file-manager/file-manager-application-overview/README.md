@@ -101,4 +101,4 @@ When configuring a builder application with Beefree SDK, you have four image and
 3. **Own AWS S3 Bucket:** Use your own AWS S3 bucket instead of Beefree SDK’s. Follow the documentation to configure this option.
 4. **Own File System:** Integrate your application’s existing file system for storage. This option is available on Beefree SDK paid plans.
 
-Reference the [Storage Options documentation](../../dev-console-settings/server-side-options/storage-options/) to learn more about how to configure storage for your File manager application.
+Reference the [Storage Options documentation](../../server-side-configurations/server-side-options/storage-options/) to learn more about how to configure storage for your File manager application.
