@@ -28,7 +28,7 @@ Restrict access to some of the functionality based on user roles. For example, s
 
 ## Activating and using the feature <a href="#activating-and-using-the-feature" id="activating-and-using-the-feature"></a>
 
-Please note that the Display conditions are **disabled by default.** You can turn this feature on by enabling it under the [Server-side configurations](../../server-side-configurations/server-side-options/). You must be on a paid plan (Core subscription and above) to enable this feature.
+Please note that the Display conditions are **disabled by default.** You can turn this feature on by enabling it under the [Server-side configurations](../../dev-console-settings/server-side-options/). You must be on a paid plan (Core subscription and above) to enable this feature.
 
 As the application hosting the builder, you can now pass an array of conditions.
 

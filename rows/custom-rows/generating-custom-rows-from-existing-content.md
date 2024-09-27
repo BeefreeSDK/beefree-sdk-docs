@@ -26,7 +26,7 @@ Properties:
 ### **display conditions**
 
 Set a row display condition.\
-Check the [display conditions documentation](../../other-customizations/advanced-options/display-conditions.md) for further details.
+Check the [display conditions documentation](../../configure/advanced-options/display-conditions.md) for further details.
 
 Properties:
 

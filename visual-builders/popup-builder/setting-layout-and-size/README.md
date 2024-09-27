@@ -53,7 +53,7 @@ beeConfig: {
 
 ```
 
-If this option is not set, then we will provide a default skeleton layout. It’s worth noting at this point that you can apply every setting for both desktop and mobile design modes. That means you can have a different background when editing in [Mobile Design Mode](../../../other-customizations/mobile-design-mode.md).
+If this option is not set, then we will provide a default skeleton layout. It’s worth noting at this point that you can apply every setting for both desktop and mobile design modes. That means you can have a different background when editing in [Mobile Design Mode](../../../configure/mobile-design-mode.md).
 
 ## Applying a preset layout <a href="#applying-a-preset-layout" id="applying-a-preset-layout"></a>
 

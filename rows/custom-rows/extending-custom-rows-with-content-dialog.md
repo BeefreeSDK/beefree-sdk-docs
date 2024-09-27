@@ -2,11 +2,11 @@
 
 ## Overview <a href="#overview" id="overview"></a>
 
-[Content Dialog](../../other-customizations/advanced-options/content-dialog.md) allows you to build user interfaces that let your users locate & insert additional content (Custom Rows) while they are working on their message.
+[Content Dialog](../../configure/advanced-options/content-dialog.md) allows you to build user interfaces that let your users locate & insert additional content (Custom Rows) while they are working on their message.
 
 By letting you establish an interaction layer between the editor and your application (e.g., you show a modal window), it allows your users to locate/build/insert new rows, thus making the _Rows_ tab in the editor dramatically more flexible and scalable.
 
-Note that _Content Dialog_ may be used to load other content types, as merge tags, special links, or display conditions. [Learn more about the Content dialog](../../other-customizations/advanced-options/content-dialog.md).
+Note that _Content Dialog_ may be used to load other content types, as merge tags, special links, or display conditions. [Learn more about the Content dialog](../../configure/advanced-options/content-dialog.md).
 
 To start using it, you need to add the _contentDialog_ object to _beeConfig_, or add the _externalContentURLs_ parameter if you already use this feature in your editor configuration.
 

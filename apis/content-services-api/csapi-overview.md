@@ -20,13 +20,13 @@ The Content Services API (CSAPI) – helps you achieve the following:
 * Generating a thumbnail from the HTML, because thumbnails are always nice to have, for all sorts of reasons 🙂
 * Generating a PDF from the HTML, as your users may want to share or print an email or a page, and PDF is great for that.
 * Merging shared content ([saved rows](../../rows/saved-rows/)) into emails and pages that use it (e.g. update 30 emails that use the same footer).
-* Use [Brand Style Management](brand-style-management.md) to make template-wide design changes to existing templates quickly and easily.
-* Generate [plain text](content-services-api-reference.md#plain-text) versions of emails from JSON templates, ensuring emails look sharp and easy to read on any device.
-* [Leverage AI](content-services-api-reference.md#ai-collection) to generate SMS, Metadata (Preheader and Subject), or Summary text from JSON templates.
+* Use [Brand Style Management](content-services-api-reference/brand-style-management.md) to make template-wide design changes to existing templates quickly and easily.
+* Generate [plain text](content-services-api-reference/#plain-text) versions of emails from JSON templates, ensuring emails look sharp and easy to read on any device.
+* [Leverage AI](content-services-api-reference/#ai-collection) to generate SMS, Metadata (Preheader and Subject), or Summary text from JSON templates.
 
 ### Getting the HTML from a message JSON <a href="#getting-the-html-from-a-message-json" id="getting-the-html-from-a-message-json"></a>
 
-This service allows the host application to build a custom workflow that doesn’t rely on the `onSave` callback in the editor ([list of available callbacks](../../getting-started/readme/installation/methods-and-events.md)). Check our [reference documentation on how to use the API to get the HTML from a JSON file](content-services-api-reference.md).
+This service allows the host application to build a custom workflow that doesn’t rely on the `onSave` callback in the editor ([list of available callbacks](../../getting-started/readme/installation/methods-and-events.md)). Check our [reference documentation on how to use the API to get the HTML from a JSON file](content-services-api-reference/).
 
 ### **A Few Common Use Cases**
 
@@ -68,7 +68,7 @@ Letter, A4, A3, and Full as available values.
 
 While the other values split the message into pages, the Full option returns a single page using 900px as the page width and the proportional height.
 
-PDF is often used in most approval processes, but is also a perfect format for printers. Check our [reference documentation on how to use the API to get a PDF from an HTML file](content-services-api-reference.md).
+PDF is often used in most approval processes, but is also a perfect format for printers. Check our [reference documentation on how to use the API to get a PDF from an HTML file](content-services-api-reference/).
 
 #### **Generating image files from an HTML**
 
@@ -84,15 +84,15 @@ When the height is not provided, the API applies a proportional value based on t
 _If it’s higher:_ the proportional value applies\
 _If it’s lower:_ the image is cropped
 
-Check our [reference documentation on how to use the API to get images from an HTML file](content-services-api-reference.md).
+Check our [reference documentation on how to use the API to get images from an HTML file](content-services-api-reference/).
 
 #### Merging saved rows in existing messages <a href="#merging-saved-rows-in-existing-messages" id="merging-saved-rows-in-existing-messages"></a>
 
 What if a footer is shared by 10 messages and needs to be updated in all of them? The [Synced Rows](../../rows/saved-rows/synced-rows.md) feature was created precisely to address the scenario of content that is shared across multiple emails, pages, or popups, and it is used in conjunction with the Content Services API.
 
-The [Merge method](content-services-api-reference.md) of the Content Services API allows you to update a row across multiple messages. More specifically, it allows the host application to update an element in an existing JSON document. This means that, for instance, you could create a feature that takes care of updating existing messages in the background, without any further action by your users.
+The [Merge method](content-services-api-reference/) of the Content Services API allows you to update a row across multiple messages. More specifically, it allows the host application to update an element in an existing JSON document. This means that, for instance, you could create a feature that takes care of updating existing messages in the background, without any further action by your users.
 
-The [Index method](content-services-api-reference.md) of the Content Services API is a complementary method, designed to retrieve the assets which contain saved rows, so that you know which assets need update using the Merge method.
+The [Index method](content-services-api-reference/) of the Content Services API is a complementary method, designed to retrieve the assets which contain saved rows, so that you know which assets need update using the Merge method.
 
 There are many use cases, including:
 

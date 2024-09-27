@@ -6,7 +6,7 @@ These AddOns need to be [installed from your Beefree SDK Console](installing-par
 
 ## Custom AI Writing Assistant <a href="#openai" id="openai"></a>
 
-The Custom AI Writing Assistant AddOn enables host applications to integrate their own LLM models with Beefree SDK. This allows host applications to provide their end users with advanced AI writing capabilities that are specific to their domains. Using the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md), this AddOn employs the same entry points as the [AI writing assistant](openai-addon/), allowing full control over the AI experience within your application. Once your Custom AI Writing Assistant AddOn is fully configured, the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md) displays the modal you created within the user interface when end users click the **Write with AI** button in the sidebar.&#x20;
+The Custom AI Writing Assistant AddOn enables host applications to integrate their own LLM models with Beefree SDK. This allows host applications to provide their end users with advanced AI writing capabilities that are specific to their domains. Using the [Content Dialog](../../../configure/advanced-options/content-dialog.md), this AddOn employs the same entry points as the [AI writing assistant](openai-addon/), allowing full control over the AI experience within your application. Once your Custom AI Writing Assistant AddOn is fully configured, the [Content Dialog](../../../configure/advanced-options/content-dialog.md) displays the modal you created within the user interface when end users click the **Write with AI** button in the sidebar.&#x20;
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2024-09-17 at 22.22.54@2x.png" alt=""><figcaption></figcaption></figure>
 
@@ -22,7 +22,7 @@ The Stability AI AddOn converts text to images. This feature allows your end use
 
 ## DeepL  <a href="#openai" id="openai"></a>
 
-Through this AddOn and [Multi-language templates](../../../other-customizations/multi-language-templates.md), you can empower your end users to create up to six different language versions of a single design. Once your end users create their new language versions, they can click the **Translate** button to automatically translate all the translatable content within their designs.
+Through this AddOn and [Multi-language templates](../../../configure/multi-language-templates.md), you can empower your end users to create up to six different language versions of a single design. Once your end users create their new language versions, they can click the **Translate** button to automatically translate all the translatable content within their designs.
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2024-09-18 at 11.02.26.png" alt=""><figcaption></figcaption></figure>
 

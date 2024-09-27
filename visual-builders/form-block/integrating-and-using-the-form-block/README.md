@@ -9,7 +9,7 @@ The Form block is available for the [Page Builder](../../page-builder/) and the 
 You can enable your users to add forms in Beefree SDK with two methods:
 
 * by passing in the [configuration parameters](../../../getting-started/readme/installation/configuration-parameters/) a single, **default JSON form**, potentially including all the fields your application supports, and then have **customers build and style forms** with our **form content block**.
-* by implementing a [content dialog](../../../other-customizations/advanced-options/content-dialog.md) on top of the form content block and building a user interface on top of the builder, so that your users can either **browse and select pre-built forms** or **build a new form.**
+* by implementing a [content dialog](../../../configure/advanced-options/content-dialog.md) on top of the form content block and building a user interface on top of the builder, so that your users can either **browse and select pre-built forms** or **build a new form.**
 
 {% hint style="info" %}
 **Note:** For the "Form" tile to appear in the "Content" of the builder, you must successfully implement one of the two methods mentioned above.
@@ -36,7 +36,7 @@ This is the **quickest way** to get started using forms. You may also decide to 
 The Content Dialog feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
 {% endhint %}
 
-If you want to pass more than one form to the builder, you can do so by implementing a [Content dialog](../../../other-customizations/advanced-options/content-dialog.md) on top of the form content block.
+If you want to pass more than one form to the builder, you can do so by implementing a [Content dialog](../../../configure/advanced-options/content-dialog.md) on top of the form content block.
 
 With a content dialog, you have full control over the experience of adding a form. A few examples:
 

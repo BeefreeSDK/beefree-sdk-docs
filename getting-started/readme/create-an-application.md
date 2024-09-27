@@ -127,5 +127,5 @@ For 24 hours after regenerating a new Client Secret, you will temporarily have a
 * Create [development applications](development-applications.md)
 * [Configuration parameters](installation/configuration-parameters/)
 * [Toggle on features](../toggle-on-features.md)
-* [Server-side options](../../server-side-configurations/server-side-options/)
+* [Server-side options](../../dev-console-settings/server-side-options/)
 * [Sample code](../sample-code.md)

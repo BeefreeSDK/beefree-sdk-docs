@@ -12,7 +12,7 @@ This AddOn is available on Beefree SDK [Enterprise](https://developers.beefree.i
 
 ## Overview
 
-The Custom AI Writing Assistant AddOn enables host applications to integrate their own LLM models with Beefree SDK. This allows host applications to provide their end users with advanced AI writing capabilities that are specific to their domains. Using the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md), this AddOn employs the same entry points as the [AI writing assistant](openai-addon/), allowing full control over the AI experience within your application. Once your Custom AI Writing Assistant AddOn is fully configured, the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md) displays the modal you created within the user interface when end users click the **Write with AI** button in the sidebar.&#x20;
+The Custom AI Writing Assistant AddOn enables host applications to integrate their own LLM models with Beefree SDK. This allows host applications to provide their end users with advanced AI writing capabilities that are specific to their domains. Using the [Content Dialog](../../../configure/advanced-options/content-dialog.md), this AddOn employs the same entry points as the [AI writing assistant](openai-addon/), allowing full control over the AI experience within your application. Once your Custom AI Writing Assistant AddOn is fully configured, the [Content Dialog](../../../configure/advanced-options/content-dialog.md) displays the modal you created within the user interface when end users click the **Write with AI** button in the sidebar.&#x20;
 
 This AddOn is compatible with the following modules:
 
@@ -25,7 +25,7 @@ With this AddOn, you can deliver a centralized assistant experience that caters 
 
 Integrating your custom LLM also allows for continuous improvement, because the model can be trained and refined based on user feedback and real-world interactions. This results in more accurate suggestions, higher relevance, and greater user satisfaction, empowering your end users to create better content with minimal effort.
 
-The following video displays an example of a [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md) with a custom built user interface that is connected to the Custom AI Writing Assistant AddOn.
+The following video displays an example of a [Content Dialog](../../../configure/advanced-options/content-dialog.md) with a custom built user interface that is connected to the Custom AI Writing Assistant AddOn.
 
 {% embed url="https://drive.google.com/file/d/1RQo5AwHK9SYLC6u9varViKoxYovHXI6a/view?t=4" %}
 
@@ -34,7 +34,7 @@ The following video displays an example of a [Content Dialog](../../../other-cus
 Prior to getting started with the configuration, ensure you have the following:
 
 * Enterprise plan
-* A custom LLM service to call from within the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md)
+* A custom LLM service to call from within the [Content Dialog](../../../configure/advanced-options/content-dialog.md)
 * Access to the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu)
 
 ## **Configuration Steps**
@@ -66,7 +66,7 @@ Once you activate the **Custom AI Writing Assistant AddOn** with your own LLM, y
 
 ### **Content Dialog Configuration**&#x20;
 
-To use the Custom AI Writing Assistant AddOn, you need to configure the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md). This is important for defining how your custom LLM is called and how the response is handled.
+To use the Custom AI Writing Assistant AddOn, you need to configure the [Content Dialog](../../../configure/advanced-options/content-dialog.md). This is important for defining how your custom LLM is called and how the response is handled.
 
 The following code snippet displays an example configuration:
 
@@ -100,9 +100,9 @@ contentDialog: {
 
 ### **Advanced Permission Management**&#x20;
 
-You can control the visibility and state of the **Write with AI** button using [Advanced Permission](../../../other-customizations/advanced-options/advanced-permissions.md) settings. For example, disabling the AddOn will hide the button, while turning the button off will keep it visible but non-functional.
+You can control the visibility and state of the **Write with AI** button using [Advanced Permission](../../../configure/advanced-options/advanced-permissions.md) settings. For example, disabling the AddOn will hide the button, while turning the button off will keep it visible but non-functional.
 
-The following code snippet displays an example configuration for [Advanced Permissions](../../../other-customizations/advanced-options/advanced-permissions.md):
+The following code snippet displays an example configuration for [Advanced Permissions](../../../configure/advanced-options/advanced-permissions.md):
 
 ```javascript
 addOns: [

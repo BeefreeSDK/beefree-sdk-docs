@@ -144,7 +144,7 @@ Besides the carousel, users can mark any part of the email as AMP-only by applyi
 
 ### **What image formats are supported?**
 
-There are no particular limitations. You can use any image type that already works with the standard Image block (GIFs included). Please note that if you have a custom [file system provider](../server-side-configurations/server-side-options/storage-options/connect-your-file-storage-system.md) that limits the image types that can be loaded in the builder, it will reflect also on the AMP carousel.
+There are no particular limitations. You can use any image type that already works with the standard Image block (GIFs included). Please note that if you have a custom [file system provider](../dev-console-settings/server-side-options/storage-options/connect-your-file-storage-system.md) that limits the image types that can be loaded in the builder, it will reflect also on the AMP carousel.
 
 ### **Can I edit an image used as a carousel slide?**
 

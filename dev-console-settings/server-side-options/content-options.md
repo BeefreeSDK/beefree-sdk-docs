@@ -43,7 +43,7 @@ There is also an additional option for turning on the **Form block**.
 Please note that you need to implement one of the two methods indicated in this article for the Form tile to appear in the Content tab of the editor:
 
 * The [default form](../../visual-builders/form-block/integrating-and-using-the-form-block/passing-forms-to-the-builder.md) method is available for all plans, including free
-* The [content dialog](../../other-customizations/advanced-options/content-dialog.md) method is available for paid plans only.
+* The [content dialog](../../configure/advanced-options/content-dialog.md) method is available for paid plans only.
 
 ## AMP Content <a href="#amp-content" id="amp-content"></a>
 
@@ -51,6 +51,6 @@ You can enable AMP blocks that will become available in the “Content” tab of
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-03-12 at 12.23.01@2x (1).png" alt=""><figcaption></figcaption></figure>
 
-We currently provide an [AMP Carousel](../../other-customizations/amp-for-email.md) content block. After enabling the toggle, you will need to configure an [AMP-compatible workspace](../../other-customizations/amp-for-email.md).
+We currently provide an [AMP Carousel](../../configure/amp-for-email.md) content block. After enabling the toggle, you will need to configure an [AMP-compatible workspace](../../configure/amp-for-email.md).
 
 Please note that AMP content is not available for Page Builder.

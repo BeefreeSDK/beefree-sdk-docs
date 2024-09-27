@@ -13,7 +13,7 @@ We added a new function to track message changes in the builder. This powerful n
 
 When _onChange_ is enabled and your customers edit their message – the callback provides you valuable information on the new content or section, the kind of action that was performed on existing content, and the JSON update (as the entire page, as well as JSON patches).
 
-_onChange_ is also the foundation on which the [Undo, Redo & Edit History](../server-side-configurations/server-side-options/undo-and-changes-history.md) feature was built on.
+_onChange_ is also the foundation on which the [Undo, Redo & Edit History](../dev-console-settings/server-side-options/undo-and-changes-history.md) feature was built on.
 
 ## Use cases <a href="#use-cases" id="use-cases"></a>
 

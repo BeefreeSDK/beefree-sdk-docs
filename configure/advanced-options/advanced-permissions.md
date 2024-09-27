@@ -36,7 +36,7 @@ You can limit how users upload and manage images and files inside Beefree SDK; f
 * disabling drag-and-drop of images onto the stage;
 * limit actions in the file manager (either the built-in one or your [custom file picker](custom-file-picker.md)) by disabling actions like upload, import, and create a folder.
 
-Another interesting case for using advanced permissions is the possibility to set a **maximum size** **for uploads, per user**. The maximum size set per user must not exceed the **custom limitation** size set on the [Activate Custom Limitation on File Manager](../../server-side-configurations/server-side-options/services-options.md). **The default limit is 20 Mb** unless otherwise stated.\
+Another interesting case for using advanced permissions is the possibility to set a **maximum size** **for uploads, per user**. The maximum size set per user must not exceed the **custom limitation** size set on the [Activate Custom Limitation on File Manager](../../dev-console-settings/server-side-options/services-options.md). **The default limit is 20 Mb** unless otherwise stated.\
 When this permission is configured, the system will check if a file exceeds the set size before uploading it; if so, Beefree SDK will return an error message, which you may customize using [Custom languages](custom-languages.md).
 
 ## **Create custom, secondary roles**

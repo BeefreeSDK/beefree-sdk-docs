@@ -44,7 +44,7 @@ Smart merge tags are **disabled by default**. If your application doesn’t have
 * Click view more under **Application configuration**.
 * Under the Services section, toggle **Enable Smart merge tags** ON and click the **Save** button.
 
-Notice that, at this point, you will be prompted to enable the merge tag preview in the toolbar. You can skip this option when your integration is not using the [standard toolbar](../../server-side-configurations/server-side-options/toolbar-options.md) or you’re not passing sample content for your [merge tags](smart-merge-tags.md).
+Notice that, at this point, you will be prompted to enable the merge tag preview in the toolbar. You can skip this option when your integration is not using the [standard toolbar](../../dev-console-settings/server-side-options/toolbar-options.md) or you’re not passing sample content for your [merge tags](smart-merge-tags.md).
 
 ## Configuring sample content <a href="#configuring-sample-content" id="configuring-sample-content"></a>
 
@@ -68,7 +68,7 @@ The value of this new parameter **will replace the merge tag in the editor previ
 
 Sample content strings are not limited to the preview, but can be displayed in the editor’s stage as mentioned above.
 
-The way to do this depends on how your integration manages the [toolbar options](../../server-side-configurations/server-side-options/toolbar-options.md).
+The way to do this depends on how your integration manages the [toolbar options](../../dev-console-settings/server-side-options/toolbar-options.md).
 
 ## **Toolbar enabled**
 

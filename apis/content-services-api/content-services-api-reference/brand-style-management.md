@@ -24,6 +24,10 @@ Include the API key in the request header as follows:
 Authorization: Bearer YOUR_API_KEY
 ```
 
+{% swagger src="https://beefree-api-poc.glitch.me/template/brand/docs-json" path="/template/brand" method="post" %}
+[https://beefree-api-poc.glitch.me/template/brand/docs-json](https://beefree-api-poc.glitch.me/template/brand/docs-json)
+{% endswagger %}
+
 ### Endpoint <a href="#tjfpide02wrb" id="tjfpide02wrb"></a>
 
 `/template/brand`
@@ -157,7 +161,7 @@ The template parameter should contain your template's JSON structure. Ensure tha
 
 ### Table Content Defaults <a href="#id-27qaij98qcq2" id="id-27qaij98qcq2"></a>
 
-Both the [Content Defaults](../../other-customizations/appearance/content-defaults.md#table) (frontend) and Brand Style Management endpoint (backend) include the table content block.
+Both the [Content Defaults](../../../configure/appearance/content-defaults.md#table) (frontend) and Brand Style Management endpoint (backend) include the table content block.
 
 The following code shows an example of how to configure the style for headers within the table content block:
 
@@ -204,3 +208,4 @@ While both Content Defaults and the Brand Style Management endpoint aim to strea
 * CSAPI endpoint that enables the development of a user interface that empowers end users to make style changes with ease and speed.
 * Modify the style of existing templates.
 * Suitable for users who need to make template-wide design changes or maintain brand consistency on existing templates.
+

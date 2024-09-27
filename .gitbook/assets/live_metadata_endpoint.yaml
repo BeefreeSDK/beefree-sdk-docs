@@ -1,0 +1,119 @@
+info:
+  description: The endpoint accepts a JSON template and returns a JSON object with
+    metadata (preheader and subject).
+  title: Metadata Endpoint
+  version: 1.0.0
+openapi: 3.0.0
+paths:
+  /v1/ai/metadata:
+    post:
+      description: The endpoint accepts a JSON template and returns a JSON object
+        with metadata.
+      requestBody:
+        content:
+          application/json:
+            example:
+              options:
+                instructions: Try to use a pun.
+                language: ''
+                model: gpt-3.5-turbo
+                reportUsage: true
+                toneOfVoice: ''
+              template:
+                comments:
+                  31878122-0ce6-4ac0-930e-ccf6086c264c:
+                    author:
+                      userColor: '#85b2c3'
+                      userHandle: '515751'
+                      username: Cinzia Caleffi
+                    content: <code contenteditable="false" data-bee-mention-uid="274606">@Dalila
+                      Bonomi</code> ...
+                    timestamp: '2022-08-03T06:54:12.900Z'
+                page:
+                  body:
+                    container:
+                      style:
+                        background-color: '#fff'
+                        background-image: none
+                        background-position: top left
+                        background-repeat: no-repeat
+                        background-size: auto
+                    content:
+                      computedStyle:
+                        linkColor: '#8a3b8f'
+                        messageBackgroundColor: transparent
+                        messageWidth: 650px
+                      style:
+                        color: '#000000'
+                        font-family: Lato, Tahoma, Verdana, Segoe, sans-serif
+                    type: mailup-bee-page-properties
+                    webFonts:
+                    - fontFamily: '''Lato'', Tahoma, Verdana, Segoe, sans-serif'
+                      name: Lato
+                      url: https://fonts.googleapis.com/css?family=Lato
+                  description: ''
+                  rows: []
+                  template:
+                    name: template-base
+                    type: basic
+                    version: 2.0.0
+                  title: ''
+            schema:
+              properties:
+                options:
+                  description: '
+
+                    Optional settings that instruct the output.
+
+                    Optional parameters:
+
+                    - toneOfVoice: Define a tone of voice, e.g., ''Formal'', ''Humorous'',
+                    etc.
+
+                    - instructions: Additional instructions for the AI.
+
+                    - reportUsage: Return usage data from OpenAI (boolean).
+
+                    - language: Specify the output language.
+
+                    '
+                  properties:
+                    instructions:
+                      description: Additional instructions for the AI.
+                      type: string
+                    language:
+                      description: Specify the output language.
+                      type: string
+                    reportUsage:
+                      description: Return usage data from OpenAI.
+                      type: boolean
+                    toneOfVoice:
+                      description: Define a tone of voice, e.g., 'Formal', 'Humorous',
+                        etc.
+                      type: string
+                  type: object
+                template:
+                  description: The template's JSON.
+                  type: object
+              required:
+              - template
+              type: object
+        description: JSON template and options to generate metadata
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                preheader: Don't BEE shy, join our user research project and shape
+                  the future of email creation!
+                subject: "BEE Pro user? Let's BEE friends and chat about your email\
+                  \ workflow \U0001F41D"
+                usage:
+                  completion_tokens: 52
+                  completion_tokens_details:
+                    reasoning_tokens: 0
+                  prompt_tokens: 424
+                  total_tokens: 476
+          description: A JSON object with metadata (preheader and subject).
+      summary: Generate Metadata (Preheader and Subject)

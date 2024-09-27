@@ -633,7 +633,7 @@ Useful to create filters, management, search, and in general to organize the con
 
 ## Metadata Content Dialog <a href="#metadata-content-dialog" id="metadata-content-dialog"></a>
 
-The metadata content dialog is triggered by the save icon in Beefree SDK. This step is required to provide Beefree SDK with information about the row, such as its name and/or id.  The Metadata Content Dialog is added in the same manner as other Content Dialogs, such as Merge Tags.  Please review the [Content Dialog](../../other-customizations/advanced-options/content-dialog.md) section for more details about how to use Beefree SDK’s Content Dialog feature.
+The metadata content dialog is triggered by the save icon in Beefree SDK. This step is required to provide Beefree SDK with information about the row, such as its name and/or id.  The Metadata Content Dialog is added in the same manner as other Content Dialogs, such as Merge Tags.  Please review the [Content Dialog](../../configure/advanced-options/content-dialog.md) section for more details about how to use Beefree SDK’s Content Dialog feature.
 
 An example Metadata Content Dialog configuration can be found below.
 
