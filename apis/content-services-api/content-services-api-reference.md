@@ -67,8 +67,8 @@ The following section provides detailed information for each of the resources as
 
 **URL:** `https://api.getbee.io/v1/{collection}/html`
 
-{% swagger src="../../.gitbook/assets/live_html_endpoint.yaml" path="/html" method="post" %}
-[live_html_endpoint.yaml](../../.gitbook/assets/live_html_endpoint.yaml)
+{% swagger src="../../.gitbook/assets/live_html_endpoint (1).yaml" path="/html/{collection}" method="post" %}
+[live_html_endpoint (1).yaml](<../../.gitbook/assets/live_html_endpoint (1).yaml>)
 {% endswagger %}
 
 ### Plain Text
@@ -107,7 +107,7 @@ The response includes the raw image data.
 
 **URL:** `https://api.getbee.io/v1/{collection}/merge`
 
-{% swagger src="../../.gitbook/assets/live_merge_endpoint.yaml" path="/v1/message/merge" method="post" %}
+{% swagger src="../../.gitbook/assets/live_merge_endpoint.yaml" path="/merge" method="post" %}
 [live_merge_endpoint.yaml](../../.gitbook/assets/live_merge_endpoint.yaml)
 {% endswagger %}
 
@@ -159,8 +159,6 @@ Prior to getting started with the resources in this collection, ensure you have 
 
 `v1/ai/metadata`
 
-**HTTP Method:** `POST`
-
 {% swagger src="../../.gitbook/assets/live_metadata_endpoint.yaml" path="/v1/ai/metadata" method="post" %}
 [live_metadata_endpoint.yaml](../../.gitbook/assets/live_metadata_endpoint.yaml)
 {% endswagger %}
@@ -169,8 +167,6 @@ Prior to getting started with the resources in this collection, ensure you have 
 
 `v1/ai/sms`
 
-**HTTP Method:** `POST`
-
 {% swagger src="../../.gitbook/assets/live_sms_endpoint.yaml" path="/v1/ai/sms" method="post" %}
 [live_sms_endpoint.yaml](../../.gitbook/assets/live_sms_endpoint.yaml)
 {% endswagger %}
@@ -178,8 +174,6 @@ Prior to getting started with the resources in this collection, ensure you have 
 ### Summary
 
 `v1/ai/summary`
-
-**HTTP Method:** `POST`
 
 {% swagger src="../../.gitbook/assets/live_summary_endpoint.yaml" path="/v1/ai/summary" method="post" %}
 [live_summary_endpoint.yaml](../../.gitbook/assets/live_summary_endpoint.yaml)

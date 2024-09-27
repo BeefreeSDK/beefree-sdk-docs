@@ -4,7 +4,7 @@ info:
   description: The endpoint accepts a JSON template and returns a JSON object with metadata (preheader and subject).
   version: 1.0.0
 servers:
-  - url: https://api.getbee.io/v1/{collection}
+  - url: https://api.getbee.io
     description: Base URL for the API
 paths:
   /v1/ai/metadata:

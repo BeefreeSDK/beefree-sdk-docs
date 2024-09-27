@@ -1,96 +1,95 @@
-info:
-  contact: {}
-  title: 'Beefree SDK: Content Services API'
-  version: '1.0'
 openapi: 3.0.0
+info:
+  title: Merge
+  description: Replace content
+  version: 1.0.0
 servers:
-  - url: https://api.getbee.io/v1/{collection}
+  - url: https://api.getbee.io
     description: Base URL for the API
 paths:
-  /v1/message/merge:
+  /merge:
     post:
-      consumes:
-      - application/json
-      deprecated: false
-      operationId: /merge
-      parameters:
-      - default: Bearer {token}
-        in: header
-        name: Authorization
-        required: false
-        type: string
-      - description: ''
-        in: header
-        name: Accept
-        required: true
-        type: string
-      - description: ''
-        enum:
-        - application/json
-        in: header
-        name: Content-Type
-        required: false
-        type: string
-      - description: ''
-        in: body
-        name: Body
-        required: true
-        schema:
-          $ref: '#/definitions/~1mergerequest'
-      produces:
-      - application/json
       requestBody:
+        required: true
         content:
           application/json:
             schema:
+              type: object
               properties:
                 replace:
+                  type: array
                   items:
+                    type: object
                     properties:
                       path:
-                        description: A JSON Path to the matching nodes in the source
-                          JSON.
-                        required: true
                         type: string
                       value:
-                        description: The value can be an object, such as a saved row.
-                          Or, it can be a string, such a hex color code. The value
-                          should be the same type as the value you want to match in
-                          your match expression.
-                        required: true
-                        type:
-                        - string
-                        - object
-                    type: object
-                  required: true
-                  type: array
-                source:
-                  description: A Beefree template in JSON format.
-                  required: true
-                  type: object
-              type: object
+                        type: object
+                        properties:
+                          columns:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                grid-columns:
+                                  type: integer
+                                modules:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      descriptor:
+                                        type: object
+                                        properties:
+                                          computedStyle:
+                                            type: object
+                                          image:
+                                            type: object
+                                          paragraph:
+                                            type: object
+                                            description: Content for paragraphs.
+                                      type:
+                                        type: string
+                                    required:
+                                      - descriptor
+                                      - type
+                                style:
+                                  type: object
+                          container:
+                            type: object
+                          content:
+                            type: object
+                          metadata:
+                            type: object
+                          type:
+                            type: string
       responses:
-        '200':
+        200:
+          description: Successful operation
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   html:
-                    description: The HTML message.
-                    required: true
                     type: string
                   json:
-                    description: The updated Beefree template in JSON format. In the
-                      event of an error, the original source is returned.
-                    required: true
                     type: object
-                  warnings:
-                    description: An array of objects containing information about
-                      issues that occurred during the merge. If no warnings exist,
-                      then it is safe to save the updated JSON.
-                    required: false
-                    type: array
-                type: object
-      summary: Replace a Beefree template in JSON format. 
-      tags:
-      - Misc
+                    properties:
+                      page:
+                        type: object
+                        properties:
+                          body:
+                            type: object
+                          rows:
+                            type: array
+                            items:
+                              type: object
+                          template:
+                            type: object
+                          title:
+                            type: string
+                      comments:
+                        type: object
+        400:
+          description: Invalid request

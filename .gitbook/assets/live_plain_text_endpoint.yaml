@@ -3,7 +3,7 @@ info:
   title: Plain Text API
   version: 1.0.0
 servers:
-  - url: https://api.getbee.io/v1/{collection}
+  - url: https://api.getbee.io
     description: Base URL for the API
 openapi: 3.0.0
 paths:
