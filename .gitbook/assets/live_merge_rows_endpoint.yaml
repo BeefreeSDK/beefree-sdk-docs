@@ -1,0 +1,94 @@
+components: {}
+info:
+  description: API for merging rows into a template
+  title: Merge Rows API
+  version: 1.0.0
+openapi: 3.0.0
+paths:
+  /v1/{collection}/merge-rows:
+    post:
+      description: The Merge Rows endpoint enables you to integrate custom fonts and resized images into your designs. It saves custom fonts within the template's JSON, ensuring the correct font is displayed. It also handles image resizing, particularly when the image's initial template width is narrower than the saved row's destination template. To use this endpoint, send your template and rows in JSON format. You will receive a response with an updated template. The rows requiring an update are identified by their rowIdentifier values.
+      parameters:
+      - description: The collection ID or name
+        in: path
+        name: collection
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                rowIdentifierLabel:
+                  description: Label for identifying rows, usually GUID
+                  type: string
+                rows:
+                  description: An array of Beefree rows in JSON format
+                  items:
+                    type: object
+                  type: array
+                template:
+                  description: A Beefree template in JSON format
+                  type: object
+                webFonts:
+                  description: List of available webfonts to rectify missing ones
+                  items:
+                    properties:
+                      fontFamily:
+                        type: string
+                      name:
+                        type: string
+                      url:
+                        type: string
+                    type: object
+                  type: array
+              required:
+              - rows
+              - template
+              type: object
+        description: JSON payload with the template and rows
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                template:
+                  page:
+                    body:
+                      container:
+                        style:
+                          background-color: '#ffffff'
+                      content:
+                        computedStyle:
+                          linkColor: '#7747FF'
+                          messageBackgroundColor: transparent
+                          messageWidth: 600px
+                        style:
+                          color: '#000000'
+                          font-family: Arial, Helvetica, sans-serif
+                      type: mailup-bee-page-properties
+                      webFonts:
+                      - fontFamily: '''Alegreya'', ''Trebuchet MS'', Helvetica, sans-serif'
+                        name: Alegreya
+                        url: https://fonts.googleapis.com/css2?family=Alegreya:wght@100;200;300;400;500;600;700;800;900
+                      - fontFamily: '''Arvo'', ''Courier New'', Courier, monospace'
+                        name: Arvo
+                        url: https://fonts.googleapis.com/css2?family=Arvo:wght@100;200;300;400;500;600;700;800;900
+                    rows:
+                    - columns:
+                      - grid-columns: 12
+                        modules:
+                        - descriptor:
+                            paragraph:
+                              html: <p>I'm a new paragraph block.</p>
+                              style:
+                                color: '#101112'
+                                font-family: '''Alegreya'', ''Trebuchet MS'', Helvetica,
+                                  sans-serif'
+                                font-size: 16px
+                    warnings:
+                    - msg: No merges were completed for row with identifier 0922fb70-f97e-4ae8-bcfe-0be9fd09a0d5
+          description: Updated template with merged rows
+      summary: Merge Rows

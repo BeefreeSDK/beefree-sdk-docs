@@ -1,0 +1,137 @@
+components: {}
+info:
+  description: API for transforming a JSON template into HTML
+  title: HTML Transformation API
+  version: 1.0.0
+openapi: 3.0.0
+paths:
+  /v1/{collection}/html:
+    post:
+      description: Transform a JSON template into an HTML response.
+      parameters:
+      - description: The collection ID or name
+        in: path
+        name: collection
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            example:
+              beautifyHtmlEnabled: true
+              page:
+                body:
+                  container:
+                    style:
+                      background-color: '#FFFFFF'
+                  content:
+                    computedStyle:
+                      linkColor: '#FF819C'
+                      messageBackgroundColor: transparent
+                      messageWidth: 675px
+                    style:
+                      color: '#000000'
+                      font-family: Arial, Helvetica Neue, Helvetica, sans-serif
+                  type: page-properties
+                  webFonts:
+                  - fontFamily: '''Montserrat'', ''Trebuchet MS'', ''Lucida Grande'',
+                      ''Lucida Sans Unicode'', ''Lucida Sans'', Tahoma, sans-serif'
+                    name: Montserrat
+                    url: https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap
+                description: BF-ecommerce-template
+                rows:
+                - columns:
+                  - grid-columns: 6
+                    modules:
+                    - descriptor:
+                        computedStyle:
+                          class: left fixedwidth
+                          width: 287px
+                        image:
+                          alt: Image
+                          height: 142px
+                          href: https://beefree.io
+                          src: https://ih1.redbubble.net/image.4902607927.7016/flat,750x,075,f-pad,750x1000,f8f8f8.jpg
+                          width: 546px
+                        style:
+                          padding-bottom: 0px
+                          padding-left: 15px
+                          padding-right: 15px
+                          padding-top: 5px
+                          width: 100%
+                      type: newsletter-modules-image
+                  container:
+                    style:
+                      background-color: '#3f005a'
+                template:
+                  name: template-base
+                  type: basic
+                  version: 2.0.0
+                title: BF-ecommerce-template
+            schema:
+              properties:
+                beautifyHtmlEnabled:
+                  description: Flag to return beautified HTML
+                  type: boolean
+                language:
+                  description: For multi-language templates, sets the output language
+                    using a valid language code
+                  type: string
+                page:
+                  description: A Beefree template in JSON format
+                  type: object
+              required:
+              - page
+              type: object
+        description: JSON payload with the template
+        required: true
+      responses:
+        '200':
+          content:
+            text/html:
+              example: "\n                                    <!DOCTYPE html>\n  \
+                \                                  <html xmlns:v=\"urn:schemas-microsoft-com:vml\"\
+                \ xmlns:o=\"urn:schemas-microsoft-com:office:office\" lang=\"en\"\
+                >\n                                    <head>\n                  \
+                \                      <title></title>\n                         \
+                \               <meta charset=\"utf-8\">\n                       \
+                \                 <meta name=\"viewport\" content=\"width=device-width,\
+                \ initial-scale=1.0\">\n                                        <link\
+                \ href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap\"\
+                \ rel=\"stylesheet\">\n                                        <style>\n\
+                \                                            body { margin: 0; padding:\
+                \ 0; background-color: #FFFFFF; }\n                              \
+                \              .row-content { width: 675px; margin: 0 auto; background-color:\
+                \ #3f005a; }\n                                            .column\
+                \ { width: 50%; padding: 30px 0; vertical-align: top; }\n        \
+                \                                    .image_block img { max-width:\
+                \ 100%; }\n                                            .text_block\
+                \ { color: #ffffff; font-family: Montserrat, Arial, sans-serif; font-size:\
+                \ 18px; }\n                                        </style>\n    \
+                \                                </head>\n                       \
+                \             <body>\n                                        <table\
+                \ class=\"nl-container\" width=\"100%\" cellpadding=\"0\" cellspacing=\"\
+                0\" style=\"background-color: #FFFFFF;\">\n                      \
+                \                      <tr>\n                                    \
+                \            <td>\n                                              \
+                \      <table class=\"row-content\" align=\"center\">\n          \
+                \                                              <tr>\n            \
+                \                                                <td class=\"column\"\
+                >\n                                                              \
+                \  <img src=\"https://ih1.redbubble.net/image.4902607927.7016/flat,750x,075,f-pad,750x1000,f8f8f8.jpg\"\
+                \ alt=\"Image\">\n                                               \
+                \             </td>\n                                            \
+                \                <td class=\"column\">\n                         \
+                \                                       <p class=\"text_block\">The\
+                \ Cat King is a majestic and enigmatic figure...</p>\n           \
+                \                                                 </td>\n        \
+                \                                                </tr>\n         \
+                \                                           </table>\n           \
+                \                                     </td>\n                    \
+                \                        </tr>\n                                 \
+                \       </table>\n                                    </body>\n  \
+                \                                  </html>\n                     \
+                \           "
+          description: The HTML response
+      summary: Transform JSON Template to HTML
