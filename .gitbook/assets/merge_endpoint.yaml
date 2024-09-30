@@ -1,0 +1,177 @@
+openapi: 3.0.0
+info:
+  title: Merge
+  description: Replace content
+  version: 1.0.0
+servers:
+  - url: https://api.getbee.io
+    description: Base URL for the API
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Enter Dev Console API Key as Bearer token
+paths:
+  /v1/{collection}/merge:
+    post:
+      summary: Merge to replace content
+      description: Replace or update content in the template using a specific path and value.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                replace:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      path:
+                        type: string
+                        description: JSON path of the element to replace.
+                        example: "$..rows[?(@.metadata.uid=='508824c4-8d45-11ee-84be-aafd6b2aca16')]"
+                      value:
+                        type: object
+                        description: The new value that will replace the current content.
+                        properties:
+                          columns:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                grid-columns:
+                                  type: integer
+                                  example: 4
+                                modules:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      descriptor:
+                                        type: object
+                                        properties:
+                                          computedStyle:
+                                            type: object
+                                            description: Computed style for the module.
+                                          image:
+                                            type: object
+                                            description: Image details and properties.
+                                          paragraph:
+                                            type: object
+                                            description: Paragraph details and properties.
+                                      type:
+                                        type: string
+                                        example: mailup-bee-newsletter-modules-paragraph
+                                    required:
+                                      - descriptor
+                                      - type
+                                style:
+                                  type: object
+                                  description: Style attributes for the column.
+                                  properties:
+                                    background-color:
+                                      type: string
+                                      example: 'transparent'
+                          container:
+                            type: object
+                            description: Styling and metadata for the container.
+                            properties:
+                              displayCondition:
+                                type: object
+                                description: Conditions for showing the content.
+                          content:
+                            type: object
+                            description: Content metadata and styling.
+                          metadata:
+                            type: object
+                            description: Metadata for the updated content.
+                            properties:
+                              uid:
+                                type: string
+                                example: "508824c4-8d45-11ee-84be-aafd6b2aca16"
+                          type:
+                            type: string
+                            example: ""
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  html:
+                    type: string
+                    description: The transformed HTML output.
+                  json:
+                    type: object
+                    description: The resulting updated JSON structure.
+                    properties:
+                      page:
+                        type: object
+                        description: The page content and structure.
+                        properties:
+                          body:
+                            type: object
+                            description: The body of the page.
+                          rows:
+                            type: array
+                            items:
+                              type: object
+                          template:
+                            type: object
+                          title:
+                            type: string
+                      comments:
+                        type: object
+                        description: Comments associated with the operation.
+        400:
+          description: Invalid request
+      examples:
+        NodeJS:
+          summary: NodeJS Request Example
+          value: |
+            const response = await fetch('https://api.getbee.io/merge', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer <token>' },
+              body: JSON.stringify({
+                "replace": [
+                  {
+                    "path": "$..rows[?(@.metadata.uid=='508824c4-8d45-11ee-84be-aafd6b2aca16')]",
+                    "value": {
+                      "columns": [
+                        {
+                          "grid-columns": 4,
+                          "modules": [
+                            {
+                              "descriptor": {
+                                "computedStyle": {},
+                                "image": {},
+                                "paragraph": {
+                                  "description": "Content for paragraphs"
+                                }
+                              },
+                              "type": "mailup-bee-newsletter-modules-paragraph"
+                            }
+                          ],
+                          "style": {}
+                        }
+                      ],
+                      "container": {},
+                      "content": {},
+                      "metadata": {
+                        "uid": "508824c4-8d45-11ee-84be-aafd6b2aca16"
+                      },
+                      "type": ""
+                    }
+                  }
+                ]
+              }),
+            });
+            const result = await response.json();
+            console.log(result); // Log the response data

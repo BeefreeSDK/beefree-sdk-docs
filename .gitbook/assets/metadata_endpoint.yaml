@@ -1,0 +1,291 @@
+openapi: 3.0.0
+info:
+  title: Metadata Endpoint
+  description: The endpoint accepts a JSON template and returns a JSON object with metadata (preheader and subject).
+  version: 1.0.0
+servers:
+  - url: https://api.getbee.io
+    description: Base URL for the API
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Enter Dev Console API Key as Bearer token
+paths:
+  /v1/ai/metadata:
+    post:
+      summary: Generate Metadata (Preheader and Subject)
+      description: The endpoint accepts a JSON template and returns a JSON object with metadata.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: JSON template and options to generate metadata
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                options:
+                  type: object
+                  description: Optional settings that provide additional instructions to the AI for metadata generation.
+                  properties:
+                    model:
+                      type: string
+                      description: The model to be used for the AI, such as GPT-3.5-turbo.
+                      example: gpt-3.5-turbo
+                    toneOfVoice:
+                      type: string
+                      description: Defines the tone of voice for the generated metadata, e.g., 'Formal', 'Humorous'.
+                      example: ''
+                    instructions:
+                      type: string
+                      description: Additional instructions to the AI for metadata generation.
+                      example: Try to use a pun.
+                    reportUsage:
+                      type: boolean
+                      description: Boolean flag to request usage data from the AI.
+                      example: true
+                    language:
+                      type: string
+                      description: Specify the output language using a valid language code.
+                      example: ''
+                template:
+                  type: object
+                  description: A JSON object representing the template structure.
+                  properties:
+                    page:
+                      type: object
+                      description: The main content structure of the template.
+                      properties:
+                        body:
+                          type: object
+                          description: The body of the template, including container and content styles.
+                          properties:
+                            container:
+                              type: object
+                              description: Contains style information for the main container of the template.
+                              properties:
+                                style:
+                                  type: object
+                                  description: CSS properties for the container.
+                                  properties:
+                                    background-color:
+                                      type: string
+                                      format: color
+                                      example: '#fff'
+                                    background-image:
+                                      type: string
+                                      example: 'none'
+                                    background-position:
+                                      type: string
+                                      example: 'top left'
+                                    background-repeat:
+                                      type: string
+                                      example: 'no-repeat'
+                                    background-size:
+                                      type: string
+                                      example: 'auto'
+                            content:
+                              type: object
+                              description: Contains computed styles and the main content styles.
+                              properties:
+                                computedStyle:
+                                  type: object
+                                  description: Computed styles for elements within the content.
+                                  properties:
+                                    linkColor:
+                                      type: string
+                                      format: color
+                                      example: '#8a3b8f'
+                                    messageBackgroundColor:
+                                      type: string
+                                      format: color
+                                      example: 'transparent'
+                                    messageWidth:
+                                      type: string
+                                      example: '650px'
+                                style:
+                                  type: object
+                                  description: General style attributes for the content.
+                                  properties:
+                                    color:
+                                      type: string
+                                      format: color
+                                      example: '#000000'
+                                    font-family:
+                                      type: string
+                                      example: 'Lato, Tahoma, Verdana, Segoe, sans-serif'
+                        type:
+                          type: string
+                          description: Template type used for identification.
+                          example: mailup-bee-page-properties
+                        webFonts:
+                          type: array
+                          description: List of web fonts used in the template.
+                          items:
+                            type: object
+                            properties:
+                              fontFamily:
+                                type: string
+                                example: "'Lato', Tahoma, Verdana, Segoe, sans-serif"
+                              name:
+                                type: string
+                                example: Lato
+                              url:
+                                type: string
+                                description: URL to fetch the font.
+                                example: https://fonts.googleapis.com/css?family=Lato
+                    template:
+                      type: object
+                      description: Basic information about the template.
+                      properties:
+                        name:
+                          type: string
+                          example: template-base
+                        type:
+                          type: string
+                          example: basic
+                        version:
+                          type: string
+                          example: 2.0.0
+                    title:
+                      type: string
+                      description: Title of the template.
+                      example: ''
+                    description:
+                      type: string
+                      description: Brief description of the template.
+                      example: ''
+                    rows:
+                      type: array
+                      description: Array of row objects that define the layout of the template.
+                      items:
+                        type: object
+                        properties:
+                          columns:
+                            type: array
+                            description: Defines the grid layout within the row.
+                            items:
+                              type: object
+                              properties:
+                                grid-columns:
+                                  type: integer
+                                  description: Number of grid columns used.
+                                  example: 12
+                                modules:
+                                  type: array
+                                  description: Content modules within the column.
+                                  items:
+                                    type: object
+                                    properties:
+                                      descriptor:
+                                        type: object
+                                        description: Module descriptor including styles and attributes.
+                                        properties:
+                                          computedStyle:
+                                            type: object
+                                            properties:
+                                              align:
+                                                type: string
+                                                example: center
+                                          style:
+                                            type: object
+                                            properties:
+                                              padding-top:
+                                                type: string
+                                                example: '10px'
+                                              padding-bottom:
+                                                type: string
+                                                example: '5px'
+      responses:
+        '200':
+          description: A JSON object with metadata (preheader and subject).
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  preheader:
+                    type: string
+                    description: Preheader text for the email.
+                    example: Ready to Bee a part of our user research project? Schedule your interview now!
+                  subject:
+                    type: string
+                    description: Subject line for the email.
+                    example: "BEE Pro: Let's Bee-gin! Join our user research project 🐝"
+                  usage:
+                    type: object
+                    description: Information about the token usage in the AI request.
+                    properties:
+                      prompt_tokens:
+                        type: integer
+                        example: 424
+                      completion_tokens:
+                        type: integer
+                        example: 48
+                      total_tokens:
+                        type: integer
+                        example: 472
+                      completion_tokens_details:
+                        type: object
+                        description: Detailed information on completion token usage.
+                        properties:
+                          reasoning_tokens:
+                            type: integer
+                            example: 0
+              example:
+                preheader: Ready to Bee a part of our user research project? Schedule your interview now!
+                subject: "BEE Pro: Let's Bee-gin! Join our user research project 🐝"
+                usage:
+                  prompt_tokens: 424
+                  completion_tokens: 48
+                  total_tokens: 472
+                  completion_tokens_details:
+                    reasoning_tokens: 0
+      examples:
+        NodeJS:
+          summary: NodeJS Request Example
+          value: |
+            const response = await fetch('https://api.getbee.io/v1/ai/metadata', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer <token>' },
+              body: JSON.stringify({
+                "options": {
+                  "model": "gpt-3.5-turbo",
+                  "toneOfVoice": "Humorous",
+                  "instructions": "Try to use a pun.",
+                  "reportUsage": true,
+                  "language": "en"
+                },
+                "template": {
+                  "page": {
+                    "body": {
+                      "container": {
+                        "style": {
+                          "background-color": "#fff",
+                          "background-image": "none",
+                          "background-position": "top left",
+                          "background-repeat": "no-repeat",
+                          "background-size": "auto"
+                        }
+                      },
+                      "content": {
+                        "computedStyle": {
+                          "linkColor": "#8a3b8f",
+                          "messageBackgroundColor": "transparent",
+                          "messageWidth": "650px"
+                        },
+                        "style": {
+                          "color": "#000000",
+                          "font-family": "Lato, Tahoma, Verdana, Segoe, sans-serif"
+                        }
+                      }
+                    }
+                  }
+                }
+              }),
+            });
+            const result = await response.json();
+            console.log(result); // Log the AI-generated metadata (preheader and subject)

@@ -1,0 +1,79 @@
+openapi: 3.0.0
+info:
+  title: Image Transformation
+  description: API endpoint for transforming HTML and image settings into an image
+  version: 1.0.0
+servers:
+  - url: https://api.getbee.io
+    description: Base URL for the API
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Enter Dev Console API Key as Bearer token
+paths:
+  /v1/{collection}/image:
+    post:
+      summary: Transform HTML to Image
+      description: Transform HTML and image settings into an image.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: collection
+          in: path
+          required: true
+          description: The collection ID or name
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: JSON payload with HTML message and image settings
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - html
+                - file_type
+              properties:
+                file_type:
+                  type: string
+                  description: Accepts jpg or png
+                height:
+                  type: integer
+                  description: The image height in pixels
+                html:
+                  type: string
+                  description: A BeeFree HTML message
+                size:
+                  type: string
+                  description: Image size if width and height are not defined
+                width:
+                  type: integer
+                  description: The image width in pixels
+            example:
+              file_type: png
+              html: "<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>Simple HTML</title></head><body><h1>Hello World!</h1><p>This is a simple HTML response.</p></body></html>"
+              size: '1000'
+      responses:
+        '200':
+          description: The image response as a binary data in PNG format
+          content:
+            image/png:
+              example: "\uFFFDPNG..."  # This is a placeholder for a binary PNG image example
+      examples:
+        NodeJS:
+          summary: NodeJS Request Example
+          value: |
+            const response = await fetch('https://api.getbee.io/v1/{collection}/image', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer <token>' },
+              body: JSON.stringify({
+                "file_type": "png",
+                "html": "<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>Simple HTML</title></head><body><h1>Hello World!</h1><p>This is a simple HTML response.</p></body></html>",
+                "size": "1000"
+              }),
+            });
+            const imageBuffer = await response.arrayBuffer(); // Fetch the binary image data
+            console.log(imageBuffer); // Log the image buffer response

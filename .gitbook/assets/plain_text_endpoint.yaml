@@ -1,0 +1,249 @@
+openapi: 3.0.0
+info:
+  title: Generate Plain Text
+  description: The endpoint accepts a JSON template and returns a plain text document.
+  version: 1.0.0
+servers:
+  - url: https://api.getbee.io
+    description: Base URL for the API
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Enter Dev Console API Key as Bearer token
+paths:
+  /v1/message/plain-text:
+    post:
+      summary: Generate Plain Text
+      description: This endpoint accepts a JSON template to create a plain text version of an email.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: Parameters required to generate plain text from a template.
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - page
+              properties:
+                language:
+                  type: string
+                  description: Optional. The output language for multi-language templates.
+                page:
+                  type: object
+                  description: The template's JSON used to create the plain text document.
+                  required:
+                    - body
+                    - rows
+                    - template
+                  properties:
+                    body:
+                      type: object
+                      properties:
+                        container:
+                          type: object
+                          properties:
+                            style:
+                              type: object
+                              properties:
+                                background-color:
+                                  type: string
+                                background-image:
+                                  type: string
+                                background-position:
+                                  type: string
+                                background-repeat:
+                                  type: string
+                                background-size:
+                                  type: string
+                        content:
+                          type: object
+                          properties:
+                            computedStyle:
+                              type: object
+                              properties:
+                                linkColor:
+                                  type: string
+                                messageBackgroundColor:
+                                  type: string
+                                messageWidth:
+                                  type: string
+                            style:
+                              type: object
+                              properties:
+                                color:
+                                  type: string
+                                font-family:
+                                  type: string
+                    rows:
+                      type: array
+                      description: Array of row definitions inside the template.
+                    template:
+                      type: object
+                      description: Metadata for the template.
+                    title:
+                      type: string
+            example:
+              language: it-IT
+              page:
+                body:
+                  container:
+                    style:
+                      background-color: '#fff'
+                      background-image: none
+                      background-position: top left
+                      background-repeat: no-repeat
+                      background-size: auto
+                  content:
+                    computedStyle:
+                      linkColor: '#8a3b8f'
+                      messageBackgroundColor: transparent
+                      messageWidth: 650px
+                    style:
+                      color: '#000000'
+                      font-family: Lato, Tahoma, Verdana, Segoe, sans-serif
+                rows:
+                  - columns:
+                      - grid-columns: 12
+                        modules:
+                          - descriptor:
+                              computedStyle:
+                                align: center
+                                hideContentOnMobile: false
+                              divider:
+                                style:
+                                  border-top: 0px solid transparent
+                                  height: 10px
+                                  width: 100%
+                              style:
+                                padding-bottom: 0px
+                                padding-left: 0px
+                                padding-right: 0px
+                                padding-top: 0px
+                            locked: false
+                            type: mailup-bee-newsletter-modules-divider
+                            uuid: b89c3d25-dbec-439a-8ad1-4939a28678e9
+                        style:
+                          background-color: transparent
+                          border-bottom: 0px solid transparent
+                          border-left: 0px solid transparent
+                          border-right: 0px solid transparent
+                          border-top: 0px solid transparent
+                          padding-bottom: 0px
+                          padding-left: 0px
+                          padding-right: 0px
+                          padding-top: 0px
+                        uuid: 3bd72010-5175-4326-b848-8beacea852d6
+                template:
+                  name: template-base
+                  type: basic
+                  version: 2.0.0
+                title: ''
+      responses:
+        '200':
+          description: A successful response with the plain text document.
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |
+                [BEE Pro Logo](https://beefree.io/) 
+                
+                ***************************** 
+                
+                Hi 😊 **Would you be interested to participate in a user research project with us?**
+        '400':
+          description: Invalid input or request parameters.
+      examples:
+        NodeJS:
+          summary: NodeJS Request Example
+          value: |
+            const response = await fetch('https://api.getbee.io/v1/message/plain-text', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer <token>' },
+              body: JSON.stringify({
+                "language": "it-IT",
+                "page": {
+                  "body": {
+                    "container": {
+                      "style": {
+                        "background-color": "#fff",
+                        "background-image": "none",
+                        "background-position": "top left",
+                        "background-repeat": "no-repeat",
+                        "background-size": "auto"
+                      }
+                    },
+                    "content": {
+                      "computedStyle": {
+                        "linkColor": "#8a3b8f",
+                        "messageBackgroundColor": "transparent",
+                        "messageWidth": "650px"
+                      },
+                      "style": {
+                        "color": "#000000",
+                        "font-family": "Lato, Tahoma, Verdana, Segoe, sans-serif"
+                      }
+                    }
+                  },
+                  "rows": [
+                    {
+                      "columns": [
+                        {
+                          "grid-columns": 12,
+                          "modules": [
+                            {
+                              "descriptor": {
+                                "computedStyle": {
+                                  "align": "center",
+                                  "hideContentOnMobile": false
+                                },
+                                "divider": {
+                                  "style": {
+                                    "border-top": "0px solid transparent",
+                                    "height": "10px",
+                                    "width": "100%"
+                                  }
+                                },
+                                "style": {
+                                  "padding-bottom": "0px",
+                                  "padding-left": "0px",
+                                  "padding-right": "0px",
+                                  "padding-top": "0px"
+                                }
+                              },
+                              "locked": false,
+                              "type": "mailup-bee-newsletter-modules-divider",
+                              "uuid": "b89c3d25-dbec-439a-8ad1-4939a28678e9"
+                            }
+                          ],
+                          "style": {
+                            "background-color": "transparent",
+                            "border-bottom": "0px solid transparent",
+                            "border-left": "0px solid transparent",
+                            "border-right": "0px solid transparent",
+                            "border-top": "0px solid transparent",
+                            "padding-bottom": "0px",
+                            "padding-left": "0px",
+                            "padding-right": "0px",
+                            "padding-top": "0px"
+                          },
+                          "uuid": "3bd72010-5175-4326-b848-8beacea852d6"
+                        }
+                      ]
+                    }
+                  ],
+                  "template": {
+                    "name": "template-base",
+                    "type": "basic",
+                    "version": "2.0.0"
+                  },
+                  "title": ""
+                }
+              }),
+            });
+            const plainText = await response.text();
+            console.log(plainText); // Log the plain text response

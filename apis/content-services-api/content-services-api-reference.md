@@ -67,24 +67,24 @@ The following section provides detailed information for each of the resources as
 
 **URL:** `https://api.getbee.io/v1/{collection}/html`
 
-{% swagger src="../../.gitbook/assets/live_html_endpoint (1).yaml" path="/html/{collection}" method="post" %}
-[live_html_endpoint (1).yaml](<../../.gitbook/assets/live_html_endpoint (1).yaml>)
+{% swagger src="../../.gitbook/assets/html_endpoint.yaml" path="/v1/{collection}/html" method="post" %}
+[html_endpoint.yaml](../../.gitbook/assets/html_endpoint.yaml)
 {% endswagger %}
 
 ### Plain Text
 
 **Endpoint:** `/message/plain-text`
 
-{% swagger src="../../.gitbook/assets/live_plain_text_endpoint.yaml" path="/v1/message/plain-text" method="post" %}
-[live_plain_text_endpoint.yaml](../../.gitbook/assets/live_plain_text_endpoint.yaml)
+{% swagger src="../../.gitbook/assets/plain_text_endpoint.yaml" path="/v1/message/plain-text" method="post" %}
+[plain_text_endpoint.yaml](../../.gitbook/assets/plain_text_endpoint.yaml)
 {% endswagger %}
 
 ### PDF <a href="#pdf" id="pdf"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/pdf`
 
-{% swagger src="../../.gitbook/assets/live_pdf_endpoint.yaml" path="/v1/{collection}/pdf" method="post" %}
-[live_pdf_endpoint.yaml](../../.gitbook/assets/live_pdf_endpoint.yaml)
+{% swagger src="../../.gitbook/assets/pdf_endpoint.yaml" path="/v1/{collection}/pdf" method="post" %}
+[pdf_endpoint.yaml](../../.gitbook/assets/pdf_endpoint.yaml)
 {% endswagger %}
 
 {% hint style="info" %}
@@ -95,28 +95,24 @@ The following section provides detailed information for each of the resources as
 
 **URL:** `https://api.getbee.io/v1/{collection}/image`
 
-{% swagger src="../../.gitbook/assets/live_image_endpoint.yaml" path="/v1/{collection}/image" method="post" %}
-[live_image_endpoint.yaml](../../.gitbook/assets/live_image_endpoint.yaml)
+{% swagger src="../../.gitbook/assets/image_endpoint.yaml" path="/v1/{collection}/image" method="post" %}
+[image_endpoint.yaml](../../.gitbook/assets/image_endpoint.yaml)
 {% endswagger %}
-
-**Response:** application/jpg
-
-The response includes the raw image data.
 
 ### Merge <a href="#merge" id="merge"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/merge`
 
-{% swagger src="../../.gitbook/assets/live_merge_endpoint.yaml" path="/merge" method="post" %}
-[live_merge_endpoint.yaml](../../.gitbook/assets/live_merge_endpoint.yaml)
+{% swagger src="../../.gitbook/assets/merge_endpoint.yaml" path="/v1/{collection}/merge" method="post" %}
+[merge_endpoint.yaml](../../.gitbook/assets/merge_endpoint.yaml)
 {% endswagger %}
 
 ### Merge Rows <a href="#merge" id="merge"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/merge-rows`
 
-{% swagger src="../../.gitbook/assets/live_merge_rows_endpoint.yaml" path="/v1/{collection}/merge-rows" method="post" %}
-[live_merge_rows_endpoint.yaml](../../.gitbook/assets/live_merge_rows_endpoint.yaml)
+{% swagger src="../../.gitbook/assets/merge_rows_endpoint.yaml" path="/v1/{collection}/merge-rows" method="post" %}
+[merge_rows_endpoint.yaml](../../.gitbook/assets/merge_rows_endpoint.yaml)
 {% endswagger %}
 
 {% hint style="info" %}
@@ -127,16 +123,16 @@ When utilizing this feature, it's important to consider adding a handle to the m
 
 **URL:** `https://api.getbee.io/v1/{collection}/synced-rows`
 
-{% swagger src="../../.gitbook/assets/live_synced_rows_endpoint.yaml" path="/v1/{collection}/synced-rows" method="post" %}
-[live_synced_rows_endpoint.yaml](../../.gitbook/assets/live_synced_rows_endpoint.yaml)
+{% swagger src="../../.gitbook/assets/synced_rows_endpoint.yaml" path="/v1/{collection}/synced-rows" method="post" %}
+[synced_rows_endpoint.yaml](../../.gitbook/assets/synced_rows_endpoint.yaml)
 {% endswagger %}
 
 ### Index <a href="#index" id="index"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/merge/index`
 
-{% swagger src="../../.gitbook/assets/live_merge_index_endpoint.yaml" path="/v1/{collection}/merge/index" method="post" %}
-[live_merge_index_endpoint.yaml](../../.gitbook/assets/live_merge_index_endpoint.yaml)
+{% swagger src="../../.gitbook/assets/merge_index_endpoint.yaml" path="/v1/{collection}/merge/index" method="post" %}
+[merge_index_endpoint.yaml](../../.gitbook/assets/merge_index_endpoint.yaml)
 {% endswagger %}
 
 ### AI Collection
@@ -159,22 +155,22 @@ Prior to getting started with the resources in this collection, ensure you have 
 
 `v1/ai/metadata`
 
-{% swagger src="../../.gitbook/assets/live_metadata_endpoint.yaml" path="/v1/ai/metadata" method="post" %}
-[live_metadata_endpoint.yaml](../../.gitbook/assets/live_metadata_endpoint.yaml)
+{% swagger src="../../.gitbook/assets/metadata_endpoint.yaml" path="/v1/ai/metadata" method="post" %}
+[metadata_endpoint.yaml](../../.gitbook/assets/metadata_endpoint.yaml)
 {% endswagger %}
 
 ### SMS <a href="#sms" id="sms"></a>
 
 `v1/ai/sms`
 
-{% swagger src="../../.gitbook/assets/live_sms_endpoint.yaml" path="/v1/ai/sms" method="post" %}
-[live_sms_endpoint.yaml](../../.gitbook/assets/live_sms_endpoint.yaml)
+{% swagger src="../../.gitbook/assets/sms_endpoint.yaml" path="/v1/ai/sms" method="post" %}
+[sms_endpoint.yaml](../../.gitbook/assets/sms_endpoint.yaml)
 {% endswagger %}
 
 ### Summary
 
 `v1/ai/summary`
 
-{% swagger src="../../.gitbook/assets/live_summary_endpoint.yaml" path="/v1/ai/summary" method="post" %}
-[live_summary_endpoint.yaml](../../.gitbook/assets/live_summary_endpoint.yaml)
+{% swagger src="../../.gitbook/assets/summary_endpoint.yaml" path="/v1/ai/summary" method="post" %}
+[summary_endpoint.yaml](../../.gitbook/assets/summary_endpoint.yaml)
 {% endswagger %}

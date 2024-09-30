@@ -1,0 +1,276 @@
+openapi: 3.0.0
+info:
+  title: Synced Rows
+  description: API endpoint for retrieving a list of all synced rows inside a template with their corresponding rowIdentifier values.
+  version: 1.0.0
+servers:
+  - url: https://api.getbee.io
+    description: Base URL for the API
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Enter Dev Console API Key as Bearer token
+paths:
+  /v1/{collection}/synced-rows:
+    post:
+      summary: Get Synced Rows
+      description: Retrieve a list of synced rows from a template.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: collection
+          in: path
+          required: true
+          description: The collection name.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Parameters for the synced rows request.
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - rowIdentifierLabel
+                - template
+              properties:
+                rowIdentifierLabel:
+                  type: string
+                  description: The label used for identifying the rows added to the metadata key, usually GUID.
+                template:
+                  type: object
+                  description: The JSON structure of the template.
+                  properties:
+                    page:
+                      type: object
+                      properties:
+                        body:
+                          type: object
+                          properties:
+                            container:
+                              type: object
+                              properties:
+                                style:
+                                  type: object
+                                  properties:
+                                    background-color:
+                                      type: string
+                                      example: '#ffffff'
+                            content:
+                              type: object
+                              properties:
+                                computedStyle:
+                                  type: object
+                                  properties:
+                                    linkColor:
+                                      type: string
+                                      example: '#7747FF'
+                                    messageBackgroundColor:
+                                      type: string
+                                      example: transparent
+                                    messageWidth:
+                                      type: string
+                                      example: '600px'
+                                style:
+                                  type: object
+                                  properties:
+                                    color:
+                                      type: string
+                                      example: '#000000'
+                                    font-family:
+                                      type: string
+                                      example: 'Arial, Helvetica, sans-serif'
+                        rows:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              columns:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    grid-columns:
+                                      type: integer
+                                    modules:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          descriptor:
+                                            type: object
+                                            properties:
+                                              paragraph:
+                                                type: object
+                                                properties:
+                                                  html:
+                                                    type: string
+                                                    example: "<p>I'm a new paragraph block.</p>"
+                                                  style:
+                                                    type: object
+                                                    properties:
+                                                      color:
+                                                        type: string
+                                                        example: '#101112'
+                                                      font-family:
+                                                        type: string
+                                                        example: "'Alegreya', 'Trebuchet MS', Helvetica, sans-serif"
+                                                      font-size:
+                                                        type: string
+                                                        example: '16px'
+                              metadata:
+                                type: object
+                                properties:
+                                  guid:
+                                    type: string
+                                    example: '0922fb70-f97e-4ae8-bcfe-0be9fd09a0d5'
+                              synced:
+                                type: boolean
+                                example: true
+                    webFonts:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          fontFamily:
+                            type: string
+                            example: "'Alegreya', 'Trebuchet MS', Helvetica, sans-serif"
+                          name:
+                            type: string
+                            example: Alegreya
+                          url:
+                            type: string
+                            example: "https://fonts.googleapis.com/css2?family=Alegreya:wght@100;200;300;400;500;600;700;800;900"
+            example:
+              rowIdentifierLabel: guid
+              template:
+                page:
+                  body:
+                    container:
+                      style:
+                        background-color: '#ffffff'
+                    content:
+                      computedStyle:
+                        linkColor: '#7747FF'
+                        messageBackgroundColor: transparent
+                        messageWidth: 600px
+                      style:
+                        color: '#000000'
+                        font-family: Arial, Helvetica, sans-serif
+                  rows:
+                    - columns:
+                        - grid-columns: 12
+                          modules:
+                            - descriptor:
+                                paragraph:
+                                  html: "<p>I'm a new paragraph block.</p>"
+                                  style:
+                                    color: '#101112'
+                                    font-family: "'Alegreya', 'Trebuchet MS', Helvetica, sans-serif"
+                                    font-size: '16px'
+                          metadata:
+                            guid: '0922fb70-f97e-4ae8-bcfe-0be9fd09a0d5'
+                          synced: true
+                webFonts:
+                  - fontFamily: "'Alegreya', 'Trebuchet MS', Helvetica, sans-serif"
+                    name: Alegreya
+                    url: "https://fonts.googleapis.com/css2?family=Alegreya:wght@100;200;300;400;500;600;700;800;900"
+      responses:
+        '200':
+          description: A successful response with a list of synced rows.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  syncedRows:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        rowIdentifier:
+                          type: string
+                          description: The unique identifier for the row, typically a GUID.
+                          example: '0922fb70-f97e-4ae8-bcfe-0be9fd09a0d5'
+                        rowIndex:
+                          type: integer
+                          description: The index of the row inside the template.
+                          example: 0
+              example:
+                syncedRows:
+                  - rowIdentifier: '0922fb70-f97e-4ae8-bcfe-0be9fd09a0d5'
+                    rowIndex: 0
+        '400':
+          description: Invalid input or request parameters.
+      examples:
+        NodeJS:
+          summary: NodeJS Request Example
+          value: |
+            const response = await fetch('https://api.getbee.io/v1/{collection}/synced-rows', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer <token>' },
+              body: JSON.stringify({
+                "rowIdentifierLabel": "guid",
+                "template": {
+                  "page": {
+                    "body": {
+                      "container": {
+                        "style": {
+                          "background-color": "#ffffff"
+                        }
+                      },
+                      "content": {
+                        "computedStyle": {
+                          "linkColor": "#7747FF",
+                          "messageBackgroundColor": "transparent",
+                          "messageWidth": "600px"
+                        },
+                        "style": {
+                          "color": "#000000",
+                          "font-family": "Arial, Helvetica, sans-serif"
+                        }
+                      }
+                    },
+                    "rows": [
+                      {
+                        "columns": [
+                          {
+                            "grid-columns": 12,
+                            "modules": [
+                              {
+                                "descriptor": {
+                                  "paragraph": {
+                                    "html": "<p>I'm a new paragraph block.</p>",
+                                    "style": {
+                                      "color": "#101112",
+                                      "font-family": "'Alegreya', 'Trebuchet MS', Helvetica, sans-serif",
+                                      "font-size": "16px"
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "metadata": {
+                          "guid": "0922fb70-f97e-4ae8-bcfe-0be9fd09a0d5"
+                        },
+                        "synced": true
+                      }
+                    ]
+                  },
+                  "webFonts": [
+                    {
+                      "fontFamily": "'Alegreya', 'Trebuchet MS', Helvetica, sans-serif",
+                      "name": "Alegreya",
+                      "url": "https://fonts.googleapis.com/css2?family=Alegreya:wght@100;200;300;400;500;600;700;800;900"
+                    }
+                  ]
+                }
+              }),
+            });
+            const result = await response.json();
+            console.log(result.syncedRows); // Log the synced rows

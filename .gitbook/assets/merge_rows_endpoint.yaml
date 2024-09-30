@@ -1,0 +1,214 @@
+openapi: 3.0.0
+info:
+  title: Merge Rows
+  description: API endpoint for merging rows into a template
+  version: 1.0.0
+servers:
+  - url: https://api.getbee.io
+    description: Base URL for the API
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Enter Dev Console API Key as Bearer token
+paths:
+  /v1/{collection}/merge-rows:
+    post:
+      summary: Merge Rows
+      description: The Merge Rows endpoint enables you to integrate custom fonts and resized images into your designs. It saves custom fonts within the template's JSON, ensuring the correct font is displayed. It also handles image resizing, particularly when the image's initial template width is narrower than the saved row's destination template. To use this endpoint, send your template and rows in JSON format. You will receive a response with an updated template. The rows requiring an update are identified by their rowIdentifier values.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: collection
+          in: path
+          required: true
+          description: The collection ID or name
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: JSON payload with the template and rows
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - rows
+                - template
+              properties:
+                rowIdentifierLabel:
+                  description: Label for identifying rows, usually GUID
+                  type: string
+                rows:
+                  description: An array of Beefree rows in JSON format
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      columns:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            grid-columns:
+                              type: integer
+                            modules:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  descriptor:
+                                    type: object
+                                    properties:
+                                      computedStyle:
+                                        type: object
+                                      paragraph:
+                                        type: object
+                                        description: HTML and styling for paragraphs
+                                      style:
+                                        type: object
+                                required:
+                                  - descriptor
+                            style:
+                              type: object
+                          uuid:
+                            type: string
+                      container:
+                        type: object
+                      content:
+                        type: object
+                      empty:
+                        type: boolean
+                      locked:
+                        type: boolean
+                      metadata:
+                        type: object
+                      synced:
+                        type: boolean
+                      type:
+                        type: string
+                      uuid:
+                        type: string
+                template:
+                  description: A Beefree template in JSON format
+                  type: object
+                webFonts:
+                  description: List of available webfonts to rectify missing ones
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      fontFamily:
+                        type: string
+                      name:
+                        type: string
+                      url:
+                        type: string
+            example:
+              rowIdentifierLabel: "guid"
+              rows:
+                - columns:
+                    - grid-columns: 12
+                      modules:
+                        - descriptor:
+                            computedStyle:
+                              hideContentOnAmp: false
+                              hideContentOnDesktop: false
+                              hideContentOnHtml: false
+                              hideContentOnMobile: false
+                            paragraph:
+                              computedStyle:
+                                linkColor: "#7747FF"
+                                paragraphSpacing: "16px"
+                              html: "<p>Updated paragraph block.</p>"
+                              style:
+                                color: "#101112"
+                                direction: "ltr"
+                                font-family: "'Alegreya', 'Trebuchet MS', Helvetica, sans-serif"
+                                font-size: "16px"
+                                font-weight: "400"
+                                letter-spacing: "0px"
+                                line-height: "120%"
+                                text-align: "left"
+                            style:
+                              padding-bottom: "10px"
+                              padding-left: "10px"
+                              padding-right: "10px"
+                              padding-top: "10px"
+                          locked: false
+                          type: "mailup-bee-newsletter-modules-paragraph"
+                          uuid: "29cd2a3d-fd76-4537-a91b-b8cb9872d8a3"
+                      style:
+                        background-color: "transparent"
+                        border-bottom: "0px solid transparent"
+                        border-left: "0px solid transparent"
+                        border-right: "0px solid transparent"
+                        border-top: "0px solid transparent"
+                        padding-bottom: "5px"
+                        padding-left: "0px"
+                        padding-right: "0px"
+                        padding-top: "5px"
+                      uuid: "56119ad2-574d-4122-8dd1-c1152b5f4879"
+              template:
+                page:
+                  body:
+                    container:
+                      style:
+                        background-color: '#ffffff'
+                    content:
+                      computedStyle:
+                        linkColor: '#7747FF'
+                        messageBackgroundColor: "transparent"
+                        messageWidth: "600px"
+                      style:
+                        color: '#000000'
+                        font-family: "Arial, Helvetica, sans-serif"
+                    webFonts:
+                      - fontFamily: "'Alegreya', 'Trebuchet MS', Helvetica, sans-serif"
+                        name: Alegreya
+                        url: "https://fonts.googleapis.com/css2?family=Alegreya:wght@100;200;300;400;500;600;700;800;900"
+                      - fontFamily: "'Arvo', 'Courier New', Courier, monospace"
+                        name: Arvo
+                        url: "https://fonts.googleapis.com/css2?family=Arvo:wght@100;200;300;400;500;600;700;800;900"
+                title: ""
+      responses:
+        '200':
+          description: Updated template with merged rows
+          content:
+            application/json:
+              example:
+                template:
+                  page:
+                    body:
+                      container:
+                        style:
+                          background-color: '#ffffff'
+                      content:
+                        computedStyle:
+                          linkColor: '#7747FF'
+                          messageBackgroundColor: "transparent"
+                          messageWidth: "600px"
+                        style:
+                          color: '#000000'
+                          font-family: "Arial, Helvetica, sans-serif"
+                      webFonts:
+                        - fontFamily: "'Alegreya', 'Trebuchet MS', Helvetica, sans-serif"
+                          name: Alegreya
+                          url: "https://fonts.googleapis.com/css2?family=Alegreya:wght@100;200;300;400;500;600;700;800;900"
+                        - fontFamily: "'Arvo', 'Courier New', Courier, monospace"
+                          name: Arvo
+                          url: "https://fonts.googleapis.com/css2?family=Arvo:wght@100;200;300;400;500;600;700;800;900"
+                    rows:
+                      - columns:
+                          - grid-columns: 12
+                            modules:
+                              - descriptor:
+                                  paragraph:
+                                    html: "<p>Updated paragraph block.</p>"
+                                    style:
+                                      color: '#101112'
+                                      font-family: "'Alegreya', 'Trebuchet MS', Helvetica, sans-serif"
+                                      font-size: 16px
+                    warnings:
+                      - msg: "No merges were completed for row with identifier 0922fb70-f97e-4ae8-bcfe-0be9fd09a0d5"

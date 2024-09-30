@@ -1,0 +1,141 @@
+openapi: 3.0.0
+info:
+  title: Summary Generation
+  description: |
+    This API endpoint generates a summary based on a provided template and additional options.
+  version: 1.0.0
+servers:
+  - url: https://api.getbee.io
+    description: Base URL for the API
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Enter Dev Console API Key as Bearer token
+paths:
+  /v1/ai/summary:
+    post:
+      summary: Generate Summary from Template
+      description: |
+        This endpoint accepts a JSON template and options to generate a concise summary.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                options:
+                  type: object
+                  properties:
+                    model:
+                      type: string
+                      example: "gpt-3.5-turbo"
+                    toneOfVoice:
+                      type: string
+                      description: "Specify the tone of voice for the summary."
+                    length:
+                      type: string
+                      enum: ["concise", "standard", "detailed"]
+                      example: "concise"
+                    instructions:
+                      type: string
+                      description: "Extra instructions for the AI."
+                    reportUsage:
+                      type: boolean
+                      example: true
+                    language:
+                      type: string
+                      example: "it-IT"
+                template:
+                  type: object
+                  properties:
+                    page:
+                      type: object
+                      properties:
+                        body:
+                          type: object
+                          properties:
+                            container:
+                              type: object
+                              properties:
+                                style:
+                                  type: object
+                                  properties:
+                                    background-color:
+                                      type: string
+                                      example: "#fff"
+                                    background-image:
+                                      type: string
+                                      example: "none"
+                                    background-position:
+                                      type: string
+                                      example: "top left"
+                                    background-repeat:
+                                      type: string
+                                      example: "no-repeat"
+                                    background-size:
+                                      type: string
+                                      example: "auto"
+      responses:
+        '200':
+          description: Successful response with summary.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  summary:
+                    type: string
+                    example: "Vuoi partecipare a un progetto di ricerca utente con BEE Pro? Rispondi a Dalila per prenotare un colloquio video."
+                  usage:
+                    type: object
+                    properties:
+                      prompt_tokens:
+                        type: integer
+                        example: 425
+                      completion_tokens:
+                        type: integer
+                        example: 39
+                      total_tokens:
+                        type: integer
+                        example: 464
+      examples:
+        NodeJS:
+          summary: NodeJS Request Example
+          value: |
+            const response = await fetch('https://api.getbee.io/v1/ai/summary', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer <token>' },
+              body: JSON.stringify({
+                "options": {
+                  "model": "gpt-3.5-turbo",
+                  "toneOfVoice": "Friendly",
+                  "length": "concise",
+                  "instructions": "Keep it clear and engaging.",
+                  "reportUsage": true,
+                  "language": "it-IT"
+                },
+                "template": {
+                  "page": {
+                    "body": {
+                      "container": {
+                        "style": {
+                          "background-color": "#fff",
+                          "background-image": "none",
+                          "background-position": "top left",
+                          "background-repeat": "no-repeat",
+                          "background-size": "auto"
+                        }
+                      }
+                    }
+                  }
+                }
+              }),
+            });
+            const result = await response.json();
+            console.log(result.summary); // Log the generated summary
+            console.log(result.usage); // Log the token usage details
