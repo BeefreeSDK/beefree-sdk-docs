@@ -1,7 +1,7 @@
 # Custom CSS
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../../../getting-started/readme/development-applications.md) for free to try this and other Superpowers-level features.
+This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../../getting-started/readme/development-applications.md) for free to try this and other Superpowers-level features.
 {% endhint %}
 
 ## Defining a custom look & feel through a CSS stylesheet <a href="#defining-a-custom-look-feel-through-a-css-stylesheet" id="defining-a-custom-look-feel-through-a-css-stylesheet"></a>
@@ -35,7 +35,7 @@ When used properly, it is a powerful tool that can be leveraged to accomplish an
 When misused, however, it may harm the user experience and the rendering capability of the builder’s stage. For example, styles applied to the stage via CSS will _not_ be reflected in the preview or exported HTML.
 
 {% hint style="info" %}
-If you're looking to hide certain UI elements, we recommend you first check if that can be accomplished with [Advanced Permissions](../../advanced-options/advanced-permissions.md), as it may be easier to implement.
+If you're looking to hide certain UI elements, we recommend you first check if that can be accomplished with [Advanced Permissions](../advanced-options/advanced-permissions.md), as it may be easier to implement.
 {% endhint %}
 
 For the best possible results, please follow these best practices:
@@ -64,7 +64,3 @@ Reference the following Sample Custom CSS Theme to see an example of how you can
 https://gist.github.com/44daee53546a9f48ecad7f52784efa55.git
 
 ```
-
-## Classnames <a href="#sample-custom-css-theme" id="sample-custom-css-theme"></a>
-
-Reference the [Classnames page](classnames/) for more information on classnames for custom CSS.
