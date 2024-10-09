@@ -28,16 +28,16 @@ Let’s now examine the anatomy of a Beefree SDK form structure.
 
 This object contains the general form attributes as strings: all of them are standard HTML5 attributes.
 
-| **Property**     | **Value** |
-| ---------------- | --------- |
-| `action`         | string    |
-| `method`         | string    |
-| `target`         | string    |
-| `accept-charset` | string    |
-| `autocomplete`   | string    |
-| `enctype`        | string    |
-| `novalidate`     | boolean   |
-| `dir`            | string    |
+| Property         | Value   |
+| ---------------- | ------- |
+| `action`         | string  |
+| `method`         | string  |
+| `target`         | string  |
+| `accept-charset` | string  |
+| `autocomplete`   | string  |
+| `enctype`        | string  |
+| `novalidate`     | boolean |
+| `dir`            | string  |
 
 ### Fields <a href="#fields" id="fields"></a>
 

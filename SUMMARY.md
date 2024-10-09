@@ -35,7 +35,9 @@
   * [Integrating and using the Form block](visual-builders/form-block/integrating-and-using-the-form-block/README.md)
     * [Passing forms to the builder](visual-builders/form-block/integrating-and-using-the-form-block/passing-forms-to-the-builder.md)
     * [Form structure and parameters](visual-builders/form-block/integrating-and-using-the-form-block/form-structure-and-parameters.md)
+    * [Form layout customization](visual-builders/form-block/integrating-and-using-the-form-block/form-layout-customization.md)
     * [Allowed form fields](visual-builders/form-block/integrating-and-using-the-form-block/allowed-form-fields.md)
+    * [Edit form field modal](visual-builders/form-block/integrating-and-using-the-form-block/edit-form-field-modal.md)
 
 ## File manager
 

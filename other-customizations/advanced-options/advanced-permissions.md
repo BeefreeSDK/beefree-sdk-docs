@@ -1373,13 +1373,16 @@ beeConfig: {
           id: {
             locked: false,
             show: true
+          },
+          layoutPreset: {
+            locked: false,
+            show: true
           }
         }
       }
     }
   }
 }
-
 
 ```
 
