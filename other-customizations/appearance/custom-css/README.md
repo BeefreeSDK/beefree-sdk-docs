@@ -1,7 +1,7 @@
 # Custom CSS
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../../getting-started/readme/development-applications.md) for free to try this and other Superpowers-level features.
+This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../../../getting-started/readme/development-applications.md) for free to try this and other Superpowers-level features.
 {% endhint %}
 
 ## Defining a custom look & feel through a CSS stylesheet <a href="#defining-a-custom-look-feel-through-a-css-stylesheet" id="defining-a-custom-look-feel-through-a-css-stylesheet"></a>
@@ -35,7 +35,7 @@ When used properly, it is a powerful tool that can be leveraged to accomplish an
 When misused, however, it may harm the user experience and the rendering capability of the builder’s stage. For example, styles applied to the stage via CSS will _not_ be reflected in the preview or exported HTML.
 
 {% hint style="info" %}
-If you're looking to hide certain UI elements, we recommend you first check if that can be accomplished with [Advanced Permissions](../advanced-options/advanced-permissions.md), as it may be easier to implement.
+If you're looking to hide certain UI elements, we recommend you first check if that can be accomplished with [Advanced Permissions](../../advanced-options/advanced-permissions.md), as it may be easier to implement.
 {% endhint %}
 
 For the best possible results, please follow these best practices:
@@ -71,9 +71,9 @@ This section lists the classnames for different buttons within the sidebar, aime
 
 This section will cover button classnames for the following sidebar areas:
 
-* [Content](custom-css.md#content)
-* [Rows](custom-css.md#rows)
-* [Settings](custom-css.md#settings)
+* [Content](./#content)
+* [Rows](./#rows)
+* [Settings](./#settings)
 
 ## Content
 
@@ -319,10 +319,10 @@ Radiogroups in the context of our web application refer to a UI component that g
 
 This section will cover widget classnames for content in the sidebar. This section will list the classnames for the following sidebar tabs:
 
-* [Rows](custom-css.md#rows)
-* [Rows & Content](custom-css.md#rows-and-content)
-* [Content](custom-css.md#content)
-* [Settings](custom-css.md#settings)
+* [Rows](./#rows)
+* [Rows & Content](./#rows-and-content)
+* [Content](./#content)
+* [Settings](./#settings)
 
 ### Rows
 
@@ -435,9 +435,9 @@ This section discusses and lists the various CSS classnames relevant to the appl
 
 This section will cover button classnames for the following sidebar areas:
 
-* [Content](custom-css.md#content)
-* [Rows](custom-css.md#rows)
-* [Settings](custom-css.md#settings)
+* [Content](./#content)
+* [Rows](./#rows)
+* [Settings](./#settings)
 
 ## Content
 
@@ -537,8 +537,8 @@ The various classnames and `data-qa` attributes associated with entities within 
 
 This section will cover button classnames for the following sidebar areas:
 
-* [Content](custom-css.md#content)
-* [Settings](custom-css.md#settings)
+* [Content](./#content)
+* [Settings](./#settings)
 
 ## Content
 

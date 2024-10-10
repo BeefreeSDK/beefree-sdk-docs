@@ -13,7 +13,7 @@ This Beefree SDK configuration allows you to change the builder’s appearance w
 
 <figure><img src="../../.gitbook/assets/2custom_look_dev-1024x626.png" alt=""><figcaption></figcaption></figure>
 
-Technically speaking, it allows you to change some parts of the CSS (Cascading Style Sheets) that controls the look & feel of the editor. If you want to use your own CSS, please refer to our [Custom CSS](custom-css.md) feature.
+Technically speaking, it allows you to change some parts of the CSS (Cascading Style Sheets) that controls the look & feel of the editor. If you want to use your own CSS, please refer to our [Custom CSS](custom-css/) feature.
 
 ### Using a predefined theme <a href="#using-a-predefined-theme" id="using-a-predefined-theme"></a>
 
