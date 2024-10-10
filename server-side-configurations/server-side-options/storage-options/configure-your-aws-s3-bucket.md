@@ -127,6 +127,33 @@ You can enable the move icon for files within the File manager. This move icon a
 
 If you are using a Custom AWS S3 Bucket, take the following steps to enable this feature for your File manager.
 
+### How to Enable the Move File Feature&#x20;
+
+Take the following steps to enable the Move icon for your end users:
+
+1. Log in to the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu).
+2. Navigate to the application you'd like to activate it for.
+3. Click on the **Details** button.
+4. Select the **View more** option located under **Application configuration**.
+5. Navigate to the **Services** section.
+6. Toggle on the **Enable moving files between folders in file manager** option.
+
+The **Move** file option will automatically become available for your end users.
+
+<figure><img src="../../../.gitbook/assets/CleanShot 2024-10-10 at 16.27.45.png" alt=""><figcaption></figcaption></figure>
+
+### How File Name Conflicts Are Handled
+
+If a file an end user trying to move or copy has the same name as an existing file, the File Manager will show a pop-up asking how to handle the conflict.&#x20;
+
+The end user will have the following options:
+
+1. **Cancel**: For this option, nothing will happen, and the operation will be stopped.
+2. **Keep Both**: This option lets them keep both files. The new file will be saved with a slightly different name, adding a number at the end. For example, if the original file is called "pizza.jpg," the new one will be named "pizza\_1.jpg."
+3. **Replace**: Selecting this will replace the old file with the new one, meaning the existing file will be overwritten.
+
+These options help them decide what to do when file names clash, ensuring they have control over how their files are managed.
+
 ### Using a Custom AWS S3 Bucket
 
 To implement the new Move File feature in your application, follow these steps to change your file path from the old format to the new format. This change is important because it allows the host application to enable the Move File feature within the File Manager without breaking old URLs. Here's how to make the transition:
