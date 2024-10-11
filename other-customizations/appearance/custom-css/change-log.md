@@ -6,47 +6,9 @@ description: >-
 
 # Change Log
 
-## Classname Changes Released October 10, 2024
+## Changes Font Stye and Drag-and-Drop Widgets | Release Coming Soon
 
-### Changes Form Edit Modal Update
-
-#### **1. Form Edit Modal - Text Inputs**
-
-* **Affected Sub-element**: All text inputs
-*   **Changes**:
-
-    * **Markup Variations**:
-      * Updated to the new input text component.
-      * The label is now positioned on top instead of to the left.
-    * **Classnames Comparison**:
-
-    | Classnames Removed       | Classnames Added       |
-    | ------------------------ | ---------------------- |
-    | `number-selector--cs`    | `input-text--cs`       |
-    | `item_1-2`               | `input-text-boxed--cs` |
-    | `widget__textbox`        |                        |
-    | `widget__label`          |                        |
-    | `widget__label--textbox` |                        |
-    | `btn`                    |                        |
-
-#### **2. Form Edit Modal - Required and Read Only Toggles**
-
-* **Affected Sub-element**: Required and Read Only Toggles
-*   **Changes**:
-
-    * **Markup Variations**:
-      * Changed from toggles to checkboxes for Required and Read Only fields.
-    * **Classnames Comparison**:
-
-    | Classnames Removed   | Classnames Added       |
-    | -------------------- | ---------------------- |
-    | `toggle-wrapper--cs` | `checkbox-wrapper--cs` |
-    | `toggle-input--cs`   | `widget__label--cs`    |
-    | `toggle-slider--cs`  |                        |
-
-### Changes Font Stye and Drag-and-Drop Widgets
-
-#### **1. Form Components**
+### **1. Form Components**
 
 * **Affected Widgets**: Font style
 *   **Changes**:
@@ -71,7 +33,7 @@ description: >-
     | `button--cs`                                                    |                          |
     | `active`                                                        |                          |
 
-#### **2. Social Widget**
+### **2. Social Widget**
 
 * **Affected Widget**: Configure Icon Collection
 *   **Changes**:
@@ -92,7 +54,7 @@ description: >-
     | `panel__title`                |                              |
     | `comp-tree-placeholder`       |                              |
 
-#### **3. Icons Widget**
+### **3. Icons Widget**
 
 * **Affected Widget**: Configure Icon Collection
 *   **Changes**:
@@ -111,7 +73,7 @@ description: >-
     | `panel__title`                |                             |
     | `comp-tree-placeholder`       |                             |
 
-#### **4. Menu Widget**
+### **4. Menu Widget**
 
 * **Affected Widget**: Configure Menu Items
 *   **Changes**:
@@ -132,7 +94,7 @@ description: >-
     | `title__icon`                 |                             |
     | `comp-tree-placeholder`       |                             |
 
-#### **5. Form Widget**
+### **5. Form Widget**
 
 * **Affected Widget**: Manage Fields
 *   **Changes**:
@@ -153,7 +115,7 @@ description: >-
     | `title__icon`                 |                          |
     | `comp-tree-placeholder`       |                          |
 
-#### **6. Carousel Widget**
+### **6. Carousel Widget**
 
 * **Affected Widget**: Configure Carousel
 *   **Changes**:
@@ -171,3 +133,39 @@ description: >-
     | `icon-organizer__panel--cs`  | `carousel-slides-list--cs`   |
     | `comp-tree-placeholder`      | `carousel-add-slide-btn--cs` |
     |                              | `slide-organizer__panel--cs` |
+
+## Changes Form Edit Modal Update | Released October 10, 2024
+
+### **1. Form Edit Modal - Text Inputs**
+
+* **Affected Sub-element**: All text inputs
+*   **Changes**:
+
+    * **Markup Variations**:
+      * Updated to the new input text component.
+      * The label is now positioned on top instead of to the left.
+    * **Classnames Comparison**:
+
+    | Classnames Removed       | Classnames Added       |
+    | ------------------------ | ---------------------- |
+    | `number-selector--cs`    | `input-text--cs`       |
+    | `item_1-2`               | `input-text-boxed--cs` |
+    | `widget__textbox`        |                        |
+    | `widget__label`          |                        |
+    | `widget__label--textbox` |                        |
+    | `btn`                    |                        |
+
+### **2. Form Edit Modal - Required and Read Only Toggles**
+
+* **Affected Sub-element**: Required and Read Only Toggles
+*   **Changes**:
+
+    * **Markup Variations**:
+      * Changed from toggles to checkboxes for Required and Read Only fields.
+    * **Classnames Comparison**:
+
+    | Classnames Removed   | Classnames Added       |
+    | -------------------- | ---------------------- |
+    | `toggle-wrapper--cs` | `checkbox-wrapper--cs` |
+    | `toggle-input--cs`   | `widget__label--cs`    |
+    | `toggle-slider--cs`  |                        |
