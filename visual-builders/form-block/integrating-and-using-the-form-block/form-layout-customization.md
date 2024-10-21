@@ -115,7 +115,7 @@ The layout of the form fields can be controlled using a new `layoutPreset` field
 * `grid`
 
 {% hint style="info" %}
-**Note:** If the `layoutPreset` is not defined, it will use  the layout structure. This is its default behavior.
+**Note:** If the `layoutPreset` is not defined in the JSON file, the Form will use a horizontal layout structure.
 {% endhint %}
 
 **JSON Structure Example**
