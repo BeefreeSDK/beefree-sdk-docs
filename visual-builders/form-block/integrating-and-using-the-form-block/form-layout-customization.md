@@ -108,14 +108,14 @@ These steps will allow you to effectively control the layout orientation of mult
 
 ### Implementing New Form Layout Presets
 
-The layout of the form fields can be controlled using a new `layoutPreset` field. This field is located in the `structure` object of the JSON and supports four possible values:
+The layout of the form fields can be controlled using a new `layoutPreset` field. This field is located in the `structure` object of the JSON and supports three possible values:
 
 * `vertical`
 * `horizontal`
 * `grid`
 
 {% hint style="info" %}
-**Note:** If the `layoutPreset` is not defined, it will use  the layout structure (default behavior).
+**Note:** If the `layoutPreset` is not defined, it will use  the layout structure. This is its default behavior.
 {% endhint %}
 
 **JSON Structure Example**

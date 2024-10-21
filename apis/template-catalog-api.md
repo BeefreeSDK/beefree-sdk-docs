@@ -1,7 +1,7 @@
 # Template Catalog API
 
 {% hint style="info" %}
-Available for purchase with a **Core** plan or higher. Contact your account manager to purchase this feature. If you do not currently have an account manager, please contact our sales team for further details.
+This feature is available for purchase with the Core plan and included at no extra cost with the [Superpowers and Enterprise plans](https://developers.beefree.io/pricing-plans). To purchase this feature with the Core plan, or to activate it for free with the Superpowers or Enterprise plans, please reach out to your account manager. If you don’t have an account manager, contact our sales team for more information.
 {% endhint %}
 
 ## Overview of Template Catalog API
