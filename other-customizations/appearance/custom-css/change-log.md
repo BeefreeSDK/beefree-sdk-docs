@@ -6,6 +6,166 @@ description: >-
 
 # Change Log
 
+## Add New Social and Form | Release Coming Soon
+
+1.  **Form**\
+    Affected Sub-element: Manage fields - Add new field
+
+    **Changes:**
+
+    * Markup Variations:
+      * Removed some wrapper divs
+      * Replaced all the list HTML
+
+    **Classnames Comparison:**
+
+    | Classnames Removed      | Classnames Added             |
+    | ----------------------- | ---------------------------- |
+    | toggle-menu-button--cs  | button-small--cs             |
+    | button-large--cs        | button-solid--cs             |
+    | widget\_\_textbox       | button-primary--cs           |
+    | widget\_\_searchbox     | button--cs                   |
+    | scrollable\_\_panel--cs | add-form-field--cs           |
+    |                         | dropdown-menu--cs            |
+    |                         | dropdown-menu-button--cs     |
+    |                         | dropdown-menu-search--cs     |
+    |                         | input-search--cs             |
+    |                         | dropdown-menu-scrollable--cs |
+    |                         | dropdown-menu-item--cs       |
+2.  **Social**\
+    Affected Sub-element: Configure icon collection - Add social icon
+
+    **Changes:**
+
+    * Markup Variations:
+      * Removed some wrapper divs
+      * Replaced all the popover HTML
+
+    **Classnames Comparison:**
+
+    | Classnames Removed          | Classnames Added             |
+    | --------------------------- | ---------------------------- |
+    | icons-manager\_\_pop--cs    | button-small--cs             |
+    | icons-manager\_\_popcontent | button-solid--cs             |
+    | popver\_\_tab               | button-primary--cs           |
+    | social-add-icon--cs         | button--cs                   |
+    |                             | add-social-icon--cs          |
+    |                             | dropdown-menu--cs            |
+    |                             | dropdown-menu-button--cs     |
+    |                             | dropdown-menu-search--cs     |
+    |                             | input-search--cs             |
+    |                             | dropdown-menu-scrollable--cs |
+    |                             | dropdown-menu-item--cs       |
+
+***
+
+## Add New Attributes and Title Bar | Release Coming Soon
+
+1.  **Button, Image, Video**\
+    Affected Sub-element: Configure attributes - Add new attribute
+
+    **Changes:**
+
+    * Markup Variations:
+      * Removed some wrapper divs
+      * Replaced all the list HTML
+
+    **Classnames Comparison:**
+
+    | Classnames Removed      | Classnames Added             |
+    | ----------------------- | ---------------------------- |
+    | toggle-menu-button--cs  | button-small--cs             |
+    | button-large--cs        | button-solid--cs             |
+    | scrollable\_\_panel--cs | button-primary--cs           |
+    |                         | button--cs                   |
+    |                         | add-attribute--cs            |
+    |                         | dropdown-menu--cs            |
+    |                         | dropdown-menu-button--cs     |
+    |                         | dropdown-menu-search--cs     |
+    |                         | input-search--cs             |
+    |                         | dropdown-menu-scrollable--cs |
+    |                         | dropdown-menu-item--cs       |
+2.  **All**\
+    Affected Sub-element: Sidebar Title
+
+    **Changes:**
+
+    * Markup Variations:
+      * Added `<div role="toolbar">`
+      * `<a>` elements are now `<button>`
+
+    **Classnames Comparison:**
+
+    | Classnames Removed         | Classnames Added                           |
+    | -------------------------- | ------------------------------------------ |
+    | widgets-section\_\_heading | widgets-section\_\_heading--cs             |
+    | icon                       | sidebar-panel-title-icon--cs               |
+    | icon-\*                    | sidebar-panel-title-icon-comment--cs       |
+    |                            | sidebar-panel-title-icon-delete--cs        |
+    |                            | sidebar-panel-title-icon-duplicate--cs     |
+    |                            | sidebar-panel-title-icon-closepanel--cs    |
+    |                            | sidebar-panel-title-icon-save--cs          |
+    |                            | sidebar-panel-title-icon-editSyncedRow--cs |
+3.  **Rows**\
+    Affected Sub-element: Sidebar Title
+
+    **Changes:**
+
+    * Markup Variations:
+      * Added `<div role="toolbar">`
+      * `<a>` elements are now `<button>`
+
+    **Classnames Comparison:**
+
+    | Classnames Removed         | Classnames Added                           |
+    | -------------------------- | ------------------------------------------ |
+    | widgets-section\_\_heading | widgets-section\_\_heading--cs             |
+    | icon                       | sidebar-panel-title-icon--cs               |
+    | icon-\*                    | sidebar-panel-title-icon-comment--cs       |
+    |                            | sidebar-panel-title-icon-delete--cs        |
+    |                            | sidebar-panel-title-icon-duplicate--cs     |
+    |                            | sidebar-panel-title-icon-closepanel--cs    |
+    |                            | sidebar-panel-title-icon-save--cs          |
+    |                            | sidebar-panel-title-icon-editSyncedRow--cs |
+
+## Mobile Stage Mode, History, and Empty States | Release Coming Soon
+
+1.  **Mobile Stage Mode**\
+    Affected Sub-element: Wrapper
+
+    **Classnames Added:**
+
+    * stagemode\_\_buttonswrapper--cs
+
+    **Mobile Stage Mode Buttons:**
+
+    * Desktop button: stagemode\_\_button\_\_desktop--cs
+    * Mobile button: stagemode\_\_button\_\_mobile--cs
+    * Display toggle button: stagemode\_\_button\_\_display--cs
+2.  **Undo/Redo**\
+    Affected Sub-elements: Undo/Redo Buttons and History Panel
+
+    **Classnames Added:**
+
+    * Toggle button: undo-redo\_\_toggleButton--cs
+    * Undo button: undo-redo\_\_undoButton--cs
+    * Redo button: undo-redo\_\_redoButton--cs
+    * History panel: undo-redo\_\_history--cs
+    * History panel item: history\_\_step--cs
+3.  **Empty States (Various Modules)**\
+    Affected Modules: Image, Icons, Video, Menu, Social, Form, AddOn, Dynamic Content
+
+    **Classnames Added:**
+
+    * Image module: stage-module\_image\_placeholder--cs
+    * Icons module: stage-module\_icons\_placeholder--cs
+    * Video module: stage-module\_video\_placeholder--cs
+    * Menu module: stage-module\_menu\_placeholder--cs
+    * Social module: stage-module\_social\_placeholder--cs
+    * Form module: stage-module\_form\_placeholder--cs
+    * AddOn module: stage-module\_addon\_placeholder--cs
+    * DynamicContent module: stage-module\_merge-content\_placeholder--cs
+
 ## Changes Font Stye and Drag-and-Drop Widgets | Release Coming Soon
 
 ### **1. Form Components**
