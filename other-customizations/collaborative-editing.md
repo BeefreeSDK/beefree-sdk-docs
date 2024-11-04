@@ -182,6 +182,14 @@ During the co-edit session, the host application may receive callbacks for savin
 
 The version is a simple integration counter: 1, 2, 3, …
 
+### onChange Callback Handler:
+
+```javascript
+onChange: function(jsonFile, response, version) {
+   console.log(`*** [integration] (onChange) version ${version}, ${new Date().toISOString()}`);
+},
+```
+
 ### onSave Callback Handler:
 
 ```javascript
