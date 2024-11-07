@@ -35,6 +35,10 @@ font:
     application/x-font-ttf
 ```
 
+{% hint style="warning" %}
+**Note:** Beefree SDK does not manage heic files at this time.
+{% endhint %}
+
 ## Additional Considerations
 
 When working with files, mime types and groups, ensure you consider the following:
