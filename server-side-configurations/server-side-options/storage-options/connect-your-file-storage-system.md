@@ -423,6 +423,10 @@ When the user clicks the _keep_ or _replace_ buttons, a new upload request is se
 
 If there's a filename conflict, the FSP should return a `3401` error code. This instructs the Builder to show a toast notification to the user and prompt them with a dialog.
 
+{% hint style="info" %}
+**Note:** When you replace an image, the thumbnail updates immediately to show the new version. However, the main image URL, which is used in the stage and in any previously sent emails, may still display the old version until the cache clears. This cache expiration typically happens within 2 hours but can vary.
+{% endhint %}
+
 ### Upload Operation Notes
 
 Uploads are proxied by Beefree’s resource APIs, which enforce the maximum file size configured by the Console. Uploads from various sources are handled as follows:
