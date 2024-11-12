@@ -21,7 +21,7 @@ layout:
 
 ## Add JavaScript Library <a href="#add-javascript-library" id="add-javascript-library"></a>
 
-Congratulations on [creating your first application](../create-an-application.md)!  Now it’s time to install it. The first step is to add the Beefree SDK library to your application. You can use [our convenient NPM module](https://dam.beefree.io/beepluginwrapper) to add it .
+Congratulations on [creating your first application](../create-an-application.md)!  Now it’s time to install it. The first step is to add the Beefree SDK library to your application. You can use our [convenient NPM module](https://www.npmjs.com/package/@beefree.io/sdk) to add it.
 
 ### **NPM**
 
