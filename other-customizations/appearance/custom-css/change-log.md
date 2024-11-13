@@ -8,7 +8,7 @@ description: >-
 
 ## December 5th Releases
 
-### Add New Social and Form
+### Add New Social and Form | Release on December 5th
 
 #### Form&#x20;
 
@@ -80,7 +80,7 @@ description: >-
 
 </details>
 
-### Add New Attributes and Title Bar&#x20;
+### Add New Attributes and Title Bar | Release on December 5th&#x20;
 
 #### 1. Button, Image, Video&#x20;
 
@@ -181,7 +181,9 @@ Markup Variations:
 
 </details>
 
-### Mobile Stage Mode, History, and Empty States
+## November 7, 2024 Releases
+
+### Mobile Stage Mode, History, and Empty States | Released on November 7th
 
 <details>
 
@@ -227,7 +229,7 @@ Markup Variations:
 
 </details>
 
-### Changes Font Stye and Drag-and-Drop Widgets&#x20;
+### Changes Font Stye and Drag-and-Drop Widgets | Released on November 7th&#x20;
 
 #### **1. Form Components**
 
@@ -405,7 +407,7 @@ Markup Variations:
 
 ## October 10, 2024 Releases
 
-### Form Edit Modal
+### Form Edit Modal | Released on October 10th
 
 #### **1. Form Edit Modal - Text Inputs**
 
