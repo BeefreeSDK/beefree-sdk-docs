@@ -6,7 +6,17 @@ description: >-
 
 # Change Log
 
-## Add New Social and Form | Release Coming Soon
+## December 5th Releases
+
+### Add New Social and Form
+
+#### Form&#x20;
+
+<details>
+
+<summary>New Classnames Form </summary>
+
+### Form
 
 1.  **Form**\
     Affected Sub-element: Manage fields - Add new field
@@ -19,20 +29,31 @@ description: >-
 
     **Classnames Comparison:**
 
-    | Classnames Removed      | Classnames Added             |
-    | ----------------------- | ---------------------------- |
-    | toggle-menu-button--cs  | button-small--cs             |
-    | button-large--cs        | button-solid--cs             |
-    | widget\_\_textbox       | button-primary--cs           |
-    | widget\_\_searchbox     | button--cs                   |
-    | scrollable\_\_panel--cs | add-form-field--cs           |
-    |                         | dropdown-menu--cs            |
-    |                         | dropdown-menu-button--cs     |
-    |                         | dropdown-menu-search--cs     |
-    |                         | input-search--cs             |
-    |                         | dropdown-menu-scrollable--cs |
-    |                         | dropdown-menu-item--cs       |
-2.  **Social**\
+    | Classnames Removed       | Classnames Added               |
+    | ------------------------ | ------------------------------ |
+    | `toggle-menu-button--cs` | `button-small--cs`             |
+    | `button-large--cs`       | `button-solid--cs`             |
+    | `widget__textbox`        | `button-primary--cs`           |
+    | `widget__searchbox`      | `button--cs`                   |
+    | `scrollable__panel--cs`  | `add-form-field--cs`           |
+    |                          | `dropdown-menu--cs`            |
+    |                          | `dropdown-menu-button--cs`     |
+    |                          | `dropdown-menu-search--cs`     |
+    |                          | `input-search--cs`             |
+    |                          | `dropdown-menu-scrollable--cs` |
+    |                          | `dropdown-menu-item--cs`       |
+
+</details>
+
+#### Social&#x20;
+
+<details>
+
+<summary>New Classnames Social </summary>
+
+### Social
+
+1.  **Social**\
     Affected Sub-element: Configure icon collection - Add social icon
 
     **Changes:**
@@ -43,23 +64,29 @@ description: >-
 
     **Classnames Comparison:**
 
-    | Classnames Removed          | Classnames Added             |
-    | --------------------------- | ---------------------------- |
-    | icons-manager\_\_pop--cs    | button-small--cs             |
-    | icons-manager\_\_popcontent | button-solid--cs             |
-    | popver\_\_tab               | button-primary--cs           |
-    | social-add-icon--cs         | button--cs                   |
-    |                             | add-social-icon--cs          |
-    |                             | dropdown-menu--cs            |
-    |                             | dropdown-menu-button--cs     |
-    |                             | dropdown-menu-search--cs     |
-    |                             | input-search--cs             |
-    |                             | dropdown-menu-scrollable--cs |
-    |                             | dropdown-menu-item--cs       |
+    | Classnames Removed          | Classnames Added               |
+    | --------------------------- | ------------------------------ |
+    | `icons-manager__pop--cs`    | `button-small--cs`             |
+    | `icons-manager__popcontent` | `button-solid--cs`             |
+    | `popver__tab`               | `button-primary--cs`           |
+    | `social-add-icon--cs`       | `button--cs`                   |
+    |                             | `add-social-icon--cs`          |
+    |                             | `dropdown-menu--cs`            |
+    |                             | `dropdown-menu-button--cs`     |
+    |                             | `dropdown-menu-search--cs`     |
+    |                             | `input-search--cs`             |
+    |                             | `dropdown-menu-scrollable--cs` |
+    |                             | `dropdown-menu-item--cs`       |
 
-***
+</details>
 
-## Add New Attributes and Title Bar | Release Coming Soon
+### Add New Attributes and Title Bar&#x20;
+
+#### 1. Button, Image, Video&#x20;
+
+<details>
+
+<summary>New Classnames Button, Image, Video </summary>
 
 1.  **Button, Image, Video**\
     Affected Sub-element: Configure attributes - Add new attribute
@@ -72,20 +99,31 @@ description: >-
 
     **Classnames Comparison:**
 
-    | Classnames Removed      | Classnames Added             |
-    | ----------------------- | ---------------------------- |
-    | toggle-menu-button--cs  | button-small--cs             |
-    | button-large--cs        | button-solid--cs             |
-    | scrollable\_\_panel--cs | button-primary--cs           |
-    |                         | button--cs                   |
-    |                         | add-attribute--cs            |
-    |                         | dropdown-menu--cs            |
-    |                         | dropdown-menu-button--cs     |
-    |                         | dropdown-menu-search--cs     |
-    |                         | input-search--cs             |
-    |                         | dropdown-menu-scrollable--cs |
-    |                         | dropdown-menu-item--cs       |
-2.  **All**\
+    | Classnames Removed       | Classnames Added               |
+    | ------------------------ | ------------------------------ |
+    | `toggle-menu-button--cs` | `button-small--cs`             |
+    | `button-large--cs`       | `button-solid--cs`             |
+    | `scrollable__panel--cs`  | `button-primary--cs`           |
+    |                          | `button--cs`                   |
+    |                          | `add-attribute--cs`            |
+    |                          | `dropdown-menu--cs`            |
+    |                          | `dropdown-menu-button--cs`     |
+    |                          | `dropdown-menu-search--cs`     |
+    |                          | `input-search--cs`             |
+    |                          | `dropdown-menu-scrollable--cs` |
+    |                          | `dropdown-menu-item--cs`       |
+
+</details>
+
+#### 2. Sidebar Title
+
+<details>
+
+<summary>New Classnames All</summary>
+
+### Sidebar Title
+
+1.  Sidebar Title\
     Affected Sub-element: Sidebar Title
 
     **Changes:**
@@ -96,79 +134,108 @@ description: >-
 
     **Classnames Comparison:**
 
-    | Classnames Removed         | Classnames Added                           |
-    | -------------------------- | ------------------------------------------ |
-    | widgets-section\_\_heading | widgets-section\_\_heading--cs             |
-    | icon                       | sidebar-panel-title-icon--cs               |
-    | icon-\*                    | sidebar-panel-title-icon-comment--cs       |
-    |                            | sidebar-panel-title-icon-delete--cs        |
-    |                            | sidebar-panel-title-icon-duplicate--cs     |
-    |                            | sidebar-panel-title-icon-closepanel--cs    |
-    |                            | sidebar-panel-title-icon-save--cs          |
-    |                            | sidebar-panel-title-icon-editSyncedRow--cs |
-3.  **Rows**\
-    Affected Sub-element: Sidebar Title
+    | Classnames Removed         | Classnames Added                             |
+    | -------------------------- | -------------------------------------------- |
+    | `widgets-section__heading` | `widgets-section__heading--cs`               |
+    | `icon`                     | `sidebar-panel-title-icon--cs`               |
+    | `icon-*`                   | `sidebar-panel-title-icon-comment--cs`       |
+    |                            | `sidebar-panel-title-icon-delete--cs`        |
+    |                            | `sidebar-panel-title-icon-duplicate--cs`     |
+    |                            | `sidebar-panel-title-icon-closepanel--cs`    |
+    |                            | `sidebar-panel-title-icon-save--cs`          |
+    |                            | `sidebar-panel-title-icon-editSyncedRow--cs` |
 
-    **Changes:**
+</details>
 
-    * Markup Variations:
-      * Added `<div role="toolbar">`
-      * `<a>` elements are now `<button>`
+#### 3. Rows
 
-    **Classnames Comparison:**
+<details>
 
-    | Classnames Removed         | Classnames Added                           |
-    | -------------------------- | ------------------------------------------ |
-    | widgets-section\_\_heading | widgets-section\_\_heading--cs             |
-    | icon                       | sidebar-panel-title-icon--cs               |
-    | icon-\*                    | sidebar-panel-title-icon-comment--cs       |
-    |                            | sidebar-panel-title-icon-delete--cs        |
-    |                            | sidebar-panel-title-icon-duplicate--cs     |
-    |                            | sidebar-panel-title-icon-closepanel--cs    |
-    |                            | sidebar-panel-title-icon-save--cs          |
-    |                            | sidebar-panel-title-icon-editSyncedRow--cs |
+<summary>New Classnames Rows </summary>
 
-## Mobile Stage Mode, History, and Empty States | Release Coming Soon
+**Rows**\
+Affected Sub-element: Sidebar Title
+
+**Changes:**
+
+Markup Variations:
+
+1. Added `<div role="toolbar">`
+2. `<a>` elements are now `<button>`
+
+**Classnames Comparison:**
+
+* **Classnames Removed:**
+  * `widgets-section__heading`
+  * `icon`
+  * `icon-*`
+* **Classnames Added:**
+  * `widgets-section__heading--cs`
+  * `sidebar-panel-title-icon--cs`
+  * `sidebar-panel-title-icon-comment--cs`
+  * `sidebar-panel-title-icon-delete--cs`
+  * `sidebar-panel-title-icon-duplicate--cs`
+  * `sidebar-panel-title-icon-closepanel--cs`
+  * `sidebar-panel-title-icon-save--cs`
+  * `sidebar-panel-title-icon-editSyncedRow--cs`
+
+</details>
+
+### Mobile Stage Mode, History, and Empty States
+
+<details>
+
+<summary>Mobile Stage Mode, History, and Empty States </summary>
+
+### Mobile Stage Mode, History, and Empty States
 
 1.  **Mobile Stage Mode**\
     Affected Sub-element: Wrapper
 
     **Classnames Added:**
 
-    * stagemode\_\_buttonswrapper--cs
+    * `stagemode__buttonswrapper--cs`
 
     **Mobile Stage Mode Buttons:**
 
-    * Desktop button: stagemode\_\_button\_\_desktop--cs
-    * Mobile button: stagemode\_\_button\_\_mobile--cs
-    * Display toggle button: stagemode\_\_button\_\_display--cs
+    * Desktop button: `stagemode__button__desktop--cs`
+    * Mobile button: `stagemode__button__mobile--cs`
+    * Display toggle button: `stagemode__button__display--cs`
 2.  **Undo/Redo**\
     Affected Sub-elements: Undo/Redo Buttons and History Panel
 
     **Classnames Added:**
 
-    * Toggle button: undo-redo\_\_toggleButton--cs
-    * Undo button: undo-redo\_\_undoButton--cs
-    * Redo button: undo-redo\_\_redoButton--cs
-    * History panel: undo-redo\_\_history--cs
-    * History panel item: history\_\_step--cs
+    * Toggle button: `undo-redo__toggleButton--cs`
+    * Undo button: `undo-redo__undoButton--cs`
+    * Redo button: `undo-redo__redoButton--cs`
+    * History panel: `undo-redo__history--cs`
+    * History panel item: `history__step--cs`
 3.  **Empty States (Various Modules)**\
     Affected Modules: Image, Icons, Video, Menu, Social, Form, AddOn, Dynamic Content
 
     **Classnames Added:**
 
-    * Image module: stage-module\_image\_placeholder--cs
-    * Icons module: stage-module\_icons\_placeholder--cs
-    * Video module: stage-module\_video\_placeholder--cs
-    * Menu module: stage-module\_menu\_placeholder--cs
-    * Social module: stage-module\_social\_placeholder--cs
-    * Form module: stage-module\_form\_placeholder--cs
-    * AddOn module: stage-module\_addon\_placeholder--cs
-    * DynamicContent module: stage-module\_merge-content\_placeholder--cs
+    * Image module: `stage-module_image_placeholder--cs`
+    * Icons module: `stage-module_icons_placeholder--cs`
+    * Video module: `stage-module_video_placeholder--cs`
+    * Menu module: `stage-module_menu_placeholder--cs`
+    * Social module: `stage-module_social_placeholder--cs`
+    * Form module: `stage-module_form_placeholder--cs`
+    * AddOn module: stage`-module_addon_placeholder--cs`
+    * DynamicContent module: `stage-module_merge-content_placeholder--cs`
 
-## Changes Font Stye and Drag-and-Drop Widgets | Release Coming Soon
+</details>
 
-### **1. Form Components**
+### Changes Font Stye and Drag-and-Drop Widgets&#x20;
+
+#### **1. Form Components**
+
+<details>
+
+<summary>New Classnames for Form Components </summary>
+
+### Form Components
 
 * **Affected Widgets**: Font style
 *   **Changes**:
@@ -193,7 +260,15 @@ description: >-
     | `button--cs`                                                    |                          |
     | `active`                                                        |                          |
 
-### **2. Social Widget**
+</details>
+
+#### **2. Social Widget**
+
+<details>
+
+<summary>New Classnames for Social Widget </summary>
+
+### Social Widget
 
 * **Affected Widget**: Configure Icon Collection
 *   **Changes**:
@@ -214,7 +289,15 @@ description: >-
     | `panel__title`                |                              |
     | `comp-tree-placeholder`       |                              |
 
-### **3. Icons Widget**
+</details>
+
+#### **3. Icons Widget**
+
+<details>
+
+<summary>New Classnames for Icons Widget </summary>
+
+### Icons Widget
 
 * **Affected Widget**: Configure Icon Collection
 *   **Changes**:
@@ -233,7 +316,15 @@ description: >-
     | `panel__title`                |                             |
     | `comp-tree-placeholder`       |                             |
 
-### **4. Menu Widget**
+</details>
+
+#### **4. Menu Widget**
+
+<details>
+
+<summary>New Classnames for Menu Widget </summary>
+
+### Menu Widget
 
 * **Affected Widget**: Configure Menu Items
 *   **Changes**:
@@ -254,7 +345,15 @@ description: >-
     | `title__icon`                 |                             |
     | `comp-tree-placeholder`       |                             |
 
-### **5. Form Widget**
+</details>
+
+#### **5. Form Widget**
+
+<details>
+
+<summary>New Classnames for Form Widget</summary>
+
+### Form Widget
 
 * **Affected Widget**: Manage Fields
 *   **Changes**:
@@ -275,7 +374,15 @@ description: >-
     | `title__icon`                 |                          |
     | `comp-tree-placeholder`       |                          |
 
-### **6. Carousel Widget**
+</details>
+
+#### **6. Carousel Widget**
+
+<details>
+
+<summary>New Classnames for Carousel Widget </summary>
+
+### Carousel Widget
 
 * **Affected Widget**: Configure Carousel
 *   **Changes**:
@@ -294,9 +401,19 @@ description: >-
     | `comp-tree-placeholder`      | `carousel-add-slide-btn--cs` |
     |                              | `slide-organizer__panel--cs` |
 
-## Changes Form Edit Modal Update | Released October 10, 2024
+</details>
 
-### **1. Form Edit Modal - Text Inputs**
+## October 10, 2024 Releases
+
+### Form Edit Modal
+
+#### **1. Form Edit Modal - Text Inputs**
+
+<details>
+
+<summary>List of New Classnames for the Form Edit Modal Text Inputs</summary>
+
+### Form Edit Modal - Text Inputs
 
 * **Affected Sub-element**: All text inputs
 *   **Changes**:
@@ -315,7 +432,15 @@ description: >-
     | `widget__label--textbox` |                        |
     | `btn`                    |                        |
 
-### **2. Form Edit Modal - Required and Read Only Toggles**
+</details>
+
+#### **2. Form Edit Modal - Required and Read Only Toggles**
+
+<details>
+
+<summary>List of New Classnames for the Form Edit Modal Required and Read Only Toggles  </summary>
+
+### **Form Edit Modal - Required and Read Only Toggles**
 
 * **Affected Sub-element**: Required and Read Only Toggles
 *   **Changes**:
@@ -329,3 +454,5 @@ description: >-
     | `toggle-wrapper--cs` | `checkbox-wrapper--cs` |
     | `toggle-input--cs`   | `widget__label--cs`    |
     | `toggle-slider--cs`  |                        |
+
+</details>
