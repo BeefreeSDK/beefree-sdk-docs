@@ -6,7 +6,7 @@ description: >-
 
 # Change Log
 
-## December 5th Releases
+## December 5, 2024 Releases
 
 ### Add New Social and Form | Release on December 5th
 
