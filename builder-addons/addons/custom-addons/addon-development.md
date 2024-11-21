@@ -1116,7 +1116,9 @@ resolve (
 
 ### Row Simplified Schema
 
-Your application receives the full schema, but we expect it to provide the Simplified Schema. When an end user reopens the Custom AddOn Content Dialog, the Beefree SDK sends your application the row's content and metadata. This feature allows your application to track user changes without needing a restart each time the dialog is reopened. The new properties in the Simplified Schema enhance the flexibility for designing Custom Rows and AddOns.
+This simplified row schema is designed to help you structure and validate rows. It allows you to define rows that contain columns, which can hold various design elements like buttons, images, text, and more, all while enforcing clear rules for responsiveness, styling, and structure. Its simplicity lies in its modular approach: each column and module follows a predictable pattern with reusable definitions like padding and predefined options for properties like alignment and color.
+
+You can reference the simplified schema in the following code snippet:
 
 {% code overflow="wrap" %}
 ```javascript
