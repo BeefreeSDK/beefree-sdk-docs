@@ -125,7 +125,7 @@ The syntax used for Merge Tags is entirely up to you. Curly brackets, square bra
 
 ## Merge Content details <a href="#merge-content-details" id="merge-content-details"></a>
 
-Merge content differs from merge tags in that it allows the user to drag and drop instances of it as a content element available in the _**Content**_** panel**.
+Merge content differs from merge tags in that it allows the user to drag and drop instances of it as a content element available in the _**Content**_**&#x20;panel**.
 
 For example, let’s say you have a section of an email where you want to display some recommended products: Merge Content allows you to insert some syntax into the message that your application will replace with the recommended products at the time the email is sent.
 

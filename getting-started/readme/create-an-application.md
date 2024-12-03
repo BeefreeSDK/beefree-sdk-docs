@@ -17,7 +17,7 @@ layout:
 
 ## Overview
 
-In this article, we will discuss how to sign up for an account in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu), create an application, and obtain your Client ID and Client Secret.&#x20;
+In this article, we will discuss how to sign up for an account in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu), create an application, and obtain your Client ID and Client Secret.&#x20;
 
 This article will cover steps for the following processes:
 
@@ -33,7 +33,7 @@ Take the following steps to sign up for a Beefree SDK account and subscribe to t
 
 1.  Navigate to the [Developer Console Sign Up page](https://developers.beefree.io/accounts/signup/).
 
-    **Note:** If you already have an account, navigate to the [Developer Console Login page instead](https://developers.beefree.io/accounts/login/?from=website\_menu).
+    **Note:** If you already have an account, navigate to the [Developer Console Login page instead](https://developers.beefree.io/accounts/login/?from=website_menu).
 2.  Complete the required information to sign up or login.
 
     You will be redirected to the dashboard.
@@ -126,6 +126,5 @@ For 24 hours after regenerating a new Client Secret, you will temporarily have a
 
 * Create [development applications](development-applications.md)
 * [Configuration parameters](installation/configuration-parameters/)
-* [Toggle on features](../toggle-on-features.md)
 * [Server-side options](../../server-side-configurations/server-side-options/)
 * [Sample code](../sample-code.md)

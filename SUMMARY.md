@@ -18,7 +18,6 @@
   * [Manage Subscriptions](getting-started/readme/manage-subscriptions.md)
 * [Tracking Message Changes](getting-started/tracking-message-changes.md)
 * [Sample Code](getting-started/sample-code.md)
-* [Toggle On Features](getting-started/toggle-on-features.md)
 
 ## Visual Builders
 

@@ -81,8 +81,8 @@ The image width in pixels
 The image height in pixels
 
 When the height is not provided, the API applies a proportional value based on the given width, keeping the image aspect ratio. When the Height value is provided, but not proportional to the given width:\
-_If it’s higher:_ the proportional value applies\
-_If it’s lower:_ the image is cropped
+&#xNAN;_&#x49;f it’s higher:_ the proportional value applies\
+&#xNAN;_&#x49;f it’s lower:_ the image is cropped
 
 Check our [reference documentation on how to use the API to get images from an HTML file](content-services-api-reference.md).
 
