@@ -1,0 +1,295 @@
+openapi: 3.0.0
+info:
+  title: Email to Page Conversion
+  description: API endpoint for converting an email JSON template to a page JSON template.
+  version: 1.0.0
+servers:
+  - url: https://api.getbee.io
+    description: Base URL for the API
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Enter Dev Console API Key as Bearer token
+paths:
+  /v1/conversion/email-to-page:
+    post:
+      summary: Convert Email JSON to Page JSON
+      description: Converts an email JSON template to a page JSON template, ensuring compatibility by converting or removing unsupported blocks.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: JSON payload with the email template to be converted
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                template:
+                  type: object
+                  description: A BeeFree template in JSON format
+                  required: true
+                  properties:
+                    page:
+                      type: object
+                      description: Page structure of the template
+                      properties:
+                        body:
+                          type: object
+                          properties:
+                            container:
+                              type: object
+                              properties:
+                                style:
+                                  type: object
+                                  properties:
+                                    backgroundColor:
+                                      type: string
+                                      description: Background color of the container
+                                      example: '#FFFFFF'
+                            content:
+                              type: object
+                              properties:
+                                computedStyle:
+                                  type: object
+                                  properties:
+                                    linkColor:
+                                      type: string
+                                      description: Link color in the content
+                                      example: '#0068A5'
+                                    messageBackgroundColor:
+                                      type: string
+                                      description: Background color for the message area
+                                      example: 'transparent'
+                                    messageWidth:
+                                      type: string
+                                      description: Width of the message area
+                                      example: '500px'
+                                style:
+                                  type: object
+                                  properties:
+                                    color:
+                                      type: string
+                                      description: Font color for the text
+                                      example: '#000000'
+                                    fontFamily:
+                                      type: string
+                                      description: Font family for the text
+                                      example: 'Arial, Helvetica, sans-serif'
+                        description:
+                          type: string
+                          description: Template description
+                          example: "Empty template for BEE"
+                        rows:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              columns:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    gridColumns:
+                                      type: integer
+                                      description: Number of grid columns in the row
+                                      example: 12
+                                    modules:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          type:
+                                            type: string
+                                            description: Module type
+                                          descriptor:
+                                            type: object
+                                            description: Module descriptor with styling and content attributes
+                                            properties:
+                                              computedStyle:
+                                                type: object
+                                                properties:
+                                                  hideContentOnAmp:
+                                                    type: boolean
+                                                  hideContentOnHtml:
+                                                    type: boolean
+                                                  hideContentOnDesktop:
+                                                    type: boolean
+                                                  hideContentOnMobile:
+                                                    type: boolean
+                                              paragraph:
+                                                type: object
+                                                properties:
+                                                  html:
+                                                    type: string
+                                                    description: Paragraph HTML content
+                                                    example: "<p>I'm a new paragraph block.</p>"
+                                                  style:
+                                                    type: object
+                                                    properties:
+                                                      color:
+                                                        type: string
+                                                        example: '#000000'
+                                                      fontSize:
+                                                        type: string
+                                                        example: '14px'
+                                                      fontFamily:
+                                                        type: string
+                                                        example: 'inherit'
+                                          uuid:
+                                            type: string
+                                            example: 'c8ecedba-4891-46fa-9aec-1f4ef3276914'
+                                          locked:
+                                            type: boolean
+                                            example: false
+                                    style:
+                                      type: object
+                                      description: Style for the column
+                                      properties:
+                                        backgroundColor:
+                                          type: string
+                                          example: 'transparent'
+                                        paddingTop:
+                                          type: string
+                                          example: '5px'
+                    template:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          description: Template name
+                          example: 'template-base'
+                        type:
+                          type: string
+                          description: Template type
+                          example: 'basic'
+                        version:
+                          type: string
+                          description: Template version
+                          example: '2.0.0'
+                    title:
+                      type: string
+                      description: Title of the template
+                      example: 'Empty Template'
+      responses:
+        '200':
+          description: Successful conversion to page JSON template
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  page:
+                    type: object
+                    properties:
+                      body:
+                        type: object
+                        properties:
+                          container:
+                            type: object
+                            properties:
+                              style:
+                                type: object
+                                properties:
+                                  backgroundColor:
+                                    type: string
+                                    example: '#FFFFFF'
+                          content:
+                            type: object
+                            properties:
+                              computedStyle:
+                                type: object
+                                properties:
+                                  linkColor:
+                                    type: string
+                                    example: '#0068A5'
+                                  messageBackgroundColor:
+                                    type: string
+                                    example: 'transparent'
+                                  messageWidth:
+                                    type: string
+                                    example: '900px'
+                              style:
+                                type: object
+                                properties:
+                                  color:
+                                    type: string
+                                    example: '#000000'
+                                  fontFamily:
+                                    type: string
+                                    example: 'Arial, Helvetica, sans-serif'
+                      description:
+                        type: string
+                        example: "Empty template for BEE"
+                      rows:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            columns:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  gridColumns:
+                                    type: integer
+                                    example: 12
+                                  modules:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        type:
+                                          type: string
+                                          example: 'mailup-bee-newsletter-modules-paragraph'
+                                        descriptor:
+                                          type: object
+                                          properties:
+                                            computedStyle:
+                                              type: object
+                                              properties:
+                                                hideContentOnAmp:
+                                                  type: boolean
+                                                hideContentOnHtml:
+                                                  type: boolean
+                                                hideContentOnDesktop:
+                                                  type: boolean
+                                                hideContentOnMobile:
+                                                  type: boolean
+                                            paragraph:
+                                              type: object
+                                              properties:
+                                                html:
+                                                  type: string
+                                                  example: "<p>I'm a new paragraph block.</p>"
+                                                style:
+                                                  type: object
+                                                  properties:
+                                                    color:
+                                                      type: string
+                                                      example: '#000000'
+                                                    fontSize:
+                                                      type: string
+                                                      example: '14px'
+                                                    fontFamily:
+                                                      type: string
+                                                      example: 'inherit'
+                                        uuid:
+                                          type: string
+                                          example: 'c8ecedba-4891-46fa-9aec-1f4ef3276914'
+                                        locked:
+                                          type: boolean
+                                          example: false
+      examples:
+        NodeJS:
+          summary: Fetch JSON Response in NodeJS
+          value: |
+            const response = await fetch('https://api.getbee.io/v1/conversion/email-to-page', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer <token>' },
+              body: JSON.stringify({ "template": { /* email JSON here */ } }),
+            });
+            const data = await response.json(); // Fetch JSON response
+            console.log(data); // Log the JSON response

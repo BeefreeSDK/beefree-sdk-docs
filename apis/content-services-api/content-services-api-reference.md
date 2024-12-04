@@ -44,14 +44,15 @@ All API access is over HTTPS, and accessed from the following URL:
 
 The following table lists the available collection option and corresponding resources for each collection.
 
-| Collection  | Available Resources                                   |
-| ----------- | ----------------------------------------------------- |
-| `/message`  | `html`, `pdf`, `images`, `merge`, `index, plain-text` |
-| `/page`     | `html`, `pdf`, `images`, `merge`, `index`             |
-| `/popup`    | `html`                                                |
-| `/amp`      | `html`                                                |
-| `/template` | `brand`                                               |
-| `/ai`       | `metadata`, `sms`, `summary`                          |
+| Collection    | Available Resources                                   |
+| ------------- | ----------------------------------------------------- |
+| `/message`    | `html`, `pdf`, `images`, `merge`, `index, plain-text` |
+| `/page`       | `html`, `pdf`, `images`, `merge`, `index`             |
+| `/popup`      | `html`                                                |
+| `/amp`        | `html`                                                |
+| `/template`   | `brand`                                               |
+| `/ai`         | `metadata`, `sms`, `summary`                          |
+| `/conversion` | `email-to-page`, `page-to-email`                      |
 
 ### Example URLs
 
@@ -95,6 +96,18 @@ The following section provides detailed information for each of the resources as
 
 **URL:** `https://api.getbee.io/v1/{collection}/image`
 
+Prior to using the image endpoint, ensure you reference the following information.
+
+The HTML is rendered in a fixed window size of 1920x1080 to generate a screenshot, with default viewport widths of 320 pixels for mobile and 1024 pixels for desktop, which may cause cropped previews if the content exceeds these dimensions. A clipping size of 1920x1080 is applied, but it can be customized, and the scale factor adjusts to align the viewport and clipping dimensions. For improved results, using auto height with the size parameter is recommended.
+
+| Name         | Type    | Description                                                                                                                                                                                                                                                                                                                        |
+| ------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| html\*       | String  | A Beefree HTML message.                                                                                                                                                                                                                                                                                                            |
+| size         | String  | Use “size” instead of “width” and “height” when you only know the width and want the height automatically calculated. **Required** if width and height are not defined.                                                                                                                                                            |
+| width        | Integer | The image width in pixels. **Required** if size is not defined.                                                                                                                                                                                                                                                                    |
+| height       | Integer | The image height in pixels. Default applies a proportional value based on the given width, keeping the image aspect ratio. When the value is not proportional to the given width, either will occur: If it’s higher, the proportional value applies, or, if it’s lower, the image is cropped. **Required** if size is not defined. |
+| file\_type\* | String  | Accepts jpg or png.                                                                                                                                                                                                                                                                                                                |
+
 {% swagger src="../../.gitbook/assets/image_endpoint.yaml" path="/v1/{collection}/image" method="post" %}
 [image_endpoint.yaml](../../.gitbook/assets/image_endpoint.yaml)
 {% endswagger %}
@@ -135,7 +148,7 @@ When utilizing this feature, it's important to consider adding a handle to the m
 [merge_index_endpoint.yaml](../../.gitbook/assets/merge_index_endpoint.yaml)
 {% endswagger %}
 
-### AI Collection
+## AI Collection
 
 The resources in the AI collection accept your template JSON and use generative AI to return text within a JSON object to you.
 
@@ -174,3 +187,58 @@ Prior to getting started with the resources in this collection, ensure you have 
 {% swagger src="../../.gitbook/assets/summary_endpoint.yaml" path="/v1/ai/summary" method="post" %}
 [summary_endpoint.yaml](../../.gitbook/assets/summary_endpoint.yaml)
 {% endswagger %}
+
+## Conversion Collection
+
+The Conversion Collection provides you with endpoints that enable you to convert templates from one format to another. With the **Email to Page** endpoint, you can easily convert your email JSON templates into page JSON. The **Page to Email** endpoint lets you turn your page JSON templates into email-ready JSON, with the option to disable the HTML sanitizer if needed.&#x20;
+
+### Email-to-Page Conversion: Key Behaviors
+
+The Email to Page endpoint converts a JSON template created for email into a JSON template optimized for web pages. During this conversion, the following adjustments are applied:
+
+* **Remove AMP Carousel**\
+  Any AMP carousels included in the email template are removed, as these are not supported in the page format.
+* **Expand Content Area Width**\
+  The content width is expanded to 900px to fit the web page format, removing the width constraints typically applied to emails.
+* **Target Attributes**\
+  Target attributes will not be processed. Remove all link target attributes or set them to "Open a new page." Links will not be modified during the conversion.
+* **Remove Subject and Preheader**\
+  Email-specific metadata, such as the subject line and preheader text, is removed since these elements are not relevant in the page format.
+* **Retain Comments and Secondary Language**\
+  Comments and secondary language data in the email template are preserved in the conversion process.
+
+{% swagger src="../../.gitbook/assets/email-to-page-conversion.yaml" path="/v1/conversion/email-to-page" method="post" %}
+[email-to-page-conversion.yaml](../../.gitbook/assets/email-to-page-conversion.yaml)
+{% endswagger %}
+
+### Page to Email Conversion: Important Behaviors
+
+The Page to Email endpoint transforms a JSON template designed for a web page into a JSON template optimized for email. During this conversion process, the following adjustments are made:
+
+* **Remove Video Row Backgrounds**\
+  Video backgrounds applied to page rows are removed because email formats do not support video backgrounds.
+* **Replace Embedded Videos with Thumbnails**\
+  Embedded videos are replaced with thumbnail images. This ensures recipients can preview the content visually without the compatibility issues of embedded videos.\
+  **Note:** Hosted videos will not be converted.
+* **Remove Form Blocks**\
+  Any form blocks present in the page template are removed.
+* **Adjust Design Content Area Width**\
+  If the page width exceeds the maximum width supported by the email builder (900px), it is resized to fit within email constraints.
+* **Update Link Target Attributes**\
+  Target attributes will not be processed. Remove all link target attributes. Links will not be modified during the conversion.
+*   **Sanitize Code**\
+    The endpoint sanitizes the code to ensure compatibility with email standards. When the sanitizer is disabled, the payload looks like this:
+
+    ```json
+    {
+      "disableHtmlSanitizer": true,
+      "template": { "page": ... }
+    }
+    ```
+* **Handle Multi-Column Layouts**\
+  The email builder supports up to 12 columns, which is compatible with the page builder's column configurations.
+
+{% swagger src="../../.gitbook/assets/page-to-emai-conversion.yaml" path="/v1/conversion/page-to-email" method="post" %}
+[page-to-emai-conversion.yaml](../../.gitbook/assets/page-to-emai-conversion.yaml)
+{% endswagger %}
+
