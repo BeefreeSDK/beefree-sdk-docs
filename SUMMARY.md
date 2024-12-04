@@ -87,6 +87,7 @@
 * [Mobile Design Mode](other-customizations/mobile-design-mode.md)
 * [Multi-Language Templates](other-customizations/multi-language-templates.md)
 * [Cards Style and Image Round Corners](other-customizations/cards-style-and-image-round-corners.md)
+* [Hover Effect for Buttons](other-customizations/hover-effect-for-buttons.md)
 
 ## APIs
 

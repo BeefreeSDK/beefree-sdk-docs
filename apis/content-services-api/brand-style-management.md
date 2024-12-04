@@ -151,6 +151,10 @@ The styles parameter in the request should follow this JSON format:
 
 Each block style can include attributes such as colors, fonts, borders, and more, depending on your brand's requirements. For additional code samples of each content block type and its respective style customization options, reference the [Content Defaults schema page](https://docs.beefree.io/content-defaults/).
 
+{% hint style="danger" %}
+**Note:** The `mobileStyles` and `hoverStyles` properties are not supported by the Brand Style Management API.
+{% endhint %}
+
 #### Template <a href="#id-6ac40siq79ge" id="id-6ac40siq79ge"></a>
 
 The template parameter should contain your template's JSON structure. Ensure that the JSON structure aligns with the template you intend to update.

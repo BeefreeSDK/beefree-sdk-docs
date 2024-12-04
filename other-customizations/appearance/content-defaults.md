@@ -269,7 +269,7 @@ The button content default in the BeeConfig specifies the appearance and behavio
 
 button: {
   label: "My New Label",
-  href: "http://www.google.com",
+  href: "http://www.google.com ",
   width: "35%",
   styles: {
     color: "#ffffff",
@@ -304,6 +304,14 @@ button: {
     textAlign: "center",
     fontSize: "40px",
   },
+  hoverStyles:{
+    color: "#FFFFFF"
+    backgroundColor: "#16688B",
+    borderBottom: "0px solid transparent",
+    borderLeft: "0px solid transparent",
+    borderRight: "0px solid transparent",
+    borderTop: "0px solid transparent",
+  }
 }
 
 ```
