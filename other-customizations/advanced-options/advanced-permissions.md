@@ -2005,6 +2005,29 @@ The following code shows an example config for how you can display or hide these
 
 ```
 
+## **Brand Tones Settings**
+
+The following code snippet provides an example configuration for integrating the [AI Writing Assistant](https://docs.beefree.io/beefree-sdk/~/changes/3EjxmC5rAYEIQ0JKR16k/builder-addons/addons/partner-addons/openai-addon) AddOn with advanced permission settings for managing access and permissions to **Brand Tones**:
+
+```javascript
+const beeConfig = {
+  uid: 'unique_user_id', // Unique identifier for the user
+  addOns: [
+    {
+      id: "ai-integration", // Identifier for the AI integration add-on
+      settings: {
+        isBrandTonesEnabled: true, // Mandatory to enable the Brand Tones feature
+        canAddBrandTones: true, // Optional: Allow the user to add new Brand Tones
+        canDeleteBrandTones: false, // Optional: Prevent the user from deleting existing Brand Tones
+        canEditBrandTones: true, // Optional: Allow the user to edit existing Brand Tones
+        canSelectBrandTones: true // Optional: Allow the user to select Brand Tones for use
+      }
+    }
+  ],
+  // Other configurations
+};
+```
+
 ## Role templates <a href="#role-templates" id="role-templates"></a>
 
 We’ve put together a few JSON templates of custom roles created with Advanced permissions, so you can get started experimenting with this powerful feature.
