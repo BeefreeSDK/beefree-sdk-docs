@@ -14,6 +14,7 @@ These providers include:
 * Azure Cognitive Vision
 * DeepL
 * Stability AI
+* Anthropic
 
 <figure><img src="../../../../.gitbook/assets/CleanShot 2024-04-04 at 12.04.07.png" alt=""><figcaption></figcaption></figure>
 

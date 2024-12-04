@@ -14,7 +14,7 @@ Beefree SDK is a toolkit that offers a comprehensive set of features to enable y
 * **File manager:** A tool to manage [media assets](file-manager/file-manager-application-overview/) (images, PDFs, and so on).
 * **Template catalog:** A [catalog of design templates](apis/template-catalog-api.md) that integrate industry best practices to support end users in getting across the finish line with their creations fast, and achieving quick design wins.
 * **Custom AddOns:** Expand your application's offering by developing your own [Custom AddOns](builder-addons/addons/custom-addons/) on top of our comprehensive suite of features.
-* **AI Writing Assistant:** A helpful [AI assistant](builder-addons/addons/partner-addons/openai-addon/) to help end users write their design content.
+* **AI Writing Assistant:** A helpful [AI assistant](builder-addons/addons/partner-addons/ai-writing-assistant/) to help end users write their design content.
 
 These builders can easily integrate into your application in a matter of minutes. Browse the latest [sample code](https://www.npmjs.com/package/@beefree.io/sdk), implementation guides, and other available features in this documentation.&#x20;
 
@@ -36,7 +36,7 @@ Learn more about our [File Manager](file-manager/file-manager-application-overvi
 
 Learn more about how our builder AddOns can help you customize your application's offerings.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td>OpenAI</td><td></td><td><a href="builder-addons/addons/partner-addons/openai-addon/">openai-addon</a></td><td><a href=".gitbook/assets/Style=Line-108.png">Style=Line-108.png</a></td></tr><tr><td></td><td>Partner AddOns</td><td></td><td><a href="builder-addons/addons/partner-addons/">partner-addons</a></td><td><a href=".gitbook/assets/Style=Solid-432.svg">Style=Solid-432.svg</a></td></tr><tr><td></td><td>Custom AddOns</td><td></td><td><a href="builder-addons/addons/custom-addons/addon-development.md">addon-development.md</a></td><td><a href=".gitbook/assets/Style=Solid-287.svg">Style=Solid-287.svg</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td>OpenAI</td><td></td><td><a href="builder-addons/addons/partner-addons/ai-writing-assistant/">ai-writing-assistant</a></td><td><a href=".gitbook/assets/Style=Line-108.png">Style=Line-108.png</a></td></tr><tr><td></td><td>Partner AddOns</td><td></td><td><a href="builder-addons/addons/partner-addons/">partner-addons</a></td><td><a href=".gitbook/assets/Style=Solid-432.svg">Style=Solid-432.svg</a></td></tr><tr><td></td><td>Custom AddOns</td><td></td><td><a href="builder-addons/addons/custom-addons/addon-development.md">addon-development.md</a></td><td><a href=".gitbook/assets/Style=Solid-287.svg">Style=Solid-287.svg</a></td></tr></tbody></table>
 
 ## Content Services API and Template Catalog API <a href="#welcome" id="welcome"></a>
 
@@ -56,7 +56,7 @@ Browse our sample code to experiment and gain hands-on experience. Get up and ru
 
 ## Developer Essentials <a href="#about-this-documentation" id="about-this-documentation"></a>
 
-Get your free Client ID and Client Secret in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu) to get started. Experiment with customizing a configuration in the playground. When you're ready, install Beefree SDK.
+Get your free Client ID and Client Secret in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu) to get started. Experiment with customizing a configuration in the playground. When you're ready, install Beefree SDK.
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>Developer Console</td><td></td><td></td><td><a href="https://developers.beefree.io/accounts/login/?from=website_menu">https://developers.beefree.io/accounts/login/?from=website_menu</a></td><td><a href=".gitbook/assets/Style=Solid-285.svg">Style=Solid-285.svg</a></td></tr><tr><td>Playground</td><td></td><td></td><td><a href="https://developers.beefree.io/playground">https://developers.beefree.io/playground</a></td><td><a href=".gitbook/assets/Style=Solid-244.svg">Style=Solid-244.svg</a></td></tr><tr><td>Install Beefree SDK</td><td></td><td></td><td><a href="getting-started/readme/installation/">installation</a></td><td><a href=".gitbook/assets/Style=Line-551.png">Style=Line-551.png</a></td></tr></tbody></table>
 

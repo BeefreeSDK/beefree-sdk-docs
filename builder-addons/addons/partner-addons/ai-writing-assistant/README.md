@@ -6,9 +6,9 @@ The AI Writing Assistant AddOn is only available for [Superpowers](https://devel
 
 ## AI Writing Assistant Overview <a href="#overview" id="overview"></a>
 
-Use this AddOn to enable the AI Writing Assistant for your end users. This AddOn allows users to generate text within their designs using AI, helping them complete their designs faster and more efficiently. This AddOn integrates with OpenAI or Azure OpenAI as the providers for this feature.
+Use this AddOn to enable the AI Writing Assistant for your end users. This AddOn allows users to generate text within their designs using AI, helping them complete their designs faster and more efficiently. This AddOn integrates with OpenAI, Azure OpenAI, or Anthropic as the providers for this feature.
 
-With this feature, your end users will see a “Write with AI” button for Title, Paragraph, List, and Button content blocks. Beefree SDK processes your end users' prompts, sends them to your AI provider, and returns the response to the end user. They can then decide to apply or regenerate the response.
+With this feature, your end users will see a **Write with AI** button for Title, Paragraph, List, and Button content blocks. Beefree SDK processes your end users' prompts, sends them to your AI provider, and returns the response to the end user. They can then decide to apply or regenerate the response.
 
 By integrating the AI Writing Assistant, you provide your end users with a powerful tool to complete their designs quickly, which helps them maintain a competitive edge. This AddOn is quick and simple to integrate.
 
@@ -18,28 +18,16 @@ The following image provides an example of how the AI Writing Assistant looks to
 
 Visit our [Integrated AI Assistant White label end user guide](https://docs.beefree.io/end-user-guide/integrated-ai-assistant) to learn more about how this feature works on the frontend for your application's end users.
 
-{% hint style="info" %}
-**Important:** The OpenAI AddOn is now the AI Writing Assistant AddOn with the addition of a new provider: Azure OpenAI. You can use either [OpenAI](https://openai.com/) or [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service) to activate the AI Writing Assistant.
-{% endhint %}
-
-## What is Azure OpenAI?
-
-[Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service) is a service offered by Microsoft Azure that provides access to OpenAI's language models, such as GPT-4, integrated within the Azure ecosystem. This integration allows users to leverage the robust cloud infrastructure, security, compliance, and scalability features of Azure, making it an attractive choice for enterprises seeking a seamless and secure AI solution.&#x20;
-
-### How is it different from OpenAI?
-
-[OpenAI](https://openai.com/) directly offers its models through its own API, which may be more straightforward for developers and small businesses looking for a quick, standalone implementation. The primary difference between the two lies in the integration and additional features provided by Azure, such as enhanced data privacy and the ability to easily combine with other Azure services. However, Azure OpenAI may require more familiarity with the [Azure platform](https://learn.microsoft.com/en-us/azure/?product=popular).
-
 ### How to activate the AI Writing Assistant
 
-This section discusses the prerequisites and steps you need to take to get started with this feature. You can watch the following [How to change your AI provider | Beefree SDK video](https://www.youtube.com/watch?v=\_FybVH28DR4) for visual steps on how to activate the AddOn and add or change providers. Or, you can continue reading the documentation in this section for a step-by-step breakdown of how to activate the AddOn and add or change providers. &#x20;
+This section discusses the prerequisites and steps you need to take to get started with this feature. You can watch the following [How to change your AI provider | Beefree SDK video](https://www.youtube.com/watch?v=_FybVH28DR4) for visual steps on how to activate the AddOn and add or change providers. Or, you can continue reading the documentation in this section for a step-by-step breakdown of how to activate the AddOn and add or change providers. &#x20;
 
 {% embed url="https://www.youtube.com/watch?v=_FybVH28DR4" %}
 
 #### Prerequisites
 
-* Azure OpenAI or OpenAI account and credentials
-* AI Writing Assistant AddOn enabled in the developer console
+* Azure OpenAI, OpenAI, or Anthropic account and credentials.
+* AI Writing Assistant AddOn enabled in the Developer Console.
 
 #### Switch Providers
 
@@ -56,9 +44,11 @@ Take the following steps to switch providers:
 
 \*The following information is required for each provider.
 
-| OpenAI                                 | Azure OpenAI                                                                      |
-| -------------------------------------- | --------------------------------------------------------------------------------- |
-| <ul><li>Name</li><li>API Key</li></ul> | <ul><li>Name</li><li>API Key</li><li>URL Provider</li><li>Deployment ID</li></ul> |
+#### Required Provider Information
+
+| OpenAI                                              | Azure OpenAI                                                                                   | Anthropic                                           |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| <ul><li>Name</li><li>API Key</li><li>Type</li></ul> | <ul><li>Name</li><li>API Key</li><li>URL Provider</li><li>Deployment ID</li><li>Type</li></ul> | <ul><li>Name</li><li>API Key</li><li>Type</li></ul> |
 
 #### Manage Providers
 
@@ -72,14 +62,18 @@ When managing your providers, you will have the following options:
 
 #### Additional considerations
 
-* Azure OpenAI and OpenAI are the only provider options for the AI Writing Assistant.
+* Azure OpenAI, OpenAI, and Anthropic are the only provider options for the AI Writing Assistant.
 * Cognitive Vision is the provider for the Alt text generation with AI feature.
+
+{% hint style="info" %}
+For provider-specific information and configuration instructions, reference the [Available Providers documentation](available-providers/).
+{% endhint %}
 
 ## Customize the AddOn's Configuration
 
 In certain scenarios, you may find the need to personalize both the user interface (UI) and the operational features of the AI Writing Assistant AddOn. This is particularly applicable when you want to achieve objectives such as:
 
-1. **Monitoring Token Usage for Cost Management:** By tracking the number of tokens being used, you can effectively manage and regulate your expenses related to using the AI Writing Assistant AddOn. This becomes important when your usage is high, and you must keep a budget check. [Learn more about tokens.](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them)
+1. **Monitoring Token Usage for Cost Management:** By tracking the number of tokens being used, you can effectively manage and regulate your expenses related to using the AI Writing Assistant AddOn. This becomes important when your usage is high, and you must keep a budget check. Learn more about configuring [Token Upselling](token-upselling.md).
 2. **Controlling Access to the Prompt:** You might want to limit who can access and manipulate the prompt. In a shared environment, for instance, you may want to restrict certain users from altering the prompt, which is crucial for maintaining consistency and avoiding unwanted changes.
 3. **Enabling Per User or Per Content Type:** You might want to limit who can access the AI so you can up-sell the feature to end-users. Or, you may only want to enable the AI capability for specific content types, such as paragraphs vs. buttons.
 4. **Disabling Automatic Suggestions:** The AI Writing Assistant AddOn can generate automatic suggestions at the prompt, which may not always be desirable. In such cases, you might want to disable this feature to have more control over the input and output at the prompt.
@@ -421,7 +415,7 @@ Below are the preset prompt suggestions we have identified for the different con
 Prior to configuring the AI Writing Assistant AddOn, consider the following:
 
 * Scrolling behavior
-* [AI Providers and Data Security](open-ai-and-data-security.md)
+* [AI Providers and Data Security](data-security.md)
 
 ### Scrolling Behavior
 
@@ -462,4 +456,4 @@ The following image shows an example of this result:&#x20;
 
 ### AI Providers and Data Security
 
-Visit our [AI Providers and Data Security page](open-ai-and-data-security.md) to learn more about the flow of your end user's information from prompt creation to generated response.
+Visit our [AI Providers and Data Security page](data-security.md) to learn more about the flow of your end user's information from prompt creation to generated response.

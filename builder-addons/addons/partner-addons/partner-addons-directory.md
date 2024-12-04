@@ -6,7 +6,7 @@ These AddOns need to be [installed from your Beefree SDK Console](installing-par
 
 ## Custom AI Writing Assistant <a href="#openai" id="openai"></a>
 
-The Custom AI Writing Assistant AddOn enables host applications to integrate their own LLM models with Beefree SDK. This allows host applications to provide their end users with advanced AI writing capabilities that are specific to their domains. Using the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md), this AddOn employs the same entry points as the [AI writing assistant](openai-addon/), allowing full control over the AI experience within your application. Once your Custom AI Writing Assistant AddOn is fully configured, the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md) displays the modal you created within the user interface when end users click the **Write with AI** button in the sidebar.&#x20;
+The Custom AI Writing Assistant AddOn enables host applications to integrate their own LLM models with Beefree SDK. This allows host applications to provide their end users with advanced AI writing capabilities that are specific to their domains. Using the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md), this AddOn employs the same entry points as the [AI writing assistant](ai-writing-assistant/), allowing full control over the AI experience within your application. Once your Custom AI Writing Assistant AddOn is fully configured, the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md) displays the modal you created within the user interface when end users click the **Write with AI** button in the sidebar.&#x20;
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2024-09-17 at 22.22.54@2x.png" alt=""><figcaption></figcaption></figure>
 
@@ -18,7 +18,7 @@ The Stability AI AddOn converts text to images. This feature allows your end use
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2024-09-18 at 11.01.46.png" alt=""><figcaption></figcaption></figure>
 
-[How do I enable the Stability AI AddOn?](partner-addons-directory.md#openai) | [AI Providers and Data Security](openai-addon/open-ai-and-data-security.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)&#x20;
+[How do I enable the Stability AI AddOn?](partner-addons-directory.md#openai) | [AI Providers and Data Security](ai-writing-assistant/data-security.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)&#x20;
 
 ## DeepL  <a href="#openai" id="openai"></a>
 
@@ -26,11 +26,11 @@ Through this AddOn and [Multi-language templates](../../../other-customizations/
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2024-09-18 at 11.02.26.png" alt=""><figcaption></figcaption></figure>
 
-[How do I enable the DeepL AddOn?](deepl.md) | [AI Providers and Data Security](openai-addon/open-ai-and-data-security.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)&#x20;
+[How do I enable the DeepL AddOn?](deepl.md) | [AI Providers and Data Security](ai-writing-assistant/data-security.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)&#x20;
 
 ## AI Writing Assistant <a href="#openai" id="openai"></a>
 
-Empower users to generate text quickly with AI. With this AddOn, your end users will see a new “Write with AI” button for Title, Paragraph, List, and Button content blocks. Beefree SDK processes your end users' prompts, sends them to your AI provider, and returns the response to the end user. They can then decide to apply or regenerate the response. By integrating the AI Writing Assistant, you provide your end users with a powerful tool to complete their designs quickly, which helps them maintain a competitive edge. Choose between [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service/?ef\_id=\_k\_Cj0KCQjwwae1BhC\_ARIsAK4JfrxKm9iAYpFxdsG338x\_u9X0GZpyFYL2a4lsLLy4Kib2MTsseC7Qpz0aAoPKEALw\_wcB\_k\_\&OCID=AIDcmm5edswduu\_SEM\_\_k\_Cj0KCQjwwae1BhC\_ARIsAK4JfrxKm9iAYpFxdsG338x\_u9X0GZpyFYL2a4lsLLy4Kib2MTsseC7Qpz0aAoPKEALw\_wcB\_k\_\&gad\_source=1\&gclid=Cj0KCQjwwae1BhC\_ARIsAK4JfrxKm9iAYpFxdsG338x\_u9X0GZpyFYL2a4lsLLy4Kib2MTsseC7Qpz0aAoPKEALw\_wcB) or [OpenAI](https://openai.com/) as providers for this feature, our AddOn is quick and simple to integrate.
+Empower users to generate text quickly with AI. With this AddOn, your end users will see a new “Write with AI” button for Title, Paragraph, List, and Button content blocks. Beefree SDK processes your end users' prompts, sends them to your AI provider, and returns the response to the end user. They can then decide to apply or regenerate the response. By integrating the AI Writing Assistant, you provide your end users with a powerful tool to complete their designs quickly, which helps them maintain a competitive edge. Choose between [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service/?ef_id=_k_Cj0KCQjwwae1BhC_ARIsAK4JfrxKm9iAYpFxdsG338x_u9X0GZpyFYL2a4lsLLy4Kib2MTsseC7Qpz0aAoPKEALw_wcB_k_\&OCID=AIDcmm5edswduu_SEM__k_Cj0KCQjwwae1BhC_ARIsAK4JfrxKm9iAYpFxdsG338x_u9X0GZpyFYL2a4lsLLy4Kib2MTsseC7Qpz0aAoPKEALw_wcB_k_\&gad_source=1\&gclid=Cj0KCQjwwae1BhC_ARIsAK4JfrxKm9iAYpFxdsG338x_u9X0GZpyFYL2a4lsLLy4Kib2MTsseC7Qpz0aAoPKEALw_wcB) or [OpenAI](https://openai.com/) as providers for this feature, our AddOn is quick and simple to integrate.
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2024-07-31 at 15.25.31.png" alt=""><figcaption></figcaption></figure>
 

@@ -12,7 +12,7 @@ This AddOn is available on Beefree SDK [Enterprise](https://developers.beefree.i
 
 ## Overview
 
-The Custom AI Writing Assistant AddOn enables host applications to integrate their own LLM models with Beefree SDK. This allows host applications to provide their end users with advanced AI writing capabilities that are specific to their domains. Using the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md), this AddOn employs the same entry points as the [AI writing assistant](openai-addon/), allowing full control over the AI experience within your application. Once your Custom AI Writing Assistant AddOn is fully configured, the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md) displays the modal you created within the user interface when end users click the **Write with AI** button in the sidebar.&#x20;
+The Custom AI Writing Assistant AddOn enables host applications to integrate their own LLM models with Beefree SDK. This allows host applications to provide their end users with advanced AI writing capabilities that are specific to their domains. Using the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md), this AddOn employs the same entry points as the [AI writing assistant](ai-writing-assistant/), allowing full control over the AI experience within your application. Once your Custom AI Writing Assistant AddOn is fully configured, the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md) displays the modal you created within the user interface when end users click the **Write with AI** button in the sidebar.&#x20;
 
 This AddOn is compatible with the following modules:
 
@@ -35,7 +35,7 @@ Prior to getting started with the configuration, ensure you have the following:
 
 * Enterprise plan
 * A custom LLM service to call from within the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md)
-* Access to the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu)
+* Access to the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu)
 
 ## **Configuration Steps**
 
@@ -51,7 +51,7 @@ These steps are the following:
 
 Take the following steps to install and enable the AddOn:
 
-1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu).
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
 2. Click on the **Details** button corresponding to the application you'd like to configure the AddOn for.
 3. Go to the **AddOns** section and click **Browse AddOns**.
 4. Search for and select the **Custom AI Writing Assistant** AddOn.
@@ -61,7 +61,7 @@ Take the following steps to install and enable the AddOn:
 **Note:** You can revisit this page in the future by clicking **Edit** in the AddOn card to turn the AddOn on or off as needed.
 
 {% hint style="warning" %}
-Once you activate the **Custom AI Writing Assistant AddOn** with your own LLM, you cannot activate the [AI Writing Assistant AddOn](openai-addon/), which uses either OpenAI or Azure OpenAI models. Only one of these two AddOns can be active.&#x20;
+Once you activate the **Custom AI Writing Assistant AddOn** with your own LLM, you cannot activate the [AI Writing Assistant AddOn](ai-writing-assistant/), which uses either OpenAI or Azure OpenAI models. Only one of these two AddOns can be active.&#x20;
 {% endhint %}
 
 ### **Content Dialog Configuration**&#x20;
@@ -181,5 +181,5 @@ This will update the button text from "Write with AI" to "Generate copy."
 
 Consider the following when using the Custom AI Writing Assistant AddOn:
 
-* You can reference the [AI Writing Assistant](openai-addon/) [End user documentation](https://docs.beefree.io/end-user-guide/ai-writing-assistant) as an example of how engaging with AI features looks like for end users.
+* You can reference the [AI Writing Assistant](ai-writing-assistant/) [End user documentation](https://docs.beefree.io/end-user-guide/ai-writing-assistant) as an example of how engaging with AI features looks like for end users.
 * We are committed to maintaining the highest standards of security to protect your data at every level. For more information on our security practices, visit our [GDPR and Cybersecurity page](https://developers.beefree.io/gdpr-and-cybersecurity).

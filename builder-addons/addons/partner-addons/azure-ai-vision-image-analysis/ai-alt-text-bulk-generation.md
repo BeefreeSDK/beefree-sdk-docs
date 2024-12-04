@@ -82,7 +82,7 @@ The type of images they can create alt-text for are the following:
 * GIFs
 * Custom AddOn Images
 
-If they do not have sufficient image tokens in their account, you can redirect them to [purchase additional image tokens](../openai-addon/token-upselling.md) prior to performing the bulk generation. &#x20;
+If they do not have sufficient image tokens in their account, you can redirect them to [purchase additional image tokens](../ai-writing-assistant/token-upselling.md) prior to performing the bulk generation. &#x20;
 
 ## Multi-Language Templates Compatibility
 

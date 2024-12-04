@@ -78,7 +78,7 @@ onError: function(errorMessage) { /* Implements function to handle error message
 
 ## OnInfo Callback
 
-The `onInfo` callback is specifically designed for the [AI Writing Assistant AddOn](../../builder-addons/addons/partner-addons/openai-addon/) and provides real-time usage data with each response, without storing or tracking the information. It also notifies your application when a user clicks on **Apply** for any AI-generated text suggestion.
+The `onInfo` callback is specifically designed for the [AI Writing Assistant AddOn](../../builder-addons/addons/partner-addons/ai-writing-assistant/) and provides real-time usage data with each response, without storing or tracking the information. It also notifies your application when a user clicks on **Apply** for any AI-generated text suggestion.
 
 To configure this in your app, add the `onInfo` callback to your [beeConfig](../../getting-started/readme/installation/configuration-parameters/):
 

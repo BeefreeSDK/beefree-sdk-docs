@@ -31,7 +31,7 @@ To active alternate text generation with AI in your Beefree SDK Developer Consol
 6. Toggle “Enable” to on
 7. Insert your Azure API Key and Endpoint
 
-**Note:** If you do not yet have an Azure API Key and Endpoint, navigate to the [Microsoft Azure Configuration Steps](https://docs.google.com/document/d/1\_bToJB4U06SvsxphJHKUKsssz7hzoAE4Gbqfa76Mjbo/edit#heading=h.8k1sgzr7vogd) of this guide.
+**Note:** If you do not yet have an Azure API Key and Endpoint, navigate to the [Microsoft Azure Configuration Steps](https://docs.google.com/document/d/1_bToJB4U06SvsxphJHKUKsssz7hzoAE4Gbqfa76Mjbo/edit#heading=h.8k1sgzr7vogd) of this guide.
 
 <figure><img src="../../../../.gitbook/assets/CleanShot-2023-11-03-at-12.26.07.png" alt=""><figcaption></figcaption></figure>
 
@@ -133,7 +133,7 @@ let imagesAvailable = 5
 
 **Note:** In this example, the end user can only make five requests in total, after the fifth request, the end user will no longer be able to generate alternate text. The number five is defined in the configuration and can be customized. For example, if `imagesAvailable` is set ten, the end user will be able to perform ten requests.
 
-3. In the AddOn settings, `isIconDisabled` is configured to automatically disable the Alternate Text Generation with AI feature when the counter reaches zero. However, through the [Token Upselling](../openai-addon/token-upselling.md) notification banner, application end users will have the opportunity to purchase more images and regain access to the feature.&#x20;
+3. In the AddOn settings, `isIconDisabled` is configured to automatically disable the Alternate Text Generation with AI feature when the counter reaches zero. However, through the [Token Upselling](../ai-writing-assistant/token-upselling.md) notification banner, application end users will have the opportunity to purchase more images and regain access to the feature.&#x20;
 
 ```javascript
 
@@ -296,7 +296,7 @@ For more information on potential errors and error codes, reference the [Azure C
 
 ## Additional Considerations
 
-The AI Alternate Text Generator is compatible with token upselling. The token upselling feature notifies the end users when their token usage is running low and when it is completely out. Both notifications include an option for the end user to purchase more tokens. The appearance of these notifications are customizable. Read the [Token Upselling documentation](../openai-addon/token-upselling.md) to learn more about configuring token upselling within your host application.
+The AI Alternate Text Generator is compatible with token upselling. The token upselling feature notifies the end users when their token usage is running low and when it is completely out. Both notifications include an option for the end user to purchase more tokens. The appearance of these notifications are customizable. Read the [Token Upselling documentation](../ai-writing-assistant/token-upselling.md) to learn more about configuring token upselling within your host application.
 
 ## FAQs <a href="#faqs" id="faqs"></a>
 
