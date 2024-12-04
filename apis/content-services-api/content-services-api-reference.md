@@ -192,7 +192,7 @@ Prior to getting started with the resources in this collection, ensure you have 
 
 The Conversion Collection provides you with endpoints that enable you to convert templates from one format to another. With the **Email to Page** endpoint, you can easily convert your email JSON templates into page JSON. The **Page to Email** endpoint lets you turn your page JSON templates into email-ready JSON, with the option to disable the HTML sanitizer if needed.&#x20;
 
-### Email-to-Page Conversion: Key Behaviors
+### Email to Page Conversion: Important Behaviors
 
 The Email to Page endpoint converts a JSON template created for email into a JSON template optimized for web pages. During this conversion, the following adjustments are applied:
 
