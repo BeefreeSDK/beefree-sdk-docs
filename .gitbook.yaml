@@ -99,9 +99,9 @@ redirects:
   rows/custom-rows/loading-custom-rows-from-your-ui: rows/reusable-content/create/pre-build/implement-custom-rows.md
   rows/custom-rows/displaying-saved-rows: rows/reusable-content/create/save/implement-self-hosted-saved-rows.md
   rows/custom-rows/generating-custom-rows-from-existing-content: rows/reusable-content/create/save/implement-self-hosted-saved-rows.md
-  rows/custom-rows/extending-custom-rows-with-content-dialog: rows/reusable-content.md
-  rows/saved-rows: rows/reusable-content/create/save.md
-  rows/saved-rows/save-rows-overview: rows/reusable-content/create/save.md
+  rows/custom-rows/extending-custom-rows-with-content-dialog: rows/reusable-content/create/pre-build/implement-custom-rows.md
+  rows/saved-rows: rows/reusable-content/create/save/implement-self-hosted-saved-rows.md
+  rows/saved-rows/save-rows-overview: rows/reusable-content/create/save/implement-self-hosted-saved-rows.md
   rows/saved-rows/save-rows-video-tutorial: rows/reusable-content/create/save/implement-self-hosted-saved-rows.md
   rows/saved-rows/edit-single-row-mode: rows/reusable-content/sync/initialize-edit-single-row-mode.md
   rows/saved-rows/synced-rows: rows/reusable-content/sync/implement-synced-rows.md
