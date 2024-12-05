@@ -17,19 +17,19 @@ Here’s an example of our Beefree product, which integrates Beefree SDK, taking
 
 The toolbar in the application contains explicit call-to-action text links to load footers, which correspond to different categories of Custom Rows in the application.
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FqREnptqd4WoUiEm40b0y%252FCTAs-for-rows.jpg%3Falt%3Dmedia%26token%3D2fe13193-3dff-4e6f-9057-56e1ba603ea9&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=390df095&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/CleanShot 2024-12-04 at 20.49.45.png" alt=""><figcaption></figcaption></figure>
 
 When users click on “Mailchimp Footers”, the Custom Rows Content Dialog is triggered, meaning that the builder opens a communication channel with your application. In this case, no additional UI will be displayed, as the host application provides the URL to the rows associated with that call-to-action. This way, the Rows tab will be immediately selected, with the “Mailchimp Footers” category already selected:
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252F7qGTMCYBM4VQePj342JK%252F2Showing-custom-rows.png%3Falt%3Dmedia%26token%3D83142623-197a-45af-9f27-99d677d25545&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=9b53ffc9&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/CleanShot 2024-12-04 at 20.50.05.png" alt=""><figcaption></figcaption></figure>
 
 But what if you wanted users to select the email footers they need from a large catalog of pre-built content? In that scenario, you could have a more generic “Load footers” call-to-action in the toolbar.
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FBBuBYzC8dIq9xZCePNBJ%252F3Load-footers.jpeg%3Falt%3Dmedia%26token%3Da4ffb11e-5f6b-4892-9ded-03c79056037d&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=c555c40d&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/CleanShot 2024-12-04 at 20.50.27.png" alt=""><figcaption></figcaption></figure>
 
 Clicking on “Load Footers” will once again trigger the _Custom Rows content dialog_, but this time the application could provide a dialog window where users can browse or search through available footers, and get some additional context on them. Here is a visual example of how it might look like, but as with all content dialogs you have complete freedom on what to show:
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252F2AY9Y71IYu8gmyD6As4e%252F4Footers-content-dialog_s.jpeg%3Falt%3Dmedia%26token%3D23cfe433-bb9c-4dd1-887b-098efbd6dc8e&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=d805b5e5&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/CleanShot 2024-12-04 at 20.50.46.png" alt=""><figcaption></figcaption></figure>
 
 When users click on MailChimp, the modal window fades off, the builder switches to the “Rows” tab, and the MailChimp Footers are shown, ready to be dragged into the message.
 
@@ -76,7 +76,7 @@ From the perspective of your users, this additional configuration adds a new ite
 
 Here is a visual example of how the “Search products” label will be shown, at the bottom of the _Rows_ drop-down.
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FZCmQGHuwEdnoteu3xz2H%252FCustomRows_ContentDialog_01.jpg%3Falt%3Dmedia%26token%3D801b797a-faa8-4548-a653-39892c1b680d&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=d67cfa86&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/CleanShot 2024-12-04 at 20.51.07.png" alt=""><figcaption></figcaption></figure>
 
 ### **Initializing the dialog** <a href="#initializing-the-dialog" id="initializing-the-dialog"></a>
 
@@ -84,11 +84,11 @@ When the user clicks on the new menu item (e.g., “Search products” in the ex
 
 You can use this event to display a form where the user can search for new items to insert in the message. Here is a visual example:
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FJ5FR3uegkM7aEityFgyF%252F2productsearch-1024x992.jpeg%3Falt%3Dmedia%26token%3D7046d990-5d85-4292-911e-27c9acdbee31&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=26223d16&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/CleanShot 2024-12-04 at 20.51.24.png" alt=""><figcaption></figcaption></figure>
 
 You could also ask the user to enter parameters that will affect the very structure of the rows (JSON documents) that will be imported into the editor, affecting the way they will display:
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FM3XKNZcf72bjlrq7gAje%252F3product_layout.jpeg%3Falt%3Dmedia%26token%3D762b3fac-da78-4a48-968a-b6610fc9e748&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=7d968389&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/CleanShot 2024-12-04 at 20.52.04.png" alt=""><figcaption></figcaption></figure>
 
 You can also mix both forms in a 2-step pattern.
 
@@ -108,7 +108,7 @@ This response will:
 1. Create a new drop-down choice with the provided name
 2. Display the rows provided by the URL in the rows panel
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FEDZpeXmL0t7Y5Fg8xdGL%252F4results.jpeg%3Falt%3Dmedia%26token%3D0a5dd716-7c4e-4dc5-a2ef-6f05ce8369a2&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=347a869&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/CleanShot 2024-12-04 at 20.52.22.png" alt=""><figcaption></figcaption></figure>
 
 Notice that in the rows list, names returned by the Content Dialog display as highlighted elements to give them further visibility over starting choices.
 
@@ -124,7 +124,7 @@ This creates a new drop-down choice, keeping the previous results as selectable 
 
 Here is a visual example:
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FSP7mlr5iy454HsW9UjmF%252F5Search_multiple.jpeg%3Falt%3Dmedia%26token%3Dd409fb29-dd00-4ec5-aee5-0698db81a780&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=df0f0d69&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/CleanShot 2024-12-04 at 20.52.39.png" alt=""><figcaption></figcaption></figure>
 
 #### **Live example** <a href="#live-example" id="live-example"></a>
 
@@ -132,7 +132,7 @@ In our example, we are using this event to display a search form and transfer th
 
 The form is part of the application, so we are using the same elements and styles that users of the application are used to.
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FU1uQRIwRqjYpRMBjblfH%252F6example_form-1024x939.jpeg%3Falt%3Dmedia%26token%3D359d53ba-f96e-4bff-b4f6-716fa3555c91&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=1d981c47&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/CleanShot 2024-12-04 at 20.54.21.png" alt=""><figcaption></figcaption></figure>
 
 ## Displaying Saved Rows
 

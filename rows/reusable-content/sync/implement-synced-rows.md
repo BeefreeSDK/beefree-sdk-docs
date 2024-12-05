@@ -53,7 +53,7 @@ If you need a refresher, check out:
 
 Here’s a **sample implementation for the Metadata Content Dialog**, offering the synced row option:
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252F5H7ef8hD2RRLpeJQh3DY%252Fsynced_rows_cd_choices.png%3Falt%3Dmedia%26token%3D35db8ef9-f48d-4def-bca3-d89ad1e22be0&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=4ae4e33a&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2024-12-04 at 20.56.10.png" alt=""><figcaption></figcaption></figure>
 
 The JSON returned to the builder includes the user’s input and selections from the UI. The configuration below shows the new synced row setting applied to the options argument of the resolve method.
 
@@ -83,13 +83,13 @@ contentDialog: {
 
 Look for the pencil icon at the top-right of synced rows. Rows without this icon are standard saved rows. The icon provides a clear visual cue for quickly identifying and editing synced rows.
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FjV5vmC5lvMaVeEsU2BgG%252F2sync_row_edit_icon.png%3Falt%3Dmedia%26token%3D9c4a28db-1aeb-448f-8826-9d1575da4ff4&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=44fb05a0&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2024-12-04 at 20.56.35.png" alt=""><figcaption></figcaption></figure>
 
 ## Editing synced rows <a href="#editing-synced-rows" id="editing-synced-rows"></a>
 
 To edit a synced row, click the pencil icon. Editing options appear in the sidebar panel. Inside, you’ll find a CTA button and optional text.
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252Ft3W6cU6jVnSaINpqYRh4%252F3image-11-300x179.png%3Falt%3Dmedia%26token%3Dfe41bd46-c02c-49c8-8375-f0fa99370523&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=c2828cda&#x26;sv=2" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2024-12-04 at 20.56.53.png" alt=""><figcaption></figcaption></figure>
 
 The CTA button opens the `editSyncedRow` Content Dialog, allowing the host application to interact with the end-user and receive their selection.
 
@@ -103,7 +103,7 @@ The host application has complete control over the content dialog and UX. Howeve
 1. Edit the row across all designs.
 2. Unsync the row, turning it into a standard saved row.
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FzHijGehdJOEOSYzOytyg%252Fsynced_rows_cd_edit_choices.png%3Falt%3Dmedia%26token%3Df3191739-9655-49a5-91e3-e80615682701&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=36e412d7&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2024-12-04 at 20.57.12.png" alt=""><figcaption></figcaption></figure>
 
 The first option, to edit the row across all designs, allows users to make changes to the synced row that will be reflected in all designs that use it.
 
@@ -134,7 +134,7 @@ A comprehensive reference of the `editSyncedRow` Content Dialog settings, such a
 
 The following animation shows this **example of edit synced rows workflow** in action. We’ll dive into this process in the following sections.
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FMqYoCr7xink1jzA4ciuS%252F5Edit_Synced_Row.gif%3Falt%3Dmedia%26token%3Dcd66b7a3-5b15-45e1-9581-6535803a64ef&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=34394926&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2024-12-04 at 20.57.50.gif" alt=""><figcaption></figcaption></figure>
 
 ## Example synced rows workflow <a href="#example-synced-rows-workflow" id="example-synced-rows-workflow"></a>
 

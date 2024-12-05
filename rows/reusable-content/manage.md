@@ -24,7 +24,7 @@ The search is performed against all elements of the array (i.e., both visible an
 
 All textual content included in the selected array – including image file names – is used to find a match.
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FkThABDJNSrBf65eGewUP%252F4CR_search.png%3Falt%3Dmedia%26token%3Dc1047f53-0806-4669-ae14-3207b4c66edc&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=411e40f6&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2024-12-04 at 20.59.03.png" alt=""><figcaption></figcaption></figure>
 
 ## **Display order** <a href="#display-order" id="display-order"></a>
 
@@ -62,7 +62,7 @@ The first ordering factor refers to the **type of row** (empty, default, custom)
 
 You would list `defaultRows` before `emptyRows`to obtain the order shown in the following screenshot:
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FrqfnZHGZTqJZSs0w0AN1%252F8rows_custom.png%3Falt%3Dmedia%26token%3Dc35c7295-42dd-42c4-9f56-cc60488c7c12&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=180ec588&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2024-12-04 at 20.59.20.png" alt=""><figcaption></figcaption></figure>
 
 ### **External content order** <a href="#external-content-order" id="external-content-order"></a>
 
@@ -101,7 +101,7 @@ The following section discusses how to configure the Saved Rows Management categ
 
 Accessing, and organizing saved rows is intuitive with Saved Rows Management. With this feature, there is an available action in the list of saved rows that your application can intercept to handle changes in this list itself. This means you can delete, rename, or re-organize your saved rows inside the builder.
 
-<figure><img src="../../.gitbook/assets/5savedrowsmanagement.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2024-12-04 at 20.59.48.gif" alt=""><figcaption></figcaption></figure>
 
 ### How to implement
 

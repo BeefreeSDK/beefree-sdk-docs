@@ -58,7 +58,7 @@ Default rows are a set of rows that contain sample content. That’s why we also
 
 They are presented as follows in the builder’s default theme (the screenshot shows the first 2 default rows):
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FrtcF6QKySIwpoIwJKmqL%252F6rows_default.png%3Falt%3Dmedia%26token%3D5e799c5e-8065-4d08-8593-5d312b494f94&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=b7c4d22&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/CleanShot 2024-12-04 at 20.48.17.png" alt=""><figcaption></figcaption></figure>
 
 ## Empty Rows
 
@@ -72,7 +72,7 @@ Will always be included as the last element if omitted in the configuration.
 
 They are presented as follows in the builder’s default theme (the screenshot shows the first 4 empty rows with unique structures):
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FuVeV6D6mzm8YhVzV436c%252F5rows_empty.png%3Falt%3Dmedia%26token%3Da472bdb4-104f-4804-a099-20db7ca58c58&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=55a82f06&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/CleanShot 2024-12-04 at 20.48.44.png" alt=""><figcaption></figcaption></figure>
 
 ## Set a Pre-selected Row Type <a href="#selectedrowtype" id="selectedrowtype"></a>
 
@@ -104,7 +104,7 @@ externalContentURLs: [
 
 The following image displays an example of how the `name` value appears in the drop-down menu.
 
-<figure><img src="https://docs.beefree.io/~gitbook/image?url=https%3A%2F%2F806400411-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8c7XIQHfAtM23Dp3ozIC%252Fuploads%252FFe4qy0sUwelqFbN90pYt%252F7rows_custom.png%3Falt%3Dmedia%26token%3D9ff24720-782a-418a-9af8-2b9dfc5b9030&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=7cc54de2&#x26;sv=2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/CleanShot 2024-12-04 at 20.49.05.png" alt=""><figcaption></figcaption></figure>
 
 In the drop-down menu, you can see a visual example of each pre-built content type mentioned in this article and in [Implement Custom Rows](implement-custom-rows.md):
 
