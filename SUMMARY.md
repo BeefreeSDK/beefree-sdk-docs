@@ -128,18 +128,21 @@
 
 ## Rows
 
-* [Custom Rows](rows/custom-rows/README.md)
-  * [🤔 Understanding Custom Rows](rows/custom-rows/understanding-custom-rows.md)
-  * [🧰 How it works](rows/custom-rows/how-it-works.md)
-  * [💻 Loading Custom Rows from your UI](rows/custom-rows/loading-custom-rows-from-your-ui.md)
-  * [🖼️ Displaying Saved Rows](rows/custom-rows/displaying-saved-rows.md)
-  * [🏗️ Generating Custom Rows from existing content](rows/custom-rows/generating-custom-rows-from-existing-content.md)
-  * [🏓 Extending Custom Rows with content dialog](rows/custom-rows/extending-custom-rows-with-content-dialog.md)
-* [Saved Rows](rows/saved-rows/README.md)
-  * [💾 Saved Rows Overview](rows/saved-rows/save-rows-overview.md)
-  * [📹 Saved Rows Video Tutorial](rows/saved-rows/save-rows-video-tutorial.md)
-  * [📙 Edit Single Row Mode](rows/saved-rows/edit-single-row-mode.md)
-  * [📄 Synced Rows](rows/saved-rows/synced-rows.md)
+* [Reusable Content](rows/reusable-content/README.md)
+  * [Create Reusable Content](rows/reusable-content/create/README.md)
+    * [Pre-build Reusable Content](rows/reusable-content/create/pre-build/README.md)
+      * [Implement Custom Rows](rows/reusable-content/create/pre-build/implement-custom-rows.md)
+    * [Save Reusable Content](rows/reusable-content/create/save/README.md)
+      * [Implement Hosted Saved Rows](rows/reusable-content/create/save/implement-hosted-saved-rows.md)
+      * [Implement Self-hosted Saved Rows](rows/reusable-content/create/save/implement-self-hosted-saved-rows.md)
+  * [Sync Reusable Content](rows/reusable-content/sync/README.md)
+    * [Implement Synced Rows](rows/reusable-content/sync/implement-synced-rows.md)
+    * [Initialize Edit Single Row Mode](rows/reusable-content/sync/initialize-edit-single-row-mode.md)
+  * [Manage Reusable Content](rows/reusable-content/manage.md)
+* [Storage for Reusable Content](rows/storage/README.md)
+  * [Hosted Saved Rows](rows/storage/hosted-saved-rows.md)
+  * [Self-Hosted Saved Rows](rows/storage/self-hosted-saved-rows.md)
+* [API Endpoints for Row Management](rows/api-endpoints.md)
 
 ## Resources
 

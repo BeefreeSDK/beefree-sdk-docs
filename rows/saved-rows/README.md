@@ -1,5 +1,0 @@
-# Saved Rows
-
-Beefree SDK offers Saved Rows. Learn more about what this feature is and what it offers in the following sections.
-
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><span data-gb-custom-inline data-tag="emoji" data-code="1f4be">💾</span> Saved Rows Overview</td><td></td><td></td><td><a href="save-rows-overview.md">save-rows-overview.md</a></td></tr><tr><td><span data-gb-custom-inline data-tag="emoji" data-code="1f4f9">📹</span> Saved Rows Video Tutorial</td><td></td><td></td><td><a href="save-rows-video-tutorial.md">save-rows-video-tutorial.md</a></td></tr><tr><td><span data-gb-custom-inline data-tag="emoji" data-code="1f4d9">📙</span> Edit Single Row Mode</td><td></td><td></td><td><a href="edit-single-row-mode.md">edit-single-row-mode.md</a></td></tr><tr><td><span data-gb-custom-inline data-tag="emoji" data-code="1f4c4">📄</span> Synced Rows</td><td></td><td></td><td><a href="synced-rows.md">synced-rows.md</a></td></tr></tbody></table>

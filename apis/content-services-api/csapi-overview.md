@@ -19,7 +19,7 @@ The Content Services API (CSAPI) – helps you achieve the following:
 * Outputting partial HTML that enables you to reuse code, increase consistency across your templates, and easily maintain your code.
 * Generating a thumbnail from the HTML, because thumbnails are always nice to have, for all sorts of reasons 🙂
 * Generating a PDF from the HTML, as your users may want to share or print an email or a page, and PDF is great for that.
-* Merging shared content ([saved rows](../../rows/saved-rows/)) into emails and pages that use it (e.g. update 30 emails that use the same footer).
+* Merging shared content ([saved rows](../../rows/reusable-content/create/save/implement-self-hosted-saved-rows.md)) into emails and pages that use it (e.g. update 30 emails that use the same footer).
 * Use [Brand Style Management](brand-style-management.md) to make template-wide design changes to existing templates quickly and easily.
 * Generate [plain text](content-services-api-reference.md#plain-text) versions of emails from JSON templates, ensuring emails look sharp and easy to read on any device.
 * [Leverage AI](content-services-api-reference.md#ai-collection) to generate SMS, Metadata (Preheader and Subject), or Summary text from JSON templates.
@@ -88,7 +88,7 @@ Check our [reference documentation on how to use the API to get images from an H
 
 #### Merging saved rows in existing messages <a href="#merging-saved-rows-in-existing-messages" id="merging-saved-rows-in-existing-messages"></a>
 
-What if a footer is shared by 10 messages and needs to be updated in all of them? The [Synced Rows](../../rows/saved-rows/synced-rows.md) feature was created precisely to address the scenario of content that is shared across multiple emails, pages, or popups, and it is used in conjunction with the Content Services API.
+What if a footer is shared by 10 messages and needs to be updated in all of them? The [Synced Rows](../../rows/reusable-content/sync/implement-synced-rows.md) feature was created precisely to address the scenario of content that is shared across multiple emails, pages, or popups, and it is used in conjunction with the Content Services API.
 
 The [Merge method](content-services-api-reference.md) of the Content Services API allows you to update a row across multiple messages. More specifically, it allows the host application to update an element in an existing JSON document. This means that, for instance, you could create a feature that takes care of updating existing messages in the background, without any further action by your users.
 

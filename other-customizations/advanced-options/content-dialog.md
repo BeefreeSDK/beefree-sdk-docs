@@ -670,11 +670,11 @@ Usage example:
 
 ## Synced Rows
 
-[Synced rows](../../rows/saved-rows/synced-rows.md) are rows that are used across multiple designs, ensuring consistency when updates to a row are made. This section will cover how to configure synced rows in your application.
+[Synced rows](../../rows/reusable-content/sync/implement-synced-rows.md) are rows that are used across multiple designs, ensuring consistency when updates to a row are made. This section will cover how to configure synced rows in your application.
 
 ### **Synced Rows Configuration**
 
-The following code snippet displays an example of how to configure [synced rows](../../rows/saved-rows/synced-rows.md).
+The following code snippet displays an example of how to configure [synced rows](../../rows/reusable-content/sync/implement-synced-rows.md).
 
 ```javascript
 contentDialog: {
@@ -712,7 +712,7 @@ And here’s an example of what `notPermittedDescription` would look like:
 
 ### **Saved Rows Configuration**
 
-The following code snippet displays an example of how to configure [save rows](../../rows/saved-rows/).
+The following code snippet displays an example of how to configure [save rows](broken-reference).
 
 ```javascript
 contentDialog: {
@@ -728,9 +728,9 @@ Unlike the rest of content dialog configurations, _Save rows_ doesn’t use the 
 
 <figure><img src="../../.gitbook/assets/16saveicon-1024x134.png" alt=""><figcaption></figcaption></figure>
 
-The _Save rows_ content dialog is a mandatory step in the [Save rows](../../rows/saved-rows/) workflow.
+The _Save rows_ content dialog is a mandatory step in the [Save rows](broken-reference) workflow.
 
-The `resolve` function must return metadata for the selected row. The [_metadata_](../../rows/saved-rows/) section of the rows schema allows you to keep track of row-specific information.
+The `resolve` function must return metadata for the selected row. The [_metadata_ section](../../rows/reusable-content/create/#saved-rows-schema) of the rows schema allows you to keep track of row-specific information.
 
 The `args` object in the handler function returns to the host application metadata already applied to the selected row.
 
@@ -748,7 +748,7 @@ The following code snippet configures a save row with a specific name and catego
 
 ```
 
-This response will provide metadata that is added to the row in the asset (email, page, popup) before it’s provided through the [Save Rows callback](../../rows/saved-rows/).
+This response will provide metadata that is added to the row in the asset (email, page, popup) before it’s provided through the [Save Rows callback](../../rows/reusable-content/create/save/implement-self-hosted-saved-rows.md#save-rows-callback).
 
 The row name is the only required metadata and it’s displayed as the row title in the _Rows_ panel:
 
@@ -756,7 +756,7 @@ The row name is the only required metadata and it’s displayed as the row title
 * Displayed in the row card when the row is shown in the _Rows_ panel.
 * Used for text searches within the _Rows_ panel
 
-&#x20;Check the [Saved rows metadata section](../../rows/saved-rows/save-rows-overview.md) for further details on recommended metadata.
+&#x20;Check the [Saved rows metadata section](../../rows/reusable-content/create/#saved-rows-schema) for further details on recommended metadata.
 
 ## Forms <a href="#forms" id="forms"></a>
 

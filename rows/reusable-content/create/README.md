@@ -1,72 +1,131 @@
-# 🏗️ Generating Custom Rows from existing content
+# Create Reusable Content
 
-Custom Rows allows you to easily generate draggable rows from your application content, or other application content, without any design process or complex user interaction.
+{% hint style="info" %}
+This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Essentials plan, [upgrade a development application](../../../getting-started/readme/development-applications.md) for free to try this and other Core-level features.
+{% endhint %}
 
-## General row parameters <a href="#simplified-row-schema" id="simplified-row-schema"></a>
+The [Reusable Content page](../) discusses, on a very high-level, the differences between key row-related features offered within Beefree SDK. This page provides more detailed information on pre-building and saving reusable content.&#x20;
 
-### **name**
+## Pre-build Reusable Content
 
-The row’s name:
+### Use cases <a href="#use-cases" id="use-cases"></a>
 
-* A string of plain text that identifies the row.
-* Displayed in the row card when the row is shown in the _Rows_ panel.
-* Included in the textual content used in searches
+#### **User saved rows**
 
-### **background image**
+By enabling the [Save Rows](save/implement-self-hosted-saved-rows.md) feature, your end users will be able to save design elements that they want to use in other designs in the future.
 
-Set a row background image.
+To display saved rows in the _Rows_ tab, add them to the list of rows available to users by leveraging the [Custom Rows feature](pre-build/implement-custom-rows.md).
 
-Properties:
+<figure><img src="../../../.gitbook/assets/2Saved_Rows-1024x601.jpeg" alt=""><figcaption></figcaption></figure>
 
-* background-image: valid image url
-* background-repeat: repeat | no-repeat
-* background-position: top | bottom + left | center | right
-* background-color: #c2c2c2 // CSS value
+#### **Prebuilt rows**
 
-### **display conditions**
+When using the standard, empty rows, users are forced to start from scratch every time they introduce a new row.
 
-Set a row display condition.\
-Check the [display conditions documentation](../../other-customizations/advanced-options/display-conditions.md) for further details.
+A set of pre-built rows may accelerate message construction, providing users with commonly used structures filled with sample content. For example, a set of headers, footers, news sections, etc.
 
-Properties:
+With _Custom rows_ you – the host application – are in control of the content that is included. In some cases, providing canned text can speed up the email creation process and provide consistency across all the communications.
 
-* display-condition
-  * type
-  * label
-  * description
-  * before
-  * after
+Imagine, for example, the case of a CRM where customer success representatives can quickly build curated emails selecting from a number of pre-built text blocks.
 
-### **mobile**
+<figure><img src="../../../.gitbook/assets/3CR_text_samples-1024x708.jpeg" alt=""><figcaption></figcaption></figure>
 
-Disable stacking on mobile.  Set the value to “false” to disable stacking on mobile.  If the value is “true”, or not provided, the columns will stack on mobile.
+## **Default rows**
 
-* colStackOnMobile: true | false
+In addition to the _empty rows_ that have always been part of the Beefree SDK system, we now provide a set of _default rows_ that you can add to your application with a simple configuration parameter.
 
-### **columns**
+They feature a series of popular structures, filled with placeholder text, images, and buttons.
 
-List of the row columns. Each column type is identified with a weight parameter to indicate how much horizontal space they fill.\
-We use a 12-column grid with the following values as available combinations:
+For some users, they may work better than _empty rows_ as they allow them to immediately visualize what they can accomplish with a specific structure.
 
-* 12
-* 9, 3
-* 8, 4
-* 6, 6
-* 6, 3, 3
-* 4, 8
-* 4, 4, 4
-* 3, 9
-* 3, 3, 6
-* 3, 6, 3
-* 3, 3, 3, 3
+<figure><img src="../../../.gitbook/assets/4CR_defaults-1024x653.jpeg" alt=""><figcaption></figcaption></figure>
 
-All the columns weight inside a row must sum 12 as the total value.
+Reference [Rows Configuration](https://docs.beefree.io/beefree-sdk/custom-rows/displaying-saved-rows#rows-configuration) to learn more about how to configure these sample rows.
 
-## Simplified Row Schema
+## **User/campaign tailored contents**
 
-This simplified row schema is designed to help you structure and validate rows. It allows you to define rows that contain columns, which can hold various design elements like buttons, images, text, and more, all while enforcing clear rules for responsiveness, styling, and structure. Its simplicity lies in its modular approach: each column and module follows a predictable pattern with reusable definitions like padding and predefined options for properties like alignment and color.
+Does your application onboard users asking for company or brand information?
 
-You can reference the simplified schema in the following code snippet:
+If so, you can use _custom rows_ to provide footers with legal information already applied (and centralized), header designs that already include the company logo, etc.
+
+Other common use cases:
+
+* Approved promotional material
+* QR codes or barcodes
+* Advertising content
+* Product recommendation templates
+
+<figure><img src="../../../.gitbook/assets/5CR_contents-1024x541.jpeg" alt=""><figcaption></figcaption></figure>
+
+Check how to configure these sample rows below under _Rows configuration > Parameters > Default rows_
+
+## **Blog updates and other news**
+
+Create _custom rows_ with content from different sources like blogging platforms, content management systems, etc.
+
+This will allow your customers to save time and reduce errors by avoiding copying and pasting text, links, and images.
+
+Additionally, this helps you ensure that only reviewed and approved contents, provided by a common repository, are used in the message creation.
+
+<figure><img src="../../../.gitbook/assets/6CR_blog_example-1024x769.jpeg" alt=""><figcaption></figcaption></figure>
+
+## **E-commerce products**
+
+Transform products from your e-commerce catalog into _custom rows_, using product images, text, and call to actions to create a promotional message with a few clicks.
+
+You can divide the products into categories and feed them into the builder as different arrays of _custom rows_.
+
+Or you can use different sets of _custom rows to_ provide different layout options in order to add design flexibility.
+
+<figure><img src="../../../.gitbook/assets/7CR_products_example-1024x643.jpeg" alt=""><figcaption></figcaption></figure>
+
+## Save Reusable Content
+
+Saved Rows allows users to select a row in a message and save it for later use. More specifically, it allows users to submit a request to the host application to save a piece of content and turn it into a reusable element. The host application, using the [Custom Rows](pre-build/implement-custom-rows.md) feature, can feed these saved elements back to the builder as rows that can be dragged into other messages.
+
+In this tutorial, you will learn how to implement Saved Rows in an application that has embedded Beefree SDK.
+
+{% embed url="https://youtu.be/OEn5DzW--Ns" %}
+
+Also, see the [sample code](https://github.com/BEE-Plugin/bee-plugin-webinars-demo-code)!
+
+### How it works <a href="#how-it-works" id="how-it-works"></a>
+
+When the feature is enabled, a new **Save** icon is added to the action icons when a row is selected:
+
+<figure><img src="../../../.gitbook/assets/saveicon-1024x134.png" alt=""><figcaption></figcaption></figure>
+
+The same action is also available in the row properties panel when a row is selected:
+
+<figure><img src="../../../.gitbook/assets/2saveicon_properties-300x210.png" alt=""><figcaption></figcaption></figure>
+
+By clicking on this icon, users trigger a request to the host application to store the row’s JSON document, which includes:
+
+* row structure and settings;
+* contents and their settings;
+* all style settings.
+
+It is entirely up to the host application:
+
+* where to store the JSON documents that describe these saved rows;
+* if and how to display them to users of the application;
+* whether to allow users to edit them individually
+* when and how to feed them back to the builder, using the [Custom Rows](pre-build/implement-custom-rows.md) feature.
+
+## Schemas
+
+There are two schemas that are important to understand and utilize when working with both Custom Rows and Self-hosted Saved Rows.&#x20;
+
+These schemas are the following:
+
+* [Simplified Rows Schema](./#simplified-rows-schema)
+* [Saved Rows Metadata Schema](./#saved-rows-schema)
+
+Throughout the subsequent pages, these two schemas and their applications will be referenced and discussed more thoroughly.&#x20;
+
+### Simplified Rows Schema
+
+The following code snippet provides an example of the Simplified Rows Schema.&#x20;
 
 ```json
 {
@@ -567,137 +626,57 @@ You can reference the simplified schema in the following code snippet:
 }
 ```
 
-### **modules**
+### Saved rows schema <a href="#saved-rows-schema" id="saved-rows-schema"></a>
 
-List of content modules inside a column
+The following is the basic structure of the row’s JSON schema. Simply put, the schema is the structure of your saved rows data feed.
 
-### **type**
+```
 
-Every module is identified by a type parameter. Available types are:
+[
+    {
+        metadata: {
+            name: 'My row name' // Identifies the row, required.
+        }
+        columns: { ... }
+        ...
+    }, // The row that was previously saved. - (*)
+    ...
+]
+```
 
-* _title_
-* _paragraph_
-* _image_
-* _button_
-* _divider_
-* _HTML_
+**NOTE**: The row schema is complex and we do not recommend creating rows programmatically. Therefore, there is no schema reference of the row itself. However, you can add your own parameters to the row’s metadata or use our [Simplified Row Schema](https://docs.beefree.io/beefree-sdk/rows/custom-rows/generating-custom-rows-from-existing-content) to generate them programmatically from existing content.
 
-Each module type has a set of available options. If none is included, the editor will use the default values.
+The _metadata_ section of the rows schema allows you to keep track of row-specific information.
 
-## Content types scheme and parameters <a href="#content-types-scheme-and-parameters" id="content-types-scheme-and-parameters"></a>
+```
 
-### **Text**
-
-```javascript
-
-{
-  "type": "title",
-  "text": "I'm a headline."
-}, {
-  "type": "paragraph",
-  "text": "I can be a long paragraph, a short sentence, or a simple word."
+metadata: {
+    "name": "My Saved Row", // The row's title displayed in the "Rows" panel.
+    "tags": "product, two columns, blue",
+    ... additional custom parameters
 }
-
 ```
 
-**title** adds the text with the following attributes:
+#### **Required metadata** <a href="#required-metadata" id="required-metadata"></a>
 
-* Font-size: 18px
-* Font-weight: Bold
-* Text-align: left
+**name The saved row’s title displayed in the&#x20;**_**Rows**_**&#x20;panel.**
 
-**paragraph** will use the following formatting:
+* A string of plain text that identifies the row.
+* Displayed in the row card when the row is shown in the _Rows_ panel.
+* Used for text searches within the _Rows_ panel
 
-* Font-size: 14px
-* Text-align: left
+**Recommended metadata**
 
-**text** contains the string that will be displayed as content:
+**category** A category can be useful for organizing your feeds on the Rows tab.
 
-* Must be a plain text string
-* Quotation marks must be escaped to be compliant with the JSON format
-* If not included, a default “Loren Ipsum” text string will be used
+**id** A handle that identifies the row in the host application’s data storage.
 
-## **Additional text parameters**
+**idParent** Useful to track rows that were saved from previously saved rows. Keeping track of where a row came from allows you to implement additional editing features.
 
-```javascript
+**dateCreated** The date the row was created: useful for filtering/sorting rows for content management purposes in your application. It can also help with technical support tasks.
 
-"align": "center" "left" "right"
-"size": integer // value in px
-"bold": boolean
-"italic": boolean
-"underline": boolean
-"color": "#CFCFCF"
-"linkColor": "#CFCFCF"
+**dateModified** The date a saved row was updated: useful for filtering/sorting rows for content management purposes in your application. It can also help with technical support tasks.
 
-```
+**userId** To let your application decide whom can edit or saved rows.
 
-### **Image**
-
-```javascript
-
-{
-    "type": "image",
-    "src": "https://static.pexels.com/photos/248280/pexels-photo-248280.jpeg",
-    "href": "https://www.beefree.io", //optional 
-    "alt": "This is a sample image", //optional 
-    "dynamicSrc": "http://srcto/dynamic/src" //optional 
-}
-
-```
-
-**src** image public URL
-
-**href** Image action URL (link)
-
-**alt** alternate text
-
-**dynamicSrc** when added, the content applies the dynamic image behavior and uses the value as dynamic URL
-
-### **Button**
-
-```javascript
-
-{
-  "type": "button",
-  "text": "Read more",
-  "href": "https://lipsum.com"
-},{
-  "module": "button",
-  "text": "Keep in touch",
-  "href": "mailto:growth@beefree.io?subject=Custom content test&body=Sent from a custom button"
-}
-
-```
-
-**text** text string that will be displayed as the button content. Must be a plain text string.
-
-If not included, a default text string will be used
-
-**href** button action URL (link)
-
-### **Additional button parameters**
-
-```javascript
-
-"color": "#CFCFCF"
-"background-color": "#C2C2C2"
-
-```
-
-### **Divider**
-
-```javascript
-
-{"type":"divider"}
-
-```
-
-Currently there are no additional parameters.
-
-### **HTML**
-
-```json
-
-{"type":"html","html":"<div class=\'our-class\'>This is custom HTML.<\/div>"}
-
-```
+**tags** Useful to create filters, management, search, and in general to organize the content in your application.

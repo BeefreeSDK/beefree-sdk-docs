@@ -2,7 +2,7 @@
 
 ## API billing: why we are charging for this API <a href="#api-billing-why-we-are-charging-for-this-api" id="api-billing-why-we-are-charging-for-this-api"></a>
 
-The [Content Services API (CSAPI)](./) allows you to carry out a number of [useful tasks](content-services-api-reference.md), like converting an email or a page into a thumbnail image or a PDF document, or updating a footer into all the emails that use it (i.e. a [_saved row_](../../rows/saved-rows/)).
+The [Content Services API (CSAPI)](./) allows you to carry out a number of [useful tasks](content-services-api-reference.md), like converting an email or a page into a thumbnail image or a PDF document, or updating a footer into all the emails that use it (i.e. a [_saved row_](../../rows/reusable-content/create/save/implement-self-hosted-saved-rows.md)).
 
 These tasks consume resources in our Amazon Web Services environment, so we have to account for that. We did extensive research to define pricing that is consistent with other APIs.
 

@@ -203,7 +203,7 @@ Additionally, there are some other limitations that are specific to the Merge Co
 3. The HTML might be created outside of Beefree SDK, which could lead to rendering issues when it’s inserted into the message.
 4. Since the HTML is created elsewhere, and it’s not part of the document created by Beefree SDK, it must be managed separately.
 
-Due to these additional limitations, we now recommend an alternative approach to Merge Content in order to handle dynamic content in Beefree SDK: utilizing [Custom Rows](../../rows/custom-rows/) with Merge Content & Display Conditions.
+Due to these additional limitations, we now recommend an alternative approach to Merge Content in order to handle dynamic content in Beefree SDK: utilizing [Custom Rows](../../rows/reusable-content/create/pre-build/implement-custom-rows.md) with Merge Content & Display Conditions.
 
 ## Further extending the builder <a href="#further-extending-the-builder" id="further-extending-the-builder"></a>
 

@@ -74,7 +74,7 @@ When enabled, it will give users the ability to _Undo_ or _Redo_ any changes tha
 
 ## Save rows feature <a href="#save-rows-feature" id="save-rows-feature"></a>
 
-This will allow users to select a row in the current message and save it for later use. More [about Saved Rows](../../rows/saved-rows/).
+This will allow users to select a row in the current message and save it for later use. More [about Saved Rows](broken-reference).
 
 ## Import from external source in file manager <a href="#import-from-external-source-in-file-manager" id="import-from-external-source-in-file-manager"></a>
 

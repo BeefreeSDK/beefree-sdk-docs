@@ -6,7 +6,7 @@ This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.
 
 ## When to use it <a href="#when-to-use-it" id="when-to-use-it"></a>
 
-This feature allows the host application to pass custom headers when it triggers a call to their services. The custom headers are added to [FSP calls](../../server-side-configurations/server-side-options/storage-options/connect-your-file-storage-system.md) and to [Custom Rows](../../rows/custom-rows/) calls.
+This feature allows the host application to pass custom headers when it triggers a call to their services. The custom headers are added to [FSP calls](../../server-side-configurations/server-side-options/storage-options/connect-your-file-storage-system.md) and to [Custom Rows](../../rows/reusable-content/create/pre-build/implement-custom-rows.md) calls.
 
 For example, this could be useful for the security teams of , which would like to pass a JWT (JSON Web Token) when the user, through the file manager, triggers a call to their [Custom File System Provider API](../../server-side-configurations/server-side-options/storage-options/connect-your-file-storage-system.md).
 

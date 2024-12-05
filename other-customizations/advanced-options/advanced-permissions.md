@@ -428,6 +428,46 @@ beeConfig: {
 
 The **`rows`** object in **Beefree SDK** allows you to manage the behavior and appearance of rows in the editor. You can control what users can do with rows, such as adding, deleting, or moving them. Additionally, you can set permissions for properties like background color, stacking behavior on mobile, and visibility settings. Configuring the **`rows`** object ensures users can work with rows in a controlled way, customizing their content without altering crucial layout elements.
 
+### **Hosted Saved Rows**
+
+Hosted Saved Rows includes advanced permissions to control how rows and categories are accessed and managed. These permissions allow you to define user capabilities, such as editing or deleting rows.
+
+#### **Available Permissions**
+
+* **`canDeleteHostedRow`:** Allows or prevents deleting hosted rows.
+* **`canEditHostedRow`:** Enables or disables editing of hosted rows.
+* **`canManageHostedRowCategory`:** Controls whether end users can manage row categories.
+* **`canAddHostedRowCategory`:** Determines if end users can add new categories.
+
+#### **Permission Behavior**
+
+* If both `canDeleteHostedRow` and `canEditHostedRow` are set to `false`, the row menu will be hidden.
+* If both `canManageHostedRowCategory` and `canAddHostedRowCategory` are set to `false`, the category management menu will be hidden.
+
+#### **Example Configuration**
+
+The following configuration displays an example of the `rows` object inside of `advancedPermissions`:
+
+```javascript
+{
+...
+advancedPermissions:{
+  ...
+  rows:{
+    behaviors: {
+        canDeleteHostedRow: false,
+        canEditHostedRow: false,
+        canManageHostedRowCategory: false,
+        canAddHostedRowCategory: false,
+      },
+    ...
+  },
+  ...
+  }
+...
+}
+```
+
 ### Rows Addon
 
 The following code demonstrates how to specify behavior settings for individual row addons. A custom row addon can have its behaviors set independently from the global row settings.
