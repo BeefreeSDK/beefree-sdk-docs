@@ -93,8 +93,8 @@ redirects:
   builder-addons/addons/partner-addons/openai-addon/open-ai-and-data-security: builder-addons/addons/partner-addons/ai-writing-assistant/data-security.md
   builder-addons/addons/partner-addons/openai-addon/ai-generated-meta-tag-fields: builder-addons/addons/partner-addons/ai-writing-assistant/ai-generated-meta-tag-fields.md
   builder-addons/addons/partner-addons/openai-addon/token-upselling: builder-addons/addons/partner-addons/ai-writing-assistant/token-upselling.md
-  rows/custom-rows: rows/reusable-content/create/pre-build.md
-  rows/custom-rows/understanding-custom-rows: rows/reusable-content/create/pre-build.md
+  rows/custom-rows: rows/reusable-content/create/pre-build/implement-custom-rows.md
+  rows/custom-rows/understanding-custom-rows: rows/reusable-content/create.md
   rows/custom-rows/how-it-works: rows/reusable-content/create/pre-build/implement-custom-rows.md
   rows/custom-rows/loading-custom-rows-from-your-ui: rows/reusable-content/create/pre-build/implement-custom-rows.md
   rows/custom-rows/displaying-saved-rows: rows/reusable-content/create/save/implement-self-hosted-saved-rows.md
