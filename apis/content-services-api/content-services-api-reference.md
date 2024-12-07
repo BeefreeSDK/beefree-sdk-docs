@@ -72,6 +72,10 @@ The following section provides detailed information for each of the resources as
 [html_endpoint.yaml](../../.gitbook/assets/html_endpoint.yaml)
 {% endswagger %}
 
+{% hint style="info" %}
+Include the optional `newbutton` query string parameter and set its value to `true` to generate HTML button results optimized for Outlook. Reference [HTML Outlook Button Rendering](../../rendering/html-outlook-button.md) for additional details.
+{% endhint %}
+
 ### Plain Text
 
 **Endpoint:** `/message/plain-text`

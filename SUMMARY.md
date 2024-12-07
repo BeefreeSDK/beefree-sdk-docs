@@ -144,6 +144,10 @@
   * [Self-Hosted Saved Rows](rows/storage/self-hosted-saved-rows.md)
 * [API Endpoints for Row Management](rows/api-endpoints.md)
 
+## Rendering
+
+* [HTML Outlook Button Rendering](rendering/html-outlook-button.md)
+
 ## Resources
 
 * [Error Management](resources/error-management/README.md)
