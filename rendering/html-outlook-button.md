@@ -4,6 +4,10 @@ description: Use newbutton for improved HTML button rendering in Outlook.
 
 # HTML Outlook Button Rendering
 
+{% hint style="info" %}
+**Important:** You need access to the [Content Services API](../apis/content-services-api/content-services-api-reference.md), which is available on [paid plans](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees), to add the `newbutton` query string parameter to your API call when transforming Beefree SDK JSON to HTML.
+{% endhint %}
+
 ### HTML Outlook Button Rendering
 
 Outlook’s unique rendering engine often requires specific adjustments to ensure buttons display and function correctly. This article explains how to use the `newbutton` query string parameter when transforming Beefree SDK JSON into HTML using the [HTML endpoint in the Content Services API (CSAPI)](../apis/content-services-api/content-services-api-reference.md#html) to enhance button rendering in Outlook.
