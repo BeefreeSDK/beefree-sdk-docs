@@ -6,6 +6,66 @@ description: >-
 
 # Change Log
 
+## January 2025 Releases
+
+### Display Conditions Widget and Modal | Release coming January 2025
+
+#### Display Conditions Widget
+
+<details>
+
+<summary>New Classnames Display Conditions Widget</summary>
+
+### Display Condition Widget
+
+*   **Display Conditions Widget**\
+    Affected Sub-element: Display Conditions Widgets
+
+    **Changes:**
+
+    * Markup Variations:
+      * `contentDialog` button is now "secondary", not "primary".
+
+    **Classnames Comparison:**
+
+    | Classnames Removed | Classnames Added                        |
+    | ------------------ | --------------------------------------- |
+    | `item_1-2`         | `display-condition-card--cs`            |
+    | `panel__actions`   | `display-condition-card_custom--cs`     |
+    |                    | `display-condition-label--cs`           |
+    |                    | `display-condition-description--cs`     |
+    |                    | `display-condition-label_before--cs`    |
+    |                    | `display-condition-before--cs`          |
+    |                    | `display-condition-label_after--cs`     |
+    |                    | `display-condition-after--cs`           |
+    |                    | `display-condition-buttons--cs`         |
+    |                    | `row-display-condition-edit-button--cs` |
+
+</details>
+
+#### Select Display Condition Modal
+
+<details>
+
+<summary>New Classnames Select Display Condition Modal</summary>
+
+### Select Display Condition Modal
+
+*   **Select Display Condition Modal**\
+    Affected Sub-element: Select Display Condition Modal&#x20;
+
+
+
+    **Classnames Comparison:**
+
+    | Classnames Removed  | Classnames Added                  |
+    | ------------------- | --------------------------------- |
+    | `category-selected` | `selectable-modal-search--cs`     |
+    | `back-action`       | `selectable-modal-breadcrumb--cs` |
+    |                     | `selectable-modal-items-list--cs` |
+
+</details>
+
 ## December 5, 2024 Releases
 
 ### Add New Social and Form | Release on December 5th
@@ -18,7 +78,7 @@ description: >-
 
 ### Form
 
-1.  **Form**\
+*   **Form**\
     Affected Sub-element: Manage fields - Add new field
 
     **Changes:**
@@ -53,7 +113,7 @@ description: >-
 
 ### Social
 
-1.  **Social**\
+*   **Social**\
     Affected Sub-element: Configure icon collection - Add social icon
 
     **Changes:**
@@ -88,7 +148,7 @@ description: >-
 
 <summary>New Classnames Button, Image, Video </summary>
 
-1.  **Button, Image, Video**\
+*   **Button, Image, Video**\
     Affected Sub-element: Configure attributes - Add new attribute
 
     **Changes:**
@@ -123,7 +183,7 @@ description: >-
 
 ### Sidebar Title
 
-1.  Sidebar Title\
+*   Sidebar Title\
     Affected Sub-element: Sidebar Title
 
     **Changes:**
@@ -160,8 +220,8 @@ Affected Sub-element: Sidebar Title
 
 Markup Variations:
 
-1. Added `<div role="toolbar">`
-2. `<a>` elements are now `<button>`
+* Added `<div role="toolbar">`
+* `<a>` elements are now `<button>`
 
 **Classnames Comparison:**
 
@@ -191,7 +251,7 @@ Markup Variations:
 
 ### Mobile Stage Mode, History, and Empty States
 
-1.  **Mobile Stage Mode**\
+*   **Mobile Stage Mode**\
     Affected Sub-element: Wrapper
 
     **Classnames Added:**
@@ -203,7 +263,7 @@ Markup Variations:
     * Desktop button: `stagemode__button__desktop--cs`
     * Mobile button: `stagemode__button__mobile--cs`
     * Display toggle button: `stagemode__button__display--cs`
-2.  **Undo/Redo**\
+*   **Undo/Redo**\
     Affected Sub-elements: Undo/Redo Buttons and History Panel
 
     **Classnames Added:**
@@ -213,7 +273,7 @@ Markup Variations:
     * Redo button: `undo-redo__redoButton--cs`
     * History panel: `undo-redo__history--cs`
     * History panel item: `history__step--cs`
-3.  **Empty States (Various Modules)**\
+*   **Empty States (Various Modules)**\
     Affected Modules: Image, Icons, Video, Menu, Social, Form, AddOn, Dynamic Content
 
     **Classnames Added:**
