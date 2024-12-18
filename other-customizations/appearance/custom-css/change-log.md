@@ -6,9 +6,9 @@ description: >-
 
 # Change Log
 
-## January 2025 Releases
+## January 30, 2025 Releases
 
-### Display Conditions Widget and Modal | Release coming January 2025
+### Display Conditions Widget and Modal | Release on January 30, 2025
 
 #### Display Conditions Widget
 
@@ -68,7 +68,7 @@ description: >-
 
 ## December 5, 2024 Releases
 
-### Add New Social and Form | Release on December 5th
+### Add New Social and Form | Released on December 5th
 
 #### Form&#x20;
 
