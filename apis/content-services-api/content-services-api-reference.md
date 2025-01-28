@@ -156,8 +156,8 @@ When utilizing this feature, it's important to consider adding a handle to the m
 
 ## AI Collection
 
-{% hint style="info" %}
-**Important:** The AI collection is only compatible with OpenAI at the moment. We are actively working on making it compatible with our other providers, too. &#x20;
+{% hint style="warning" %}
+**Important:** The [AI collection](content-services-api-reference.md#ai-collection) is only compatible with OpenAI AddOns that were configured before August 1, 2024. We are actively working on making it compatible with AI AddOns and Providers configured after that date, too.
 {% endhint %}
 
 The resources in the AI collection accept your template JSON and use generative AI to return text within a JSON object to you.

@@ -4,8 +4,8 @@ description: Learn more about available providers for the AI Writing Assistant A
 
 # Available Providers
 
-{% hint style="info" %}
-**Important:** The [AI collection](../../../../../apis/content-services-api/content-services-api-reference.md#ai-collection) is only compatible with OpenAI at the moment. We are actively working on making it compatible with our other providers, too. &#x20;
+{% hint style="warning" %}
+**Important:** The [AI collection](../../../../../apis/content-services-api/content-services-api-reference.md#ai-collection) is only compatible with OpenAI AddOns that were configured before August 1, 2024. We are actively working on making it compatible with AI AddOns and Providers configured after that date, too. &#x20;
 {% endhint %}
 
 ## Overview
