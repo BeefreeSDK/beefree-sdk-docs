@@ -14,7 +14,7 @@ This page covers how to:
 * [User Interface and End User Experience](implement-hosted-saved-rows.md#user-interface-and-end-user-experience)
 * [Configure Advanced Permissions](implement-hosted-saved-rows.md#configure-advanced-permissions)
 * [Making Saved Rows Available to Select Users](implement-hosted-saved-rows.md#making-saved-rows-available-to-select-users)
-* Removing the Rows Tab for Select Users
+* [Removing the Rows Tab for Select Users](implement-hosted-saved-rows.md#removing-the-rows-tab-for-select-users)
 
 ### **Enable Hosted Saved Rows**
 

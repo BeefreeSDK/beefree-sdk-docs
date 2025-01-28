@@ -10,8 +10,8 @@ description: >-
 The AI Writing Assistant AddOn is only available for [Superpowers](https://developers.beefree.io/pricing-plans) and [Enterprise](https://developers.beefree.io/pricing-plans) plans. The AI Writing Assistant and Azure OpenAI provider are available for Email, Page, and Popup builders.
 {% endhint %}
 
-{% hint style="danger" %}
-**Important:** The AI collection is currently experiencing compatibility issues with the Manage Providers feature. We are aware of the issue and actively working to resolve it. In the meantime, the endpoints in the AI collection may not work as expected. &#x20;
+{% hint style="info" %}
+**Important:** The [AI collection](../../../../../apis/content-services-api/content-services-api-reference.md#ai-collection) is only compatible with OpenAI at the moment. We are actively working on making it compatible with our other providers, too. &#x20;
 {% endhint %}
 
 ## **Overview**

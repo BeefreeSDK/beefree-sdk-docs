@@ -4,8 +4,8 @@ description: Learn more about available providers for the AI Writing Assistant A
 
 # Available Providers
 
-{% hint style="danger" %}
-**Important:** The[ AI collection](../../../../../apis/content-services-api/content-services-api-reference.md#ai-collection) is currently experiencing compatibility issues with the Manage Providers features. We are aware of the issue and actively working to resolve it. In the meantime, the endpoints in the AI collection may not work as expected. &#x20;
+{% hint style="info" %}
+**Important:** The [AI collection](../../../../../apis/content-services-api/content-services-api-reference.md#ai-collection) is only compatible with OpenAI at the moment. We are actively working on making it compatible with our other providers, too. &#x20;
 {% endhint %}
 
 ## Overview

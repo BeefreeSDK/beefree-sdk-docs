@@ -156,8 +156,8 @@ When utilizing this feature, it's important to consider adding a handle to the m
 
 ## AI Collection
 
-{% hint style="danger" %}
-**Important:** The AI collection is currently experiencing compatibility issues with the Manage Providers feature. We are aware of the issue and actively working to resolve it. In the meantime, the endpoints in the AI collection may not work as expected.
+{% hint style="info" %}
+**Important:** The AI collection is only compatible with OpenAI at the moment. We are actively working on making it compatible with our other providers, too. &#x20;
 {% endhint %}
 
 The resources in the AI collection accept your template JSON and use generative AI to return text within a JSON object to you.
