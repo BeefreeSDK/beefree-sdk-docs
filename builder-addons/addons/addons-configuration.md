@@ -40,6 +40,8 @@ addOns: [
 
 ## AddOns Configuration in the Client Config
 
+The `editable` parameter is a boolean that controls whether the content associated with a specific content AddOn can be modified by users. By default, this boolean is set to `false`, meaning the content is locked and cannot be edited. When set to `true`, the content becomes editable, allowing users to make changes as needed. However, it’s important to note that this parameter only applies to content AddOns and has no effect on row or mixed content AddOns. This feature provides flexibility in managing user permissions and ensuring that only intended content can be modified, enhancing control over the editing experience.
+
 The following code snippet shows an example of how to configure an AddOn of type Paragraph.
 
 ```javascript

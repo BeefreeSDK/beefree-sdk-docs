@@ -100,7 +100,7 @@ Once the session is started, a globally unique id will be created and returned t
 
 ### Example Callback Handler
 
-```json
+```javascript
 
 onSessionStarted: function(sessionInfo) {
   console.log('*** [integration] --> (onSessionStarted) ', sessionInfo)
@@ -221,6 +221,14 @@ onSend: function(htmlFile, version) {
 
 
 ```
+
+## Track Message Changes
+
+You can [track message changes](collaborative-editing.md#track-message-changes) for the main user and additional users in a collaborative editing session.&#x20;
+
+The `onChange` callback allows you to track the activities and changes to the design JSON performed by session's main user (User A). Reference the `onChange` [section of the Track Message Changes page](../getting-started/tracking-message-changes.md#onchange-event) to learn more about implementing and using this callback.&#x20;
+
+The `onRemoteChange` callback allows you to track the activities and changes to the design's JSON performed by additional users (User B, User C, and so on). Reference the `onRemoteChange` [section of the Track Message Changes page](../getting-started/tracking-message-changes.md#onremotechange) to learn more about implementing and using this callback.&#x20;
 
 ## Custom Languages
 

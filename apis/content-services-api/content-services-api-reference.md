@@ -84,6 +84,8 @@ Include the optional `newbutton` query string parameter and set its value to `tr
 [plain_text_endpoint.yaml](../../.gitbook/assets/plain_text_endpoint.yaml)
 {% endswagger %}
 
+
+
 ### PDF <a href="#pdf" id="pdf"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/pdf`
@@ -153,6 +155,10 @@ When utilizing this feature, it's important to consider adding a handle to the m
 {% endswagger %}
 
 ## AI Collection
+
+{% hint style="danger" %}
+**Important:** The AI collection is currently experiencing compatibility issues with the Manage Providers feature. We are aware of the issue and actively working to resolve it. In the meantime, the endpoints in the AI collection may not work as expected.
+{% endhint %}
 
 The resources in the AI collection accept your template JSON and use generative AI to return text within a JSON object to you.
 

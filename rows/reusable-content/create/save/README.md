@@ -12,23 +12,30 @@ This page provides an overview of Saved Rows and their key benefits.
 
 Saved Rows in Beefree SDK optimize the content creation process by allowing users to save, categorize, and manage reusable rows for future use. When this feature is enabled, users can simply click the **Save** icon on a row within their design and store it for later. This ensures quick access to preferred layouts and design elements across multiple projects.
 
+Save Rows are particularly helpful in the following scenarios:&#x20;
+
+* **Standardizing Footers:** Save a footer row with contact details, social media links, and copyright information. Use it across multiple email templates to ensure consistency.
+* **Designing E-Commerce Product Grids:** Create reusable rows showcasing product images, descriptions, and call-to-action buttons. Pull these rows dynamically from an e-commerce catalog for up-to-date content.
+* **Creating Promotional Banners:** Save promotional rows with pre-configured styles and messaging. Reuse them across campaigns to maintain branding and reduce setup time.
+
 ### Benefits of Saved Rows
 
-#### For End Users
+There are several benefits to utilizing saved rows. This section outlines benefits for both end users and the host applications.
 
-* **Reusable Rows:** Save rows once and reuse them across multiple designs.
-* **Flexible Categorization:** Organize rows into intuitive categories for discoverability.
-* **Easily Manage Rows:** Manage rows with intuitive editing options.
+Saved Rows enable end users to:
 
-#### For Host Applications
+* **Save and reuse content:** Create emails, landing pages, and popups, apply their own style and brand guidelines, and save all of that hard work inside of a row and reuse it at a later date. After saving a row, they can still edit the row and make any adjustments to the content blocks inside of it.
+* **Flexible Categorization:** Organize rows into intuitive categories to easily find and reuse them later on.
+* **Easily Manage Rows:** Edit the name and category of a saved row easily. Or, delete rows if they are no longer needed.
 
-* **Enhanced User Experience:** Enable users to save, categorize, and manage their rows efficiently.
-* **Flexible Implementation and Management Options:** Activate, store, and manage Saved Rows using either hosted or self-hosted options.
-* **Highly Customizable:** Enable or disable end user permissions to delete, edit, manage, or add Saved Rows.&#x20;
+Saved Rows enable host applications to:
+
+* **Enhance the User Experience:** Enable users to save, categorize, and manage rows efficiently.
+* **Multiple Storage Options:** Activate, store, and manage Saved Rows using either [hosted](../../../storage/hosted-saved-rows.md) or [self-hosted](../../../storage/self-hosted-saved-rows.md) options.
+* **Customize Permissions:** Enable or disable end user permissions to delete, edit, manage, or add Saved Rows.
+* M**ake Saved Rows Available to Select Users:** Control which users can and cannot save rows.
 
 ### How Saved Rows Work
-
-#### Saving Rows
 
 When enabled, Saved Rows allow end users to select a row in their design and save it. This process involves:
 
@@ -42,49 +49,21 @@ When enabled, Saved Rows allow end users to select a row in their design and sav
 
 #### Using Saved Rows
 
-Saved Rows are displayed in the builder’s Rows panel. Users can:
+Once created and saved, end users can reuse saved rows through the builder’s **ROWS** tab.&#x20;
+
+There, users can:
 
 * Browse saved rows by category.
 * Search for rows using metadata like row names or descriptions.
 * Drag and drop rows into their designs for immediate use.
 
-#### Activation Paths for Saved Rows
+#### Activation and Storage Paths for Saved Rows
 
-There are two paths you can take to activate Saved Rows for your application:
+There are two paths you can take to activate and store Saved Rows for your application:
 
-* Hosted Saved Rows
-* Self-Hosted Saved Rows
+* [Hosted Saved Rows](implement-hosted-saved-rows.md)
+* [Self-Hosted Saved Rows](../../../storage/self-hosted-saved-rows.md)
 
-Both paths provide their own set of benefits. The following section discusses these activation paths at a high-level. For more detailed information on both activation routes, reference Implement Hosted Saved Rows and Implement Self-Hosted Saved Rows.
+Both paths provide their own set of benefits and limitations. It is important to familiarize yourself with the benefits and limitations of each option to choose the storage and activation solution that is best for you and your application's needs. For more detailed information on both activation routes, reference [Implement Hosted Saved Rows](implement-hosted-saved-rows.md) and Implement [Self-Hosted Saved Rows](implement-self-hosted-saved-rows.md).
 
-### Hosting Options for Saved Rows
-
-Saved Rows can be hosted and configured using one of the following options:
-
-#### **Beefree SDK Hosted Infrastructure:** Hosted Saved Rows
-
-* Fully managed by Beefree SDK, and activated through a toggle in the Developer Console.
-* Ideal for teams that want a quick setup without maintaining backend systems.
-* Offers centralized storage, security, and reliability, while also providing a user interface to save and  reuse rows within your application.
-
-#### **Self-Hosted Infrastructure:** Self-Hosted Saved Rows
-
-* Allows full control over where and how rows are stored.
-* Suitable for teams with specific compliance or integration needs.
-* Requires development resources for managing row storage, and creating a user interface to manage and reuse rows.
-
-Learn more about [Storage for Reusable Content](../../../storage/).
-
-### Examples of Saved Rows in Action
-
-#### Standardized Footers
-
-Save a footer row with contact details, social media links, and copyright information. Use it across multiple email templates to ensure consistency.
-
-#### E-Commerce Product Grids
-
-Create reusable rows showcasing product images, descriptions, and call-to-action buttons. Pull these rows dynamically from an e-commerce catalog for up-to-date content.
-
-#### Promotional Banners
-
-Save promotional rows with pre-configured styles and messaging. Reuse them across campaigns to maintain branding and reduce setup time.
+Learn more about [Storage for Reusable Content](../../../storage/) to discover the best option for you.
