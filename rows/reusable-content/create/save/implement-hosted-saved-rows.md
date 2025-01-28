@@ -127,7 +127,7 @@ Take the following step to disable access for specific users:
 
 * Set `saveRows` to `false` for users who shouldn’t have access.
 
-The following code provides a simple example of how to add the `saveRows` configuration parameter and set it to false to make the feature unavailable to select users.
+The following code provides a simple example of how to add the `saveRows` configuration parameter and set it to `false` to make the feature unavailable to select users.
 
 ```javascript
 
@@ -140,6 +140,18 @@ const beeConfig = {
 }
 
 ```
+
+### Default Behavior
+
+The following image shows the save icon when the end user clicks on the row.
+
+<figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 21.02.35.png" alt=""><figcaption></figcaption></figure>
+
+### Hiding the Save Icon
+
+The following image does not show the save icon when the end user clicks on the row. This behavior occurs after adding `saveRows` to your `beeConfig` and setting it to `false`.
+
+<figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 21.02.03.png" alt=""><figcaption></figcaption></figure>
 
 ## Removing the Rows Tab for Select Users
 
