@@ -90,7 +90,7 @@ The following table displays the headers you need to complete your API request.
 
 <table><thead><tr><th width="358">Key</th><th>Value</th></tr></thead><tbody><tr><td>Content-type</td><td>application/json</td></tr><tr><td>Authorization</td><td>Bearer{{key}}</td></tr></tbody></table>
 
-## Fetch a list of all Templates
+## Get a list of all Templates
 
 `/v1/catalog/templates`
 
@@ -120,57 +120,9 @@ The following table displays a list of request parameters.
 | `published_after`  | 2023-01-01              | Filter by published\_at after given date                 |
 | `published_before` | 2023-01-01              | Filter by published\_at before given date                |
 
-### Sample Request
-
-The following code displays a sample request.
-
-```http
-
-GET /v1/catalog/templates/?search=music HTTP/1.1
-Host: api.getbee.io
-Content-Type: application/json
-Authorization: Bearer •••••••
-
-```
-
-### Sample Response
-
-The following code displays a sample response.
-
-```json
-{
-  "count": 1592,
-  "next": "https://api.getbee.io/v1/catalog/templates?page=2",
-  "previous": null,
-  "results": [
-      {template_1},
-      {template_2},
-      ...
-      {template_N},
-      ...
-      {template_20}
-      ],
-  "facets": }"categories": 		category_1,
-		       ...
-		      category_N
-        ],
-        "collections": [
-               collection_1,
-	           ...
-	           collection_N
-        ],
-        "designers": [
-              designer_1,
-	          ...
-	          designer_N
-        ],
-        "tags" :[
-               tag_1,
-               ...
-              tag_n
-        ]
-}
-```
+{% swagger src="../.gitbook/assets/catalog-templates.yaml" path="/v1/catalog/templates" method="get" %}
+[catalog-templates.yaml](../.gitbook/assets/catalog-templates.yaml)
+{% endswagger %}
 
 ## Fetch a single Template
 
@@ -180,62 +132,9 @@ The following code displays a sample response.
 
 **Description:** Fetch a single template identified by its slug (in the URL).
 
-### Sample Request
-
-The following code displays a sample request.
-
-```http
-
-GET /v1/catalog/templates/mens-fashion HTTP/1.1
-Host: api.getbee.io
-Content-Type: application/json
-Authorization: Bearer •••••••
-
-```
-
-### Sample Response
-
-The following code displays a sample response.
-
-```json
-{
-"categories": [
-		"product-promotion",
-		"fashion"
-	],
-	"collections": "",
-	"description": "Mens Fashion Template for marketing",
-	"designer": {
-		"avatar_url": https://cloudfront.net/designers/team.jpg",
-		"description": "Bee Designers Team",
-		"display_name": "BEE Team",
-		"id": "bee-team",
-	},
-	"html_data":"........"
-	"html_url": "https://cloudfront.net/templates/default/3.html",
-	"id": "mens-fashion",
-	"is_blank": false,
-	"json_data": {
-		"page": {body": {
-			"container": {...}
-		.....
-	}
-"order": "00760",
-"published_at": "2017-08-28",
-"tags": [
-	"blue",
-	"light",
-	"light blue",
-	"sans serif",
-	"sell",
-	"two-column"
-],
-"template_type": "email",
-"thumbnail_large": "https://cloudfront.net/templates/default/3_l.jpg",
-"thumbnail": "https://cloudfront.net/templates/default/3.jpg",
-"title": "Men's Fashion"
-}
-```
+{% swagger src="../.gitbook/assets/catalog-templates-slug.yaml" path="/v1/catalog/templates/:slug" method="get" %}
+[catalog-templates-slug.yaml](../.gitbook/assets/catalog-templates-slug.yaml)
+{% endswagger %}
 
 ## Fetch a list of all Categories
 
@@ -259,38 +158,9 @@ The following table displays request parameters.
 | ---------- | ----- | ---------------------------- |
 | `pagesize` | int   | Set the item number per page |
 
-### Sample Request
-
-The following code displays a sample request.
-
-```http
-
-GET /v1/catalog/categories?search=fashion / HTTP/1.1
-Host: api.getbee.io
-Content-Type: application/json
-Authorization: Bearer •••••••
-
-```
-
-### Sample Response
-
-The following code displays a sample response.
-
-```json
-{
-   "count": 114,
-   "next": null,
-   "previous": null,
-   "results": [
-		category_1,
-        category_2,
-        ....
-        category_N,
-        ....
-       category_200
-   ]	
-}
-```
+{% swagger src="../.gitbook/assets/catalog-categories.yaml" path="/v1/catalog/categories" method="get" %}
+[catalog-categories.yaml](../.gitbook/assets/catalog-categories.yaml)
+{% endswagger %}
 
 ## Fetch a single Category
 
@@ -302,36 +172,9 @@ The following code displays a sample response.
 
 Retrieve detailed information about a specific Category using its unique identifier, or slug, which can be found in the URL. This method allows you to access in-depth data related to that particular category, such as its associated templates and related metadata.
 
-### Sample Request
-
-The following code displays a sample request.
-
-```http
-
-GET /v1/catalog/categories/fashion-week / HTTP/1.1
-Host: api.getbee.io
-Content-Type: application/json
-Authorization: Bearer •••••••
-
-```
-
-### Sample Response
-
-The following code displays a sample response.
-
-```json
-{
-	"bg_color": "#F8F8F8",
-	"fb_color": "#333A45",
-	"highlighted": false,
-	"icon": null,
-	"id": "fashion-week",
-	"image": null,
-	"name": "Fashion Week",
-	"description": "Category for Fashion Week dedicated templates",
-	"parent": "seasonal"
-}
-```
+{% swagger src="../.gitbook/assets/catalog-categories-slug.yaml" path="/v1/catalog/categories/:slug" method="get" %}
+[catalog-categories-slug.yaml](../.gitbook/assets/catalog-categories-slug.yaml)
+{% endswagger %}
 
 ## Fetch a List of Collections
 
@@ -351,38 +194,9 @@ The following table displays request parameters.
 | ---------- | ----- | ---------------------------- |
 | `pagesize` | int   | Set the item number per page |
 
-### Sample Request
-
-The following code displays a sample request.
-
-```http
-
-GET /v1/catalog/collections?pagesize=10/ HTTP/1.1
-Host: api.getbee.io
-Content-Type: application/json
-Authorization: Bearer •••••••
-
-```
-
-### Sample Response
-
-The following code displays a sample response.
-
-```json
-{
-   "count": 19,
-   "next": https://api.getbee.io/v1/catalog/collections?page=2&pagesize=10",
-   "previous": null,
-   "results": [
-		  collection_1,
-          collection_2,
-          ....
-          collection_N,
-          ....
-          collection_10
-   ]
-}
-```
+{% swagger src="../.gitbook/assets/catalog-collections.yaml" path="/v1/catalog/collections" method="get" %}
+[catalog-collections.yaml](../.gitbook/assets/catalog-collections.yaml)
+{% endswagger %}
 
 ## Fetch a single Collection
 
@@ -392,35 +206,9 @@ The following code displays a sample response.
 
 **Description:** Access a specific Collection using its unique slug found in the URL. This lets you view detailed information about this particular group of templates, including its associated templates and any related details.
 
-### Sample Request
-
-The following code displays a sample request.
-
-```http
-
-GET /v1/catalog/collections/music / HTTP/1.1
-Host: api.getbee.io
-Content-Type: application/json
-Authorization: Bearer •••••••
-
-```
-
-### Sample Response
-
-The following code displays a sample response.
-
-<pre class="language-json"><code class="lang-json"><strong>{
-</strong>	"bg_color": "#76D3BA",
-	"description": "Music Collection Descriptiom",
-	"fg_color": "#262626",
-	"highlighted": false,
-	"icon_url": "https://cloudfront.net/collections/music_icon.svg",
-	"id": "music",
-	"image_url": "https://cloudfront.net/collections/music.png",
-	"name": "Music",
-	"order": "0"
-}
-</code></pre>
+{% swagger src="../.gitbook/assets/catalog-collections-slug.yaml" path="/v1/catalog/collections/:slug" method="get" %}
+[catalog-collections-slug.yaml](../.gitbook/assets/catalog-collections-slug.yaml)
+{% endswagger %}
 
 ## Fetch a list of all Designers
 
@@ -440,51 +228,9 @@ The following table displays request parameters.
 | ---------- | ----- | ---------------------------- |
 | `pagesize` | int   | Set the item number per page |
 
-### Sample Request
-
-The following code displays a sample request.
-
-```http
-
-GET /v1/catalog/designers/?pagesize=int HTTP/1.1
-Host: api.getbee.io
-Content-Type: application/json
-Authorization: Bearer •••••••
-
-```
-
-### Sample Response
-
-The following code displays a sample response.
-
-```json
-{
-    "count": 34,
-    "next": null,
-    "previous": null,
-    "results": [
-        {
-            "available": true,
-            "avatar_url": "https://d3rnqdo8eaigh4.cloudfront.net/designers/leotrina.jpg",
-            "base": "Kosovo",
-            "description": "Hi, I’m Leotrina a UI/UX Designer based in Kosovo, I am a designer with a lot of passion for digital art. My goal is to create thoughtful designs that bring memorable experiences.",
-            "short_description": "",
-            "display_name": "Leotrina Stojkaj",
-            "email": "leotrinastojkaj1@gmail.com",
-            "first_name": "Leotrina",
-            "highlighted": false,
-            "hobby": "",
-            "id": "leotrina-stojkaj",
-            "last_name": "Stojkaj",
-            "position": "UI/UX Designer",
-            "social_behance": "https://www.behance.net/leotrinastojkaj2",
-            "social_dribbble": "",
-            "social_linkedin": "https://www.linkedin.com/in/leotrina-stojkaj-ab278a19b",
-            "website": ""
-        }
-    ]
-}
-```
+{% swagger src="../.gitbook/assets/catalog-designers.yaml" path="/v1/catalog/designers" method="get" %}
+[catalog-designers.yaml](../.gitbook/assets/catalog-designers.yaml)
+{% endswagger %}
 
 ## Fetch a single Designer
 
@@ -494,44 +240,9 @@ The following code displays a sample response.
 
 **Description:** Retrieve detailed information for a specific Designer, identified by the unique slug present in the URL. This enables the procurement of comprehensive data pertaining to the particular designer, including their portfolio of templates and any associated metadata within the catalog.
 
-### Sample Request
-
-The following code displays a sample request.
-
-```http
-
-GET /v1/catalog/designers/:slug/ HTTP/1.1
-Host: api.getbee.io
-Content-Type: application/json
-Authorization: Bearer •••••••
-
-```
-
-### Sample Response
-
-The following code displays a sample response.
-
-```json
-{
-    "available": true,
-    "avatar_url": "https://d3rnqdo8eaigh4.cloudfront.net/designers/jen-schmaltz.jpg",
-    "base": "Thorold, Canada",
-    "description": "Graphic Design is at the heart of my story, but I’ve been known to write myself a new part now and again… happily and frequently embracing such roles as: Project Manager, Strategic Thinker, Visual Communicator, Copy Writer, Brand Stylist and Content Curator... magician.\r\n\r\nDesign is where my passion and my purpose intersect, and providing clients with “the goods” to help their businesses soar is a pretty amazing thing to hop outta’ bed and do each day!",
-    "short_description": "",
-    "display_name": "Jen Schmaltz",
-    "email": "info@jenschmaltzdesign.com",
-    "first_name": "Jen",
-    "highlighted": false,
-    "hobby": "",
-    "id": "jen-schmaltz",
-    "last_name": "Schmaltz",
-    "position": "Graphic Designer",
-    "social_behance": "",
-    "social_dribbble": "",
-    "social_linkedin": "",
-    "website": "https://www.jenschmaltzdesign.com/"
-}
-```
+{% swagger src="../.gitbook/assets/catalog-designers-slug.yaml" path="/v1/designers/:slug" method="get" %}
+[catalog-designers-slug.yaml](../.gitbook/assets/catalog-designers-slug.yaml)
+{% endswagger %}
 
 ## Fetch a list of all Tags
 
@@ -549,39 +260,9 @@ The following table displays request parameters.
 | ---------- | ----- | ---------------------------- |
 | `pagesize` | int   | Set the item number per page |
 
-### Sample Request
-
-The following code displays a sample request.
-
-```http
-
-GET /v1/catalog/tags/?pagesize=int HTTP/1.1
-Host: api.getbee.io
-Content-Type: application/json
-Authorization: Bearer •••••••
-
-```
-
-### Sample Response
-
-The following code displays a sample response.
-
-```json
-[
-    {
-        "name": "minimal"
-    },
-    {
-        "name": "elegant"
-    },
-    {
-        "name": "grey"
-    },
-    {
-        "name": "news"
-    },
-]
-```
+{% swagger src="../.gitbook/assets/catalog-tags.yaml" path="/v1/catalog/tags" method="get" %}
+[catalog-tags.yaml](../.gitbook/assets/catalog-tags.yaml)
+{% endswagger %}
 
 ### FAQs
 

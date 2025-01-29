@@ -1,11 +1,12 @@
 openapi: 3.0.0
 info:
-  title: Metadata Endpoint
-  description: The endpoint accepts a JSON template and returns a JSON object with metadata (preheader and subject).
+  title: Generate Preheader and Subject Metadata with AI
+  description: Use AI and this endpoint to generate metadata, which includes preheaders
+    and subject lines, automatically.
   version: 1.0.0
 servers:
-  - url: https://api.getbee.io
-    description: Base URL for the API
+- url: https://api.getbee.io
+  description: Base URL for the API
 components:
   securitySchemes:
     bearerAuth:
@@ -13,15 +14,23 @@ components:
       scheme: bearer
       bearerFormat: Enter Dev Console API Key as Bearer token
 paths:
-  /v1/ai/metadata:
+  /v1/{collection}/metadata:
     post:
-      summary: Generate Metadata (Preheader and Subject)
-      description: The endpoint accepts a JSON template and returns a JSON object with metadata.
+      summary: Generate Preheader and Subject Metadata with AI
+      description: Use AI and this endpoint to generate metadata, which includes preheaders
+        and subject lines, automatically.
       security:
-        - bearerAuth: []
+      - bearerAuth: []
+      parameters:
+      - name: collection
+        in: path
+        required: true
+        description: The collection ID or name
+        schema:
+          type: string
       requestBody:
         required: true
-        description: JSON template and options to generate metadata
+        description: Request body for the endpoint
         content:
           application/json:
             schema:
@@ -29,263 +38,1313 @@ paths:
               properties:
                 options:
                   type: object
-                  description: Optional settings that provide additional instructions to the AI for metadata generation.
+                  description: An object field for options
                   properties:
                     model:
                       type: string
-                      description: The model to be used for the AI, such as GPT-3.5-turbo.
+                      description: A string field for model
                       example: gpt-3.5-turbo
                     toneOfVoice:
                       type: string
-                      description: Defines the tone of voice for the generated metadata, e.g., 'Formal', 'Humorous'.
+                      description: A string field for toneOfVoice
                       example: ''
                     instructions:
                       type: string
-                      description: Additional instructions to the AI for metadata generation.
+                      description: A string field for instructions
                       example: Try to use a pun.
                     reportUsage:
-                      type: boolean
-                      description: Boolean flag to request usage data from the AI.
+                      type: integer
+                      description: An integer field for reportUsage
                       example: true
                     language:
                       type: string
-                      description: Specify the output language using a valid language code.
+                      description: A string field for language
                       example: ''
+                  example:
+                    model: gpt-3.5-turbo
+                    toneOfVoice: ''
                 template:
                   type: object
-                  description: A JSON object representing the template structure.
+                  description: An object field for template
                   properties:
                     page:
                       type: object
-                      description: The main content structure of the template.
+                      description: An object field for page
                       properties:
                         body:
                           type: object
-                          description: The body of the template, including container and content styles.
+                          description: An object field for body
                           properties:
                             container:
                               type: object
-                              description: Contains style information for the main container of the template.
+                              description: An object field for container
                               properties:
                                 style:
                                   type: object
-                                  description: CSS properties for the container.
+                                  description: An object field for style
                                   properties:
                                     background-color:
                                       type: string
-                                      format: color
+                                      description: A string field for background-color
                                       example: '#fff'
                                     background-image:
                                       type: string
-                                      example: 'none'
+                                      description: A string field for background-image
+                                      example: none
                                     background-position:
                                       type: string
-                                      example: 'top left'
+                                      description: A string field for background-position
+                                      example: top left
                                     background-repeat:
                                       type: string
-                                      example: 'no-repeat'
+                                      description: A string field for background-repeat
+                                      example: no-repeat
                                     background-size:
                                       type: string
-                                      example: 'auto'
+                                      description: A string field for background-size
+                                      example: auto
+                                  example:
+                                    background-color: '#fff'
+                                    background-image: none
+                              example:
+                                style: &id001
+                                  background-color: '#fff'
+                                  background-image: none
+                                  background-position: top left
+                                  background-repeat: no-repeat
+                                  background-size: auto
                             content:
                               type: object
-                              description: Contains computed styles and the main content styles.
+                              description: An object field for content
                               properties:
                                 computedStyle:
                                   type: object
-                                  description: Computed styles for elements within the content.
+                                  description: An object field for computedStyle
                                   properties:
                                     linkColor:
                                       type: string
-                                      format: color
+                                      description: A string field for linkColor
                                       example: '#8a3b8f'
                                     messageBackgroundColor:
                                       type: string
-                                      format: color
-                                      example: 'transparent'
+                                      description: A string field for messageBackgroundColor
+                                      example: transparent
                                     messageWidth:
                                       type: string
-                                      example: '650px'
+                                      description: A string field for messageWidth
+                                      example: 650px
+                                  example:
+                                    linkColor: '#8a3b8f'
+                                    messageBackgroundColor: transparent
                                 style:
                                   type: object
-                                  description: General style attributes for the content.
+                                  description: An object field for style
                                   properties:
                                     color:
                                       type: string
-                                      format: color
+                                      description: A string field for color
                                       example: '#000000'
                                     font-family:
                                       type: string
-                                      example: 'Lato, Tahoma, Verdana, Segoe, sans-serif'
-                        type:
+                                      description: A string field for font-family
+                                      example: Lato, Tahoma, Verdana, Segoe, sans-serif
+                                  example:
+                                    color: '#000000'
+                                    font-family: Lato, Tahoma, Verdana, Segoe, sans-serif
+                              example:
+                                computedStyle: &id002
+                                  linkColor: '#8a3b8f'
+                                  messageBackgroundColor: transparent
+                                  messageWidth: 650px
+                                style: &id003
+                                  color: '#000000'
+                                  font-family: Lato, Tahoma, Verdana, Segoe, sans-serif
+                            type:
+                              type: string
+                              description: A string field for type
+                              example: mailup-bee-page-properties
+                            webFonts:
+                              type: array
+                              description: An array of objects for webFonts
+                              items:
+                                type: object
+                                properties:
+                                  fontFamily:
+                                    type: string
+                                    description: A string field for fontFamily
+                                    example: '''Lato'', Tahoma, Verdana, Segoe, sans-serif'
+                                  name:
+                                    type: string
+                                    description: A string field for name
+                                    example: Lato
+                                  url:
+                                    type: string
+                                    description: A string field for url
+                                    example: https://fonts.googleapis.com/css?family=Lato
+                              example:
+                              - &id014
+                                fontFamily: '''Lato'', Tahoma, Verdana, Segoe, sans-serif'
+                                name: Lato
+                                url: https://fonts.googleapis.com/css?family=Lato
+                          example:
+                            container: &id012
+                              style: *id001
+                            content: &id013
+                              computedStyle: *id002
+                              style: *id003
+                        description:
                           type: string
-                          description: Template type used for identification.
-                          example: mailup-bee-page-properties
-                        webFonts:
+                          description: A string field for description
+                          example: ''
+                        rows:
                           type: array
-                          description: List of web fonts used in the template.
+                          description: An array of objects for rows
                           items:
                             type: object
                             properties:
-                              fontFamily:
-                                type: string
-                                example: "'Lato', Tahoma, Verdana, Segoe, sans-serif"
-                              name:
-                                type: string
-                                example: Lato
-                              url:
-                                type: string
-                                description: URL to fetch the font.
-                                example: https://fonts.googleapis.com/css?family=Lato
-                    template:
-                      type: object
-                      description: Basic information about the template.
-                      properties:
-                        name:
-                          type: string
-                          example: template-base
-                        type:
-                          type: string
-                          example: basic
-                        version:
-                          type: string
-                          example: 2.0.0
-                    title:
-                      type: string
-                      description: Title of the template.
-                      example: ''
-                    description:
-                      type: string
-                      description: Brief description of the template.
-                      example: ''
-                    rows:
-                      type: array
-                      description: Array of row objects that define the layout of the template.
-                      items:
-                        type: object
-                        properties:
-                          columns:
-                            type: array
-                            description: Defines the grid layout within the row.
-                            items:
-                              type: object
-                              properties:
-                                grid-columns:
-                                  type: integer
-                                  description: Number of grid columns used.
-                                  example: 12
-                                modules:
-                                  type: array
-                                  description: Content modules within the column.
-                                  items:
-                                    type: object
-                                    properties:
-                                      descriptor:
+                              columns:
+                                type: array
+                                description: An array of objects for columns
+                                items:
+                                  type: object
+                                  properties:
+                                    grid-columns:
+                                      type: integer
+                                      description: An integer field for grid-columns
+                                      example: 12
+                                    modules:
+                                      type: array
+                                      description: An array of objects for modules
+                                      items:
                                         type: object
-                                        description: Module descriptor including styles and attributes.
                                         properties:
-                                          computedStyle:
+                                          descriptor:
                                             type: object
+                                            description: An object field for descriptor
                                             properties:
-                                              align:
-                                                type: string
-                                                example: center
+                                              computedStyle:
+                                                type: object
+                                                description: An object field for computedStyle
+                                                properties:
+                                                  align:
+                                                    type: string
+                                                    description: A string field for
+                                                      align
+                                                    example: center
+                                                  hideContentOnMobile:
+                                                    type: integer
+                                                    description: An integer field
+                                                      for hideContentOnMobile
+                                                    example: false
+                                                example:
+                                                  align: center
+                                                  hideContentOnMobile: false
+                                              divider:
+                                                type: object
+                                                description: An object field for divider
+                                                properties:
+                                                  style:
+                                                    type: object
+                                                    description: An object field for
+                                                      style
+                                                    properties:
+                                                      border-top:
+                                                        type: string
+                                                        description: A string field
+                                                          for border-top
+                                                        example: 0px solid transparent
+                                                      height:
+                                                        type: string
+                                                        description: A string field
+                                                          for height
+                                                        example: 10px
+                                                      width:
+                                                        type: string
+                                                        description: A string field
+                                                          for width
+                                                        example: 100%
+                                                    example:
+                                                      border-top: 0px solid transparent
+                                                      height: 10px
+                                                example:
+                                                  style: &id004
+                                                    border-top: 0px solid transparent
+                                                    height: 10px
+                                                    width: 100%
+                                              style:
+                                                type: object
+                                                description: An object field for style
+                                                properties:
+                                                  padding-bottom:
+                                                    type: string
+                                                    description: A string field for
+                                                      padding-bottom
+                                                    example: 0px
+                                                  padding-left:
+                                                    type: string
+                                                    description: A string field for
+                                                      padding-left
+                                                    example: 0px
+                                                  padding-right:
+                                                    type: string
+                                                    description: A string field for
+                                                      padding-right
+                                                    example: 0px
+                                                  padding-top:
+                                                    type: string
+                                                    description: A string field for
+                                                      padding-top
+                                                    example: 0px
+                                                example:
+                                                  padding-bottom: 0px
+                                                  padding-left: 0px
+                                            example:
+                                              computedStyle: &id005
+                                                align: center
+                                                hideContentOnMobile: false
+                                              divider: &id006
+                                                style: *id004
+                                          locked:
+                                            type: integer
+                                            description: An integer field for locked
+                                            example: false
+                                          type:
+                                            type: string
+                                            description: A string field for type
+                                            example: mailup-bee-newsletter-modules-divider
+                                          uuid:
+                                            type: string
+                                            description: A string field for uuid
+                                            example: b89c3d25-dbec-439a-8ad1-4939a28678e9
+                                      example:
+                                      - &id007
+                                        descriptor:
+                                          computedStyle: *id005
+                                          divider: *id006
                                           style:
-                                            type: object
-                                            properties:
-                                              padding-top:
-                                                type: string
-                                                example: '10px'
-                                              padding-bottom:
-                                                type: string
-                                                example: '5px'
+                                            padding-bottom: 0px
+                                            padding-left: 0px
+                                            padding-right: 0px
+                                            padding-top: 0px
+                                        locked: false
+                                        type: mailup-bee-newsletter-modules-divider
+                                        uuid: b89c3d25-dbec-439a-8ad1-4939a28678e9
+                                    style:
+                                      type: object
+                                      description: An object field for style
+                                      properties:
+                                        background-color:
+                                          type: string
+                                          description: A string field for background-color
+                                          example: transparent
+                                        border-bottom:
+                                          type: string
+                                          description: A string field for border-bottom
+                                          example: 0px solid transparent
+                                        border-left:
+                                          type: string
+                                          description: A string field for border-left
+                                          example: 0px solid transparent
+                                        border-right:
+                                          type: string
+                                          description: A string field for border-right
+                                          example: 0px solid transparent
+                                        border-top:
+                                          type: string
+                                          description: A string field for border-top
+                                          example: 0px solid transparent
+                                        padding-bottom:
+                                          type: string
+                                          description: A string field for padding-bottom
+                                          example: 0px
+                                        padding-left:
+                                          type: string
+                                          description: A string field for padding-left
+                                          example: 0px
+                                        padding-right:
+                                          type: string
+                                          description: A string field for padding-right
+                                          example: 0px
+                                        padding-top:
+                                          type: string
+                                          description: A string field for padding-top
+                                          example: 0px
+                                      example:
+                                        background-color: transparent
+                                        border-bottom: 0px solid transparent
+                                    uuid:
+                                      type: string
+                                      description: A string field for uuid
+                                      example: 3bd72010-5175-4326-b848-8beacea852d6
+                                example:
+                                - &id008
+                                  grid-columns: 12
+                                  modules:
+                                  - *id007
+                                  style:
+                                    background-color: transparent
+                                    border-bottom: 0px solid transparent
+                                    border-left: 0px solid transparent
+                                    border-right: 0px solid transparent
+                                    border-top: 0px solid transparent
+                                    padding-bottom: 0px
+                                    padding-left: 0px
+                                    padding-right: 0px
+                                    padding-top: 0px
+                                  uuid: 3bd72010-5175-4326-b848-8beacea852d6
+                              container:
+                                type: object
+                                description: An object field for container
+                                properties:
+                                  style:
+                                    type: object
+                                    description: An object field for style
+                                    properties:
+                                      background-color:
+                                        type: string
+                                        description: A string field for background-color
+                                        example: '#8a3b8f'
+                                      background-image:
+                                        type: string
+                                        description: A string field for background-image
+                                        example: none
+                                      background-position:
+                                        type: string
+                                        description: A string field for background-position
+                                        example: top left
+                                      background-repeat:
+                                        type: string
+                                        description: A string field for background-repeat
+                                        example: no-repeat
+                                    example:
+                                      background-color: '#8a3b8f'
+                                      background-image: none
+                                example:
+                                  style: &id009
+                                    background-color: '#8a3b8f'
+                                    background-image: none
+                                    background-position: top left
+                                    background-repeat: no-repeat
+                              content:
+                                type: object
+                                description: An object field for content
+                                properties:
+                                  computedStyle:
+                                    type: object
+                                    description: An object field for computedStyle
+                                    properties:
+                                      hideContentOnDesktop:
+                                        type: integer
+                                        description: An integer field for hideContentOnDesktop
+                                        example: false
+                                      hideContentOnMobile:
+                                        type: integer
+                                        description: An integer field for hideContentOnMobile
+                                        example: false
+                                      rowColStackOnMobile:
+                                        type: integer
+                                        description: An integer field for rowColStackOnMobile
+                                        example: true
+                                      rowReverseColStackOnMobile:
+                                        type: integer
+                                        description: An integer field for rowReverseColStackOnMobile
+                                        example: false
+                                      verticalAlign:
+                                        type: string
+                                        description: A string field for verticalAlign
+                                        example: top
+                                    example:
+                                      hideContentOnDesktop: false
+                                      hideContentOnMobile: false
+                                  style:
+                                    type: object
+                                    description: An object field for style
+                                    properties:
+                                      background-color:
+                                        type: string
+                                        description: A string field for background-color
+                                        example: transparent
+                                      background-image:
+                                        type: string
+                                        description: A string field for background-image
+                                        example: none
+                                      background-position:
+                                        type: string
+                                        description: A string field for background-position
+                                        example: top left
+                                      background-repeat:
+                                        type: string
+                                        description: A string field for background-repeat
+                                        example: no-repeat
+                                      color:
+                                        type: string
+                                        description: A string field for color
+                                        example: '#000000'
+                                      width:
+                                        type: string
+                                        description: A string field for width
+                                        example: 650px
+                                    example:
+                                      background-color: transparent
+                                      background-image: none
+                                example:
+                                  computedStyle: &id010
+                                    hideContentOnDesktop: false
+                                    hideContentOnMobile: false
+                                    rowColStackOnMobile: true
+                                    rowReverseColStackOnMobile: false
+                                    verticalAlign: top
+                                  style: &id011
+                                    background-color: transparent
+                                    background-image: none
+                                    background-position: top left
+                                    background-repeat: no-repeat
+                                    color: '#000000'
+                                    width: 650px
+                              empty:
+                                type: integer
+                                description: An integer field for empty
+                                example: false
+                              locked:
+                                type: integer
+                                description: An integer field for locked
+                                example: false
+                              metadata:
+                                type: object
+                                description: An object field for metadata
+                                properties:
+                                  category:
+                                    type: integer
+                                    description: An integer field for category
+                                    example: 625122
+                                  dateCreated:
+                                    type: string
+                                    description: A string field for dateCreated
+                                    example: '2022-01-20T09:49:32.875165Z'
+                                  dateModified:
+                                    type: string
+                                    description: A string field for dateModified
+                                    example: '2022-01-20T09:49:32.875165Z'
+                                  description:
+                                    type: string
+                                    description: A string field for description
+                                    example: ''
+                                  name:
+                                    type: string
+                                    description: A string field for name
+                                    example: Pre header purple row
+                                  slug:
+                                    type: string
+                                    description: A string field for slug
+                                    example: pre-header-purple-row
+                                  thumb_large:
+                                    type: string
+                                    description: A string field for thumb_large
+                                    example: https://pro-bee-beepro-thumbnails.s3.amazonaws.com/templates/saved-rows/53601/655907/8b99691b-8e39-47a7-8773-4540cd7ff113_large.jpg
+                                  thumb_medium:
+                                    type: string
+                                    description: A string field for thumb_medium
+                                    example: https://pro-bee-beepro-thumbnails.s3.amazonaws.com/templates/saved-rows/53601/655907/8b99691b-8e39-47a7-8773-4540cd7ff113_medium.jpg
+                                  thumb_small:
+                                    type: string
+                                    description: A string field for thumb_small
+                                    example: https://pro-bee-beepro-thumbnails.s3.amazonaws.com/templates/saved-rows/53601/655907/8b99691b-8e39-47a7-8773-4540cd7ff113_small.jpg
+                                  uuid:
+                                    type: string
+                                    description: A string field for uuid
+                                    example: 8b99691b-8e39-47a7-8773-4540cd7ff113
+                                example:
+                                  category: 625122
+                                  dateCreated: '2022-01-20T09:49:32.875165Z'
+                              synced:
+                                type: integer
+                                description: An integer field for synced
+                                example: false
+                              type:
+                                type: string
+                                description: A string field for type
+                                example: one-column-empty
+                              uuid:
+                                type: string
+                                description: A string field for uuid
+                                example: 7fa3e6c4-ac4f-421f-b9eb-db1b9f629fb3
+                          example:
+                          - &id018
+                            columns:
+                            - *id008
+                            container:
+                              style: *id009
+                            content:
+                              computedStyle: *id010
+                              style: *id011
+                            empty: false
+                            locked: false
+                            metadata:
+                              category: 625122
+                              dateCreated: '2022-01-20T09:49:32.875165Z'
+                              dateModified: '2022-01-20T09:49:32.875165Z'
+                              description: ''
+                              idParent: null
+                              name: Pre header purple row
+                              slug: pre-header-purple-row
+                              thumb_large: https://pro-bee-beepro-thumbnails.s3.amazonaws.com/templates/saved-rows/53601/655907/8b99691b-8e39-47a7-8773-4540cd7ff113_large.jpg
+                              thumb_medium: https://pro-bee-beepro-thumbnails.s3.amazonaws.com/templates/saved-rows/53601/655907/8b99691b-8e39-47a7-8773-4540cd7ff113_medium.jpg
+                              thumb_small: https://pro-bee-beepro-thumbnails.s3.amazonaws.com/templates/saved-rows/53601/655907/8b99691b-8e39-47a7-8773-4540cd7ff113_small.jpg
+                              uuid: 8b99691b-8e39-47a7-8773-4540cd7ff113
+                            synced: false
+                            type: one-column-empty
+                            uuid: 7fa3e6c4-ac4f-421f-b9eb-db1b9f629fb3
+                        template:
+                          type: object
+                          description: An object field for template
+                          properties:
+                            name:
+                              type: string
+                              description: A string field for name
+                              example: template-base
+                            type:
+                              type: string
+                              description: A string field for type
+                              example: basic
+                            version:
+                              type: string
+                              description: A string field for version
+                              example: 2.0.0
+                          example:
+                            name: template-base
+                            type: basic
+                        title:
+                          type: string
+                          description: A string field for title
+                          example: ''
+                      example:
+                        body: &id017
+                          container: *id012
+                          content: *id013
+                          type: mailup-bee-page-properties
+                          webFonts:
+                          - *id014
+                        description: ''
+                    comments:
+                      type: object
+                      description: An object field for comments
+                      properties:
+                        31878122-0ce6-4ac0-930e-ccf6086c264c:
+                          type: object
+                          description: An object field for 31878122-0ce6-4ac0-930e-ccf6086c264c
+                          properties:
+                            author:
+                              type: object
+                              description: An object field for author
+                              properties:
+                                userColor:
+                                  type: string
+                                  description: A string field for userColor
+                                  example: '#85b2c3'
+                                userHandle:
+                                  type: string
+                                  description: A string field for userHandle
+                                  example: '515751'
+                                username:
+                                  type: string
+                                  description: A string field for username
+                                  example: Cinzia Caleffi
+                              example:
+                                userColor: '#85b2c3'
+                                userHandle: '515751'
+                            content:
+                              type: string
+                              description: A string field for content
+                              example: <code contenteditable="false" data-bee-mention-uid="274606">@Dalila
+                                Bonomi</code> <code contenteditable="false" data-bee-mention-uid="264431">@Cinzia
+                                Caleffi</code> ei
+                            elementId:
+                              type: string
+                              description: A string field for elementId
+                              example: 9664b8a4-b3c0-401d-be92-6a0dc5022591
+                            mentions:
+                              type: array
+                              description: An array of strings for mentions
+                              items:
+                                type: string
+                              example:
+                              - '274606'
+                            responses:
+                              type: array
+                              description: An array of strings for responses
+                              items:
+                                type: string
+                              example: []
+                            timestamp:
+                              type: string
+                              description: A string field for timestamp
+                              example: '2022-08-03T06:54:12.900Z'
+                            isElementDeleted:
+                              type: integer
+                              description: An integer field for isElementDeleted
+                              example: true
+                          example:
+                            author: &id015
+                              userColor: '#85b2c3'
+                              userHandle: '515751'
+                              username: Cinzia Caleffi
+                            content: <code contenteditable="false" data-bee-mention-uid="274606">@Dalila
+                              Bonomi</code> <code contenteditable="false" data-bee-mention-uid="264431">@Cinzia
+                              Caleffi</code> ei
+                        aa9ea85d-1cdd-49b4-90d0-a42fb87d0a44:
+                          type: object
+                          description: An object field for aa9ea85d-1cdd-49b4-90d0-a42fb87d0a44
+                          properties:
+                            author:
+                              type: object
+                              description: An object field for author
+                              properties:
+                                userColor:
+                                  type: string
+                                  description: A string field for userColor
+                                  example: '#85b2c3'
+                                userHandle:
+                                  type: string
+                                  description: A string field for userHandle
+                                  example: '515751'
+                                username:
+                                  type: string
+                                  description: A string field for username
+                                  example: Cinzia Caleffi
+                              example:
+                                userColor: '#85b2c3'
+                                userHandle: '515751'
+                            content:
+                              type: string
+                              description: A string field for content
+                              example: <code contenteditable="false" data-bee-mention-uid="274606">@Dalila
+                                Bonomi</code> <code contenteditable="false" data-bee-mention-uid="264431">@Cinzia
+                                Caleffi</code> test
+                            mentions:
+                              type: array
+                              description: An array of strings for mentions
+                              items:
+                                type: string
+                              example:
+                              - '274606'
+                            responses:
+                              type: array
+                              description: An array of strings for responses
+                              items:
+                                type: string
+                              example: []
+                            timestamp:
+                              type: string
+                              description: A string field for timestamp
+                              example: '2022-08-03T06:55:03.335Z'
+                          example:
+                            author: &id016
+                              userColor: '#85b2c3'
+                              userHandle: '515751'
+                              username: Cinzia Caleffi
+                            content: <code contenteditable="false" data-bee-mention-uid="274606">@Dalila
+                              Bonomi</code> <code contenteditable="false" data-bee-mention-uid="264431">@Cinzia
+                              Caleffi</code> test
+                      example:
+                        31878122-0ce6-4ac0-930e-ccf6086c264c: &id019
+                          author: *id015
+                          content: <code contenteditable="false" data-bee-mention-uid="274606">@Dalila
+                            Bonomi</code> <code contenteditable="false" data-bee-mention-uid="264431">@Cinzia
+                            Caleffi</code> ei
+                          elementId: 9664b8a4-b3c0-401d-be92-6a0dc5022591
+                          mentions:
+                          - '274606'
+                          - '264431'
+                          parentCommentId: null
+                          responses: []
+                          timestamp: '2022-08-03T06:54:12.900Z'
+                          isElementDeleted: true
+                        aa9ea85d-1cdd-49b4-90d0-a42fb87d0a44: &id020
+                          author: *id016
+                          content: <code contenteditable="false" data-bee-mention-uid="274606">@Dalila
+                            Bonomi</code> <code contenteditable="false" data-bee-mention-uid="264431">@Cinzia
+                            Caleffi</code> test
+                          elementId: null
+                          mentions:
+                          - '274606'
+                          - '264431'
+                          parentCommentId: null
+                          responses: []
+                          timestamp: '2022-08-03T06:55:03.335Z'
+                          isElementDeleted: null
+                  example:
+                    page: &id021
+                      body: *id017
+                      description: ''
+                      rows:
+                      - *id018
+                      - columns:
+                        - grid-columns: 12
+                          modules:
+                          - align: left
+                            descriptor:
+                              computedStyle:
+                                class: left fixedwidth
+                                width: 162.5px
+                              image:
+                                alt: BEE Pro Logo
+                                height: 109px
+                                href: https://beefree.io/
+                                percWidth: 25
+                                prefix: ''
+                                src: https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/53601_655907/editor_images/BEEPro_logo_2.png
+                                target: _self
+                                width: 291px
+                              style:
+                                padding-bottom: 40px
+                                padding-left: 20px
+                                padding-right: 20px
+                                padding-top: 20px
+                                width: 100%
+                            locked: false
+                            type: mailup-bee-newsletter-modules-image
+                            uuid: cc54124d-97bd-44e0-b15e-710a577840ec
+                          - align: left
+                            descriptor:
+                              computedStyle:
+                                align: center
+                              divider:
+                                style:
+                                  border-top: '1px dotted #CCCCCC'
+                                  width: 100%
+                              style:
+                                padding-bottom: 20px
+                                padding-left: 10px
+                                padding-right: 10px
+                                padding-top: 15px
+                            locked: false
+                            type: mailup-bee-newsletter-modules-divider
+                            uuid: 2cd36842-fbe8-4f43-9688-ff6c964aaa89
+                          - descriptor:
+                              computedStyle:
+                                hideContentOnAmp: false
+                                hideContentOnDesktop: false
+                                hideContentOnHtml: false
+                                hideContentOnMobile: false
+                              paragraph:
+                                computedStyle:
+                                  linkColor: '#0068a5'
+                                  paragraphSpacing: 16px
+                                html: "<p>Hi \U0001F642</p>\n<p><strong>Would you\
+                                  \ be interested to participate in a user research\
+                                  \ project with us?</strong></p>\n<p>The research\
+                                  \ will consist of a video call. It usually takes\
+                                  \ 30 to 45 minutes maximum, but we schedule 1 hour\
+                                  \ in case we need more time. We'll be asking questions\
+                                  \ about you, your team, and your email/page creation\
+                                  \ workflow. The idea is for us to understand how\
+                                  \ BEE Pro fits in your work day.</p>\n<p><strong>Sounds\
+                                  \ good?</strong> Pick a time slot at your convenience\
+                                  \ using <a href=\"https://calendly.com/beepro-product-team/beepro-interview?month=2022-06\"\
+                                  \ target=\"_blank\" rel=\"noopener\" style=\"text-decoration:\
+                                  \ underline;\">this link \u2197</a></p>\n<p>Look\
+                                  \ forward to hearing back from you.</p>\n<p>Best,</p>\n\
+                                  <p>Dalila from the Product Team \U0001F49C</p>\n\
+                                  <p>P.S. Probably your colleagues that use BEE Pro\
+                                  \ have received this email too. If you'd like you\
+                                  \ can add one guest to the booking link and participate\
+                                  \ together, or you can join us alone. We would love\
+                                  \ to talk to you in any case.&nbsp;</p>"
+                                style:
+                                  color: '#000000'
+                                  direction: ltr
+                                  font-family: inherit
+                                  font-size: 14px
+                                  font-weight: '400'
+                                  letter-spacing: 0px
+                                  line-height: 120%
+                                  text-align: left
+                                translations:
+                                  de-DE:
+                                    html: "<p>Hallo \U0001F642<br /><br />Is het interessant\
+                                      \ om deel te nemen aan een onderzoek naar nieuwe\
+                                      \ gebruikersonderzoeken?<br /><br />Het onderzoek\
+                                      \ bestaat uit een videofilm. Wacht tussen 30\
+                                      \ en 45 minuten als het maximum, maar het programma\
+                                      \ duurt 1 uur voordat u meer tijd nodig heeft.\
+                                      \ De haremos worden nu gebruikt, uw uitrusting\
+                                      \ en uw vloeiende creatie van pagina's/correos\
+                                      \ elektronische. Het idee is dat BEE Pro op\
+                                      \ zijn werk werkt.<br /><br />&iquest;Suena\
+                                      \ bien? Elija un horario de su conveniencia\
+                                      \ usando este enlace \u2197<br />Esperamos tener\
+                                      \ noticias suyas.<br /><br />Groot,<br /><br\
+                                      \ />Dalila del equipo de producto \U0001F49C\
+                                      <br /><br /><br />PD Waarschijnlijk is uw partner\
+                                      \ die BEE Pro gebruikt, deze recibido is elektrisch\
+                                      \ correct. Als je dit hebt gedaan, kun je een\
+                                      \ uitnodiging voor het reserveren en de deelname\
+                                      \ aan de wedstrijd verzamelen, of je kunt een\
+                                      \ nieuwe solo spelen. Geen enkele gebeurtenis\
+                                      \ wordt in een ander geval verwisseld.</p>"
+                                  es-ES:
+                                    html: "<p>Hola \U0001F642<br /><br />&iquest;Estar&iacute;a\
+                                      \ interesado en participar en un proyecto de\
+                                      \ investigaci&oacute;n de usuarios con nosotros?<br\
+                                      \ /><br />La investigaci&oacute;n consistir&aacute;\
+                                      \ en una videollamada. Suele tardar entre 30\
+                                      \ y 45 minutos como m&aacute;ximo, pero programamos\
+                                      \ 1 hora por si necesitamos m&aacute;s tiempo.\
+                                      \ Le haremos preguntas sobre usted, su equipo\
+                                      \ y su flujo de trabajo de creaci&oacute;n de\
+                                      \ p&aacute;ginas/correos electr&oacute;nicos.\
+                                      \ La idea es que entendamos c&oacute;mo encaja\
+                                      \ BEE Pro en su jornada laboral.<br /><br /><br\
+                                      \ />&iquest;Suena bien? Elija un horario de\
+                                      \ su conveniencia usando este enlace \u2197\
+                                      <br />Esperamos tener noticias suyas.<br /><br\
+                                      \ /><br />Mejor,<br /><br />Dalila del equipo\
+                                      \ de producto \U0001F49C<br /><br /><br /><br\
+                                      \ />PD Probablemente tus compa&ntilde;eros que\
+                                      \ utilizan BEE Pro tambi&eacute;n hayan recibido\
+                                      \ este correo electr&oacute;nico. Si lo desea,\
+                                      \ puede agregar un invitado al enlace de reserva\
+                                      \ y participar juntos, o puede unirse a nosotros\
+                                      \ solo. Nos encantar&iacute;a hablar con usted\
+                                      \ en cualquier caso.</p>"
+                              style:
+                                padding-bottom: 10px
+                                padding-left: 10px
+                                padding-right: 10px
+                                padding-top: 10px
+                            locked: false
+                            type: mailup-bee-newsletter-modules-paragraph
+                            uuid: 0456f2de-7125-475c-b016-41f77b3fda47
+                          style:
+                            background-color: transparent
+                            border-bottom: 0px solid transparent
+                            border-left: 0px solid transparent
+                            border-right: 0px solid transparent
+                            border-top: 0px solid transparent
+                            padding-bottom: 5px
+                            padding-left: 10px
+                            padding-right: 10px
+                            padding-top: 5px
+                          uuid: 61614a04-eb36-4d98-b28e-c6c9e048877d
+                        container:
+                          style:
+                            background-color: transparent
+                            background-image: none
+                            background-position: top left
+                            background-repeat: no-repeat
+                        content:
+                          computedStyle:
+                            hideContentOnDesktop: false
+                            hideContentOnMobile: false
+                            rowColStackOnMobile: true
+                            rowReverseColStackOnMobile: false
+                            verticalAlign: top
+                          style:
+                            background-color: transparent
+                            background-image: none
+                            background-position: top left
+                            background-repeat: no-repeat
+                            color: '#000000'
+                            width: 650px
+                        empty: false
+                        locked: false
+                        metadata:
+                          category: 625122
+                          dateCreated: '2022-01-20T09:51:57.896884Z'
+                          dateModified: '2022-01-20T09:51:57.896884Z'
+                          description: ''
+                          idParent: null
+                          name: 'body with: logo + pre title + title + subtitle +
+                            body'
+                          slug: body-with-logo-pre-title-title-subtitle-body
+                          thumb_large: https://pro-bee-beepro-thumbnails.s3.amazonaws.com/templates/saved-rows/53601/655907/35d02430-32b2-41d6-a115-68d7bb476d64_large.jpg
+                          thumb_medium: https://pro-bee-beepro-thumbnails.s3.amazonaws.com/templates/saved-rows/53601/655907/35d02430-32b2-41d6-a115-68d7bb476d64_medium.jpg
+                          thumb_small: https://pro-bee-beepro-thumbnails.s3.amazonaws.com/templates/saved-rows/53601/655907/35d02430-32b2-41d6-a115-68d7bb476d64_small.jpg
+                          uuid: 35d02430-32b2-41d6-a115-68d7bb476d64
+                        synced: false
+                        type: two-columns-empty
+                        uuid: f57920be-d9e4-41c0-a009-eb85fd2a8034
+                      - columns:
+                        - grid-columns: 12
+                          modules:
+                          - align: left
+                            descriptor:
+                              computedStyle:
+                                align: center
+                              divider:
+                                style:
+                                  border-top: '1px dotted #CCCCCC'
+                                  width: 100%
+                              style:
+                                padding-bottom: 30px
+                                padding-left: 10px
+                                padding-right: 10px
+                                padding-top: 15px
+                            locked: false
+                            type: mailup-bee-newsletter-modules-divider
+                            uuid: ab4460e6-1206-45c1-ba56-9f6d6409508e
+                          style:
+                            background-color: transparent
+                            border-bottom: 0px solid transparent
+                            border-left: 0px solid transparent
+                            border-right: 0px solid transparent
+                            border-top: 0px solid transparent
+                            padding-bottom: 5px
+                            padding-left: 0px
+                            padding-right: 0px
+                            padding-top: 5px
+                          uuid: 6ac459ef-5e34-468a-b064-07ea57e1e37c
+                        container:
+                          style:
+                            background-color: transparent
+                            background-image: none
+                            background-position: top left
+                            background-repeat: no-repeat
+                        content:
+                          computedStyle:
+                            hideContentOnDesktop: false
+                            hideContentOnMobile: false
+                            rowColStackOnMobile: true
+                            rowReverseColStackOnMobile: false
+                            verticalAlign: top
+                          style:
+                            background-color: transparent
+                            background-image: none
+                            background-position: top left
+                            background-repeat: no-repeat
+                            color: '#000000'
+                            width: 650px
+                        empty: false
+                        locked: false
+                        metadata:
+                          category: 625122
+                          dateCreated: '2021-06-29T08:19:25.800829Z'
+                          dateModified: '2021-06-29T08:19:27.572522Z'
+                          description: ''
+                          idParent: null
+                          name: Footer Line
+                          slug: footer-line
+                          uuid: 77127825-a508-4127-9155-b5161f9e1703
+                        synced: false
+                        type: row-1-columns-12
+                        uuid: b759c29c-fb9e-4b1a-add9-a464eeb568f5
+                      - columns:
+                        - grid-columns: 3
+                          modules:
+                          - align: left
+                            descriptor:
+                              computedStyle:
+                                class: left fixedwidth
+                                width: 130px
+                              image:
+                                alt: Elena Loatelli & Dalila Bonomi
+                                height: 263px
+                                href: ''
+                                percWidth: 80
+                                prefix: ''
+                                src: https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/53601_655907/editor_images/dalila.png
+                                target: _self
+                                width: 263px
+                              style:
+                                padding-bottom: 0px
+                                padding-left: 15px
+                                padding-right: 0px
+                                padding-top: 5px
+                                width: 100%
+                            locked: false
+                            type: mailup-bee-newsletter-modules-image
+                            uuid: 682c9273-3090-43fb-9acc-a2e2cda857b7
+                          style:
+                            background-color: transparent
+                            border-bottom: 0px solid transparent
+                            border-left: 0px solid transparent
+                            border-right: 0px solid transparent
+                            border-top: 0px solid transparent
+                            padding-bottom: 5px
+                            padding-left: 0px
+                            padding-right: 0px
+                            padding-top: 5px
+                          uuid: a434440b-92d8-4841-90cc-2ab49b1afc14
+                        - grid-columns: 9
+                          modules:
+                          - align: left
+                            descriptor:
+                              computedStyle:
+                                hideContentOnMobile: false
+                              style:
+                                padding-bottom: 0px
+                                padding-left: 15px
+                                padding-right: 10px
+                                padding-top: 10px
+                              text:
+                                computedStyle:
+                                  linkColor: '#8a3b8f'
+                                html: <div class="txtTinyMce-wrapper" style="font-size:14px;line-height:16px;font-family:inherit;"
+                                  data-mce-style="font-size:14px;line-height:16px;font-family:inherit;"><p
+                                  style="font-size:14px;line-height:16px;word-break:break-word;"
+                                  data-mce-style="font-size:14px;line-height:16px;word-break:break-word;"><strong><span
+                                  style="font-size:16px;line-height:19px;" data-mce-style="font-size:16px;line-height:19px;">DALILA
+                                  BONOMI</span></strong></p></div>
+                                style:
+                                  color: '#8a3b8f'
+                                  font-family: inherit
+                                  line-height: 120%
+                            locked: false
+                            type: mailup-bee-newsletter-modules-text
+                            uuid: b37a5a73-5f40-4e2d-8d7b-6a117aa686eb
+                          - align: left
+                            descriptor:
+                              computedStyle:
+                                hideContentOnDesktop: false
+                                hideContentOnMobile: false
+                              style:
+                                padding-bottom: 5px
+                                padding-left: 15px
+                                padding-right: 0px
+                                padding-top: 10px
+                              text:
+                                computedStyle:
+                                  linkColor: '#8a3b8f'
+                                html: <div class="txtTinyMce-wrapper" style="font-size:12px;line-height:21px;font-family:inherit;"
+                                  data-mce-style="font-size:12px;line-height:21px;font-family:inherit;"><p
+                                  style="font-size:14px;line-height:25px;word-break:break-word;text-align:left;"
+                                  data-mce-style="font-size:14px;line-height:25px;word-break:break-word;text-align:left;"><strong><span
+                                  style="font-size:16px;line-height:28px;" data-mce-style="font-size:16px;line-height:28px;">BEE
+                                  | The email &amp; page builder for everyone.</span></strong></p><p
+                                  style="line-height:21px;word-break:break-word;"
+                                  data-mce-style="line-height:21px;word-break:break-word;"><span
+                                  style="font-size:16px;line-height:28px;" data-mce-style="font-size:16px;line-height:28px;">Design
+                                  Researcher</span></p></div>
+                                style:
+                                  color: '#454562'
+                                  font-family: inherit
+                                  line-height: 180%
+                            locked: false
+                            type: mailup-bee-newsletter-modules-text
+                            uuid: a916773b-42f4-4efc-af64-3b2a9f801015
+                          style:
+                            background-color: transparent
+                            border-bottom: 0px solid transparent
+                            border-left: 0px solid transparent
+                            border-right: 0px solid transparent
+                            border-top: 0px solid transparent
+                            padding-bottom: 5px
+                            padding-left: 0px
+                            padding-right: 0px
+                            padding-top: 5px
+                          uuid: bc078241-a4ab-4a26-b28b-b7aba3180d3a
+                        container:
+                          style:
+                            background-color: transparent
+                            background-image: none
+                            background-position: top left
+                            background-repeat: no-repeat
+                        content:
+                          computedStyle:
+                            hideContentOnDesktop: false
+                            hideContentOnMobile: false
+                            rowColStackOnMobile: true
+                            rowReverseColStackOnMobile: false
+                            verticalAlign: top
+                          style:
+                            background-color: transparent
+                            background-image: none
+                            background-position: top left
+                            background-repeat: no-repeat
+                            color: '#000000'
+                            width: 650px
+                        empty: false
+                        locked: false
+                        metadata:
+                          category: 706433
+                          dateCreated: '2022-01-31T09:21:17.612857Z'
+                          dateModified: '2022-01-31T09:21:20.633639Z'
+                          description: ''
+                          idParent: null
+                          name: Dalila single sign
+                          slug: dalila-single-sign
+                          uuid: 37bceb9d-b1c9-4724-b5ad-31645653d1c2
+                        synced: false
+                        type: two-columns-3-9-empty
+                        uuid: 3218627f-a68a-4f5d-b3e9-adfa19bb82ec
+                      - columns:
+                        - grid-columns: 12
+                          modules:
+                          - descriptor:
+                              computedStyle:
+                                align: center
+                                hideContentOnMobile: false
+                              divider:
+                                style:
+                                  border-top: 0px solid transparent
+                                  height: 50px
+                                  width: 100%
+                              style:
+                                padding-bottom: 10px
+                                padding-left: 10px
+                                padding-right: 10px
+                                padding-top: 10px
+                            locked: false
+                            type: mailup-bee-newsletter-modules-divider
+                            uuid: 5a247632-900c-4a38-8bf1-2307938d9bb5
+                          style:
+                            background-color: transparent
+                            border-bottom: 0px solid transparent
+                            border-left: 0px solid transparent
+                            border-right: 0px solid transparent
+                            border-top: 0px solid transparent
+                            padding-bottom: 5px
+                            padding-left: 0px
+                            padding-right: 0px
+                            padding-top: 5px
+                          uuid: ecfdb53f-a7a0-40dd-9fd9-67d7e2677832
+                        container:
+                          style:
+                            background-color: transparent
+                            background-image: none
+                            background-position: top left
+                            background-repeat: no-repeat
+                        content:
+                          computedStyle:
+                            hideContentOnDesktop: false
+                            hideContentOnMobile: false
+                            rowColStackOnMobile: true
+                            rowReverseColStackOnMobile: false
+                            verticalAlign: top
+                          style:
+                            background-color: transparent
+                            background-image: none
+                            background-position: top left
+                            background-repeat: no-repeat
+                            color: '#000000'
+                            width: 650px
+                        empty: false
+                        locked: false
+                        synced: false
+                        type: one-column-empty
+                        uuid: feb66cab-ac4a-4ec2-b5d6-657eeabd1039
+                      - columns:
+                        - grid-columns: 12
+                          modules:
+                          - align: left
+                            descriptor:
+                              computedStyle:
+                                hideContentOnDesktop: false
+                                hideContentOnMobile: false
+                                iconHeight: 16px
+                                iconSpacing:
+                                  padding-bottom: 5px
+                                  padding-left: 5px
+                                  padding-right: 6px
+                                  padding-top: 5px
+                                itemsSpacing: 0px
+                              iconsList:
+                                icons:
+                                - alt: Designed with BEE
+                                  height: 325px
+                                  href: https://beefree.io/
+                                  id: 1879a39d-9303-43e5-8458-990ac7b0a429
+                                  image: https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/53601_510656/Signature/bee_w.png
+                                  target: _blank
+                                  text: Designed with BEE
+                                  textPosition: right
+                                  title: Designed with BEE
+                                  width: 325px
+                              style:
+                                color: '#ffffff'
+                                font-family: inherit
+                                font-size: 15px
+                                padding-bottom: 5px
+                                padding-left: 0px
+                                padding-right: 0px
+                                padding-top: 5px
+                                text-align: center
+                            locked: false
+                            type: mailup-bee-newsletter-modules-icons
+                            uuid: 35f3f7a2-37aa-4471-bd26-ce2b51e6e39b
+                          style:
+                            background-color: transparent
+                            border-bottom: 0px solid transparent
+                            border-left: 0px solid transparent
+                            border-right: 0px solid transparent
+                            border-top: 0px solid transparent
+                            padding-bottom: 5px
+                            padding-left: 0px
+                            padding-right: 0px
+                            padding-top: 5px
+                          uuid: 8d6cbc30-0a36-4037-ae02-827d71033fee
+                        container:
+                          style:
+                            background-color: '#8a3b8f'
+                            background-image: none
+                            background-position: top left
+                            background-repeat: no-repeat
+                        content:
+                          computedStyle:
+                            hideContentOnDesktop: false
+                            hideContentOnMobile: false
+                            rowColStackOnMobile: true
+                            rowReverseColStackOnMobile: false
+                            verticalAlign: top
+                          style:
+                            background-color: transparent
+                            background-image: none
+                            background-position: top left
+                            background-repeat: no-repeat
+                            color: '#000000'
+                            width: 650px
+                        empty: false
+                        locked: false
+                        metadata:
+                          category: 706433
+                          dateCreated: '2022-01-20T09:44:21.371097Z'
+                          dateModified: '2022-01-20T11:01:58.708887Z'
+                          description: ''
+                          idParent: null
+                          name: Designed with BEE
+                          slug: designed-with-bee
+                          thumb_large: https://pro-bee-beepro-thumbnails.s3.amazonaws.com/templates/saved-rows/53601/655907/727e515b-7455-4661-8e85-22b9f7178d3f_large.jpg
+                          thumb_medium: https://pro-bee-beepro-thumbnails.s3.amazonaws.com/templates/saved-rows/53601/655907/727e515b-7455-4661-8e85-22b9f7178d3f_medium.jpg
+                          thumb_small: https://pro-bee-beepro-thumbnails.s3.amazonaws.com/templates/saved-rows/53601/655907/727e515b-7455-4661-8e85-22b9f7178d3f_small.jpg
+                          uuid: 727e515b-7455-4661-8e85-22b9f7178d3f
+                        synced: false
+                        type: one-column-empty
+                        uuid: cc615b28-4773-45ef-b0bf-4ef7ef89b1bf
+                      template:
+                        name: template-base
+                        type: basic
+                        version: 2.0.0
+                      title: ''
+                    comments: &id022
+                      31878122-0ce6-4ac0-930e-ccf6086c264c: *id019
+                      aa9ea85d-1cdd-49b4-90d0-a42fb87d0a44: *id020
+              example:
+                options:
+                  model: gpt-3.5-turbo
+                  toneOfVoice: ''
+                  instructions: Try to use a pun.
+                  reportUsage: true
+                  language: ''
+                template:
+                  page: *id021
+                  comments: *id022
       responses:
         '200':
-          description: A JSON object with metadata (preheader and subject).
+          description: Successful response
           content:
-            application/json:
+            text/html:
               schema:
-                type: object
-                properties:
-                  preheader:
-                    type: string
-                    description: Preheader text for the email.
-                    example: Ready to Bee a part of our user research project? Schedule your interview now!
-                  subject:
-                    type: string
-                    description: Subject line for the email.
-                    example: "BEE Pro: Let's Bee-gin! Join our user research project 🐝"
-                  usage:
-                    type: object
-                    description: Information about the token usage in the AI request.
-                    properties:
-                      prompt_tokens:
-                        type: integer
-                        example: 424
-                      completion_tokens:
-                        type: integer
-                        example: 48
-                      total_tokens:
-                        type: integer
-                        example: 472
-                      completion_tokens_details:
-                        type: object
-                        description: Detailed information on completion token usage.
-                        properties:
-                          reasoning_tokens:
-                            type: integer
-                            example: 0
-              example:
-                preheader: Ready to Bee a part of our user research project? Schedule your interview now!
-                subject: "BEE Pro: Let's Bee-gin! Join our user research project 🐝"
-                usage:
-                  prompt_tokens: 424
-                  completion_tokens: 48
-                  total_tokens: 472
-                  completion_tokens_details:
-                    reasoning_tokens: 0
-      examples:
-        NodeJS:
-          summary: NodeJS Request Example
-          value: |
-            const response = await fetch('https://api.getbee.io/v1/ai/metadata', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer <token>' },
-              body: JSON.stringify({
-                "options": {
-                  "model": "gpt-3.5-turbo",
-                  "toneOfVoice": "Humorous",
-                  "instructions": "Try to use a pun.",
-                  "reportUsage": true,
-                  "language": "en"
-                },
-                "template": {
-                  "page": {
-                    "body": {
-                      "container": {
-                        "style": {
-                          "background-color": "#fff",
-                          "background-image": "none",
-                          "background-position": "top left",
-                          "background-repeat": "no-repeat",
-                          "background-size": "auto"
-                        }
-                      },
-                      "content": {
-                        "computedStyle": {
-                          "linkColor": "#8a3b8f",
-                          "messageBackgroundColor": "transparent",
-                          "messageWidth": "650px"
-                        },
-                        "style": {
-                          "color": "#000000",
-                          "font-family": "Lato, Tahoma, Verdana, Segoe, sans-serif"
-                        }
-                      }
-                    }
-                  }
-                }
-              }),
-            });
-            const result = await response.json();
-            console.log(result); // Log the AI-generated metadata (preheader and subject)
+                type: string
+                example:
+                  message: Success
+        '400':
+          description: Bad request. The request could not be understood or was missing
+            required parameters.
+        '401':
+          description: Unauthorized. Authentication is required and has failed or
+            has not been provided.
+        '403':
+          description: Forbidden. The request was valid, but the server is refusing
+            action.
+        '500':
+          description: Internal Server Error. An unexpected condition was encountered.

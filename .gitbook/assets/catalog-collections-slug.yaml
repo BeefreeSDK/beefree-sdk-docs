@@ -1,0 +1,56 @@
+openapi: 3.0.0
+info:
+  title: Get a Collection
+  description: Retrieve a specific collection in the catalog.
+  version: 1.0.0
+servers:
+- url: https://api.getbee.io
+  description: Base URL for the API
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Enter Dev Console API Key as Bearer token
+paths:
+  /v1/catalog/collections/:slug:
+    get:
+      summary: Get a Collection
+      description: Retrieve a specific collection in the catalog.
+      security:
+      - bearerAuth: []
+      parameters:
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: string
+                example:
+                  bg_color: '#FBFBFB'
+                  description: A Beefree collection is a set of templates focused
+                    on a specific communication need. Whether you need to create an
+                    automated email sequence to onboard new customers, launch a new
+                    product, or dress up transactional messages for your online store,
+                    Beefree collections will help you hit the ground running and achieve
+                    your goals faster.
+                  short_description: ''
+                  fg_color: '#140242'
+                  highlighted: false
+                  icon_url: https://d1oco4z2z1fhwp.cloudfront.net/collections/photo.svg
+                  id: photography
+                  image_url: https://d1oco4z2z1fhwp.cloudfront.net/collections/Photography-TC.png
+                  name: Photography
+                  order: '0'
+        '400':
+          description: Bad request. The request could not be understood or was missing
+            required parameters.
+        '401':
+          description: Unauthorized. Authentication is required and has failed or
+            has not been provided.
+        '403':
+          description: Forbidden. The request was valid, but the server is refusing
+            action.
+        '500':
+          description: Internal Server Error. An unexpected condition was encountered.

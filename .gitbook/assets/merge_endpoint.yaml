@@ -1,11 +1,12 @@
 openapi: 3.0.0
 info:
-  title: Merge
-  description: Replace content
+  title: ' Merge to replace content or update content'
+  description: Replace or update content in a Beefree template using a specific path
+    and value. Compatible with Email and Page builders.
   version: 1.0.0
 servers:
-  - url: https://api.getbee.io
-    description: Base URL for the API
+- url: https://api.getbee.io
+  description: Base URL for the API
 components:
   securitySchemes:
     bearerAuth:
@@ -15,12 +16,21 @@ components:
 paths:
   /v1/{collection}/merge:
     post:
-      summary: Merge to replace content
-      description: Replace or update content in the template using a specific path and value.
+      summary: ' Merge to replace content or update content'
+      description: Replace or update content in a Beefree template using a specific
+        path and value. Compatible with Email and Page builders.
       security:
-        - bearerAuth: []
+      - bearerAuth: []
+      parameters:
+      - name: collection
+        in: path
+        required: true
+        description: The collection ID or name
+        schema:
+          type: string
       requestBody:
         required: true
+        description: Request body for the endpoint
         content:
           application/json:
             schema:
@@ -28,150 +38,2061 @@ paths:
               properties:
                 replace:
                   type: array
+                  description: An array of objects for replace
                   items:
                     type: object
                     properties:
                       path:
                         type: string
-                        description: JSON path of the element to replace.
-                        example: "$..rows[?(@.metadata.uid=='508824c4-8d45-11ee-84be-aafd6b2aca16')]"
+                        description: A string field for path
+                        example: $..rows[?(@.metadata.uid=='508824c4-8d45-11ee-84be-aafd6b2aca16')]
                       value:
                         type: object
-                        description: The new value that will replace the current content.
+                        description: An object field for value
                         properties:
                           columns:
                             type: array
+                            description: An array of objects for columns
                             items:
                               type: object
                               properties:
                                 grid-columns:
                                   type: integer
+                                  description: An integer field for grid-columns
                                   example: 4
                                 modules:
                                   type: array
+                                  description: An array of objects for modules
                                   items:
                                     type: object
                                     properties:
                                       descriptor:
                                         type: object
+                                        description: An object field for descriptor
                                         properties:
                                           computedStyle:
                                             type: object
-                                            description: Computed style for the module.
+                                            description: An object field for computedStyle
+                                            properties:
+                                              class:
+                                                type: string
+                                                description: A string field for class
+                                                example: center autowidth
+                                              hideContentOnMobile:
+                                                type: integer
+                                                description: An integer field for
+                                                  hideContentOnMobile
+                                                example: false
+                                              width:
+                                                type: string
+                                                description: A string field for width
+                                                example: 156.66666666666666px
+                                            example:
+                                              class: center autowidth
+                                              hideContentOnMobile: false
                                           image:
                                             type: object
-                                            description: Image details and properties.
-                                          paragraph:
+                                            description: An object field for image
+                                            properties:
+                                              alt:
+                                                type: string
+                                                description: A string field for alt
+                                                example: ''
+                                              dynamicSrc:
+                                                type: string
+                                                description: A string field for dynamicSrc
+                                                example: $product_reco[1].image_url$
+                                              height:
+                                                type: string
+                                                description: A string field for height
+                                                example: 500px
+                                              href:
+                                                type: string
+                                                description: A string field for href
+                                                example: ''
+                                              prefix:
+                                                type: string
+                                                description: A string field for prefix
+                                                example: ''
+                                              src:
+                                                type: string
+                                                description: A string field for src
+                                                example: data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjUwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNGM0YzRjMiLz4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTMzMS4yNTMgMjExLjY1NEwyMzUuOTc5IDE4Ni4xMjZMMjE1LjA3OSAyNjQuMTI5TDI1MS45ODkgMjQ4LjUxM0wyNzEuMzUgMjYzLjQwN0wzMjMuMTcyIDI0MS44MTVMMzMxLjI1MyAyMTEuNjU0Wk0zMDUuNzI1IDMwNi45MjhMMjc5LjgxNCAyOTkuOTg1TDMwNS44OTEgMzA2LjMwN0wzMDUuNzI1IDMwNi45MjhaTTIzNy4yNzQgMTgxLjI5NkwyMzIuNDQ0IDE4MC4wMDJMMjMxLjE1IDE4NC44MzJMMjA1LjYyMSAyODAuMTA2TDIwNC4zMjcgMjg0LjkzNUwyMDkuMTU3IDI4Ni4yMjlMMzA0LjQzMSAzMTEuNzU4TDMwOS4yNiAzMTMuMDUyTDMxMC41NTQgMzA4LjIyMkwzMzYuMDgzIDIxMi45NDhMMzM3LjM3NyAyMDguMTE5TDMzMi41NDggMjA2LjgyNUwyMzcuMjc0IDE4MS4yOTZaTTI1OS40MzUgMjM2LjU5NUMyNjYuODM4IDIzNi41OTUgMjcyLjgzOSAyMzAuNTk0IDI3Mi44MzkgMjIzLjE5MUMyNzIuODM5IDIxNS43ODggMjY2LjgzOCAyMDkuNzg2IDI1OS40MzUgMjA5Ljc4NkMyNTIuMDMyIDIwOS43ODYgMjQ2LjAzIDIxNS43ODggMjQ2LjAzIDIyMy4xOTFDMjQ2LjAzIDIzMC41OTQgMjUyLjAzMiAyMzYuNTk1IDI1OS40MzUgMjM2LjU5NVoiIGZpbGw9IiM5Nzk4OTQiLz4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIxNy42MDQgMjEyLjc2NEgyMTQuNTAyVjIxNC4wMTRWMjE1LjI2NEgyMTYuOTM0TDIxNy42MDQgMjEyLjc2NFpNMTYyLjYyMiAyMTguMTI1SDE2My44NzJIMTY1LjEyMlYyMTUuMjY0SDE2Ny4zMzhWMjE0LjAxNFYyMTIuNzY0SDE2NS4xMjJIMTYzLjg3MkgxNjIuNjIyVjIxNC4wMTRWMjE1LjI2NFYyMTguMTI1Wk0xNzYuNzcxIDIxMi43NjRIMTg2LjIwNFYyMTQuMDE0VjIxNS4yNjRIMTc2Ljc3MVYyMTQuMDE0VjIxMi43NjRaTTE5NS42MzcgMjE0LjAxNFYyMTIuNzY0SDIwNS4wNjlWMjE0LjAxNFYyMTUuMjY0SDE5NS42MzdWMjE0LjAxNFpNMjc0LjU2NSAzMTQuNjM3SDI3NS44MTVWMzE3LjQ5OVYzMTguNzQ5VjMxOS45OTlIMjc0LjU2NUgyNzMuMzE1SDI3MS4wOTlWMzE4Ljc0OVYzMTcuNDk5SDI3My4zMTVWMzE0LjYzN0gyNzQuNTY1Wk0yNjEuNjY2IDMxOC43NDlWMzE5Ljk5OUgyNTIuMjMzVjMxOC43NDlWMzE3LjQ5OUgyNjEuNjY2VjMxOC43NDlaTTI0Mi44IDMxOC43NDlWMzE5Ljk5OUgyMzMuMzY4VjMxOC43NDlWMzE3LjQ5OUgyNDIuOFYzMTguNzQ5Wk0yMjMuOTM1IDMxOC43NDlWMzE5Ljk5OUgyMTQuNTAyVjMxOC43NDlWMzE3LjQ5OUgyMjMuOTM1VjMxOC43NDlaTTIwNS4wNjkgMzE4Ljc0OVYzMTkuOTk5SDE5NS42MzdWMzE4Ljc0OVYzMTcuNDk5SDIwNS4wNjlWMzE4Ljc0OVpNMTg2LjIwNCAzMTguNzQ5VjMxOS45OTlIMTc2Ljc3MVYzMTguNzQ5VjMxNy40OTlIMTg2LjIwNFYzMTguNzQ5Wk0xNjcuMzM4IDMxOC43NDlWMzE5Ljk5OUgxNjUuMTIySDE2My44NzJIMTYyLjYyMlYzMTguNzQ5VjMxNy40OTlWMzE0LjYzN0gxNjMuODcySDE2NS4xMjJWMzE3LjQ5OUgxNjcuMzM4VjMxOC43NDlaTTE2My44NzIgMzAzLjkxNEgxNjIuNjIyVjI5My4xOUgxNjMuODcySDE2NS4xMjJWMzAzLjkxNEgxNjMuODcyWk0xNjMuODcyIDI4Mi40NjdIMTYyLjYyMlYyNzEuNzQzSDE2My44NzJIMTY1LjEyMlYyODIuNDY3SDE2My44NzJaTTE2My44NzIgMjYxLjAySDE2Mi42MjJWMjUwLjI5NkgxNjMuODcySDE2NS4xMjJWMjYxLjAySDE2My44NzJaTTE2My44NzIgMjM5LjU3M0gxNjIuNjIyVjIyOC44NDlIMTYzLjg3MkgxNjUuMTIyVjIzOS41NzNIMTYzLjg3MloiIGZpbGw9IiM5Nzk4OTQiLz4KPC9zdmc+Cg==
+                                              target:
+                                                type: string
+                                                description: A string field for target
+                                                example: _blank
+                                              width:
+                                                type: string
+                                                description: A string field for width
+                                                example: 500px
+                                            example:
+                                              alt: ''
+                                              dynamicSrc: $product_reco[1].image_url$
+                                          style:
                                             type: object
-                                            description: Paragraph details and properties.
+                                            description: An object field for style
+                                            properties:
+                                              padding-bottom:
+                                                type: string
+                                                description: A string field for padding-bottom
+                                                example: 5px
+                                              padding-left:
+                                                type: string
+                                                description: A string field for padding-left
+                                                example: 5px
+                                              padding-right:
+                                                type: string
+                                                description: A string field for padding-right
+                                                example: 5px
+                                              padding-top:
+                                                type: string
+                                                description: A string field for padding-top
+                                                example: 5px
+                                              width:
+                                                type: string
+                                                description: A string field for width
+                                                example: 100%
+                                            example:
+                                              padding-bottom: 5px
+                                              padding-left: 5px
+                                        example:
+                                          computedStyle: &id001
+                                            class: center autowidth
+                                            hideContentOnMobile: false
+                                            width: 156.66666666666666px
+                                          image: &id002
+                                            alt: ''
+                                            dynamicSrc: $product_reco[1].image_url$
+                                            height: 500px
+                                            href: ''
+                                            prefix: ''
+                                            src: data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjUwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNGM0YzRjMiLz4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTMzMS4yNTMgMjExLjY1NEwyMzUuOTc5IDE4Ni4xMjZMMjE1LjA3OSAyNjQuMTI5TDI1MS45ODkgMjQ4LjUxM0wyNzEuMzUgMjYzLjQwN0wzMjMuMTcyIDI0MS44MTVMMzMxLjI1MyAyMTEuNjU0Wk0zMDUuNzI1IDMwNi45MjhMMjc5LjgxNCAyOTkuOTg1TDMwNS44OTEgMzA2LjMwN0wzMDUuNzI1IDMwNi45MjhaTTIzNy4yNzQgMTgxLjI5NkwyMzIuNDQ0IDE4MC4wMDJMMjMxLjE1IDE4NC44MzJMMjA1LjYyMSAyODAuMTA2TDIwNC4zMjcgMjg0LjkzNUwyMDkuMTU3IDI4Ni4yMjlMMzA0LjQzMSAzMTEuNzU4TDMwOS4yNiAzMTMuMDUyTDMxMC41NTQgMzA4LjIyMkwzMzYuMDgzIDIxMi45NDhMMzM3LjM3NyAyMDguMTE5TDMzMi41NDggMjA2LjgyNUwyMzcuMjc0IDE4MS4yOTZaTTI1OS40MzUgMjM2LjU5NUMyNjYuODM4IDIzNi41OTUgMjcyLjgzOSAyMzAuNTk0IDI3Mi44MzkgMjIzLjE5MUMyNzIuODM5IDIxNS43ODggMjY2LjgzOCAyMDkuNzg2IDI1OS40MzUgMjA5Ljc4NkMyNTIuMDMyIDIwOS43ODYgMjQ2LjAzIDIxNS43ODggMjQ2LjAzIDIyMy4xOTFDMjQ2LjAzIDIzMC41OTQgMjUyLjAzMiAyMzYuNTk1IDI1OS40MzUgMjM2LjU5NVoiIGZpbGw9IiM5Nzk4OTQiLz4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIxNy42MDQgMjEyLjc2NEgyMTQuNTAyVjIxNC4wMTRWMjE1LjI2NEgyMTYuOTM0TDIxNy42MDQgMjEyLjc2NFpNMTYyLjYyMiAyMTguMTI1SDE2My44NzJIMTY1LjEyMlYyMTUuMjY0SDE2Ny4zMzhWMjE0LjAxNFYyMTIuNzY0SDE2NS4xMjJIMTYzLjg3MkgxNjIuNjIyVjIxNC4wMTRWMjE1LjI2NFYyMTguMTI1Wk0xNzYuNzcxIDIxMi43NjRIMTg2LjIwNFYyMTQuMDE0VjIxNS4yNjRIMTc2Ljc3MVYyMTQuMDE0VjIxMi43NjRaTTE5NS42MzcgMjE0LjAxNFYyMTIuNzY0SDIwNS4wNjlWMjE0LjAxNFYyMTUuMjY0SDE5NS42MzdWMjE0LjAxNFpNMjc0LjU2NSAzMTQuNjM3SDI3NS44MTVWMzE3LjQ5OVYzMTguNzQ5VjMxOS45OTlIMjc0LjU2NUgyNzMuMzE1SDI3MS4wOTlWMzE4Ljc0OVYzMTcuNDk5SDI3My4zMTVWMzE0LjYzN0gyNzQuNTY1Wk0yNjEuNjY2IDMxOC43NDlWMzE5Ljk5OUgyNTIuMjMzVjMxOC43NDlWMzE3LjQ5OUgyNjEuNjY2VjMxOC43NDlaTTI0Mi44IDMxOC43NDlWMzE5Ljk5OUgyMzMuMzY4VjMxOC43NDlWMzE3LjQ5OUgyNDIuOFYzMTguNzQ5Wk0yMjMuOTM1IDMxOC43NDlWMzE5Ljk5OUgyMTQuNTAyVjMxOC43NDlWMzE3LjQ5OUgyMjMuOTM1VjMxOC43NDlaTTIwNS4wNjkgMzE4Ljc0OVYzMTkuOTk5SDE5NS42MzdWMzE4Ljc0OVYzMTcuNDk5SDIwNS4wNjlWMzE4Ljc0OVpNMTg2LjIwNCAzMTguNzQ5VjMxOS45OTlIMTc2Ljc3MVYzMTguNzQ5VjMxNy40OTlIMTg2LjIwNFYzMTguNzQ5Wk0xNjcuMzM4IDMxOC43NDlWMzE5Ljk5OUgxNjUuMTIySDE2My44NzJIMTYyLjYyMlYzMTguNzQ5VjMxNy40OTlWMzE0LjYzN0gxNjMuODcySDE2NS4xMjJWMzE3LjQ5OUgxNjcuMzM4VjMxOC43NDlaTTE2My44NzIgMzAzLjkxNEgxNjIuNjIyVjI5My4xOUgxNjMuODcySDE2NS4xMjJWMzAzLjkxNEgxNjMuODcyWk0xNjMuODcyIDI4Mi40NjdIMTYyLjYyMlYyNzEuNzQzSDE2My44NzJIMTY1LjEyMlYyODIuNDY3SDE2My44NzJaTTE2My44NzIgMjYxLjAySDE2Mi42MjJWMjUwLjI5NkgxNjMuODcySDE2NS4xMjJWMjYxLjAySDE2My44NzJaTTE2My44NzIgMjM5LjU3M0gxNjIuNjIyVjIyOC44NDlIMTYzLjg3MkgxNjUuMTIyVjIzOS41NzNIMTYzLjg3MloiIGZpbGw9IiM5Nzk4OTQiLz4KPC9zdmc+Cg==
+                                            target: _blank
+                                            width: 500px
+                                      locked:
+                                        type: integer
+                                        description: An integer field for locked
+                                        example: false
                                       type:
                                         type: string
-                                        example: mailup-bee-newsletter-modules-paragraph
-                                    required:
-                                      - descriptor
-                                      - type
+                                        description: A string field for type
+                                        example: mailup-bee-newsletter-modules-image
+                                      uuid:
+                                        type: string
+                                        description: A string field for uuid
+                                        example: ebce211c-e771-4a85-ac7b-e4b40f9dc041
+                                  example:
+                                  - &id003
+                                    descriptor:
+                                      computedStyle: *id001
+                                      image: *id002
+                                      style:
+                                        padding-bottom: 5px
+                                        padding-left: 5px
+                                        padding-right: 5px
+                                        padding-top: 5px
+                                        width: 100%
+                                    locked: false
+                                    type: mailup-bee-newsletter-modules-image
+                                    uuid: ebce211c-e771-4a85-ac7b-e4b40f9dc041
                                 style:
                                   type: object
-                                  description: Style attributes for the column.
+                                  description: An object field for style
                                   properties:
                                     background-color:
                                       type: string
-                                      example: 'transparent'
+                                      description: A string field for background-color
+                                      example: transparent
+                                    border-bottom:
+                                      type: string
+                                      description: A string field for border-bottom
+                                      example: 0px solid transparent
+                                    border-left:
+                                      type: string
+                                      description: A string field for border-left
+                                      example: 0px solid transparent
+                                    border-right:
+                                      type: string
+                                      description: A string field for border-right
+                                      example: 0px solid transparent
+                                    border-top:
+                                      type: string
+                                      description: A string field for border-top
+                                      example: 0px solid transparent
+                                    padding-bottom:
+                                      type: string
+                                      description: A string field for padding-bottom
+                                      example: 5px
+                                    padding-left:
+                                      type: string
+                                      description: A string field for padding-left
+                                      example: 0px
+                                    padding-right:
+                                      type: string
+                                      description: A string field for padding-right
+                                      example: 0px
+                                    padding-top:
+                                      type: string
+                                      description: A string field for padding-top
+                                      example: 5px
+                                  example:
+                                    background-color: transparent
+                                    border-bottom: 0px solid transparent
+                                uuid:
+                                  type: string
+                                  description: A string field for uuid
+                                  example: 909f2b4f-557e-4aad-acc8-ae48b2fd8fd1
+                            example:
+                            - &id004
+                              grid-columns: 4
+                              modules:
+                              - *id003
+                              - descriptor:
+                                  computedStyle:
+                                    hideContentOnDesktop: false
+                                    hideContentOnMobile: false
+                                  paragraph:
+                                    computedStyle:
+                                      linkColor: '#0068A5'
+                                    html: <code spellcheck="false" data-bee-type="mergetag"
+                                      data-bee-code="" data-bee-name="product name
+                                      1" data-bee-value="$product_reco[1].name (new)$"><q>no-content</q></code>
+                                    style:
+                                      color: '#555555'
+                                      direction: ltr
+                                      font-family: inherit
+                                      font-size: 14px
+                                      font-weight: '500'
+                                      letter-spacing: 0px
+                                      line-height: 120%
+                                      link-color: '#E01253'
+                                      text-align: center
+                                  style:
+                                    padding-bottom: 0px
+                                    padding-left: 0px
+                                    padding-right: 0px
+                                    padding-top: 0px
+                                    text-align: center
+                                    width: 100%
+                                locked: false
+                                type: mailup-bee-newsletter-modules-paragraph
+                                uuid: 1dff7521-11ca-4fa5-aab0-ef3ab1e7cc28
+                              - descriptor:
+                                  computedStyle:
+                                    hideContentOnDesktop: false
+                                    hideContentOnMobile: false
+                                  paragraph:
+                                    computedStyle:
+                                      linkColor: '#0068A5'
+                                    html: <code spellcheck="false" data-bee-type="mergetag"
+                                      data-bee-code="" data-bee-name="product description
+                                      1" data-bee-value="$product_reco[1].description$"><q>no-content</q></code>
+                                    style:
+                                      color: '#555555'
+                                      direction: ltr
+                                      font-family: inherit
+                                      font-size: 12px
+                                      font-weight: '500'
+                                      letter-spacing: 0px
+                                      line-height: 120%
+                                      link-color: '#E01253'
+                                      text-align: center
+                                  style:
+                                    padding-bottom: 0px
+                                    padding-left: 0px
+                                    padding-right: 0px
+                                    padding-top: 0px
+                                    text-align: center
+                                    width: 100%
+                                locked: false
+                                type: mailup-bee-newsletter-modules-paragraph
+                                uuid: dfe9b1ee-13a2-4d64-b6b6-f917fe359874
+                              - descriptor:
+                                  computedStyle:
+                                    hideContentOnDesktop: false
+                                    hideContentOnMobile: false
+                                  paragraph:
+                                    computedStyle:
+                                      linkColor: '#0068A5'
+                                    html: "<code spellcheck=\"false\" data-bee-type=\"\
+                                      mergetag\" data-bee-code=\"\" data-bee-name=\"\
+                                      product price 1\" data-bee-value=\"$product_reco[1].price$\"\
+                                      ><q>no-content</q></code> \u20AC"
+                                    style:
+                                      color: '#555555'
+                                      direction: ltr
+                                      font-family: inherit
+                                      font-size: 13px
+                                      font-weight: '500'
+                                      letter-spacing: 0px
+                                      line-height: 120%
+                                      link-color: '#E01253'
+                                      text-align: center
+                                  style:
+                                    padding-bottom: 0px
+                                    padding-left: 0px
+                                    padding-right: 0px
+                                    padding-top: 0px
+                                    text-align: center
+                                    width: 100%
+                                locked: false
+                                type: mailup-bee-newsletter-modules-paragraph
+                                uuid: edd551af-b2d5-4e84-a03e-188f5612c242
+                              - descriptor:
+                                  button:
+                                    href: $product_reco[1].extid$
+                                    label: <div class="txtTinyMce-wrapper" style=""
+                                      data-mce-style=""><p style="word-break:break-word;"
+                                      data-mce-style="word-break:break-word;">product
+                                      button 1</p></div>
+                                    style:
+                                      background-color: '#3AAEE0'
+                                      border-bottom: 0px solid transparent
+                                      border-left: 0px solid transparent
+                                      border-radius: 4px
+                                      border-right: 0px solid transparent
+                                      border-top: 0px solid transparent
+                                      color: '#ffffff'
+                                      direction: ltr
+                                      font-family: inherit
+                                      font-size: 14px
+                                      font-weight: '400'
+                                      line-height: 200%
+                                      max-width: 100%
+                                      padding-bottom: 5px
+                                      padding-left: 15px
+                                      padding-right: 15px
+                                      padding-top: 5px
+                                      width: auto
+                                    target: _blank
+                                  computedStyle:
+                                    height: 38
+                                    hideContentOnDesktop: false
+                                    hideContentOnMobile: false
+                                    width: 131
+                                  style:
+                                    padding-bottom: 10px
+                                    padding-left: 10px
+                                    padding-right: 10px
+                                    padding-top: 10px
+                                    text-align: center
+                                locked: false
+                                type: mailup-bee-newsletter-modules-button
+                                uuid: f2dfb43a-9b2c-4a6c-934c-185b8995cf4a
+                              style:
+                                background-color: transparent
+                                border-bottom: 0px solid transparent
+                                border-left: 0px solid transparent
+                                border-right: 0px solid transparent
+                                border-top: 0px solid transparent
+                                padding-bottom: 5px
+                                padding-left: 0px
+                                padding-right: 0px
+                                padding-top: 5px
+                              uuid: 909f2b4f-557e-4aad-acc8-ae48b2fd8fd1
                           container:
                             type: object
-                            description: Styling and metadata for the container.
+                            description: An object field for container
                             properties:
                               displayCondition:
                                 type: object
-                                description: Conditions for showing the content.
+                                description: An object field for displayCondition
+                                properties:
+                                  after:
+                                    type: string
+                                    description: A string field for after
+                                    example: '{ SPLIO ENDPRODUCT_RECO }'
+                                  before:
+                                    type: string
+                                    description: A string field for before
+                                    example: '{ SPLIO PRODUCT_RECO 4 }'
+                                  description:
+                                    type: string
+                                    description: A string field for description
+                                    example: desc product reco 4
+                                  label:
+                                    type: string
+                                    description: A string field for label
+                                    example: product reco 4
+                                  type:
+                                    type: string
+                                    description: A string field for type
+                                    example: BEE_CUSTOM_DISPLAY_CONDITION
+                                example:
+                                  after: '{ SPLIO ENDPRODUCT_RECO }'
+                                  before: '{ SPLIO PRODUCT_RECO 4 }'
+                              style:
+                                type: object
+                                description: An object field for style
+                                properties:
+                                  background-color:
+                                    type: string
+                                    description: A string field for background-color
+                                    example: transparent
+                                  background-image:
+                                    type: string
+                                    description: A string field for background-image
+                                    example: none
+                                  background-position:
+                                    type: string
+                                    description: A string field for background-position
+                                    example: top left
+                                  background-repeat:
+                                    type: string
+                                    description: A string field for background-repeat
+                                    example: no-repeat
+                                example:
+                                  background-color: transparent
+                                  background-image: none
+                            example:
+                              displayCondition: &id005
+                                after: '{ SPLIO ENDPRODUCT_RECO }'
+                                before: '{ SPLIO PRODUCT_RECO 4 }'
+                                description: desc product reco 4
+                                label: product reco 4
+                                type: BEE_CUSTOM_DISPLAY_CONDITION
+                              style: &id006
+                                background-color: transparent
+                                background-image: none
+                                background-position: top left
+                                background-repeat: no-repeat
                           content:
                             type: object
-                            description: Content metadata and styling.
+                            description: An object field for content
+                            properties:
+                              computedStyle:
+                                type: object
+                                description: An object field for computedStyle
+                                properties:
+                                  hideContentOnDesktop:
+                                    type: integer
+                                    description: An integer field for hideContentOnDesktop
+                                    example: false
+                                  hideContentOnMobile:
+                                    type: integer
+                                    description: An integer field for hideContentOnMobile
+                                    example: false
+                                  rowColStackOnMobile:
+                                    type: integer
+                                    description: An integer field for rowColStackOnMobile
+                                    example: true
+                                  rowReverseColStackOnMobile:
+                                    type: integer
+                                    description: An integer field for rowReverseColStackOnMobile
+                                    example: false
+                                  verticalAlign:
+                                    type: string
+                                    description: A string field for verticalAlign
+                                    example: top
+                                example:
+                                  hideContentOnDesktop: false
+                                  hideContentOnMobile: false
+                              style:
+                                type: object
+                                description: An object field for style
+                                properties:
+                                  background-color:
+                                    type: string
+                                    description: A string field for background-color
+                                    example: transparent
+                                  background-image:
+                                    type: string
+                                    description: A string field for background-image
+                                    example: none
+                                  background-position:
+                                    type: string
+                                    description: A string field for background-position
+                                    example: top left
+                                  background-repeat:
+                                    type: string
+                                    description: A string field for background-repeat
+                                    example: no-repeat
+                                  color:
+                                    type: string
+                                    description: A string field for color
+                                    example: '#000000'
+                                  width:
+                                    type: string
+                                    description: A string field for width
+                                    example: 500px
+                                example:
+                                  background-color: transparent
+                                  background-image: none
+                            example:
+                              computedStyle: &id009
+                                hideContentOnDesktop: false
+                                hideContentOnMobile: false
+                                rowColStackOnMobile: true
+                                rowReverseColStackOnMobile: false
+                                verticalAlign: top
+                              style: &id010
+                                background-color: transparent
+                                background-image: none
+                                background-position: top left
+                                background-repeat: no-repeat
+                                color: '#000000'
+                                width: 500px
+                          empty:
+                            type: integer
+                            description: An integer field for empty
+                            example: false
+                          locked:
+                            type: integer
+                            description: An integer field for locked
+                            example: false
                           metadata:
                             type: object
-                            description: Metadata for the updated content.
+                            description: An object field for metadata
                             properties:
+                              name:
+                                type: string
+                                description: A string field for name
+                                example: ProductReco NEW 2
                               uid:
                                 type: string
-                                example: "508824c4-8d45-11ee-84be-aafd6b2aca16"
+                                description: A string field for uid
+                                example: 508824c4-8d45-11ee-84be-aafd6b2aca16
+                            example:
+                              name: ProductReco NEW 2
+                              uid: 508824c4-8d45-11ee-84be-aafd6b2aca16
+                          synced:
+                            type: integer
+                            description: An integer field for synced
+                            example: true
                           type:
                             type: string
-                            example: ""
+                            description: A string field for type
+                            example: ''
+                          uuid:
+                            type: string
+                            description: A string field for uuid
+                            example: 8b547e1e-2b19-46af-a86d-3dc0cb3d3893
+                        example:
+                          columns: &id007
+                          - *id004
+                          - grid-columns: 4
+                            modules:
+                            - descriptor:
+                                computedStyle:
+                                  class: center autowidth
+                                  hideContentOnMobile: false
+                                  width: 156.66666666666666px
+                                image:
+                                  alt: ''
+                                  dynamicSrc: $product_reco[2].image_url$
+                                  height: 500px
+                                  href: ''
+                                  prefix: ''
+                                  src: data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjUwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNGM0YzRjMiLz4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTMzMS4yNTMgMjExLjY1NEwyMzUuOTc5IDE4Ni4xMjZMMjE1LjA3OSAyNjQuMTI5TDI1MS45ODkgMjQ4LjUxM0wyNzEuMzUgMjYzLjQwN0wzMjMuMTcyIDI0MS44MTVMMzMxLjI1MyAyMTEuNjU0Wk0zMDUuNzI1IDMwNi45MjhMMjc5LjgxNCAyOTkuOTg1TDMwNS44OTEgMzA2LjMwN0wzMDUuNzI1IDMwNi45MjhaTTIzNy4yNzQgMTgxLjI5NkwyMzIuNDQ0IDE4MC4wMDJMMjMxLjE1IDE4NC44MzJMMjA1LjYyMSAyODAuMTA2TDIwNC4zMjcgMjg0LjkzNUwyMDkuMTU3IDI4Ni4yMjlMMzA0LjQzMSAzMTEuNzU4TDMwOS4yNiAzMTMuMDUyTDMxMC41NTQgMzA4LjIyMkwzMzYuMDgzIDIxMi45NDhMMzM3LjM3NyAyMDguMTE5TDMzMi41NDggMjA2LjgyNUwyMzcuMjc0IDE4MS4yOTZaTTI1OS40MzUgMjM2LjU5NUMyNjYuODM4IDIzNi41OTUgMjcyLjgzOSAyMzAuNTk0IDI3Mi44MzkgMjIzLjE5MUMyNzIuODM5IDIxNS43ODggMjY2LjgzOCAyMDkuNzg2IDI1OS40MzUgMjA5Ljc4NkMyNTIuMDMyIDIwOS43ODYgMjQ2LjAzIDIxNS43ODggMjQ2LjAzIDIyMy4xOTFDMjQ2LjAzIDIzMC41OTQgMjUyLjAzMiAyMzYuNTk1IDI1OS40MzUgMjM2LjU5NVoiIGZpbGw9IiM5Nzk4OTQiLz4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIxNy42MDQgMjEyLjc2NEgyMTQuNTAyVjIxNC4wMTRWMjE1LjI2NEgyMTYuOTM0TDIxNy42MDQgMjEyLjc2NFpNMTYyLjYyMiAyMTguMTI1SDE2My44NzJIMTY1LjEyMlYyMTUuMjY0SDE2Ny4zMzhWMjE0LjAxNFYyMTIuNzY0SDE2NS4xMjJIMTYzLjg3MkgxNjIuNjIyVjIxNC4wMTRWMjE1LjI2NFYyMTguMTI1Wk0xNzYuNzcxIDIxMi43NjRIMTg2LjIwNFYyMTQuMDE0VjIxNS4yNjRIMTc2Ljc3MVYyMTQuMDE0VjIxMi43NjRaTTE5NS42MzcgMjE0LjAxNFYyMTIuNzY0SDIwNS4wNjlWMjE0LjAxNFYyMTUuMjY0SDE5NS42MzdWMjE0LjAxNFpNMjc0LjU2NSAzMTQuNjM3SDI3NS44MTVWMzE3LjQ5OVYzMTguNzQ5VjMxOS45OTlIMjc0LjU2NUgyNzMuMzE1SDI3MS4wOTlWMzE4Ljc0OVYzMTcuNDk5SDI3My4zMTVWMzE0LjYzN0gyNzQuNTY1Wk0yNjEuNjY2IDMxOC43NDlWMzE5Ljk5OUgyNTIuMjMzVjMxOC43NDlWMzE3LjQ5OUgyNjEuNjY2VjMxOC43NDlaTTI0Mi44IDMxOC43NDlWMzE5Ljk5OUgyMzMuMzY4VjMxOC43NDlWMzE3LjQ5OUgyNDIuOFYzMTguNzQ5Wk0yMjMuOTM1IDMxOC43NDlWMzE5Ljk5OUgyMTQuNTAyVjMxOC43NDlWMzE3LjQ5OUgyMjMuOTM1VjMxOC43NDlaTTIwNS4wNjkgMzE4Ljc0OVYzMTkuOTk5SDE5NS42MzdWMzE4Ljc0OVYzMTcuNDk5SDIwNS4wNjlWMzE4Ljc0OVpNMTg2LjIwNCAzMTguNzQ5VjMxOS45OTlIMTc2Ljc3MVYzMTguNzQ5VjMxNy40OTlIMTg2LjIwNFYzMTguNzQ5Wk0xNjcuMzM4IDMxOC43NDlWMzE5Ljk5OUgxNjUuMTIySDE2My44NzJIMTYyLjYyMlYzMTguNzQ5VjMxNy40OTlWMzE0LjYzN0gxNjMuODcySDE2NS4xMjJWMzE3LjQ5OUgxNjcuMzM4VjMxOC43NDlaTTE2My44NzIgMzAzLjkxNEgxNjIuNjIyVjI5My4xOUgxNjMuODcySDE2NS4xMjJWMzAzLjkxNEgxNjMuODcyWk0xNjMuODcyIDI4Mi40NjdIMTYyLjYyMlYyNzEuNzQzSDE2My44NzJIMTY1LjEyMlYyODIuNDY3SDE2My44NzJaTTE2My44NzIgMjYxLjAySDE2Mi42MjJWMjUwLjI5NkgxNjMuODcySDE2NS4xMjJWMjYxLjAySDE2My44NzJaTTE2My44NzIgMjM5LjU3M0gxNjIuNjIyVjIyOC44NDlIMTYzLjg3MkgxNjUuMTIyVjIzOS41NzNIMTYzLjg3MloiIGZpbGw9IiM5Nzk4OTQiLz4KPC9zdmc+Cg==
+                                  target: _blank
+                                  width: 500px
+                                style:
+                                  padding-bottom: 5px
+                                  padding-left: 5px
+                                  padding-right: 5px
+                                  padding-top: 5px
+                                  width: 100%
+                              locked: false
+                              type: mailup-bee-newsletter-modules-image
+                              uuid: 1b5fa1b7-8ce8-4f67-a9e0-9b19038a788b
+                            - descriptor:
+                                computedStyle:
+                                  hideContentOnDesktop: false
+                                  hideContentOnMobile: false
+                                paragraph:
+                                  computedStyle:
+                                    linkColor: '#0068A5'
+                                  html: <code spellcheck="false" data-bee-type="mergetag"
+                                    data-bee-code="" data-bee-name="product name 2"
+                                    data-bee-value="$product_reco[2].name$"><q>no-content</q></code>
+                                  style:
+                                    color: '#555555'
+                                    direction: ltr
+                                    font-family: inherit
+                                    font-size: 14px
+                                    font-weight: '500'
+                                    letter-spacing: 0px
+                                    line-height: 120%
+                                    link-color: '#E01253'
+                                    text-align: center
+                                style:
+                                  padding-bottom: 0px
+                                  padding-left: 0px
+                                  padding-right: 0px
+                                  padding-top: 0px
+                                  text-align: center
+                                  width: 100%
+                              locked: false
+                              type: mailup-bee-newsletter-modules-paragraph
+                              uuid: de22ee0a-c86e-4811-a8ed-76dd8039267b
+                            - descriptor:
+                                computedStyle:
+                                  hideContentOnDesktop: false
+                                  hideContentOnMobile: false
+                                paragraph:
+                                  computedStyle:
+                                    linkColor: '#0068A5'
+                                  html: <code spellcheck="false" data-bee-type="mergetag"
+                                    data-bee-code="" data-bee-name="product description
+                                    2" data-bee-value="$product_reco[2].description$"><q>no-content</q></code>
+                                  style:
+                                    color: '#555555'
+                                    direction: ltr
+                                    font-family: inherit
+                                    font-size: 12px
+                                    font-weight: '500'
+                                    letter-spacing: 0px
+                                    line-height: 120%
+                                    link-color: '#E01253'
+                                    text-align: center
+                                style:
+                                  padding-bottom: 0px
+                                  padding-left: 0px
+                                  padding-right: 0px
+                                  padding-top: 0px
+                                  text-align: center
+                                  width: 100%
+                              locked: false
+                              type: mailup-bee-newsletter-modules-paragraph
+                              uuid: a8f24663-e5bc-4cf4-b448-1cbc8ebf9349
+                            - descriptor:
+                                computedStyle:
+                                  hideContentOnDesktop: false
+                                  hideContentOnMobile: false
+                                paragraph:
+                                  computedStyle:
+                                    linkColor: '#0068A5'
+                                  html: "<code spellcheck=\"false\" data-bee-type=\"\
+                                    mergetag\" data-bee-code=\"\" data-bee-name=\"\
+                                    product price 2\" data-bee-value=\"$product_reco[2].price$\"\
+                                    ><q>no-content</q></code> \u20AC"
+                                  style:
+                                    color: '#555555'
+                                    direction: ltr
+                                    font-family: inherit
+                                    font-size: 13px
+                                    font-weight: '500'
+                                    letter-spacing: 0px
+                                    line-height: 120%
+                                    link-color: '#E01253'
+                                    text-align: center
+                                style:
+                                  padding-bottom: 0px
+                                  padding-left: 0px
+                                  padding-right: 0px
+                                  padding-top: 0px
+                                  text-align: center
+                                  width: 100%
+                              locked: false
+                              type: mailup-bee-newsletter-modules-paragraph
+                              uuid: a665bd50-39d6-43f6-9148-d7ed7de1d931
+                            - descriptor:
+                                button:
+                                  href: $product_reco[2].extid$
+                                  label: <div class="txtTinyMce-wrapper" style=""
+                                    data-mce-style=""><p style="word-break:break-word;"
+                                    data-mce-style="word-break:break-word;">product
+                                    button 2</p></div>
+                                  style:
+                                    background-color: '#3AAEE0'
+                                    border-bottom: 0px solid transparent
+                                    border-left: 0px solid transparent
+                                    border-radius: 4px
+                                    border-right: 0px solid transparent
+                                    border-top: 0px solid transparent
+                                    color: '#ffffff'
+                                    direction: ltr
+                                    font-family: inherit
+                                    font-size: 14px
+                                    font-weight: '400'
+                                    line-height: 200%
+                                    max-width: 100%
+                                    padding-bottom: 5px
+                                    padding-left: 15px
+                                    padding-right: 15px
+                                    padding-top: 5px
+                                    width: auto
+                                  target: _blank
+                                computedStyle:
+                                  height: 38
+                                  hideContentOnDesktop: false
+                                  hideContentOnMobile: false
+                                  width: 131
+                                style:
+                                  padding-bottom: 10px
+                                  padding-left: 10px
+                                  padding-right: 10px
+                                  padding-top: 10px
+                                  text-align: center
+                              locked: false
+                              type: mailup-bee-newsletter-modules-button
+                              uuid: f1c7e4e9-e11f-4be5-99c6-a36ee56378ce
+                            - type: mailup-bee-newsletter-modules-button
+                              descriptor:
+                                button:
+                                  label: '<div class="txtTinyMce-wrapper"><p style=''font-family:
+                                    inherit;''>Button</p></div>'
+                                  href: ''
+                                  target: _blank
+                                  style:
+                                    font-family: inherit
+                                    font-size: 14px
+                                    font-weight: '400'
+                                    background-color: '#3AAEE0'
+                                    border-radius: 4px
+                                    border-top: 0px solid transparent
+                                    border-right: 0px solid transparent
+                                    border-bottom: 0px solid transparent
+                                    border-left: 0px solid transparent
+                                    color: '#ffffff'
+                                    line-height: 200%
+                                    padding-top: 5px
+                                    padding-right: 20px
+                                    padding-bottom: 5px
+                                    padding-left: 20px
+                                    width: auto
+                                    max-width: 100%
+                                    direction: ltr
+                                style:
+                                  text-align: center
+                                  padding-top: 10px
+                                  padding-right: 10px
+                                  padding-bottom: 10px
+                                  padding-left: 10px
+                                mobileStyle: {}
+                                computedStyle:
+                                  width: 52
+                                  height: 42
+                                  hideContentOnMobile: false
+                              uuid: 974e36a4-dd64-43ac-a6d2-ddbe74120e13
+                              locked: false
+                            style:
+                              background-color: transparent
+                              border-bottom: 0px solid transparent
+                              border-left: 0px solid transparent
+                              border-right: 0px solid transparent
+                              border-top: 0px solid transparent
+                              padding-bottom: 5px
+                              padding-left: 0px
+                              padding-right: 0px
+                              padding-top: 5px
+                            uuid: e2982735-0bbc-473d-b2f3-ae2f70f1e14e
+                          - grid-columns: 4
+                            modules:
+                            - descriptor:
+                                computedStyle:
+                                  class: center autowidth
+                                  hideContentOnMobile: false
+                                  width: 156.66666666666666px
+                                image:
+                                  alt: ''
+                                  dynamicSrc: $product_reco[3].image_url$
+                                  height: 500px
+                                  href: ''
+                                  prefix: ''
+                                  src: data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjUwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNGM0YzRjMiLz4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTMzMS4yNTMgMjExLjY1NEwyMzUuOTc5IDE4Ni4xMjZMMjE1LjA3OSAyNjQuMTI5TDI1MS45ODkgMjQ4LjUxM0wyNzEuMzUgMjYzLjQwN0wzMjMuMTcyIDI0MS44MTVMMzMxLjI1MyAyMTEuNjU0Wk0zMDUuNzI1IDMwNi45MjhMMjc5LjgxNCAyOTkuOTg1TDMwNS44OTEgMzA2LjMwN0wzMDUuNzI1IDMwNi45MjhaTTIzNy4yNzQgMTgxLjI5NkwyMzIuNDQ0IDE4MC4wMDJMMjMxLjE1IDE4NC44MzJMMjA1LjYyMSAyODAuMTA2TDIwNC4zMjcgMjg0LjkzNUwyMDkuMTU3IDI4Ni4yMjlMMzA0LjQzMSAzMTEuNzU4TDMwOS4yNiAzMTMuMDUyTDMxMC41NTQgMzA4LjIyMkwzMzYuMDgzIDIxMi45NDhMMzM3LjM3NyAyMDguMTE5TDMzMi41NDggMjA2LjgyNUwyMzcuMjc0IDE4MS4yOTZaTTI1OS40MzUgMjM2LjU5NUMyNjYuODM4IDIzNi41OTUgMjcyLjgzOSAyMzAuNTk0IDI3Mi44MzkgMjIzLjE5MUMyNzIuODM5IDIxNS43ODggMjY2LjgzOCAyMDkuNzg2IDI1OS40MzUgMjA5Ljc4NkMyNTIuMDMyIDIwOS43ODYgMjQ2LjAzIDIxNS43ODggMjQ2LjAzIDIyMy4xOTFDMjQ2LjAzIDIzMC41OTQgMjUyLjAzMiAyMzYuNTk1IDI1OS40MzUgMjM2LjU5NVoiIGZpbGw9IiM5Nzk4OTQiLz4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIxNy42MDQgMjEyLjc2NEgyMTQuNTAyVjIxNC4wMTRWMjE1LjI2NEgyMTYuOTM0TDIxNy42MDQgMjEyLjc2NFpNMTYyLjYyMiAyMTguMTI1SDE2My44NzJIMTY1LjEyMlYyMTUuMjY0SDE2Ny4zMzhWMjE0LjAxNFYyMTIuNzY0SDE2NS4xMjJIMTYzLjg3MkgxNjIuNjIyVjIxNC4wMTRWMjE1LjI2NFYyMTguMTI1Wk0xNzYuNzcxIDIxMi43NjRIMTg2LjIwNFYyMTQuMDE0VjIxNS4yNjRIMTc2Ljc3MVYyMTQuMDE0VjIxMi43NjRaTTE5NS42MzcgMjE0LjAxNFYyMTIuNzY0SDIwNS4wNjlWMjE0LjAxNFYyMTUuMjY0SDE5NS42MzdWMjE0LjAxNFpNMjc0LjU2NSAzMTQuNjM3SDI3NS44MTVWMzE3LjQ5OVYzMTguNzQ5VjMxOS45OTlIMjc0LjU2NUgyNzMuMzE1SDI3MS4wOTlWMzE4Ljc0OVYzMTcuNDk5SDI3My4zMTVWMzE0LjYzN0gyNzQuNTY1Wk0yNjEuNjY2IDMxOC43NDlWMzE5Ljk5OUgyNTIuMjMzVjMxOC43NDlWMzE3LjQ5OUgyNjEuNjY2VjMxOC43NDlaTTI0Mi44IDMxOC43NDlWMzE5Ljk5OUgyMzMuMzY4VjMxOC43NDlWMzE3LjQ5OUgyNDIuOFYzMTguNzQ5Wk0yMjMuOTM1IDMxOC43NDlWMzE5Ljk5OUgyMTQuNTAyVjMxOC43NDlWMzE3LjQ5OUgyMjMuOTM1VjMxOC43NDlaTTIwNS4wNjkgMzE4Ljc0OVYzMTkuOTk5SDE5NS42MzdWMzE4Ljc0OVYzMTcuNDk5SDIwNS4wNjlWMzE4Ljc0OVpNMTg2LjIwNCAzMTguNzQ5VjMxOS45OTlIMTc2Ljc3MVYzMTguNzQ5VjMxNy40OTlIMTg2LjIwNFYzMTguNzQ5Wk0xNjcuMzM4IDMxOC43NDlWMzE5Ljk5OUgxNjUuMTIySDE2My44NzJIMTYyLjYyMlYzMTguNzQ5VjMxNy40OTlWMzE0LjYzN0gxNjMuODcySDE2NS4xMjJWMzE3LjQ5OUgxNjcuMzM4VjMxOC43NDlaTTE2My44NzIgMzAzLjkxNEgxNjIuNjIyVjI5My4xOUgxNjMuODcySDE2NS4xMjJWMzAzLjkxNEgxNjMuODcyWk0xNjMuODcyIDI4Mi40NjdIMTYyLjYyMlYyNzEuNzQzSDE2My44NzJIMTY1LjEyMlYyODIuNDY3SDE2My44NzJaTTE2My44NzIgMjYxLjAySDE2Mi42MjJWMjUwLjI5NkgxNjMuODcySDE2NS4xMjJWMjYxLjAySDE2My44NzJaTTE2My44NzIgMjM5LjU3M0gxNjIuNjIyVjIyOC44NDlIMTYzLjg3MkgxNjUuMTIyVjIzOS41NzNIMTYzLjg3MloiIGZpbGw9IiM5Nzk4OTQiLz4KPC9zdmc+Cg==
+                                  target: _blank
+                                  width: 500px
+                                style:
+                                  padding-bottom: 5px
+                                  padding-left: 5px
+                                  padding-right: 5px
+                                  padding-top: 5px
+                                  width: 100%
+                              locked: false
+                              type: mailup-bee-newsletter-modules-image
+                              uuid: 0be65661-f596-4dc8-afa2-f886d64439b2
+                            - descriptor:
+                                computedStyle:
+                                  hideContentOnDesktop: false
+                                  hideContentOnMobile: false
+                                paragraph:
+                                  computedStyle:
+                                    linkColor: '#0068A5'
+                                  html: <code spellcheck="false" data-bee-type="mergetag"
+                                    data-bee-code="" data-bee-name="product name 3"
+                                    data-bee-value="$product_reco[3].name$"><q>no-content</q></code>
+                                  style:
+                                    color: '#555555'
+                                    direction: ltr
+                                    font-family: inherit
+                                    font-size: 14px
+                                    font-weight: '500'
+                                    letter-spacing: 0px
+                                    line-height: 120%
+                                    link-color: '#E01253'
+                                    text-align: center
+                                style:
+                                  padding-bottom: 0px
+                                  padding-left: 0px
+                                  padding-right: 0px
+                                  padding-top: 0px
+                                  text-align: center
+                                  width: 100%
+                              locked: false
+                              type: mailup-bee-newsletter-modules-paragraph
+                              uuid: 23c9c3b8-ce5c-48e1-8491-90a982799c35
+                            - descriptor:
+                                computedStyle:
+                                  hideContentOnDesktop: false
+                                  hideContentOnMobile: false
+                                paragraph:
+                                  computedStyle:
+                                    linkColor: '#0068A5'
+                                  html: <code spellcheck="false" data-bee-type="mergetag"
+                                    data-bee-code="" data-bee-name="product description
+                                    3" data-bee-value="$product_reco[3].description$"><q>no-content</q></code>
+                                  style:
+                                    color: '#555555'
+                                    direction: ltr
+                                    font-family: inherit
+                                    font-size: 12px
+                                    font-weight: '500'
+                                    letter-spacing: 0px
+                                    line-height: 120%
+                                    link-color: '#E01253'
+                                    text-align: center
+                                style:
+                                  padding-bottom: 0px
+                                  padding-left: 0px
+                                  padding-right: 0px
+                                  padding-top: 0px
+                                  text-align: center
+                                  width: 100%
+                              locked: false
+                              type: mailup-bee-newsletter-modules-paragraph
+                              uuid: e4a351b9-cf06-4040-8db0-31202ec9e37c
+                            - descriptor:
+                                computedStyle:
+                                  hideContentOnDesktop: false
+                                  hideContentOnMobile: false
+                                paragraph:
+                                  computedStyle:
+                                    linkColor: '#0068A5'
+                                  html: "<code spellcheck=\"false\" data-bee-type=\"\
+                                    mergetag\" data-bee-code=\"\" data-bee-name=\"\
+                                    product price 3\" data-bee-value=\"$product_reco[3].price$\"\
+                                    ><q>no-content</q></code> \u20AC"
+                                  style:
+                                    color: '#555555'
+                                    direction: ltr
+                                    font-family: inherit
+                                    font-size: 13px
+                                    font-weight: '500'
+                                    letter-spacing: 0px
+                                    line-height: 120%
+                                    link-color: '#E01253'
+                                    text-align: center
+                                style:
+                                  padding-bottom: 0px
+                                  padding-left: 0px
+                                  padding-right: 0px
+                                  padding-top: 0px
+                                  text-align: center
+                                  width: 100%
+                              locked: false
+                              type: mailup-bee-newsletter-modules-paragraph
+                              uuid: 131bac4a-4396-4559-819c-688abbb571cb
+                            - descriptor:
+                                button:
+                                  href: $product_reco[3].extid$
+                                  label: <div class="txtTinyMce-wrapper" style=""
+                                    data-mce-style=""><p style="word-break:break-word;"
+                                    data-mce-style="word-break:break-word;">product
+                                    button 3</p></div>
+                                  style:
+                                    background-color: '#3AAEE0'
+                                    border-bottom: 0px solid transparent
+                                    border-left: 0px solid transparent
+                                    border-radius: 4px
+                                    border-right: 0px solid transparent
+                                    border-top: 0px solid transparent
+                                    color: '#ffffff'
+                                    direction: ltr
+                                    font-family: inherit
+                                    font-size: 14px
+                                    font-weight: '400'
+                                    line-height: 200%
+                                    max-width: 100%
+                                    padding-bottom: 5px
+                                    padding-left: 15px
+                                    padding-right: 15px
+                                    padding-top: 5px
+                                    width: auto
+                                  target: _blank
+                                computedStyle:
+                                  height: 38
+                                  hideContentOnDesktop: false
+                                  hideContentOnMobile: false
+                                  width: 131
+                                style:
+                                  padding-bottom: 10px
+                                  padding-left: 10px
+                                  padding-right: 10px
+                                  padding-top: 10px
+                                  text-align: center
+                              locked: false
+                              type: mailup-bee-newsletter-modules-button
+                              uuid: 264812f2-d487-4d1c-baab-554921508b56
+                            style:
+                              background-color: transparent
+                              border-bottom: 0px solid transparent
+                              border-left: 0px solid transparent
+                              border-right: 0px solid transparent
+                              border-top: 0px solid transparent
+                              padding-bottom: 5px
+                              padding-left: 0px
+                              padding-right: 0px
+                              padding-top: 5px
+                            uuid: 2bfe2efe-af8f-43cf-9b6a-b6003a85f937
+                          container: &id008
+                            displayCondition: *id005
+                            style: *id006
+                  example:
+                  - &id025
+                    path: $..rows[?(@.metadata.uid=='508824c4-8d45-11ee-84be-aafd6b2aca16')]
+                    value:
+                      columns: *id007
+                      container: *id008
+                      content:
+                        computedStyle: *id009
+                        style: *id010
+                      empty: false
+                      locked: false
+                      metadata:
+                        name: ProductReco NEW 2
+                        uid: 508824c4-8d45-11ee-84be-aafd6b2aca16
+                      synced: true
+                      type: ''
+                      uuid: 8b547e1e-2b19-46af-a86d-3dc0cb3d3893
+                source:
+                  type: object
+                  description: An object field for source
+                  properties:
+                    page:
+                      type: object
+                      description: An object field for page
+                      properties:
+                        body:
+                          type: object
+                          description: An object field for body
+                          properties:
+                            container:
+                              type: object
+                              description: An object field for container
+                              properties:
+                                style:
+                                  type: object
+                                  description: An object field for style
+                                  properties:
+                                    background-color:
+                                      type: string
+                                      description: A string field for background-color
+                                      example: '#FFFFFF'
+                                  example:
+                                    background-color: '#FFFFFF'
+                              example:
+                                style: &id011
+                                  background-color: '#FFFFFF'
+                            content:
+                              type: object
+                              description: An object field for content
+                              properties:
+                                computedStyle:
+                                  type: object
+                                  description: An object field for computedStyle
+                                  properties:
+                                    linkColor:
+                                      type: string
+                                      description: A string field for linkColor
+                                      example: '#0068A5'
+                                    messageBackgroundColor:
+                                      type: string
+                                      description: A string field for messageBackgroundColor
+                                      example: transparent
+                                    messageWidth:
+                                      type: string
+                                      description: A string field for messageWidth
+                                      example: 500px
+                                  example:
+                                    linkColor: '#0068A5'
+                                    messageBackgroundColor: transparent
+                                style:
+                                  type: object
+                                  description: An object field for style
+                                  properties:
+                                    color:
+                                      type: string
+                                      description: A string field for color
+                                      example: '#000000'
+                                    font-family:
+                                      type: string
+                                      description: A string field for font-family
+                                      example: Arial, 'Helvetica Neue', Helvetica,
+                                        sans-serif
+                                  example:
+                                    color: '#000000'
+                                    font-family: Arial, 'Helvetica Neue', Helvetica,
+                                      sans-serif
+                              example:
+                                computedStyle: &id012
+                                  linkColor: '#0068A5'
+                                  messageBackgroundColor: transparent
+                                  messageWidth: 500px
+                                style: &id013
+                                  color: '#000000'
+                                  font-family: Arial, 'Helvetica Neue', Helvetica,
+                                    sans-serif
+                            type:
+                              type: string
+                              description: A string field for type
+                              example: mailup-bee-page-properties
+                            webFonts:
+                              type: array
+                              description: An array of strings for webFonts
+                              items:
+                                type: string
+                              example: []
+                          example:
+                            container: &id021
+                              style: *id011
+                            content: &id022
+                              computedStyle: *id012
+                              style: *id013
+                        description:
+                          type: string
+                          description: A string field for description
+                          example: ''
+                        rows:
+                          type: array
+                          description: An array of objects for rows
+                          items:
+                            type: object
+                            properties:
+                              columns:
+                                type: array
+                                description: An array of objects for columns
+                                items:
+                                  type: object
+                                  properties:
+                                    grid-columns:
+                                      type: integer
+                                      description: An integer field for grid-columns
+                                      example: 12
+                                    modules:
+                                      type: array
+                                      description: An array of objects for modules
+                                      items:
+                                        type: object
+                                        properties:
+                                          type:
+                                            type: string
+                                            description: A string field for type
+                                            example: mailup-bee-newsletter-modules-heading
+                                          descriptor:
+                                            type: object
+                                            description: An object field for descriptor
+                                            properties:
+                                              heading:
+                                                type: object
+                                                description: An object field for heading
+                                                properties:
+                                                  title:
+                                                    type: string
+                                                    description: A string field for
+                                                      title
+                                                    example: h1
+                                                  text:
+                                                    type: string
+                                                    description: A string field for
+                                                      text
+                                                    example: <span class="tinyMce-placeholder">ProductRecoOne</span>
+                                                  style:
+                                                    type: object
+                                                    description: An object field for
+                                                      style
+                                                    properties:
+                                                      color:
+                                                        type: string
+                                                        description: A string field
+                                                          for color
+                                                        example: '#555555'
+                                                      font-size:
+                                                        type: string
+                                                        description: A string field
+                                                          for font-size
+                                                        example: 23px
+                                                      font-family:
+                                                        type: string
+                                                        description: A string field
+                                                          for font-family
+                                                        example: inherit
+                                                      link-color:
+                                                        type: string
+                                                        description: A string field
+                                                          for link-color
+                                                        example: '#E01253'
+                                                      line-height:
+                                                        type: string
+                                                        description: A string field
+                                                          for line-height
+                                                        example: 120%
+                                                      text-align:
+                                                        type: string
+                                                        description: A string field
+                                                          for text-align
+                                                        example: center
+                                                      direction:
+                                                        type: string
+                                                        description: A string field
+                                                          for direction
+                                                        example: ltr
+                                                      font-weight:
+                                                        type: string
+                                                        description: A string field
+                                                          for font-weight
+                                                        example: '700'
+                                                      letter-spacing:
+                                                        type: string
+                                                        description: A string field
+                                                          for letter-spacing
+                                                        example: 0px
+                                                    example:
+                                                      color: '#555555'
+                                                      font-size: 23px
+                                                example:
+                                                  title: h1
+                                                  text: <span class="tinyMce-placeholder">ProductRecoOne</span>
+                                              style:
+                                                type: object
+                                                description: An object field for style
+                                                properties:
+                                                  width:
+                                                    type: string
+                                                    description: A string field for
+                                                      width
+                                                    example: 100%
+                                                  text-align:
+                                                    type: string
+                                                    description: A string field for
+                                                      text-align
+                                                    example: center
+                                                  padding-top:
+                                                    type: string
+                                                    description: A string field for
+                                                      padding-top
+                                                    example: 0px
+                                                  padding-right:
+                                                    type: string
+                                                    description: A string field for
+                                                      padding-right
+                                                    example: 0px
+                                                  padding-bottom:
+                                                    type: string
+                                                    description: A string field for
+                                                      padding-bottom
+                                                    example: 0px
+                                                  padding-left:
+                                                    type: string
+                                                    description: A string field for
+                                                      padding-left
+                                                    example: 0px
+                                                example:
+                                                  width: 100%
+                                                  text-align: center
+                                              mobileStyle:
+                                                type: object
+                                                description: An object field for mobileStyle
+                                                properties: {}
+                                                example: {}
+                                              computedStyle:
+                                                type: object
+                                                description: An object field for computedStyle
+                                                properties:
+                                                  width:
+                                                    type: integer
+                                                    description: An integer field
+                                                      for width
+                                                    example: 52
+                                                  height:
+                                                    type: integer
+                                                    description: An integer field
+                                                      for height
+                                                    example: 42
+                                                example:
+                                                  width: 52
+                                                  height: 42
+                                            example:
+                                              heading: &id014
+                                                title: h1
+                                                text: <span class="tinyMce-placeholder">ProductRecoOne</span>
+                                                style:
+                                                  color: '#555555'
+                                                  font-size: 23px
+                                                  font-family: inherit
+                                                  link-color: '#E01253'
+                                                  line-height: 120%
+                                                  text-align: center
+                                                  direction: ltr
+                                                  font-weight: '700'
+                                                  letter-spacing: 0px
+                                              style: &id015
+                                                width: 100%
+                                                text-align: center
+                                                padding-top: 0px
+                                                padding-right: 0px
+                                                padding-bottom: 0px
+                                                padding-left: 0px
+                                          uuid:
+                                            type: string
+                                            description: A string field for uuid
+                                            example: ba1fd29b-4e18-4a69-a708-9755a2da87d5
+                                          locked:
+                                            type: integer
+                                            description: An integer field for locked
+                                            example: false
+                                      example:
+                                      - &id016
+                                        type: mailup-bee-newsletter-modules-heading
+                                        descriptor:
+                                          heading: *id014
+                                          style: *id015
+                                          mobileStyle: {}
+                                          computedStyle:
+                                            width: 52
+                                            height: 42
+                                        uuid: ba1fd29b-4e18-4a69-a708-9755a2da87d5
+                                        locked: false
+                                    style:
+                                      type: object
+                                      description: An object field for style
+                                      properties:
+                                        background-color:
+                                          type: string
+                                          description: A string field for background-color
+                                          example: transparent
+                                        border-bottom:
+                                          type: string
+                                          description: A string field for border-bottom
+                                          example: 0px dotted transparent
+                                        border-left:
+                                          type: string
+                                          description: A string field for border-left
+                                          example: 0px dotted transparent
+                                        border-right:
+                                          type: string
+                                          description: A string field for border-right
+                                          example: 0px dotted transparent
+                                        border-top:
+                                          type: string
+                                          description: A string field for border-top
+                                          example: 0px dotted transparent
+                                        padding-bottom:
+                                          type: string
+                                          description: A string field for padding-bottom
+                                          example: 5px
+                                        padding-left:
+                                          type: string
+                                          description: A string field for padding-left
+                                          example: 0px
+                                        padding-right:
+                                          type: string
+                                          description: A string field for padding-right
+                                          example: 0px
+                                        padding-top:
+                                          type: string
+                                          description: A string field for padding-top
+                                          example: 5px
+                                      example:
+                                        background-color: transparent
+                                        border-bottom: 0px dotted transparent
+                                    uuid:
+                                      type: string
+                                      description: A string field for uuid
+                                      example: 56978ed0-79cd-494f-8c72-b6f9470c5ef3
+                                example:
+                                - &id017
+                                  grid-columns: 12
+                                  modules:
+                                  - *id016
+                                  style:
+                                    background-color: transparent
+                                    border-bottom: 0px dotted transparent
+                                    border-left: 0px dotted transparent
+                                    border-right: 0px dotted transparent
+                                    border-top: 0px dotted transparent
+                                    padding-bottom: 5px
+                                    padding-left: 0px
+                                    padding-right: 0px
+                                    padding-top: 5px
+                                  uuid: 56978ed0-79cd-494f-8c72-b6f9470c5ef3
+                              container:
+                                type: object
+                                description: An object field for container
+                                properties:
+                                  style:
+                                    type: object
+                                    description: An object field for style
+                                    properties:
+                                      background-color:
+                                        type: string
+                                        description: A string field for background-color
+                                        example: transparent
+                                      background-image:
+                                        type: string
+                                        description: A string field for background-image
+                                        example: none
+                                      background-position:
+                                        type: string
+                                        description: A string field for background-position
+                                        example: top left
+                                      background-repeat:
+                                        type: string
+                                        description: A string field for background-repeat
+                                        example: no-repeat
+                                    example:
+                                      background-color: transparent
+                                      background-image: none
+                                example:
+                                  style: &id018
+                                    background-color: transparent
+                                    background-image: none
+                                    background-position: top left
+                                    background-repeat: no-repeat
+                              content:
+                                type: object
+                                description: An object field for content
+                                properties:
+                                  computedStyle:
+                                    type: object
+                                    description: An object field for computedStyle
+                                    properties:
+                                      hideContentOnDesktop:
+                                        type: integer
+                                        description: An integer field for hideContentOnDesktop
+                                        example: false
+                                      hideContentOnMobile:
+                                        type: integer
+                                        description: An integer field for hideContentOnMobile
+                                        example: false
+                                      rowColStackOnMobile:
+                                        type: integer
+                                        description: An integer field for rowColStackOnMobile
+                                        example: true
+                                      rowReverseColStackOnMobile:
+                                        type: integer
+                                        description: An integer field for rowReverseColStackOnMobile
+                                        example: false
+                                      verticalAlign:
+                                        type: string
+                                        description: A string field for verticalAlign
+                                        example: top
+                                    example:
+                                      hideContentOnDesktop: false
+                                      hideContentOnMobile: false
+                                  style:
+                                    type: object
+                                    description: An object field for style
+                                    properties:
+                                      background-color:
+                                        type: string
+                                        description: A string field for background-color
+                                        example: transparent
+                                      background-image:
+                                        type: string
+                                        description: A string field for background-image
+                                        example: none
+                                      background-position:
+                                        type: string
+                                        description: A string field for background-position
+                                        example: top left
+                                      background-repeat:
+                                        type: string
+                                        description: A string field for background-repeat
+                                        example: no-repeat
+                                      color:
+                                        type: string
+                                        description: A string field for color
+                                        example: '#000000'
+                                      width:
+                                        type: string
+                                        description: A string field for width
+                                        example: 500px
+                                    example:
+                                      background-color: transparent
+                                      background-image: none
+                                example:
+                                  computedStyle: &id019
+                                    hideContentOnDesktop: false
+                                    hideContentOnMobile: false
+                                    rowColStackOnMobile: true
+                                    rowReverseColStackOnMobile: false
+                                    verticalAlign: top
+                                  style: &id020
+                                    background-color: transparent
+                                    background-image: none
+                                    background-position: top left
+                                    background-repeat: no-repeat
+                                    color: '#000000'
+                                    width: 500px
+                              empty:
+                                type: integer
+                                description: An integer field for empty
+                                example: false
+                              locked:
+                                type: integer
+                                description: An integer field for locked
+                                example: false
+                              synced:
+                                type: integer
+                                description: An integer field for synced
+                                example: false
+                              type:
+                                type: string
+                                description: A string field for type
+                                example: one-column-empty
+                              uuid:
+                                type: string
+                                description: A string field for uuid
+                                example: a0a410e4-3b14-4a41-98ba-fe6a355b79fa
+                          example:
+                          - &id024
+                            columns:
+                            - *id017
+                            container:
+                              style: *id018
+                            content:
+                              computedStyle: *id019
+                              style: *id020
+                            empty: false
+                            locked: false
+                            synced: false
+                            type: one-column-empty
+                            uuid: a0a410e4-3b14-4a41-98ba-fe6a355b79fa
+                        saveRows:
+                          type: integer
+                          description: An integer field for saveRows
+                          example: true
+                        template:
+                          type: object
+                          description: An object field for template
+                          properties:
+                            name:
+                              type: string
+                              description: A string field for name
+                              example: template-base
+                            type:
+                              type: string
+                              description: A string field for type
+                              example: basic
+                            version:
+                              type: string
+                              description: A string field for version
+                              example: 2.0.0
+                          example:
+                            name: template-base
+                            type: basic
+                        title:
+                          type: string
+                          description: A string field for title
+                          example: ''
+                      example:
+                        body: &id023
+                          container: *id021
+                          content: *id022
+                          type: mailup-bee-page-properties
+                          webFonts: []
+                        description: ''
+                    comments:
+                      type: object
+                      description: An object field for comments
+                      properties: {}
+                      example: {}
+                  example:
+                    page: &id026
+                      body: *id023
+                      description: ''
+                      rows:
+                      - *id024
+                      - columns:
+                        - uuid: 736d2504-9d0d-485f-87c9-d1ff3dfd1588
+                          grid-columns: 4
+                          modules:
+                          - uuid: 60650bb5-c0f5-449f-bfa0-2ffc25a7b04a
+                            descriptor:
+                              computedStyle:
+                                class: center autowidth
+                                hideContentOnMobile: false
+                                width: 156.66666666666666px
+                              image:
+                                alt: ''
+                                dynamicSrc: $product_reco[1].image_url$
+                                href: ''
+                                src: data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjUwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNGM0YzRjMiLz4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTMzMS4yNTMgMjExLjY1NEwyMzUuOTc5IDE4Ni4xMjZMMjE1LjA3OSAyNjQuMTI5TDI1MS45ODkgMjQ4LjUxM0wyNzEuMzUgMjYzLjQwN0wzMjMuMTcyIDI0MS44MTVMMzMxLjI1MyAyMTEuNjU0Wk0zMDUuNzI1IDMwNi45MjhMMjc5LjgxNCAyOTkuOTg1TDMwNS44OTEgMzA2LjMwN0wzMDUuNzI1IDMwNi45MjhaTTIzNy4yNzQgMTgxLjI5NkwyMzIuNDQ0IDE4MC4wMDJMMjMxLjE1IDE4NC44MzJMMjA1LjYyMSAyODAuMTA2TDIwNC4zMjcgMjg0LjkzNUwyMDkuMTU3IDI4Ni4yMjlMMzA0LjQzMSAzMTEuNzU4TDMwOS4yNiAzMTMuMDUyTDMxMC41NTQgMzA4LjIyMkwzMzYuMDgzIDIxMi45NDhMMzM3LjM3NyAyMDguMTE5TDMzMi41NDggMjA2LjgyNUwyMzcuMjc0IDE4MS4yOTZaTTI1OS40MzUgMjM2LjU5NUMyNjYuODM4IDIzNi41OTUgMjcyLjgzOSAyMzAuNTk0IDI3Mi44MzkgMjIzLjE5MUMyNzIuODM5IDIxNS43ODggMjY2LjgzOCAyMDkuNzg2IDI1OS40MzUgMjA5Ljc4NkMyNTIuMDMyIDIwOS43ODYgMjQ2LjAzIDIxNS43ODggMjQ2LjAzIDIyMy4xOTFDMjQ2LjAzIDIzMC41OTQgMjUyLjAzMiAyMzYuNTk1IDI1OS40MzUgMjM2LjU5NVoiIGZpbGw9IiM5Nzk4OTQiLz4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIxNy42MDQgMjEyLjc2NEgyMTQuNTAyVjIxNC4wMTRWMjE1LjI2NEgyMTYuOTM0TDIxNy42MDQgMjEyLjc2NFpNMTYyLjYyMiAyMTguMTI1SDE2My44NzJIMTY1LjEyMlYyMTUuMjY0SDE2Ny4zMzhWMjE0LjAxNFYyMTIuNzY0SDE2NS4xMjJIMTYzLjg3MkgxNjIuNjIyVjIxNC4wMTRWMjE1LjI2NFYyMTguMTI1Wk0xNzYuNzcxIDIxMi43NjRIMTg2LjIwNFYyMTQuMDE0VjIxNS4yNjRIMTc2Ljc3MVYyMTQuMDE0VjIxMi43NjRaTTE5NS42MzcgMjE0LjAxNFYyMTIuNzY0SDIwNS4wNjlWMjE0LjAxNFYyMTUuMjY0SDE5NS42MzdWMjE0LjAxNFpNMjc0LjU2NSAzMTQuNjM3SDI3NS44MTVWMzE3LjQ5OVYzMTguNzQ5VjMxOS45OTlIMjc0LjU2NUgyNzMuMzE1SDI3MS4wOTlWMzE4Ljc0OVYzMTcuNDk5SDI3My4zMTVWMzE0LjYzN0gyNzQuNTY1Wk0yNjEuNjY2IDMxOC43NDlWMzE5Ljk5OUgyNTIuMjMzVjMxOC43NDlWMzE3LjQ5OUgyNjEuNjY2VjMxOC43NDlaTTI0Mi44IDMxOC43NDlWMzE5Ljk5OUgyMzMuMzY4VjMxOC43NDlWMzE3LjQ5OUgyNDIuOFYzMTguNzQ5Wk0yMjMuOTM1IDMxOC43NDlWMzE5Ljk5OUgyMTQuNTAyVjMxOC43NDlWMzE3LjQ5OUgyMjMuOTM1VjMxOC43NDlaTTIwNS4wNjkgMzE4Ljc0OVYzMTkuOTk5SDE5NS42MzdWMzE4Ljc0OVYzMTcuNDk5SDIwNS4wNjlWMzE4Ljc0OVpNMTg2LjIwNCAzMTguNzQ5VjMxOS45OTlIMTc2Ljc3MVYzMTguNzQ5VjMxNy40OTlIMTg2LjIwNFYzMTguNzQ5Wk0xNjcuMzM4IDMxOC43NDlWMzE5Ljk5OUgxNjUuMTIySDE2My44NzJIMTYyLjYyMlYzMTguNzQ5VjMxNy40OTlWMzE0LjYzN0gxNjMuODcySDE2NS4xMjJWMzE3LjQ5OUgxNjcuMzM4VjMxOC43NDlaTTE2My44NzIgMzAzLjkxNEgxNjIuNjIyVjI5My4xOUgxNjMuODcySDE2NS4xMjJWMzAzLjkxNEgxNjMuODcyWk0xNjMuODcyIDI4Mi40NjdIMTYyLjYyMlYyNzEuNzQzSDE2My44NzJIMTY1LjEyMlYyODIuNDY3SDE2My44NzJaTTE2My44NzIgMjYxLjAySDE2Mi42MjJWMjUwLjI5NkgxNjMuODcySDE2NS4xMjJWMjYxLjAySDE2My44NzJaTTE2My44NzIgMjM5LjU3M0gxNjIuNjIyVjIyOC44NDlIMTYzLjg3MkgxNjUuMTIyVjIzOS41NzNIMTYzLjg3MloiIGZpbGw9IiM5Nzk4OTQiLz4KPC9zdmc+Cg==
+                                target: _blank
+                                width: 500px
+                                height: 500px
+                              mobileStyle: []
+                              style:
+                                padding-bottom: 5px
+                                padding-left: 5px
+                                padding-right: 5px
+                                padding-top: 5px
+                                width: 100%
+                            type: mailup-bee-newsletter-modules-image
+                            align: left
+                          - uuid: f3fd437e-0ecc-4585-81b0-db39d9b260f5
+                            descriptor:
+                              paragraph:
+                                html: <code spellcheck="false" data-bee-type="mergetag"
+                                  data-bee-code="" data-bee-name="product name 1"
+                                  data-bee-value="$product_reco[1].name$"><q>no-content</q></code>
+                                style:
+                                  color: '#555555'
+                                  direction: ltr
+                                  font-family: inherit
+                                  font-size: 14px
+                                  font-weight: '500'
+                                  letter-spacing: 0px
+                                  line-height: 120%
+                                  link-color: '#E01253'
+                                  text-align: center
+                              style:
+                                padding-bottom: 0px
+                                padding-left: 0px
+                                padding-right: 0px
+                                padding-top: 0px
+                                text-align: center
+                                width: 100%
+                              computedStyle:
+                                rowColStackOnMobile: true
+                                rowReverseColStackOnMobile: false
+                                verticalAlign: top
+                                hideContentOnMobile: false
+                                hideContentOnDesktop: false
+                            type: mailup-bee-newsletter-modules-paragraph
+                            align: left
+                          - uuid: 125f536f-46b7-4cdf-8a59-25168357387e
+                            descriptor:
+                              paragraph:
+                                html: <code spellcheck="false" data-bee-type="mergetag"
+                                  data-bee-code="" data-bee-name="product description
+                                  1" data-bee-value="$product_reco[1].description$"><q>no-content</q></code>
+                                style:
+                                  color: '#555555'
+                                  direction: ltr
+                                  font-family: inherit
+                                  font-size: 12px
+                                  font-weight: '500'
+                                  letter-spacing: 0px
+                                  line-height: 120%
+                                  link-color: '#E01253'
+                                  text-align: center
+                              style:
+                                padding-bottom: 0px
+                                padding-left: 0px
+                                padding-right: 0px
+                                padding-top: 0px
+                                text-align: center
+                                width: 100%
+                              computedStyle:
+                                rowColStackOnMobile: true
+                                rowReverseColStackOnMobile: false
+                                verticalAlign: top
+                                hideContentOnMobile: false
+                                hideContentOnDesktop: false
+                            type: mailup-bee-newsletter-modules-paragraph
+                            align: left
+                          - uuid: 2d35f73e-20f2-4d20-a2af-55c3b3bd8186
+                            descriptor:
+                              paragraph:
+                                html: "<code spellcheck=\"false\" data-bee-type=\"\
+                                  mergetag\" data-bee-code=\"\" data-bee-name=\"product\
+                                  \ price 1\" data-bee-value=\"$product_reco[1].price$\"\
+                                  ><q>no-content</q></code> \u20AC"
+                                style:
+                                  color: '#555555'
+                                  direction: ltr
+                                  font-family: inherit
+                                  font-size: 13px
+                                  font-weight: '500'
+                                  letter-spacing: 0px
+                                  line-height: 120%
+                                  link-color: '#E01253'
+                                  text-align: center
+                              style:
+                                padding-bottom: 0px
+                                padding-left: 0px
+                                padding-right: 0px
+                                padding-top: 0px
+                                text-align: center
+                                width: 100%
+                              computedStyle:
+                                rowColStackOnMobile: true
+                                rowReverseColStackOnMobile: false
+                                verticalAlign: top
+                                hideContentOnMobile: false
+                                hideContentOnDesktop: false
+                            type: mailup-bee-newsletter-modules-paragraph
+                            align: left
+                          - uuid: 810f6968-7aaf-4b20-b892-9407cacd73e0
+                            descriptor:
+                              button:
+                                href: $product_reco[1].extid$
+                                label: <div class="txtTinyMce-wrapper" style="" data-mce-style="">product
+                                  button 1</div>
+                                style:
+                                  background-color: '#3AAEE0'
+                                  border-bottom: 0px solid transparent
+                                  border-left: 0px solid transparent
+                                  border-radius: 4px
+                                  border-right: 0px solid transparent
+                                  border-top: 0px solid transparent
+                                  color: '#ffffff'
+                                  direction: ltr
+                                  font-family: inherit
+                                  font-size: 14px
+                                  font-weight: '400'
+                                  line-height: 200%
+                                  max-width: 100%
+                                  padding-bottom: 5px
+                                  padding-left: 15px
+                                  padding-right: 15px
+                                  padding-top: 5px
+                                  width: auto
+                                target: _blank
+                              computedStyle:
+                                rowColStackOnMobile: true
+                                rowReverseColStackOnMobile: false
+                                verticalAlign: top
+                                hideContentOnMobile: false
+                                hideContentOnDesktop: false
+                              mobileStyle: []
+                              style:
+                                padding-bottom: 10px
+                                padding-left: 10px
+                                padding-right: 10px
+                                padding-top: 10px
+                                text-align: center
+                            type: mailup-bee-newsletter-modules-button
+                            align: left
+                          style:
+                            background-color: transparent
+                            border-bottom: 0px solid transparent
+                            border-left: 0px solid transparent
+                            border-right: 0px solid transparent
+                            border-top: 0px solid transparent
+                            padding-bottom: 5px
+                            padding-left: 0px
+                            padding-right: 0px
+                            padding-top: 5px
+                        - uuid: 8324c1fb-8485-4429-9ffe-8cd656bbaef2
+                          grid-columns: 4
+                          modules:
+                          - uuid: e866a16b-56ee-43c1-bfce-9a10a7f6a3fd
+                            descriptor:
+                              computedStyle:
+                                class: center autowidth
+                                hideContentOnMobile: false
+                                width: 156.66666666666666px
+                              image:
+                                alt: ''
+                                dynamicSrc: $product_reco[2].image_url$
+                                href: ''
+                                src: data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjUwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNGM0YzRjMiLz4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTMzMS4yNTMgMjExLjY1NEwyMzUuOTc5IDE4Ni4xMjZMMjE1LjA3OSAyNjQuMTI5TDI1MS45ODkgMjQ4LjUxM0wyNzEuMzUgMjYzLjQwN0wzMjMuMTcyIDI0MS44MTVMMzMxLjI1MyAyMTEuNjU0Wk0zMDUuNzI1IDMwNi45MjhMMjc5LjgxNCAyOTkuOTg1TDMwNS44OTEgMzA2LjMwN0wzMDUuNzI1IDMwNi45MjhaTTIzNy4yNzQgMTgxLjI5NkwyMzIuNDQ0IDE4MC4wMDJMMjMxLjE1IDE4NC44MzJMMjA1LjYyMSAyODAuMTA2TDIwNC4zMjcgMjg0LjkzNUwyMDkuMTU3IDI4Ni4yMjlMMzA0LjQzMSAzMTEuNzU4TDMwOS4yNiAzMTMuMDUyTDMxMC41NTQgMzA4LjIyMkwzMzYuMDgzIDIxMi45NDhMMzM3LjM3NyAyMDguMTE5TDMzMi41NDggMjA2LjgyNUwyMzcuMjc0IDE4MS4yOTZaTTI1OS40MzUgMjM2LjU5NUMyNjYuODM4IDIzNi41OTUgMjcyLjgzOSAyMzAuNTk0IDI3Mi44MzkgMjIzLjE5MUMyNzIuODM5IDIxNS43ODggMjY2LjgzOCAyMDkuNzg2IDI1OS40MzUgMjA5Ljc4NkMyNTIuMDMyIDIwOS43ODYgMjQ2LjAzIDIxNS43ODggMjQ2LjAzIDIyMy4xOTFDMjQ2LjAzIDIzMC41OTQgMjUyLjAzMiAyMzYuNTk1IDI1OS40MzUgMjM2LjU5NVoiIGZpbGw9IiM5Nzk4OTQiLz4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIxNy42MDQgMjEyLjc2NEgyMTQuNTAyVjIxNC4wMTRWMjE1LjI2NEgyMTYuOTM0TDIxNy42MDQgMjEyLjc2NFpNMTYyLjYyMiAyMTguMTI1SDE2My44NzJIMTY1LjEyMlYyMTUuMjY0SDE2Ny4zMzhWMjE0LjAxNFYyMTIuNzY0SDE2NS4xMjJIMTYzLjg3MkgxNjIuNjIyVjIxNC4wMTRWMjE1LjI2NFYyMTguMTI1Wk0xNzYuNzcxIDIxMi43NjRIMTg2LjIwNFYyMTQuMDE0VjIxNS4yNjRIMTc2Ljc3MVYyMTQuMDE0VjIxMi43NjRaTTE5NS42MzcgMjE0LjAxNFYyMTIuNzY0SDIwNS4wNjlWMjE0LjAxNFYyMTUuMjY0SDE5NS42MzdWMjE0LjAxNFpNMjc0LjU2NSAzMTQuNjM3SDI3NS44MTVWMzE3LjQ5OVYzMTguNzQ5VjMxOS45OTlIMjc0LjU2NUgyNzMuMzE1SDI3MS4wOTlWMzE4Ljc0OVYzMTcuNDk5SDI3My4zMTVWMzE0LjYzN0gyNzQuNTY1Wk0yNjEuNjY2IDMxOC43NDlWMzE5Ljk5OUgyNTIuMjMzVjMxOC43NDlWMzE3LjQ5OUgyNjEuNjY2VjMxOC43NDlaTTI0Mi44IDMxOC43NDlWMzE5Ljk5OUgyMzMuMzY4VjMxOC43NDlWMzE3LjQ5OUgyNDIuOFYzMTguNzQ5Wk0yMjMuOTM1IDMxOC43NDlWMzE5Ljk5OUgyMTQuNTAyVjMxOC43NDlWMzE3LjQ5OUgyMjMuOTM1VjMxOC43NDlaTTIwNS4wNjkgMzE4Ljc0OVYzMTkuOTk5SDE5NS42MzdWMzE4Ljc0OVYzMTcuNDk5SDIwNS4wNjlWMzE4Ljc0OVpNMTg2LjIwNCAzMTguNzQ5VjMxOS45OTlIMTc2Ljc3MVYzMTguNzQ5VjMxNy40OTlIMTg2LjIwNFYzMTguNzQ5Wk0xNjcuMzM4IDMxOC43NDlWMzE5Ljk5OUgxNjUuMTIySDE2My44NzJIMTYyLjYyMlYzMTguNzQ5VjMxNy40OTlWMzE0LjYzN0gxNjMuODcySDE2NS4xMjJWMzE3LjQ5OUgxNjcuMzM4VjMxOC43NDlaTTE2My44NzIgMzAzLjkxNEgxNjIuNjIyVjI5My4xOUgxNjMuODcySDE2NS4xMjJWMzAzLjkxNEgxNjMuODcyWk0xNjMuODcyIDI4Mi40NjdIMTYyLjYyMlYyNzEuNzQzSDE2My44NzJIMTY1LjEyMlYyODIuNDY3SDE2My44NzJaTTE2My44NzIgMjYxLjAySDE2Mi42MjJWMjUwLjI5NkgxNjMuODcySDE2NS4xMjJWMjYxLjAySDE2My44NzJaTTE2My44NzIgMjM5LjU3M0gxNjIuNjIyVjIyOC44NDlIMTYzLjg3MkgxNjUuMTIyVjIzOS41NzNIMTYzLjg3MloiIGZpbGw9IiM5Nzk4OTQiLz4KPC9zdmc+Cg==
+                                target: _blank
+                                width: 500px
+                                height: 500px
+                              mobileStyle: []
+                              style:
+                                padding-bottom: 5px
+                                padding-left: 5px
+                                padding-right: 5px
+                                padding-top: 5px
+                                width: 100%
+                            type: mailup-bee-newsletter-modules-image
+                            align: left
+                          - uuid: 7b070eae-4b65-46e2-8b9b-4449b36edeaa
+                            descriptor:
+                              paragraph:
+                                html: <code spellcheck="false" data-bee-type="mergetag"
+                                  data-bee-code="" data-bee-name="product name 2"
+                                  data-bee-value="$product_reco[2].name$"><q>no-content</q></code>
+                                style:
+                                  color: '#555555'
+                                  direction: ltr
+                                  font-family: inherit
+                                  font-size: 14px
+                                  font-weight: '500'
+                                  letter-spacing: 0px
+                                  line-height: 120%
+                                  link-color: '#E01253'
+                                  text-align: center
+                              style:
+                                padding-bottom: 0px
+                                padding-left: 0px
+                                padding-right: 0px
+                                padding-top: 0px
+                                text-align: center
+                                width: 100%
+                              computedStyle:
+                                rowColStackOnMobile: true
+                                rowReverseColStackOnMobile: false
+                                verticalAlign: top
+                                hideContentOnMobile: false
+                                hideContentOnDesktop: false
+                            type: mailup-bee-newsletter-modules-paragraph
+                            align: left
+                          - uuid: f133b5f7-cc70-4ac2-aa43-6e504ac52bc2
+                            descriptor:
+                              paragraph:
+                                html: <code spellcheck="false" data-bee-type="mergetag"
+                                  data-bee-code="" data-bee-name="product description
+                                  2" data-bee-value="$product_reco[2].description$"><q>no-content</q></code>
+                                style:
+                                  color: '#555555'
+                                  direction: ltr
+                                  font-family: inherit
+                                  font-size: 12px
+                                  font-weight: '500'
+                                  letter-spacing: 0px
+                                  line-height: 120%
+                                  link-color: '#E01253'
+                                  text-align: center
+                              style:
+                                padding-bottom: 0px
+                                padding-left: 0px
+                                padding-right: 0px
+                                padding-top: 0px
+                                text-align: center
+                                width: 100%
+                              computedStyle:
+                                rowColStackOnMobile: true
+                                rowReverseColStackOnMobile: false
+                                verticalAlign: top
+                                hideContentOnMobile: false
+                                hideContentOnDesktop: false
+                            type: mailup-bee-newsletter-modules-paragraph
+                            align: left
+                          - uuid: 2cb7b14a-29f5-4f9c-8068-7b9dd4090ce4
+                            descriptor:
+                              paragraph:
+                                html: "<code spellcheck=\"false\" data-bee-type=\"\
+                                  mergetag\" data-bee-code=\"\" data-bee-name=\"product\
+                                  \ price 2\" data-bee-value=\"$product_reco[2].price$\"\
+                                  ><q>no-content</q></code> \u20AC"
+                                style:
+                                  color: '#555555'
+                                  direction: ltr
+                                  font-family: inherit
+                                  font-size: 13px
+                                  font-weight: '500'
+                                  letter-spacing: 0px
+                                  line-height: 120%
+                                  link-color: '#E01253'
+                                  text-align: center
+                              style:
+                                padding-bottom: 0px
+                                padding-left: 0px
+                                padding-right: 0px
+                                padding-top: 0px
+                                text-align: center
+                                width: 100%
+                              computedStyle:
+                                rowColStackOnMobile: true
+                                rowReverseColStackOnMobile: false
+                                verticalAlign: top
+                                hideContentOnMobile: false
+                                hideContentOnDesktop: false
+                            type: mailup-bee-newsletter-modules-paragraph
+                            align: left
+                          - uuid: 12bc82a2-b6be-4be5-aa83-f4434eb11344
+                            descriptor:
+                              button:
+                                href: $product_reco[2].extid$
+                                label: <div class="txtTinyMce-wrapper" style="" data-mce-style="">product
+                                  button 2</div>
+                                style:
+                                  background-color: '#3AAEE0'
+                                  border-bottom: 0px solid transparent
+                                  border-left: 0px solid transparent
+                                  border-radius: 4px
+                                  border-right: 0px solid transparent
+                                  border-top: 0px solid transparent
+                                  color: '#ffffff'
+                                  direction: ltr
+                                  font-family: inherit
+                                  font-size: 14px
+                                  font-weight: '400'
+                                  line-height: 200%
+                                  max-width: 100%
+                                  padding-bottom: 5px
+                                  padding-left: 15px
+                                  padding-right: 15px
+                                  padding-top: 5px
+                                  width: auto
+                                target: _blank
+                              computedStyle:
+                                rowColStackOnMobile: true
+                                rowReverseColStackOnMobile: false
+                                verticalAlign: top
+                                hideContentOnMobile: false
+                                hideContentOnDesktop: false
+                              mobileStyle: []
+                              style:
+                                padding-bottom: 10px
+                                padding-left: 10px
+                                padding-right: 10px
+                                padding-top: 10px
+                                text-align: center
+                            type: mailup-bee-newsletter-modules-button
+                            align: left
+                          style:
+                            background-color: transparent
+                            border-bottom: 0px solid transparent
+                            border-left: 0px solid transparent
+                            border-right: 0px solid transparent
+                            border-top: 0px solid transparent
+                            padding-bottom: 5px
+                            padding-left: 0px
+                            padding-right: 0px
+                            padding-top: 5px
+                        - uuid: 54be4f34-5d62-4779-adcb-4762d2e42161
+                          grid-columns: 4
+                          modules:
+                          - uuid: 2b07c014-bd37-47e2-b3cf-594c1dc61969
+                            descriptor:
+                              computedStyle:
+                                class: center autowidth
+                                hideContentOnMobile: false
+                                width: 156.66666666666666px
+                              image:
+                                alt: ''
+                                dynamicSrc: $product_reco[3].image_url$
+                                href: ''
+                                src: data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjUwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNGM0YzRjMiLz4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTMzMS4yNTMgMjExLjY1NEwyMzUuOTc5IDE4Ni4xMjZMMjE1LjA3OSAyNjQuMTI5TDI1MS45ODkgMjQ4LjUxM0wyNzEuMzUgMjYzLjQwN0wzMjMuMTcyIDI0MS44MTVMMzMxLjI1MyAyMTEuNjU0Wk0zMDUuNzI1IDMwNi45MjhMMjc5LjgxNCAyOTkuOTg1TDMwNS44OTEgMzA2LjMwN0wzMDUuNzI1IDMwNi45MjhaTTIzNy4yNzQgMTgxLjI5NkwyMzIuNDQ0IDE4MC4wMDJMMjMxLjE1IDE4NC44MzJMMjA1LjYyMSAyODAuMTA2TDIwNC4zMjcgMjg0LjkzNUwyMDkuMTU3IDI4Ni4yMjlMMzA0LjQzMSAzMTEuNzU4TDMwOS4yNiAzMTMuMDUyTDMxMC41NTQgMzA4LjIyMkwzMzYuMDgzIDIxMi45NDhMMzM3LjM3NyAyMDguMTE5TDMzMi41NDggMjA2LjgyNUwyMzcuMjc0IDE4MS4yOTZaTTI1OS40MzUgMjM2LjU5NUMyNjYuODM4IDIzNi41OTUgMjcyLjgzOSAyMzAuNTk0IDI3Mi44MzkgMjIzLjE5MUMyNzIuODM5IDIxNS43ODggMjY2LjgzOCAyMDkuNzg2IDI1OS40MzUgMjA5Ljc4NkMyNTIuMDMyIDIwOS43ODYgMjQ2LjAzIDIxNS43ODggMjQ2LjAzIDIyMy4xOTFDMjQ2LjAzIDIzMC41OTQgMjUyLjAzMiAyMzYuNTk1IDI1OS40MzUgMjM2LjU5NVoiIGZpbGw9IiM5Nzk4OTQiLz4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIxNy42MDQgMjEyLjc2NEgyMTQuNTAyVjIxNC4wMTRWMjE1LjI2NEgyMTYuOTM0TDIxNy42MDQgMjEyLjc2NFpNMTYyLjYyMiAyMTguMTI1SDE2My44NzJIMTY1LjEyMlYyMTUuMjY0SDE2Ny4zMzhWMjE0LjAxNFYyMTIuNzY0SDE2NS4xMjJIMTYzLjg3MkgxNjIuNjIyVjIxNC4wMTRWMjE1LjI2NFYyMTguMTI1Wk0xNzYuNzcxIDIxMi43NjRIMTg2LjIwNFYyMTQuMDE0VjIxNS4yNjRIMTc2Ljc3MVYyMTQuMDE0VjIxMi43NjRaTTE5NS42MzcgMjE0LjAxNFYyMTIuNzY0SDIwNS4wNjlWMjE0LjAxNFYyMTUuMjY0SDE5NS42MzdWMjE0LjAxNFpNMjc0LjU2NSAzMTQuNjM3SDI3NS44MTVWMzE3LjQ5OVYzMTguNzQ5VjMxOS45OTlIMjc0LjU2NUgyNzMuMzE1SDI3MS4wOTlWMzE4Ljc0OVYzMTcuNDk5SDI3My4zMTVWMzE0LjYzN0gyNzQuNTY1Wk0yNjEuNjY2IDMxOC43NDlWMzE5Ljk5OUgyNTIuMjMzVjMxOC43NDlWMzE3LjQ5OUgyNjEuNjY2VjMxOC43NDlaTTI0Mi44IDMxOC43NDlWMzE5Ljk5OUgyMzMuMzY4VjMxOC43NDlWMzE3LjQ5OUgyNDIuOFYzMTguNzQ5Wk0yMjMuOTM1IDMxOC43NDlWMzE5Ljk5OUgyMTQuNTAyVjMxOC43NDlWMzE3LjQ5OUgyMjMuOTM1VjMxOC43NDlaTTIwNS4wNjkgMzE4Ljc0OVYzMTkuOTk5SDE5NS42MzdWMzE4Ljc0OVYzMTcuNDk5SDIwNS4wNjlWMzE4Ljc0OVpNMTg2LjIwNCAzMTguNzQ5VjMxOS45OTlIMTc2Ljc3MVYzMTguNzQ5VjMxNy40OTlIMTg2LjIwNFYzMTguNzQ5Wk0xNjcuMzM4IDMxOC43NDlWMzE5Ljk5OUgxNjUuMTIySDE2My44NzJIMTYyLjYyMlYzMTguNzQ5VjMxNy40OTlWMzE0LjYzN0gxNjMuODcySDE2NS4xMjJWMzE3LjQ5OUgxNjcuMzM4VjMxOC43NDlaTTE2My44NzIgMzAzLjkxNEgxNjIuNjIyVjI5My4xOUgxNjMuODcySDE2NS4xMjJWMzAzLjkxNEgxNjMuODcyWk0xNjMuODcyIDI4Mi40NjdIMTYyLjYyMlYyNzEuNzQzSDE2My44NzJIMTY1LjEyMlYyODIuNDY3SDE2My44NzJaTTE2My44NzIgMjYxLjAySDE2Mi42MjJWMjUwLjI5NkgxNjMuODcySDE2NS4xMjJWMjYxLjAySDE2My44NzJaTTE2My44NzIgMjM5LjU3M0gxNjIuNjIyVjIyOC44NDlIMTYzLjg3MkgxNjUuMTIyVjIzOS41NzNIMTYzLjg3MloiIGZpbGw9IiM5Nzk4OTQiLz4KPC9zdmc+Cg==
+                                target: _blank
+                                width: 500px
+                                height: 500px
+                              mobileStyle: []
+                              style:
+                                padding-bottom: 5px
+                                padding-left: 5px
+                                padding-right: 5px
+                                padding-top: 5px
+                                width: 100%
+                            type: mailup-bee-newsletter-modules-image
+                            align: left
+                          - uuid: 5e458b01-7574-4c5c-84a4-a62901b3b400
+                            descriptor:
+                              paragraph:
+                                html: <code spellcheck="false" data-bee-type="mergetag"
+                                  data-bee-code="" data-bee-name="product name 3"
+                                  data-bee-value="$product_reco[3].name$"><q>no-content</q></code>
+                                style:
+                                  color: '#555555'
+                                  direction: ltr
+                                  font-family: inherit
+                                  font-size: 14px
+                                  font-weight: '500'
+                                  letter-spacing: 0px
+                                  line-height: 120%
+                                  link-color: '#E01253'
+                                  text-align: center
+                              style:
+                                padding-bottom: 0px
+                                padding-left: 0px
+                                padding-right: 0px
+                                padding-top: 0px
+                                text-align: center
+                                width: 100%
+                              computedStyle:
+                                rowColStackOnMobile: true
+                                rowReverseColStackOnMobile: false
+                                verticalAlign: top
+                                hideContentOnMobile: false
+                                hideContentOnDesktop: false
+                            type: mailup-bee-newsletter-modules-paragraph
+                            align: left
+                          - uuid: dd60bc41-f15a-447d-92bb-d3193d7ea625
+                            descriptor:
+                              paragraph:
+                                html: <code spellcheck="false" data-bee-type="mergetag"
+                                  data-bee-code="" data-bee-name="product description
+                                  3" data-bee-value="$product_reco[3].description$"><q>no-content</q></code>
+                                style:
+                                  color: '#555555'
+                                  direction: ltr
+                                  font-family: inherit
+                                  font-size: 12px
+                                  font-weight: '500'
+                                  letter-spacing: 0px
+                                  line-height: 120%
+                                  link-color: '#E01253'
+                                  text-align: center
+                              style:
+                                padding-bottom: 0px
+                                padding-left: 0px
+                                padding-right: 0px
+                                padding-top: 0px
+                                text-align: center
+                                width: 100%
+                              computedStyle:
+                                rowColStackOnMobile: true
+                                rowReverseColStackOnMobile: false
+                                verticalAlign: top
+                                hideContentOnMobile: false
+                                hideContentOnDesktop: false
+                            type: mailup-bee-newsletter-modules-paragraph
+                            align: left
+                          - uuid: 9d899e18-9f54-4f19-bfe4-2cea5bc5e9dd
+                            descriptor:
+                              paragraph:
+                                html: "<code spellcheck=\"false\" data-bee-type=\"\
+                                  mergetag\" data-bee-code=\"\" data-bee-name=\"product\
+                                  \ price 3\" data-bee-value=\"$product_reco[3].price$\"\
+                                  ><q>no-content</q></code> \u20AC"
+                                style:
+                                  color: '#555555'
+                                  direction: ltr
+                                  font-family: inherit
+                                  font-size: 13px
+                                  font-weight: '500'
+                                  letter-spacing: 0px
+                                  line-height: 120%
+                                  link-color: '#E01253'
+                                  text-align: center
+                              style:
+                                padding-bottom: 0px
+                                padding-left: 0px
+                                padding-right: 0px
+                                padding-top: 0px
+                                text-align: center
+                                width: 100%
+                              computedStyle:
+                                rowColStackOnMobile: true
+                                rowReverseColStackOnMobile: false
+                                verticalAlign: top
+                                hideContentOnMobile: false
+                                hideContentOnDesktop: false
+                            type: mailup-bee-newsletter-modules-paragraph
+                            align: left
+                          - uuid: cb56d5c0-1743-458a-b19c-c5a49ca3342d
+                            descriptor:
+                              button:
+                                href: $product_reco[3].extid$
+                                label: <div class="txtTinyMce-wrapper" style="" data-mce-style="">product
+                                  button 3</div>
+                                style:
+                                  background-color: '#3AAEE0'
+                                  border-bottom: 0px solid transparent
+                                  border-left: 0px solid transparent
+                                  border-radius: 4px
+                                  border-right: 0px solid transparent
+                                  border-top: 0px solid transparent
+                                  color: '#ffffff'
+                                  direction: ltr
+                                  font-family: inherit
+                                  font-size: 14px
+                                  font-weight: '400'
+                                  line-height: 200%
+                                  max-width: 100%
+                                  padding-bottom: 5px
+                                  padding-left: 15px
+                                  padding-right: 15px
+                                  padding-top: 5px
+                                  width: auto
+                                target: _blank
+                              computedStyle:
+                                rowColStackOnMobile: true
+                                rowReverseColStackOnMobile: false
+                                verticalAlign: top
+                                hideContentOnMobile: false
+                                hideContentOnDesktop: false
+                              mobileStyle: []
+                              style:
+                                padding-bottom: 10px
+                                padding-left: 10px
+                                padding-right: 10px
+                                padding-top: 10px
+                                text-align: center
+                            type: mailup-bee-newsletter-modules-button
+                            align: left
+                          style:
+                            background-color: transparent
+                            border-bottom: 0px solid transparent
+                            border-left: 0px solid transparent
+                            border-right: 0px solid transparent
+                            border-top: 0px solid transparent
+                            padding-bottom: 5px
+                            padding-left: 0px
+                            padding-right: 0px
+                            padding-top: 5px
+                        type: ''
+                        name: ProductRecoOne
+                        locked: false
+                        synced: true
+                        metadata:
+                          name: ProductRecoOne
+                          uid: 508824c4-8d45-11ee-84be-aafd6b2aca16
+                        container:
+                          displayCondition:
+                            after: '{ SPLIO ENDPRODUCT_RECO }'
+                            before: '{ SPLIO PRODUCT_RECO 4 }'
+                            description: desc product reco 4
+                            label: product reco 4
+                            type: BEE_CUSTOM_DISPLAY_CONDITION
+                          style:
+                            background-color: transparent
+                            background-image: none
+                            background-position: top left
+                            background-repeat: no-repeat
+                        content:
+                          computedStyle:
+                            hideContentOnDesktop: false
+                            hideContentOnMobile: false
+                            rowColStackOnMobile: true
+                            rowReverseColStackOnMobile: false
+                            verticalAlign: top
+                          style:
+                            background-color: transparent
+                            background-image: none
+                            background-position: top left
+                            background-repeat: no-repeat
+                            color: '#000000'
+                            width: 500px
+                        uuid: cce7dcda-25e5-47b1-aa9e-16e251c6a184
+                      saveRows: true
+                      template:
+                        name: template-base
+                        type: basic
+                        version: 2.0.0
+                      title: ''
+                    comments: &id027 {}
+              example:
+                replace:
+                - *id025
+                source:
+                  page: *id026
+                  comments: *id027
       responses:
-        200:
-          description: Successful operation
+        '200':
+          description: Successful response
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  html:
-                    type: string
-                    description: The transformed HTML output.
-                  json:
-                    type: object
-                    description: The resulting updated JSON structure.
-                    properties:
-                      page:
-                        type: object
-                        description: The page content and structure.
-                        properties:
-                          body:
-                            type: object
-                            description: The body of the page.
-                          rows:
-                            type: array
-                            items:
-                              type: object
-                          template:
-                            type: object
-                          title:
-                            type: string
-                      comments:
-                        type: object
-                        description: Comments associated with the operation.
-        400:
-          description: Invalid request
-      examples:
-        NodeJS:
-          summary: NodeJS Request Example
-          value: |
-            const response = await fetch('https://api.getbee.io/merge', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer <token>' },
-              body: JSON.stringify({
-                "replace": [
-                  {
-                    "path": "$..rows[?(@.metadata.uid=='508824c4-8d45-11ee-84be-aafd6b2aca16')]",
-                    "value": {
-                      "columns": [
-                        {
-                          "grid-columns": 4,
-                          "modules": [
-                            {
-                              "descriptor": {
-                                "computedStyle": {},
-                                "image": {},
-                                "paragraph": {
-                                  "description": "Content for paragraphs"
-                                }
-                              },
-                              "type": "mailup-bee-newsletter-modules-paragraph"
-                            }
-                          ],
-                          "style": {}
-                        }
-                      ],
-                      "container": {},
-                      "content": {},
-                      "metadata": {
-                        "uid": "508824c4-8d45-11ee-84be-aafd6b2aca16"
-                      },
-                      "type": ""
-                    }
-                  }
-                ]
-              }),
-            });
-            const result = await response.json();
-            console.log(result); // Log the response data
+                type: string
+                example:
+                  message: Success
+        '400':
+          description: Bad request. The request could not be understood or was missing
+            required parameters.
+        '401':
+          description: Unauthorized. Authentication is required and has failed or
+            has not been provided.
+        '403':
+          description: Forbidden. The request was valid, but the server is refusing
+            action.
+        '500':
+          description: Internal Server Error. An unexpected condition was encountered.

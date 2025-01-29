@@ -1,0 +1,59 @@
+openapi: 3.0.0
+info:
+  title: Get a List of Categories
+  description: Get a list of categories from the catalog.
+  version: 1.0.0
+servers:
+- url: https://api.getbee.io
+  description: Base URL for the API
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Enter Dev Console API Key as Bearer token
+paths:
+  /v1/catalog/categories:
+    get:
+      summary: Get a List of Categories
+      description: Get a list of categories from the catalog.
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: string
+                example:
+                  count: 114
+                  next: null
+                  previous: null
+                  results:
+                  - bg_color: '#F8F8F8'
+                    fb_color: '#333A45'
+                    highlighted: false
+                    icon: null
+                    id: leap-year
+                    image: null
+                    name: Leap Year
+                    description: Make every extra day count with our Leap Year email
+                      templates. Whether you're celebrating a special promotion, organizing
+                      an exclusive event, or simply seizing the opportunity for a
+                      unique marketing campaign, our templates are designed to make
+                      your Leap Year messages stand out.
+                    short_description: Engage your audience with visually appealing
+                      designs that capture the essence of this rare occurrence.
+                    parent: seasonal
+        '400':
+          description: Bad request. The request could not be understood or was missing
+            required parameters.
+        '401':
+          description: Unauthorized. Authentication is required and has failed or
+            has not been provided.
+        '403':
+          description: Forbidden. The request was valid, but the server is refusing
+            action.
+        '500':
+          description: Internal Server Error. An unexpected condition was encountered.

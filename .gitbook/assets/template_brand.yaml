@@ -1,0 +1,900 @@
+openapi: 3.0.0
+info:
+  title: Brand Style Management
+  description: Manage and modify the style of email, pages, and popup templates. Make
+    template-wide design changes to existing templates quickly and easily, ensuring
+    that all modules adhere to the broader design system or brand guidelines
+  version: 1.0.0
+servers:
+- url: https://api.getbee.io
+  description: Base URL for the API
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Enter Dev Console API Key as Bearer token
+paths:
+  /v1/template/brand:
+    post:
+      summary: Brand Style Management
+      description: Manage and modify the style of email, pages, and popup templates.
+        Make template-wide design changes to existing templates quickly and easily,
+        ensuring that all modules adhere to the broader design system or brand guidelines
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        description: Request body for the endpoint
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                styles:
+                  type: object
+                  description: An object field for styles
+                  properties:
+                    button:
+                      type: object
+                      description: An object field for button
+                      properties:
+                        className:
+                          type: string
+                          description: A string field for className
+                          example: Primary
+                        styles:
+                          type: object
+                          description: An object field for styles
+                          properties:
+                            color:
+                              type: string
+                              description: A string field for color
+                              example: '#FBF9FF'
+                            fontSize:
+                              type: string
+                              description: A string field for fontSize
+                              example: 16px
+                            fontFamily:
+                              type: string
+                              description: A string field for fontFamily
+                              example: Inter,sans-serif
+                            backgroundColor:
+                              type: string
+                              description: A string field for backgroundColor
+                              example: '#7747ff'
+                            borderBottom:
+                              type: string
+                              description: A string field for borderBottom
+                              example: 0px solid transparent
+                            borderLeft:
+                              type: string
+                              description: A string field for borderLeft
+                              example: 0px solid transparent
+                            borderRight:
+                              type: string
+                              description: A string field for borderRight
+                              example: 0px solid transparent
+                            borderTop:
+                              type: string
+                              description: A string field for borderTop
+                              example: 0px solid transparent
+                            borderRadius:
+                              type: string
+                              description: A string field for borderRadius
+                              example: 5px
+                            lineHeight:
+                              type: string
+                              description: A string field for lineHeight
+                              example: 120%
+                            maxWidth:
+                              type: string
+                              description: A string field for maxWidth
+                              example: 100%
+                            paddingBottom:
+                              type: string
+                              description: A string field for paddingBottom
+                              example: 8px
+                            paddingLeft:
+                              type: string
+                              description: A string field for paddingLeft
+                              example: 20px
+                            paddingRight:
+                              type: string
+                              description: A string field for paddingRight
+                              example: 20px
+                            paddingTop:
+                              type: string
+                              description: A string field for paddingTop
+                              example: 8px
+                          example:
+                            color: '#FBF9FF'
+                            fontSize: 16px
+                        blockOptions:
+                          type: object
+                          description: An object field for blockOptions
+                          properties:
+                            paddingBottom:
+                              type: string
+                              description: A string field for paddingBottom
+                              example: 20px
+                            paddingLeft:
+                              type: string
+                              description: A string field for paddingLeft
+                              example: 20px
+                            paddingRight:
+                              type: string
+                              description: A string field for paddingRight
+                              example: 20px
+                            paddingTop:
+                              type: string
+                              description: A string field for paddingTop
+                              example: 20px
+                            align:
+                              type: string
+                              description: A string field for align
+                              example: left
+                            hideContentOnMobile:
+                              type: integer
+                              description: An integer field for hideContentOnMobile
+                              example: true
+                          example:
+                            paddingBottom: 20px
+                            paddingLeft: 20px
+                      example:
+                        className: Primary
+                        styles: &id001
+                          color: '#FBF9FF'
+                          fontSize: 16px
+                          fontFamily: Inter,sans-serif
+                          backgroundColor: '#7747ff'
+                          borderBottom: 0px solid transparent
+                          borderLeft: 0px solid transparent
+                          borderRight: 0px solid transparent
+                          borderTop: 0px solid transparent
+                          borderRadius: 5px
+                          lineHeight: 120%
+                          maxWidth: 100%
+                          paddingBottom: 8px
+                          paddingLeft: 20px
+                          paddingRight: 20px
+                          paddingTop: 8px
+                  example:
+                    button: &id017
+                      className: Primary
+                      styles: *id001
+                      blockOptions:
+                        paddingBottom: 20px
+                        paddingLeft: 20px
+                        paddingRight: 20px
+                        paddingTop: 20px
+                        align: left
+                        hideContentOnMobile: true
+                template:
+                  type: object
+                  description: An object field for template
+                  properties:
+                    page:
+                      type: object
+                      description: An object field for page
+                      properties:
+                        body:
+                          type: object
+                          description: An object field for body
+                          properties:
+                            container:
+                              type: object
+                              description: An object field for container
+                              properties:
+                                style:
+                                  type: object
+                                  description: An object field for style
+                                  properties:
+                                    background-color:
+                                      type: string
+                                      description: A string field for background-color
+                                      example: '#fff'
+                                  example:
+                                    background-color: '#fff'
+                              example:
+                                style: &id002
+                                  background-color: '#fff'
+                            content:
+                              type: object
+                              description: An object field for content
+                              properties:
+                                computedStyle:
+                                  type: object
+                                  description: An object field for computedStyle
+                                  properties:
+                                    linkColor:
+                                      type: string
+                                      description: A string field for linkColor
+                                      example: '#8a3b8f'
+                                    messageBackgroundColor:
+                                      type: string
+                                      description: A string field for messageBackgroundColor
+                                      example: transparent
+                                    messageWidth:
+                                      type: string
+                                      description: A string field for messageWidth
+                                      example: 650px
+                                  example:
+                                    linkColor: '#8a3b8f'
+                                    messageBackgroundColor: transparent
+                                style:
+                                  type: object
+                                  description: An object field for style
+                                  properties:
+                                    color:
+                                      type: string
+                                      description: A string field for color
+                                      example: '#000000'
+                                    font-family:
+                                      type: string
+                                      description: A string field for font-family
+                                      example: Lato, Tahoma, Verdana, Segoe, sans-serif
+                                  example:
+                                    color: '#000000'
+                                    font-family: Lato, Tahoma, Verdana, Segoe, sans-serif
+                              example:
+                                computedStyle: &id003
+                                  linkColor: '#8a3b8f'
+                                  messageBackgroundColor: transparent
+                                  messageWidth: 650px
+                                style: &id004
+                                  color: '#000000'
+                                  font-family: Lato, Tahoma, Verdana, Segoe, sans-serif
+                            type:
+                              type: string
+                              description: A string field for type
+                              example: mailup-bee-page-properties
+                            webFonts:
+                              type: array
+                              description: An array of objects for webFonts
+                              items:
+                                type: object
+                                properties:
+                                  fontFamily:
+                                    type: string
+                                    description: A string field for fontFamily
+                                    example: '''Lato'', Tahoma, Verdana, Segoe, sans-serif'
+                                  name:
+                                    type: string
+                                    description: A string field for name
+                                    example: Lato
+                                  url:
+                                    type: string
+                                    description: A string field for url
+                                    example: https://fonts.googleapis.com/css?family=Lato
+                              example:
+                              - &id014
+                                fontFamily: '''Lato'', Tahoma, Verdana, Segoe, sans-serif'
+                                name: Lato
+                                url: https://fonts.googleapis.com/css?family=Lato
+                          example:
+                            container: &id012
+                              style: *id002
+                            content: &id013
+                              computedStyle: *id003
+                              style: *id004
+                        description:
+                          type: string
+                          description: A string field for description
+                          example: ''
+                        rows:
+                          type: array
+                          description: An array of objects for rows
+                          items:
+                            type: object
+                            properties:
+                              container:
+                                type: object
+                                description: An object field for container
+                                properties:
+                                  style:
+                                    type: object
+                                    description: An object field for style
+                                    properties:
+                                      background-color:
+                                        type: string
+                                        description: A string field for background-color
+                                        example: transparent
+                                      background-image:
+                                        type: string
+                                        description: A string field for background-image
+                                        example: none
+                                      background-repeat:
+                                        type: string
+                                        description: A string field for background-repeat
+                                        example: no-repeat
+                                      background-position:
+                                        type: string
+                                        description: A string field for background-position
+                                        example: top left
+                                    example:
+                                      background-color: transparent
+                                      background-image: none
+                                example:
+                                  style: &id008
+                                    background-color: transparent
+                                    background-image: none
+                                    background-repeat: no-repeat
+                                    background-position: top left
+                              content:
+                                type: object
+                                description: An object field for content
+                                properties:
+                                  style:
+                                    type: object
+                                    description: An object field for style
+                                    properties:
+                                      background-color:
+                                        type: string
+                                        description: A string field for background-color
+                                        example: transparent
+                                      color:
+                                        type: string
+                                        description: A string field for color
+                                        example: '#000000'
+                                      width:
+                                        type: string
+                                        description: A string field for width
+                                        example: 500px
+                                      background-image:
+                                        type: string
+                                        description: A string field for background-image
+                                        example: none
+                                      background-repeat:
+                                        type: string
+                                        description: A string field for background-repeat
+                                        example: no-repeat
+                                      background-position:
+                                        type: string
+                                        description: A string field for background-position
+                                        example: top left
+                                      border-top:
+                                        type: string
+                                        description: A string field for border-top
+                                        example: 0px solid transparent
+                                      border-right:
+                                        type: string
+                                        description: A string field for border-right
+                                        example: 0px solid transparent
+                                      border-bottom:
+                                        type: string
+                                        description: A string field for border-bottom
+                                        example: 0px solid transparent
+                                      border-left:
+                                        type: string
+                                        description: A string field for border-left
+                                        example: 0px solid transparent
+                                      border-radius:
+                                        type: string
+                                        description: A string field for border-radius
+                                        example: 0px
+                                    example:
+                                      background-color: transparent
+                                      color: '#000000'
+                                  computedStyle:
+                                    type: object
+                                    description: An object field for computedStyle
+                                    properties:
+                                      rowColStackOnMobile:
+                                        type: integer
+                                        description: An integer field for rowColStackOnMobile
+                                        example: true
+                                      rowReverseColStackOnMobile:
+                                        type: integer
+                                        description: An integer field for rowReverseColStackOnMobile
+                                        example: false
+                                      verticalAlign:
+                                        type: string
+                                        description: A string field for verticalAlign
+                                        example: top
+                                      hideContentOnMobile:
+                                        type: integer
+                                        description: An integer field for hideContentOnMobile
+                                        example: false
+                                      hideContentOnDesktop:
+                                        type: integer
+                                        description: An integer field for hideContentOnDesktop
+                                        example: false
+                                    example:
+                                      rowColStackOnMobile: true
+                                      rowReverseColStackOnMobile: false
+                                example:
+                                  style: &id009
+                                    background-color: transparent
+                                    color: '#000000'
+                                    width: 500px
+                                    background-image: none
+                                    background-repeat: no-repeat
+                                    background-position: top left
+                                    border-top: 0px solid transparent
+                                    border-right: 0px solid transparent
+                                    border-bottom: 0px solid transparent
+                                    border-left: 0px solid transparent
+                                    border-radius: 0px
+                                  computedStyle: &id010
+                                    rowColStackOnMobile: true
+                                    rowReverseColStackOnMobile: false
+                                    verticalAlign: top
+                                    hideContentOnMobile: false
+                                    hideContentOnDesktop: false
+                              columns:
+                                type: array
+                                description: An array of objects for columns
+                                items:
+                                  type: object
+                                  properties:
+                                    style:
+                                      type: object
+                                      description: An object field for style
+                                      properties:
+                                        background-color:
+                                          type: string
+                                          description: A string field for background-color
+                                          example: transparent
+                                        border-bottom:
+                                          type: string
+                                          description: A string field for border-bottom
+                                          example: 0px solid transparent
+                                        border-left:
+                                          type: string
+                                          description: A string field for border-left
+                                          example: 0px solid transparent
+                                        border-right:
+                                          type: string
+                                          description: A string field for border-right
+                                          example: 0px solid transparent
+                                        border-top:
+                                          type: string
+                                          description: A string field for border-top
+                                          example: 0px solid transparent
+                                        padding-bottom:
+                                          type: string
+                                          description: A string field for padding-bottom
+                                          example: 5px
+                                        padding-left:
+                                          type: string
+                                          description: A string field for padding-left
+                                          example: 0px
+                                        padding-right:
+                                          type: string
+                                          description: A string field for padding-right
+                                          example: 0px
+                                        padding-top:
+                                          type: string
+                                          description: A string field for padding-top
+                                          example: 5px
+                                      example:
+                                        background-color: transparent
+                                        border-bottom: 0px solid transparent
+                                    modules:
+                                      type: array
+                                      description: An array of objects for modules
+                                      items:
+                                        type: object
+                                        properties:
+                                          type:
+                                            type: string
+                                            description: A string field for type
+                                            example: mailup-bee-newsletter-modules-heading
+                                          descriptor:
+                                            type: object
+                                            description: An object field for descriptor
+                                            properties:
+                                              heading:
+                                                type: object
+                                                description: An object field for heading
+                                                properties:
+                                                  title:
+                                                    type: string
+                                                    description: A string field for
+                                                      title
+                                                    example: h1
+                                                  text:
+                                                    type: string
+                                                    description: A string field for
+                                                      text
+                                                    example: <span class="tinyMce-placeholder">BUTTON</span>
+                                                  style:
+                                                    type: object
+                                                    description: An object field for
+                                                      style
+                                                    properties:
+                                                      color:
+                                                        type: string
+                                                        description: A string field
+                                                          for color
+                                                        example: '#555555'
+                                                      font-size:
+                                                        type: string
+                                                        description: A string field
+                                                          for font-size
+                                                        example: 23px
+                                                      font-family:
+                                                        type: string
+                                                        description: A string field
+                                                          for font-family
+                                                        example: inherit
+                                                      link-color:
+                                                        type: string
+                                                        description: A string field
+                                                          for link-color
+                                                        example: '#E01253'
+                                                      line-height:
+                                                        type: string
+                                                        description: A string field
+                                                          for line-height
+                                                        example: 120%
+                                                      text-align:
+                                                        type: string
+                                                        description: A string field
+                                                          for text-align
+                                                        example: left
+                                                      direction:
+                                                        type: string
+                                                        description: A string field
+                                                          for direction
+                                                        example: ltr
+                                                      font-weight:
+                                                        type: string
+                                                        description: A string field
+                                                          for font-weight
+                                                        example: '700'
+                                                      letter-spacing:
+                                                        type: string
+                                                        description: A string field
+                                                          for letter-spacing
+                                                        example: 0px
+                                                    example:
+                                                      color: '#555555'
+                                                      font-size: 23px
+                                                example:
+                                                  title: h1
+                                                  text: <span class="tinyMce-placeholder">BUTTON</span>
+                                              style:
+                                                type: object
+                                                description: An object field for style
+                                                properties:
+                                                  width:
+                                                    type: string
+                                                    description: A string field for
+                                                      width
+                                                    example: 100%
+                                                  text-align:
+                                                    type: string
+                                                    description: A string field for
+                                                      text-align
+                                                    example: center
+                                                  padding-top:
+                                                    type: string
+                                                    description: A string field for
+                                                      padding-top
+                                                    example: 0px
+                                                  padding-right:
+                                                    type: string
+                                                    description: A string field for
+                                                      padding-right
+                                                    example: 0px
+                                                  padding-bottom:
+                                                    type: string
+                                                    description: A string field for
+                                                      padding-bottom
+                                                    example: 0px
+                                                  padding-left:
+                                                    type: string
+                                                    description: A string field for
+                                                      padding-left
+                                                    example: 0px
+                                                example:
+                                                  width: 100%
+                                                  text-align: center
+                                              mobileStyle:
+                                                type: object
+                                                description: An object field for mobileStyle
+                                                properties: {}
+                                                example: {}
+                                              computedStyle:
+                                                type: object
+                                                description: An object field for computedStyle
+                                                properties:
+                                                  width:
+                                                    type: integer
+                                                    description: An integer field
+                                                      for width
+                                                    example: 52
+                                                  height:
+                                                    type: integer
+                                                    description: An integer field
+                                                      for height
+                                                    example: 42
+                                                example:
+                                                  width: 52
+                                                  height: 42
+                                            example:
+                                              heading: &id005
+                                                title: h1
+                                                text: <span class="tinyMce-placeholder">BUTTON</span>
+                                                style:
+                                                  color: '#555555'
+                                                  font-size: 23px
+                                                  font-family: inherit
+                                                  link-color: '#E01253'
+                                                  line-height: 120%
+                                                  text-align: left
+                                                  direction: ltr
+                                                  font-weight: '700'
+                                                  letter-spacing: 0px
+                                              style: &id006
+                                                width: 100%
+                                                text-align: center
+                                                padding-top: 0px
+                                                padding-right: 0px
+                                                padding-bottom: 0px
+                                                padding-left: 0px
+                                          uuid:
+                                            type: string
+                                            description: A string field for uuid
+                                            example: 00a47280-8fa6-4519-b6c8-dcd5f28f35a2
+                                      example:
+                                      - &id007
+                                        type: mailup-bee-newsletter-modules-heading
+                                        descriptor:
+                                          heading: *id005
+                                          style: *id006
+                                          mobileStyle: {}
+                                          computedStyle:
+                                            width: 52
+                                            height: 42
+                                        uuid: 00a47280-8fa6-4519-b6c8-dcd5f28f35a2
+                                    grid-columns:
+                                      type: integer
+                                      description: An integer field for grid-columns
+                                      example: 12
+                                    uuid:
+                                      type: string
+                                      description: A string field for uuid
+                                      example: 9b3de3ea-4f56-4e21-b7cc-848aea563dc0
+                                example:
+                                - &id011
+                                  style:
+                                    background-color: transparent
+                                    border-bottom: 0px solid transparent
+                                    border-left: 0px solid transparent
+                                    border-right: 0px solid transparent
+                                    border-top: 0px solid transparent
+                                    padding-bottom: 5px
+                                    padding-left: 0px
+                                    padding-right: 0px
+                                    padding-top: 5px
+                                  modules:
+                                  - *id007
+                                  grid-columns: 12
+                                  uuid: 9b3de3ea-4f56-4e21-b7cc-848aea563dc0
+                              type:
+                                type: string
+                                description: A string field for type
+                                example: one-column-empty
+                              uuid:
+                                type: string
+                                description: A string field for uuid
+                                example: dce46360-6ac7-4bee-bc24-f5688917b7b4
+                          example:
+                          - &id016
+                            container:
+                              style: *id008
+                            content:
+                              style: *id009
+                              computedStyle: *id010
+                            columns:
+                            - *id011
+                            type: one-column-empty
+                            uuid: dce46360-6ac7-4bee-bc24-f5688917b7b4
+                        template:
+                          type: object
+                          description: An object field for template
+                          properties:
+                            name:
+                              type: string
+                              description: A string field for name
+                              example: template-base
+                            type:
+                              type: string
+                              description: A string field for type
+                              example: basic
+                            version:
+                              type: string
+                              description: A string field for version
+                              example: 2.0.0
+                          example:
+                            name: template-base
+                            type: basic
+                        title:
+                          type: string
+                          description: A string field for title
+                          example: ''
+                      example:
+                        body: &id015
+                          container: *id012
+                          content: *id013
+                          type: mailup-bee-page-properties
+                          webFonts:
+                          - *id014
+                        description: ''
+                    comments:
+                      type: object
+                      description: An object field for comments
+                      properties: {}
+                      example: {}
+                  example:
+                    page: &id018
+                      body: *id015
+                      description: ''
+                      rows:
+                      - *id016
+                      - container:
+                          style:
+                            background-color: transparent
+                            background-image: none
+                            background-repeat: no-repeat
+                            background-position: top left
+                        content:
+                          style:
+                            background-color: transparent
+                            color: '#000000'
+                            width: 500px
+                            background-image: none
+                            background-repeat: no-repeat
+                            background-position: top left
+                            border-top: 0px solid transparent
+                            border-right: 0px solid transparent
+                            border-bottom: 0px solid transparent
+                            border-left: 0px solid transparent
+                            border-radius: 0px
+                          computedStyle:
+                            rowColStackOnMobile: true
+                            rowReverseColStackOnMobile: false
+                            verticalAlign: top
+                            hideContentOnMobile: false
+                            hideContentOnDesktop: false
+                        columns:
+                        - style:
+                            background-color: transparent
+                            border-bottom: 0px solid transparent
+                            border-left: 0px solid transparent
+                            border-right: 0px solid transparent
+                            border-top: 0px solid transparent
+                            padding-bottom: 5px
+                            padding-left: 0px
+                            padding-right: 0px
+                            padding-top: 5px
+                          modules:
+                          - type: mailup-bee-newsletter-modules-button
+                            descriptor:
+                              button:
+                                label: '<div class="txtTinyMce-wrapper" style="font-family:
+                                  inherit;" data-mce-style="font-family: inherit;"><p
+                                  dir="ltr" style="word-break: break-word;" data-mce-style="word-break:
+                                  break-word;">Call to action button</p></div>'
+                                href: ''
+                                target: _blank
+                                style:
+                                  font-family: '''Courier New'', Courier, ''Lucida
+                                    Sans Typewriter'', ''Lucida Typewriter'', monospace'
+                                  font-size: 14px
+                                  font-weight: '400'
+                                  background-color: '#3AAEE0'
+                                  border-radius: 4px
+                                  border-top: 0px solid transparent
+                                  border-right: 0px solid transparent
+                                  border-bottom: 0px solid transparent
+                                  border-left: 0px solid transparent
+                                  color: '#ffffff'
+                                  line-height: 200%
+                                  padding-top: 5px
+                                  padding-right: 20px
+                                  padding-bottom: 5px
+                                  padding-left: 20px
+                                  width: auto
+                                  max-width: 100%
+                                  direction: ltr
+                              style:
+                                text-align: left
+                                padding-top: 10px
+                                padding-right: 10px
+                                padding-bottom: 10px
+                                padding-left: 10px
+                              mobileStyle: {}
+                              computedStyle:
+                                width: 216
+                                height: 38
+                                hideContentOnMobile: false
+                            customFields:
+                              className: Primary
+                            uuid: be31ba9a-b0b0-4ae7-b3ea-562ff74bb775
+                          - type: mailup-bee-newsletter-modules-button
+                            descriptor:
+                              button:
+                                label: '<div class="txtTinyMce-wrapper" style="font-family:
+                                  inherit;" data-mce-style="font-family: inherit;"><p
+                                  dir="ltr" style="word-break: break-word;" data-mce-style="word-break:
+                                  break-word;">100% width button example</p></div>'
+                                href: ''
+                                target: _blank
+                                style:
+                                  font-family: inherit
+                                  font-size: 14px
+                                  font-weight: '400'
+                                  background-color: '#3AAEE0'
+                                  border-radius: 4px
+                                  border-top: 0px solid transparent
+                                  border-right: 0px solid transparent
+                                  border-bottom: 0px solid transparent
+                                  border-left: 0px solid transparent
+                                  color: '#ffffff'
+                                  line-height: 200%
+                                  padding-top: 5px
+                                  padding-right: 20px
+                                  padding-bottom: 5px
+                                  padding-left: 20px
+                                  width: 100%
+                                  max-width: 100%
+                                  direction: ltr
+                              style:
+                                text-align: center
+                                padding-top: 10px
+                                padding-right: 10px
+                                padding-bottom: 10px
+                                padding-left: 10px
+                              mobileStyle: {}
+                              computedStyle:
+                                width: 630
+                                height: 38
+                                hideContentOnMobile: false
+                              customAttributes:
+                              - key: class
+                                name: class
+                                value: Primary
+                                target: tag
+                            customFields:
+                              className: Primary
+                            uuid: 220b02a8-1cb9-429a-88c6-c2b7028a9f31
+                          grid-columns: 12
+                          uuid: 3967ef9b-ed2b-4e9e-8fe4-2367736e32cc
+                        type: one-column-empty
+                        uuid: ce0b0367-bb90-4eaa-92e2-095d5a9170dc
+                      template:
+                        name: template-base
+                        type: basic
+                        version: 2.0.0
+                      title: ''
+                    comments: &id019 {}
+              example:
+                styles:
+                  button: *id017
+                template:
+                  page: *id018
+                  comments: *id019
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: string
+                example:
+                  message: Success
+        '400':
+          description: Bad request. The request could not be understood or was missing
+            required parameters.
+        '401':
+          description: Unauthorized. Authentication is required and has failed or
+            has not been provided.
+        '403':
+          description: Forbidden. The request was valid, but the server is refusing
+            action.
+        '500':
+          description: Internal Server Error. An unexpected condition was encountered.

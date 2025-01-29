@@ -32,6 +32,12 @@ Authorization: Bearer YOUR_API_KEY
 
 **Description:** Apply brand styles to a template, ensuring a consistent visual identity.
 
+{% swagger src="../../.gitbook/assets/template_brand.yaml" path="/v1/template/brand" method="post" %}
+[template_brand.yaml](../../.gitbook/assets/template_brand.yaml)
+{% endswagger %}
+
+
+
 **Request Parameters:**
 
 * `styles` (JSON): The brand styles to apply to the template.

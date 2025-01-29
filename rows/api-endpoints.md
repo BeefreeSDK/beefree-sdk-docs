@@ -23,13 +23,17 @@ Beefree SDK provides robust APIs for managing rows. These API endpoints enable o
 [merge_rows_endpoint.yaml](../.gitbook/assets/merge_rows_endpoint.yaml)
 {% endswagger %}
 
+
+
 **Index Rows**
 
 **Endpoint**: `POST https://api.beefree.io/v1/{collection}/merge/index`
 
-{% swagger src="../.gitbook/assets/merge_index_endpoint.yaml" path="/v1/{collection}/merge/index" method="post" %}
+{% swagger src="../.gitbook/assets/merge_index_endpoint.yaml" path="/v1/{collection}/merge-index" method="post" %}
 [merge_index_endpoint.yaml](../.gitbook/assets/merge_index_endpoint.yaml)
 {% endswagger %}
+
+
 
 **Retrieve Synced Rows**
 

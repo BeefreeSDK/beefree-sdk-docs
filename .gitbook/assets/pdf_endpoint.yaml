@@ -1,11 +1,12 @@
 openapi: 3.0.0
 info:
-  title: PDF Generation
-  description: This API endpoint transforms HTML and PDF settings to a JSON object with a URL for the PDF document.
+  title: Transform HTML into a PDF
+  description: Transform email or page HTML into a PDF that can be attached to emails,
+    SMS messages, or physically printed out.
   version: 1.0.0
 servers:
-  - url: https://api.getbee.io
-    description: Base URL for the API
+- url: https://api.getbee.io
+  description: Base URL for the API
 components:
   securitySchemes:
     bearerAuth:
@@ -15,104 +16,61 @@ components:
 paths:
   /v1/{collection}/pdf:
     post:
-      summary: Generate PDF
-      description: This endpoint accepts HTML and settings to generate a PDF document and provides a URL for the PDF.
+      summary: Transform HTML into a PDF
+      description: Transform email or page HTML into a PDF that can be attached to
+        emails, SMS messages, or physically printed out.
       security:
-        - bearerAuth: []
+      - bearerAuth: []
+      parameters:
+      - name: collection
+        in: path
+        required: true
+        description: The collection ID or name
+        schema:
+          type: string
       requestBody:
         required: true
-        description: Parameters required to generate a PDF from HTML.
+        description: Request body for the endpoint
         content:
           application/json:
             schema:
               type: object
-              required:
-                - html
-                - page_size
-                - page_orientation
-                - file_type
               properties:
-                file_type:
-                  type: string
-                  enum:
-                    - PDF
-                  default: PDF
-                  description: The file type for the output.
-                html:
-                  type: string
-                  description: A full HTML document to be transformed into a PDF.
-                page_orientation:
-                  type: string
-                  enum:
-                    - landscape
-                    - portrait
-                  default: landscape
-                  description: The orientation of the PDF page.
                 page_size:
                   type: string
-                  enum:
-                    - letter
-                    - A4
-                    - A3
-                    - Full
-                  default: letter
-                  description: The size of the PDF page.
-            example:
-              html: '<!DOCTYPE html><html lang=''en''><head><meta charset=''UTF-8''><title>PDF Output</title></head><body style=''font-family: Arial, sans-serif;''><header style=''text-align: center; margin-top: 20px;''><h1 style=''font-size: 36px; color: #4CAF50;''>The Incredible World of Cats</h1></header><main style=''margin: 40px;''><p style=''font-size: 18px; line-height: 1.6;''>Cats are truly fascinating creatures...</p></main></body></html>'
-              page_orientation: landscape
-              page_size: Full
+                  description: A string field for page_size
+                  example: Full
+                page_orientation:
+                  type: string
+                  description: A string field for page_orientation
+                  example: landscape
+                html:
+                  type: string
+                  description: A string field for html
+                  example: '<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body><div
+                    style=''width:900px; margin: 30px;''>test</div></body></html>'
+              example:
+                page_size: Full
+                page_orientation: landscape
+                html: '<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body><div
+                  style=''width:900px; margin: 30px;''>test</div></body></html>'
       responses:
         '200':
-          description: A successful response with the PDF document URL.
+          description: Successful response
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  body:
-                    type: object
-                    properties:
-                      content_type:
-                        type: string
-                        description: The MIME type of the PDF file.
-                      filename:
-                        type: string
-                        description: The filename of the generated PDF.
-                      page_orientation:
-                        type: string
-                        description: The orientation of the PDF.
-                      page_size:
-                        type: string
-                        description: The size of the generated PDF.
-                      url:
-                        type: string
-                        description: The URL where the generated PDF is temporarily hosted.
-                  statusCode:
-                    type: integer
-                    description: The HTTP status code of the response.
-              example:
-                body:
-                  content_type: application/pdf
-                  filename: 7qMsRsxTz8.pdf
-                  page_orientation: landscape
-                  page_size: Full
-                  url: https://pro-bee-beepro-pdf.s3.amazonaws.com/public/pdf/7qMsRsxTz8.pdf
-                statusCode: 200
+                type: string
+                example:
+                  message: Success
         '400':
-          description: Invalid input or request parameters.
-      examples:
-        NodeJS:
-          summary: NodeJS Request Example
-          value: |
-            const response = await fetch('https://api.getbee.io/v1/{collection}/pdf', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer <token>' },
-              body: JSON.stringify({
-                "html": "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>PDF Output</title></head><body><h1>The Incredible World of Cats</h1><p>Cats are fascinating creatures...</p></body></html>",
-                "page_orientation": "landscape",
-                "page_size": "Full",
-                "file_type": "PDF"
-              }),
-            });
-            const pdfResponse = await response.json();
-            console.log(pdfResponse.url); // Log the URL to the generated PDF
+          description: Bad request. The request could not be understood or was missing
+            required parameters.
+        '401':
+          description: Unauthorized. Authentication is required and has failed or
+            has not been provided.
+        '403':
+          description: Forbidden. The request was valid, but the server is refusing
+            action.
+        '500':
+          description: Internal Server Error. An unexpected condition was encountered.

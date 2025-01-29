@@ -72,6 +72,8 @@ The following section provides detailed information for each of the resources as
 [html_endpoint.yaml](../../.gitbook/assets/html_endpoint.yaml)
 {% endswagger %}
 
+
+
 {% hint style="info" %}
 Include the optional `newbutton` query string parameter and set its value to `true` to generate HTML button results optimized for Outlook. Reference [HTML Outlook Button Rendering](../../rendering/html-outlook-button.md) for additional details.
 {% endhint %}
@@ -80,7 +82,7 @@ Include the optional `newbutton` query string parameter and set its value to `tr
 
 **Endpoint:** `/message/plain-text`
 
-{% swagger src="../../.gitbook/assets/plain_text_endpoint.yaml" path="/v1/message/plain-text" method="post" %}
+{% swagger src="../../.gitbook/assets/plain_text_endpoint.yaml" path="/v1/{collection}/plain-text" method="post" %}
 [plain_text_endpoint.yaml](../../.gitbook/assets/plain_text_endpoint.yaml)
 {% endswagger %}
 
@@ -93,6 +95,8 @@ Include the optional `newbutton` query string parameter and set its value to `tr
 {% swagger src="../../.gitbook/assets/pdf_endpoint.yaml" path="/v1/{collection}/pdf" method="post" %}
 [pdf_endpoint.yaml](../../.gitbook/assets/pdf_endpoint.yaml)
 {% endswagger %}
+
+
 
 {% hint style="info" %}
 **Note:** The response is a JSON string that will contain the URL of the temporary location of the PDF document. The file is available for 24 hours.
@@ -118,6 +122,8 @@ The HTML is rendered in a fixed window size of 1920x1080 to generate a screensho
 [image_endpoint.yaml](../../.gitbook/assets/image_endpoint.yaml)
 {% endswagger %}
 
+
+
 ### Merge <a href="#merge" id="merge"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/merge`
@@ -126,6 +132,8 @@ The HTML is rendered in a fixed window size of 1920x1080 to generate a screensho
 [merge_endpoint.yaml](../../.gitbook/assets/merge_endpoint.yaml)
 {% endswagger %}
 
+
+
 ### Merge Rows <a href="#merge" id="merge"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/merge-rows`
@@ -133,6 +141,8 @@ The HTML is rendered in a fixed window size of 1920x1080 to generate a screensho
 {% swagger src="../../.gitbook/assets/merge_rows_endpoint.yaml" path="/v1/{collection}/merge-rows" method="post" %}
 [merge_rows_endpoint.yaml](../../.gitbook/assets/merge_rows_endpoint.yaml)
 {% endswagger %}
+
+
 
 {% hint style="info" %}
 When utilizing this feature, it's important to consider adding a handle to the metadata. This handle serves a crucial role in functions such as `onDeleteRow` and `onEditRow`. In our provided example, we use a handle named `guid`. However, users have the flexibility to choose their own handle name according to their preferences and requirements. When selecting a handle name, we recommend you choose something descriptive and meaningful for ease of identification and management within your workflow.
@@ -146,13 +156,17 @@ When utilizing this feature, it's important to consider adding a handle to the m
 [synced_rows_endpoint.yaml](../../.gitbook/assets/synced_rows_endpoint.yaml)
 {% endswagger %}
 
+
+
 ### Index <a href="#index" id="index"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/merge/index`
 
-{% swagger src="../../.gitbook/assets/merge_index_endpoint.yaml" path="/v1/{collection}/merge/index" method="post" %}
+{% swagger src="../../.gitbook/assets/merge_index_endpoint.yaml" path="/v1/{collection}/merge-index" method="post" %}
 [merge_index_endpoint.yaml](../../.gitbook/assets/merge_index_endpoint.yaml)
 {% endswagger %}
+
+
 
 ## AI Collection
 
@@ -178,7 +192,7 @@ Prior to getting started with the resources in this collection, ensure you have 
 
 `v1/ai/metadata`
 
-{% swagger src="../../.gitbook/assets/metadata_endpoint.yaml" path="/v1/ai/metadata" method="post" %}
+{% swagger src="../../.gitbook/assets/metadata_endpoint.yaml" path="/v1/{collection}/metadata" method="post" %}
 [metadata_endpoint.yaml](../../.gitbook/assets/metadata_endpoint.yaml)
 {% endswagger %}
 
@@ -186,7 +200,7 @@ Prior to getting started with the resources in this collection, ensure you have 
 
 `v1/ai/sms`
 
-{% swagger src="../../.gitbook/assets/sms_endpoint.yaml" path="/v1/ai/sms" method="post" %}
+{% swagger src="../../.gitbook/assets/sms_endpoint.yaml" path="/v1/{collection}/sms" method="post" %}
 [sms_endpoint.yaml](../../.gitbook/assets/sms_endpoint.yaml)
 {% endswagger %}
 
@@ -194,9 +208,11 @@ Prior to getting started with the resources in this collection, ensure you have 
 
 `v1/ai/summary`
 
-{% swagger src="../../.gitbook/assets/summary_endpoint.yaml" path="/v1/ai/summary" method="post" %}
+{% swagger src="../../.gitbook/assets/summary_endpoint.yaml" path="/v1/{collection}/summary" method="post" %}
 [summary_endpoint.yaml](../../.gitbook/assets/summary_endpoint.yaml)
 {% endswagger %}
+
+
 
 ## Conversion Collection
 
@@ -217,9 +233,11 @@ The Email to Page endpoint converts a JSON template created for email into a JSO
 * **Retain Comments and Secondary Language**\
   Comments and secondary language data in the email template are preserved in the conversion process.
 
-{% swagger src="../../.gitbook/assets/email-to-page-conversion.yaml" path="/v1/conversion/email-to-page" method="post" %}
+{% swagger src="../../.gitbook/assets/email-to-page-conversion.yaml" path="/v1/{collection}/email-to-page" method="post" %}
 [email-to-page-conversion.yaml](../../.gitbook/assets/email-to-page-conversion.yaml)
 {% endswagger %}
+
+
 
 ### Page to Email Conversion: Important Behaviors
 
@@ -248,7 +266,7 @@ The Page to Email endpoint transforms a JSON template designed for a web page in
 * **Handle Multi-Column Layouts**\
   The email builder supports up to 12 columns, which is compatible with the page builder's column configurations.
 
-{% swagger src="../../.gitbook/assets/page-to-emai-conversion.yaml" path="/v1/conversion/page-to-email" method="post" %}
+{% swagger src="../../.gitbook/assets/page-to-emai-conversion.yaml" path="/v1/{collection}/page-to-email" method="post" %}
 [page-to-emai-conversion.yaml](../../.gitbook/assets/page-to-emai-conversion.yaml)
 {% endswagger %}
 
