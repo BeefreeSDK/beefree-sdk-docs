@@ -4,10 +4,6 @@ description: Learn more about available providers for the AI Writing Assistant A
 
 # Available Providers
 
-{% hint style="warning" %}
-**Important:** The [AI collection](../../../../../apis/content-services-api/content-services-api-reference.md#ai-collection) is only compatible with OpenAI AddOns that were configured before August 1, 2024. We are actively working on making it compatible with AI AddOns and Providers configured after that date, too. &#x20;
-{% endhint %}
-
 ## Overview
 
 The [AI Writing Assistant AddOn](../) provides your application's end users with access to the the **Write with AI button** for text-based content blocks within the builder. When your end users click this button, a modal appears prompting them to submit a prompt to the AI Assistant. This is the portion of their journey that interacts with the provider that you configured within the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu). Beefree SDK offers a variety of providers as options for enabling the AI Writing Assistant AddOn for your application's end users. These providers each include their own set of benefits, and ultimately, the one you select for your configuration should be the provider with the set of benefits that most closely aligns with the goals you have for your application.

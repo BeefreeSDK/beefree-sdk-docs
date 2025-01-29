@@ -10,10 +10,6 @@ description: >-
 The AI Writing Assistant AddOn is only available for [Superpowers](https://developers.beefree.io/pricing-plans) and [Enterprise](https://developers.beefree.io/pricing-plans) plans. The AI Writing Assistant and OpenAI provider are available for Email, Page, and Popup builders.
 {% endhint %}
 
-{% hint style="warning" %}
-**Important:** The [AI collection](../../../../../apis/content-services-api/content-services-api-reference.md#ai-collection) is only compatible with OpenAI AddOns that were configured before August 1, 2024. We are actively working on making it compatible with AI AddOns and Providers configured after that date, too. &#x20;
-{% endhint %}
-
 ## **Overview**
 
 This page discusses how to configure OpenAI as a provider for the [AI Writing Assistant AddOn](../) within the Beefree SDK Developer Console. If the AI Writing Assistant AddOn is already enabled for your application, and you'd like to switch providers, take the steps outlined in the [Switch Providers](../#switch-providers) section of the [AI Writing Assistant page](../#switch-providers) to enable OpenAI as your new provider.&#x20;
