@@ -172,40 +172,65 @@ A valid response that the hosting application should send to the Beefree app whe
 
 ```
 
-### For example:
+### Mixed Content AddOn Example
 
-```json
+The following code snippet shows an example of a Mixed Content AddOn. It includes the paragraph and button modules together in one mixed content example for reference.
 
-{
-  "type": "mixed",
-  "value": [
-    {
-      "type": "title",
-      "value": {
-        "text": "Enjoy $50 off!",
-        "title": "h1"
-      }
-    }, {
-      "type": "title",
-      "value": {
-        "text": "ENTER CODE: 2 YEARS",
-        "title": "h2"
-      }
-    }, {
-      "type": "image",
-      "value": {
-        "alt": "My custom image",
-        "href": "http://www.google.com/",
-        "src": "http://my-image-url",
-      }
-    }, {
-      "type": "button",
-      "value": {
-        "label": "SHOP NOW >",
-      }
-    }
-  ]
-}
+```javascript
+
+resolve({
+    "type": "mixed",
+    "value": [
+        {
+            "type": "paragraph",
+            "value": {
+                "html": "<p>Hello @first_name,</p><p>Your address of @address was recently updated...</p>",
+                "underline": true,
+                "italic": true,
+                "bold": true,
+                "color": "pink",
+                "linkColor": "green",
+                "padding-top": "5px",
+                "padding-right": "20px",
+                "padding-bottom": "5px",
+                "padding-left": "20px"
+            }
+        },
+        {
+            "type": "button",
+            "value": {
+                "label": "Click here",
+                "font-family": "inherit",
+                "font-size": "14px",
+                "background-color": "#7747FF",
+                "border-radius": "4px",
+                "color": "#81A07B",
+                "line-height": "200%",
+                "padding-top": "5px",
+                "padding-right": "20px",
+                "padding-bottom": "5px",
+                "padding-left": "20px",
+                "width": "80%",
+                "max-width": "100%",
+                "direction": "ltr"
+            },
+            "locked": true
+        }
+    ],
+    "mergeTags": [
+        {
+            "name": "First Name",
+            "value": "@first_name",
+            "previewValue": "First Name Preview"
+        },
+        {
+            "name": "Address",
+            "value": "@address",
+            "previewValue": "Address Preview"
+        }
+    ]
+});
+
 
 ```
 
@@ -386,12 +411,10 @@ The following sample code defines a button element with various attributes.
 ```javascript
 
 resolve({
-  "type" : "mixed",
-  "value" : [
-    {
       "type" : "button",
       "value" : {
         "label" : "Click here",
+        "href": "https://beefree.io/",
         "font-family" : "inherit",
         "font-size" : "14px",
         "background-color" : "#7747FF",
@@ -406,22 +429,7 @@ resolve({
         "max-width" : "100%",
         "direction" : "ltr",
       }
-    }
-  ],
-  "mergeTags" : [
-    {
-      "name" : "First Name",
-      "value" : "@first_name",
-      "previewValue" : "First Name Preview"
-    },
-    {
-      "name" : "Address",
-      "value" : "@address",
-      "previewValue" : "Address Preview"
-    }
-  ]
-});
-
+    });
 ```
 
 The following table displays a list of properties in the resolve function, and each of its respective value types and whether or not they are mandatory.
@@ -483,22 +491,16 @@ The following table displays a list of properties in the resolve function, and e
 The following sample code defines a paragraph element with various attributes. The mergeTags property contains a list of merge tags, which can be used for dynamic content insertion.
 
 ```javascript
-
 resolve({
-  "type" : "mixed",
-  "value" : [
-    {
-      "type" : 'paragraph',
-      "value" : {
+  "type" : 'paragraph',
+   "value" : {
         "html" : "<p>Hello @first_name,</p><p>Your address of @address was recently updated...</p>",
         "underline" : true,
         "italic" : true,
         "bold" : true,
         "color" : "pink",
         "linkColor" : "green",
-      }
-    }
-  ],
+  },
   "mergeTags" : [
     {
       "name" : "First Name",
@@ -512,7 +514,6 @@ resolve({
     }
   ]
 });
-
 ```
 
 The following table displays a list of properties in the resolve function, and each of its respective value types and whether or not they are mandatory.

@@ -125,7 +125,13 @@ Throughout the subsequent pages, these two schemas and their applications will b
 
 ### Simplified Rows Schema
 
-The following code snippet provides an example of the Simplified Rows Schema.&#x20;
+The following code snippet provides an example of the Simplified Rows Schema.
+
+<details>
+
+<summary>View the Simplified Rows Schema</summary>
+
+The following code displays the Simplified Rows Schema.
 
 ```json
 {
@@ -193,6 +199,18 @@ The following code snippet provides an example of the Simplified Rows Schema.&#x
     },
     metadata: {
       type: 'object',
+    },
+    'padding-top': {
+      $ref: '#/definitions/padding',
+    },
+    'padding-right': {
+      $ref: '#/definitions/padding',
+    },
+    'padding-bottom': {
+      $ref: '#/definitions/padding',
+    },
+    'padding-left': {
+      $ref: '#/definitions/padding',
     },
     columns: {
       type: 'array',
@@ -625,6 +643,12 @@ The following code snippet provides an example of the Simplified Rows Schema.&#x
   },
 }
 ```
+
+</details>
+
+{% hint style="info" %}
+**Note:** This section includes expandable content. Click the **>** symbol to expand the content and view the Simplified Rows Schema.
+{% endhint %}
 
 ### Saved rows schema <a href="#saved-rows-schema" id="saved-rows-schema"></a>
 

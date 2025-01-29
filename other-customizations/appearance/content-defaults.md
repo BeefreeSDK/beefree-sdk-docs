@@ -239,19 +239,27 @@ image: {
 The `row` content default in the BeeConfig specifies various styling properties for rows, including background colors, vertical alignment, border radius, and spacing. It also includes options for mobile-specific styles, such as stacking and padding configurations.
 
 ```json
-  row: {
-    styles: {
-      backgroundColor: "red",
-      contentAreaBackgroundColor: "green",
-      verticalAlign: "bottom",
-      columnsBorderRadius: "10px",
-      columnsSpacing: "20px",
-      columnsStackOnMobile: false,
-      columnsReverseStackOnMobile: true,
-      columnsPadding: "42px",
-      columnsBackgroundColor: "yellow",
-    }
-  },
+row: {
+  styles: {
+    backgroundColor: "red",
+    contentAreaBackgroundColor: "green",
+    verticalAlign: "bottom",
+    columnsBorderRadius: "10px",
+    columnsSpacing: "20px",
+    columnsStackOnMobile: false,
+    columnsReverseStackOnMobile: true,
+    columnsPadding: "42px",
+    columnsPaddingLeft: "25px",
+    columnsPaddingRight: "20px",
+    columnsPaddingTop: "15px",
+    columnsPaddingBottom: "10px",
+    columnsBackgroundColor: "yellow",
+    padding: "20px",
+    paddingLeft: "25px",
+    paddingRight: "20px",
+    paddingTop: "15px",
+    paddingBottom: "10px",
+  }
 }
 ```
 
@@ -259,7 +267,7 @@ The `row` content default in the BeeConfig specifies various styling properties 
 
 The following table lists the row content default parameters and their corresponding descriptions and data types.
 
-<table><thead><tr><th width="218">Parameter</th><th>Data Type</th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>backgroundColor</code></td><td>String</td><td>Red</td><td>Sets the background color of the row.</td></tr><tr><td><code>contentAreaBackgroundColor</code></td><td>String</td><td>Green</td><td>Sets the background color of the content area within the row.</td></tr><tr><td><code>verticalAlign</code></td><td>String</td><td>bottom</td><td>Specifies the vertical alignment of the row content.</td></tr><tr><td><code>columnsBorderRadius</code></td><td>String</td><td>10px</td><td>Defines the roundness of the column corners.</td></tr><tr><td><code>columnsSpacing</code></td><td>String</td><td>20px</td><td>Sets the spacing between columns.</td></tr><tr><td><p></p><p><code>columnsStackOnMobile</code></p><p></p></td><td>Boolean</td><td>false</td><td>Determines if columns should stack on mobile devices.</td></tr><tr><td><code>columnsReverseStackOnMobile</code></td><td>Boolean</td><td>true</td><td>Specifies if the order of stacked columns should be reversed on mobile devices.</td></tr><tr><td><code>columnsPadding</code></td><td>String</td><td>42px</td><td>Defines the padding inside each column.</td></tr><tr><td><code>columnsBackgroundColor</code></td><td>String</td><td>Yellow</td><td>Sets the background color for each column.</td></tr></tbody></table>
+<table><thead><tr><th width="218">Parameter</th><th>Data Type</th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>backgroundColor</code></td><td>String</td><td>Red</td><td>Sets the background color of the row.</td></tr><tr><td><code>contentAreaBackgroundColor</code></td><td>String</td><td>Green</td><td>Sets the background color of the content area within the row.</td></tr><tr><td><code>verticalAlign</code></td><td>String</td><td>bottom</td><td>Specifies the vertical alignment of the row content.</td></tr><tr><td><code>columnsBorderRadius</code></td><td>String</td><td>10px</td><td>Defines the roundness of the column corners.</td></tr><tr><td><code>columnsSpacing</code></td><td>String</td><td>20px</td><td>Sets the spacing between columns.</td></tr><tr><td><p></p><p><code>columnsStackOnMobile</code></p><p></p></td><td>Boolean</td><td>false</td><td>Determines if columns should stack on mobile devices.</td></tr><tr><td><code>columnsReverseStackOnMobile</code></td><td>Boolean</td><td>true</td><td>Specifies if the order of stacked columns should be reversed on mobile devices.</td></tr><tr><td><code>columnsPadding</code></td><td>String</td><td>42px</td><td>Defines the padding inside each column (the value applies to all padding sides).</td></tr><tr><td><code>columnsBackgroundColor</code></td><td>String</td><td>Yellow</td><td>Sets the background color for each column.</td></tr><tr><td><code>columnsPaddingLeft</code></td><td>String</td><td>25px</td><td>Defines the left padding for each column.</td></tr><tr><td><code>columnsPaddingRight</code></td><td>String</td><td>20px</td><td>Defines the right padding for each column.</td></tr><tr><td><code>columnsPaddingTop</code></td><td>String</td><td>15px</td><td>Defines the top padding for each column.</td></tr><tr><td><code>columnsPaddingBottom</code></td><td>String</td><td>10px</td><td>Defines the bottom padding for each column.</td></tr><tr><td><code>padding</code></td><td>String</td><td>20px</td><td>Defines the padding for the entire row (the value applies to all padding sides).</td></tr><tr><td><code>paddingLeft</code></td><td>String</td><td>25px</td><td>Defines the left padding for the entire row.</td></tr><tr><td><code>paddingRight</code></td><td>String</td><td>20px</td><td>Defines the right padding for the entire row.</td></tr><tr><td><code>paddingTop</code></td><td>String</td><td>15px</td><td>Defines the top padding for the entire row.</td></tr><tr><td><code>paddingBottom</code></td><td>String</td><td>10px</td><td>Defines the bottom padding for the entire row.</td></tr></tbody></table>
 
 ### **Button**
 

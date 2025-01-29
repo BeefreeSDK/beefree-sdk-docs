@@ -428,6 +428,10 @@ beeConfig: {
 
 The **`rows`** object in **Beefree SDK** allows you to manage the behavior and appearance of rows in the editor. You can control what users can do with rows, such as adding, deleting, or moving them. Additionally, you can set permissions for properties like background color, stacking behavior on mobile, and visibility settings. Configuring the **`rows`** object ensures users can work with rows in a controlled way, customizing their content without altering crucial layout elements.
 
+{% hint style="info" %}
+**Important:** This section includes expandable content. Click the **>** symbol to expand the content and view the sample code in this section.
+{% endhint %}
+
 ### **Hosted Saved Rows**
 
 Hosted Saved Rows includes advanced permissions to control how rows and categories are accessed and managed. These permissions allow you to define user capabilities, such as editing or deleting rows.
@@ -448,29 +452,11 @@ Hosted Saved Rows includes advanced permissions to control how rows and categori
 
 The following configuration displays an example of the `rows` object inside of `advancedPermissions`:
 
-```javascript
-{
-...
-advancedPermissions:{
-  ...
-  rows:{
-    behaviors: {
-        canDeleteHostedRow: false,
-        canEditHostedRow: false,
-        canManageHostedRowCategory: false,
-        canAddHostedRowCategory: false,
-      },
-    ...
-  },
-  ...
-  }
-...
-}
-```
+<details>
 
-### Rows Addon
+<summary>View a Rows Configuration example</summary>
 
-The following code demonstrates how to specify behavior settings for individual row addons. A custom row addon can have its behaviors set independently from the global row settings.
+The following snippet displays an example of the `rows` object inside `advancedPermissions`.
 
 ```javascript
 beeConfig: {
@@ -544,7 +530,35 @@ beeConfig: {
       columnsBorderRadius: {
         show: true,
         locked: false
+      },
+      padding: {
+        show: true,
+        locked: false
       }
+    }
+  }
+}
+```
+
+</details>
+
+### Rows AddOn
+
+The following code demonstrates how to specify behavior settings for individual Row AddOns. A custom Row AddOn can have its behaviors set independently from the global row settings.
+
+<details>
+
+<summary>View a Rows AddOn example</summary>
+
+The following sample code dispays a Rows AddOn example.
+
+```javascript
+beeConfig: {
+  uid: 'CmsUserName', // [mandatory]
+  container: 'bee-plugin-container', // [mandatory]
+  advancedPermissions: {
+    rows: {
+      ...
     },
     rowAddon: {
       customRowAddonHandle: {
@@ -559,12 +573,19 @@ beeConfig: {
           canResize: true,
           canResetMobile: true
         }
+        ... // properties example
+        padding: {
+          show: true,
+          locked: true
+        }
+        ...
       }
     }
   }
 }
-
 ```
+
+</details>
 
 ## Columns
 

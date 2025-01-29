@@ -88,6 +88,7 @@
 * [Multi-Language Templates](other-customizations/multi-language-templates.md)
 * [Cards Style and Image Round Corners](other-customizations/cards-style-and-image-round-corners.md)
 * [Hover Effect for Buttons](other-customizations/hover-effect-for-buttons.md)
+* [Content Area Padding](other-customizations/content-area-padding.md)
 
 ## APIs
 
