@@ -19,8 +19,8 @@ Beefree SDK provides robust APIs for managing rows. These API endpoints enable o
 
 **Endpoint**: `POST https://api.beefree.io/v1/{collection}/merge-rows`
 
-{% swagger src="broken-reference" path="/v1/{collection}/merge-rows" method="post" %}
-[Broken link](broken-reference)
+{% swagger src="../.gitbook/assets/merge_rows_endpoint.yaml" path="/v1/{collection}/merge-rows" method="post" %}
+[merge_rows_endpoint.yaml](../.gitbook/assets/merge_rows_endpoint.yaml)
 {% endswagger %}
 
 
@@ -29,8 +29,8 @@ Beefree SDK provides robust APIs for managing rows. These API endpoints enable o
 
 **Endpoint**: `POST https://api.beefree.io/v1/{collection}/merge/index`
 
-{% swagger src="broken-reference" path="/v1/{collection}/merge-index" method="post" %}
-[Broken link](broken-reference)
+{% swagger src="../.gitbook/assets/merge_index_endpoint.yaml" path="/v1/{collection}/merge/index" method="post" %}
+[merge_index_endpoint.yaml](../.gitbook/assets/merge_index_endpoint.yaml)
 {% endswagger %}
 
 
@@ -39,8 +39,8 @@ Beefree SDK provides robust APIs for managing rows. These API endpoints enable o
 
 **Endpoint**: `POST https://api.beefree.io/v1/{collection}/synced-rows`
 
-{% swagger src="../.gitbook/assets/synced_rows_endpoint (1).yaml" path="/v1/{collection}/synced-rows" method="post" %}
-[synced_rows_endpoint (1).yaml](<../.gitbook/assets/synced_rows_endpoint (1).yaml>)
+{% swagger src="../.gitbook/assets/synced_rows_endpoint.yaml" path="/v1/{collection}/synced-rows" method="post" %}
+[synced_rows_endpoint.yaml](../.gitbook/assets/synced_rows_endpoint.yaml)
 {% endswagger %}
 
 
