@@ -39,38 +39,31 @@ paths:
                 page_size:
                   type: string
                   description: A string field for page_size
-                  example: Full
                 page_orientation:
                   type: string
                   description: A string field for page_orientation
-                  example: landscape
                 html:
                   type: string
                   description: A string field for html
-                  example: '<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body><div
-                    style=''width:900px; margin: 30px;''>test</div></body></html>'
-              example:
-                page_size: Full
-                page_orientation: landscape
-                html: '<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body><div
-                  style=''width:900px; margin: 30px;''>test</div></body></html>'
+            example:
+              page_size: Full
+              page_orientation: landscape
+              html: '<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body><div
+                style=''width:900px; margin: 30px;''>test</div></body></html>'
       responses:
         '200':
           description: Successful response
           content:
             application/json:
               schema:
-                type: string
-                example:
-                  message: Success
+                type: object
+              example:
+                message: Success
         '400':
-          description: Bad request. The request could not be understood or was missing
-            required parameters.
+          description: Bad request
         '401':
-          description: Unauthorized. Authentication is required and has failed or
-            has not been provided.
+          description: Unauthorized
         '403':
-          description: Forbidden. The request was valid, but the server is refusing
-            action.
+          description: Forbidden
         '500':
-          description: Internal Server Error. An unexpected condition was encountered.
+          description: Internal Server Error

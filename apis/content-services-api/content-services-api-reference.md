@@ -86,8 +86,6 @@ Include the optional `newbutton` query string parameter and set its value to `tr
 [plain_text_endpoint.yaml](../../.gitbook/assets/plain_text_endpoint.yaml)
 {% endswagger %}
 
-
-
 ### PDF <a href="#pdf" id="pdf"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/pdf`
@@ -95,8 +93,6 @@ Include the optional `newbutton` query string parameter and set its value to `tr
 {% swagger src="../../.gitbook/assets/pdf_endpoint.yaml" path="/v1/{collection}/pdf" method="post" %}
 [pdf_endpoint.yaml](../../.gitbook/assets/pdf_endpoint.yaml)
 {% endswagger %}
-
-
 
 {% hint style="info" %}
 **Note:** The response is a JSON string that will contain the URL of the temporary location of the PDF document. The file is available for 24 hours.
@@ -122,8 +118,6 @@ The HTML is rendered in a fixed window size of 1920x1080 to generate a screensho
 [image_endpoint.yaml](../../.gitbook/assets/image_endpoint.yaml)
 {% endswagger %}
 
-
-
 ### Merge <a href="#merge" id="merge"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/merge`
@@ -131,8 +125,6 @@ The HTML is rendered in a fixed window size of 1920x1080 to generate a screensho
 {% swagger src="../../.gitbook/assets/merge_endpoint.yaml" path="/v1/{collection}/merge" method="post" %}
 [merge_endpoint.yaml](../../.gitbook/assets/merge_endpoint.yaml)
 {% endswagger %}
-
-
 
 ### Merge Rows <a href="#merge" id="merge"></a>
 
@@ -156,17 +148,13 @@ When utilizing this feature, it's important to consider adding a handle to the m
 [synced_rows_endpoint.yaml](../../.gitbook/assets/synced_rows_endpoint.yaml)
 {% endswagger %}
 
-
-
 ### Index <a href="#index" id="index"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/merge/index`
 
-{% swagger src="../../.gitbook/assets/merge_index_endpoint.yaml" path="/v1/{collection}/merge-index" method="post" %}
+{% swagger src="../../.gitbook/assets/merge_index_endpoint.yaml" path="/v1/{collection}/merge/index" method="post" %}
 [merge_index_endpoint.yaml](../../.gitbook/assets/merge_index_endpoint.yaml)
 {% endswagger %}
-
-
 
 ## AI Collection
 
@@ -212,8 +200,6 @@ Prior to getting started with the resources in this collection, ensure you have 
 [summary_endpoint.yaml](../../.gitbook/assets/summary_endpoint.yaml)
 {% endswagger %}
 
-
-
 ## Conversion Collection
 
 The Conversion Collection provides you with endpoints that enable you to convert templates from one format to another. With the **Email to Page** endpoint, you can easily convert your email JSON templates into page JSON. The **Page to Email** endpoint lets you turn your page JSON templates into email-ready JSON, with the option to disable the HTML sanitizer if needed.&#x20;
@@ -236,8 +222,6 @@ The Email to Page endpoint converts a JSON template created for email into a JSO
 {% swagger src="../../.gitbook/assets/email-to-page-conversion.yaml" path="/v1/{collection}/email-to-page" method="post" %}
 [email-to-page-conversion.yaml](../../.gitbook/assets/email-to-page-conversion.yaml)
 {% endswagger %}
-
-
 
 ### Page to Email Conversion: Important Behaviors
 

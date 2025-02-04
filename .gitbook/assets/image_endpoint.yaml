@@ -41,15 +41,553 @@ paths:
                 file_type:
                   type: string
                   description: A string field for file_type
-                  example: png
                 size:
                   type: string
                   description: A string field for size
-                  example: '1000'
                 html:
                   type: string
                   description: A string field for html
-                  example: "<html>Hello World!</html>"
+            example:
+              file_type: png
+              size: '1000'
+              html: "<!DOCTYPE html>\r\n<html lang=\"en\" xmlns:v=\"urn:schemas-microsoft-com:vml\"\
+                >\r\n  <head></head>\r\n  <head>\r\n    <meta charset=\"utf-8\">\r\
+                \n    <meta name=\"x-apple-disable-message-reformatting\">\r\n   \
+                \ <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\r\n  \
+                \  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"\
+                >\r\n    <meta name=\"format-detection\" content=\"telephone=no, date=no,\
+                \ address=no, email=no\">\r\n    <meta name=\"color-scheme\" content=\"\
+                light dark\">\r\n    <meta name=\"supported-color-schemes\" content=\"\
+                light dark\">\r\n    <!--[if mso]>\r\n\t\t\t\t\t\t\t\t\t<noscript>\r\
+                \n\t\t\t\t\t\t\t\t\t\t<xml>\r\n\t\t\t\t\t\t\t\t\t\t\t<o:OfficeDocumentSettings\r\
+                \n\t\t\t\t\t\t\t\t\t\t\t\txmlns:o=\"urn:schemas-microsoft-com:office:office\"\
+                >\r\n\t\t\t\t\t\t\t\t\t\t\t\t<o:PixelsPerInch>96</o:PixelsPerInch>\r\
+                \n\t\t\t\t\t\t\t\t\t\t\t</o:OfficeDocumentSettings>\r\n\t\t\t\t\t\t\
+                \t\t\t\t</xml>\r\n\t\t\t\t\t\t\t\t\t</noscript>\r\n\t\t\t\t\t\t\t\t\
+                \t<style>\r\n    td,th,div,p,a,h1,h2,h3,h4,h5,h6 {font-family: \"\
+                Segoe UI\", sans-serif; mso-line-height-rule: exactly;}\r\n  </style>\r\
+                \n\t\t\t\t\t\t\t\t\t<![endif]-->\r\n    <title>Black Friday Booster\
+                \ 50% OFF</title>\r\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"\
+                >\r\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\"\
+                \ crossorigin=\"\">\r\n    <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap\"\
+                \ rel=\"stylesheet\" media=\"screen\">\r\n    <style>\r\n      .hover-bg-cool-gray-100:hover\
+                \ {\r\n        background-color: #f7f8fa !important;\r\n      }\r\n\
+                \r\n      .hover-bg-primary-600:hover {\r\n        background-color:\
+                \ #003cdf !important;\r\n      }\r\n\r\n      .hover-text-cool-gray-600:hover\
+                \ {\r\n        color: #585e83 !important;\r\n      }\r\n\r\n     \
+                \ @media (max-width: 648px) {\r\n        .sm-block {\r\n         \
+                \ display: block !important;\r\n        }\r\n\r\n        .sm-hidden\
+                \ {\r\n          display: none !important;\r\n        }\r\n\r\n  \
+                \      .sm-h-px {\r\n          height: 1px !important;\r\n       \
+                \ }\r\n\r\n        .sm-w-full {\r\n          width: 100% !important;\r\
+                \n        }\r\n\r\n        .sm-py-12 {\r\n          padding-top: 12px\
+                \ !important;\r\n          padding-bottom: 12px !important;\r\n  \
+                \      }\r\n\r\n        .sm-px-0 {\r\n          padding-left: 0 !important;\r\
+                \n          padding-right: 0 !important;\r\n        }\r\n\r\n    \
+                \    .sm-px-24 {\r\n          padding-left: 24px !important;\r\n \
+                \         padding-right: 24px !important;\r\n        }\r\n\r\n   \
+                \     .sm-pb-12 {\r\n          padding-bottom: 12px !important;\r\n\
+                \        }\r\n\r\n        .sm-text-center {\r\n          text-align:\
+                \ center !important;\r\n        }\r\n\r\n        .sm-text-4xl {\r\n\
+                \          font-size: 36px !important;\r\n        }\r\n\r\n      \
+                \  .sm-leading-16 {\r\n          line-height: 16px !important;\r\n\
+                \        }\r\n\r\n        .sm-leading-2 {\r\n          line-height:\
+                \ 2px !important;\r\n        }\r\n\r\n        .sm-leading-40 {\r\n\
+                \          line-height: 40px !important;\r\n        }\r\n      }\r\
+                \n\r\n      @media (prefers-color-scheme: dark) {\r\n        .dark-border-gray-600\
+                \ {\r\n          border-color: #272727 !important;\r\n        }\r\n\
+                \r\n        .dark-bg-gray-800 {\r\n          background-color: #1e1e1e\
+                \ !important;\r\n        }\r\n\r\n        .dark-bg-gray-900 {\r\n\
+                \          background-color: #121212 !important;\r\n        }\r\n\r\
+                \n        .dark-bg-white {\r\n          background-color: #ffffff\
+                \ !important;\r\n        }\r\n\r\n        .dark-bg-gray-600 {\r\n\
+                \          background-color: #272727 !important;\r\n        }\r\n\r\
+                \n        .dark-bg-gray-700 {\r\n          background-color: #222222\
+                \ !important;\r\n        }\r\n\r\n        .dark-bg-gray-500 {\r\n\
+                \          background-color: #2d2d2d !important;\r\n        }\r\n\r\
+                \n        .dark-text-gray-200 {\r\n          color: #ababab !important;\r\
+                \n        }\r\n\r\n        .dark-text-gray-800 {\r\n          color:\
+                \ #1e1e1e !important;\r\n        }\r\n\r\n        .dark-text-gray-900\
+                \ {\r\n          color: #121212 !important;\r\n        }\r\n\r\n \
+                \       .dark-text-gray-50 {\r\n          color: #f9fafb !important;\r\
+                \n        }\r\n\r\n        .dark-text-primary-500 {\r\n          color:\
+                \ #0047ff !important;\r\n        }\r\n\r\n        .dark-hover-bg-gray-50:hover\
+                \ {\r\n          background-color: #f9fafb !important;\r\n       \
+                \ }\r\n\r\n        .dark-hover-text-gray-100:hover {\r\n         \
+                \ color: #d5d5d5 !important;\r\n        }\r\n      }\r\n    </style>\r\
+                \n  </head>\r\n  <body class=\"dark-bg-gray-900\" style=\"margin:\
+                \ 0; width: 100%; padding: 0; word-break: break-word; -webkit-font-smoothing:\
+                \ antialiased; background-color: #f7f8fa;\">\r\n    <div role=\"article\"\
+                \ aria-roledescription=\"email\" aria-label=\"Black Friday Booster\
+                \ 50% OFF\" lang=\"en\" style=\"font-size: 16px; font-size: 1rem;\
+                \ font-size: max(16px, 1rem)\">\r\n      <table style=\"width: 100%;\
+                \ font-family: 'Inter', -apple-system, ui-sans-serif, system-ui, -apple-system,\
+                \ 'Segoe UI', sans-serif;\" cellpadding=\"0\" cellspacing=\"0\" role=\"\
+                presentation\">\r\n        <tr>\r\n          <td align=\"center\"\
+                >\r\n            <!--[if mso]>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                <v:rect\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\txmlns:v=\"urn:schemas-microsoft-com:vml\"\
+                \ fill=\"true\" stroke=\"false\" style=\"height:300px; mso-width-percent:\
+                \ 1000; position: absolute; left: -10px; top: -20px; z-index: -1;\"\
+                >\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<v:fill type=\"tile\" color=\"\
+                #dee2e9\" />\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<v:textbox inset=\"\
+                0,0,0,0\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<![endif]-->\r\n\
+                \            <div style=\"max-height: 40px;\">\r\n              <div\
+                \ class=\"dark-bg-gray-900\" style=\"height: 300px; background-color:\
+                \ #dee2e9;\"></div>\r\n            </div>\r\n            <!--[if mso]>\r\
+                \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</v:textbox>\r\n\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t</v:rect>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<![endif]-->\r\
+                \n            <table class=\"sm-w-full\" style=\"position: relative;\
+                \ max-height: 0; width: 568px; opacity: 0.999;\" cellpadding=\"0\"\
+                \ cellspacing=\"0\" role=\"presentation\">\r\n              <tr>\r\
+                \n                <td style=\"vertical-align: top;\" valign=\"top\"\
+                >\r\n                  <div class=\"sm-px-24\">\r\n              \
+                \      <table style=\"width: 100%;\" cellpadding=\"0\" cellspacing=\"\
+                0\" role=\"presentation\">\r\n                      <tr>\r\n     \
+                \                   <td class=\"sm-px-24\" style=\"padding-left: 40px;\
+                \ padding-right: 40px;\">\r\n                          <table style=\"\
+                width: 100%;\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\"\
+                >\r\n                            <tr>\r\n                        \
+                \      <td>\r\n                                <a href=\"https://example.com\"\
+                \ style=\"text-decoration: none;\">\r\n                          \
+                \        <picture>\r\n                                    <source\
+                \ srcset=\"https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/logo-dark_2x.png\"\
+                \ media=\"(prefers-color-scheme: dark)\">\r\n                    \
+                \                <img src=\"https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/logo_2x.png\"\
+                \ width=\"88\" alt=\"Company Logo\" style=\"max-width: 100%; vertical-align:\
+                \ middle; line-height: 100%; border: 0;\">\r\n                   \
+                \               </picture>\r\n                                </a>\r\
+                \n                              </td>\r\n                        \
+                \      <td align=\"right\">\r\n                                <a\
+                \ href=\"https://example.com\" class=\"dark-text-gray-900 dark-bg-white\
+                \ hover-bg-cool-gray-100\" style=\"display: inline-block; border-radius:\
+                \ 8px; background-color: #ffffff; padding: 7px 12px; text-align: center;\
+                \ font-size: 12px; font-weight: 700; color: #191847; text-decoration:\
+                \ none; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0,\
+                \ 0, 0, 0.1);\">\r\n                                  <!--[if mso]>\r\
+                \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i style=\"\
+                letter-spacing: 24px; mso-font-width: -100%; mso-text-raise: 30px;\"\
+                >&nbsp;</i>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t<![endif]-->\r\n                                  <span style=\"\
+                mso-text-raise: 15px; margin-right: 6px;\"> Shop\r\n             \
+                \                       <!--[if mso]>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i style=\"letter-spacing: 6px;\
+                \ mso-font-width: -100%;\">&nbsp;</i>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<![endif]-->\r\n               \
+                \                   </span>\r\n                        <span style=\"\
+                mso-text-raise: 10px;\">\r\n                          <img src=\"\
+                https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/cart_2x.png\"\
+                \ width=\"18\"></span>\r\n                                  <!--[if\
+                \ mso]>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t<i style=\"letter-spacing: 24px; mso-font-width: -100%;\">&nbsp;</i>\r\
+                \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<![endif]-->\r\
+                \n                                </a>\r\n                       \
+                \       </td>\r\n                            </tr>\r\n           \
+                \               </table>\r\n                        </td>\r\n    \
+                \                  </tr>\r\n                    </table>\r\n     \
+                \               <div role=\"separator\" style=\"line-height: 40px;\"\
+                >&zwnj;</div>\r\n                    <table class=\"dark-bg-gray-600\"\
+                \ style=\"width: 100%; border-radius: 8px; background-color: #ffffff;\
+                \ box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.04), 0px 20px 25px\
+                \ -5px rgba(0, 0, 0, 0.1);\" cellpadding=\"0\" cellspacing=\"0\" role=\"\
+                presentation\">\r\n                      <tr>\r\n                \
+                \        <td class=\"sm-px-24\" style=\"padding: 40px;\">\r\n    \
+                \                      <table style=\"width: 100%;\" cellpadding=\"\
+                0\" cellspacing=\"0\" role=\"presentation\">\r\n                 \
+                \           <tr>\r\n                              <td>\r\n       \
+                \                         <div>\r\n                              \
+                \    <a href=\"https://example.com\">\r\n                        \
+                \            <img src=\"https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/hero/black-friday.png\"\
+                \ width=\"488\" style=\"max-width: 100%; vertical-align: middle; line-height:\
+                \ 100%; border: 0;\" alt=\"\">\r\n                               \
+                \   </a>\r\n                                </div>\r\n           \
+                \                     <div role=\"separator\" style=\"line-height:\
+                \ 24px;\">&zwnj;</div>\r\n                                <h2 class=\"\
+                sm-text-4xl dark-text-gray-50\" style=\"margin: 0; font-size: 60px;\
+                \ font-weight: 700; line-height: 1; letter-spacing: -0.025em; color:\
+                \ #191847;\"> Black Friday <br class=\"sm-hidden\"> Booster <br>\r\
+                \n                                  <span style=\"font-family: -apple-system-ui-serif,\
+                \ ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif; font-weight:\
+                \ 400; font-style: italic;\">50% OFF</span>\r\n                  \
+                \              </h2>\r\n                                <div role=\"\
+                separator\" style=\"line-height: 24px;\">&zwnj;</div>\r\n        \
+                \                        <p class=\"dark-text-gray-50\" style=\"margin:\
+                \ 0; font-size: 16px; line-height: 26px; color: #191847;\"> Hi Smiles\
+                \ Davis, <br>\r\n                                  <br> This Black\
+                \ Friday, we\u2019re offering loyal [Product Name] customers like\
+                \ you the chance to take advantage of our entire range of Teams services\
+                \ for only HALF the usual price. <br>\r\n                        \
+                \          <br> For <strong>$XX / month</strong>, you can upgrade\
+                \ your experience to include all these great benefits:\r\n       \
+                \                         </p>\r\n                              </td>\r\
+                \n                            </tr>\r\n                          \
+                \  <tr role=\"separator\">\r\n                              <td style=\"\
+                line-height: 24px;\">&zwnj;</td>\r\n                            </tr>\r\
+                \n                            <tr>\r\n                           \
+                \   <td>\r\n                                <table style=\"width:\
+                \ 100%;\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\"\
+                >\r\n                                  <tr>\r\n                  \
+                \                  <td class=\"dark-border-gray-600 dark-bg-gray-700\
+                \ dark-text-gray-50\" style=\"border-radius: 8px; border: 1px solid\
+                \ #dee2e9; background-color: #f7f8fa; padding: 24px; color: #191847;\"\
+                >\r\n                                      <h3 style=\"margin: 0;\
+                \ font-size: 12px; font-weight: 700;\"> Free Plan <em class=\"dark-text-gray-200\"\
+                \ style=\"font-weight: 400; color: #424670;\">(Currently 15 Members)</em>\r\
+                \n                                      </h3>\r\n                \
+                \                      <div role=\"separator\" style=\"line-height:\
+                \ 4px;\">&zwnj;</div>\r\n                                      <p\
+                \ style=\"margin: 0; font-size: 18px; font-weight: 700; line-height:\
+                \ 28px;\"> $0 </p>\r\n                                      <div role=\"\
+                separator\" style=\"line-height: 12px;\">&zwnj;</div>\r\n        \
+                \                              <p style=\"margin: 0; font-size: 14px;\
+                \ line-height: 21px;\"> Free Plan features include: </p>\r\n     \
+                \                                 <div role=\"separator\" style=\"\
+                line-height: 12px;\">&zwnj;</div>\r\n                            \
+                \          <table style=\"width: 100%;\" cellpadding=\"0\" cellspacing=\"\
+                0\" role=\"presentation\">\r\n                                   \
+                \     <tr>\r\n                                          <td class=\"\
+                sm-w-full sm-block sm-pb-12\" style=\"width: 50%;\">\r\n         \
+                \                                   <table style=\"width: 100%;\"\
+                \ cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\">\r\n \
+                \                                             <tr>\r\n           \
+                \                                     <td style=\"width: 32px;\">\r\
+                \n                                                  <picture>\r\n\
+                \                                                    <source srcset=\"\
+                https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/icon-check-dark-3x.png\"\
+                \ media=\"(prefers-color-scheme: dark)\">\r\n                    \
+                \                                <img src=\"https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/icon-check-3x.png\"\
+                \ width=\"24\" alt=\"\u2714\" style=\"max-width: 100%; vertical-align:\
+                \ middle; line-height: 100%; border: 0;\">\r\n                   \
+                \                               </picture>\r\n                   \
+                \                             </td>\r\n                          \
+                \                      <td style=\"font-size: 14px;\">[Feature name]</td>\r\
+                \n                                              </tr>\r\n        \
+                \                                      <tr role=\"separator\">\r\n\
+                \                                                <td style=\"line-height:\
+                \ 12px;\">&zwnj;</td>\r\n                                        \
+                \      </tr>\r\n                                              <tr>\r\
+                \n                                                <td style=\"width:\
+                \ 32px;\">\r\n                                                  <picture>\r\
+                \n                                                    <source srcset=\"\
+                https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/icon-check-dark-3x.png\"\
+                \ media=\"(prefers-color-scheme: dark)\">\r\n                    \
+                \                                <img src=\"https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/icon-check-3x.png\"\
+                \ width=\"24\" alt=\"\u2714\" style=\"max-width: 100%; vertical-align:\
+                \ middle; line-height: 100%; border: 0;\">\r\n                   \
+                \                               </picture>\r\n                   \
+                \                             </td>\r\n                          \
+                \                      <td style=\"font-size: 14px;\">[Feature name]</td>\r\
+                \n                                              </tr>\r\n        \
+                \                                    </table>\r\n                \
+                \                          </td>\r\n                             \
+                \             <td class=\"sm-w-full sm-block\" style=\"width: 50%;\"\
+                >\r\n                                            <table style=\"width:\
+                \ 100%;\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\"\
+                >\r\n                                              <tr>\r\n      \
+                \                                          <td style=\"width: 32px;\"\
+                >\r\n                                                  <picture>\r\
+                \n                                                    <source srcset=\"\
+                https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/icon-check-dark-3x.png\"\
+                \ media=\"(prefers-color-scheme: dark)\">\r\n                    \
+                \                                <img src=\"https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/icon-check-3x.png\"\
+                \ width=\"24\" alt=\"\u2714\" style=\"max-width: 100%; vertical-align:\
+                \ middle; line-height: 100%; border: 0;\">\r\n                   \
+                \                               </picture>\r\n                   \
+                \                             </td>\r\n                          \
+                \                      <td style=\"font-size: 14px;\">[Feature name]</td>\r\
+                \n                                              </tr>\r\n        \
+                \                                      <tr role=\"separator\">\r\n\
+                \                                                <td style=\"line-height:\
+                \ 12px;\">&zwnj;</td>\r\n                                        \
+                \      </tr>\r\n                                              <tr>\r\
+                \n                                                <td style=\"width:\
+                \ 32px;\">\r\n                                                  <picture>\r\
+                \n                                                    <source srcset=\"\
+                https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/icon-check-dark-3x.png\"\
+                \ media=\"(prefers-color-scheme: dark)\">\r\n                    \
+                \                                <img src=\"https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/icon-check-3x.png\"\
+                \ width=\"24\" alt=\"\u2714\" style=\"max-width: 100%; vertical-align:\
+                \ middle; line-height: 100%; border: 0;\">\r\n                   \
+                \                               </picture>\r\n                   \
+                \                             </td>\r\n                          \
+                \                      <td style=\"font-size: 14px;\">[Feature name]</td>\r\
+                \n                                              </tr>\r\n        \
+                \                                    </table>\r\n                \
+                \                          </td>\r\n                             \
+                \           </tr>\r\n                                      </table>\r\
+                \n                                    </td>\r\n                  \
+                \                </tr>\r\n                                </table>\r\
+                \n                              </td>\r\n                        \
+                \    </tr>\r\n                            <tr role=\"separator\">\r\
+                \n                              <td style=\"line-height: 24px;\">&zwnj;</td>\r\
+                \n                            </tr>\r\n                          \
+                \  <tr>\r\n                              <td>\r\n                \
+                \                <table style=\"width: 100%;\" cellpadding=\"0\" cellspacing=\"\
+                0\" role=\"presentation\">\r\n                                  <tr>\r\
+                \n                                    <td class=\"dark-border-gray-600\
+                \ dark-bg-gray-500 dark-text-gray-50\" style=\"border-radius: 8px;\
+                \ border: 1px solid #dee2e9; background-color: #ffffff; padding: 24px;\
+                \ color: #191847;\">\r\n                                      <h3\
+                \ style=\"margin: 0; font-size: 12px; font-weight: 700;\"> Team Plan\
+                \ </h3>\r\n                                      <div role=\"separator\"\
+                \ style=\"line-height: 4px;\">&zwnj;</div>\r\n                   \
+                \                   <p style=\"margin: 0; font-size: 18px; font-weight:\
+                \ 700; line-height: 28px;\"> $7 monthly </p>\r\n                 \
+                \                     <div role=\"separator\" style=\"line-height:\
+                \ 12px;\">&zwnj;</div>\r\n                                      <p\
+                \ style=\"margin: 0; font-size: 14px; line-height: 21px;\"> All features\
+                \ of the Free plan plus: </p>\r\n                                \
+                \      <div role=\"separator\" style=\"line-height: 12px;\">&zwnj;</div>\r\
+                \n                                      <table style=\"width: 100%;\"\
+                \ cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\">\r\n \
+                \                                       <tr>\r\n                 \
+                \                         <td class=\"sm-w-full sm-block sm-pb-12\"\
+                \ style=\"width: 50%;\">\r\n                                     \
+                \       <table style=\"width: 100%;\" cellpadding=\"0\" cellspacing=\"\
+                0\" role=\"presentation\">\r\n                                   \
+                \           <tr>\r\n                                             \
+                \   <td style=\"width: 32px;\">\r\n                              \
+                \                    <picture>\r\n                               \
+                \                     <source srcset=\"https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/icon-check-dark-3x.png\"\
+                \ media=\"(prefers-color-scheme: dark)\">\r\n                    \
+                \                                <img src=\"https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/icon-check-3x.png\"\
+                \ width=\"24\" alt=\"\u2714\" style=\"max-width: 100%; vertical-align:\
+                \ middle; line-height: 100%; border: 0;\">\r\n                   \
+                \                               </picture>\r\n                   \
+                \                             </td>\r\n                          \
+                \                      <td style=\"font-size: 14px;\">[Feature name]</td>\r\
+                \n                                              </tr>\r\n        \
+                \                                      <tr role=\"separator\">\r\n\
+                \                                                <td style=\"line-height:\
+                \ 12px;\">&zwnj;</td>\r\n                                        \
+                \      </tr>\r\n                                              <tr>\r\
+                \n                                                <td style=\"width:\
+                \ 32px;\">\r\n                                                  <picture>\r\
+                \n                                                    <source srcset=\"\
+                https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/icon-check-dark-3x.png\"\
+                \ media=\"(prefers-color-scheme: dark)\">\r\n                    \
+                \                                <img src=\"https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/icon-check-3x.png\"\
+                \ width=\"24\" alt=\"\u2714\" style=\"max-width: 100%; vertical-align:\
+                \ middle; line-height: 100%; border: 0;\">\r\n                   \
+                \                               </picture>\r\n                   \
+                \                             </td>\r\n                          \
+                \                      <td style=\"font-size: 14px;\">[Feature name]</td>\r\
+                \n                                              </tr>\r\n        \
+                \                                    </table>\r\n                \
+                \                          </td>\r\n                             \
+                \             <td class=\"sm-w-full sm-block\" style=\"width: 50%;\"\
+                >\r\n                                            <table style=\"width:\
+                \ 100%;\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\"\
+                >\r\n                                              <tr>\r\n      \
+                \                                          <td style=\"width: 32px;\"\
+                >\r\n                                                  <picture>\r\
+                \n                                                    <source srcset=\"\
+                https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/icon-check-dark-3x.png\"\
+                \ media=\"(prefers-color-scheme: dark)\">\r\n                    \
+                \                                <img src=\"https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/icon-check-3x.png\"\
+                \ width=\"24\" alt=\"\u2714\" style=\"max-width: 100%; vertical-align:\
+                \ middle; line-height: 100%; border: 0;\">\r\n                   \
+                \                               </picture>\r\n                   \
+                \                             </td>\r\n                          \
+                \                      <td style=\"font-size: 14px;\">[Feature name]</td>\r\
+                \n                                              </tr>\r\n        \
+                \                                      <tr role=\"separator\">\r\n\
+                \                                                <td style=\"line-height:\
+                \ 12px;\">&zwnj;</td>\r\n                                        \
+                \      </tr>\r\n                                              <tr>\r\
+                \n                                                <td style=\"width:\
+                \ 32px;\">\r\n                                                  <picture>\r\
+                \n                                                    <source srcset=\"\
+                https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/icon-check-dark-3x.png\"\
+                \ media=\"(prefers-color-scheme: dark)\">\r\n                    \
+                \                                <img src=\"https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/icon-check-3x.png\"\
+                \ width=\"24\" alt=\"\u2714\" style=\"max-width: 100%; vertical-align:\
+                \ middle; line-height: 100%; border: 0;\">\r\n                   \
+                \                               </picture>\r\n                   \
+                \                             </td>\r\n                          \
+                \                      <td style=\"font-size: 14px;\">[Feature name]</td>\r\
+                \n                                              </tr>\r\n        \
+                \                                    </table>\r\n                \
+                \                          </td>\r\n                             \
+                \           </tr>\r\n                                      </table>\r\
+                \n                                      <div role=\"separator\" style=\"\
+                line-height: 24px;\">&zwnj;</div>\r\n                            \
+                \          <a href=\"https://example.com\" class=\"sm-block dark-text-primary-500\
+                \ hover-bg-primary-600 dark-bg-white dark-hover-bg-gray-50\" style=\"\
+                display: inline-block; border-radius: 8px; background-color: #0047ff;\
+                \ padding: 14px 24px; text-align: center; font-size: 16px; font-weight:\
+                \ 700; color: #ffffff; text-decoration: none; box-shadow: 0px 2px\
+                \ 4px -1px rgba(0, 0, 0, 0.06), 0px 4px 6px -1px rgba(0, 0, 0, 0.1);\"\
+                >\r\n                                        <!--[if mso]>\r\n\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i style=\"letter-spacing:\
+                \ 24px; mso-font-width: -100%; mso-text-raise:30px;\">&nbsp;</i>\r\
+                \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<![endif]-->\r\n \
+                \                                       <span style=\"mso-text-raise:\
+                \ 15px;\">Upgrade to Team Plan</span>\r\n                        \
+                \                <!--[if mso]>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t<i style=\"letter-spacing: 24px; mso-font-width: -100%;\"\
+                >&nbsp;</i>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<![endif]-->\r\
+                \n                                      </a>\r\n                 \
+                \                     <div role=\"separator\" style=\"line-height:\
+                \ 16px;\">&zwnj;</div>\r\n                                      <p\
+                \ class=\"dark-text-gray-200 sm-text-center\" style=\"margin: 0; font-size:\
+                \ 12px; line-height: 16px; color: #767e9d;\"> Upgrade and save 50%\
+                \ today. </p>\r\n                                    </td>\r\n   \
+                \                               </tr>\r\n                        \
+                \        </table>\r\n                              </td>\r\n     \
+                \                       </tr>\r\n                            <tr role=\"\
+                separator\">\r\n                              <td style=\"line-height:\
+                \ 24px;\">&zwnj;</td>\r\n                            </tr>\r\n   \
+                \                         <tr>\r\n                              <td>\r\
+                \n                                <p class=\"dark-text-gray-50\" style=\"\
+                margin: 0; font-size: 16px; line-height: 26px; color: #191847;\">\
+                \ But act fast &mdash; this deal is for a limited time only! </p>\r\
+                \n                              </td>\r\n                        \
+                \    </tr>\r\n                          </table>\r\n             \
+                \           </td>\r\n                      </tr>\r\n             \
+                \       </table>\r\n                  </div>\r\n                </td>\r\
+                \n              </tr>\r\n            </table>\r\n            <div\
+                \ class=\"sm-leading-40\" role=\"separator\" style=\"line-height:\
+                \ 64px;\">&zwnj;</div>\r\n            <table class=\"sm-w-full dark-text-gray-200\"\
+                \ style=\"width: 568px; color: #767e9d;\" cellpadding=\"0\" cellspacing=\"\
+                0\" role=\"presentation\">\r\n              <tr>\r\n             \
+                \   <td style=\"padding-left: 40px; padding-right: 40px;\">\r\n  \
+                \                <a href=\"https://example.com\" style=\"text-decoration:\
+                \ none;\">\r\n                    <picture>\r\n                  \
+                \    <source srcset=\"https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/logo-footer-dark_2x.png\"\
+                \ media=\"(prefers-color-scheme: dark)\">\r\n                    \
+                \  <img src=\"https://res.cloudinary.com/dxa66e5ic/image/upload/v1637601683/holidays/logo-footer_2x.png\"\
+                \ width=\"79\" alt=\"Company Logo\" style=\"max-width: 100%; vertical-align:\
+                \ middle; line-height: 100%; border: 0;\">\r\n                   \
+                \ </picture>\r\n                  </a>\r\n                  <div role=\"\
+                separator\" style=\"line-height: 16px;\">&zwnj;</div>\r\n        \
+                \          <table class=\"sm-w-full\" style=\"font-size: 12px; line-height:\
+                \ 16px;\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\"\
+                >\r\n                    <tr>\r\n                      <td class=\"\
+                sm-block sm-w-full\">\r\n                        <a href=\"https://example.com\"\
+                \ class=\"hover-text-cool-gray-600 dark-text-gray-200 dark-hover-text-gray-100\"\
+                \ style=\"font-weight: 700; color: #767e9d; text-decoration: none;\"\
+                > Shop </a>\r\n                      </td>\r\n                   \
+                \   <td class=\"sm-block sm-py-12 sm-px-0\" style=\"padding-left:\
+                \ 12px; padding-right: 12px;\">\r\n                        <table\
+                \ class=\"sm-hidden\" cellpadding=\"0\" cellspacing=\"0\" role=\"\
+                presentation\">\r\n                          <tr>\r\n            \
+                \                <td class=\"dark-bg-gray-800\" style=\"height: 24px;\
+                \ width: 1px; background-color: #dee2e9;\"></td>\r\n             \
+                \             </tr>\r\n                        </table>\r\n      \
+                \                  <!--[if !mso]>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t<!-->\r\n                        <div class=\"sm-block sm-h-px\
+                \ dark-bg-gray-800\" style=\"mso-hide: all; display: none; background-color:\
+                \ #dee2e9;\"></div>\r\n                        <!--\r\n\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t<![endif]-->\r\n                      </td>\r\
+                \n                      <td class=\"sm-block sm-w-full\">\r\n    \
+                \                    <a href=\"https://twitter.com\" class=\"hover-text-cool-gray-600\
+                \ dark-text-gray-200 dark-hover-text-gray-100\" style=\"font-weight:\
+                \ 700; color: #767e9d; text-decoration: none;\"> Twitter </a>\r\n\
+                \                      </td>\r\n                      <td class=\"\
+                sm-block sm-py-12 sm-px-0\" style=\"padding-left: 12px; padding-right:\
+                \ 12px;\">\r\n                        <table class=\"sm-hidden\" cellpadding=\"\
+                0\" cellspacing=\"0\" role=\"presentation\">\r\n                 \
+                \         <tr>\r\n                            <td class=\"dark-bg-gray-800\"\
+                \ style=\"height: 24px; width: 1px; background-color: #dee2e9;\"></td>\r\
+                \n                          </tr>\r\n                        </table>\r\
+                \n                        <!--[if !mso]>\r\n\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t<!-->\r\n                        <div class=\"sm-block\
+                \ sm-h-px dark-bg-gray-800\" style=\"mso-hide: all; display: none;\
+                \ background-color: #dee2e9;\"></div>\r\n                        <!--\r\
+                \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<![endif]-->\r\n             \
+                \         </td>\r\n                      <td class=\"sm-block sm-w-full\"\
+                >\r\n                        <a href=\"https://instagram.com\" class=\"\
+                hover-text-cool-gray-600 dark-text-gray-200 dark-hover-text-gray-100\"\
+                \ style=\"font-weight: 700; color: #767e9d; text-decoration: none;\"\
+                > Instagram </a>\r\n                      </td>\r\n              \
+                \      </tr>\r\n                  </table>\r\n                  <hr\
+                \ class=\"dark-bg-gray-800 dark-text-gray-800\" style=\"margin-top:\
+                \ 12px; margin-bottom: 16px; height: 1px; border-width: 0px; background-color:\
+                \ #dee2e9; color: #dee2e9;\">\r\n                  <p style=\"margin:\
+                \ 0; font-size: 12px; line-height: 16px;\"> If you have questions\
+                \ or need help, don't hesitate to contact our support team! <br>\r\
+                \n                    <br> DEMOCO USA Inc, 4 World Trade Center, 150\
+                \ Greenwich Street, 62nd Floor, New York, NY 10007, USA\r\n      \
+                \            </p>\r\n                  <div class=\"sm-leading-16\"\
+                \ role=\"separator\" style=\"line-height: 20px;\">&zwnj;</div>\r\n\
+                \                  <table class=\"sm-w-full\" style=\"font-size: 12px;\
+                \ line-height: 16px;\" cellpadding=\"0\" cellspacing=\"0\" role=\"\
+                presentation\">\r\n                    <tr>\r\n                  \
+                \    <td class=\"sm-block sm-w-full\">\r\n                       \
+                \ <a href=\"https://example.com\" class=\"hover-text-cool-gray-600\
+                \ dark-text-gray-200 dark-hover-text-gray-100\" style=\"font-weight:\
+                \ 700; color: #767e9d; text-decoration: none;\"> Terms &amp; conditions\
+                \ </a>\r\n                      </td>\r\n                      <td\
+                \ class=\"sm-block sm-py-12 sm-px-0\" style=\"padding-left: 12px;\
+                \ padding-right: 12px;\">\r\n                        <table class=\"\
+                sm-hidden\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\"\
+                >\r\n                          <tr>\r\n                          \
+                \  <td class=\"dark-bg-gray-800\" style=\"height: 24px; width: 1px;\
+                \ background-color: #dee2e9;\"></td>\r\n                         \
+                \ </tr>\r\n                        </table>\r\n                  \
+                \      <!--[if !mso]>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<!-->\r\
+                \n                        <div class=\"sm-block sm-h-px dark-bg-gray-800\"\
+                \ style=\"mso-hide: all; display: none; background-color: #dee2e9;\"\
+                ></div>\r\n                        <!--\r\n\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t<![endif]-->\r\n                      </td>\r\n  \
+                \                    <td class=\"sm-block sm-w-full\">\r\n       \
+                \                 <a href=\"https://example.com\" class=\"hover-text-cool-gray-600\
+                \ dark-text-gray-200 dark-hover-text-gray-100\" style=\"font-weight:\
+                \ 700; color: #767e9d; text-decoration: none;\"> Privacy policy </a>\r\
+                \n                      </td>\r\n                      <td class=\"\
+                sm-block sm-py-12 sm-px-0\" style=\"padding-left: 12px; padding-right:\
+                \ 12px;\">\r\n                        <table class=\"sm-hidden\" cellpadding=\"\
+                0\" cellspacing=\"0\" role=\"presentation\">\r\n                 \
+                \         <tr>\r\n                            <td class=\"dark-bg-gray-800\"\
+                \ style=\"height: 24px; width: 1px; background-color: #dee2e9;\"></td>\r\
+                \n                          </tr>\r\n                        </table>\r\
+                \n                        <!--[if !mso]>\r\n\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t<!-->\r\n                        <div class=\"sm-block\
+                \ sm-h-px dark-bg-gray-800\" style=\"mso-hide: all; display: none;\
+                \ background-color: #dee2e9;\"></div>\r\n                        <!--\r\
+                \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<![endif]-->\r\n       \
+                \               </td>\r\n                      <td class=\"sm-block\
+                \ sm-w-full\">\r\n                        <a href=\"https://example.com\"\
+                \ class=\"hover-text-cool-gray-600 dark-text-gray-200 dark-hover-text-gray-100\"\
+                \ style=\"font-weight: 700; color: #767e9d; text-decoration: none;\"\
+                > Contact us </a>\r\n                      </td>\r\n             \
+                \         <td class=\"sm-block sm-px-0 sm-py-12\" style=\"mso-hide:\
+                \ all; display: none; padding-left: 12px; padding-right: 12px;\">\r\
+                \n                        <!--[if !mso]>\r\n\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t<!-->\r\n                        <div class=\"sm-block\
+                \ sm-h-px dark-bg-gray-800\" style=\"mso-hide: all; display: none;\
+                \ background-color: #dee2e9;\"></div>\r\n                        <!--\r\
+                \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+                \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<![endif]-->\r\n       \
+                \               </td>\r\n                    </tr>\r\n           \
+                \       </table>\r\n                  <div class=\"sm-leading-2\"\
+                \ role=\"separator\" style=\"line-height: 20px;\">&zwnj;</div>\r\n\
+                \                  <p style=\"margin: 0; font-size: 12px; line-height:\
+                \ 16px;\"> This message was sent to name@domain.com. If you don't\
+                \ want to receive these emails from DEMOCO in the future, you can\
+                \ <a href=\"https://example.com\" class=\"hover-text-cool-gray-600\
+                \ dark-text-gray-200 dark-hover-text-gray-100\" style=\"font-weight:\
+                \ 700; color: #767e9d; text-decoration: none;\">edit your profile</a>\
+                \ or <a href=\"https://example.com\" class=\"hover-text-cool-gray-600\
+                \ dark-text-gray-200 dark-hover-text-gray-100\" style=\"font-weight:\
+                \ 700; color: #767e9d; text-decoration: none;\">unsubscribe</a>. </p>\r\
+                \n                  <div role=\"separator\" style=\"line-height: 40px;\"\
+                >&zwnj;</div>\r\n                </td>\r\n              </tr>\r\n\
+                \            </table>\r\n          </td>\r\n        </tr>\r\n    \
+                \  </table>\r\n    </div>\r\n  </body>\r\n</html>"
       responses:
         '200':
           description: Successful response
@@ -57,15 +595,12 @@ paths:
             image/png:
               schema:
                 type: string
-                example: https://s3.example.com/generic-image.png
+              example: https://s3.example.com/generic-image.png
         '400':
-          description: Bad request. The request could not be understood or was missing
-            required parameters.
+          description: Bad request
         '401':
-          description: Unauthorized. Authentication is required and has failed or
-            has not been provided.
+          description: Unauthorized
         '403':
-          description: Forbidden. The request was valid, but the server is refusing
-            action.
+          description: Forbidden
         '500':
-          description: Internal Server Error. An unexpected condition was encountered.
+          description: Internal Server Error

@@ -37,7 +37,6 @@ paths:
                 rowIdentifierLabel:
                   type: string
                   description: A string field for rowIdentifierLabel
-                  example: guid
                 template:
                   type: object
                   description: An object field for template
@@ -61,12 +60,6 @@ paths:
                                     background-color:
                                       type: string
                                       description: A string field for background-color
-                                      example: '#ffffff'
-                                  example:
-                                    background-color: '#ffffff'
-                              example:
-                                style: &id001
-                                  background-color: '#ffffff'
                             content:
                               type: object
                               description: An object field for content
@@ -78,18 +71,12 @@ paths:
                                     linkColor:
                                       type: string
                                       description: A string field for linkColor
-                                      example: '#7747FF'
                                     messageBackgroundColor:
                                       type: string
                                       description: A string field for messageBackgroundColor
-                                      example: transparent
                                     messageWidth:
                                       type: string
                                       description: A string field for messageWidth
-                                      example: 600px
-                                  example:
-                                    linkColor: '#7747FF'
-                                    messageBackgroundColor: transparent
                                 style:
                                   type: object
                                   description: An object field for style
@@ -97,26 +84,12 @@ paths:
                                     color:
                                       type: string
                                       description: A string field for color
-                                      example: '#000000'
                                     font-family:
                                       type: string
                                       description: A string field for font-family
-                                      example: Arial, Helvetica, sans-serif
-                                  example:
-                                    color: '#000000'
-                                    font-family: Arial, Helvetica, sans-serif
-                              example:
-                                computedStyle: &id002
-                                  linkColor: '#7747FF'
-                                  messageBackgroundColor: transparent
-                                  messageWidth: 600px
-                                style: &id003
-                                  color: '#000000'
-                                  font-family: Arial, Helvetica, sans-serif
                             type:
                               type: string
                               description: A string field for type
-                              example: mailup-bee-page-properties
                             webFonts:
                               type: array
                               description: An array of objects for webFonts
@@ -126,32 +99,15 @@ paths:
                                   fontFamily:
                                     type: string
                                     description: A string field for fontFamily
-                                    example: '''Alegreya'', ''Trebuchet MS'', Helvetica,
-                                      sans-serif'
                                   name:
                                     type: string
                                     description: A string field for name
-                                    example: Alegreya
                                   url:
                                     type: string
                                     description: A string field for url
-                                    example: https://fonts.googleapis.com/css2?family=Alegreya:wght@100;200;300;400;500;600;700;800;900
-                              example:
-                              - &id014
-                                fontFamily: '''Alegreya'', ''Trebuchet MS'', Helvetica,
-                                  sans-serif'
-                                name: Alegreya
-                                url: https://fonts.googleapis.com/css2?family=Alegreya:wght@100;200;300;400;500;600;700;800;900
-                          example:
-                            container: &id012
-                              style: *id001
-                            content: &id013
-                              computedStyle: *id002
-                              style: *id003
                         description:
                           type: string
                           description: A string field for description
-                          example: ''
                         rows:
                           type: array
                           description: An array of objects for rows
@@ -167,7 +123,6 @@ paths:
                                     grid-columns:
                                       type: integer
                                       description: An integer field for grid-columns
-                                      example: 12
                                     modules:
                                       type: array
                                       description: An array of objects for modules
@@ -186,25 +141,18 @@ paths:
                                                     type: integer
                                                     description: An integer field
                                                       for hideContentOnAmp
-                                                    example: false
                                                   hideContentOnDesktop:
                                                     type: integer
                                                     description: An integer field
                                                       for hideContentOnDesktop
-                                                    example: false
                                                   hideContentOnHtml:
                                                     type: integer
                                                     description: An integer field
                                                       for hideContentOnHtml
-                                                    example: false
                                                   hideContentOnMobile:
                                                     type: integer
                                                     description: An integer field
                                                       for hideContentOnMobile
-                                                    example: false
-                                                example:
-                                                  hideContentOnAmp: false
-                                                  hideContentOnDesktop: false
                                               paragraph:
                                                 type: object
                                                 description: An object field for paragraph
@@ -218,21 +166,14 @@ paths:
                                                         type: string
                                                         description: A string field
                                                           for linkColor
-                                                        example: '#7747FF'
                                                       paragraphSpacing:
                                                         type: string
                                                         description: A string field
                                                           for paragraphSpacing
-                                                        example: 16px
-                                                    example:
-                                                      linkColor: '#7747FF'
-                                                      paragraphSpacing: 16px
                                                   html:
                                                     type: string
                                                     description: A string field for
                                                       html
-                                                    example: <p>I'm a new paragraph
-                                                      block.</p>
                                                   style:
                                                     type: object
                                                     description: An object field for
@@ -242,51 +183,34 @@ paths:
                                                         type: string
                                                         description: A string field
                                                           for color
-                                                        example: '#101112'
                                                       direction:
                                                         type: string
                                                         description: A string field
                                                           for direction
-                                                        example: ltr
                                                       font-family:
                                                         type: string
                                                         description: A string field
                                                           for font-family
-                                                        example: '''Alegreya'', ''Trebuchet
-                                                          MS'', Helvetica, sans-serif'
                                                       font-size:
                                                         type: string
                                                         description: A string field
                                                           for font-size
-                                                        example: 16px
                                                       font-weight:
                                                         type: string
                                                         description: A string field
                                                           for font-weight
-                                                        example: '400'
                                                       letter-spacing:
                                                         type: string
                                                         description: A string field
                                                           for letter-spacing
-                                                        example: 0px
                                                       line-height:
                                                         type: string
                                                         description: A string field
                                                           for line-height
-                                                        example: 120%
                                                       text-align:
                                                         type: string
                                                         description: A string field
                                                           for text-align
-                                                        example: left
-                                                    example:
-                                                      color: '#101112'
-                                                      direction: ltr
-                                                example:
-                                                  computedStyle: &id004
-                                                    linkColor: '#7747FF'
-                                                    paragraphSpacing: 16px
-                                                  html: <p>I'm a new paragraph block.</p>
                                               style:
                                                 type: object
                                                 description: An object field for style
@@ -295,69 +219,27 @@ paths:
                                                     type: string
                                                     description: A string field for
                                                       padding-bottom
-                                                    example: 10px
                                                   padding-left:
                                                     type: string
                                                     description: A string field for
                                                       padding-left
-                                                    example: 10px
                                                   padding-right:
                                                     type: string
                                                     description: A string field for
                                                       padding-right
-                                                    example: 10px
                                                   padding-top:
                                                     type: string
                                                     description: A string field for
                                                       padding-top
-                                                    example: 10px
-                                                example:
-                                                  padding-bottom: 10px
-                                                  padding-left: 10px
-                                            example:
-                                              computedStyle: &id005
-                                                hideContentOnAmp: false
-                                                hideContentOnDesktop: false
-                                                hideContentOnHtml: false
-                                                hideContentOnMobile: false
-                                              paragraph: &id006
-                                                computedStyle: *id004
-                                                html: <p>I'm a new paragraph block.</p>
-                                                style:
-                                                  color: '#101112'
-                                                  direction: ltr
-                                                  font-family: '''Alegreya'', ''Trebuchet
-                                                    MS'', Helvetica, sans-serif'
-                                                  font-size: 16px
-                                                  font-weight: '400'
-                                                  letter-spacing: 0px
-                                                  line-height: 120%
-                                                  text-align: left
                                           locked:
                                             type: integer
                                             description: An integer field for locked
-                                            example: false
                                           type:
                                             type: string
                                             description: A string field for type
-                                            example: mailup-bee-newsletter-modules-paragraph
                                           uuid:
                                             type: string
                                             description: A string field for uuid
-                                            example: 29cd2a3d-fd76-4537-a91b-b8cb9872d8a3
-                                      example:
-                                      - &id007
-                                        descriptor:
-                                          computedStyle: *id005
-                                          paragraph: *id006
-                                          style:
-                                            padding-bottom: 10px
-                                            padding-left: 10px
-                                            padding-right: 10px
-                                            padding-top: 10px
-                                        locked: false
-                                        type: mailup-bee-newsletter-modules-paragraph
-                                        uuid: 29cd2a3d-fd76-4537-a91b-b8cb9872d8a3
                                     style:
                                       type: object
                                       description: An object field for style
@@ -365,91 +247,33 @@ paths:
                                         background-color:
                                           type: string
                                           description: A string field for background-color
-                                          example: transparent
                                         border-bottom:
                                           type: string
                                           description: A string field for border-bottom
-                                          example: 0px solid transparent
                                         border-left:
                                           type: string
                                           description: A string field for border-left
-                                          example: 0px solid transparent
                                         border-right:
                                           type: string
                                           description: A string field for border-right
-                                          example: 0px solid transparent
                                         border-top:
                                           type: string
                                           description: A string field for border-top
-                                          example: 0px solid transparent
                                         padding-bottom:
                                           type: string
                                           description: A string field for padding-bottom
-                                          example: 5px
                                         padding-left:
                                           type: string
                                           description: A string field for padding-left
-                                          example: 0px
                                         padding-right:
                                           type: string
                                           description: A string field for padding-right
-                                          example: 0px
                                         padding-top:
                                           type: string
                                           description: A string field for padding-top
-                                          example: 5px
-                                      example:
-                                        background-color: transparent
-                                        border-bottom: 0px solid transparent
                                     uuid:
                                       type: string
                                       description: A string field for uuid
-                                      example: 56119ad2-574d-4122-8dd1-c1152b5f4879
-                                example:
-                                - &id008
-                                  grid-columns: 12
-                                  modules:
-                                  - *id007
-                                  - descriptor:
-                                      computedStyle:
-                                        hideContentOnAmp: false
-                                        hideContentOnDesktop: false
-                                        hideContentOnHtml: false
-                                        hideContentOnMobile: false
-                                      paragraph:
-                                        computedStyle:
-                                          linkColor: '#7747FF'
-                                          paragraphSpacing: 16px
-                                        html: <p>I'm a new paragraph block.</p>
-                                        style:
-                                          color: '#101112'
-                                          direction: ltr
-                                          font-family: '''Arvo'', ''Courier New'',
-                                            Courier, monospace'
-                                          font-size: 16px
-                                          font-weight: '400'
-                                          letter-spacing: 0px
-                                          line-height: 120%
-                                          text-align: left
-                                      style:
-                                        padding-bottom: 10px
-                                        padding-left: 10px
-                                        padding-right: 10px
-                                        padding-top: 10px
-                                    locked: false
-                                    type: mailup-bee-newsletter-modules-paragraph
-                                    uuid: e22bd20c-805e-439a-832c-f7a100dcaaf2
-                                  style:
-                                    background-color: transparent
-                                    border-bottom: 0px solid transparent
-                                    border-left: 0px solid transparent
-                                    border-right: 0px solid transparent
-                                    border-top: 0px solid transparent
-                                    padding-bottom: 5px
-                                    padding-left: 0px
-                                    padding-right: 0px
-                                    padding-top: 5px
-                                  uuid: 56119ad2-574d-4122-8dd1-c1152b5f4879
                               container:
                                 type: object
                                 description: An object field for container
@@ -461,28 +285,15 @@ paths:
                                       background-color:
                                         type: string
                                         description: A string field for background-color
-                                        example: transparent
                                       background-image:
                                         type: string
                                         description: A string field for background-image
-                                        example: none
                                       background-position:
                                         type: string
                                         description: A string field for background-position
-                                        example: top left
                                       background-repeat:
                                         type: string
                                         description: A string field for background-repeat
-                                        example: no-repeat
-                                    example:
-                                      background-color: transparent
-                                      background-image: none
-                                example:
-                                  style: &id009
-                                    background-color: transparent
-                                    background-image: none
-                                    background-position: top left
-                                    background-repeat: no-repeat
                               content:
                                 type: object
                                 description: An object field for content
@@ -494,26 +305,18 @@ paths:
                                       hideContentOnDesktop:
                                         type: integer
                                         description: An integer field for hideContentOnDesktop
-                                        example: false
                                       hideContentOnMobile:
                                         type: integer
                                         description: An integer field for hideContentOnMobile
-                                        example: false
                                       rowColStackOnMobile:
                                         type: integer
                                         description: An integer field for rowColStackOnMobile
-                                        example: true
                                       rowReverseColStackOnMobile:
                                         type: integer
                                         description: An integer field for rowReverseColStackOnMobile
-                                        example: false
                                       verticalAlign:
                                         type: string
                                         description: A string field for verticalAlign
-                                        example: top
-                                    example:
-                                      hideContentOnDesktop: false
-                                      hideContentOnMobile: false
                                   style:
                                     type: object
                                     description: An object field for style
@@ -521,52 +324,27 @@ paths:
                                       background-color:
                                         type: string
                                         description: A string field for background-color
-                                        example: transparent
                                       background-image:
                                         type: string
                                         description: A string field for background-image
-                                        example: none
                                       background-position:
                                         type: string
                                         description: A string field for background-position
-                                        example: top left
                                       background-repeat:
                                         type: string
                                         description: A string field for background-repeat
-                                        example: no-repeat
                                       color:
                                         type: string
                                         description: A string field for color
-                                        example: '#000000'
                                       width:
                                         type: string
                                         description: A string field for width
-                                        example: 600px
-                                    example:
-                                      background-color: transparent
-                                      background-image: none
-                                example:
-                                  computedStyle: &id010
-                                    hideContentOnDesktop: false
-                                    hideContentOnMobile: false
-                                    rowColStackOnMobile: true
-                                    rowReverseColStackOnMobile: false
-                                    verticalAlign: top
-                                  style: &id011
-                                    background-color: transparent
-                                    background-image: none
-                                    background-position: top left
-                                    background-repeat: no-repeat
-                                    color: '#000000'
-                                    width: 600px
                               empty:
                                 type: integer
                                 description: An integer field for empty
-                                example: false
                               locked:
                                 type: integer
                                 description: An integer field for locked
-                                example: false
                               metadata:
                                 type: object
                                 description: An object field for metadata
@@ -574,37 +352,15 @@ paths:
                                   guid:
                                     type: string
                                     description: A string field for guid
-                                    example: 0922fb70-f97e-4ae8-bcfe-0be9fd09a0d5
-                                example:
-                                  guid: 0922fb70-f97e-4ae8-bcfe-0be9fd09a0d5
                               synced:
                                 type: integer
                                 description: An integer field for synced
-                                example: true
                               type:
                                 type: string
                                 description: A string field for type
-                                example: one-column-empty
                               uuid:
                                 type: string
                                 description: A string field for uuid
-                                example: 0922fb70-f97e-4ae8-bcfe-0be9fd09a0d5
-                          example:
-                          - &id016
-                            columns:
-                            - *id008
-                            container:
-                              style: *id009
-                            content:
-                              computedStyle: *id010
-                              style: *id011
-                            empty: false
-                            locked: false
-                            metadata:
-                              guid: 0922fb70-f97e-4ae8-bcfe-0be9fd09a0d5
-                            synced: true
-                            type: one-column-empty
-                            uuid: 0922fb70-f97e-4ae8-bcfe-0be9fd09a0d5
                         template:
                           type: object
                           description: An object field for template
@@ -612,138 +368,15 @@ paths:
                             name:
                               type: string
                               description: A string field for name
-                              example: template-base
                             type:
                               type: string
                               description: A string field for type
-                              example: basic
                             version:
                               type: string
                               description: A string field for version
-                              example: 2.0.0
-                          example:
-                            name: template-base
-                            type: basic
                         title:
                           type: string
                           description: A string field for title
-                          example: ''
-                      example:
-                        body: &id015
-                          container: *id012
-                          content: *id013
-                          type: mailup-bee-page-properties
-                          webFonts:
-                          - *id014
-                        description: ''
-                  example:
-                    page: &id017
-                      body: *id015
-                      description: ''
-                      rows:
-                      - *id016
-                      - columns:
-                        - grid-columns: 12
-                          modules:
-                          - descriptor:
-                              computedStyle:
-                                hideContentOnAmp: false
-                                hideContentOnDesktop: false
-                                hideContentOnHtml: false
-                                hideContentOnMobile: false
-                              paragraph:
-                                computedStyle:
-                                  linkColor: '#7747FF'
-                                  paragraphSpacing: 16px
-                                html: <p>I'm a new paragraph block.</p>
-                                style:
-                                  color: '#101112'
-                                  direction: ltr
-                                  font-family: '''Alegreya'', ''Trebuchet MS'', Helvetica,
-                                    sans-serif'
-                                  font-size: 16px
-                                  font-weight: '400'
-                                  letter-spacing: 0px
-                                  line-height: 120%
-                                  text-align: left
-                              style:
-                                padding-bottom: 10px
-                                padding-left: 10px
-                                padding-right: 10px
-                                padding-top: 10px
-                            locked: false
-                            type: mailup-bee-newsletter-modules-paragraph
-                            uuid: 29cd2a3d-fd76-4537-a91b-b8cb9872d8a3
-                          - descriptor:
-                              computedStyle:
-                                hideContentOnAmp: false
-                                hideContentOnDesktop: false
-                                hideContentOnHtml: false
-                                hideContentOnMobile: false
-                              paragraph:
-                                computedStyle:
-                                  linkColor: '#7747FF'
-                                  paragraphSpacing: 16px
-                                html: <p>I'm a new paragraph block.</p>
-                                style:
-                                  color: '#101112'
-                                  direction: ltr
-                                  font-family: '''Arvo'', ''Courier New'', Courier,
-                                    monospace'
-                                  font-size: 16px
-                                  font-weight: '400'
-                                  letter-spacing: 0px
-                                  line-height: 120%
-                                  text-align: left
-                              style:
-                                padding-bottom: 10px
-                                padding-left: 10px
-                                padding-right: 10px
-                                padding-top: 10px
-                            locked: false
-                            type: mailup-bee-newsletter-modules-paragraph
-                            uuid: e22bd20c-805e-439a-832c-f7a100dcaaf2
-                          style:
-                            background-color: transparent
-                            border-bottom: 0px solid transparent
-                            border-left: 0px solid transparent
-                            border-right: 0px solid transparent
-                            border-top: 0px solid transparent
-                            padding-bottom: 5px
-                            padding-left: 0px
-                            padding-right: 0px
-                            padding-top: 5px
-                          uuid: 56119ad2-574d-4122-8dd1-c1152b5f4879
-                        container:
-                          style:
-                            background-color: transparent
-                            background-image: none
-                            background-position: top left
-                            background-repeat: no-repeat
-                        content:
-                          computedStyle:
-                            hideContentOnDesktop: false
-                            hideContentOnMobile: false
-                            rowColStackOnMobile: true
-                            rowReverseColStackOnMobile: false
-                            verticalAlign: top
-                          style:
-                            background-color: transparent
-                            background-image: none
-                            background-position: top left
-                            background-repeat: no-repeat
-                            color: '#000000'
-                            width: 600px
-                        empty: false
-                        locked: false
-                        synced: false
-                        type: one-column-empty
-                        uuid: 0922fb70-f97e-4ae8-bcfe-0be9fd09a0d5
-                      template:
-                        name: template-base
-                        type: basic
-                        version: 2.0.0
-                      title: ''
                 webFonts:
                   type: array
                   description: An array of objects for webFonts
@@ -753,49 +386,258 @@ paths:
                       fontFamily:
                         type: string
                         description: A string field for fontFamily
-                        example: '''Arvo'', ''Courier New'', Courier, monospace'
                       name:
                         type: string
                         description: A string field for name
-                        example: Arvo
                       url:
                         type: string
                         description: A string field for url
-                        example: https://fonts.googleapis.com/css2?family=Arvo:wght@100;200;300;400;500;600;700;800;900
-                  example:
-                  - &id018
-                    fontFamily: '''Arvo'', ''Courier New'', Courier, monospace'
-                    name: Arvo
-                    url: https://fonts.googleapis.com/css2?family=Arvo:wght@100;200;300;400;500;600;700;800;900
-              example:
-                rowIdentifierLabel: guid
-                template:
-                  page: *id017
-                webFonts:
-                - *id018
-                - fontFamily: '''Alegreya'', ''Trebuchet MS'', Helvetica, sans-serif'
-                  name: Alegreya
-                  url: https://fonts.googleapis.com/css2?family=Alegreya:wght@100;200;300;400;500;600;700;800;900
-                - fontFamily: '''Chivo'', Arial, Helvetica, sans-serif'
-                  name: Chivo
-                  url: https://fonts.googleapis.com/css2?family=Chivo:wght@100;200;300;400;500;600;700;800;900
+            example:
+              rowIdentifierLabel: guid
+              template:
+                page:
+                  body:
+                    container:
+                      style:
+                        background-color: '#ffffff'
+                    content:
+                      computedStyle:
+                        linkColor: '#7747FF'
+                        messageBackgroundColor: transparent
+                        messageWidth: 600px
+                      style:
+                        color: '#000000'
+                        font-family: Arial, Helvetica, sans-serif
+                    type: mailup-bee-page-properties
+                    webFonts:
+                    - fontFamily: '''Alegreya'', ''Trebuchet MS'', Helvetica, sans-serif'
+                      name: Alegreya
+                      url: https://fonts.googleapis.com/css2?family=Alegreya:wght@100;200;300;400;500;600;700;800;900
+                  description: ''
+                  rows:
+                  - columns:
+                    - grid-columns: 12
+                      modules:
+                      - descriptor:
+                          computedStyle:
+                            hideContentOnAmp: false
+                            hideContentOnDesktop: false
+                            hideContentOnHtml: false
+                            hideContentOnMobile: false
+                          paragraph:
+                            computedStyle:
+                              linkColor: '#7747FF'
+                              paragraphSpacing: 16px
+                            html: <p>I'm a new paragraph block.</p>
+                            style:
+                              color: '#101112'
+                              direction: ltr
+                              font-family: '''Alegreya'', ''Trebuchet MS'', Helvetica,
+                                sans-serif'
+                              font-size: 16px
+                              font-weight: '400'
+                              letter-spacing: 0px
+                              line-height: 120%
+                              text-align: left
+                          style:
+                            padding-bottom: 10px
+                            padding-left: 10px
+                            padding-right: 10px
+                            padding-top: 10px
+                        locked: false
+                        type: mailup-bee-newsletter-modules-paragraph
+                        uuid: 29cd2a3d-fd76-4537-a91b-b8cb9872d8a3
+                      - descriptor:
+                          computedStyle:
+                            hideContentOnAmp: false
+                            hideContentOnDesktop: false
+                            hideContentOnHtml: false
+                            hideContentOnMobile: false
+                          paragraph:
+                            computedStyle:
+                              linkColor: '#7747FF'
+                              paragraphSpacing: 16px
+                            html: <p>I'm a new paragraph block.</p>
+                            style:
+                              color: '#101112'
+                              direction: ltr
+                              font-family: '''Arvo'', ''Courier New'', Courier, monospace'
+                              font-size: 16px
+                              font-weight: '400'
+                              letter-spacing: 0px
+                              line-height: 120%
+                              text-align: left
+                          style:
+                            padding-bottom: 10px
+                            padding-left: 10px
+                            padding-right: 10px
+                            padding-top: 10px
+                        locked: false
+                        type: mailup-bee-newsletter-modules-paragraph
+                        uuid: e22bd20c-805e-439a-832c-f7a100dcaaf2
+                      style:
+                        background-color: transparent
+                        border-bottom: 0px solid transparent
+                        border-left: 0px solid transparent
+                        border-right: 0px solid transparent
+                        border-top: 0px solid transparent
+                        padding-bottom: 5px
+                        padding-left: 0px
+                        padding-right: 0px
+                        padding-top: 5px
+                      uuid: 56119ad2-574d-4122-8dd1-c1152b5f4879
+                    container:
+                      style:
+                        background-color: transparent
+                        background-image: none
+                        background-position: top left
+                        background-repeat: no-repeat
+                    content:
+                      computedStyle:
+                        hideContentOnDesktop: false
+                        hideContentOnMobile: false
+                        rowColStackOnMobile: true
+                        rowReverseColStackOnMobile: false
+                        verticalAlign: top
+                      style:
+                        background-color: transparent
+                        background-image: none
+                        background-position: top left
+                        background-repeat: no-repeat
+                        color: '#000000'
+                        width: 600px
+                    empty: false
+                    locked: false
+                    metadata:
+                      guid: 0922fb70-f97e-4ae8-bcfe-0be9fd09a0d5
+                    synced: true
+                    type: one-column-empty
+                    uuid: 0922fb70-f97e-4ae8-bcfe-0be9fd09a0d5
+                  - columns:
+                    - grid-columns: 12
+                      modules:
+                      - descriptor:
+                          computedStyle:
+                            hideContentOnAmp: false
+                            hideContentOnDesktop: false
+                            hideContentOnHtml: false
+                            hideContentOnMobile: false
+                          paragraph:
+                            computedStyle:
+                              linkColor: '#7747FF'
+                              paragraphSpacing: 16px
+                            html: <p>I'm a new paragraph block.</p>
+                            style:
+                              color: '#101112'
+                              direction: ltr
+                              font-family: '''Alegreya'', ''Trebuchet MS'', Helvetica,
+                                sans-serif'
+                              font-size: 16px
+                              font-weight: '400'
+                              letter-spacing: 0px
+                              line-height: 120%
+                              text-align: left
+                          style:
+                            padding-bottom: 10px
+                            padding-left: 10px
+                            padding-right: 10px
+                            padding-top: 10px
+                        locked: false
+                        type: mailup-bee-newsletter-modules-paragraph
+                        uuid: 29cd2a3d-fd76-4537-a91b-b8cb9872d8a3
+                      - descriptor:
+                          computedStyle:
+                            hideContentOnAmp: false
+                            hideContentOnDesktop: false
+                            hideContentOnHtml: false
+                            hideContentOnMobile: false
+                          paragraph:
+                            computedStyle:
+                              linkColor: '#7747FF'
+                              paragraphSpacing: 16px
+                            html: <p>I'm a new paragraph block.</p>
+                            style:
+                              color: '#101112'
+                              direction: ltr
+                              font-family: '''Arvo'', ''Courier New'', Courier, monospace'
+                              font-size: 16px
+                              font-weight: '400'
+                              letter-spacing: 0px
+                              line-height: 120%
+                              text-align: left
+                          style:
+                            padding-bottom: 10px
+                            padding-left: 10px
+                            padding-right: 10px
+                            padding-top: 10px
+                        locked: false
+                        type: mailup-bee-newsletter-modules-paragraph
+                        uuid: e22bd20c-805e-439a-832c-f7a100dcaaf2
+                      style:
+                        background-color: transparent
+                        border-bottom: 0px solid transparent
+                        border-left: 0px solid transparent
+                        border-right: 0px solid transparent
+                        border-top: 0px solid transparent
+                        padding-bottom: 5px
+                        padding-left: 0px
+                        padding-right: 0px
+                        padding-top: 5px
+                      uuid: 56119ad2-574d-4122-8dd1-c1152b5f4879
+                    container:
+                      style:
+                        background-color: transparent
+                        background-image: none
+                        background-position: top left
+                        background-repeat: no-repeat
+                    content:
+                      computedStyle:
+                        hideContentOnDesktop: false
+                        hideContentOnMobile: false
+                        rowColStackOnMobile: true
+                        rowReverseColStackOnMobile: false
+                        verticalAlign: top
+                      style:
+                        background-color: transparent
+                        background-image: none
+                        background-position: top left
+                        background-repeat: no-repeat
+                        color: '#000000'
+                        width: 600px
+                    empty: false
+                    locked: false
+                    synced: false
+                    type: one-column-empty
+                    uuid: 0922fb70-f97e-4ae8-bcfe-0be9fd09a0d5
+                  template:
+                    name: template-base
+                    type: basic
+                    version: 2.0.0
+                  title: ''
+              webFonts:
+              - fontFamily: '''Arvo'', ''Courier New'', Courier, monospace'
+                name: Arvo
+                url: https://fonts.googleapis.com/css2?family=Arvo:wght@100;200;300;400;500;600;700;800;900
+              - fontFamily: '''Alegreya'', ''Trebuchet MS'', Helvetica, sans-serif'
+                name: Alegreya
+                url: https://fonts.googleapis.com/css2?family=Alegreya:wght@100;200;300;400;500;600;700;800;900
+              - fontFamily: '''Chivo'', Arial, Helvetica, sans-serif'
+                name: Chivo
+                url: https://fonts.googleapis.com/css2?family=Chivo:wght@100;200;300;400;500;600;700;800;900
       responses:
         '200':
           description: Successful response
           content:
             application/json:
               schema:
-                type: string
-                example:
-                  message: Success
+                type: object
+              example:
+                message: Success
         '400':
-          description: Bad request. The request could not be understood or was missing
-            required parameters.
+          description: Bad request
         '401':
-          description: Unauthorized. Authentication is required and has failed or
-            has not been provided.
+          description: Unauthorized
         '403':
-          description: Forbidden. The request was valid, but the server is refusing
-            action.
+          description: Forbidden
         '500':
-          description: Internal Server Error. An unexpected condition was encountered.
+          description: Internal Server Error
