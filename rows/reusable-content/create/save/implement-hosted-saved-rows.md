@@ -4,17 +4,13 @@
 This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.
 {% endhint %}
 
-## **How to Set Up Hosted Saved Rows**
+## **Overview**
 
-Hosted Saved Rows simplifies row management by allowing you to store and retrieve saved rows using Beefree SDK's secure infrastructure. This fully managed solution eliminates the need for custom backend systems and UI development, enabling faster implementation and reduced maintenance.
+With Hosted Saved Rows, you can provide your end users with the option to save and manage reusable content directly within the builder. Hosted Saved Rows can be activated through a toggle within the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu), which makes it an excellent option for those who are interested in a fast implementation of [Saved Rows](./). Once you toggle this feature on, your end users will be able to save the rows they create within the builder, and reuse them easily in the future. They can also perform actions to manage the rows that they save, such as renaming them, deleting them, categorizing, or recategorizing them. This page covers [the steps](implement-hosted-saved-rows.md#enable-hosted-saved-rows) you need to take to successfully implement [Hosted Saved Rows](../../../storage/hosted-saved-rows.md). &#x20;
 
-This page covers how to:
+The following video tutorial discusses what Saved Rows are, how reusable content can support your end users throughout their content creation journeys, and how you can implement Hosted Saved Rows in your application.
 
-* [Enable Hosted Saved Rows](implement-hosted-saved-rows.md#enable-hosted-saved-rows)
-* [User Interface and End User Experience](implement-hosted-saved-rows.md#user-interface-and-end-user-experience)
-* [Configure Advanced Permissions](implement-hosted-saved-rows.md#configure-advanced-permissions)
-* [Making Saved Rows Available to Select Users](implement-hosted-saved-rows.md#making-saved-rows-available-to-select-users)
-* [Removing the Rows Tab for Select Users](implement-hosted-saved-rows.md#removing-the-rows-tab-for-select-users)
+{% embed url="https://www.youtube.com/watch?v=5m80DgKW0x8" %}
 
 ### **Enable Hosted Saved Rows**
 
@@ -27,10 +23,10 @@ To enable Hosted Saved Rows for your application, follow these steps:
 5. Scroll to the **Saved Rows** section.
    1.  Toggle on the **Hosted on the Beefree SDK Infrastructure** option.
 
-       <figure><img src="../../../../.gitbook/assets/CleanShot 2024-11-20 at 20.28.15.png" alt=""><figcaption></figcaption></figure>
+       <figure><img src="../../../../.gitbook/assets/CleanShot 2024-11-20 at 20.28.15.png" alt="Beefree SDK Developer console user interface displaying the toggle options for hosted and self-hosted saved rows"><figcaption></figcaption></figure>
    2.  Read the pricing information in the popup closely, because additional fees may apply.\*&#x20;
 
-       <figure><img src="../../../../.gitbook/assets/CleanShot 2024-11-20 at 20.28.37.png" alt=""><figcaption></figcaption></figure>
+       <figure><img src="../../../../.gitbook/assets/CleanShot 2024-11-20 at 20.28.37.png" alt="Beefree SDK Developer console user interface displaying the popup confirming usage based fees may apply"><figcaption></figcaption></figure>
    3. If you'd like to proceed, confirm you read and understand the pricing to activate the feature.
 
 {% hint style="info" %}
@@ -59,19 +55,19 @@ The Hosted Saved Rows UI includes the following experience for end users:
 
 *   End users can save a row using the **Save** icon.    &#x20;
 
-    <figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 14.00.04.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 14.00.04.png" alt="Beefree SDK user interface displaying the save icon on the builder stage end users see"><figcaption></figcaption></figure>
 *   They have the ability to name and categorize rows.&#x20;
 
-    <figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 14.03.25.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 14.03.25.png" alt="Beefree SDK user interface displaying the save row modal with Row name and Category options"><figcaption></figcaption></figure>
 *   They  can edit a row's name or category and save those changes. &#x20;
 
-    <figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 14.07.16.gif" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 14.07.16.gif" alt="Beefree SDK user interface displaying the edit row options, which allows editing the name or category of a row"><figcaption></figcaption></figure>
 *   End users can decide to reuse or delete rows through the **Rows** tab in the side panel.&#x20;
 
-    <figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 14.08.29.gif" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 14.08.29.gif" alt="Beefree SDK user interface displaying the delete row option, which allows deleting a row"><figcaption></figcaption></figure>
 *   They can also use the vertical three dots to add and manage categories.
 
-    <figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 14.09.34.gif" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 14.09.34.gif" alt="Beefree SDK user interface displaying the add new category option, which allows adding more row categories in the builder"><figcaption></figcaption></figure>
 
 Reference the [Hosted Saved Rows end user documentation](https://docs.beefree.io/end-user-guide/hosted-saved-rows) for more information on the end user steps and experience.
 
@@ -145,13 +141,13 @@ const beeConfig = {
 
 The following image shows the save icon when the end user clicks on the row.
 
-<figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 21.02.35.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 21.02.35.png" alt="User interface showing the save icon and default behavior of saveRows boolean"><figcaption></figcaption></figure>
 
 ### Hiding the Save Icon
 
 The following image does not show the save icon when the end user clicks on the row. This behavior occurs after adding `saveRows` to your `beeConfig` and setting it to `false`.
 
-<figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 21.02.03.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 21.02.03.png" alt="User interface not showing the save icon and the behavior of saveRows boolean when set to false"><figcaption></figcaption></figure>
 
 ## Removing the Rows Tab for Select Users
 
@@ -173,9 +169,9 @@ The tab order represented in the snippet below with `content` first and `setting
 defaultTabsOrder: ['content', 'settings']
 ```
 
-In the following image, the **ROWS** tab is no longer available to the end user.
+In the following image, the **ROWS** tab is no longer available to the end user. In the following image, the **ROWS** tab is no longer available to the end user and the order of the tabs are **Content** first and **Settings** second.
 
-<figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 15.04.18.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 15.04.18.png" alt="User interface not showing the rows tab based on the custom configuration"><figcaption></figcaption></figure>
 
 The tab order represented in the snippet below with `settings` first and `content` second, results in the visualization displayed in the image after.
 
@@ -183,9 +179,9 @@ The tab order represented in the snippet below with `settings` first and `conten
 defaultTabsOrder: ['settings', 'content']
 ```
 
-In the following image, the **ROWS** tab is no longer available to the end user.
+In the following image, the **ROWS** tab is no longer available to the end user and the order of the tabs are **Settings** first and **Content** second.
 
-<figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 15.10.54.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 15.10.54.png" alt="User interface not showing the rows tab based on the custom configuration with the order of the tabs showing Settings first and Content second"><figcaption></figcaption></figure>
 
 Visit the [Hosted Saved Rows page](../../../storage/hosted-saved-rows.md) to learn more about the following topics:
 
