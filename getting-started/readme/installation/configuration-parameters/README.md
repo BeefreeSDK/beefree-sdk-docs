@@ -37,7 +37,6 @@ var beeConfig = {
     disableLinkSanitize: true, // [optional, default: false]}
     loadingSpinnerDisableOnSave: false, // [optional, default: false]}
     loadingSpinnerDisableOnDialog: true, // [optional, default: false]}
-    maxRowsDisplayed: 35, // // [optional, set this to any number to define the maximum number of rows that a category should display]}
     onSave: function(jsonFile, htmlFile) { /* Implements function for save */ }, // [optional]
     onChange: function(jsonFile, response) { /* Implements function for change */ }, // [optional]
     onSaveAsTemplate: function(jsonFile) { /* Implements function for save as template (only JSON file) */ }, // [optional]
