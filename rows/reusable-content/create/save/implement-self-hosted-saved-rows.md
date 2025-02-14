@@ -142,7 +142,8 @@ The following code sample shows an example of a `rowsConfiguration` that display
 
 rowsConfiguration: {
             emptyRows: true,
-            defaultRows: true,         
+            defaultRows: true,
+            maxRowsDisplayed: 40, //optional parameter, the max number of displayed rows is 30 by default         
             externalContentURLs: [{
                 name: "Headers",
                 value: "https://URL-01"
