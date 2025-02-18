@@ -255,6 +255,152 @@ The following image shows the results for the overwritten default text for AI Bu
 
 Reference the [Customize Prompt Suggestions section of the AI Writing Assistant page](https://docs.beefree.io/beefree-sdk/builder-addons/addons/partner-addons/ai-writing-assistant#customize-prompt-suggestions) for additional customization options and details.
 
+## Confirmation Dialogs <a href="#sample-language-file" id="sample-language-file"></a>
+
+The following section lists translations that correspond with Confirmation Dialogs for Rows, Columns, Modules, and the File Manager.&#x20;
+
+### Delete Row <a href="#sample-language-file" id="sample-language-file"></a>
+
+This list details the translations corresponding with the Delete Row Confirmation Dialog.
+
+#### **Translations Variations**
+
+* **Title:** 🆕 _Delete row_
+  * `confirmation-dialogs.delete-row-confirmation-title`
+* **Secondary Button:** 🆕 _Keep_
+  * `confirmation-dialogs.keep-button`
+* **Primary Button:** 🆕 _Delete_
+  * `confirmation-dialogs.delete-button`
+
+Reference the corresponding [classnames for Delete Row](../appearance/custom-css/change-log.md#delete-row-confirmation-dialog).
+
+### Delete Column <a href="#sample-language-file" id="sample-language-file"></a>
+
+This list details the translations corresponding with the Delete Column Confirmation Dialog.
+
+**Translations Variations**
+
+* **Title:** 🆕 _Delete column_
+  * `confirmation-dialogs.delete-column-confirmation-title`
+* **Secondary Button:** 🆕 _Keep_
+  * `confirmation-dialogs.keep-button`
+* **Primary Button:** 🆕 _Delete_
+  * `confirmation-dialogs.delete-button`
+
+Reference the corresponding [classnames for Delete Column](../appearance/custom-css/change-log.md#delete-column-confirmation-dialog).
+
+### Delete Module <a href="#sample-language-file" id="sample-language-file"></a>
+
+This list details the translations corresponding with the Delete Module Confirmation Dialog.
+
+**Translations Variations**
+
+* **Title:** 🆕 _Delete module_
+  * `confirmation-dialogs.delete-module-confirmation-title`
+* **Secondary Button:** 🆕 _Keep_
+  * `confirmation-dialogs.keep-button`
+* **Primary Button:** 🆕 _Delete_
+  * `confirmation-dialogs.delete-button`
+
+Reference the corresponding [classnames for Delete Module](../appearance/custom-css/change-log.md#delete-module-confirmation-dialog).&#x20;
+
+### Hide Row on Mobile with Module Already Hidden on Desktop
+
+This list details the translations corresponding with the Hide Row on Mobile Confirmation Dialog.
+
+**Translations Variations**
+
+* **Title:** 🆕 _Hide row_
+  * `confirmation-dialogs.hide-row-confirmation-title`
+* **Heading:** 🆕 _Are you sure you want to hide this?_
+  * `confirmation-dialogs.hide-row-confirmation-heading`
+
+Reference the corresponding classnames for [Hide Row on Mobile with Module Already Hidden on Desktop](../appearance/custom-css/change-log.md#hide-row-on-mobile-with-module-already-hidden-on-desktop).
+
+### Remove Custom Display Condition <a href="#sample-language-file" id="sample-language-file"></a>
+
+This list details the translations corresponding with the Remove Custom Display Condition Confirmation Dialog.
+
+**Translations Variations**
+
+* **Title:** 🆕 _Delete display condition_
+  * `confirmation-dialogs.delete-display-condition-confirmation-title`
+
+Reference the corresponding classnames for [Remove Custom Display Condition](../appearance/custom-css/change-log.md#remove-custom-display-condition).
+
+### Confirm Delete Single File <a href="#sample-language-file" id="sample-language-file"></a>
+
+This list details the translations corresponding with the Confirm Delete Single File Confirmation Dialog.
+
+**Translations Variations**
+
+* **Title:** 🆕 _Delete {filename}_
+  * `confirmation-dialogs.delete-file-confirmation-title`
+* **Secondary Button:** 🆕 _Keep_
+  * `confirmation-dialogs.keep-button`
+* **Primary Button:** 🆕 _Delete_
+  * `confirmation-dialogs.delete-button`
+
+Reference the corresponding classnames for [Confirm Delete Single File](../appearance/custom-css/change-log.md#confirm-delete-single-file).
+
+### **Confirm Delete Multiple Files**
+
+This list details the translations corresponding with the Confirm Delete Multiple Files Confirmation Dialog.
+
+**Translations Variations**
+
+* **Title:** 🆕 _Delete {count} files_
+  * `confirmation-dialogs.delete-files-confirmation-title`
+* **Secondary Button:** 🆕 _Keep_
+  * `confirmation-dialogs.keep-button`
+* **Primary Button:** 🆕 _Delete_
+  * `confirmation-dialogs.delete-button`
+
+Reference the corresponding [classnames for Confirm Delete Multiple Files](../appearance/custom-css/change-log.md#confirm-delete-multiple-files).
+
+### Confirm Update Existing File | Custom FSP <a href="#sample-language-file" id="sample-language-file"></a>
+
+{% hint style="info" %}
+**Note:** This section is relevant if both the [Custom FSP](../../server-side-configurations/server-side-options/storage-options/connect-your-file-storage-system.md) and `ConfirmOverwriteModalEnabled` are activate.
+{% endhint %}
+
+This list details the translations corresponding with the Confirm Update Existing File Confirmation Dialog.
+
+**Text Updates:**
+
+* **Title:** 🆕 _Replace {filename}_
+  * `confirmation-dialogs.replace-file-confirmation-title`
+* **Secondary Button:** 🆕 _Keep_
+  * `confirmation-dialogs.keep-button`
+
+Reference the corresponding [classnames for Confirm Update Existing File](../appearance/custom-css/change-log.md#confirm-upload-existing-file).
+
+### Confirm Update Existing File <a href="#sample-language-file" id="sample-language-file"></a>
+
+This list details the translations corresponding with the Update Existing File Confirmation Dialog.
+
+**Translations Variations**
+
+* **Title:** 🆕 _File {filename} already exists_
+  * `confirmation-dialogs.file-already-exists-title`
+* **Heading:** 🆕 _Do you want to replace or keep both files?_
+  * `confirmation-dialogs.replace-file-confirmation-heading`
+
+Reference the corresponding classnames: Not applicable.
+
+### File Manager - Move File Replace Confirmation
+
+This list details the translations corresponding with the Move File Replace Confirmation Dialog.
+
+#### **Translations Variations**
+
+* **Title:** 🆕 _File {filename} already exists_
+  * `confirmation-dialogs.file-already-exists-title`
+* **Heading:** 🆕 _Do you want to replace or keep both files?_
+  * `confirmation-dialogs.replace-file-confirmation-heading`
+
+Reference the corresponding classnames: Not applicable.
+
 ## Sample language file <a href="#sample-language-file" id="sample-language-file"></a>
 
 Check out our Github repository for [starter language templates](https://dam.beefree.io/beecustomlanguages) in all supported languages.

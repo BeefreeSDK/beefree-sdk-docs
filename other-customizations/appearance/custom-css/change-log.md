@@ -6,6 +6,281 @@ description: >-
 
 # Change Log
 
+## Release Scheduled for March 2025
+
+This section includes a reference of the new classnames scheduled for release in March 2025. The new classnames will be related to [Mobile Badge](change-log.md#mobile-badge-or-scheduled-for-march-2025) and [Confirmation Dialogs](change-log.md#confirmation-dialogs-or-scheduled-for-march-2025). For more details, click the **>** symbol to expand the expandable content sections containing additional information.&#x20;
+
+### Mobile Badge | Scheduled for March 2025
+
+This section includes a reference for new classnames related to Mobile Badge.
+
+#### Content
+
+Reference the classname changes related to Content for Mobile Badge in the following expandable section.
+
+<details>
+
+<summary>Mobile Badge Content </summary>
+
+This section shows the classname updates for the Mobile Badge Content. The following Markup variations apply to each of the **Content types** outlined in this section.
+
+* Converted the badge into a button
+* Removed a `<span>`
+* Moved it out of the widget's label tag
+
+#### <mark style="background-color:purple;">Button</mark>
+
+**Affected Sub-element:** Width Slider
+
+**Classnames Removed:** Not applicable
+
+**Classnames Added**
+
+* `widget-mobile-badge-enabled--cs`
+
+#### <mark style="background-color:purple;">Carousel, Text, Video</mark>
+
+**Affected Sub-element:** Block options - Padding
+
+**Classnames Removed:** Not applicable
+
+**Classnames Added**
+
+* `widget-mobile-badge-enabled--cs`
+
+#### <mark style="background-color:purple;">Divider, Image, Social</mark>
+
+**Affected Sub-element:** Align, Block options - Padding
+
+**Classnames Removed:** Not applicable
+
+**Classnames Adde**
+
+* `widget-mobile-badge-enabled--cs`
+
+#### <mark style="background-color:purple;">Form</mark>
+
+**Affected Sub-element:** Font size, Block options - Padding
+
+**CClassnames Removed:** Not applicable
+
+**Classnames Added**
+
+* `widget-mobile-badge-enabled--cs`
+
+#### <mark style="background-color:purple;">Button, Title, Icons, Image, List, Menu, Paragraph</mark>
+
+**Affected Sub-element:** Font size, Align, Block options - Padding
+
+**Classnames Removed:** Not applicable
+
+**Classnames Added**
+
+* `widget-mobile-badge-enabled--cs`
+
+#### <mark style="background-color:purple;">Spacer</mark>
+
+**Affected Sub-element:** Height
+
+**Classnames Removed:** Not applicable
+
+**Classnames Added**
+
+* `widget-mobile-badge-enabled--cs`
+
+</details>
+
+#### Rows
+
+Reference the classname changes related to Rows for Mobile Badge in the following expandable section.
+
+<details>
+
+<summary>Mobile Badge Row</summary>
+
+The following sections show the classname updates for the Mobile Badge Row.
+
+**Affected Sub-element:** Columns Structure - Padding
+
+**Markup Variations**
+
+The following Markup variations apply for Mobile badge row.&#x20;
+
+* Converted the badge into a button
+* Removed a `<span>`
+
+**Classnames Removed:** Not applicable
+
+**Classnames Added**
+
+* `widget-mobile-badge-enabled--cs`
+
+</details>
+
+### Confirmation Dialogs | Scheduled for March 2025
+
+This section includes a reference for new classnames related to Confirmation Dialogs.
+
+#### Rows
+
+Reference the classname changes related to Rows for Confirmation Dialogs in the following expandable section.
+
+<details>
+
+<summary>Delete Row Confirmation Dialog</summary>
+
+**Affected Sub-element:** Delete Row Confirmation Dialog
+
+**Markup Variations:**
+
+* Removed SVG icon
+
+**Classnames Added**
+
+* `confirmation-title--cs`
+
+</details>
+
+Reference the corresponding [Custom Translations for Delete Row](../../advanced-options/custom-languages.md#sample-language-file-4). &#x20;
+
+#### Column
+
+Reference the classname changes related to Columns for Confirmation Dialogs in the following expandable section.
+
+<details>
+
+<summary>Delete Column Confirmation Dialog</summary>
+
+**Affected Sub-element:** Delete Column Confirmation Dialog
+
+**Markup Variations:**
+
+* Removed SVG icon
+
+**Classnames Added**
+
+* `confirmation-title--cs`
+
+</details>
+
+Reference the corresponding [Custom Translations for Delete Column](../../advanced-options/custom-languages.md#sample-language-file-5).
+
+#### Module
+
+Reference the classname changes related to Modules for Confirmation Dialogs in the following expandable section.
+
+<details>
+
+<summary>Delete Module Confirmation Dialog</summary>
+
+**Affected Sub-element:** Delete Module Confirmation Dialog
+
+**Markup Variations:**
+
+* Removed SVG icon
+
+**Classnames Added**
+
+* `confirmation-title--cs`
+
+</details>
+
+Reference the corresponding [Custom Translations for Delete Module](../../advanced-options/custom-languages.md#sample-language-file-6).
+
+#### Rows
+
+Reference the classname changes related to Rows for Confirmation Dialogs in the following expandable section.
+
+<details>
+
+<summary>Hide Row on Mobile with Module Already Hidden on Desktop</summary>
+
+**Affected Sub-element:** Hide Row Confirmation Dialog
+
+**Markup Variations:**
+
+* Removed SVG icon
+
+**Classnames Added**
+
+* `confirmation-title--cs`
+
+</details>
+
+Reference the corresponding [Custom Translations for Hide Row on Mobile with Module Already Hidden on Desktop](../../advanced-options/custom-languages.md#hide-row-on-mobile-with-module-already-hidden-on-desktop).
+
+#### Rows
+
+Reference the classname changes related to Rows for Confirmation Dialogs in the following expandable section.
+
+<details>
+
+<summary>Remove Custom Display Condition</summary>
+
+**Affected Sub-element:** Remove Custom Display Condition Confirmation Dialog
+
+**Classnames Added**
+
+* `confirmation-title--cs`
+
+</details>
+
+Reference the corresponding [Custom Translations for Remove Custom Display Condition](../../advanced-options/custom-languages.md#sample-language-file-7).
+
+#### File manager
+
+Reference the classname changes related to File Manager for Confirmation Dialogs in the following expandable section.
+
+<details>
+
+<summary>Confirm Delete Single File</summary>
+
+**Affected Sub-element:** File Manager - Confirm Delete Single File
+
+**Classnames Added**
+
+* `confirmation-title--cs`
+
+</details>
+
+Reference the corresponding [Custom Translations for Confirm Delete Single File](../../advanced-options/custom-languages.md#sample-language-file-8).
+
+#### File manager
+
+Reference the classnames added in the following expandable section.
+
+<details>
+
+<summary>Confirm Delete Multiple Files</summary>
+
+**Affected Sub-element:** File Manager - Confirm Delete Multiple Files
+
+**Classnames Addded**
+
+* `confirmation-title--cs`
+
+</details>
+
+Reference the corresponding [Custom Translations for Confirm Delete Multiple Files](../../advanced-options/custom-languages.md#confirm-delete-multiple-files).
+
+#### File manager
+
+Reference the classnames added in the following expandable section.
+
+<details>
+
+<summary>Confirm Upload Existing File</summary>
+
+**Affected Sub-element:** File Manager - Confirm Upload Existing File (Custom FSP and ConfirmOverwriteModalEnabled)
+
+**Classnames Added**
+
+* `confirmation-title--cs`
+
+</details>
+
+Reference the corresponding [Custom Translations for Confirm Upload Existing File](../../advanced-options/custom-languages.md#sample-language-file-9).
+
 ## January 30, 2025 Releases
 
 ### Display Conditions Widget and Modal | Release on January 30, 2025
