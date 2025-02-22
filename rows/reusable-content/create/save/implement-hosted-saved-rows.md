@@ -11,6 +11,8 @@ With Hosted Saved Rows, you can provide your end users with the option to save a
 The following video tutorial discusses what Saved Rows are, how reusable content can support your end users throughout their content creation journeys, and how you can implement Hosted Saved Rows in your application.
 
 {% embed url="https://www.youtube.com/watch?v=5m80DgKW0x8" %}
+Save Time with Hosted Rows Video Tutorial
+{% endembed %}
 
 ### **Enable Hosted Saved Rows**
 
@@ -183,7 +185,17 @@ In the following image, the **ROWS** tab is no longer available to the end user 
 
 <figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 15.10.54.png" alt="User interface not showing the rows tab based on the custom configuration with the order of the tabs showing Settings first and Content second"><figcaption></figcaption></figure>
 
-Visit the [Hosted Saved Rows page](../../../storage/hosted-saved-rows.md) to learn more about the following topics:
+Reference the [Hosted Saved Rows Webinar](../../../storage/hosted-saved-rows.md#webinar-tutorial) to learn more about other customizations that are compatible with Hosted Saved Rows. The webinar discusses the following topics:
+
+* How to enable Hosted Saved Rows
+* How to use [Advanced Permissions](../../../../other-customizations/advanced-options/advanced-permissions.md#hosted-saved-rows) with Hosted Saved Rows
+* How to restrict which end users can save rows
+* How to customize the modals related to Hosted Saved Rows
+* How to use Hosted Saved Rows with [Content Services API](../../../../apis/content-services-api/content-services-api-reference.md)
+
+Reference the [sample code in this GitHub repository](https://github.com/mailupinc/beefree-sdk-hosted-saved-rows-demo) to follow along with the [webinar tutorial](../../../storage/hosted-saved-rows.md#webinar-tutorial).
+
+Visit the [Hosted Saved Rows page](../../../storage/hosted-saved-rows.md) to also learn more about the following topics:
 
 * [Troubleshooting and FAQs](../../../storage/hosted-saved-rows.md#troubleshooting-and-faqs)
 * [Deactivating Hosted Saved Rows](../../../storage/hosted-saved-rows.md#deactivating-hosted-saved-rows)

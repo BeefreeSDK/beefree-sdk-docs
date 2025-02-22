@@ -23,6 +23,22 @@ This [ready-to-go UI](hosted-saved-rows.md#ready-to-go-user-interface) enables a
 * Offers centralized storage, security, and reliability, while also providing a user interface to save and  reuse rows within your application.
 * Allows for advanced controls through configuring [Advanced Permissions for Hosted Saved Rows](../../other-customizations/advanced-options/advanced-permissions.md#hosted-saved-rows).
 
+### Webinar Tutorial
+
+Learn more about how to enable and customize Hosted Saved Rows in the following video. The webinar discusses:
+
+* How to enable Hosted Saved Rows
+* How to use [Advanced Permissions](../../other-customizations/advanced-options/advanced-permissions.md#hosted-saved-rows) with Hosted Saved Rows
+* How to restrict which end users can save rows
+* How to customize the modals related to Hosted Saved Rows
+* How to use Hosted Saved Rows with [Content Services API](../../apis/content-services-api/content-services-api-reference.md)
+
+Reference the [sample code in this GitHub repository](https://github.com/mailupinc/beefree-sdk-hosted-saved-rows-demo) to follow along with the webinar tutorial.
+
+{% embed url="https://www.youtube.com/watch?v=BSqWRusx2fg" %}
+Webinar on Hosted Saved Rows
+{% endembed %}
+
 ## **Enable Hosted Saved Rows**
 
 To enable Hosted Saved Rows for your application, follow these steps:
