@@ -276,7 +276,9 @@ function updateExternalContentURLs(categories) {
 
 ```
 
-_This snippet illustrates how to construct the array of external content URLs based on the list of categories fetched from your backend._
+{% hint style="info" %}
+This snippet illustrates how to construct the array of external content URLs based on the list of categories fetched from your backend.
+{% endhint %}
 
 **Supplementary Code Snippet**
 
