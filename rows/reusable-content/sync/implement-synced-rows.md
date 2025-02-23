@@ -31,7 +31,7 @@ Synced Rows expands on the foundational capabilities of [Save Rows](../create/sa
 
 Prior to implementing Synced Rows, review the following prerequisites:
 
-1. [Save Rows](../../storage/self-hosted-saved-rows.md): Implement [Self-hosted Saved Rows](../create/save/implement-self-hosted-saved-rows.md) first, because it establishes the foundation for a row management workflow.
+1. [Save Rows](../../storage/self-hosted-saved-rows.md): Implement [Self-hosted Saved Rows](../create/save/implement-self-hosted-saved-rows/) first, because it establishes the foundation for a row management workflow.
 2. [Edit Single Row Mode](initialize-edit-single-row-mode.md) & [Content Services API (CSAPI)](../../api-endpoints.md): Familiarizing yourself with Edit Single Rows Mode and CSAPI will provide you with a mechanism to edit and manage synced rows, which will support your implementation workflow. However, they are not strictly necessary to implement Synced Rows.
 
 ## How it works <a href="#how-it-works" id="how-it-works"></a>
@@ -48,8 +48,8 @@ You might need to modify the `saveRow` handler from the Metadata Content Dialog 
 
 If you need a refresher, check out:
 
-* [Save Rows workflow for developers](../create/save/implement-self-hosted-saved-rows.md)
-* [Metadata Content Dialog response format](../create/save/implement-self-hosted-saved-rows.md)
+* [Save Rows workflow for developers](../create/save/implement-self-hosted-saved-rows/)
+* [Metadata Content Dialog response format](../create/save/implement-self-hosted-saved-rows/)
 
 Here’s a **sample implementation for the Metadata Content Dialog**, offering the synced row option:
 

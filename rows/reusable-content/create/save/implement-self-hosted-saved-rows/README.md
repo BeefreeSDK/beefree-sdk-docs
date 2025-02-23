@@ -1,8 +1,14 @@
+---
+description: >-
+  Read this page to learn more about important the core concepts of implementing
+  Self-hosted saved rows.
+---
+
 # Implement Self-hosted Saved Rows
 
 {% hint style="info" %}
 This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.\
-If you're on the Essentials plan, [upgrade a development application](../../../../getting-started/readme/development-applications.md) for free to try this and other Core-level features.
+If you're on the Essentials plan, [upgrade a development application](../../../../../getting-started/readme/development-applications.md) for free to try this and other Core-level features.
 {% endhint %}
 
 ## Overview <a href="#overview" id="overview"></a>
@@ -19,11 +25,11 @@ You can also reference the [sample code](https://github.com/BEE-Plugin/bee-plugi
 
 When the Self-hosted Saved Rows feature is enabled, a  **Save** icon is added to the action icons when a row is selected. The following image displays an example of a row with the **Save** icon enabled in the upper right-hand corner.
 
-<figure><img src="../../../../.gitbook/assets/saveicon-1024x134.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/saveicon-1024x134.png" alt=""><figcaption></figcaption></figure>
 
 The **Save** icon is also available in the Row properties panel when a row is selected. The following image displays an example of this.
 
-<figure><img src="../../../../.gitbook/assets/2saveicon_properties-300x210.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/2saveicon_properties-300x210.png" alt=""><figcaption></figcaption></figure>
 
 By clicking on the **Save** icon, the end user triggers a request to the host application to store the row’s JSON document.&#x20;
 
@@ -56,7 +62,7 @@ Take the following steps to enable Self-hosted Saved Rows in the [Beefree SDK De
 
 The following image displays where the toggle is located in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
 
-<figure><img src="../../../../.gitbook/assets/CleanShot 2024-12-03 at 21.46.45.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/CleanShot 2024-12-03 at 21.46.45.png" alt=""><figcaption></figcaption></figure>
 
 ## **Making Saved Rows available only to select users**
 
@@ -93,11 +99,11 @@ const beeConfig = {
 
 ## **Understanding the end user experience**
 
-Visit the [Saved Rows section of the Reusable Content page](../../#self-hosted-saved-rows) to learn more about the end user experience with saved rows. You can also reference the [white label end user documentation on Saved Rows](https://docs.beefree.io/end-user-guide/saved-rows) to learn more. &#x20;
+Visit the [Saved Rows section of the Reusable Content page](../../../#self-hosted-saved-rows) to learn more about the end user experience with saved rows. You can also reference the [white label end user documentation on Saved Rows](https://docs.beefree.io/end-user-guide/saved-rows) to learn more. &#x20;
 
 The following GIF provides a quick visual example of the end user experience:
 
-<figure><img src="../../../../.gitbook/assets/4saveRows.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/4saveRows.gif" alt=""><figcaption></figcaption></figure>
 
 ## **Saving rows workflow for developers**
 
@@ -132,7 +138,7 @@ The following describes the recommended workflow to implement saved rows in a ho
 
 ## Displaying rows <a href="#displaying-rows" id="displaying-rows"></a>
 
-To display saved rows in the Rows tab, add them to the list of rows available to users by leveraging [Custom Rows](../pre-build/implement-custom-rows.md).
+To display saved rows in the Rows tab, add them to the list of rows available to users by leveraging [Custom Rows](../../pre-build/implement-custom-rows.md).
 
 The rows are organized in lists that are displayed based on your rows configuration. Use the metadata submitted by your users to categorize them, creating multiple lists of rows: this can significantly improve the user experience.
 
@@ -211,13 +217,13 @@ rowsConfiguration: {
 }
 ```
 
-For more information on setting a category's maximum rows, visit[ Manage Reusable Content](../../manage.md).
+For more information on setting a category's maximum rows, visit[ Manage Reusable Content](../../../manage.md).
 
 ## Saved Row Management Actions
 
 Accessing, and organizing saved rows is intuitive with Saved Rows Management. With this feature, we’ve introduced a new action in the list of saved rows that your application can intercept to handle changes in this list itself. This means you can now delete, rename, or re-organize your saved rows, right inside the builder.
 
-Visit the [Saved Row Management Actions section of the Manage Reusable page](../../manage.md#saved-row-management-actions) to learn how to configure edit and delete row options for your application's end users.
+Visit the [Saved Row Management Actions section of the Manage Reusable page](../../../manage.md#saved-row-management-actions) to learn how to configure edit and delete row options for your application's end users.
 
 ## Loading External Rows with an Instance Method <a href="#loading-external-rows-with-an-instance-method" id="loading-external-rows-with-an-instance-method"></a>
 
@@ -372,7 +378,7 @@ Useful to create filters, management, search, and in general to organize the con
 
 ## Metadata Content Dialog <a href="#metadata-content-dialog" id="metadata-content-dialog"></a>
 
-The metadata content dialog is triggered by the save icon in Beefree SDK. This step is required to provide Beefree SDK with information about the row, such as its name and/or id.  The Metadata Content Dialog is added in the same manner as other Content Dialogs, such as Merge Tags.  Please review the [Content Dialog](../../../../other-customizations/advanced-options/content-dialog.md) section for more details about how to use Beefree SDK’s Content Dialog feature.
+The metadata content dialog is triggered by the save icon in Beefree SDK. This step is required to provide Beefree SDK with information about the row, such as its name and/or id.  The Metadata Content Dialog is added in the same manner as other Content Dialogs, such as Merge Tags.  Please review the [Content Dialog](../../../../../other-customizations/advanced-options/content-dialog.md) section for more details about how to use Beefree SDK’s Content Dialog feature.
 
 An example Metadata Content Dialog configuration can be found below.
 
@@ -434,8 +440,8 @@ onSaveRow: function (rowJSON, rowHTML, pageJSON) {
 
 ## Edit Saved Rows <a href="#edit-saved-rows" id="edit-saved-rows"></a>
 
-With [Edit Single Row mode](../../sync/initialize-edit-single-row-mode.md) you can offer an easy way for your end users to edit saved rows individually, using a tailored UI built to modify the row structure, content, and style settings without worrying about messing up with the overall design of the email campaign, landing page, or pop-up.
+With [Edit Single Row mode](../../../sync/initialize-edit-single-row-mode.md) you can offer an easy way for your end users to edit saved rows individually, using a tailored UI built to modify the row structure, content, and style settings without worrying about messing up with the overall design of the email campaign, landing page, or pop-up.
 
-<figure><img src="../../../../.gitbook/assets/6image1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/6image1.png" alt=""><figcaption></figcaption></figure>
 
-Enabling a more modular approach to saved rows simplifies how users can design and act on content: updating small details in a saved row, saving it, then deploying it to existing templates becomes a matter of minutes. If you want to learn more about how to leverage Edit Single Row mode to safely modify a Saved Row, take a look at the [dedicated technical documentation](../../sync/initialize-edit-single-row-mode.md).
+Enabling a more modular approach to saved rows simplifies how users can design and act on content: updating small details in a saved row, saving it, then deploying it to existing templates becomes a matter of minutes. If you want to learn more about how to leverage Edit Single Row mode to safely modify a Saved Row, take a look at the [dedicated technical documentation](../../../sync/initialize-edit-single-row-mode.md).

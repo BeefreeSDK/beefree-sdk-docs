@@ -73,7 +73,7 @@ Visit the [Implement Hosted Saved Rows](create/save/implement-hosted-saved-rows.
 
 #### Self-hosted Saved Rows
 
-[Self-hosted Saved Rows](create/save/implement-self-hosted-saved-rows.md) are similar to Hosted Saved Rows on the frontend, but require you to connect your own database on the backend. This feature also provides you with more customization options on the frontend if you'd more granular control over customizing your end user's experience saving and managing rows.
+[Self-hosted Saved Rows](create/save/implement-self-hosted-saved-rows/) are similar to Hosted Saved Rows on the frontend, but require you to connect your own database on the backend. This feature also provides you with more customization options on the frontend if you'd more granular control over customizing your end user's experience saving and managing rows.
 
 &#x20;The following GIF shows an example of a customized modal for saving a row within an application. This modal uses both [saved rows](./#hosted-saved-rows) and [content dialog](../../other-customizations/advanced-options/content-dialog.md) for the customized experience.
 

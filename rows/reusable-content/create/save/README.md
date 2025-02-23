@@ -44,7 +44,7 @@ When enabled, Saved Rows allow end users to select a row in their design and sav
 3. Storing the row’s structure, content, and styles as a JSON document in your chosen storage solution.\*
 
 {% hint style="info" %}
-\*Beefree SDK offers [two paths](./#activation-paths-for-saved-rows) for this: [Hosted Saved Rows](implement-hosted-saved-rows.md) or [Self-hosted Saved Rows](implement-self-hosted-saved-rows.md).
+\*Beefree SDK offers [two paths](./#activation-paths-for-saved-rows) for this: [Hosted Saved Rows](implement-hosted-saved-rows.md) or [Self-hosted Saved Rows](implement-self-hosted-saved-rows/).
 {% endhint %}
 
 #### Using Saved Rows
@@ -64,6 +64,6 @@ There are two paths you can take to activate and store Saved Rows for your appli
 * [Hosted Saved Rows](implement-hosted-saved-rows.md)
 * [Self-Hosted Saved Rows](../../../storage/self-hosted-saved-rows.md)
 
-Both paths provide their own set of benefits and limitations. It is important to familiarize yourself with the benefits and limitations of each option to choose the storage and activation solution that is best for you and your application's needs. For more detailed information on both activation routes, reference [Implement Hosted Saved Rows](implement-hosted-saved-rows.md) and Implement [Self-Hosted Saved Rows](implement-self-hosted-saved-rows.md).
+Both paths provide their own set of benefits and limitations. It is important to familiarize yourself with the benefits and limitations of each option to choose the storage and activation solution that is best for you and your application's needs. For more detailed information on both activation routes, reference [Implement Hosted Saved Rows](implement-hosted-saved-rows.md) and Implement [Self-Hosted Saved Rows](implement-self-hosted-saved-rows/).
 
 Learn more about [Storage for Reusable Content](../../../storage/) to discover the best option for you.

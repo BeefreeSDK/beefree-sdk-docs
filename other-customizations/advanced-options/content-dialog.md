@@ -748,7 +748,7 @@ The following code snippet configures a save row with a specific name and catego
 
 ```
 
-This response will provide metadata that is added to the row in the asset (email, page, popup) before it’s provided through the [Save Rows callback](../../rows/reusable-content/create/save/implement-self-hosted-saved-rows.md#save-rows-callback).
+This response will provide metadata that is added to the row in the asset (email, page, popup) before it’s provided through the [Save Rows callback](../../rows/reusable-content/create/save/implement-self-hosted-saved-rows/#save-rows-callback).
 
 The row name is the only required metadata and it’s displayed as the row title in the _Rows_ panel:
 
