@@ -14,11 +14,11 @@ A Release Candidate (RC) Environment is a crucial part of the deployment workflo
 
 The following list includes some of the most commonly referenced benefits of utilizing the Release Candidate Environment.
 
-* Risk Mitigation: Enterprise customers can validate new updates in a stable, production-like setting before they are fully deployed.
-* Enhanced Quality Assurance: QA teams can test features in real-world scenarios, catching regressions before broader release.
-* Predictable Deployment Schedule: A structured release cadence (RC → General → Delayed) ensures smoother rollouts with fewer surprises.
-* Reduced Need for Rollbacks: The phased approach minimizes critical failures in production, lessening the necessity for emergency rollbacks.
-* Customer Control: Enterprise customers have additional time to adjust workflows and prepare internal documentation before full adoption.
+* **Risk Mitigation:** Enterprise customers can validate new updates in a stable, production-like setting before they are fully deployed.
+* **Enhanced Quality Assurance:** QA teams can test features in real-world scenarios, catching regressions before broader release.
+* **Predictable Deployment Schedule:** A structured release cadence (RC → General → Delayed) ensures smoother rollouts with fewer surprises.
+* **Reduced Need for Rollbacks:** The phased approach minimizes critical failures in production, lessening the necessity for emergency rollbacks.
+* **Customer Control:** Enterprise customers have additional time to adjust workflows and prepare internal documentation before full adoption.
 
 ## How the Release Candidate Environment Works
 
