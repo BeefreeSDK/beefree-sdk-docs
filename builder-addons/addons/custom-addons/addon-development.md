@@ -119,8 +119,9 @@ Currently, you may choose between the following content types:
 
 * **Image**:\
   Will insert an image module on the stage, and show the properties of an image content block in the sidebar. Adjusting the properties allows for customization of the content type.
-* **HTML**:\
-  Will insert an HTML module on the stage, and show the properties of a custom HTML content block in the sidebar, except the HTML text input will be hidden. That’s because the HTML cannot be edited outside of the content dialog or iframe made available by your AddOn.
+*   **HTML**:&#x20;
+
+    Inserts an HTML module on the stage and displays its properties in the sidebar. However, the HTML text input field will not be visible because the HTML content can only be edited through the content dialog or an iframe provided by your AddOn.
 * **Mixed**:\
   Will insert a module on the stage that allows for loading of different content blocks with a single action.
 * **Row**:\

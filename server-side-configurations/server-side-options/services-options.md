@@ -84,6 +84,8 @@ When enabled, adds an option in the file manager to import images from different
 
 When enabled, an editor to apply image effects and transformations is available in the image module and row background images.
 
+## Commenting
+
 This feature allows users to leave comments and start discussion threads inside an email or page, to collaborate asynchronously. [More on Commenting](https://docs.beefree.io/commenting/).
 
 ## Reverse stacking on mobile <a href="#reverse-stacking-on-mobile" id="reverse-stacking-on-mobile"></a>
