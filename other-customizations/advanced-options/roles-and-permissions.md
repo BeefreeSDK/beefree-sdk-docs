@@ -76,15 +76,15 @@ To accomplish the above, a user with higher permissions needs to:
 
 Log into the [Beefree SDK Console](https://dam.beefree.io/devmain) and click on **Manage roles** under Application configuration for the selected application:
 
-<figure><img src="../../.gitbook/assets/7bee_plugin_user_roles.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.40.52.png" alt=""><figcaption></figcaption></figure>
 
 In the Manage Roles section you’ll be able to create different user roles and set their permissions. For example, your user roles could be Brand Manager, Account Manager, Junior Editor, etc depending on your needs and nomenclature. For each user role you create, you can set and restrict editing permissions, such as the ability to lock or edit rows and content blocks, as you can see below:
 
-<figure><img src="../../.gitbook/assets/8bee_plugin_user_roles_permissions.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.41.17.png" alt=""><figcaption></figcaption></figure>
 
 Once you create your user roles you’ll be able to see them listed:
 
-<figure><img src="../../.gitbook/assets/9bee_plugin_roles.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.42.02.png" alt=""><figcaption></figcaption></figure>
 
 ## How to use the Role Hash parameter <a href="#how-to-use-the-role-hash-parameter" id="how-to-use-the-role-hash-parameter"></a>
 

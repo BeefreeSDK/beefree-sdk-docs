@@ -82,7 +82,7 @@ When active, the feature is available to all users by default. You can manage wh
 
 When the feature is ON, new permissions are available for you to configure when you create or edit a Role.
 
-<figure><img src="../../.gitbook/assets/6DC_useroles.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.44.11.png" alt=""><figcaption></figcaption></figure>
 
 A basic set up allows you to have 3 user levels:
 

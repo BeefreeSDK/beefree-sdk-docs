@@ -10,27 +10,27 @@ You can **use** ready-to-go AddOns to extend the functionality of Beefree SDK (y
 
 To browse and install existing AddOns, log into the [Beefree SDK Console](https://dam.beefree.io/devmain) and click on _Details_ to navigate to the application details page.
 
-In the lower part of the page, locate the _Application configuration_ section and click on AddOns.
+In the lower part of the page, locate the **Application configuration** section and click on AddOns.
 
-<figure><img src="../../../.gitbook/assets/Bee_Dev_Portal_AddOns.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-13 at 15.07.43.png" alt=""><figcaption></figcaption></figure>
 
 You will be taken to a page that lists the AddOns that have been installed for this application. If you are just getting started, the list will be empty.
 
-Click on _Browse Partner AddOns_ to get the list of ready-to-install AddOns. We call them _Partner AddOns_ because they were developed by companies that partnered with us to extend Beefree SDK’s core functionality.
+Click on **Browse Partner AddOns** to get the list of ready-to-install AddOns. We call them **Partner AddOns** because they were developed by companies that partnered with us to extend Beefree SDK’s core functionality.
 
 You will deal directly with those companies with regard to signing up for an account, cost, support, etc.
 
-<figure><img src="../../../.gitbook/assets/2bee-plugin-addons-create-custom.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-13 at 15.08.33.png" alt=""><figcaption></figcaption></figure>
 
 You will instead click on _Create a Custom AddOn_ if you want to [build a new AddOn](https://docs.beefree.io/addon-development/) for Beefree SDK.
 
 ## Installing an AddOn <a href="#installing-an-addon" id="installing-an-addon"></a>
 
-When you click on the _Browse Partner AddOns_ button, a list of AddOns is displayed. You can browse them and select what you need to install.
+When you click on the **Browse Partner AddOns** button, a list of AddOns is displayed. You can browse them and select what you need to install.
 
-After installing a Partner AddOn, you will need to configure it by clicking on the _Edit_ action. A form will be displayed.
+After installing a Partner AddOn, you will need to configure it by clicking on the **Edit** action. A form will be displayed.
 
-<figure><img src="../../../.gitbook/assets/3partnerAddOnsetup-1024x741.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-13 at 15.09.51.png" alt=""><figcaption></figcaption></figure>
 
 At the top of the form you will find the AddOn name and some links to the AddOn documentation. If any signup is required, that is the company that you will need to contact.
 

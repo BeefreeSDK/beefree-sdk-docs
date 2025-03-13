@@ -2,7 +2,7 @@
 description: Learn more about AddOns at a high-level.
 ---
 
-# 🔍 AddOns Overview
+# AddOns Overview
 
 ## Why AddOns? <a href="#why-addons" id="why-addons"></a>
 

@@ -4,7 +4,7 @@
 
 When you create an application in the [Beefree SDK Console](https://dam.beefree.io/devmain), you’ll be asked to select either Page or Email Builder. Paid applications allow you to create child development applications, to ease new feature testing, development, and maintenance.
 
-<figure><img src="../../.gitbook/assets/Applications-in-Dev-portal.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.07.55.png" alt=""><figcaption></figcaption></figure>
 
 Page and Email builders **share the same core functionalities**, including authentication and configuration. If you already integrated our Email builder, you can re-use most of your work by using the **same configuration and callbacks**. If this is your first approach to our builders, just follow the [Installation section in our documentation](../../getting-started/readme/installation/). All the documentation in this site applies to both products, except where noted.
 

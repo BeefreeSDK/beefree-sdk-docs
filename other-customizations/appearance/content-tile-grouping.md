@@ -91,4 +91,4 @@ If you want to organize or include AddOns, and Custom AddOns under a custom grou
 
 Please note, the AddOn needs to be enabled to appear in the sidebar.
 
-<figure><img src="../../.gitbook/assets/2Screenshot-2022-09-29-at-13.56.41.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.53.06.png" alt=""><figcaption></figcaption></figure>

@@ -2,14 +2,13 @@
 description: >-
   Learn more about AddOn options within Beefree SDK and how you can use them to
   offer your end users extended features and functionality.
-icon: square-plus
 ---
 
 # AddOns
 
 Beefree SDK includes [Partner AddOns](partner-addons/) and [Custom AddOns](custom-addons/) that you can incorporate into your application. At a high-level, these AddOns enable you to add extended functionality and capabilities to your application. These extended functionalities empower you to customize your end users' experience based on their interests and the desired tasks they are trying to perform with your app. The AddOns work as additional features you can opt in for on top of the base features that come with your [Beefree SDK plan type](https://developers.beefree.io/pricing-plans).
 
-There are two types of AddOns: [Partner AddOns](partner-addons/) and [Custom AddOns](custom-addons/). Partner AddOns can easily be integrated with your application in a matter of minutes by installing them inside of the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu). They are available for the following [Beefree SDK plan types](https://developers.beefree.io/pricing-plans):
+There are two types of AddOns: [Partner AddOns](partner-addons/) and [Custom AddOns](custom-addons/). Partner AddOns can easily be integrated with your application in a matter of minutes by installing them inside of the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu). They are available for the following [Beefree SDK plan types](https://developers.beefree.io/pricing-plans):
 
 * Essentials
 * Core

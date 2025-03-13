@@ -4,7 +4,7 @@ description: >-
   custom built AddOn.
 ---
 
-# 🛠️ Custom AddOns
+# Custom AddOns
 
 {% hint style="info" %}
 This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Core or Essentials plan, [upgrade a development application](../../../getting-started/readme/development-applications.md) for free to try this and other Superpowers-level features.
@@ -48,10 +48,10 @@ Of course, there are exceptions to this requirement.
 
 Log into the [Beefree SDK Console](https://dam.beefree.io/devmain) and locate any application that is on the Superpowers or Enterprise plans. Click on _Details_ to navigate to the application details page. In the lower part of the page, locate the _Application configuration_ section and click on AddOns.
 
-<figure><img src="../../../.gitbook/assets/2bee-plugin-addons-create-details-icon-1024x766.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-13 at 15.01.17.png" alt=""><figcaption></figcaption></figure>
 
 You will be taken to a page that lists the addons that have been installed for this application. Since you are just getting started, the list is likely empty. Click on _Create a custom addon_ to start the process of creating a Custom AddOn.
 
-<figure><img src="../../../.gitbook/assets/3Screenshot-2022-06-27-at-13.59.22.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-13 at 15.01.53.png" alt=""><figcaption></figcaption></figure>
 
 Refer to the [AddOn Development documentation](addon-development.md) for all the details on building your addon.

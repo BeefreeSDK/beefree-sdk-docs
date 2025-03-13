@@ -4,7 +4,7 @@ description: >-
   AddOns.
 ---
 
-# ❓ AddOn FAQs
+# AddOn FAQs
 
 ## What is an AddOn?
 

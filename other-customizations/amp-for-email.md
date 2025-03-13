@@ -33,7 +33,7 @@ To do so:
 * Click view more under **Application configuration**.
 * In the AMP Content section, toggle **Enable AMP Carousel** ON and click the **Save** button to activate Commenting for the application.
 
-<figure><img src="../.gitbook/assets/2Dev-Portal-AMP-toggle.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/CleanShot 2025-03-13 at 14.55.59.png" alt=""><figcaption></figcaption></figure>
 
 Next, to activate the AMP Carousel when launching the builder, you will need to initialize your Beefree application with an AMP-compatible workspace.
 

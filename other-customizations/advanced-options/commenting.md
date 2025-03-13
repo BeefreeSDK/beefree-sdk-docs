@@ -100,13 +100,9 @@ Improved accessibility to in-line threads. Hover the mouse over the comment icon
 
 Clicking on **< All comments** in the top section will bring up a list of all comment threads, indicating which ones have been resolved and which ones are still open. Contributors can search inside comments and filter out solved threads, or threads that were part of deleted content. Deleted and hidden comments will be filtered automatically.
 
-![All comments](https://docs.beefree.io/wp-content/uploads/2020/09/All-Comments.png)
-
 To go back to the editor sidebar, contributors can close the Commenting panel by clicking the **X** icon in the upper right, or they can just click on another row or content block in the stage.
 
 Quickly reopen resolved threads by adding a new comment, expand threads with a click, and show a comment thread preview straight from the content area.
-
-![](https://docs.beefree.io/wp-content/uploads/2022/04/commenting\_resolve-high.gif)
 
 ## **Copy comment text and paste it to content area**
 

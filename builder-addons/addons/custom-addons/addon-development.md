@@ -33,7 +33,7 @@ The process all starts in the [Beefree SDK Console](https://dam.beefree.io/devma
 
 When you create a new Custom AddOn, you will be prompted to enter some information through the AddOn setup form. Depending on the _method_ that you choose, the number of fields in the form will change.
 
-<figure><img src="../../../.gitbook/assets/Custom-AddOn-setup-1024x743.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-13 at 15.04.33.png" alt=""><figcaption></figcaption></figure>
 
 * **Name**:\
   The name of the AddOn is saved in the dashboard. This is not the name used for the _tile_ in the Beefree editor’s _Content_ tab but rather the internal name visible to other developers. In other words, it will not be shown to end-users of the editor.
@@ -66,7 +66,7 @@ When you create a new Custom AddOn, you will be prompted to enter some informati
 
 If you are using the **iFrame method**, some **additional fields** are shown on the form.
 
-<figure><img src="../../../.gitbook/assets/2iframeform-1024x787.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-13 at 15.05.04.png" alt=""><figcaption></figcaption></figure>
 
 * **Iframe URL** – Required\
   The URL that will be loaded inside the Iframe.

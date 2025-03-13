@@ -103,11 +103,11 @@
 ## Builder AddOns
 
 * [AddOns](builder-addons/addons/README.md)
-  * [🔍 AddOns Overview](builder-addons/addons/addons-overview.md)
-  * [🛠️ Custom AddOns](builder-addons/addons/custom-addons/README.md)
+  * [AddOns Overview](builder-addons/addons/addons-overview.md)
+  * [Custom AddOns](builder-addons/addons/custom-addons/README.md)
     * [AddOn Development](builder-addons/addons/custom-addons/addon-development.md)
     * [Contribute to the Partner AddOn Marketplace](builder-addons/addons/custom-addons/contribute-to-the-partner-addon-marketplace.md)
-  * [🤝 Partner AddOns](builder-addons/addons/partner-addons/README.md)
+  * [Partner AddOns](builder-addons/addons/partner-addons/README.md)
     * [Partner AddOns directory](builder-addons/addons/partner-addons/partner-addons-directory.md)
     * [Installing Partner AddOns](builder-addons/addons/partner-addons/installing-partner-addons.md)
     * [DeepL](builder-addons/addons/partner-addons/deepl.md)
@@ -125,8 +125,8 @@
       * [Token Upselling](builder-addons/addons/partner-addons/ai-writing-assistant/token-upselling.md)
       * [Apply a Brand Tone](builder-addons/addons/partner-addons/ai-writing-assistant/apply-a-brand-tone.md)
     * [Custom AI Writing Assistant](builder-addons/addons/partner-addons/custom-ai-writing-assistant.md)
-  * [🎨 AddOns Configuration](builder-addons/addons/addons-configuration.md)
-  * [❓ AddOn FAQs](builder-addons/addons/addon-faqs.md)
+  * [AddOns Configuration](builder-addons/addons/addons-configuration.md)
+  * [AddOn FAQs](builder-addons/addons/addon-faqs.md)
 
 ## Rows
 

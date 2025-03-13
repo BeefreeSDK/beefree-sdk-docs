@@ -11,7 +11,7 @@ If you're on the Essentials plan, [upgrade a development application](../../gett
 
 This Beefree SDK configuration allows you to change the builder’s appearance when rendered within your application so that it will blend even more seamlessly with the rest of your user interface.
 
-<figure><img src="../../.gitbook/assets/2custom_look_dev-1024x626.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.53.58.png" alt=""><figcaption></figcaption></figure>
 
 Technically speaking, it allows you to change some parts of the CSS (Cascading Style Sheets) that controls the look & feel of the editor. If you want to use your own CSS, please refer to our [Custom CSS](custom-css/) feature.
 
@@ -21,7 +21,7 @@ To change the builder’s appearance with just one click – and to familiarize 
 
 You can apply one of these themes as is, or use them as a starting point. And you can roll back to the default theme at any time, if things go wrong.
 
-<figure><img src="../../.gitbook/assets/3themes-1024x398 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.54.25.png" alt=""><figcaption></figcaption></figure>
 
 Note that themes will **not be applied automatically**, but rather will change the Look & feel values displayed in the lower part of the page.
 
@@ -31,7 +31,7 @@ Once you’re happy with your selection, press **Save** to apply the new theme t
 
 The properties that make up a theme are divided into sections for clarity and easy of use.
 
-<figure><img src="../../.gitbook/assets/4settings-1024x522.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.54.58.png" alt=""><figcaption></figcaption></figure>
 
 ### Available settings explained <a href="#available-settings-explained" id="available-settings-explained"></a>
 

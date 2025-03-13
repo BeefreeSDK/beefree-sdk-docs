@@ -153,7 +153,7 @@ In this section, you can activate **restrictions for the file manager**:
 * Specify which **file formats** your users can upload in File Manager.
 * Set a **maximum allowed size**, different from the default of **20MB**.
 
-<figure><img src="../../.gitbook/assets/3File-manager-limitations.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.38.45.png" alt=""><figcaption></figcaption></figure>
 
 Please note that the first option will not ask for file extensions, but will instead present file categories such as **image**, **video**, **text**, etc. We have mapped these categories to the most used MIME types that can be referenced in HTML documents.
 

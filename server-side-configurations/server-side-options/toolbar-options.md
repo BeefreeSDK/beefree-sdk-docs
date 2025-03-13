@@ -11,7 +11,7 @@ In the Toolbar Options tab you can:
 * control individual settings that affect the top toolbar in the builder
 * decide whether to hide the toolbar completely
 
-<figure><img src="../../.gitbook/assets/bee_plugin_app_config_toolbar.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.33.00.png" alt=""><figcaption></figcaption></figure>
 
 The toolbar contains all the actions not related directly with content edition, like save, send a test or preview.
 

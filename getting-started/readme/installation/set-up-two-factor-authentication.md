@@ -13,7 +13,7 @@ When 2FA is set up, users will need to:
 
 If you’re an account owner (i.e. the user who created the Beefree SDK account), you may require all account users to use two-factor authentication to log in. To do so, go to the _Setting & Security_ section in your personal area and enable _Require two-factor authentication at login_.
 
-<figure><img src="../../../.gitbook/assets/settings-and-security.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-13 at 13.53.49.png" alt=""><figcaption></figcaption></figure>
 
 After saving the setting, you will be prompted to scan a QR code with a 2FA application to generate a security token to complete the setup.
 
@@ -31,8 +31,8 @@ When adding or editing a user, you may also decide to turn on or off 2FA for tha
 
 If 2FA is OFF at the account level, additional users, i.e. admins, can turn on 2FA for themselves, for their peace of mind. They can go to the “Profile” section of their personal area and turn it on.
 
-<figure><img src="../../../.gitbook/assets/2fa_users_on.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-13 at 13.55.06.png" alt=""><figcaption></figcaption></figure>
 
-Instead, if 2FA is ON at the account level, admins cannot turn it off from the “Profile” page and must contact their account owner.
-
-<figure><img src="../../../.gitbook/assets/2Xfa-on-account-for-users.png" alt=""><figcaption></figcaption></figure>
+{% hint style="info" %}
+**Note:** Instead, if 2FA is ON at the account level, admins cannot turn it off from the “Profile” page and must contact their account owner.
+{% endhint %}

@@ -39,11 +39,11 @@ To use this option you need to set-up two additional folders:
 
 ## S3 configuration <a href="#s3-configuration" id="s3-configuration"></a>
 
-This section discusses how you can configure your own custom S3 bucket within the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu), and also provides an example JSON of the Permission policy.&#x20;
+This section discusses how you can configure your own custom S3 bucket within the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu), and also provides an example JSON of the Permission policy.&#x20;
 
 ### Configure Access keys in the Developer Console
 
-Prior to configuring your custom S3 bucket, ensure you configure Access keys in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu).&#x20;
+Prior to configuring your custom S3 bucket, ensure you configure Access keys in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).&#x20;
 
 Take the following steps to configure Access keys in the Developer Console:
 
@@ -57,7 +57,7 @@ Take the following steps to configure Access keys in the Developer Console:
 6. Complete the required fields.\*
 7. Click the **Test S3 settings** button.
 
-\*The following image shows an example of the required fields within the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu) for configuring your own S3 bucket:
+\*The following image shows an example of the required fields within the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu) for configuring your own S3 bucket:
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2024-09-06 at 14.14.27@2x.png" alt=""><figcaption><p>Image of required fields to configure your own S3 bucket within the Developer Console.</p></figcaption></figure>
 
@@ -131,7 +131,7 @@ If you are using a Custom AWS S3 Bucket, take the following steps to enable this
 
 Take the following steps to enable the Move icon for your end users:
 
-1. Log in to the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu).
+1. Log in to the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
 2. Navigate to the application you'd like to activate it for.
 3. Click on the **Details** button.
 4. Select the **View more** option located under **Application configuration**.
@@ -140,7 +140,7 @@ Take the following steps to enable the Move icon for your end users:
 
 The **Move** file option will automatically become available for your end users.
 
-<figure><img src="../../../.gitbook/assets/CleanShot 2024-10-10 at 16.27.45.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-13 at 14.35.11.png" alt=""><figcaption></figcaption></figure>
 
 ### How File Name Conflicts Are Handled
 

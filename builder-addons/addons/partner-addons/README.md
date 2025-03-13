@@ -4,7 +4,7 @@ description: >-
   Developer Console, and how to integrate them into your application.
 ---
 
-# 🤝 Partner AddOns
+# Partner AddOns
 
 {% hint style="info" %}
 Partner AddOns are available for [Beefree SDK paid plan types](https://developers.beefree.io/pricing-plans).
@@ -12,17 +12,17 @@ Partner AddOns are available for [Beefree SDK paid plan types](https://developer
 
 ## What are Partner AddOns? <a href="#introduction" id="introduction"></a>
 
-Partner AddOns can easily be integrated with your application in a matter of minutes by installing them inside of the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu). You can reference available Partner AddOns inside of the [Partner AddOn Directory](partner-addons-directory.md). If the AddOn with the functionality you are looking for is not offered within the Partner Directory, you also have the option to create your own [Custom AddOn](../custom-addons/).
+Partner AddOns can easily be integrated with your application in a matter of minutes by installing them inside of the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu). You can reference available Partner AddOns inside of the [Partner AddOn Directory](partner-addons-directory.md). If the AddOn with the functionality you are looking for is not offered within the Partner Directory, you also have the option to create your own [Custom AddOn](../custom-addons/).
 
 At a high-level, these AddOns enable you to add extended functionality and capabilities to your application. These extended functionalities empower you to customize your end users' experience based on their interests and the desired tasks they are trying to perform with your app. The AddOns work as additional features you can opt in for on top of the base features that come with your [Beefree SDK plan type](https://developers.beefree.io/pricing-plans).
 
 ## Where can I find the Partner AddOns Marketplace?
 
-You can find the Partner AddOns Marketplace within the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu).
+You can find the Partner AddOns Marketplace within the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
 
 Take the following steps to access the Partner AddOns Marketplace:
 
-1. Log in to your [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu).
+1. Log in to your [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
 2. Navigate to the application you'd like to add a Partner AddOn to.
 3. Click on the **Details** button.
 4.  Navigate to **AddOns** and click **View more**.
@@ -35,7 +35,7 @@ Take the following steps to access the Partner AddOns Marketplace:
 **Note:** Partner AddOns are very intutive and quick to install. For steps on how to install a Partner AddOn, navigate to [Installing Partner AddOns](installing-partner-addons.md).
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/CleanShot 2024-09-06 at 15.42.09@2x.png" alt=""><figcaption><p>Image of Partner AddOns within the Partner AddOn Marketplace.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-13 at 15.06.11.png" alt=""><figcaption></figcaption></figure>
 
 ## How soon is the functionality available to my end users?
 

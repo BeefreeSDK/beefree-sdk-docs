@@ -15,7 +15,7 @@ To obtain an API Key, take the following steps:
 
 Your API key will appear under the **Content services API** section of your application details.
 
-<figure><img src="../../.gitbook/assets/CSAPI_in_dev_portal.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.58.00.png" alt=""><figcaption></figcaption></figure>
 
 The Content Services API uses API Keys to authenticate requests for resources.  You can manage your API Keys within the Beefree SDK Console.  All requests must be made over HTTPS and contain the following HTTP Header:
 
@@ -68,9 +68,9 @@ The following section provides detailed information for each of the resources as
 
 **URL:** `https://api.getbee.io/v1/{collection}/html`
 
-{% swagger src="../../.gitbook/assets/html_endpoint.yaml" path="/v1/{collection}/html" method="post" %}
+{% openapi src="../../.gitbook/assets/html_endpoint.yaml" path="/v1/{collection}/html" method="post" %}
 [html_endpoint.yaml](../../.gitbook/assets/html_endpoint.yaml)
-{% endswagger %}
+{% endopenapi %}
 
 
 
@@ -82,17 +82,17 @@ Include the optional `newbutton` query string parameter and set its value to `tr
 
 **Endpoint:** `/message/plain-text`
 
-{% swagger src="../../.gitbook/assets/plain_text_endpoint.yaml" path="/v1/{collection}/plain-text" method="post" %}
+{% openapi src="../../.gitbook/assets/plain_text_endpoint.yaml" path="/v1/{collection}/plain-text" method="post" %}
 [plain_text_endpoint.yaml](../../.gitbook/assets/plain_text_endpoint.yaml)
-{% endswagger %}
+{% endopenapi %}
 
 ### PDF <a href="#pdf" id="pdf"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/pdf`
 
-{% swagger src="../../.gitbook/assets/pdf_endpoint.yaml" path="/v1/{collection}/pdf" method="post" %}
+{% openapi src="../../.gitbook/assets/pdf_endpoint.yaml" path="/v1/{collection}/pdf" method="post" %}
 [pdf_endpoint.yaml](../../.gitbook/assets/pdf_endpoint.yaml)
-{% endswagger %}
+{% endopenapi %}
 
 {% hint style="info" %}
 **Note:** The response is a JSON string that will contain the URL of the temporary location of the PDF document. The file is available for 24 hours.
@@ -114,25 +114,25 @@ The HTML is rendered in a fixed window size of 1920x1080 to generate a screensho
 | height       | Integer | The image height in pixels. Default applies a proportional value based on the given width, keeping the image aspect ratio. When the value is not proportional to the given width, either will occur: If it’s higher, the proportional value applies, or, if it’s lower, the image is cropped. **Required** if size is not defined. |
 | file\_type\* | String  | Accepts jpg or png.                                                                                                                                                                                                                                                                                                                |
 
-{% swagger src="../../.gitbook/assets/image_endpoint.yaml" path="/v1/{collection}/image" method="post" %}
+{% openapi src="../../.gitbook/assets/image_endpoint.yaml" path="/v1/{collection}/image" method="post" %}
 [image_endpoint.yaml](../../.gitbook/assets/image_endpoint.yaml)
-{% endswagger %}
+{% endopenapi %}
 
 ### Merge <a href="#merge" id="merge"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/merge`
 
-{% swagger src="../../.gitbook/assets/merge_endpoint.yaml" path="/v1/{collection}/merge" method="post" %}
+{% openapi src="../../.gitbook/assets/merge_endpoint.yaml" path="/v1/{collection}/merge" method="post" %}
 [merge_endpoint.yaml](../../.gitbook/assets/merge_endpoint.yaml)
-{% endswagger %}
+{% endopenapi %}
 
 ### Merge Rows <a href="#merge" id="merge"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/merge-rows`
 
-{% swagger src="../../.gitbook/assets/merge_rows_endpoint.yaml" path="/v1/{collection}/merge-rows" method="post" %}
+{% openapi src="../../.gitbook/assets/merge_rows_endpoint.yaml" path="/v1/{collection}/merge-rows" method="post" %}
 [merge_rows_endpoint.yaml](../../.gitbook/assets/merge_rows_endpoint.yaml)
-{% endswagger %}
+{% endopenapi %}
 
 
 
@@ -144,17 +144,17 @@ When utilizing this feature, it's important to consider adding a handle to the m
 
 **URL:** `https://api.getbee.io/v1/{collection}/synced-rows`
 
-{% swagger src="../../.gitbook/assets/synced_rows_endpoint.yaml" path="/v1/{collection}/synced-rows" method="post" %}
+{% openapi src="../../.gitbook/assets/synced_rows_endpoint.yaml" path="/v1/{collection}/synced-rows" method="post" %}
 [synced_rows_endpoint.yaml](../../.gitbook/assets/synced_rows_endpoint.yaml)
-{% endswagger %}
+{% endopenapi %}
 
 ### Index <a href="#index" id="index"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/merge/index`
 
-{% swagger src="../../.gitbook/assets/merge_index_endpoint.yaml" path="/v1/{collection}/merge/index" method="post" %}
+{% openapi src="../../.gitbook/assets/merge_index_endpoint.yaml" path="/v1/{collection}/merge/index" method="post" %}
 [merge_index_endpoint.yaml](../../.gitbook/assets/merge_index_endpoint.yaml)
-{% endswagger %}
+{% endopenapi %}
 
 ## AI Collection
 
@@ -180,25 +180,25 @@ Prior to getting started with the resources in this collection, ensure you have 
 
 `v1/ai/metadata`
 
-{% swagger src="../../.gitbook/assets/metadata_endpoint.yaml" path="/v1/{collection}/metadata" method="post" %}
+{% openapi src="../../.gitbook/assets/metadata_endpoint.yaml" path="/v1/{collection}/metadata" method="post" %}
 [metadata_endpoint.yaml](../../.gitbook/assets/metadata_endpoint.yaml)
-{% endswagger %}
+{% endopenapi %}
 
 ### SMS <a href="#sms" id="sms"></a>
 
 `v1/ai/sms`
 
-{% swagger src="../../.gitbook/assets/sms_endpoint.yaml" path="/v1/{collection}/sms" method="post" %}
+{% openapi src="../../.gitbook/assets/sms_endpoint.yaml" path="/v1/{collection}/sms" method="post" %}
 [sms_endpoint.yaml](../../.gitbook/assets/sms_endpoint.yaml)
-{% endswagger %}
+{% endopenapi %}
 
 ### Summary
 
 `v1/ai/summary`
 
-{% swagger src="../../.gitbook/assets/summary_endpoint.yaml" path="/v1/{collection}/summary" method="post" %}
+{% openapi src="../../.gitbook/assets/summary_endpoint.yaml" path="/v1/{collection}/summary" method="post" %}
 [summary_endpoint.yaml](../../.gitbook/assets/summary_endpoint.yaml)
-{% endswagger %}
+{% endopenapi %}
 
 ## Conversion Collection
 
@@ -219,9 +219,9 @@ The Email to Page endpoint converts a JSON template created for email into a JSO
 * **Retain Comments and Secondary Language**\
   Comments and secondary language data in the email template are preserved in the conversion process.
 
-{% swagger src="../../.gitbook/assets/email-to-page-conversion.yaml" path="/v1/{collection}/email-to-page" method="post" %}
+{% openapi src="../../.gitbook/assets/email-to-page-conversion.yaml" path="/v1/{collection}/email-to-page" method="post" %}
 [email-to-page-conversion.yaml](../../.gitbook/assets/email-to-page-conversion.yaml)
-{% endswagger %}
+{% endopenapi %}
 
 ### Page to Email Conversion: Important Behaviors
 
@@ -250,7 +250,7 @@ The Page to Email endpoint transforms a JSON template designed for a web page in
 * **Handle Multi-Column Layouts**\
   The email builder supports up to 12 columns, which is compatible with the page builder's column configurations.
 
-{% swagger src="../../.gitbook/assets/page-to-emai-conversion.yaml" path="/v1/{collection}/page-to-email" method="post" %}
+{% openapi src="../../.gitbook/assets/page-to-emai-conversion.yaml" path="/v1/{collection}/page-to-email" method="post" %}
 [page-to-emai-conversion.yaml](../../.gitbook/assets/page-to-emai-conversion.yaml)
-{% endswagger %}
+{% endopenapi %}
 

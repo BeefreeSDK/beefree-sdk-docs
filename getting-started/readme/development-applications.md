@@ -61,4 +61,4 @@ Beefree SDK allows you to access next tier features within your development appl
 
 Development apps inherit the same plan that your production app is on. If you wish to test features that are available on a higher plan, go the application details and click “CHANGE PLAN” in the upper right.
 
-<figure><img src="../../.gitbook/assets/child-app-screenshot-1024x333.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 13.58.35.png" alt=""><figcaption></figcaption></figure>

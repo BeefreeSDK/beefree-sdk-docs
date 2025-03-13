@@ -8,11 +8,11 @@ description: Learn how to manage users within the Beefree SDK Developer Console.
 
 You can invite additional users to your Beefree SDK Console. To do so, go to _Manage users_ from the personal menu in the top right.
 
-<figure><img src="../../.gitbook/assets/Personal-menu-4.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.00.50.png" alt=""><figcaption></figcaption></figure>
 
 The user that initially created the account is identified as the account owner and can add users from this page.
 
-<figure><img src="../../.gitbook/assets/manage-users-3-1024x298.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.01.43.png" alt=""><figcaption></figcaption></figure>
 
 Additional users will be identified as admins. The owner may limit access to certain production apps when creating or editing an admin.
 

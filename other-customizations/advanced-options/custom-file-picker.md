@@ -21,7 +21,7 @@ contentDialog: {
 
 ```
 
-**The `handler` function** lets you use your own logic to retrieve the desired value, and it has a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise)-like signature.
+**The `handler` function** lets you use your own logic to retrieve the desired value, and it has a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)-like signature.
 
 If data from Beefree SDK is available, it will be sent in the `args` parameter (see below). Once the value is available, you must call the `resolve(value)` function to pass it to the editor. In case you want to cancel the operation, call the `reject()` function.
 
@@ -78,24 +78,19 @@ contentDialog: {
 
 ## List of modules
 
-The following is a list of all modules that are sent as part of the _args_ parameter:
+The following is a list of all modules that are sent as part of the **args** parameter:
 
-<table data-view="cards"><thead><tr><th>Modules</th></tr></thead><tbody><tr><td><strong>sidebar.link</strong></td></tr><tr><td><strong>buttonModule.link</strong></td></tr><tr><td><strong>imageModule.link</strong></td></tr><tr><td><strong>iconsModule.link</strong></td></tr><tr><td><strong>menuModule.link</strong></td></tr></tbody></table>
-
-<table data-view="cards"><thead><tr><th>Icons Module Icon</th></tr></thead><tbody><tr><td><strong>iconsModule.src</strong></td></tr></tbody></table>
-
-<table data-view="cards"><thead><tr><th>Social Module Icon</th></tr></thead><tbody><tr><td><strong>socialModule.src</strong></td></tr></tbody></table>
-
-<table data-view="cards"><thead><tr><th>Text Module Link</th></tr></thead><tbody><tr><td><strong>textModule.link</strong></td></tr></tbody></table>
-
-<table data-view="cards"><thead><tr><th>Image module URL</th></tr></thead><tbody><tr><td><strong>imageModule.src</strong></td></tr></tbody></table>
-
-<table data-view="cards"><thead><tr><th>Title module link</th></tr></thead><tbody><tr><td><strong>titleModule.link</strong></td></tr></tbody></table>
-
-<table data-view="cards"><thead><tr><th>Row background image URL</th></tr></thead><tbody><tr><td><strong>row.backgroundImage</strong></td></tr></tbody></table>
-
-<table data-view="cards"><thead><tr><th>Row background video URL</th></tr></thead><tbody><tr><td><strong>backgroundVideo.src</strong></td></tr></tbody></table>
-
-<table data-view="cards"><thead><tr><th>Special links: Text module toolbar</th></tr></thead><tbody><tr><td><strong>toolbar.specialLink</strong></td></tr></tbody></table>
-
-<table data-view="cards"><thead><tr><th>Special links: Sidebar</th></tr></thead><tbody><tr><td><strong>sidebar.specialLink</strong></td></tr></tbody></table>
+* `sidebar.link`
+* `buttonModule.link`
+* `imageModule.link`
+* `iconsModule.link`
+* `menuModule.link`
+* `iconsModule.src`
+* `socialModule.src`
+* `textModule.link`
+* `imageModule.src`
+* `titleModule.link`
+* `row.backgroundImage`
+* `backgroundVideo.src`
+* `toolbar.specialLink`
+* `sidebar.specialLink`

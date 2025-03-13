@@ -12,11 +12,11 @@ Instead of having to switch between different applications or tools, they can ac
 
 When you create an application in the [Beefree SDK Console](https://dam.beefree.io/devmain), you’ll have the option to create a File Manager application.
 
-<figure><img src="../../.gitbook/assets/file-manager-1-1024x136.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.30.26.png" alt=""><figcaption></figcaption></figure>
 
 Paid applications also include the option to create child development applications. These child applications can be used for new feature testing, development, and maintenance. By creating a child application, developers can easily test and iterate on new features without affecting the main application. This can help to minimize downtime and reduce the risk of introducing bugs or errors into the production environment.
 
-<figure><img src="../../.gitbook/assets/2Screenshot-2023-05-02-at-17.54.19-1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.31.10.png" alt=""><figcaption></figcaption></figure>
 
 The child applications can also be used for ongoing maintenance and updates. Instead of making changes directly to the production environment, developers can make updates and improvements in the child application, test them thoroughly, and then deploy the changes to the main application once they have been fully vetted. This can help to ensure that the main application remains stable and functional, even as new features and updates are introduced.
 

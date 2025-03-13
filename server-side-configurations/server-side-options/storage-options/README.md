@@ -9,7 +9,7 @@ When you configure a builder application, you have four options for image & file
 * **Your own AWS S3 bucket**: instead of using Beefree SDK’s AWS S3 bucket to store & deliver files, you can use your own. See [Configuring your own S3 bucket](configure-your-aws-s3-bucket.md).
 * **Your own file system**: if your application already has a place where images and other assets are stored, you can leverage it. This option is only available on Beefree SDK paid plans. See using [your file system](connect-your-file-storage-system.md).
 
-<figure><img src="../../../.gitbook/assets/87CAB3D3-C06A-4937-B79B-33EB8D659F9A_1_201_a.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-13 at 14.33.38 (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Custom File System Provider&#x20;
 
@@ -47,7 +47,7 @@ If you are using the Beefree AWS S3 Bucket, take the following steps to enable t
 If you are using your own AWS S3 bucket, take the following steps to activate the **Move File** feature:
 
 1. Ensure that your FSP is updated to the latest version.&#x20;
-2. Navigate to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu).
+2. Navigate to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
 3. Locate the **Move File** configuration toggle.
 4. Toggle the feature on.
 
@@ -69,7 +69,7 @@ If you exceed the 5TB monthly traffic allotment, we ask you to cover the cost of
 
 You can always see when the current period starts and ends in your application details, in the Statistics widget:
 
-<figure><img src="../../../.gitbook/assets/Bandwidth-usage.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-13 at 14.34.25.png" alt=""><figcaption></figcaption></figure>
 
 ### **I’m on an annual plan. If I exceed the traffic quota in a month, when will I be billed?**
 
