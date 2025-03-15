@@ -44,7 +44,7 @@ Before writing any code changes, ensure you first activate the **Self-hosted on 
 * Creating, configuring, and connecting your own database to store the saved rows data.
 * Creating CRUD operations with your own API endpoints.
 
-This is in contrast to the other toggle in the **Saved Rows** section of the **Application Configurations** within the Developer console, which [automatically provide a user interface for end user actions and stores row data](https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/save/implement-hosted-saved-rows).
+This is in contrast to the other toggle in the **Saved Rows** section of the **Application Configurations** within the Developer console, [Hosted Saved Rows](../implement-hosted-saved-rows.md), which [automatically provides a user interface for end user actions and stores row data](https://docs.beefree.io/beefree-sdk/rows/reusable-content/create/save/implement-hosted-saved-rows).
 
 Enabling this toggle is a prerequisite for all the integration steps outlined in the subsequent sections. Without this toggle, none of the custom hooks or API endpoints will function properly.
 
@@ -134,7 +134,6 @@ Next, you will create the user interface (using a framework like React) that int
 
 This step covers the following key tasks:
 
-* Create a React component (e.g., `SavedRowsEditor`) that will render the Beefree SDK editor.
 * Fetch saved rows and categories during the component's mounting phase.
 * Implement modal dialogs that capture user input (e.g., row name, category) and trigger backend updates.
 
@@ -213,7 +212,7 @@ This snippet demonstrates the creation of a modal dialog that collects user inpu
 
 **Code Snippet**
 
-The following code snippet shows the React Component Skeleton.
+The following code snippet shows an example interaction.
 
 ```typescript
 class SavedRowsEditor extends React.Component {
@@ -244,7 +243,7 @@ class SavedRowsEditor extends React.Component {
 
 **Additional Context**
 
-This step ties together your user interface with the Beefree SDK and backend. By using modal dialogs for CRUD actions, users can interact with the saved rows feature directly within the Beefree SDK editor. The React component handles data fetching and state updates, ensuring that the UI remains in sync with the backend.
+This step ties together your user interface with the Beefree SDK and backend. By using modal dialogs for CRUD actions, users can interact with the saved rows feature directly within the Beefree SDK editor.
 
 ### 4. Manage Metadata for Saved Rows
 
@@ -260,7 +259,7 @@ Managing metadata is critical for organizing and retrieving saved rows. Metadata
 
 **Code Snippet**
 
-The following code snippet shows an example of Updating External URLs.
+The following code snippet shows an example of updating external content URLs.
 
 ```typescript
 function updateExternalContentURLs(categories) {
@@ -409,17 +408,17 @@ componentDidMount() {
 
 **Additional Context**
 
-By establishing these fetch connections, the frontend remains dynamic and responsive. Changes in the backend are quickly reflected in the UI, which is crucial for maintaining a seamless user experience.
+By establishing these fetch connections, the frontend remains dynamic and responsive. Changes in the backend are quickly reflected in the UI.
 
 ### 8. Test Your Endpoints
 
 **Overview and Context**
 
-Before deploying your solution, it's critical to test all endpoints to verify that CRUD operations work as expected. Using tools like Postman or Insomnia allows you to simulate API requests and ensure that both the backend and frontend are interacting correctly. Comprehensive testing helps catch potential errors early.
+Before testing your Saved Rows implementation, it's important to test each endpoint to verify that the CRUD operations work as expected. Using tools like Postman or Insomnia allows you to make API requests and ensure that both the backend and frontend are interacting correctly.
 
 **Testing Steps**
 
-Take the following steps to test your endpoints.
+In this example, this step covers testing each of the following endpoints in Insomnia.
 
 * **GET /rows:** Verify that all saved rows are returned.
 * **GET /rows/:category:** Confirm that rows for a specific category are fetched.
@@ -434,11 +433,11 @@ By following this guide you have:
 
 1. Enabled self-hosted saved rows in your developer console.
 2. Configured the Beefree SDK with a custom `getRows` hook.
-3. Built a user-friendly React component with modals to save, edit, and delete rows.
+3. Built user-friendly modals with [Content Dialog](../../../../../other-customizations/advanced-options/content-dialog.md) to save, edit, and delete rows.
 4. Managed metadata (name and category) for each row, and integrated dynamic external content URLs into the Beefree SDK configuration.
-5. Created complete API endpoints (GET, POST, PUT, DELETE) on your Express backend.
+5. Created complete API endpoints (GET, POST, PUT, DELETE) on an Express backend.
 6. Set up an SQLite database (or your preferred database) to store row data.
-7. Connected your frontend to the backend using standard HTTP requests.
+7. Connected the frontend to the backend using standard HTTP requests.
 8. Tested your endpoints to ensure a smooth integration.
 
-Each step is interconnected: enabling the feature makes it available in Beefree SDK, the frontend's modals interact with backend endpoints, and the dynamic configuration ensures that data remains consistent and up-to-date. The full code files (including the complete React component, server code, and configuration files) are available in the [GitHub repository](https://github.com/mailupinc/beefree-sdk-self-hosted-saved-rows-demo). This guide shows smaller, focused snippets to help you quickly understand the implementation while leaving the complete examples for your reference in the repository.
+Each step is interconnected: enabling the feature makes it available in Beefree SDK, the frontend's modals interact with backend endpoints, and the dynamic configuration ensures that data remains consistent and up-to-date. The full code files (including the complete Beefree SDK configuration, server code, and database set up) are available in this [GitHub repository](https://github.com/mailupinc/beefree-sdk-self-hosted-saved-rows-demo). This guide shows more concise, focused snippets to help you quickly understand the implementation while leaving the complete examples for additional reference in the repository.

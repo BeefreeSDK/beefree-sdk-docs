@@ -186,22 +186,84 @@ This is a description of the form fields and what information you will need to p
 
 <table><thead><tr><th width="177.33333333333331">Parameter</th><th width="460">Description</th><th>Required</th></tr></thead><tbody><tr><td><strong>Custom url</strong></td><td>The hostname – typically a CDN – that will be prefixed to resources URLs referenced in the JSONs created with BEE.</td><td>No</td></tr><tr><td><strong>Bucket name</strong></td><td>The name you assigned to the bucket when you created it.</td><td>Yes</td></tr><tr><td><strong>Access key &#x26; Access secret key</strong></td><td>You can provide AWS Root Account Credentials or IAM User Credentials (we recommend the second option for security reasons). The provided account must have read and write access to the given bucket. <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">More about AWS credentials</a>.</td><td>Yes</td></tr><tr><td><strong>Select Region</strong></td><td>AWS region where you created the bucket. Uses EU as the default setting.</td><td>Yes</td></tr><tr><td><strong>Images Path</strong></td><td>The relative path (from the bucket root) to the images folder described above (use “/” symbol as path delimiter).</td><td>Yes</td></tr><tr><td><strong>Thumbnails Path</strong></td><td>The relative path (from the bucket root) to the thumbnails folder described above (use “/” symbol as path delimiter).</td><td>Yes</td></tr><tr><td><strong>Shared images path</strong></td><td>The relative path (from the bucket root) to the shared images folder described above. Cannot be the bucket root (use “/” symbol as path delimiter).</td><td>No</td></tr><tr><td><strong>Shared thumbnails Path</strong></td><td>The relative path (from the bucket root) to the shared thumbnails folder described above. Cannot be the bucket root (use “/” symbol as path delimiter).</td><td>No</td></tr></tbody></table>
 
-**Note:** If you change the custom URL, the new URL is immediately used for all images.
+{% hint style="warning" %}
+**Important:** If you change the custom URL, the new URL is immediately used for all images.
+{% endhint %}
 
-Example using single folders in the bucket root:
+### Steps to Configure Storage Paths for Single Folders in the Bucket Root
 
-<figure><img src="../../../.gitbook/assets/custom_bucket_s3_single_directory.jpg" alt=""><figcaption></figcaption></figure>
+To store images and thumbnails in separate folders at the root of your S3 bucket in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu), follow these steps:
 
-Example using single nested folders:
+1. **Configure the Images Path**
+   * **Field Name:** `Images path`
+   * **Example Value:** `your-images-folder`
+   * **Format:** Type the folder name where images should be stored.
+   * **Example:** `userlist`
+2. **Configure the Thumbnail Path**
+   * **Field Name:** `Thumbnail path`
+   * **Example Value:** `your-thumbnails-folder`
+   * **Format:** Type the folder name where thumbnails should be stored.
+   * **Example:** `usrlistthump`
+3. **Configure the Shared Images Path**
+   * **Field Name:** `Shared images path`
+   * **Example Value:** `your-shared-images-folder`
+   * **Format:** Type the folder name for shared images.
+   * **Example:** `usersShared`
+4. **Configure the Shared Thumbnails Path**
+   * **Field Name:** `Shared thumbnails path`
+   * **Example Value:** `your-shared-thumbnails-folder`
+   * **Format:** Type the folder name for shared thumbnails.
+   * **Example:** `usersSharedThumb`
+5. **Test the Configuration**
+   * Click **Test S3 settings** to validate the setup.
+   * If successful, your files will be stored in the specified root-level folders in your S3 bucket.
 
-<figure><img src="../../../.gitbook/assets/2custom_bucket_s3_multi_directories.jpeg" alt=""><figcaption></figcaption></figure>
+The following image shows an example of how to configure single folders in the bucket root inside of the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
 
-## Testing your settings <a href="#testing-your-settings" id="testing-your-settings"></a>
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-15 at 13.04.08.png" alt=""><figcaption></figcaption></figure>
+
+### Steps to Configure Storage Paths for Single Nested Folders in the Bucket Root
+
+To store images and thumbnails inside a **single nested folder** within your S3 bucket in the **Beefree SDK Developer Console**, complete the following fields using your preferred nested folder names in the correct format:
+
+**1. Images Path**
+
+* **Field Name:** `Images path`
+* **Example Value:** `inner/your-folder-name`
+* **Format:** Use a parent folder (for example, `inner/`) followed by the subfolder name where images should be stored.
+* **Example:** `inner/userlist`
+
+**2. Thumbnail Path**
+
+* **Field Name:** `Thumbnail path`
+* **Example Value:** `inner/your-thumbnail-folder-name`
+* **Format:** Use a parent folder (for example, `inner/`) followed by the subfolder name for thumbnails.
+* **Example:** `inner/usrlistthump`
+
+**3. Shared Images Path**
+
+* **Field Name:** `Shared images path`
+* **Example Value:** `inner/your-shared-images-folder-name`
+* **Format:** Use a parent folder (for example, `inner/`) followed by the subfolder name for shared images.
+* **Example:** `inner/usersShared`
+
+**4. Shared Thumbnails Path**
+
+* **Field Name:** `Shared thumbnails path`
+* **Example Value:** `inner/your-shared-thumbnails-folder-name`
+* **Format:** Use a parent folder (for example, `inner/`) followed by the subfolder name for shared thumbnails.
+* **Example:** `inner/usersSharedThumb`
+
+The following image shows an example of how to configure a single nested folder in the bucket root inside of the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-15 at 13.01.38.png" alt=""><figcaption></figcaption></figure>
+
+### Testing your settings <a href="#testing-your-settings" id="testing-your-settings"></a>
 
 The button will become active once all required fields have been correctly filled out. It allows you to test your settings before saving the updated configuration. We recommend that you do so before saving any changes.
 
 {% hint style="info" %}
-Remember to **save your changes** with the SAVE button at the top.
+Remember to **save your changes** with the **SAVE** button at the top.
 {% endhint %}
 
 ## Preparing thumbnails <a href="#preparing-thumbnails" id="preparing-thumbnails"></a>
