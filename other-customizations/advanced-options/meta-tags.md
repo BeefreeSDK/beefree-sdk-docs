@@ -130,6 +130,6 @@ Here is an example of what a language attribute inside Beefree SDK’s HTML outp
 
 ```javascript
 
-<html lang="en">
+<html lang="it-IT">
 
 ```
