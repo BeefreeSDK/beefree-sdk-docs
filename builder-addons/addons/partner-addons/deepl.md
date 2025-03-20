@@ -7,12 +7,12 @@ description: >-
 # DeepL
 
 {% hint style="info" %}
-The DeepL AddOn is only available for [Superpowers](https://developers.beefree.io/pricing-plans) and [Enterprise](https://developers.beefree.io/pricing-plans) plans.
+The DeepL AddOn is only available for [Superpowers](https://developers.beefree.io/pricing-plans) and [Enterprise](https://developers.beefree.io/pricing-plans) plans. Superpowers customers can add up to 6 translations per template. If you're on an Enterprise plan, you can add up to 20 translations.&#x20;
 {% endhint %}
 
 ## MLT Automatic Bulk Translation with DeepL
 
-The new [DeepL](https://www.deepl.com/en/translator) addOn available in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu) empowers your end users to translate all the translatable content within their designs using the new translate button. This feature requires that you have [Multi-language templates](../../../other-customizations/multi-language-templates.md) configured for your application, and that you have a DeepL API key. Once you configure both within your host application, your end users will be able to automatically translate the translatable content within the different language versions of their designs. Also, now your end users can have up to six different language versions of their designs. Visit the [Automatic Translations white label end user documentation](https://docs.beefree.io/end-user-guide/multi-language-templates/automatic-translations) to learn more about how this feature works for your application's end users.
+The new [DeepL](https://www.deepl.com/en/translator) addOn available in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu) empowers your end users to translate all the translatable content within their designs using the new translate button. This feature requires that you have [Multi-language templates](../../../other-customizations/multi-language-templates.md) configured for your application, and that you have a DeepL API key. Once you configure both within your host application, your end users will be able to automatically translate the translatable content within the additional language versions of their designs. If you are on the Superpowers plan, your end users can add up to 6 additional translations, and for Enterprise, your end users can add up to 20 additional translations. Visit the [Automatic Translations white label end user documentation](https://docs.beefree.io/end-user-guide/multi-language-templates/automatic-translations) to learn more about how this feature works for your application's end users.
 
 The following content types qualify as translatable content:
 
@@ -201,11 +201,11 @@ This section discusses the prerequisites and steps you need to take to get start
 
     **Note:** DeepL offers a [free tier](https://www.deepl.com/en/pro) for their plans. You can obtain an [API key from DeepL](https://www.deepl.com/en/pro) for free to get started with this feature.
 
-### Activate the addOn in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu)
+### Activate the addOn in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu)
 
 Take the following steps to activate this feature:
 
-1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu).
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
 2. Navigate to the application you'd like install the addOn in.
 3. Install the [DeepL](https://www.deepl.com/en/translator) addOn.
 4. Provide the requested details.

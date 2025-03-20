@@ -2,11 +2,13 @@
 
 {% hint style="info" %}
 Multi-language Templates are only available for [Superpower and Enterprise plans](https://developers.beefree.io/pricing-plans).
+
+Superpowers customers can add up to 6 translations per template. If you're on an Enterprise plan, you can add up to 20 translations.&#x20;
 {% endhint %}
 
 ## Overview
 
-Multi-language Templates (MLT) empower your end users to design customized experiences for their international audiences. Through the use of this feature, your end users will be able to select one default language, and up to six translations reflected in the top bar of their builder. Keep in mind that Multi-language Templates provide you with a means to translate template content, but _does not_ automatically translate the content for you.
+Multi-language Templates (MLT) empower your end users to design customized experiences for their international audiences. Through the use of this feature, your end users will be able to select one default language, and up to 20 translations reflected in the top bar of their builder. Keep in mind that Multi-language Templates provide you with a means to translate template content, but _does not_ automatically translate the content for you.
 
 MLT provides a translation infrastructure, but does not perform the translation for each language version of your template. You can integrate translations into your application for each language version using one of the following two methods:
 
@@ -112,7 +114,7 @@ templateLanguages: [
 
 ```
 
-**Note:** You can have up to six different versions of the design using one template.
+**Note:** If you're on a Superpowers plan, you can have up to six additional language versions of the design using one template. If you're on an Enterprise plan, you can add up to 20 translation languages.&#x20;
 
 {% hint style="info" %}
 Languages are defined with a value and a label. The label is what will be shown in the language drop-down inside the top bar. The value is a key that stores the translations in the JSON. It is used to set the corresponding language meta attribute for each translation.
