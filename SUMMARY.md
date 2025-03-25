@@ -161,3 +161,7 @@
   * [Template Validation and Update](resources/error-management/template-validation-and-update.md)
   * [Template validation and update errors](resources/error-management/template-validation-and-update-errors.md)
 * [Scheduled maintenances](resources/scheduled-maintenances.md)
+
+***
+
+* [HTML Importer Beta](html-importer-beta.md)

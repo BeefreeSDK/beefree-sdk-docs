@@ -1,0 +1,465 @@
+openapi: 3.0.0
+info:
+  title: HTML Importer
+  description: The HTML Importer API is an API built to easily convert HTML email
+    templates into Beefree's JSON format.
+  version: 1.0.0
+servers:
+- url: https://api.getbee.io
+  description: Base URL for the API
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Enter Dev Console API Key as Bearer token
+paths:
+  /v1/{collection}/html-to-json:
+    post:
+      summary: HTML Importer
+      description: The HTML Importer API is an API built to easily convert HTML email
+        templates into Beefree's JSON format.
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: collection
+        in: path
+        required: true
+        description: The collection ID or name
+        schema:
+          type: string
+      requestBody:
+        required: true
+        description: Request body for the endpoint
+        content:
+          text/html:
+            schema:
+              type: string
+            example: "<!DOCTYPE html>\n<html>\n  <head>\n\n    <!--[if gte mso 9]><xml>\n\
+              <o:OfficeDocumentSettings>\n<o:AllowPNG/>\n<o:PixelsPerInch>96</o:PixelsPerInch>\n\
+              </o:OfficeDocumentSettings>\n</xml><![endif]-->\n    <meta http-equiv=\"\
+              Content-Type\" content=\"text/html; charset=utf-8\" />\n    <meta http-equiv=\"\
+              X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\"\
+              \ content=\"width=device-width, initial-scale=1.0 \" />\n    <meta name=\"\
+              format-detection\" content=\"telephone=no\" />\n\n    <!--[if !mso]>\n\
+              <!-->\n    <style>\n      @import url('https://content.andomoney.com/email-assets/tropiline.css');\n\
+              \    </style>\n    <link href=\"https://content.andomoney.com/email-assets/gt_walsheim.css\"\
+              \ rel=\"stylesheet\" type=\"text/css\" />\n\n    <!--<![endif]-->\n\
+              \    <style type=\"text/css\">\n      body {\n        margin: 0;\n \
+              \       padding: 0;\n        -webkit-text-size-adjust: 100% !important;\n\
+              \        -ms-text-size-adjust: 100% !important;\n        -webkit-font-smoothing:\
+              \ antialiased !important;\n      }\n      img {\n        border: 0 !important;\n\
+              \        outline: none !important;\n      }\n      p {\n        Margin:\
+              \ 0px !important;\n        Padding: 0px !important;\n      }\n     \
+              \ table {\n        border-collapse: collapse;\n        mso-table-lspace:\
+              \ 0px;\n        mso-table-rspace: 0px;\n      }\n      td,\n      a,\n\
+              \      span {\n        border-collapse: collapse;\n        mso-line-height-rule:\
+              \ exactly;\n      }\n      .ExternalClass * {\n        line-height:\
+              \ 100%;\n      }\n      .el_defaultlink a {\n        color: inherit;\n\
+              \        text-decoration: none;\n      }\n      .el_defaultlink1 a {\n\
+              \        color: inherit;\n        text-decoration: underline;\n    \
+              \  }\n      .em_g_img+div {\n        display: none;\n      }\n     \
+              \ a[x-apple-data-detectors],\n      u+.el_body a,\n      #MessageViewBody\
+              \ a {\n        color: inherit;\n        text-decoration: none;\n   \
+              \     font-size: inherit;\n        font-family: inherit;\n        font-weight:\
+              \ inherit;\n        line-height: inherit;\n      }\n      @media only\
+              \ screen and (max-width:624px) {\n        .el_main_table {\n       \
+              \   width: 100% !important;\n        }\n        .el_wrapper {\n    \
+              \      width: 100% !important;\n        }\n        .el_hide {\n    \
+              \      display: none !important;\n        }\n        .el_full_img img\
+              \ {\n          width: 100% !important;\n          height: auto !important;\n\
+              \        }\n        .el_ptop {\n          padding-top: 20px !important;\n\
+              \        }\n        .el_pbottom {\n          padding-bottom: 20px !important;\n\
+              \        }\n        .el_h30 {\n          height: 30px !important;\n\
+              \        }\n        .el_h80 {\n          height: 80px !important;\n\
+              \        }\n        u+.el_body .el_full_wrap {\n          width: 100%\
+              \ !important;\n          width: 100vw !important;\n        }\n     \
+              \   .el_aside {\n          padding-left: 20px !important;\n        \
+              \  padding-right: 20px !important;\n        }\n        .el_ptrl {\n\
+              \          padding: 20px !important;\n        }\n        .el_clear {\n\
+              \          clear: both !important;\n          width: 100% !important;\n\
+              \          display: block !important;\n        }\n        .el_center\
+              \ {\n          text-align: center !important;\n        }\n      }\n\
+              \      @media screen and (max-width:480px) {\n        .el_font25 {\n\
+              \          font-size: 25px !important;\n          line-height: 32px\
+              \ !important;\n        }\n        .el_font15 {\n          font-size:\
+              \ 16px !important;\n          line-height: 28px !important;\n      \
+              \  }\n        .el_ptop40 {\n          padding-toptop: 40px !important;\n\
+              \        }\n        .el_ptop50 {\n          padding-top: 50px !important;\n\
+              \        }\n        .el_ptop30 {\n          padding-top: 30px !important;\n\
+              \        }\n        .el_ptop60 {\n          padding-top: 60px !important;\n\
+              \        }\n        .el_ptop40 {\n          padding-top: 40px !important;\n\
+              \        }\n      }\n    </style>\n  </head>\n  <body class=\"el_body\"\
+              \ style=\"margin:0px auto; padding:0px;\" bgcolor=\"#ffffff\">\n\n \
+              \   <!-- == Header Section == -->\n    <table width=\"100%\" border=\"\
+              0\" cellspacing=\"0\" cellpadding=\"0\" class=\"el_full_wrap\" bgcolor=\"\
+              #ffffff\" style=\"table-layout:fixed;\">\n      <tr>\n        <td align=\"\
+              center\" valign=\"top\">\n          <table align=\"center\" width=\"\
+              625\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" class=\"el_main_table\"\
+              \ style=\"width:625px; table-layout:fixed;\" bgcolor=\"#ffffff\">\n\
+              \            <tr>\n              <td align=\"center\" valign=\"top\"\
+              >\n                <table width=\"625\" border=\"0\" cellspacing=\"\
+              0\" cellpadding=\"0\" align=\"center\" style=\"width:625px;\" class=\"\
+              el_wrapper\">\n                  <tr>\n                    <td align=\"\
+              center\" valign=\"top\" style=\"padding:20px 27px 40px 28px;\" class=\"\
+              el_ptrl\">\n                      <table width=\"100%\" border=\"0\"\
+              \ cellspacing=\"0\" cellpadding=\"0\" align=\"center\">\n\n        \
+              \                <!-- == View_online Section == -->\n              \
+              \          <tr>\n                          <td align=\"center\" valign=\"\
+              top\" style=\"font-size:12px; line-height:18px; color:#3a3a3a; font-family:'GT\
+              \ Walsheim Pro', Helvetica, Arial, sans-serif;\" class=\"el_defaultlink1\"\
+              ><a href=\"#\" target=\"_blank\" style=\"text-decoration:underline;\
+              \ color:#ffffff;\"><span style=\"text-decoration:underline; color:#3a3a3a;\"\
+              >View in browser</span></a></td>\n                        </tr>\n\n\
+              \                        <!-- == //View_online Section == -->\n\n  \
+              \                      <!-- == Logo Section == -->\n\n             \
+              \           <!-- == //Logo Section == -->\n                        <tr>\n\
+              \                          <td align=\"center\" valign=\"top\" style=\"\
+              padding:40px 15px 20px;\">\n                            <table width=\"\
+              100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"\
+              >\n                              <tr>\n                            \
+              \    <td align=\"left\" valign=\"middle\" width=\"150\" style=\"width:150px;\"\
+              \ class=\"el_clear\">\n                                  <table width=\"\
+              150\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"left\"\
+              \ class=\"el_wrapper\">\n                                    <tr>\n\
+              \                                      <td align=\"center\" valign=\"\
+              top\" class=\"el_pbottom\"><a href=\"https://updates.andomoney.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuYW5kb21vbmV5LmNvbSUyRg==&a=476537907&account=andomoney%2Eactivehosted%2Ecom&email=%2Bra1JSeoBI356Y5%2FM1XmyND8bjJpCHl33qvDqYu5emM%3D&s=2ad87194132d03c99740e0ec5a8c1ada&i=311A343A5A2398\"\
+              \ target=\"_blank\" style=\"text-decoration:none;\"><img src=\"https://andomoney.imgus11.com/public//d7dd232a77df187d6b8e0e48756e2506.png?r=868092789\"\
+              \ width=\"150\" alt=\"Ando\" style=\"display:block; max-width:150px;\
+              \ font-size:14px; line-height:18px; color:#000000; font-family:Arial,\
+              \ sans-serif;\" border=\"0\" /></a></td>\n                         \
+              \           </tr>\n                                  </table>\n    \
+              \                            </td>\n                               \
+              \ <td align=\"right\" valign=\"middle\" class=\"el_clear\"><a href=\"\
+              April 22 2021\" target=\"_blank\" style=\"text-decoration:none; color:#000000;\
+              \ font-family:Arial, sans-serif;\" class=\"em_defaultlink el_center\
+              \ el_clear\">April 22 2021</a></td>\n                              </tr>\n\
+              \                            </table>\n                          </td>\n\
+              \                        </tr>\n\n                        <!-- == Hero_banner\
+              \ Section == -->\n                        <tr>\n                   \
+              \       <td align=\"center\" valign=\"top\" class=\"el_full_img el_ptop40\"\
+              \ style=\"padding-top:40px;\"><a href=\"https://updates.andomoney.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZhcHAuYW5kb21vbmV5LmNvbSUyRiUyMyUyMSUyRmxvZ2lu&a=476537907&account=andomoney%2Eactivehosted%2Ecom&email=%2Bra1JSeoBI356Y5%2FM1XmyND8bjJpCHl33qvDqYu5emM%3D&s=2ad87194132d03c99740e0ec5a8c1ada&i=311A343A5A2405\"\
+              \ target=\"_blank\" style=\"text-decoration:none;\"><img src=\"https://ac-image.s3.amazonaws.com/1/6/4/8/2/1/7/home/Megha%40elevated.com/spinning-globe-email-hero.gif?r=1041674147\"\
+              \ width=\"545\" alt=\"Alt tag goes here\" style=\"display:block; max-width:545px;\
+              \ font-size:14px; line-height:18px; color:#ffffff; font-family:Arial,\
+              \ sans-serif;\" border=\"0\" /></a></td>\n                        </tr>\n\
+              \n                        <!-- == //Hero_banner Section == -->\n\n \
+              \                       <!-- == Headline Section == -->\n          \
+              \              <tr>\n                          <td align=\"center\"\
+              \ valign=\"top\" style=\"font-size:38px; line-height:48px; color:#3a3a3a;\
+              \ text-align: -moz-center; font-family:'Tropiline', Georgia,Times New\
+              \ Roman,Times,serif; font-weight:500; padding-top:40px;\" class=\"el_defaultlink\
+              \ el_ptop40 el_font25\">Mobile Banking for a More Sustainable Tomorrow<br\
+              \ class=\"el_hide\" />\n                          </td>\n          \
+              \              </tr>\n\n                        <!-- == Headline Section\
+              \ == -->\n\n                        <!-- == body_copy Section == -->\n\
+              \                        <tr>\n                          <td align=\"\
+              center\" valign=\"top\" style=\"font-size:18px; line-height:32px; color:#3a3a3a;\
+              \ font-family:'GT Walsheim Pro', Helvetica, Arial, sans-serif; padding-top:20px;\
+              \ text-align: -moz-center;\" class=\"el_defaultlink el_ptop el_font15\"\
+              >Still thinking about opening an Ando account? Discover how everyday\
+              \ banking can be a eco-friendly force for good.\n                  \
+              \        </td>\n                        </tr>\n\n                  \
+              \      <!-- == //body_copy Section == -->\n\n                      \
+              \  <!-- == Call_to_action Section == -->\n                        <tr>\n\
+              \                          <td align=\"center\" valign=\"top\" style=\"\
+              padding-top:30px;\">\n                            <table border=\"0\"\
+              \ cellspacing=\"0\" cellpadding=\"0\" align=\"center\" width=\"170\"\
+              \ style=\"width:170px; min-width:170px; border-radius:32px;\" bgcolor=\"\
+              #EFCE60\">\n                              <tr>\n                   \
+              \             <td align=\"center\" valign=\"middle\" height=\"54\" style=\"\
+              font-size:14px; color:#000000; height:54px; font-weight:bold; font-family:'GT\
+              \ Walsheim Pro', Helvetica, Arial, sans-serif; text-align: -moz-center;\"\
+              \ class=\"el_defaultlink\"><a href=\"https://updates.andomoney.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZhcHAuYW5kb21vbmV5LmNvbSUyRiUyMyUyMSUyRmxvZ2lu&a=476537907&account=andomoney%2Eactivehosted%2Ecom&email=%2Bra1JSeoBI356Y5%2FM1XmyND8bjJpCHl33qvDqYu5emM%3D&s=2ad87194132d03c99740e0ec5a8c1ada&i=311A343A5A2405\"\
+              \ target=\"_blank\" style=\"text-decoration:none; color:#000000; line-height:54px;\
+              \ display:block;\">Complete My Setup</a></td>\n                    \
+              \          </tr>\n                            </table>\n           \
+              \               </td>\n                        </tr>\n\n           \
+              \             <!-- == //Call_to_action Section == -->\n\n          \
+              \              <!-- == Divider Section == -->\n                    \
+              \    <tr>\n                          <td align=\"center\" valign=\"\
+              top\" height=\"60\" style=\"height:60px; border-bottom:1px solid #d7d7d7;\"\
+              \ class=\"el_h80\">&nbsp;</td>\n                        </tr>\n\n  \
+              \                      <!-- == Divider Section == -->\n\n          \
+              \              <!-- == 2col_section_v1 Section == -->\n            \
+              \            <tr>\n                          <td align=\"center\" valign=\"\
+              top\" style=\"font-size:32px; line-height:48px; color:#3a3a3a; text-align:\
+              \ -moz-center; font-family:'Tropiline', Georgia,Times New Roman,Times,serif;\
+              \ font-weight:500; padding-top:40px;\" class=\"el_defaultlink el_font25\"\
+              >Banking With Purpose<br class=\"el_hide\" />\n                    \
+              \      </td>\n                        </tr>\n                      \
+              \  <tr>\n                          <td align=\"center\" valign=\"top\"\
+              \ style=\"padding-top:40px;\" class=\"el_ptop50\">\n               \
+              \             <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"\
+              0\" align=\"center\">\n                              <tr>\n        \
+              \                        <td align=\"left\" valign=\"top\">\n      \
+              \                            <table width=\"100\" border=\"0\" cellspacing=\"\
+              0\" cellpadding=\"0\" align=\"left\" style=\"width:167px;\">\n     \
+              \                               <tr>\n                             \
+              \         <td align=\"left\" valign=\"top\"><a href=\"https://updates.andomoney.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZhcHAuYW5kb21vbmV5LmNvbSUyRiUyMyUyMSUyRmxvZ2lu&a=476537907&account=andomoney%2Eactivehosted%2Ecom&email=%2Bra1JSeoBI356Y5%2FM1XmyND8bjJpCHl33qvDqYu5emM%3D&s=2ad87194132d03c99740e0ec5a8c1ada&i=311A343A5A2405\"\
+              \ target=\"_blank\" style=\"text-decoration:none;\"><img src=\"https://ac-image.s3.amazonaws.com/1/6/4/8/2/1/7/home/Megha%40elevated.com/html_images_/icon_no_carbon.png?r=558038507\"\
+              \ width=\"110\" alt=\"\" style=\"display:block; max-width:167px; font-size:14px;\
+              \ line-height:18px; color:#000000; padding-bottom: 20; font-family:Arial,\
+              \ sans-serif;\" border=\"0\" /> </a></td>\n                        \
+              \            </tr>\n                                  </table>\n\n \
+              \                                 <!--[if gte mso 9]></td>\n<td valign=\"\
+              top\"><![endif]-->\n                                  <table width=\"\
+              390\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"right\"\
+              \ style=\"width:390px;\" class=\"el_wrapper\">\n                   \
+              \                 <tr>\n                                      <td align=\"\
+              center\" valign=\"top\">\n                                        <table\
+              \ width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"\
+              center\">\n                                          <tr>\n        \
+              \                                    <td align=\"center\" valign=\"\
+              top\" width=\"30\" style=\"width:30px;\" class=\"el_hide\">&nbsp;</td>\n\
+              \                                            <td align=\"left\" valign=\"\
+              top\">\n                                              <table width=\"\
+              100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"\
+              >\n                                                <tr>\n          \
+              \                                        <td align=\"left\" valign=\"\
+              top\" style=\"font-size:20px; line-height:26px; color:#3a3a3a; font-family:'GT\
+              \ Walsheim Pro', Helvetica, Arial, sans-serif; text-align: -moz-left;\
+              \ font-weight:bold;\" class=\"el_defaultlink el_ptop\">Banking for Balance</td>\n\
+              \                                                </tr>\n           \
+              \                                     <tr>\n                       \
+              \                           <td align=\"left\" valign=\"top\" style=\"\
+              font-size:16px; line-height:26px; color:#3a3a3a; font-family:'GT Walsheim\
+              \ Pro', Helvetica, Arial, sans-serif; text-align: -moz-left; font-weight:400;\
+              \ padding-top:8px;\" class=\"el_defaultlink\">Zero monthly fees, no\
+              \ minimum balance, and a huge fee-free ATM network&sup1; means sustainable\
+              \ banking is more sustainable for&nbsp;everyone.</td>\n            \
+              \                                    </tr>\n                       \
+              \                       </table>\n                                 \
+              \           </td>\n                                          </tr>\n\
+              \                                        </table>\n                \
+              \                      </td>\n                                    </tr>\n\
+              \                                  </table>\n                      \
+              \          </td>\n                              </tr>\n            \
+              \                </table>\n                          </td>\n       \
+              \                 </tr>\n\n                        <!-- == //2col_section_v1\
+              \ Section == -->\n\n                        <!-- == 2col_section_v2\
+              \ Section == -->\n                        <tr>\n                   \
+              \       <td align=\"center\" valign=\"top\" style=\"padding-top:50px;\"\
+              \ class=\"el_ptop50\">\n                            <table width=\"\
+              100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"\
+              >\n                              <tr>\n                            \
+              \    <td align=\"left\" valign=\"top\">\n                          \
+              \        <table width=\"100\" border=\"0\" cellspacing=\"0\" cellpadding=\"\
+              0\" align=\"left\" style=\"width:167px;\">\n                       \
+              \             <tr>\n                                      <td align=\"\
+              left\" valign=\"top\"><a href=\"https://updates.andomoney.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZhcHAuYW5kb21vbmV5LmNvbSUyRiUyMyUyMSUyRmxvZ2lu&a=476537907&account=andomoney%2Eactivehosted%2Ecom&email=%2Bra1JSeoBI356Y5%2FM1XmyND8bjJpCHl33qvDqYu5emM%3D&s=2ad87194132d03c99740e0ec5a8c1ada&i=311A343A5A2405\"\
+              \ target=\"_blank\" style=\"text-decoration:none;\"><img src=\"https://ac-image.s3.amazonaws.com/1/6/4/8/2/1/7/home/Megha%40elevated.com/html_images_/icon_money_fly.png?r=2142250612\"\
+              \ width=\"110\" alt=\"\" style=\"display:block; max-width:167px; font-size:14px;\
+              \ line-height:18px; color:#000000; font-family:Arial, sans-serif;\"\
+              \ border=\"0\" /></a></td>\n                                    </tr>\n\
+              \                                  </table>\n\n                    \
+              \              <!--[if gte mso 9]></td>\n<td valign=\"top\"><![endif]-->\n\
+              \                                  <table width=\"390\" border=\"0\"\
+              \ cellspacing=\"0\" cellpadding=\"0\" align=\"right\" style=\"width:390px;\"\
+              \ class=\"el_wrapper\">\n                                    <tr>\n\
+              \                                      <td align=\"center\" valign=\"\
+              top\">\n                                        <table width=\"100%\"\
+              \ border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"\
+              >\n                                          <tr>\n                \
+              \                            <td align=\"center\" valign=\"top\" width=\"\
+              30\" style=\"width:30px;\" class=\"el_hide\">&nbsp;</td>\n         \
+              \                                   <td align=\"left\" valign=\"top\"\
+              >\n                                              <table width=\"100%\"\
+              \ border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"\
+              >\n                                                <tr>\n          \
+              \                                        <td align=\"left\" valign=\"\
+              top\" style=\"font-size:20px; line-height:26px; color:#3a3a3a; font-family:'GT\
+              \ Walsheim Pro', Helvetica, Arial, sans-serif; text-align: -moz-left;\
+              \ font-weight:bold;\" class=\"el_defaultlink el_ptop\">Banking with\
+              \ Clarity</td>\n                                                </tr>\n\
+              \                                                <tr>\n            \
+              \                                      <td align=\"left\" valign=\"\
+              top\" style=\"font-size:16px; line-height:26px; color:#3a3a3a; font-family:'GT\
+              \ Walsheim Pro', Helvetica, Arial, sans-serif; text-align: -moz-left;\
+              \ font-weight:400; padding-top:8px;\" class=\"el_defaultlink\">Most\
+              \ banks use your deposits to fund fossil fuels. \xB2Not Ando. Our investments\
+              \ only support green initiatives, giving you unprecedented insights\
+              \ into how you\u2019re helping to save the&nbsp;planet.</td>\n     \
+              \                                           </tr>\n                \
+              \                              </table>\n                          \
+              \                  </td>\n                                         \
+              \ </tr>\n                                        </table>\n        \
+              \                              </td>\n                             \
+              \       </tr>\n                                  </table>\n        \
+              \                        </td>\n                              </tr>\n\
+              \                            </table>\n                          </td>\n\
+              \                        </tr>\n\n                        <!-- == //2col_section_v2\
+              \ Section == -->\n\n                        <!-- == 2col_section_v3\
+              \ Section == -->\n                        <tr>\n                   \
+              \       <td align=\"center\" valign=\"top\" style=\"padding-top:50px;\"\
+              \ class=\"el_ptop50\">\n                            <table width=\"\
+              100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"\
+              >\n                              <tr>\n                            \
+              \    <td align=\"left\" valign=\"top\">\n                          \
+              \        <table width=\"100\" border=\"0\" cellspacing=\"0\" cellpadding=\"\
+              0\" align=\"left\" style=\"width:167px;\">\n                       \
+              \             <tr>\n                                      <td align=\"\
+              left\" valign=\"top\"><a href=\"https://updates.andomoney.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZhcHAuYW5kb21vbmV5LmNvbSUyRiUyMyUyMSUyRmxvZ2lu&a=476537907&account=andomoney%2Eactivehosted%2Ecom&email=%2Bra1JSeoBI356Y5%2FM1XmyND8bjJpCHl33qvDqYu5emM%3D&s=2ad87194132d03c99740e0ec5a8c1ada&i=311A343A5A2405\"\
+              \ target=\"_blank\" style=\"text-decoration:none;\"><img src=\"https://ac-image.s3.amazonaws.com/1/6/4/8/2/1/7/home/Megha%40elevated.com/html_images_/icon_fdic_shield.png?r=1132411367\"\
+              \ width=\"88\" alt=\"Bank With Confidence\" style=\"display:block; max-width:167px;\
+              \ font-size:14px; line-height:18px; color:#000000; font-family:Arial,\
+              \ sans-serif;\" border=\"0\" /></a> </td>\n                        \
+              \            </tr>\n                                  </table>\n\n \
+              \                                 <!--[if gte mso 9]></td>\n<td valign=\"\
+              top\"><![endif]-->\n                                  <table width=\"\
+              390\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"right\"\
+              \ style=\"width:390px;\" class=\"el_wrapper\">\n                   \
+              \                 <tr>\n                                      <td align=\"\
+              center\" valign=\"top\">\n                                        <table\
+              \ width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"\
+              center\">\n                                          <tr>\n        \
+              \                                    <td align=\"center\" valign=\"\
+              top\" width=\"30\" style=\"width:30px;\" class=\"el_hide\">&nbsp;</td>\n\
+              \                                            <td align=\"left\" valign=\"\
+              top\">\n                                              <table width=\"\
+              100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"\
+              >\n                                                <tr>\n          \
+              \                                        <td align=\"left\" valign=\"\
+              top\" style=\"font-size:20px; line-height:26px; color:#3a3a3a; font-family:'GT\
+              \ Walsheim Pro', Helvetica, Arial, sans-serif; text-align: -moz-left;\
+              \ font-weight:bold;\" class=\"el_defaultlink el_ptop\">Bank with Confidence</td>\n\
+              \                                                </tr>\n           \
+              \                                     <tr>\n                       \
+              \                           <td align=\"left\" valign=\"top\" style=\"\
+              font-size:16px; line-height:26px; color:#3a3a3a; font-family:'GT Walsheim\
+              \ Pro', Helvetica, Arial, sans-serif; text-align: -moz-left; font-weight:400;\
+              \ padding-top:8px;\" class=\"el_defaultlink\">Your deposits are FDIC\
+              \ insured up to $250,000 through Community Federal Savings Bank, member&nbsp;FDIC.</td>\n\
+              \                                                </tr>\n           \
+              \                                   </table>\n                     \
+              \                       </td>\n                                    \
+              \      </tr>\n                                        </table>\n   \
+              \                                   </td>\n                        \
+              \            </tr>\n                                  </table>\n   \
+              \                             </td>\n                              </tr>\n\
+              \                            </table>\n                          </td>\n\
+              \                        </tr>\n\n                        <!-- == //2col_section_v3\
+              \ Section == -->\n\n                        <!-- == Call_to_action Section\
+              \ == -->\n                        <tr>\n                          <td\
+              \ align=\"center\" valign=\"top\" style=\"padding-top:30px;\">\n   \
+              \                         <table border=\"0\" cellspacing=\"0\" cellpadding=\"\
+              0\" align=\"center\" width=\"170\" style=\"width:170px; min-width:170px;\
+              \ border-radius:32px;\" bgcolor=\"#EFCE60\">\n                     \
+              \         <tr>\n                                <td align=\"center\"\
+              \ valign=\"middle\" height=\"54\" style=\"font-size:14px; color:#000000;\
+              \ height:54px; font-weight:bold; font-family:'GT Walsheim Pro', Helvetica,\
+              \ Arial, sans-serif; text-align: -moz-center;\" class=\"el_defaultlink\
+              \ \"><a href=\"https://updates.andomoney.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZhcHAuYW5kb21vbmV5LmNvbSUyRiUyMyUyMSUyRmxvZ2lu&a=476537907&account=andomoney%2Eactivehosted%2Ecom&email=%2Bra1JSeoBI356Y5%2FM1XmyND8bjJpCHl33qvDqYu5emM%3D&s=2ad87194132d03c99740e0ec5a8c1ada&i=311A343A5A2405\"\
+              \ target=\"_blank\" style=\"text-decoration:none; color:#000000; line-height:54px;\
+              \ display:block;\">Open My Account</a></td>\n                      \
+              \        </tr>\n                            </table>\n             \
+              \             </td>\n                        </tr>\n\n             \
+              \           <!-- == //Call_to_action Section == -->\n\n            \
+              \            <!-- == Divider Section == -->\n                      \
+              \  <tr>\n                          <td align=\"center\" valign=\"top\"\
+              \ height=\"45\" style=\"height:45px; border-bottom:1px solid #d7d7d7;\"\
+              \ class=\"el_h50\">&nbsp;</td>\n                        </tr>\n\n  \
+              \                      <!-- == Divider Section == -->\n\n          \
+              \              <!-- == Footer_logo Section == -->\n                \
+              \        <tr>\n                          <td align=\"center\" valign=\"\
+              top\" style=\"padding-top:40px;\" class=\"el_ptop50\">\n           \
+              \                 <table width=\"75\" style=\"min-width:75px; width:75px;\"\
+              \ border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"\
+              >\n                              <tr>\n                            \
+              \    <td align=\"center\" valign=\"top\"><a href=\"https://updates.andomoney.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuYW5kb21vbmV5LmNvbSUyRg==&a=476537907&account=andomoney%2Eactivehosted%2Ecom&email=%2Bra1JSeoBI356Y5%2FM1XmyND8bjJpCHl33qvDqYu5emM%3D&s=2ad87194132d03c99740e0ec5a8c1ada&i=311A343A5A2398\"\
+              \ target=\"_blank\" style=\"text-decoration:none;\"><img src=\"https://andomoney.imgus11.com/public//d7dd232a77df187d6b8e0e48756e2506.png?r=868092789\"\
+              \ width=\"75\" alt=\"Ando\" style=\"display:block; max-width:75px; font-size:14px;\
+              \ line-height:18px; color:#ffffff; font-family:Arial, sans-serif;\"\
+              \ border=\"0\" /></a></td>\n                              </tr>\n  \
+              \                          </table>\n                          </td>\n\
+              \                        </tr>\n\n                        <!-- == //Footer_logo\
+              \ Section == -->\n\n                        <!-- == Copyright Section\
+              \ == -->\n                        <tr>\n                          <td\
+              \ align=\"center\" valign=\"top\" style=\"font-size:13px; line-height:18px;\
+              \ color:#3a3a3a; text-align: -moz-center; font-family:'GT Walsheim Pro',\
+              \ Helvetica, Arial, sans-serif; padding-top:28px; padding-left:20px;\
+              \ padding-right:20px;\" class=\"el_defaultlink\">&copy; 2021 Ando Inc.\
+              \ All Rights Reserved.<br />\n                            Ando Inc.,\
+              \ 8996 Miramar Road, Suite 310, San Diego, CA 92126, United States</td>\n\
+              \                        </tr>\n\n                        <!-- == //Copyright\
+              \ Section == -->\n\n                        <!-- == Social_icon Section\
+              \ == -->\n                        <tr>\n                          <td\
+              \ align=\"center\" valign=\"top\" style=\"padding-top:37px;\" class=\"\
+              el_ptop30\">\n                            <table border=\"0\" cellspacing=\"\
+              0\" cellpadding=\"0\" align=\"center\" width=\"145\" style=\"min-width:145px;\
+              \ width:145px;\">\n                              <tr>\n            \
+              \                    <td align=\"center\" valign=\"middle\" style=\"\
+              padding-right:23px;\"><a href=\"https://updates.andomoney.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuZmFjZWJvb2suY29tJTJGYW5kby5tb25leQ==&a=476537907&account=andomoney%2Eactivehosted%2Ecom&email=%2Bra1JSeoBI356Y5%2FM1XmyND8bjJpCHl33qvDqYu5emM%3D&s=2ad87194132d03c99740e0ec5a8c1ada&i=311A343A5A2399\"\
+              \ target=\"_blank\" style=\"text-decoration:none;\"><img src=\"https://ac-image.s3.amazonaws.com/1/6/4/8/2/1/7/home/Megha%40elevated.com/updated_ando/fb_grey.png?r=1464504408\"\
+              \ width=\"33\" alt=\"FB\" style=\"display:block; max-width:33px; font-size:14px;\
+              \ line-height:18px; color:#ffffff; font-family: Arial, sans-serif;\"\
+              \ border=\"0\" /></a></td>\n                                <td align=\"\
+              center\" valign=\"middle\" style=\"padding-right:23px;\"><a href=\"\
+              https://updates.andomoney.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuaW5zdGFncmFtLmNvbSUyRmFuZG8ubW9uZXklMkY=&a=476537907&account=andomoney%2Eactivehosted%2Ecom&email=%2Bra1JSeoBI356Y5%2FM1XmyND8bjJpCHl33qvDqYu5emM%3D&s=2ad87194132d03c99740e0ec5a8c1ada&i=311A343A5A2400\"\
+              \ target=\"_blank\" style=\"text-decoration:none;\"><img src=\"https://ac-image.s3.amazonaws.com/1/6/4/8/2/1/7/home/Megha%40elevated.com/updated_ando/iconfinder_instagram_1217174.png?r=1667089082\"\
+              \ width=\"33\" alt=\"INSTA\" style=\"display:block; max-width:33px;\
+              \ font-size:14px; line-height:18px; color:#ffffff; font-family: Arial,\
+              \ sans-serif;\" border=\"0\" /></a></td>\n                         \
+              \       <td align=\"center\" valign=\"middle\"><a href=\"https://updates.andomoney.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ0d2l0dGVyLmNvbSUyRmFuZG9fbW9uZXk=&a=476537907&account=andomoney%2Eactivehosted%2Ecom&email=%2Bra1JSeoBI356Y5%2FM1XmyND8bjJpCHl33qvDqYu5emM%3D&s=2ad87194132d03c99740e0ec5a8c1ada&i=311A343A5A2401\"\
+              \ target=\"_blank\" style=\"text-decoration:none;\"><img src=\"https://ac-image.s3.amazonaws.com/1/6/4/8/2/1/7/home/Megha%40elevated.com/updated_ando/iconfinder_twitter_1217163.png?r=2104098364\"\
+              \ width=\"33\" alt=\"TW\" style=\"display:block; max-width:33px; font-size:14px;\
+              \ line-height:18px; color:#ffffff; font-family: Arial, sans-serif;\"\
+              \ border=\"0\" /></a></td>\n                              </tr>\n  \
+              \                          </table>\n                          </td>\n\
+              \                        </tr>\n\n                        <!-- == //Social_icon\
+              \ Section == -->\n\n                        <!-- == Footer_body_copy\
+              \ Section == -->\n                        <tr>\n                   \
+              \       <td align=\"center\" valign=\"top\" style=\"font-size:13px;\
+              \ line-height:23px; color:#3a3a3a; font-family:'GT Walsheim Pro', Helvetica,\
+              \ Arial, sans-serif; padding-top:41px; text-align: -moz-center;\" class=\"\
+              el_defaultlink el_ptop30\">Banking services provided by Community Federal\
+              \ Savings Bank, member FDIC.<br class=\"el_hide\" />\n             \
+              \               The Ando Visa&reg; Debit Card is issued by Community\
+              \ Federal Savings Bank<br class=\"el_hide\" />\n                   \
+              \         pursuant to a license from Visa U.S.A. Inc. and may be used\
+              \ everywhere<br class=\"el_hide\" />\n                            Visa\
+              \ <span style=\"white-space:nowrap;\">debit cards are accepted.</span></td>\n\
+              \                        </tr>\n                        <tr>\n     \
+              \                     <td align=\"center\" valign=\"top\" style=\"font-size:13px;\
+              \ line-height:23px; color:#3a3a3a; font-family:'GT Walsheim Pro', Helvetica,\
+              \ Arial, sans-serif; padding-top:41px; text-align: -moz-center;\" class=\"\
+              el_defaultlink el_ptop30\">\xB9Fee-free withdrawals MoneyPass\xAE ATMs.\
+              \ Out-of-Network cash withdrawal fees apply.<br /> Third-party and cash\
+              \ deposit fees may apply. \xB2Global Banks, Led by JPMorgan Chase, <br\
+              \ />Invested $2.7 Trillion in Fossil Fuels Since Paris Climate Pact\n\
+              \                            <br /><br />*Global Warming Is Driving\
+              \ Polar Bears Toward Extinction, Researchers Say\n                 \
+              \         </td>\n                        </tr>\n\n                 \
+              \       <!-- == //Footer_body_copy Section == -->\n\n              \
+              \          <!-- == Unsubscribe Section == -->\n                    \
+              \    <tr>\n                          <td align=\"center\" valign=\"\
+              top\" style=\"font-size:13px; line-height:22px; color:#3a3a3a; font-family:'GT\
+              \ Walsheim Pro', Helvetica, Arial, sans-serif; padding-top:27px; text-align:\
+              \ -moz-center;\" class=\"el_defaultlink1 el_ptop30\"><a href=\"#\" target=\"\
+              _blank\" style=\"text-decoration:underline; color:#3a3a3a;\"><span style=\"\
+              text-decoration:underline; color:#3a3a3a;\">Unsubscribe</span></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a\
+              \ href=\"#\" target=\"_blank\" style=\"text-decoration:underline; color:#3a3a3a;\"\
+              ><span style=\"text-decoration:underline; color:#3a3a3a;\">Send to Friend</span></a></td>\n\
+              \                        </tr>\n\n                        <!-- == //Unsubscribe\
+              \ Section == -->\n                      </table>\n                 \
+              \   </td>\n                  </tr>\n                </table>\n     \
+              \         </td>\n            </tr>\n          </table>\n        </td>\n\
+              \      </tr>\n    </table>\n\n    <!-- == //Header Section == -->\n\
+              \   \n     </body>\n</html>"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Success
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal Server Error
