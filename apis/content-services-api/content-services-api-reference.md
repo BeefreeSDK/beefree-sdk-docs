@@ -44,15 +44,15 @@ All API access is over HTTPS, and accessed from the following URL:
 
 The following table lists the available collection option and corresponding resources for each collection.
 
-| Collection    | Available Resources                                   |
-| ------------- | ----------------------------------------------------- |
-| `/message`    | `html`, `pdf`, `images`, `merge`, `index, plain-text` |
-| `/page`       | `html`, `pdf`, `images`, `merge`, `index`             |
-| `/popup`      | `html`                                                |
-| `/amp`        | `html`                                                |
-| `/template`   | `brand`                                               |
-| `/ai`         | `metadata`, `sms`, `summary`                          |
-| `/conversion` | `email-to-page`, `page-to-email`                      |
+| Collection    | Available Resources                                     |
+| ------------- | ------------------------------------------------------- |
+| `/message`    | `html`, `pdf`, `images`, `merge`, `index`, `plain-text` |
+| `/page`       | `html`, `pdf`, `images`, `merge`, `index`               |
+| `/popup`      | `html`                                                  |
+| `/amp`        | `html`                                                  |
+| `/template`   | `brand`                                                 |
+| `/ai`         | `metadata`, `sms`, `summary`                            |
+| `/conversion` | `email-to-page`, `page-to-email`                        |
 
 ### Example URLs
 
