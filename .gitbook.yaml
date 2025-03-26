@@ -105,3 +105,4 @@ redirects:
   rows/saved-rows/save-rows-video-tutorial: rows/reusable-content/create/save/implement-self-hosted-saved-rows.md
   rows/saved-rows/edit-single-row-mode: rows/reusable-content/sync/initialize-edit-single-row-mode.md
   rows/saved-rows/synced-rows: rows/reusable-content/sync/implement-synced-rows.md
+  -or-html-to-json-beta: html-importer-beta.md
