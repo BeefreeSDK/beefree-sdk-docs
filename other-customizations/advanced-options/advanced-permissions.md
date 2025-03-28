@@ -60,7 +60,7 @@ To set up the advanced permissions, you will need to add the `advancedPermission
 **Note:** Click on the arrow next to the section title in the following section to expand the following sections and reference its corresponding content.
 {% endhint %}
 
-Steps to set up Advanced Permissions in your beeConfig file.
+#### Steps to set up Advanced Permissions in your beeConfig file
 
 Take the following steps to set up **advanced permissions** in your `beeConfig` for Beefree SDK:
 
