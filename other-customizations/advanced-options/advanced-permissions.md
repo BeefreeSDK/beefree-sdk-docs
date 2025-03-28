@@ -14,7 +14,7 @@ With Advanced permissions, you can tailor permissions for users of your Beefree 
 * row & content actions (clone, delete, drag, save)
 * basically anything in the editor!
 
-These advanced permissions grant total customization of the experience you want to present. Since you set them in the configuration parameters passed to your Beefree app after you’ve initialized it, they could be different each time the editor starts, and have different setups for different users.
+These advanced permissions grant total customization of the experience you want to present. Since you set them in the configuration parameters passed to your application after you’ve initialized it, they could be different each time the editor starts, and have different setups for different users.
 
 ## Use cases <a href="#use-cases" id="use-cases"></a>
 
@@ -28,6 +28,8 @@ You can create roles that can act only on a content type. For example, you may w
 * limit style options for the text itself, by&#x20;
   * locking/hiding the side tab;
   * hiding specific settings in the text toolbar.
+
+Reference the [Roles and Permissions documentation](roles-and-permissions.md) to learn more about creating different roles, and assigning corresponding permissions to each of those roles.&#x20;
 
 ## **Customize image & file management workflows**
 
@@ -58,9 +60,7 @@ To set up the advanced permissions, you will need to add the `advancedPermission
 **Note:** Click on the arrow next to the section title in the following section to expand the following sections and reference its corresponding content.
 {% endhint %}
 
-<details>
-
-<summary>Steps to set up advanced permissions in your beeConfig</summary>
+Steps to set up Advanced Permissions in your beeConfig file.
 
 Take the following steps to set up **advanced permissions** in your `beeConfig` for Beefree SDK:
 
@@ -71,8 +71,6 @@ Take the following steps to set up **advanced permissions** in your `beeConfig` 
 5. **Control `tabs` visibility:** You can manage which tabs (such as rows or settings) are visible and editable in the editor interface.&#x20;
 6. **Set `rows` behaviors:** You can control row-specific permissions, such as adding or hiding rows, background colors, and mobile visibility.
 7. **Test the configuration:** After adding the `advancedPermissions` object to your `beeConfig`, test your configuration by launching the editor and checking if the permissions are applied correctly (e.g., specific settings are visible or locked as intended).
-
-</details>
 
 <details>
 
@@ -448,6 +446,43 @@ Hosted Saved Rows includes advanced permissions to control how rows and categori
 * If both `canDeleteHostedRow` and `canEditHostedRow` are set to `false`, the row menu will be hidden.
 * If both `canManageHostedRowCategory` and `canAddHostedRowCategory` are set to `false`, the category management menu will be hidden.
 
+### **Edit Synced Row Button**
+
+Advanced permissions for the **Edit Synced Row** button are available on Superpowers and Enterprise plans. Development applications on the Core plan can access this feature for free.
+
+Available in the Email, Page, and Popup builders.
+
+**Available Permissions**
+
+* `show`: Controls visibility of the Edit Synced Row button.
+* `locked`: Controls whether the button is clickable (false) or read-only (true).
+
+**Permission Behavior**
+
+* If `show` is false, the **Edit Synced Row** button is hidden.
+* If `locked` is true, the button is visible but not clickable.
+* Depending on your configuration, when this button is visible and clickable, end users can:
+  * Open the row in [Edit Single Row Mode](../../rows/reusable-content/sync/initialize-edit-single-row-mode.md) (changes apply globally).
+  * Convert the Synced Row to a Saved Row to [apply edits](../../rows/reusable-content/sync/implement-synced-rows.md).
+
+**Example Configuration**\
+The following example shows how to configure permissions for the **Edit Synced Row** button:
+
+```js
+advancedPermissions: {
+  rows: {
+    toolbar: {
+      editSyncedRow: {
+        show: true,     // show or hide the button
+        locked: false   // editable (false) or read-only (true)
+      }
+    }
+  }
+}
+```
+
+Reference the [Implement Synced Rows documentation](../../rows/reusable-content/sync/implement-synced-rows.md#advanced-permissions-for-the-edit-synced-row-button) to learn more about Advanced Permissions for the **Edit Synced Row** button.&#x20;
+
 #### **Example Configuration**
 
 The following configuration displays an example of the `rows` object inside of `advancedPermissions`:
@@ -464,6 +499,12 @@ beeConfig: {
   container: 'bee-plugin-container', // [mandatory]
   advancedPermissions: {
     rows: {
+      toolbar: {
+        editSyncedRow: {
+          show: true,
+          locked: false,
+        },
+      },
       behaviors: {
         canSelect: true,
         canAdd: true,

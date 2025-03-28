@@ -172,3 +172,118 @@ Upon adding a synced row into a design, the `onChange` callback method supplies 
 For those rows incorporated into designs before the implementation of the `onChange` tracking method, CSAPI’s `synced-rows` method is available. Use the `synced-rows` method get a list of all the synced rows inside a template with their corresponding `rowIdentifier` values. To learn more about how to use this endpoint, visit our[ API Reference on Synced Rows](../../api-endpoints.md).
 
 The specific objectives of the host application steer the choice between these methods. Whatever the choice, the primary focus is meticulously tracking the row across all linked templates, ensuring accurate and efficient updates.
+
+## Advanced Permissions for the Edit Synced Row Button
+
+{% hint style="info" %}
+Adding [Advanced Permissions](../../../other-customizations/advanced-options/advanced-permissions.md) to Synced Rows is available for Superpowers and Enterprise plans. If you're on the Core plan, [upgrade a development application](../../../getting-started/readme/development-applications.md) to the Superpowers plan for free. In your development application, you'll be able to try Advanced Permissions with Synced Rows. This is available for Email, Page, and Popup builders.
+{% endhint %}
+
+By configuring advanced permissions for Synced Rows, you can manage the visibility of and access to the **Edit Synced Row** toolbar button. These customization options enable you to define whether end users can:
+
+* View the **Edit Synced Row** button.
+* Click the **Edit Synced Row** button.
+* Edit Synced Rows using one of the following options:
+  * Redirecting to the [Edit Single Row Mode](initialize-edit-single-row-mode.md) builder to edit the Synced Row, and save changes applied globally.
+  * Converting a Synced Row to a Saved Row.
+
+A few of the benefits of applying advanced permissions to Synced Rows are the following:
+
+* Limit who can modify synced rows to ensure centralized control.
+* Hide unnecessary editing actions for users who only need to reuse existing content.
+* Prevent accidental edits to shared content, maintaining consistency across templates.
+
+Sure! Here's a clearer and more user-friendly version of your configuration steps, based on the code you shared:
+
+### Configuration Steps
+
+Follow these steps to enable or customize the `editSyncedRow` option in your Beefree SDK configuration:
+
+1. Open your codebase and locate where you configure the Beefree SDK.
+2. If it doesn’t already exist, add the `advancedPermissions` object to your configuration.
+3.  Inside `advancedPermissions`, add the following nested structure:
+
+    ```js
+    advancedPermissions: {
+      rows: {
+        toolbar: {
+          editSyncedRow: {
+            show: true,     // or false
+            locked: true,   // or false
+          }
+        }
+      }
+    }
+    ```
+4. Set the Properties:
+   * `show`: Set to `true` to display the edit button for Synced Rows, or `false` to hide it.
+   * `locked`: Set to `true` to make the edit button read-only, or `false` to make it clickable.
+5. Save your changes and test your implementation to confirm the desired behavior.
+
+### Available Settings
+
+The following table outlines the configurable parameters for Synced Rows.
+
+| Parameter | Type    | Description                                                     | Additional info           |
+| --------- | ------- | --------------------------------------------------------------- | ------------------------- |
+| `show`    | boolean | Controls the visibility of the **Edit Synced Row** button.      | Default value is `true`.  |
+| `locked`  | boolean | Determines whether the **Edit Synced Row** button is clickable. | Default value is `false`. |
+
+### Examples
+
+The following code snippet shows an example configuration where `show` is set to `true` and `locked` is set to `false`. In the subsequent image, you can see this configuration results in a clickable **Edit Synced Row** button that is visible in the toolbar.&#x20;
+
+```javascript
+advancedPermissions: {
+        rows: {
+          toolbar: {
+            editSyncedRow: {
+              show: true,
+              locked: false,
+            },
+          },
+        },
+      },
+```
+
+The following image shows a clickable **Edit Synced Row** button in the toolbar.
+
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-28 at 11.26.39.png" alt=""><figcaption></figcaption></figure>
+
+The following code snippet shows an example configuration where `show` is set to `true` and `locked` is set to `true`. In the subsequent image, you can see the configuration result, which is a visible **Edit Synced Row** button that can't be clicked in the toolbar.
+
+```javascript
+advancedPermissions: {
+        rows: {
+          toolbar: {
+            editSyncedRow: {
+              show: true,
+              locked: true,
+            },
+          },
+        },
+      },
+```
+
+The following image shows a visible **Edit Synced Row** button in the toolbar, but it is not clickable.
+
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-28 at 11.29.08.png" alt=""><figcaption></figcaption></figure>
+
+The following code snippet shows an example configuration where `show` is set to `false` and `locked` is set to `true`. In the subsequent image, you can see this configuration results in a toolbar without the button.
+
+```javascript
+advancedPermissions: {
+        rows: {
+          toolbar: {
+            editSyncedRow: {
+              show: false,
+              locked: true,
+            },
+          },
+        },
+      },
+```
+
+The following image shows a toolbar without the **Edit Synced Row** button.
+
+<figure><img src="../../../.gitbook/assets/CleanShot 2025-03-28 at 11.30.35.png" alt=""><figcaption></figcaption></figure>
