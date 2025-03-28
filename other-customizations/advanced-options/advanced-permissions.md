@@ -454,9 +454,7 @@ Hosted Saved Rows includes advanced permissions to control how rows and categori
 
 ### **Edit Synced Row Button**
 
-Advanced permissions for the **Edit Synced Row** button are available on Superpowers and Enterprise plans. Development applications on the Core plan can access this feature for free.
-
-Available in the Email, Page, and Popup builders.
+You can set Advanced Permissions for the **Edit Synced Row** button in the toolbar.
 
 **Available Permissions**
 
