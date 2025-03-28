@@ -29,7 +29,9 @@ You can create roles that can act only on a content type. For example, you may w
   * locking/hiding the side tab;
   * hiding specific settings in the text toolbar.
 
-Reference the [Roles and Permissions documentation](roles-and-permissions.md) to learn more about creating different roles, and assigning corresponding permissions to each of those roles.&#x20;
+{% hint style="info" %}
+**Note**: `UID` is a [mandatory field](advanced-permissions.md#available-permissions-and-behaviors) when you configure Beefree SDK. This field connects end users to the permissions you set in the configuration.&#x20;
+{% endhint %}
 
 ## **Customize image & file management workflows**
 
@@ -57,7 +59,7 @@ By combining multiple permissions, you can load Beefree SDK with radically diffe
 To set up the advanced permissions, you will need to add the `advancedPermissions` object to `beeConfig.`&#x20;
 
 {% hint style="info" %}
-**Note:** Click on the arrow next to the section title in the following section to expand the following sections and reference its corresponding content.
+**Note**: `UID` is a [mandatory field](advanced-permissions.md#available-permissions-and-behaviors) when you configure Beefree SDK. This field connects end users to the permissions you set in the configuration.&#x20;
 {% endhint %}
 
 #### Steps to set up Advanced Permissions in your beeConfig file
@@ -71,6 +73,10 @@ Take the following steps to set up **advanced permissions** in your `beeConfig` 
 5. **Control `tabs` visibility:** You can manage which tabs (such as rows or settings) are visible and editable in the editor interface.&#x20;
 6. **Set `rows` behaviors:** You can control row-specific permissions, such as adding or hiding rows, background colors, and mobile visibility.
 7. **Test the configuration:** After adding the `advancedPermissions` object to your `beeConfig`, test your configuration by launching the editor and checking if the permissions are applied correctly (e.g., specific settings are visible or locked as intended).
+
+{% hint style="info" %}
+**Note:** Click on the arrow next to **Sample code** to expand the full configuration example.
+{% endhint %}
 
 <details>
 
