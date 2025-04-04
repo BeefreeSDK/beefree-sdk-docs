@@ -55,35 +55,28 @@ Setting the `newbutton=true` query parameter ensures buttons are accessible and 
 
 * Moves the \<a> tag outside the VML block, enabling full keyboard accessibility.
 * Places the VML block after the \<a> tag, ensuring compatibility with Outlook and resolving forwarding issues.
-* Wraps the button label inside a \<div>, providing improved layout control for consistent padding and word-breaking compared to the inline \<a> tag in the default HTML.
+* Wraps the button label inside a \<span>, providing improved layout control for consistent padding and word-breaking compared to the inline \<a> tag in the default HTML.
 
 **Example:** HTML With `newbutton`
 
 ```html
-<a href="https://docs.beefree.io/beefree-sdk" 
-   target="_blank" 
-   style="background-color:#3AAEE0;color:#ffffff;display:inline-block;
-          font-family:Arial, Helvetica, sans-serif;font-size:14px;font-weight:400;
-          text-align:center;text-decoration:none;width:auto;">
-  <div style="padding:10px 20px;line-height:28px;">
-    Button
-  </div>
-</a>
+<a href="https://beefree.io" target="_blank" style="color:#ffffff;text-decoration:none;">
 <!--[if mso]>
-<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" 
-             xmlns:w="urn:schemas-microsoft-com:office:word" 
-             href="https://docs.beefree.io/beefree-sdk" 
-             style="height:37px;width:80px;v-text-anchor:middle;" 
-             arcsize="11%" stroke="false" fillcolor="#3AAEE0">
-  <w:anchorlock/>
-  <v:textbox inset="0px,0px,0px,0px">
-    <center dir="false" style="color:#ffffff;font-family:Arial, sans-serif;font-size:14px">
-      Button
-    </center>
-  </v:textbox>
-</v:roundrect>
+   <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"  href="https://google.com"  style="height:38px;width:80px;v-text-anchor:middle;" arcsize="11%" fillcolor="#3AAEE0">
+      <v:stroke dashstyle="Solid" weight="0px" color="#3AAEE0"/>
+      <w:anchorlock/>
+      <v:textbox inset="0px,0px,0px,0px">
+         <center dir="false" style="color:#ffffff;font-family:sans-serif;font-size:14px">
 <![endif]-->
-
+<span class="button" style="background-color: #3AAEE0; border-bottom: 0px solid transparent; border-left: 0px solid transparent; border-radius: 4px; border-right: 0px solid transparent; border-top: 0px solid transparent; color: #ffffff; display: inline-block; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 14px; font-weight: 400; mso-border-alt: none; padding-bottom: 5px; padding-top: 5px; padding-left: 20px; padding-right: 20px; text-align: center; width: auto; word-break: keep-all; letter-spacing: normal;">
+   <span style="word-break: break-word; line-height: 28px;">Button</span>
+</span>
+<!--[if mso]>
+         </center>
+      </v:textbox>
+   </v:roundrect>
+<![endif]-->
+</a>
 ```
 
 #### Benefits of `newbutton`
