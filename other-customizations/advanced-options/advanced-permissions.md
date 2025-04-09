@@ -394,7 +394,7 @@ beeConfig: {
 
 ```
 
-### **linktypes**
+### **linkTypes**
 
 The following code provides an example of the `linkTypes` object.
 
@@ -426,6 +426,24 @@ beeConfig: {
   }
 }
 
+```
+
+### colorPicker
+
+The following code provides an example of the `colorPicker` object.
+
+```javascript
+const advancedPermissions = {
+    ...,
+    components: {
+      ...,
+      colorPicker: {
+        canViewColorInput: true,
+        canViewSliders: true,
+        canViewSwatches: true,
+      }
+    }
+}
 ```
 
 ## Rows
