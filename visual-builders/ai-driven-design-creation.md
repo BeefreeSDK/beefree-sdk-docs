@@ -1,7 +1,10 @@
 # AI-Driven Design Creation
 
 {% hint style="info" %}
-Simple Schema is available on [Superpowers and Enterprise plans](https://developers.beefree.io/pricing-plans).
+**Simple Schema Features by Plan Type:**
+
+* **Superpowers & Enterprise Plans:** Access to Simple Schema for [Custom AddOns](ai-driven-design-creation.md#custom-addons) and [Custom Rows](../rows/reusable-content/create/pre-build/implement-custom-rows.md).
+* **All Paid Plans:** Use Simple Schema for AI-based content generation. Access the Simple Schema API through the [Content Services API](../apis/content-services-api/content-services-api-reference.md#simple-to-full-json) (CSAPI).
 {% endhint %}
 
 ## Overview

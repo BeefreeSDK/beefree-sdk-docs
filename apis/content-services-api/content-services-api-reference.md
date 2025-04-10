@@ -52,7 +52,7 @@ The following table lists the available collection option and corresponding reso
 | `/amp`        | `html`                                                  |
 | `/template`   | `brand`                                                 |
 | `/ai`         | `metadata`, `sms`, `summary`                            |
-| `/conversion` | `email-to-page`, `page-to-email`                        |
+| `/conversion` | `email-to-page`, `page-to-email`, `simple-to-full-json` |
 
 ### Example URLs
 
