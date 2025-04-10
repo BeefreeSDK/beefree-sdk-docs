@@ -31,6 +31,7 @@
   * [Testing and Integrating](visual-builders/popup-builder/testing-and-integrating.md)
   * [Setting layout and size](visual-builders/popup-builder/setting-layout-and-size/README.md)
     * [Advanced settings](visual-builders/popup-builder/setting-layout-and-size/advanced-settings.md)
+* [AI-Driven Design Creation](visual-builders/ai-driven-design-creation.md)
 * [Form Block](visual-builders/form-block/README.md)
   * [Integrating and using the Form block](visual-builders/form-block/integrating-and-using-the-form-block/README.md)
     * [Passing forms to the builder](visual-builders/form-block/integrating-and-using-the-form-block/passing-forms-to-the-builder.md)
@@ -38,6 +39,25 @@
     * [Form layout customization](visual-builders/form-block/integrating-and-using-the-form-block/form-layout-customization.md)
     * [Allowed form fields](visual-builders/form-block/integrating-and-using-the-form-block/allowed-form-fields.md)
     * [Edit form field modal](visual-builders/form-block/integrating-and-using-the-form-block/edit-form-field-modal.md)
+
+## Rows
+
+* [Reusable Content](rows/reusable-content/README.md)
+  * [Create Reusable Content](rows/reusable-content/create/README.md)
+    * [Pre-build Reusable Content](rows/reusable-content/create/pre-build/README.md)
+      * [Implement Custom Rows](rows/reusable-content/create/pre-build/implement-custom-rows.md)
+    * [Save Reusable Content](rows/reusable-content/create/save/README.md)
+      * [Implement Hosted Saved Rows](rows/reusable-content/create/save/implement-hosted-saved-rows.md)
+      * [Implement Self-hosted Saved Rows](rows/reusable-content/create/save/implement-self-hosted-saved-rows/README.md)
+        * [Self-hosted Saved Rows Concepts and Tutorial](rows/reusable-content/create/save/implement-self-hosted-saved-rows/self-hosted-saved-rows-concepts-and-tutorial.md)
+  * [Sync Reusable Content](rows/reusable-content/sync/README.md)
+    * [Implement Synced Rows](rows/reusable-content/sync/implement-synced-rows.md)
+    * [Initialize Edit Single Row Mode](rows/reusable-content/sync/initialize-edit-single-row-mode.md)
+  * [Manage Reusable Content](rows/reusable-content/manage.md)
+* [Storage for Reusable Content](rows/storage/README.md)
+  * [Hosted Saved Rows](rows/storage/hosted-saved-rows.md)
+  * [Self-Hosted Saved Rows](rows/storage/self-hosted-saved-rows.md)
+* [API Endpoints for Row Management](rows/api-endpoints.md)
 
 ## File manager
 
@@ -86,11 +106,34 @@
 * [AMP for Email](other-customizations/amp-for-email.md)
 * [Collaborative Editing](other-customizations/collaborative-editing.md)
 * [Mobile Design Mode](other-customizations/mobile-design-mode.md)
-* [Multi-Language Templates](other-customizations/multi-language-templates.md)
+* [Multi-language Templates](other-customizations/multi-language-templates.md)
 * [Cards Style and Image Round Corners](other-customizations/cards-style-and-image-round-corners.md)
 * [Hover Effect for Buttons](other-customizations/hover-effect-for-buttons.md)
 * [Content Area Padding](other-customizations/content-area-padding.md)
 * [Line Height](other-customizations/line-height.md)
+
+## Data Structures
+
+* [Getting Started](data-structures/getting-started.md)
+* [Schema Catalog](data-structures/schema-catalog.md)
+* [Simple Schema](data-structures/simple-schema/README.md)
+  * [Template Schema](data-structures/simple-schema/template-schema.md)
+  * [Definitions Schema](data-structures/simple-schema/definitions-schema.md)
+  * [Row Schema](data-structures/simple-schema/row-schema.md)
+  * [Column Schema](data-structures/simple-schema/column-schema.md)
+  * [Title Schema](data-structures/simple-schema/title-schema.md)
+  * [Image Schema](data-structures/simple-schema/image-schema.md)
+  * [Button Schema](data-structures/simple-schema/button-schema.md)
+  * [Paragraph Schema](data-structures/simple-schema/paragraph-schema.md)
+  * [HTML Schema](data-structures/simple-schema/html-schema.md)
+  * [Menu Schema](data-structures/simple-schema/menu-schema.md)
+  * [List Schema](data-structures/simple-schema/list-schema.md)
+  * [Icon Schema](data-structures/simple-schema/icon-schema.md)
+  * [Divider Schema](data-structures/simple-schema/divider-schema.md)
+* [Row Metadata](data-structures/row-metadata.md)
+* [Form Validation Schema](data-structures/form-validation-schema.md)
+* [Comments Schema](data-structures/comments-schema/README.md)
+  * [Change Schema for Comments](data-structures/comments-schema/change-schema-for-comments.md)
 
 ## APIs
 
@@ -105,9 +148,6 @@
 
 * [AddOns](builder-addons/addons/README.md)
   * [AddOns Overview](builder-addons/addons/addons-overview.md)
-  * [Custom AddOns](builder-addons/addons/custom-addons/README.md)
-    * [AddOn Development](builder-addons/addons/custom-addons/addon-development.md)
-    * [Contribute to the Partner AddOn Marketplace](builder-addons/addons/custom-addons/contribute-to-the-partner-addon-marketplace.md)
   * [Partner AddOns](builder-addons/addons/partner-addons/README.md)
     * [Partner AddOns directory](builder-addons/addons/partner-addons/partner-addons-directory.md)
     * [Installing Partner AddOns](builder-addons/addons/partner-addons/installing-partner-addons.md)
@@ -126,27 +166,11 @@
       * [Token Upselling](builder-addons/addons/partner-addons/ai-writing-assistant/token-upselling.md)
       * [Apply a Brand Tone](builder-addons/addons/partner-addons/ai-writing-assistant/apply-a-brand-tone.md)
     * [Custom AI Writing Assistant](builder-addons/addons/partner-addons/custom-ai-writing-assistant.md)
+  * [Custom AddOns](builder-addons/addons/custom-addons/README.md)
+    * [AddOn Development](builder-addons/addons/custom-addons/addon-development.md)
+    * [Contribute to the Partner AddOn Marketplace](builder-addons/addons/custom-addons/contribute-to-the-partner-addon-marketplace.md)
   * [AddOns Configuration](builder-addons/addons/addons-configuration.md)
   * [AddOn FAQs](builder-addons/addons/addon-faqs.md)
-
-## Rows
-
-* [Reusable Content](rows/reusable-content/README.md)
-  * [Create Reusable Content](rows/reusable-content/create/README.md)
-    * [Pre-build Reusable Content](rows/reusable-content/create/pre-build/README.md)
-      * [Implement Custom Rows](rows/reusable-content/create/pre-build/implement-custom-rows.md)
-    * [Save Reusable Content](rows/reusable-content/create/save/README.md)
-      * [Implement Hosted Saved Rows](rows/reusable-content/create/save/implement-hosted-saved-rows.md)
-      * [Implement Self-hosted Saved Rows](rows/reusable-content/create/save/implement-self-hosted-saved-rows/README.md)
-        * [Self-hosted Saved Rows Concepts and Tutorial](rows/reusable-content/create/save/implement-self-hosted-saved-rows/self-hosted-saved-rows-concepts-and-tutorial.md)
-  * [Sync Reusable Content](rows/reusable-content/sync/README.md)
-    * [Implement Synced Rows](rows/reusable-content/sync/implement-synced-rows.md)
-    * [Initialize Edit Single Row Mode](rows/reusable-content/sync/initialize-edit-single-row-mode.md)
-  * [Manage Reusable Content](rows/reusable-content/manage.md)
-* [Storage for Reusable Content](rows/storage/README.md)
-  * [Hosted Saved Rows](rows/storage/hosted-saved-rows.md)
-  * [Self-Hosted Saved Rows](rows/storage/self-hosted-saved-rows.md)
-* [API Endpoints for Row Management](rows/api-endpoints.md)
 
 ## Rendering
 

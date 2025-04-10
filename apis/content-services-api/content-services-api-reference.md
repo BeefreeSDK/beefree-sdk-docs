@@ -254,3 +254,90 @@ The Page to Email endpoint transforms a JSON template designed for a web page in
 [page-to-emai-conversion.yaml](../../.gitbook/assets/page-to-emai-conversion.yaml)
 {% endopenapi %}
 
+### Simple to Full JSON
+
+{% hint style="info" %}
+Simple Schema is available on [Superpowers and Enterprise plans](https://developers.beefree.io/pricing-plans).
+{% endhint %}
+
+This section discusses what the `/simple-to-full-json` endpoint is and how you can use it for AI-driven designs. Beefree SDK template JSON is long and includes many properties. For this reason, it does not provide the best structure for training AI models in workflows that include AI-driven design creation. Beefree SDK's [Simple schema](../../data-structures/simple-schema/) is a lightweight alternative that is optimized for training AI models. [Simple schema](../../data-structures/simple-schema/), which is several lines shorter than Beefree SDK's template JSON, is a great solution for AI-generated schemas. This endpoint accepts [Simple schema](../../data-structures/simple-schema/) as the body of the `POST` request, and returns the full Beefree SDK template JSON, which can then be loaded in the Beefree SDK editor for an end user to view and edit accordingly. There are many creative ways to use and implement this endpoint, because it provides a pathway to programmatically creating full Beefree SDK-compatible templates completely outside of the Beefree SDK builder.        &#x20;
+
+#### Request Parameters
+
+The API call accepts a `template` object, which is required to successfully perform the `/simple-to-full-json` API call. The following table describes this required object.
+
+| Name       | Type | Required | Description                                                                                                                                                              |
+| ---------- | ---- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `template` | JSON | Yes      | A Beefree SDK template in simple JSON format ([see the schema in GitHub](https://github.com/mailupinc/simple-schema-beefree-sdk/blob/main/simple_template.schema.json)). |
+
+The following code snippet shows the template object as the body of the `POST` request.
+
+```json
+{
+  “template”:{...}
+}
+```
+
+{% hint style="info" %}
+**Note:** The [simple template JSON schema](https://github.com/mailupinc/simple-schema-beefree-sdk/blob/main/simple_template.schema.json) describes the request parameters, and the template object structure.&#x20;
+{% endhint %}
+
+#### Object Parameters Nested within the Template Object
+
+The following table lists and describes both **required** and **optional** object parameters nested within the mandatory `template` object. This `template` object is the body of the `POST` request for the API call.&#x20;
+
+| Name       | Type   | Required | Description                                                                                                                                                                                                        |
+| ---------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `type`     | String | ✅ Yes    | Specifies the template type. Possible values include: `email`, `page`, `popup`.                                                                                                                                    |
+| `rows`     | Array  | ✅ Yes    | Array containing at least one row. Reference the [simple row schema](https://github.com/mailupinc/simple-schema-beefree-sdk/blob/main/simple_row.schema.json).                                                     |
+| `settings` | Object | ❌ No     | Configuration settings. Reference the [Settings Object Parameters](content-services-api-reference.md#settings-object-parameters-request-greater-than-template-greater-than-settings) section for more information. |
+| `metadata` | Object | ❌ No     | Metadata information. Reference the [Metadata Object Parameters section](content-services-api-reference.md#metadata-object-parameters-request-greater-than-template-greater-than-metadata) for more information.   |
+
+#### **Settings Object Parameters** <a href="#settings-object-parameters-request-greater-than-template-greater-than-settings" id="settings-object-parameters-request-greater-than-template-greater-than-settings"></a>
+
+The following code snippet shows the optional `settings` object nested within the `template` object in the body of the `POST` request.
+
+```json
+{
+  “template”:{
+    "settings":{...},
+    ...
+  }
+}
+```
+
+The following table lists and describes **optional** object parameters nested within the `settings` object. The settings object is nested within the mandatory `template` object.&#x20;
+
+| Name                         | Type    | Required | Description                                                                           |
+| ---------------------------- | ------- | -------- | ------------------------------------------------------------------------------------- |
+| `linkColor`                  | String  | ❌ No     | The default color of the links within the template.                                   |
+| `backgroundColor`            | String  | ❌ No     | The background color of the template.                                                 |
+| `contentAreaBackgroundColor` | String  | ❌ No     | The background color of the content area.                                             |
+| `width`                      | integer | ❌ No     | **Important:** The width of the template must be between **320** and **1440** pixels. |
+
+#### **Metadata Object Parameters** <a href="#metadata-object-parameters-request-greater-than-template-greater-than-metadata" id="metadata-object-parameters-request-greater-than-template-greater-than-metadata"></a>
+
+The following code snippet shows the optional `metadata` object nested within the `template` object in the body of the `POST` request.
+
+```json
+{
+  “template”:{
+    "metadata":{...},
+    ...
+  }
+}
+```
+
+The following table lists and describes **optional** object parameters nested within the `metadata` object. The `metadata` object is nested within the mandatory `template` object. &#x20;
+
+| Name          | Type   | Required | Description                                                      |
+| ------------- | ------ | -------- | ---------------------------------------------------------------- |
+| `lang`        | string | ❌ No     | The language code of the template (for example, `"en"`, `"fr"`). |
+| `title`       | string | ❌ No     | The title of the template.                                       |
+| `description` | string | ❌ No     | A short description of the template.                             |
+| `subject`     | string | ❌ No     | The subject line of the email (if applicable).                   |
+| `preheader`   | string | ❌ No     | The preheader text for the email (if applicable).                |
+
+{% openapi src="../../.gitbook/assets/simple-to-full-json.yaml" path="/v1/{collection}/simple-to-full-json" method="post" %}
+[simple-to-full-json.yaml](../../.gitbook/assets/simple-to-full-json.yaml)
+{% endopenapi %}
