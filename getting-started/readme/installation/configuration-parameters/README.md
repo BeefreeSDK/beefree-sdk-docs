@@ -45,6 +45,11 @@ var beeConfig = {
     onLoad: function(jsonFile) { /* Implements function to perform an action once the template is loaded */}, // [optional]
     onError: function(errorMessage) { /* Implements function to handle error messages */ }, // [optional]
     onWarning: function(alertMessage) { /* Implements function to handle error messages */ }, // [optional]
+    debug: {
+        all: true,                 // Enables all debug features listed below
+        inspectJson: true,        // Enables an eye icon on the module/row toolbar to inspect specific JSON portions
+        showTranslationKeys: true // Shows translation keys instead of localized strings
+    },
     translations: {
         'bee-common-widget-bar': {
             content: 'MODULES',

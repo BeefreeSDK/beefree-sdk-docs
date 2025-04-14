@@ -8,6 +8,7 @@
     * [Configuration parameters](getting-started/readme/installation/configuration-parameters/README.md)
       * [Configuration Reload](getting-started/readme/installation/configuration-parameters/configuration-reload.md)
       * [Workspaces](getting-started/readme/installation/configuration-parameters/workspaces.md)
+      * [Debugging the Beefree SDK Editor](getting-started/readme/installation/configuration-parameters/debugging-the-beefree-sdk-editor.md)
     * [Methods and Events](getting-started/readme/installation/methods-and-events.md)
     * [Authorization Process](getting-started/readme/installation/authorization-process-in-detail.md)
     * [How the UID parameter works](getting-started/readme/installation/how-the-uid-parameter-works.md)
