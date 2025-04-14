@@ -381,6 +381,9 @@ Below are the preset prompt suggestions we have identified for the different con
 | Use Active Voice                                                    | mailup-bee-common-component-ai.use-active-voice       |
 | Summarize the content                                               | mailup-bee-common-component-ai.summarize-text         |
 | Convert the content to the third person without changing the format | mailup-bee-common-component-ai.convert-third-person   |
+| Use lowercase                                                       | mailup-bee-common-component-ai.suggest-lowercase-text |
+| Use title case                                                      | mailup-bee-common-component-ai.suggest-titlecase-text |
+| Use ALL CAPS                                                        | mailup-bee-common-component-ai.suggest-use-all-caps   |
 
 ### Button
 
@@ -399,16 +402,20 @@ Below are the preset prompt suggestions we have identified for the different con
 | Translate content to \[language]                | mailup-bee-common-component-ai.translate              |
 | Make it \[tone] without changing the format     | mailup-bee-common-component-ai.adjust-tone            |
 | Use Active Voice                                | mailup-bee-common-component-ai.use-active-voice       |
+| Use ALL CAPS                                    | mailup-bee-common-component-ai.suggest-use-all-caps   |
 
 ### Title
 
-| Label                                       | Key                                                 |
-| ------------------------------------------- | --------------------------------------------------- |
-| Capitalize all letters                      | mailup-bee-common-component-ai.capitalize-text      |
-| Capitalize the first letter of each word    | mailup-bee-common-component-ai.capitalize-all-words |
-| Make it \[number] words long                | mailup-bee-common-component-ai.characters-length    |
-| Make it \[tone] without changing the format | mailup-bee-common-component-ai.adjust-tone          |
-| Translate it to \[language]                 | mailup-bee-common-component-ai.translate-heading    |
+| Label                                       | Key                                                      |
+| ------------------------------------------- | -------------------------------------------------------- |
+| Capitalize all letters                      | mailup-bee-common-component-ai.capitalize-text           |
+| Capitalize the first letter of each word    | mailup-bee-common-component-ai.capitalize-all-words      |
+| Make it \[number] words long                | mailup-bee-common-component-ai.characters-length         |
+| Make it \[tone] without changing the format | mailup-bee-common-component-ai.adjust-tone               |
+| Translate it to \[language]                 | mailup-bee-common-component-ai.translate-heading         |
+| Use ALL CAPS                                | mailup-bee-common-component-ai.suggest-use-all-caps      |
+| Use title case                              | mailup-bee-common-component-ai.suggest-titlecase-text    |
+| Set length to approx \[number] characters   | mailup-bee-common-component-ai.suggest-characters-length |
 
 ## Additional considerations
 
