@@ -23,8 +23,6 @@ Simple Schema also enhances [Custom AddOns development](../../builder-addons/add
 
 * Providing a comprehensive set of properties for full flexibility in your design.
 * Consolidating the Custom Rows, Single Content AddOn, and Row Mixed schemas into a unified, compatible schema type.
-* Enabling global updates—changes in one module apply across all modules.
-* Improving how modules load on the stage.
 
 {% hint style="success" %}
 Reference the [Simple Schema GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main) for more information.
