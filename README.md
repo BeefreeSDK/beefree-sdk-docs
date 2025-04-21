@@ -4,18 +4,34 @@ description: Welcome to the Beefree SDK technical documentation!
 
 # Introduction to Beefree SDK
 
-## What is Beefree SDK? <a href="#welcome" id="welcome"></a>
+## What is Beefree SDK?
 
-Beefree SDK is an embeddable no-code email, landing page, and popup builder. It enables your end users to achieve their design goals without writing a single line of code. By embedding Beefree SDK into your application, you'll provide your end users with access to a full suite of design features that include the following and more:
+Beefree SDK is an embeddable no-code [email](visual-builders/email-builder.md), [landing page,](visual-builders/page-builder/) and [popup](visual-builders/popup-builder/) builder. It enables your end users to achieve their design goals without writing a single line of code. By embedding Beefree SDK into your application, you'll provide your end users with access to a full suite of design features that include the following and more:
 
-* **Email builder:** A no-code interactive and guided experience that helps your end users create beautiful emails quickly.
-* **Page builder:** A no-code intuitive experience that guides your end users through how to create visually stunning landing pages they can use to present information, embed forms, and capture critical data points to make data-driven decisions.
-* **Popup builder: The popup builder is a** no-code environment that provides end users with the fundamentals of creating popups.
-* **File manager:** A tool to manage media assets (images, PDFs, and so on).
-* **Template catalog:** A design template catalog that integrates industry best practices to support end users in getting across the finish line with their creations quickly and achieving quick design wins.
+* **Email builder:** A [no-code email](visual-builders/email-builder.md) creation environment that helps end users quickly create beautiful emails. This environment supports your end users in following email creation best practices recommended by industry experts.
+* **Page builder:** A [no-code landing page](visual-builders/page-builder/) creation environment that empowers end users to build visually stunning landing pages. They can use a landing page as a link for a call-to-action (CTA) inside emails, to embed forms and capture information, or to create standalone pages.
+* **Popup builder:** The [popup builder is a no-code environment](visual-builders/popup-builder/) that provides end users with the tools they need to build compelling popups that capture attention.
+* **File manager:** A tool to [manage media assets](broken-reference) (images, PDFs, and so on).
+* **Template catalog:** A design template catalog that integrates industry best practices to support end users in quickly getting across the finish line with their creations and achieving quick design wins.
 * **AI Writing Assistant:** A helpful AI assistant to help end users write their design content.
 
-These builders can easily integrate into your application in minutes. Browse this documentation's latest [sample code](https://www.npmjs.com/package/@beefree.io/sdk) and[ implementation guides](getting-started/readme/create-an-application.md) to get started.
+These builders can easily integrate into your application in minutes. Browse this documentation's latest [sample code](https://www.npmjs.com/package/@beefree.io/sdk) and implementation guides to get started.
+
+## Quick Start <a href="#welcome" id="welcome"></a>
+
+Take the following steps to get started with Beefree SDK in a few minutes:
+
+1. Create an account to access the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu) and obtain your credentials.
+2. [Create a new subscription](getting-started/readme/create-an-application.md#sign-up-for-account-in-the-developer-console) to get started. Beefree SDK offers a generous Free plan that includes each builder type mentioned in the previous section.
+3. Create an application and [obtain your Client ID and Client Secret](getting-started/readme/create-an-application.md#obtain-your-client-id-and-client-secret).
+4. Clone the [beefree-sdk-sample-client repository](https://github.com/BeefreeSDK/beefree-sdk-sample-client), which includes the code for email and popup builder implementations.
+5. Add your credentials, the Client ID and Client Secret from step three, inside the placeholders in the code.
+6. Once the email builder, or popup builder, depending on which environment you chose, opens, you can start experimenting with the SDK's configuration by customizing the [configuration parameters](getting-started/readme/installation/configuration-parameters/) in the `beeConfig` section of the code.
+7. &#x20;You can also customize the SDK's configuration inside the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu) under the [Application configuration section](https://docs.beefree.io/beefree-sdk/server-side-configurations/server-side-options) of the application you created.
+
+{% hint style="info" %}
+**Note:** Visit the [Beefree SDK pricing page](https://developers.beefree.io/pricing-plans) for a comprehensive list of features and the plan type they correspond to.
+{% endhint %}
 
 ## Beefree SDK's Embeddable Builders <a href="#welcome" id="welcome"></a>
 
