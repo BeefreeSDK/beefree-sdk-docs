@@ -38,6 +38,12 @@ POST /v1/conversion/simple-to-full-json
 
 This endpoint is essential for building headless template workflows, where templates are generated or assembled programmatically—by AI models, config files, or external systems—and later converted for use inside the builder.
 
+Visit the [Content Services API Simple to Full JSON documentation](../../apis/content-services-api/content-services-api-reference.md#simple-to-full-json) to learn more about how to use this endpoint.
+
+{% hint style="warning" %}
+**Tip:** Reference an [example valid request body in the GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/blob/main/example_valid_request.json) to experiment with the API endpoint and see it in action.
+{% endhint %}
+
 ## Use Cases
 
 The following section lists several ways you can leverage Simple Schema to bring additional value to your end users.
@@ -79,7 +85,7 @@ Simple Schema enhances the development experience for Custom AddOns by integrati
 
 ### Content Dialog Handler Behavior
 
-To develop your own [Custom AddOn](../../builder-addons/addons/custom-addons/addon-development.md), you need to utilize Beefree SDK's [Content Dialog](../../other-customizations/advanced-options/content-dialog.md) method. When `contentDialog.addon.handler` is triggered:
+To develop your own [Custom AddOn](../../builder-addons/addons/custom-addons/addon-development.md), you need to utilize Beefree SDK's [Content Dialog](../../other-customizations/advanced-options/content-dialog.md) method. The following code snippet provides and example of how to utilize the Content Dialog for Custom AddOns with Simple Schema.
 
 ```json
 {
@@ -92,7 +98,9 @@ To develop your own [Custom AddOn](../../builder-addons/addons/custom-addons/add
 }
 ```
 
-This structure supports consistent block-level styling globally.
+{% hint style="warning" %}
+**Tip:** The structure in the code snippet supports consistent block-level styling globally.
+{% endhint %}
 
 ## Custom Rows
 

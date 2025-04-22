@@ -89,8 +89,8 @@ The following JSON Schema is related to the request parameters for this endpoint
 ```json
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "title": "Simple Template"
   "$id": "simple_template.schema.json",
+  "title": "Simple Template",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -107,21 +107,21 @@ The following JSON Schema is related to the request parameters for this endpoint
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "BEE-simplified-row"
+            "$ref": "simple_row.schema.json"
           }
         },
         "settings":{
           "additionalProperties": false,
-          "type":"object",
+          "type": "object",
           "properties":{
             "linkColor":{
-              "type":"string"
+              "type": "string"
             },
-            "backgroundColor":{
-              "type":"string"
+            "background-color":{
+              "type": "string"
             },
             "contentAreaBackgroundColor":{
-              "type":"string"
+              "type": "string"
             },
             "width": {
               "type": "integer",

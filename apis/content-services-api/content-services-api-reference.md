@@ -68,11 +68,9 @@ The following section provides detailed information for each of the resources as
 
 **URL:** `https://api.getbee.io/v1/{collection}/html`
 
-{% openapi src="../../.gitbook/assets/html_endpoint.yaml" path="/v1/{collection}/html" method="post" %}
-[html_endpoint.yaml](../../.gitbook/assets/html_endpoint.yaml)
-{% endopenapi %}
-
-
+{% openapi-operation spec="export-html-1" path="/v1/{collection}/html" method="post" %}
+[Broken link](broken-reference)
+{% endopenapi-operation %}
 
 {% hint style="info" %}
 Include the optional `newbutton` query string parameter and set its value to `true` to generate HTML button results optimized for Outlook. Reference [HTML Outlook Button Rendering](../../rendering/html-outlook-button.md) for additional details.
@@ -261,6 +259,10 @@ Simple Schema is available on [Superpowers and Enterprise plans](https://develop
 {% endhint %}
 
 This section discusses what the `/simple-to-full-json` endpoint is and how you can use it for AI-driven designs. Beefree SDK template JSON is long and includes many properties. For this reason, it does not provide the best structure for training AI models in workflows that include AI-driven design creation. Beefree SDK's [Simple schema](../../data-structures/simple-schema/) is a lightweight alternative that is optimized for training AI models. [Simple schema](../../data-structures/simple-schema/), which is several lines shorter than Beefree SDK's template JSON, is a great solution for AI-generated schemas. This endpoint accepts [Simple schema](../../data-structures/simple-schema/) as the body of the `POST` request, and returns the full Beefree SDK template JSON, which can then be loaded in the Beefree SDK editor for an end user to view and edit accordingly. There are many creative ways to use and implement this endpoint, because it provides a pathway to programmatically creating full Beefree SDK-compatible templates completely outside of the Beefree SDK builder.        &#x20;
+
+{% hint style="warning" %}
+**Tip:** Reference an [example valid request body in the GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/blob/main/example_valid_request.json) to experiment with the API endpoint and see it in action.
+{% endhint %}
 
 #### Request Parameters
 

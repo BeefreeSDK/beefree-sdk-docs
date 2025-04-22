@@ -65,7 +65,7 @@ Below is the JSON Schema definition and a detailed breakdown of each property.
 
 ### Field Descriptions
 
-The following table lists the field descriptions along with their corresponding data type, whether or not they are mandatory, and their description.
+The following table lists the field descriptions along with their corresponding data type, and their description.
 
 | Definition Name | Type    | Description                                                                                                                                                   |
 | --------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
