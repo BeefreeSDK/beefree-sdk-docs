@@ -33,3 +33,15 @@ Please note that **all custom headers will be prefixed with “X-BEE-“** ident
 {% hint style="info" %}
 Please note that custom headers must be whitelisted by our team before using them. Please open a support ticket via the [Beefree SDK Console](https://dam.beefree.io/devportal) if you’re planning to use this feature.
 {% endhint %}
+
+### Using Pre-approved Custom Headers
+
+You don't need to request whitelisting for the following custom headers. Instead, you can immediately use any of these **pre-approved** custom headers:
+
+* `x-bee-authorization`
+* `x-bee-document-id`
+* `x-bee-custom-host`
+* `x-bee-tenant-identifier`
+* `x-bee-businessuid`
+
+No additional approval is required when using these headers.
