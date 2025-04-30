@@ -28,6 +28,12 @@ Simple Schema also enhances [Custom AddOns development](../../builder-addons/add
 Reference the [Simple Schema GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main) for more information.
 {% endhint %}
 
+## Webinar
+
+The following webinar includes an in-depth exploration of [Simple Schema](https://github.com/BeefreeSDK/beefree-sdk-simple-schema), the `/simple-to-full-json` [API endpoint](../../apis/content-services-api/content-services-api-reference.md#simple-to-full-json), and covers two example scenarios and applications of Simple Schema.
+
+{% embed url="https://www.youtube.com/watch?v=DEpQERhWV9E" %}
+
 ## API Endpoint: Convert Simple Schema to Full JSON
 
 You can convert Simple Schema into fully functional Beefree native JSON using the [following endpoint](../../apis/content-services-api/content-services-api-reference.md#simple-to-full-json):
