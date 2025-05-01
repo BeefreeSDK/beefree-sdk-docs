@@ -1,7 +1,7 @@
 # Reusable Content
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Essentials plan, [upgrade a development application](https://docs.beefree.io/beefree-sdk/getting-started/readme/development-applications) for free to try this and other Core-level features.
+This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above. Upgrade a [development application](../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
 {% endhint %}
 
 Beefree SDK offers a comprehensive suite of features that enable your application's end users to save and manage reusable content. Rows are a core feature of the visual builders within Beefree SDK that provide end users with an intuitive avenue for saving and reusing content throughout their design creation workflows. They provide a structured method to house various types of content such as headers, paragraphs, images, and buttons.

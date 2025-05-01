@@ -1,7 +1,7 @@
 # Implement Synced Rows
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above. If you're on the Essentials plan, [upgrade a development application](../../../getting-started/readme/development-applications.md) for free to try this and other Core-level features.
+This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above. Upgrade a [development application](../../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
 {% endhint %}
 
 ## Overview <a href="#overview" id="overview"></a>
@@ -176,7 +176,7 @@ The specific objectives of the host application steer the choice between these m
 ## Advanced Permissions for the Edit Synced Row Button
 
 {% hint style="info" %}
-Adding [Advanced Permissions](../../../other-customizations/advanced-options/advanced-permissions.md) to Synced Rows is available for Superpowers and Enterprise plans. If you're on the Core plan, [upgrade a development application](../../../getting-started/readme/development-applications.md) to the Superpowers plan for free. In your development application, you'll be able to try Advanced Permissions with Synced Rows. This is available for Email, Page, and Popup builders.
+Adding [Advanced Permissions](../../../other-customizations/advanced-options/advanced-permissions.md) to Synced Rows is available for Superpowers and Enterprise plans. Upgrade a [development application](../../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits. In your development application, you'll be able to try Advanced Permissions with Synced Rows. This is available for Email, Page, and Popup builders.
 {% endhint %}
 
 By configuring advanced permissions for Synced Rows, you can manage the visibility of and access to the **Edit Synced Row** toolbar button. These customization options enable you to define whether end users can:
