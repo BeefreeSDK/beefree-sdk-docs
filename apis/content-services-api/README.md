@@ -172,6 +172,24 @@ By default, the API has the following rate limits:
 * **X-Rate-Limit-Reset:** A Unix timestamp representing the time the next cycle will begin, and the count will reset.
 * **Retry-After:** A Unix timestamp representing the time the application may resume submitting requests.
 
+### Strategies for Managing Rate Limits
+
+To stay within the default limits and ensure reliable delivery, the following practices are recommended. These not only help distribute traffic more evenly but also provide resilience against transient network issues:
+
+* **Monitor rate limit headers and handle 429 responses gracefully.**\
+  &#x20;Response metadata indicates remaining capacity and reset timing. When receiving a `429 Too Many Requests`, it’s best to pause requests and retry after the time specified in the `Retry-After` header.
+* **Use exponential backoff.**\
+  On retries, apply an exponentially increasing delay with a small random variation. This helps prevent synchronized retry storms that can worsen congestion.
+* **Throttle traffic using a queue.**\
+  In applications that generate burst traffic or scale horizontally, a request queue with rate-based throttling can smooth spikes and prevent exceeding per-second or per-minute thresholds.
+* **Debounce high-frequency updates.**\
+  Debouncing can be especially effective in scenarios like autosaving. For example, it's not typically necessary to request new HTML after every change.
+*   **Cache repeated GET requests.**
+
+    Short-lived caching for frequently accessed data helps reduce redundant requests and conserves rate limit capacity.
+* **Monitor usage patterns.**\
+  Set up alerting for repeated 429 errors to catch rate limit issues early. Monitoring request patterns can also help anticipate scale needs.
+
 ## FAQs <a href="#api-billing-why-we-are-charging-for-this-api" id="api-billing-why-we-are-charging-for-this-api"></a>
 
 Reference the answers to the most frequently asked questions in this section.
