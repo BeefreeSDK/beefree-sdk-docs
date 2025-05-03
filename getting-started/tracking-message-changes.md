@@ -6,13 +6,13 @@ This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/plu
 
 ## Overview of Tracking Message Changes <a href="#overview" id="overview"></a>
 
-This page discusses how to effectively track message changes in the Beefree SDK. It explains how you can use the `onChange` function to monitor real-time JSON updates, enabling efficient application updates and debugging, if needed. It also covers how to implement the `onRemoteChange` function to track edits made by other users, ensuring that team projects remain synchronized and consistent. By leveraging these two callbacks, you can develop a workflow for tracking design changes your end users make, whether they are within single session or a [collaborative editing](../other-customizations/collaborative-editing.md) session.
+This page discusses how to effectively track message changes in the Beefree SDK. It explains how you can use the `onChange` function to monitor real-time JSON updates, enabling efficient application updates and debugging, if needed. It also covers how to implement the `onRemoteChange` function to track edits made by other users, ensuring that team projects remain synchronized and consistent. By leveraging these two callbacks, you can develop a workflow for tracking design changes your end users make, whether they are within single session or a [collaborative editing](../other-customizations/collaborative-editing/) session.
 
 This page explores and answers the following questions:
 
 * How can I monitor what my customers do in the builder?
 * How can I tell when a message has actually been updated?
-* How can I tell when a [collaborative editing](../other-customizations/collaborative-editing.md) session has been updated?
+* How can I tell when a [collaborative editing](../other-customizations/collaborative-editing/) session has been updated?
 
 ### Use cases <a href="#use-cases" id="use-cases"></a>
 
@@ -245,7 +245,7 @@ To enable tracking message changes, you need to add the following in the [beeCon
 
 * Add `trackChanges`  and set it to `true`.
 * The `onChange` callback, with the related response function.
-* (Optional) Add and set the `onRemoteChange` boolean to `true` for multi-user message tracking during [collaborative editing session](../other-customizations/collaborative-editing.md).
+* (Optional) Add and set the `onRemoteChange` boolean to `true` for multi-user message tracking during [collaborative editing session](../other-customizations/collaborative-editing/).
 
 #### **Enable "onChange" Event**
 
@@ -264,7 +264,7 @@ onChange: function (jsonFile, response) {
 
 ### **onRemoteChange**
 
-The `onRemoteChange` callback is a bit different than `onChange`, because it monitors and tracks the changes of other users (those who are not the primary user) during [collaborative editing sessions](../other-customizations/collaborative-editing.md). Using this callback allows you to monitor the changes of all end users in the same session.
+The `onRemoteChange` callback is a bit different than `onChange`, because it monitors and tracks the changes of other users (those who are not the primary user) during [collaborative editing sessions](../other-customizations/collaborative-editing/). Using this callback allows you to monitor the changes of all end users in the same session.
 
 Consider the following when using the `onRemoteChange` callback:
 

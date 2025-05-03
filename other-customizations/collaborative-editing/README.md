@@ -1,20 +1,20 @@
 # Collaborative Editing
 
 {% hint style="info" %}
-This feature is available on the Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. Additional limitations apply ([learn more](collaborative-editing.md#monitor-a-session)). Upgrade a [development application](../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
+This feature is available on the Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. Additional limitations apply ([learn more](./#monitor-a-session)). Upgrade a [development application](../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
 {% endhint %}
 
 ## Overview
 
 With Co-editing, multiple users can work on the same asset (email, page or popup) simultaneously. Co-editors can see what each other is doing, as their changes are synced to the stage in real-time.
 
-<figure><img src="../.gitbook/assets/Co-editing-avatars.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Co-editing-avatars.png" alt=""><figcaption></figcaption></figure>
 
 Each user is represented by a round icon with the initial of the user, and hovering the mouse on the icon will show the full name for that user.
 
 When a user selects a row or a content block, other co-editors will see it highlighted with that user’s color. To avoid conflicting edits, only one user at a time can edit a row or block. A feedback message will guide users when this situation happens.
 
-<figure><img src="../.gitbook/assets/2Content-locked-by-another-user.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2Content-locked-by-another-user.gif" alt=""><figcaption></figcaption></figure>
 
 ## Use Cases
 
@@ -22,9 +22,9 @@ In many companies, it’s rare that someone works alone on everything related to
 
 When multiple people collaborate on creating content, co-editing is the logical solution for an authentic teamwork experience, Google-doc style.
 
-<figure><img src="../.gitbook/assets/3coediting_min.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/3coediting_min.gif" alt=""><figcaption></figcaption></figure>
 
-If you add [Commenting](advanced-options/commenting.md) to the mix, Beefree SDK becomes an all-around, real-time, collaborative content creation platform to design and review emails, landing pages, and popups, unifying your customers’ workflow under one roof.
+If you add [Commenting](../advanced-options/commenting.md) to the mix, Beefree SDK becomes an all-around, real-time, collaborative content creation platform to design and review emails, landing pages, and popups, unifying your customers’ workflow under one roof.
 
 ### Availability <a href="#availability" id="availability"></a>
 
@@ -224,15 +224,15 @@ onSend: function(htmlFile, version) {
 
 ## Track Message Changes
 
-You can [track message changes](collaborative-editing.md#track-message-changes) for the main user and additional users in a collaborative editing session.&#x20;
+You can [track message changes](./#track-message-changes) for the main user and additional users in a collaborative editing session.&#x20;
 
-The `onChange` callback allows you to track the activities and changes to the design JSON performed by session's main user (User A). Reference the `onChange` [section of the Track Message Changes page](../getting-started/tracking-message-changes.md#onchange-event) to learn more about implementing and using this callback.&#x20;
+The `onChange` callback allows you to track the activities and changes to the design JSON performed by session's main user (User A). Reference the `onChange` [section of the Track Message Changes page](../../getting-started/tracking-message-changes.md#onchange-event) to learn more about implementing and using this callback.&#x20;
 
-The `onRemoteChange` callback allows you to track the activities and changes to the design's JSON performed by additional users (User B, User C, and so on). Reference the `onRemoteChange` [section of the Track Message Changes page](../getting-started/tracking-message-changes.md#onremotechange) to learn more about implementing and using this callback.&#x20;
+The `onRemoteChange` callback allows you to track the activities and changes to the design's JSON performed by additional users (User B, User C, and so on). Reference the `onRemoteChange` [section of the Track Message Changes page](../../getting-started/tracking-message-changes.md#onremotechange) to learn more about implementing and using this callback.&#x20;
 
 ## Custom Languages
 
-You may override any of the default language strings using [custom translations](collaborative-editing.md#custom-languages).  The code block below contains the JSON required to replace all co-editing strings.
+You may override any of the default language strings using [custom translations](./#custom-languages).  The code block below contains the JSON required to replace all co-editing strings.
 
 ```json
 
