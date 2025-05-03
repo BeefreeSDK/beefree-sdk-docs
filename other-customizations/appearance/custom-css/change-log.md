@@ -6,11 +6,149 @@ description: >-
 
 # Change Log
 
-## Release Scheduled for March 2025
+## Release Scheduled for May 2025
 
-This section includes a reference of the new classnames scheduled for release in March 2025. The new classnames will be related to [Mobile Badge](change-log.md#mobile-badge-or-scheduled-for-march-2025) and [Confirmation Dialogs](change-log.md#confirmation-dialogs-or-scheduled-for-march-2025). For more details, click the **>** symbol to expand the expandable content sections containing additional information.&#x20;
+Reference the CSS changes scheduled to go live May 2025 in the following expandable section.
 
-### Mobile Badge | Scheduled for March 2025
+<details>
+
+<summary><strong>Draggable Widgets, Mobile Stage Toggle, and History (Undo/Redo) CSS Classes</strong></summary>
+
+### 1. Draggable Widgets
+
+**UI Area: Sidebar Content Tab / Tiles Panel**
+
+#### 🔄 What’s Changing
+
+* A wrapper `<div>` has been **removed**.
+* Several class names have been **updated for consistency**.
+
+#### ❌ Removed Classes
+
+* `sidebar__draggablewrapper--cs`
+* `sidebar__draggablewrapper`
+* `sidebar__draggablewrapper--DraggableModule`
+* `sidebar__draggablewrapper--modules-***` (e.g., `heading`, `form`, `button`)
+* `sidebar__draggablewrapper--rowAddon`
+* `panel--cs`
+* `panel`
+* `panel--default`
+* `panel--module`
+* `panel--locked`
+* `panel--***` (e.g., `heading`, `form`, `button`)
+* `panel--body`
+* Internal: `Draggable_Sidebar_*`
+* `sidebar-draggable-fullwidth--cs`
+* `sidebar-draggable-locked--cs`
+* `sidebar-draggable-***--cs`
+
+#### ✅ New Classes
+
+* `sidebar-draggable--cs`
+
+### 2. Draggable Rows
+
+**UI Area: Sidebar Rows Tab / Empty Rows**
+
+#### 🔄 What’s Changing
+
+* A wrapper `<div>` has been **removed**.
+* Class names updated for consistency.
+
+#### ❌ Removed Classes
+
+* `sidebar__draggablewrapper--cs`
+* `sidebar__draggablewrapper_fullwidth--cs`
+* `sidebar__draggablewrapper`
+* `sidebar__draggablewrapper--DraggableRow`
+* `sidebar__draggablewrapper--***` (e.g., `one-column-empty`, `two-columns-3-9-empty`)
+* `fullWidth`
+* `panel--cs`, `panel`, `panel--default`, `panel--row`
+* `panel--customrow`, `panel--customrow--cs`
+* `panel--customrow--***` (element type or custom row name)
+* Internal: `Draggable_Sidebar_*`
+* `sidebar-draggable-fullwidth--cs`
+* `sidebar-draggable-locked--cs`
+* `sidebar-draggable-***--cs`
+
+#### ✅ New Classes
+
+* `sidebar-draggable--cs`
+
+### 3. Draggable Rows
+
+**UI Area: Sidebar Rows Tab / Other Rows**
+
+#### 🔄 What’s Changing
+
+* A wrapper `<div>` has been **removed**.
+
+#### ❌ Removed Classes
+
+* `fullWidth`
+* `panel--cs`, `panel`, `panel--default`, `panel--row`
+* `panel--customrow`, `panel--customrow--cs`
+* `panel--customrow--***` (element type or custom row name)
+* Internal: `CustomRowDraggable_*`
+* `sidebar-draggable-fullwidth--cs`
+* `sidebar-draggable-locked--cs`
+* `sidebar-draggable-***--cs`
+
+#### ✅ New Classes
+
+* `sidebar-draggable-customrow--cs`
+
+### 4. Mobile Stage Toggle
+
+#### 🔄 What’s Changing
+
+* Updated class names for **Desktop/Mobile toggle** and **Blur/Hide** functionality for better clarity.
+
+#### ❌ Removed Classes
+
+* `stagemode__button`, `stagemode__button__desktop`, `stagemode__button__mobile`
+* `stagemode__button--active`, `stagemode__radiogroup--cs`
+* `radiogroup-mobile--cs`, `radiogroup-desktop--cs`, `active--cs`
+* `stagemode__button__display`
+
+#### ✅ New Classes
+
+* `stagemode__button--cs`
+* `stagemode__button__desktop--cs`
+* `stagemode__button__mobile--cs`
+* `button-icon--cs`, `button-small--cs`, `button-primary--cs`
+* `button--cs`, `button-active--cs`
+
+### 5. History (Undo/Redo)
+
+#### 🔄 What’s Changing
+
+* Structural changes to wrappers and class names for **undo/redo functionality**.
+
+#### ❌ Removed Elements and Classes
+
+* `History_undoRedoWrapper__*` (outer `<div>`)
+* `History_undoRedoActionsArrowsContainer__* > span` (spans inside arrows container)
+* `<div id="undo-redo__history" class="undo-redo__history--open">`
+* `<span class="history__step__borderline">` inside history items
+* `history-event-time` tag (now replaced with `<time>`)
+
+#### ✅ New Elements and Classes
+
+* `undo-redo__toggleButton`
+* `undo-redo__undoButton`, `undo-redo__redoButton`
+* `undo-redo__history`, `undo-redo__history--open--cs`
+* `<div role="menuitem">` wrapping history steps
+* `history__step`, `history__step--active`
+* `history__step--disabled--cs`, `history__step--active--cs`
+
+</details>
+
+## Release March 2025
+
+This section includes a reference of the new classnames released in March 2025. The new classnames will be related to [Mobile Badge](change-log.md#mobile-badge-or-scheduled-for-march-2025) and [Confirmation Dialogs](change-log.md#confirmation-dialogs-or-scheduled-for-march-2025). For more details, click the **>** symbol to expand the expandable content sections containing additional information.&#x20;
+
+### Mobile Badge | Released March 2025
 
 This section includes a reference for new classnames related to Mobile Badge.
 
@@ -117,7 +255,7 @@ The following Markup variations apply for Mobile badge row.&#x20;
 
 </details>
 
-### Confirmation Dialogs | Scheduled for March 2025
+### Confirmation Dialogs | Released March 2025
 
 This section includes a reference for new classnames related to Confirmation Dialogs.
 
