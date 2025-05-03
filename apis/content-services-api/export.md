@@ -15,11 +15,11 @@ This endpoint allows you to retrieve the full or partial HTML output of a templa
 
 #### How It Works
 
-To generate the HTML from a message JSON:
+To generate HTML from a template's JSON:
 
-1. Capture or store the latest JSON output from the builder using callbacks such as `onChange` or `autosave`.
-2. Send this JSON payload to the HTML generation endpoint.
-3. Receive an HTML string as the response.
+1. Capture or store the latest JSON output from the builder using [callbacks](../../getting-started/readme/installation/methods-and-events.md) such as `onChange` or `autosave`.
+2. Send this JSON payload to the HTML endpoint.
+3. Receive the HTML string as the response.
 
 #### Required Request Payload
 
@@ -91,7 +91,7 @@ Using `"Full"` produces a single, unpaginated scrollable PDF.
 
 To generate a PDF from a template:
 
-1. Call the `/html` endpoint to retrieve the rendered HTML of the template.
+1. Call the `/html` endpoint to retrieve the template's HTML.
 2. Insert that HTML into the `"html"` field of the request payload.
 3. Set your preferred `"page_orientation"` and `"page_size"`.
 4. Send the payload to the PDF generation endpoint.
@@ -108,7 +108,7 @@ To generate a PDF from a template:
 
 **URL:** `https://api.getbee.io/v1/{collection}/image`
 
-This endpoint allows you to generate an image file (e.g., PNG) from a given HTML string. You can control the image output by specifying dimensions.
+This endpoint allows you to generate an image file (for example, PNG) from a template's HTML. You can control the image output by specifying the dimensions.
 
 #### Required Request Payload
 
@@ -120,7 +120,11 @@ This endpoint allows you to generate an image file (e.g., PNG) from a given HTML
 }
 ```
 
-#### Rendering Environment
+{% hint style="info" %}
+Note: As an alternative to providing `width` and `height`, you can also provide `size`.
+{% endhint %}
+
+#### Rendering
 
 The HTML is rendered using a fixed-size browser window to simulate a real-world preview. Here are the key rendering parameters:
 
