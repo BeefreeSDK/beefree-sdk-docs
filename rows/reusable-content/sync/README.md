@@ -6,7 +6,7 @@ This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/plug
 
 ## Synced Rows <a href="#overview" id="overview"></a>
 
-Synced Rows expands on the foundational capabilities of [Save Rows](../create/save/) and [Edit Single Row Mode](./#edit-single-row-mode), helping users manage rows more effectively. Using the `merge-rows` and `synced-rows` methods in the [Content Services API (CSAPI)](../../api-endpoints.md), you can create an efficient row management workflow. This ensures that when users update content in one row marked as “synced,” those updates are reflected across all connected designs using that synced row.
+Synced Rows expands on the foundational capabilities of [Save Rows](../create/save/) and [Edit Single Row Mode](./#edit-single-row-mode), helping users manage rows more effectively. Using the `merge-rows` and `synced-rows` methods in the [Content Services API (CSAPI)](../../../apis/content-services-api/), you can create an efficient row management workflow. This ensures that when users update content in one row marked as “synced,” those updates are reflected across all connected designs using that synced row.
 
 ### Prerequisites
 

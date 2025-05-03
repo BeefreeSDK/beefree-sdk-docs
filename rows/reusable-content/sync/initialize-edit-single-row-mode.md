@@ -88,4 +88,4 @@ onChange: function (json, response) {
 
 ## **Merging saved rows in existing messages**
 
-An effective way to update saved rows across multiple templates is by implementing the save action in combination with the [CSAPI](../../api-endpoints.md), to handle a row update across [multiple existing templates](../../api-endpoints.md).
+An effective way to update saved rows across multiple templates is by [implementing the save action](../create/save/implement-self-hosted-saved-rows/) in combination with the [Content Services API](../../../apis/content-services-api/), to handle a row update across multiple existing templates.

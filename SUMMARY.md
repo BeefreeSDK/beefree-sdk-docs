@@ -34,13 +34,36 @@
   * [Setting layout and size](visual-builders/popup-builder/setting-layout-and-size/README.md)
     * [Advanced settings](visual-builders/popup-builder/setting-layout-and-size/advanced-settings.md)
 * [AI-Driven Design Creation](visual-builders/ai-driven-design-creation.md)
-* [Form Block](visual-builders/form-block/README.md)
-  * [Integrating and using the Form block](visual-builders/form-block/integrating-and-using-the-form-block/README.md)
-    * [Passing forms to the builder](visual-builders/form-block/integrating-and-using-the-form-block/passing-forms-to-the-builder.md)
-    * [Form structure and parameters](visual-builders/form-block/integrating-and-using-the-form-block/form-structure-and-parameters.md)
-    * [Form layout customization](visual-builders/form-block/integrating-and-using-the-form-block/form-layout-customization.md)
-    * [Allowed form fields](visual-builders/form-block/integrating-and-using-the-form-block/allowed-form-fields.md)
-    * [Edit form field modal](visual-builders/form-block/integrating-and-using-the-form-block/edit-form-field-modal.md)
+
+## APIs
+
+* [Content Services API](apis/content-services-api/README.md)
+  * [Authentication](apis/content-services-api/authentication.md)
+  * [Export](apis/content-services-api/export.md)
+  * [Convert](apis/content-services-api/convert.md)
+  * [Row Processing](apis/content-services-api/row-processing.md)
+  * [AI Collection](apis/content-services-api/ai-collection.md)
+  * [Brand Style](apis/content-services-api/brand-style-management.md)
+* [Template Catalog API](apis/template-catalog-api/README.md)
+  * [Authentication](apis/template-catalog-api/authentication.md)
+  * [Templates](apis/template-catalog-api/templates.md)
+  * [Categories](apis/template-catalog-api/categories.md)
+  * [Collections](apis/template-catalog-api/collections.md)
+  * [Designers](apis/template-catalog-api/designers.md)
+  * [Tags](apis/template-catalog-api/tags.md)
+* [HTML Importer API](apis/html-importer-api/README.md)
+  * [Authentication](apis/html-importer-api/authentication.md)
+  * [Import HTML](apis/html-importer-api/import-html.md)
+
+## Forms
+
+* [Form Block](forms/form-block.md)
+* [Integrating and using the Form block](forms/integrating-and-using-the-form-block/README.md)
+  * [Passing forms to the builder](forms/integrating-and-using-the-form-block/passing-forms-to-the-builder.md)
+  * [Form structure and parameters](forms/integrating-and-using-the-form-block/form-structure-and-parameters.md)
+  * [Form layout customization](forms/integrating-and-using-the-form-block/form-layout-customization.md)
+  * [Allowed form fields](forms/integrating-and-using-the-form-block/allowed-form-fields.md)
+  * [Edit form field modal](forms/integrating-and-using-the-form-block/edit-form-field-modal.md)
 
 ## Rows
 
@@ -59,7 +82,6 @@
 * [Storage for Reusable Content](rows/storage/README.md)
   * [Hosted Saved Rows](rows/storage/hosted-saved-rows.md)
   * [Self-Hosted Saved Rows](rows/storage/self-hosted-saved-rows.md)
-* [API Endpoints for Row Management](rows/api-endpoints.md)
 
 ## File manager
 
@@ -137,15 +159,6 @@
 * [Comments Schema](data-structures/comments-schema/README.md)
   * [Change Schema for Comments](data-structures/comments-schema/change-schema-for-comments.md)
 
-## APIs
-
-* [Content Services API](apis/content-services-api/README.md)
-  * [CSAPI Overview](apis/content-services-api/csapi-overview.md)
-  * [Content Services API Reference](apis/content-services-api/content-services-api-reference.md)
-  * [Brand Style Management](apis/content-services-api/brand-style-management.md)
-  * [FAQs](apis/content-services-api/faqs.md)
-* [Template Catalog API](apis/template-catalog-api.md)
-
 ## Builder AddOns
 
 * [AddOns](builder-addons/addons/README.md)
@@ -174,10 +187,6 @@
   * [AddOns Configuration](builder-addons/addons/addons-configuration.md)
   * [AddOn FAQs](builder-addons/addons/addon-faqs.md)
 
-## Rendering
-
-* [HTML Outlook Button Rendering](rendering/html-outlook-button.md)
-
 ## Resources
 
 * [Error Management](resources/error-management/README.md)
@@ -188,7 +197,3 @@
   * [Template Validation and Update](resources/error-management/template-validation-and-update.md)
   * [Template validation and update errors](resources/error-management/template-validation-and-update-errors.md)
 * [Scheduled maintenances](resources/scheduled-maintenances.md)
-
-***
-
-* [HTML Importer Beta](html-importer-beta.md)

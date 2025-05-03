@@ -5,7 +5,7 @@ description: Explore how to implement customization options for a form's layout.
 # Form layout customization
 
 {% hint style="info" %}
-This feature is available on all [Beefree SDK plan types](https://developers.beefree.io/pricing-plans) and applies only to [Page](../../page-builder/) and [Popup](../../popup-builder/) builders.
+This feature is available on all [Beefree SDK plan types](https://developers.beefree.io/pricing-plans) and applies only to [Page](../../visual-builders/page-builder/) and [Popup](../../visual-builders/popup-builder/) builders.
 {% endhint %}
 
 ## Overview
@@ -30,7 +30,7 @@ The following video provides a visual representation of these customization opti
 Prior to getting started, ensure you have the following:
 
 * [Beefree SDK Plan](https://developers.beefree.io/accounts/signup/)
-  * Page builder or Popup builder application within your [Dev Console](https://developers.beefree.io/accounts/login/?from=website\_menu)
+  * Page builder or Popup builder application within your [Dev Console](https://developers.beefree.io/accounts/login/?from=website_menu)
 
 ## Implementing Multiple and Single Choice Orientation
 

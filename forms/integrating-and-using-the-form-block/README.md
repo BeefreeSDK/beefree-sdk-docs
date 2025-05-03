@@ -1,15 +1,15 @@
 # Integrating and using the Form block
 
 {% hint style="info" %}
-The Form block is available for the [Page Builder](../../page-builder/) and the [Popup Builder](../../popup-builder/)
+The Form block is available for the [Page Builder](../../visual-builders/page-builder/) and the [Popup Builder](../../visual-builders/popup-builder/)
 {% endhint %}
 
 ## How it Works
 
 You can enable your users to add forms in Beefree SDK with two methods:
 
-* by passing in the [configuration parameters](../../../getting-started/readme/installation/configuration-parameters/) a single, **default JSON form**, potentially including all the fields your application supports, and then have **customers build and style forms** with our **form content block**.
-* by implementing a [content dialog](../../../other-customizations/advanced-options/content-dialog.md) on top of the form content block and building a user interface on top of the builder, so that your users can either **browse and select pre-built forms** or **build a new form.**
+* by passing in the [configuration parameters](../../getting-started/readme/installation/configuration-parameters/) a single, **default JSON form**, potentially including all the fields your application supports, and then have **customers build and style forms** with our **form content block**.
+* by implementing a [content dialog](../../other-customizations/advanced-options/content-dialog.md) on top of the form content block and building a user interface on top of the builder, so that your users can either **browse and select pre-built forms** or **build a new form.**
 
 {% hint style="info" %}
 **Note:** For the "Form" tile to appear in the "Content" of the builder, you must successfully implement one of the two methods mentioned above.
@@ -24,7 +24,7 @@ Your application passes a single JSON form, potentially including all the fields
 * renaming their labels
 * editing their type
 
-<figure><img src="../../../.gitbook/assets/Managing-fields_2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Managing-fields_2.png" alt=""><figcaption></figcaption></figure>
 
 This is the **quickest way** to get started using forms. You may also decide to include such forms inside templates provided by your application.
 
@@ -36,7 +36,7 @@ This is the **quickest way** to get started using forms. You may also decide to 
 The Content Dialog feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
 {% endhint %}
 
-If you want to pass more than one form to the builder, you can do so by implementing a [Content dialog](../../../other-customizations/advanced-options/content-dialog.md) on top of the form content block.
+If you want to pass more than one form to the builder, you can do so by implementing a [Content dialog](../../other-customizations/advanced-options/content-dialog.md) on top of the form content block.
 
 With a content dialog, you have full control over the experience of adding a form. A few examples:
 
@@ -46,7 +46,7 @@ With a content dialog, you have full control over the experience of adding a for
 
 Here is an example of form selection built with a Content Dialog.
 
-<figure><img src="../../../.gitbook/assets/2Content-dialog-to-select-form_2.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2Content-dialog-to-select-form_2.gif" alt=""><figcaption></figcaption></figure>
 
 Once the content dialog returns a form to the application, users can then change the form content properties in the builder, by adding and removing fields, rearranging their order. and customizing their labels and style
 
@@ -56,7 +56,7 @@ Once the content dialog returns a form to the application, users can then change
 
 You may even want to go a step further and use the Content dialog to load your UI for form creation, on top of the builder; your users will be able to create a new form and add it to the web content they’re building, without interrupting their workflow.
 
-<figure><img src="../../../.gitbook/assets/3mock-form-builder-with-content-dialog.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/3mock-form-builder-with-content-dialog.png" alt=""><figcaption></figcaption></figure>
 
 ## Embed a Third-Party Form
 
@@ -66,7 +66,7 @@ The HTML Block is available on Beefree SDK [paid plans](https://dam.beefree.io/p
 
 As an alternative to the above-mentioned methods, your users can add an **HTML block** and easily **embed forms** created with [any form builder](https://www.g2.com/categories/online-form-builder) available on the market (e.g. Typeform, JotForm, etc.).
 
-<figure><img src="../../../.gitbook/assets/4firefox_oDUJyfo03S.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/4firefox_oDUJyfo03S.png" alt=""><figcaption></figcaption></figure>
 
 Form builders typically offer different options to get an embed code:
 
@@ -83,7 +83,7 @@ Once a form is added to the web content, the user has these options to manage fi
 
 Besides, end users can [edit fields](form-structure-and-parameters.md), when the “edit” action is available.
 
-<figure><img src="../../../.gitbook/assets/5Icons.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/5Icons.png" alt=""><figcaption></figcaption></figure>
 
 Finally, users can apply various styling options to the form:
 
@@ -99,11 +99,11 @@ Finally, users can apply various styling options to the form:
 
 When managing fields in a form block, users can click on the “Edit” action to change field types and properties. To facilitate the user, the icon next to the label highlights the current field type.
 
-<figure><img src="../../../.gitbook/assets/6Edit-fields_cropped (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/6Edit-fields_cropped (1).png" alt=""><figcaption></figcaption></figure>
 
 A modal window will pop up:
 
-<figure><img src="../../../.gitbook/assets/7Edit-field-dialog.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/7Edit-field-dialog.png" alt=""><figcaption></figcaption></figure>
 
 From this modal, users can:
 
@@ -116,7 +116,7 @@ From this modal, users can:
 
 Clicking on “Type” will open a dropdown with all the available field types:
 
-<figure><img src="../../../.gitbook/assets/8Edit-field-available-types.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/8Edit-field-available-types.png" alt=""><figcaption></figcaption></figure>
 
 All fields can be edited, unless:
 
@@ -139,7 +139,7 @@ The email and URL types will check at form submission, through HTML5 validation,
 
 Users need to enter the values that will be displayed to visitors. To do this, they will add those values under **Options**:
 
-<figure><img src="../../../.gitbook/assets/9Dropdown-field.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/9Dropdown-field.png" alt=""><figcaption></figcaption></figure>
 
 They can either:
 
@@ -148,13 +148,13 @@ They can either:
 
 The Multiple choice type can also be used to create checkboxes, e.g. privacy policy acceptance. In this case, no value should be specified, and any external URL should be added in the field label, like in this example:
 
-<figure><img src="../../../.gitbook/assets/10Using-multiple-choice-for-checkbox.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/10Using-multiple-choice-for-checkbox.png" alt=""><figcaption></figcaption></figure>
 
 **Date**
 
 This type has no additional properties. The date format of the value returned to the host app will be coherent with browser locale information.
 
-<figure><img src="../../../.gitbook/assets/11Datepicker.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/11Datepicker.png" alt=""><figcaption></figcaption></figure>
 
 Visitors will enter the date using the browser’s date picker. Otherwise, they can input the date directly, following the automatically generated placeholder for the expected date format.
 
@@ -164,19 +164,19 @@ This type has the option to enter a minimum and/or a maximum allowed value. If n
 
 Number fields have a “spinner” input that visitors can use to cycle through allowed values. Visitors can also input a number directly, but the HTML 5 validation will verify if the submitted number falls into the permitted interval.
 
-<figure><img src="../../../.gitbook/assets/12Validating-a-number.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/12Validating-a-number.png" alt=""><figcaption></figcaption></figure>
 
 **Long text**
 
 This type is just like a text field, but it’s meant for longer inputs. It has an additional “row height” property to define the default height for the text area – which can be adjusted by the visitor by dragging the bottom right corner. Here is how a long text field looks like in a form:
 
-<figure><img src="../../../.gitbook/assets/13Long-text-field.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/13Long-text-field.png" alt=""><figcaption></figcaption></figure>
 
 ### What happens after a form is submitted? <a href="#what-happens-after-a-form-is-submitted" id="what-happens-after-a-form-is-submitted"></a>
 
 Beefree SDK just passes the data back to the host application. It doesn’t save anything or touch any of the data.
 
-You can implement client-side validation in your JSON forms using the built-in [HTML5 form validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form\_validation#using\_built-in\_form\_validation), to validate things like:
+You can implement client-side validation in your JSON forms using the built-in [HTML5 form validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#using_built-in_form_validation), to validate things like:
 
 * required field;
 * response length, for strings (“must be less than” or “must be higher than” n characters);

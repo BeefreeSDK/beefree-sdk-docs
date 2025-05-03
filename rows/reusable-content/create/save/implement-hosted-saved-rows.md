@@ -191,7 +191,7 @@ Reference the [Hosted Saved Rows Webinar](../../../storage/hosted-saved-rows.md#
 * How to use [Advanced Permissions](../../../../other-customizations/advanced-options/advanced-permissions.md#hosted-saved-rows) with Hosted Saved Rows
 * How to restrict which end users can save rows
 * How to customize the modals related to Hosted Saved Rows
-* How to use Hosted Saved Rows with [Content Services API](../../../../apis/content-services-api/content-services-api-reference.md)
+* How to use Hosted Saved Rows with [Content Services API](broken-reference)
 
 Reference the [sample code in this GitHub repository](https://github.com/mailupinc/beefree-sdk-hosted-saved-rows-demo) to follow along with the [webinar tutorial](../../../storage/hosted-saved-rows.md#webinar-tutorial).
 

@@ -59,9 +59,9 @@ The [Content Services API](apis/content-services-api/) allows you to perform a n
 
 The Template Catalog API enables you to incorporate design templates into your application. With this API, you can browse, retrieve, and utilize a variety of pre-designed templates to enhance your user's content creation experience. It gives you the flexibility to offer customized design solutions directly within your platform.
 
-Learn more about [Content Services API](apis/content-services-api/) and [Template Catalog API](apis/template-catalog-api.md).
+Learn more about [Content Services API](apis/content-services-api/) and [Template Catalog API](apis/template-catalog-api/).
 
-<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td><strong>Content Services:</strong> Export plain text, transform JSON to HTML, and manage brand styles.</td><td></td><td><a href="apis/content-services-api/">content-services-api</a></td></tr><tr><td></td><td><strong>Template Catalog:</strong> Add templates to your application.</td><td></td><td><a href="apis/template-catalog-api.md">template-catalog-api.md</a></td></tr><tr><td></td><td><strong>AI Collection:</strong> Use the AI collection to get metadata, SMS, and summary text.</td><td></td><td><a href="apis/content-services-api/content-services-api-reference.md#ai-collection">#ai-collection</a></td></tr></tbody></table>
+<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td><strong>Content Services:</strong> Export plain text, transform JSON to HTML, and manage brand styles.</td><td></td><td><a href="apis/content-services-api/">content-services-api</a></td></tr><tr><td></td><td><strong>Template Catalog:</strong> Add templates to your application.</td><td></td><td><a href="apis/template-catalog-api/">template-catalog-api</a></td></tr><tr><td></td><td><strong>AI Collection:</strong> Use the AI collection to get metadata, SMS, and summary text.</td><td></td><td><a href="broken-reference">Broken link</a></td></tr></tbody></table>
 
 ## Sample Code <a href="#about-this-documentation" id="about-this-documentation"></a>
 

@@ -32,7 +32,7 @@ If you’re on a paid plan, you will also get support for forms and embedded vid
 
 ### Additional resources <a href="#additional-resources" id="additional-resources"></a>
 
-[**Managing forms with the Page Builder**](../form-block/integrating-and-using-the-form-block/form-structure-and-parameters.md)
+[**Managing forms with the Page Builder**](../../forms/integrating-and-using-the-form-block/form-structure-and-parameters.md)
 
 A quick primer on how to include forms in a web page.
 

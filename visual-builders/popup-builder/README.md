@@ -18,7 +18,7 @@ With this in mind, we have developed an embeddable solution for designing popups
 
 * it’s built from the ground up to integrate seamlessly with your application;
 * it’s easy to use, offers tons of design flexibility, and builds upon the same UX your customers already know from our Email & Page Builders;
-* all data stays in your application, and you don’t have to ask your customers to use 3rd party tools for building popups. You can leverage our [Form block](../form-block/integrating-and-using-the-form-block/form-structure-and-parameters.md) to add forms to popups
+* all data stays in your application, and you don’t have to ask your customers to use 3rd party tools for building popups. You can leverage our [Form block](../../forms/integrating-and-using-the-form-block/form-structure-and-parameters.md) to add forms to popups
 
 ### Sample workflow <a href="#sample-workflow" id="sample-workflow"></a>
 

@@ -42,7 +42,7 @@ There is also an additional option for turning on the **Form block**.
 
 Please note that you need to implement one of the two methods indicated in this article for the Form tile to appear in the Content tab of the editor:
 
-* The [default form](../../visual-builders/form-block/integrating-and-using-the-form-block/passing-forms-to-the-builder.md) method is available for all plans, including free
+* The [default form](../../forms/integrating-and-using-the-form-block/passing-forms-to-the-builder.md) method is available for all plans, including free
 * The [content dialog](../../other-customizations/advanced-options/content-dialog.md) method is available for paid plans only.
 
 ## AMP Content <a href="#amp-content" id="amp-content"></a>

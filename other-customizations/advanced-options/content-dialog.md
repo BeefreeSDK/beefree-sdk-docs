@@ -764,7 +764,7 @@ Forms are interactive elements that allow users to input and submit data. This s
 
 ### **Forms Configuration**
 
-The following code snippet displays an example of how to configure [forms](../../visual-builders/form-block/).
+The following code snippet displays an example of how to configure [forms](../../forms/form-block.md).
 
 ```javascript
 manageForm: {
@@ -777,11 +777,11 @@ manageForm: {
 
 If you want to have total control on the forms that a Beefree SDK application displays and renders, you can use this _forms_ Content Dialog rather than passing a single form to the Beefree SDK application.
 
-The [forms](../../visual-builders/form-block/) Content Dialog works the same way as the previous Content Dialog for [save rows](content-dialog.md#save-rows) **–** but in this case, the `resolve` function should return the structure for the desired form.
+The [forms](../../forms/form-block.md) Content Dialog works the same way as the previous Content Dialog for [save rows](content-dialog.md#save-rows) **–** but in this case, the `resolve` function should return the structure for the desired form.
 
 The `args` object in the handler function returns to the host application the form object already applied. With this information, the application can decide what to display to the user (e.g., edit the current form, suggest a similar form, etc.).
 
-To understand how this data is structured, refer to the [form structure page](../../visual-builders/form-block/integrating-and-using-the-form-block/form-structure-and-parameters.md) on this website.
+To understand how this data is structured, refer to the [form structure page](../../forms/integrating-and-using-the-form-block/form-structure-and-parameters.md) on this website.
 
 ## Custom Attributes <a href="#custom-attributes" id="custom-attributes"></a>
 

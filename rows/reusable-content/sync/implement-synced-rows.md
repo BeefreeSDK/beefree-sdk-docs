@@ -6,7 +6,7 @@ This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/plug
 
 ## Overview <a href="#overview" id="overview"></a>
 
-Synced Rows expands on the foundational capabilities of [Save Rows](../create/save/) and [Edit Single Row Mode](implement-synced-rows.md#edit-single-row-mode), helping users manage rows more effectively. Using the `merge-rows` and `synced-rows` methods in the [Content Services API (CSAPI)](../../api-endpoints.md), you can create an efficient row management workflow. This ensures that when users update content in one row marked as “synced,” those updates are reflected across all connected designs using that synced row.
+Synced Rows expands on the foundational capabilities of [Save Rows](../create/save/) and [Edit Single Row Mode](implement-synced-rows.md#edit-single-row-mode), helping users manage rows more effectively. Using the `merge-rows` and `synced-rows` methods in the [Content Services API (CSAPI)](broken-reference), you can create an efficient row management workflow. This ensures that when users update content in one row marked as “synced,” those updates are reflected across all connected designs using that synced row.
 
 ### Key features
 
@@ -32,7 +32,7 @@ Synced Rows expands on the foundational capabilities of [Save Rows](../create/sa
 Prior to implementing Synced Rows, review the following prerequisites:
 
 1. [Save Rows](../../storage/self-hosted-saved-rows.md): Implement [Self-hosted Saved Rows](../create/save/implement-self-hosted-saved-rows/) first, because it establishes the foundation for a row management workflow.
-2. [Edit Single Row Mode](initialize-edit-single-row-mode.md) & [Content Services API (CSAPI)](../../api-endpoints.md): Familiarizing yourself with Edit Single Rows Mode and CSAPI will provide you with a mechanism to edit and manage synced rows, which will support your implementation workflow. However, they are not strictly necessary to implement Synced Rows.
+2. [Edit Single Row Mode](initialize-edit-single-row-mode.md) and [Content Services API (CSAPI)](../../../apis/content-services-api/): Familiarizing yourself with Edit Single Rows Mode and CSAPI will provide you with a mechanism to edit and manage synced rows, which will support your implementation workflow. However, they are not strictly necessary to implement Synced Rows.
 
 ## How it works <a href="#how-it-works" id="how-it-works"></a>
 
@@ -146,7 +146,7 @@ Here’s a breakdown of the typical workflow the host app adopts:
 2. **User edits**: Users generally hit ‘Save’ to confirm their edits once they modify the synchronized row. Simultaneously, the host app can proactively track these edits using the `onChange` method.
 3. **Synchronization timing**: The decision on when to synchronize changes across all designs rests with the host application. Given the potential need to propagate edits to multiple designs, holding off until the user indicates their wish to exit is customary.
 4. **Initiation of synchronization**: The synchronization is initiated as soon as the user signifies their satisfaction with the edits, either through the ‘Save’ or ‘Save & Exit’ options.
-5. **Redirection & Synchronizing changes**: After editing a row, the host app usually performs a synchronous [merge rows using the CSAPI](../../api-endpoints.md). The user will then be redirected to their ongoing design, where they can see their edits reflected in the synced row.
+5. **Redirection & Synchronizing changes**: After editing a row, the host app usually performs a synchronous [merge rows using the CSAPI](../../../apis/content-services-api/#row-processing). The user will then be redirected to their ongoing design, where they can see their edits reflected in the synced row.
 6. **Background syncing**: Given the possible existence of numerous linked designs, a background process is usually set in motion to update all other templates.
 
 ## Synchronizing row changes <a href="#synchronizing-row-changes" id="synchronizing-row-changes"></a>
@@ -157,7 +157,7 @@ The `merge-rows` method functions as a sophisticated “find and replace.”
 
 * i.e., To synchronize content, the host app forwards a request comprising the outdated template, the newly edited row, and a succinct query detailing which row(s) the API should target for replacement. The “query” is a standards-based JSON Path query typically referencing a globally unique identifier that was added to the saved row during the Metadata Content Dialog step.
 
-For an example on how to use the `merge-rows` method, visit our [API Reference on Merge Rows](../../api-endpoints.md).
+For an example on how to use the `merge-rows` method, visit our [API Reference on Merge Rows](../../../apis/content-services-api/#row-processing).
 
 ## Efficient template updates <a href="#efficient-template-updates" id="efficient-template-updates"></a>
 
@@ -169,7 +169,7 @@ Upon adding a synced row into a design, the `onChange` callback method supplies 
 
 **Leverage the `synced-rows` method**
 
-For those rows incorporated into designs before the implementation of the `onChange` tracking method, CSAPI’s `synced-rows` method is available. Use the `synced-rows` method get a list of all the synced rows inside a template with their corresponding `rowIdentifier` values. To learn more about how to use this endpoint, visit our[ API Reference on Synced Rows](../../api-endpoints.md).
+For those rows incorporated into designs before the implementation of the `onChange` tracking method, CSAPI’s `synced-rows` method is available. Use the `synced-rows` method get a list of all the synced rows inside a template with their corresponding `rowIdentifier` values. To learn more about how to use this endpoint, visit our [API Reference on Synced Rows](../../../apis/content-services-api/#row-processing).
 
 The specific objectives of the host application steer the choice between these methods. Whatever the choice, the primary focus is meticulously tracking the row across all linked templates, ensuring accurate and efficient updates.
 

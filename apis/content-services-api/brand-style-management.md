@@ -1,8 +1,15 @@
-# Brand Style Management
+---
+description: >-
+  This page lists and describes the Brand Style category of endpoints within the
+  Content Services API. It also includes interactive testing environments for
+  each endpoint in this category.
+---
+
+# Brand Style
 
 ### Overview <a href="#e7tjitffe17" id="e7tjitffe17"></a>
 
-The Brand Style Management endpoint enables you to manage and modify the style of email, pages, and popup templates. While the Content Defaults feature enables you to set default styles for new content elements like headings, paragraphs, and buttons, the Brand Style Management endpoint takes it a step further. It allows you to make template-wide design changes to existing templates quickly and easily, ensuring that all modules adhere to the broader design system or brand guidelines. In this article, we'll explore what this Content Services API (CSAPI) Brand Style Management endpoint is, its benefits, how to get started with it, and how it differs from Content Defaults.
+The Brand Style endpoints enables you to manage and modify the style of email, pages, and popup templates. While the Content Defaults feature enables you to set default styles for new content elements like headings, paragraphs, and buttons, the Brand Style Management endpoint takes it a step further. It allows you to make template-wide design changes to existing templates quickly and easily, ensuring that all modules adhere to the broader design system or brand guidelines. In this article, we'll explore what this Content Services API (CSAPI) Brand Style Management endpoint is, its benefits, how to get started with it, and how it differs from Content Defaults.
 
 ### How to Apply Styles Globally <a href="#id-7o6uselkp1bb" id="id-7o6uselkp1bb"></a>
 
@@ -14,27 +21,17 @@ To apply a style globally, take the following steps:
 4. **API Processing:** The API will take care of processing your request. It will automatically merge the specified brand styles into the template, applying the desired changes globally.
 5. **Receive Modified Template:** After the API processes your request, it will return the modified JSON template with the updated styles. This template is now ready to be used in your marketing campaigns with the consistent branding you've defined.
 
-### Authentication <a href="#cd49yafb8cb2" id="cd49yafb8cb2"></a>
+### Endpoints <a href="#tjfpide02wrb" id="tjfpide02wrb"></a>
 
-Authentication is essential to secure access to the Brand Style Management endpoint. We use API keys to authenticate requests. The API key you should use to access this endpoint is the CSAPI API key available in your Beefree SDK Developer Console. If you do not have a CSAPI key in your Developer Console, ensure you have a [paid plan](https://developers.beefree.io/pricing-plans).
+`/template/brand` or `/row/brand`
 
-Include the API key in the request header as follows:
+**HTTP Method:** `POST`
 
-```http
-Authorization: Bearer YOUR_API_KEY
-```
+**Description:** Apply brand styles to a template or row, ensuring a consistent visual identity.
 
-### Endpoint <a href="#tjfpide02wrb" id="tjfpide02wrb"></a>
-
-`/template/brand`
-
-**HTTP Method:** POST
-
-**Description:** Apply brand styles to a template, ensuring a consistent visual identity.
-
-{% swagger src="../../.gitbook/assets/template_brand.yaml" path="/v1/template/brand" method="post" %}
+{% openapi src="../../.gitbook/assets/template_brand.yaml" path="/v1/template/brand" method="post" %}
 [template_brand.yaml](../../.gitbook/assets/template_brand.yaml)
-{% endswagger %}
+{% endopenapi %}
 
 
 
@@ -44,7 +41,7 @@ Authorization: Bearer YOUR_API_KEY
 * `template` (JSON): The JSON template to be updated with the brand styles.
 * `HTML` Return the template with or without HTML.
 
-The following section displays an example request. Note that the syntax for the CSAPI Brand Style Management endpoint is similar to the [syntax for Content Defaults](https://docs.beefree.io/content-defaults/).
+The following section displays an example request. Note that the syntax for the CSAPI Brand Style Management endpoint is similar to the syntax for [Content Defaults](../../other-customizations/appearance/content-defaults.md).
 
 Example Request:
 
@@ -205,7 +202,7 @@ While both Content Defaults and the Brand Style Management endpoint aim to strea
 
 #### Content Defaults <a href="#id-8mbnu8skeyea" id="id-8mbnu8skeyea"></a>
 
-* Can be a part of the [Configuration Parameter](https://docs.beefree.io/configuration-parameters/).
+* Can be a part of the [Configuration Parameter](../../getting-started/readme/installation/configuration-parameters/).
 * Set default styles for specific content types.
 * Useful for quickly creating new templates with consistent styling.
 

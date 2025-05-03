@@ -1,4 +1,4 @@
-# Multi-Language Templates
+# Multi-language Templates
 
 {% hint style="info" %}
 Multi-language Templates are only available for [Superpower and Enterprise plans](https://developers.beefree.io/pricing-plans).
@@ -247,7 +247,7 @@ function exportAllTranslations() {
 
 ```
 
-To get HTML in a specific language by our [CSAPI](../apis/content-services-api/content-services-api-reference.md#html), ensure you include a “language” key/value pair to the body of your request. Ensure you reference the instructions for using the [`/html` endpoint section](../apis/content-services-api/content-services-api-reference.md#html) of the [Content Services API Reference](../apis/content-services-api/content-services-api-reference.md) to learn more about exporting template HTML. &#x20;
+To get HTML in a specific language by our [CSAPI](broken-reference), ensure you include a “language” key/value pair to the body of your request. Ensure you reference the instructions for using the [`/html` endpoint section](broken-reference) of the [Content Services API Reference](broken-reference) to learn more about exporting template HTML. &#x20;
 
 The following sample code displays this:
 

@@ -4,7 +4,7 @@
 **Simple Schema Features by Plan Type:**
 
 * **Superpowers & Enterprise Plans:** Access to Simple Schema for [Custom AddOns](ai-driven-design-creation.md#custom-addons) and [Custom Rows](../rows/reusable-content/create/pre-build/implement-custom-rows.md).
-* **All Paid Plans:** Access the [Simple Schema API](../apis/content-services-api/content-services-api-reference.md#v1-collection-simple-to-full-json) through the [Content Services API](../apis/content-services-api/content-services-api-reference.md#simple-to-full-json) (CSAPI).
+* **All Paid Plans:** Access the [Simple Schema API](broken-reference) through the [Content Services API](broken-reference) (CSAPI).
 {% endhint %}
 
 ## Overview
@@ -18,7 +18,7 @@ Saving your end users time when creating designs is more important than ever—e
 [Simple Schema](../data-structures/simple-schema/) is designed for flexibility, making it ideal for AI-assisted and headless workflows. Imagine a tool where users describe the design they want in plain language, and submit that description to an AI agent. On the backend:
 
 * An AI model receives the description and generates a Simple Schema-compatible template.
-* This template is passed to the `/v1/conversion/simple-to-full-json` [API endpoint](../apis/content-services-api/content-services-api-reference.md#simple-to-full-json).
+* This template is passed to the `/v1/conversion/simple-to-full-json` [API endpoint](broken-reference).
 * The API returns the complete Beefree JSON for the entire template.
 * The template is loaded in the builder, and the end user can start applying edits in a no-code environment.
 
@@ -41,4 +41,4 @@ Using [Simple Schema](../data-structures/simple-schema/) for AI-driven design cr
 
 ## Simple to Full JSON API Endpoint
 
-This endpoint is essential for converting AI-generated or manually assembled Simple Schema templates into full, builder-compatible Beefree JSON. Learn more about how to use this endpoint in the [Content Services API Reference](../apis/content-services-api/content-services-api-reference.md#simple-to-full-json).
+This endpoint is essential for converting AI-generated or manually assembled Simple Schema templates into full, builder-compatible Beefree JSON. Learn more about how to use this endpoint in the [Content Services API Reference](broken-reference).
