@@ -24,7 +24,11 @@ This section of the documentation discusses the [Content Services API](./#overvi
 
 ## Overview of Content Services API
 
-The Content Services API is a [REST](https://restfulapi.net/)-based API that enables Beefree SDK integrators to programmatically manipulate [template JSON](broken-reference). It exposes a set of services that will help you provide a better experience with how emails, pages, and popups are created, updated, and transformed into different formats. There are five categories of [Content Resources](broken-reference) available within the Content Services API.&#x20;
+The Content Services API is a [REST](https://restfulapi.net/)-based API that enables Beefree SDK integrators to programmatically manipulate template JSON. It is built to follow predictable resource url patterns, and to utilize standard HTTP response codes and methods.    &#x20;
+
+Beefree SDK requires that you [authenticate](authentication.md) prior to accessing the Content Services API's resources. You can generate API keys for both production and [development applications](../../getting-started/readme/development-applications.md). API keys associated with development applications are intended for pre-production environments and endpoint testing. They should not be used in production environments.
+
+There are five categories of resources within the Content Services API. Each of these categories includes a group of endpoints with resources to support various workflows.&#x20;
 
 These categories are the following:
 
@@ -84,14 +88,6 @@ These endpoints manage rows within templates to maintain consistency and reduce 
 Brand consistency can be enforced or retroactively applied across templates:
 
 * **/templates and /rows** endpoints allow updating visual properties (colors, fonts, spacings, etc.) across multiple templates or rows based on defined brand styles.
-
-## Overview
-
-The Content Services API is a [REST](https://restfulapi.net/)-based API that enables Beefree SDK integrators to programmatically manipulate template JSON. It is built to follow predictable resource url patterns, and to utilize standard HTTP response codes and methods.    &#x20;
-
-Beefree SDK requires that you [authenticate](authentication.md) prior to accessing the Content Services API's resources. You can generate API keys for both production and [development applications](../../getting-started/readme/development-applications.md). API keys associated with development applications are intended for pre-production environments and endpoint testing. They should not be used in production environments.
-
-There are five categories of Content Resources within the Content Services API. Each of these categories includes a group of endpoints with resources to support various workflows.&#x20;
 
 ## Base URL
 
