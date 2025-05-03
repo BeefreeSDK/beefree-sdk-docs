@@ -105,4 +105,14 @@ redirects:
   rows/saved-rows/save-rows-video-tutorial: rows/reusable-content/create/save/implement-self-hosted-saved-rows.md
   rows/saved-rows/edit-single-row-mode: rows/reusable-content/sync/initialize-edit-single-row-mode.md
   rows/saved-rows/synced-rows: rows/reusable-content/sync/implement-synced-rows.md
-  beefree-sdk-or-html-to-json-beta: html-importer-beta.md
+  apis/content-services-api/csapi-overview: apis/content-services-api.md
+  apis/content-services-api/content-services-api-reference: apis/content-services-api.md
+  apis/content-services-api/brand-style-management: apis/content-services-api/brand-style-management.md
+  apis/content-services-api/faqs: apis/content-services-api.md
+  visual-builders/form-block: forms/form-block.md
+  visual-builders/form-block/integrating-and-using-the-form-block: forms/integrating-and-using-the-form-block.md
+  visual-builders/form-block/integrating-and-using-the-form-block/passing-forms-to-the-builder: forms/integrating-and-using-the-form-block/passing-forms-to-the-builder.md
+  visual-builders/form-block/integrating-and-using-the-form-block/form-structure-and-parameters: forms/integrating-and-using-the-form-block/form-structure-and-parameters.md
+  visual-builders/form-block/integrating-and-using-the-form-block/form-layout-customization: forms/integrating-and-using-the-form-block/form-layout-customization.md
+  visual-builders/form-block/integrating-and-using-the-form-block/allowed-form-fields: forms/integrating-and-using-the-form-block/allowed-form-fields.md
+  visual-builders/form-block/integrating-and-using-the-form-block/edit-form-field-modal: forms/integrating-and-using-the-form-block/edit-form-field-modal.md
