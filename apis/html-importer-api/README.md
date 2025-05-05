@@ -7,7 +7,7 @@ description: Learn more about the HTML Importer API offering in Beefree SDK.
 {% hint style="info" %}
 Available on all [Beefree SDK plan types](https://developers.beefree.io/pricing-plans). Learn more about Usage-based fees for the [HTML Importer API](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees).&#x20;
 
-The HTML Importer API is currently only accessible in production applications.
+The HTML Importer API is **currently only accessible in production applications**.
 {% endhint %}
 
 ## Beefree SDK API Offering <a href="#in-a-nutshell" id="in-a-nutshell"></a>
