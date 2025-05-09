@@ -34,7 +34,7 @@ Manually migrating your existing templates into Beefree SDK can be tedious and t
 
 The HTML Importer API is a [REST](https://restfulapi.net/)-based API that enables Beefree SDK integrators to programmatically convert email HTML into Beefree JSON. It is built to follow predictable resource url patterns, and to utilize standard HTTP response codes and methods. This service is particularly helpful if you (or your end users) have pre-existing HTML templates you'd like to load within the no-code Beefree SDK builder and edit in the drag-and-drop editor.
 
-Beefree SDK requires that you [authenticate](authentication.md) prior to accessing the HTML Importer API's resources. You can generate API keys for both production and [development applications](../../getting-started/readme/development-applications.md). API keys associated with development applications are intended for pre-production environments and endpoint testing. They should not be used in production environments.     &#x20;
+Beefree SDK requires that you [authenticate](authentication.md) prior to accessing the HTML Importer API's resources and obtain an API key for your production application.&#x20;
 
 The resource in HTML Importer API is a synchronous endpoint that accepts the email HTML as the body of a `POST` request and returns the Beefree JSON in the response.&#x20;
 
