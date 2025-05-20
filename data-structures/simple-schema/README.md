@@ -8,7 +8,7 @@ description: Learn more about how to use Beefree SDK's simple schema for AI-driv
 **Simple Schema Features by Plan Type:**
 
 * **Superpowers & Enterprise Plans:** Access to Simple Schema for [Custom AddOns](./#custom-addons) and [Custom Rows](../../rows/reusable-content/create/pre-build/implement-custom-rows.md).
-* **All Paid Plans:** Access the [Simple Schema API](broken-reference) through the [Content Services API](broken-reference) (CSAPI).
+* **All Paid Plans:** Access the [Simple Schema API](../../apis/content-services-api/convert.md#simple-to-full-json) through the [Content Services API](../../apis/content-services-api/) (CSAPI).
 {% endhint %}
 
 ## Overview
@@ -17,7 +17,7 @@ Beefree JSON is the JSON schema we use to structure and validate designs within 
 
 As a simpler model, Simple Schema is an intuitive language you can use as a baseline for training AI agents and building templates programmatically outside of Beefree SDK's visual builders. These headless templates can then be instantly transformed into Beefree’s native JSON and loaded inside the builder for end users to edit accordingly in a no-code environment.
 
-You can convert the simple schema into native Beefree JSON using the [Content Services API endpoint](broken-reference) `/v1/conversion/simple-to-full-json`.
+You can convert the simple schema into native Beefree JSON using the [Content Services API endpoint](../../apis/content-services-api/convert.md) `/v1/conversion/simple-to-full-json`.
 
 Simple Schema also enhances [Custom AddOns development](../../builder-addons/addons/custom-addons/addon-development.md) by:
 
@@ -30,13 +30,13 @@ Reference the [Simple Schema GitHub repository](https://github.com/BeefreeSDK/be
 
 ## Webinar
 
-The following webinar includes an in-depth exploration of [Simple Schema](https://github.com/BeefreeSDK/beefree-sdk-simple-schema), the `/simple-to-full-json` [API endpoint](broken-reference), and covers two example scenarios and applications of Simple Schema.
+The following webinar includes an in-depth exploration of [Simple Schema](https://github.com/BeefreeSDK/beefree-sdk-simple-schema), the `/simple-to-full-json` API endpoint, and covers two example scenarios and applications of Simple Schema.
 
 {% embed url="https://www.youtube.com/watch?v=DEpQERhWV9E" %}
 
 ## API Endpoint: Convert Simple Schema to Full JSON
 
-You can convert Simple Schema into fully functional Beefree native JSON using the [following endpoint](broken-reference):
+You can convert Simple Schema into fully functional Beefree native JSON using the following endpoint:
 
 ```
 POST /v1/conversion/simple-to-full-json
@@ -44,7 +44,7 @@ POST /v1/conversion/simple-to-full-json
 
 This endpoint is essential for building headless template workflows, where templates are generated or assembled programmatically—by AI models, config files, or external systems—and later converted for use inside the builder.
 
-Visit the [Content Services API Simple to Full JSON documentation](broken-reference) to learn more about how to use this endpoint.
+Visit the [Content Services API Simple to Full JSON documentation](../../apis/content-services-api/convert.md) to learn more about how to use this endpoint.
 
 {% hint style="warning" %}
 **Tip:** Reference an [example valid request body in the GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/blob/main/example_valid_request.json) to experiment with the API endpoint and see it in action.

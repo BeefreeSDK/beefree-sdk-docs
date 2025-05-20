@@ -40,7 +40,7 @@ The resource in HTML Importer API is a synchronous endpoint that accepts the ema
 
 ### How the HTML Importer API works
 
-The HTML Importer leverages a series of algorithms to map and classify all the content elements available in the email, label them, and then translate them into Beefree's JSON format.
+This section provides a high-level overview of the concepts related to the HTML Importer API. For detailed information on how to activate, use, and implement the endpoint, [visit the Import HTML page](import-html.md), which includes comprehensive implementation steps and considerations. The HTML Importer leverages a series of algorithms to map and classify all the content elements available in the email, label them, and then translate them into Beefree's JSON format.
 
 Using a simple API, you can pass us the email you'd like us to convert, and the API will return Beefree JSON in response:&#x20;
 
