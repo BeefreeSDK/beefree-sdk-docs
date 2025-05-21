@@ -17,7 +17,6 @@
   * [Development Applications](getting-started/readme/development-applications.md)
   * [Manage Users](getting-started/readme/manage-users.md)
   * [Manage Subscriptions](getting-started/readme/manage-subscriptions.md)
-  * [Installation and Fundamentals](getting-started/readme/installation-and-fundamentals.md)
 * [Tracking Message Changes](getting-started/tracking-message-changes.md)
 * [Sample Code](getting-started/sample-code.md)
 * [Release Candidate Environment](getting-started/release-candidate-environment.md)
