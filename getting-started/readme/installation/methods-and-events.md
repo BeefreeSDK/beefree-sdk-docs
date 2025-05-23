@@ -24,7 +24,7 @@ Here’s some useful methods for this scenario:
 | `beePluginInstance.toggleStructure()`         | Controls the visibility of the structure outlines in the message editing portion of the builder.                                                                                       |
 | `beePluginInstance.save()`                    | Invokes the `onSave` callback function. The application will pass two files to the function: a JSON file with the message structure (for later editing) and a ready-to-send HTML file. |
 | `beePluginInstance.saveAsTemplate()`          | Invokes the `onSaveAsTemplate` callback function. The application will pass to the function a JSON file with the message structure (for later editing).                                |
-| `beePluginInstance.send()`                    | Invokes the `onSend` callback function. The application will pass to the function a ready-to-send HTML file.                                                                           |
+| `beePluginInstance.send()`                    | Invokes the `onSend` callback function. The application will pass to the function a ready-to-send HTML file. **Important:** This callback is only compatible with the email builder.   |
 | `beePluginInstance. toggleMergeTagsPreview()` | Controls the visibility of sample content for merge tags in the message editing portion of the builder.                                                                                |
 
 ## Instance Events <a href="#instance-events" id="instance-events"></a>

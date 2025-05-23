@@ -211,3 +211,7 @@ While both Content Defaults and the Brand Style Management endpoint aim to strea
 * CSAPI endpoint that enables the development of a user interface that empowers end users to make style changes with ease and speed.
 * Modify the style of existing templates.
 * Suitable for users who need to make template-wide design changes or maintain brand consistency on existing templates.
+
+### Understanding API Responses
+
+The Brand Style API includes a `422` response. This response is returned when an API call is successfully, but the brand style defined is the JSON does not apply to the template specified. For example, if the brand style defined in the JSON is for a button, and a button module does not exist within the specified template, no styles will be applied. The API call in this scenario was successful, and the final result is that no styles were applied because they were not applicable to that template. &#x20;

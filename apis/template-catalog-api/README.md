@@ -22,9 +22,9 @@ Beefree SDK's API offering includes three APIs. They are the following:&#x20;
 * [Template Catalog API](./)
 * [HTML Importer API](../html-importer-api/)
 
-This section of the documentation discusses the [Template Catalog API](./#overview-of-template-catalog-api), which includes resources for programmatically adding a catalog of pre-existing email, page, and popup templates to your application. These pre-existing templates were carefully constructed by professional designers with the goal of inspiring your end users' creativity. &#x20;
+This section of the documentation discusses the [Template Catalog API](./#overview-of-template-catalog-api), which includes resources for programmatically adding a catalog of pre-existing email, page, and popup templates to your application. These pre-existing templates were carefully constructed by professional designers with the goal of inspiring your end users' creativity.
 
-<figure><img src="../../.gitbook/assets/mermaid-diagram-BeefreeSDK-API-offering.png" alt="" width="375"><figcaption><p>Diagram Displaying Beefree SDK's API Offering</p></figcaption></figure>
+<table><thead><tr><th>API</th><th>Purpose</th><th width="208.046875">Requires Separate API Key?</th></tr></thead><tbody><tr><td><a href="../html-importer-api/">HTML Importer</a></td><td>Import custom HTML into Beefree SDK</td><td>✅ Yes, <a href="../html-importer-api/authentication.md">see authentication instructions</a>.</td></tr><tr><td><a href="../content-services-api/">CSAPI</a></td><td>Export, convert, and style templates and rows. Use AI to generate metadata, SMS, and summaries.</td><td>✅ Yes, <a href="../content-services-api/authentication.md">see authentication instructions</a>.</td></tr><tr><td><a href="./">Template Catalog</a></td><td>Access Beefree's catalog of templates</td><td>✅ Yes,<a href="authentication.md"> see authentication instructions</a>.</td></tr></tbody></table>
 
 ## Overview of Template Catalog API
 

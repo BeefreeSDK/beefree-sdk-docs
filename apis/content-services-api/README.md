@@ -20,6 +20,8 @@ Beefree SDK's API offering includes three APIs. They are the following:&#x20;
 
 This section of the documentation discusses the [Content Services API](./#overview-of-content-services-api), which includes resources for exporting, converting, processing, and styling templates within Beefree SDK. This collection of resources extends the functionality of the builder to offer your end users a complete content creation solution.
 
+<table><thead><tr><th>API</th><th>Purpose</th><th width="208.046875">Requires Separate API Key?</th></tr></thead><tbody><tr><td><a href="../html-importer-api/">HTML Importer</a></td><td>Import custom HTML into Beefree SDK</td><td>✅ Yes, <a href="../html-importer-api/authentication.md">see authentication instructions</a>.</td></tr><tr><td><a href="./">CSAPI</a></td><td>Export, convert, and style templates and rows. Use AI to generate metadata, SMS, and summaries.</td><td>✅ Yes, <a href="authentication.md">see authentication instructions</a>.</td></tr><tr><td><a href="../template-catalog-api/">Template Catalog</a></td><td>Access Beefree's catalog of templates</td><td>✅ Yes,<a href="../template-catalog-api/authentication.md"> see authentication instructions</a>.</td></tr></tbody></table>
+
 <figure><img src="../../.gitbook/assets/mermaid-diagram-BeefreeSDK-API-offering.png" alt="" width="375"><figcaption><p>Diagram Displaying Beefree SDK's API Offering</p></figcaption></figure>
 
 ## Overview of Content Services API

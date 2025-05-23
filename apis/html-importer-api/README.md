@@ -22,11 +22,15 @@ Beefree SDK's API offering includes three APIs. They are the following:&#x20;
 
 This section of the documentation discusses the [HTML Importer API](./#overview-of-html-importer-api), which includes resources for programmatically importing pre-existing HTML templates into Beefree SDK's builder.
 
+<table><thead><tr><th>API</th><th>Purpose</th><th width="208.046875">Requires Separate API Key?</th></tr></thead><tbody><tr><td><a href="./">HTML Importer</a></td><td>Import custom HTML into Beefree SDK</td><td>✅ Yes, <a href="authentication.md">see authentication instructions</a>.</td></tr><tr><td><a href="../content-services-api/">CSAPI</a></td><td>Export, convert, and style templates and rows. Use AI to generate metadata, SMS, and summaries.</td><td>✅ Yes,<a href="../content-services-api/authentication.md"> see authentication instructions</a>.</td></tr><tr><td><a href="../template-catalog-api/">Template Catalog</a></td><td>Access Beefree's catalog of templates</td><td>✅ Yes, <a href="../template-catalog-api/authentication.md">see authentication instructions</a>.</td></tr></tbody></table>
+
 <figure><img src="../../.gitbook/assets/mermaid-diagram-BeefreeSDK-API-offering.png" alt="" width="375"><figcaption><p>Diagram Displaying Beefree SDK's API Offering</p></figcaption></figure>
 
 ## Overview of HTML Importer API
 
-Manually migrating your existing templates into Beefree SDK can be tedious and time-consuming, but with the HTML Importer API you can:
+The HTML Importer API allows you to import your own HTML files into Beefree SDK. To use the HTML Importer API, you'll need to [create an API key](authentication.md) for the HTML Importer in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu). Visit the [Import HTML page](import-html.md) to learn how to make API calls with the HTML Importer API.&#x20;
+
+Manually migrating your existing templates can be time-consuming, but with the HTML Importer API you can:
 
 * **Make existing HTML editable in the Beefree SDK:** Empower your end-users to edit their current HTML email templates using the intuitive drag-and-drop interface — without having to manually recreate them
 * **Save time and resources**: Manually recreating email templates from scratch can take _hours_. With the new Importer API, you can make existing email templates editable in Beefree in seconds.
