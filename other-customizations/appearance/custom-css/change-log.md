@@ -38,13 +38,15 @@ Reference the CSS changes scheduled to go live May 2025 in the following expanda
 * `panel--***` (e.g., `heading`, `form`, `button`)
 * `panel--body`
 * Internal: `Draggable_Sidebar_*`
-* `sidebar-draggable-fullwidth--cs`
-* `sidebar-draggable-locked--cs`
-* `sidebar-draggable-***--cs`
 
 #### ✅ New Classes
 
 * `sidebar-draggable--cs`
+
+- `sidebar-draggable-fullwidth--cs`
+- `sidebar-draggable-locked--cs`
+- `sidebar-draggable-***--cs` (where \*\*\* represents the element type, e.g., `heading`, `form`, `button`)
+- `sidebar-draggable-[addon-name]--cs`
 
 ### 2. Draggable Rows
 
@@ -75,6 +77,10 @@ Reference the CSS changes scheduled to go live May 2025 in the following expanda
 
 * `sidebar-draggable--cs`
 
+- `sidebar-draggable-fullwidth--cs`
+- `sidebar-draggable-locked--cs`
+- `sidebar-draggable-***--cs` (where \*\*\* represents the element type, e.g., `one-column-empty`, `two-columns-3-9-empty`)
+
 ### 3. Draggable Rows
 
 **UI Area: Sidebar Rows Tab / Other Rows**
@@ -90,13 +96,14 @@ Reference the CSS changes scheduled to go live May 2025 in the following expanda
 * `panel--customrow`, `panel--customrow--cs`
 * `panel--customrow--***` (element type or custom row name)
 * Internal: `CustomRowDraggable_*`
-* `sidebar-draggable-fullwidth--cs`
-* `sidebar-draggable-locked--cs`
-* `sidebar-draggable-***--cs`
 
 #### ✅ New Classes
 
 * `sidebar-draggable-customrow--cs`
+
+- `sidebar-draggable-fullwidth--cs`
+- `sidebar-draggable-locked--cs`
+- `sidebar-draggable-***--cs` (where \*\*\* represents the element type, e.g., `one-column-empty`, `two-columns-3-9-empty`)
 
 ### 4. Mobile Stage Toggle
 
