@@ -33,12 +33,46 @@ You can create roles that can act only on a content type. For example, you may w
 **Note**: `UID` is a [mandatory field](advanced-permissions.md#available-permissions-and-behaviors) when you configure Beefree SDK. This field connects end users to the permissions you set in the configuration.&#x20;
 {% endhint %}
 
-## **Customize image & file management workflows**
+## **Customize image and file management workflows**
 
-You can limit how users upload and manage images and files inside Beefree SDK; for example, you want some users – e.g., external collaborators – to select pre-approved images and files uploaded by “admin” users. You can do so by:
+You can limit how users upload and manage images and files inside Beefree SDK. For example, if you want certain end users to only use pre-approved images and files uploaded by Admin users, you can create this workflow by:
 
-* disabling drag-and-drop of images onto the stage;
-* limit actions in the file manager (either the built-in one or your [custom file picker](custom-file-picker.md)) by disabling actions like upload, import, and create a folder.
+* **Disabling drag-and-drop of images onto the stage:** You can restrict this by setting the `canAdd` parameter to `false`. The following snippet shows an example of this:&#x20;
+
+```json
+advancedPermissions: {
+      content: {
+        image: {
+          behaviors: {
+            canSelect: false,
+            canAdd: false,
+            canViewSidebar: false
+          } 
+        }
+      },
+```
+
+* **Disable uploads:** To restrict an end user's ability to upload, import, or create folders, you can disable these actions by setting specific permissions. Set `canUpload` to `false` to prevent file or image uploads. The following code snippet demonstrates how to manage end user permissions using `canUpload`, `canCreateFolder`, and `canImportFile`:
+
+```json
+advancedPermissions: {
+      components: {
+        filePicker: {
+          canApplyEffects: true,
+          canChangeImage: true,
+          canChangeVideo: true,
+          canCreateFolder: false, // Disabled end user's ability to create a folder
+          canDeleteFile: true,
+          canDeleteFolder: true,
+          canImportFile: false, // Disabled end user's ability to import a file or image
+          canSearchFreePhotos: true,
+          canSearchFreeVideos: true,
+          canUpload: false, // Disabled end user's ability to upload a file or image
+          maxUploadFileSize: 20971520
+        }
+      }
+    },
+```
 
 Another interesting case for using advanced permissions is the possibility to set a **maximum size** **for uploads, per user**. The maximum size set per user must not exceed the **custom limitation** size set on the [Activate Custom Limitation on File Manager](../../server-side-configurations/server-side-options/services-options.md). **The default limit is 20 Mb** unless otherwise stated.\
 When this permission is configured, the system will check if a file exceeds the set size before uploading it; if so, Beefree SDK will return an error message, which you may customize using [Custom languages](custom-languages.md).
