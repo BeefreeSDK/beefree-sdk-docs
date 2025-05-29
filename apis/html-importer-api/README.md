@@ -50,11 +50,11 @@ Using a simple API, you can pass us the email you'd like us to convert, and the 
 
 <figure><img src="../../.gitbook/assets/mermaid-diagram-HTML-Importer.png" alt=""><figcaption></figcaption></figure>
 
-## FAQs
+### FAQs
 
 Explore answers to the most frequently asked questions.
 
-### Can I convert any HTML template? Are there any limitations? <a href="#can-i-convert-any-html-template" id="can-i-convert-any-html-template"></a>
+#### Can I convert any HTML template? Are there any limitations? <a href="#can-i-convert-any-html-template" id="can-i-convert-any-html-template"></a>
 
 There are a few things you should be aware of to ensure a great import experience:
 
@@ -64,17 +64,25 @@ There are a few things you should be aware of to ensure a great import experienc
 * **Ensure that all images and resources included in your HTML are publicly available on the internet.** We can't convert emails with images and resources that are only available on private networks.&#x20;
 * Please be aware that **some HTML elements are not fully supported** by the importer at this time, including background images, dividers, and menus.&#x20;
 
-If you follow the best practices above, the HTML Importer will migrate the structure and content of your HTML into Beefree's JSON format, significantly reducing the time it takes to recreate templates from scratch manually. Some design adjustments may still be necessary to match the original design.&#x20;
+If you follow the best practices above, the HTML Importer will migrate the structure and content of your HTML into Beefree's JSON format, significantly reducing the time it takes to recreate templates from scratch manually. Some design adjustments may still be necessary to match the original design.
 
-### Will I get different results if I upload the same HTML template to the API several times?
+#### **What happens with unsupported HTML tags?**
+
+Unsupported HTML tags do not break the endpoint as long as the overall HTML structure is valid. However, they may behave unpredictably and result in suboptimal imports. Implement validation and sanitization workflows for unsupported HTML tags to ensure proper handling.
+
+#### Will I get different results if I upload the same HTML template to the API several times?
 
 No, with the HTML importer API, the result will stay consistent each time you call the API.&#x20;
 
-### What's the applicable use policy? <a href="#what-is-the-applicable-use-policy" id="what-is-the-applicable-use-policy"></a>
+#### What's the applicable use policy? <a href="#what-is-the-applicable-use-policy" id="what-is-the-applicable-use-policy"></a>
 
 You can use this tool in accordance with [Beefree's Terms of Service](https://developers.beefree.io/terms-of-service). In particular, you should use the tool in a way that ensures you will not violate the rights of third parties.
 
-### Which plan has access to the API, and what's the pricing? <a href="#is-this-converter-free-of-charge" id="is-this-converter-free-of-charge"></a>
+#### **Can I limit the number of imports per user?**
+
+Yes, the HTML Importer API can be integrated with usage-based logic. For instance, you can track API calls by user ID and enforce usage limits based on predefined credit tiers. This logic should be implemented within your backend—for example, by maintaining a counter that increments with each API call to monitor and restrict access accordingly.
+
+#### Which plan has access to the API, and what's the pricing? <a href="#is-this-converter-free-of-charge" id="is-this-converter-free-of-charge"></a>
 
 The HTML Importer API is available for all Beefree SDK plan types, including the free plan. We charge $2 per template import.&#x20;
 
@@ -83,10 +91,26 @@ The HTML Importer API is available for all Beefree SDK plan types, including the
 
 For more information on usage and pricing, visit the [Usage-based fees article](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees).
 
-### **Do you store any of the templates I upload to the HTML Importer?**
+#### **Do you store any of the templates I upload to the HTML Importer?**
 
 No, we do not store any of your templates.
 
-### **Does the HTML Importer API use AI, and are you using my templates for training?**
+#### **When importing images, where are they hosted?**
+
+Images are not uploaded to Beefree SDK's file manager. They are referenced from the original source and must be publicly accessible on the internet to display correctly in the builder.
+
+#### **Does the HTML Importer API use AI, and are you using my templates for training?**
 
 No, the HTML importer API does not use AI to recreate content into our native JSON format. Your templates will not be stored or used for training or data analysis purposes.
+
+#### **Does the importer support external CSS or merge tags?**
+
+External CSS may only work if it is publicly hosted online, but its behavior is not guaranteed as it has not been thoroughly tested. It is best to inline CSS for reliable results. Merge tags are not supported during import but can be added afterward in the builder.
+
+#### **What happens with dynamic content in imported templates?**
+
+Dynamic content must be configured after import. The importer does not interpret or map dynamic content placeholders. You can apply dynamic content once the HTML is converted and editable in the Beefree SDK.
+
+**What about importing .eml or other email formats?**
+
+The HTML Importer API only supports plain HTML. If clients provide .eml or other formats, you’ll need to convert them to static HTML before importing. Consider developing preprocessing tools for recurring client onboarding.

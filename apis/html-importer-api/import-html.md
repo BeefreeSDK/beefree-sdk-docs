@@ -34,6 +34,10 @@ Take the following steps to perform the conversion:
 
 Within a few seconds, you should receive a response containing the Beefree JSON.
 
+{% hint style="info" %}
+**Note:** If your imported HTML contains inline CSS, it will be converted as long as the HTML structure is valid. The importer converts from HTML to Beefree JSON but does not enhance or add new styles — only what's present in the source HTML will be mapped.
+{% endhint %}
+
 ## Test the endpoint here
 
 You can test the endpoint in the following interactive environment. Ensure you follow the steps outlined in the [Steps to perform the API call section](import-html.md#steps-to-perform-the-api-call) to successfully execute the API call after clicking the **Test it** button. You can copy and paste the HTML in the **Sample HTML Template to Convert** expandable section below, or use your own HTML as a request body for experimenting with the **Test it** feature.
