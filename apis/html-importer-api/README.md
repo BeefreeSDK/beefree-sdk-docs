@@ -111,6 +111,6 @@ External CSS may only work if it is publicly hosted online, but its behavior is 
 
 Dynamic content must be configured after import. The importer does not interpret or map dynamic content placeholders. You can apply dynamic content once the HTML is converted and editable in the Beefree SDK.
 
-**What about importing .eml or other email formats?**
+#### **What about importing .eml or other email formats?**
 
 The HTML Importer API only supports plain HTML. If clients provide .eml or other formats, you’ll need to convert them to static HTML before importing. Consider developing preprocessing tools for recurring client onboarding.
