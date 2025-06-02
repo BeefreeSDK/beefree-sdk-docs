@@ -152,6 +152,6 @@ You may override the clipping size if your layout requires a custom viewport. If
 | height       | Integer | The image height in pixels. Default applies a proportional value based on the given width, keeping the image aspect ratio. When the value is not proportional to the given width, either will occur: If it’s higher, the proportional value applies, or, if it’s lower, the image is cropped. **Required** if size is not defined. |
 | file\_type\* | String  | Accepts jpg or png.                                                                                                                                                                                                                                                                                                                |
 
-{% openapi src="../../.gitbook/assets/image_endpoint.yaml" path="/v1/{collection}/image" method="post" %}
-[image_endpoint.yaml](../../.gitbook/assets/image_endpoint.yaml)
-{% endopenapi %}
+{% openapi-operation spec="image-endpoint" path="/v1/{collection}/image" method="post" %}
+[Broken link](broken-reference)
+{% endopenapi-operation %}
