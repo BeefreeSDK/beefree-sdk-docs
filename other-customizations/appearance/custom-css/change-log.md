@@ -12,142 +12,227 @@ Reference the CSS changes scheduled to go live May 2025 in the following expanda
 
 <details>
 
-<summary><strong>Draggable Widgets, Mobile Stage Toggle, and History (Undo/Redo) CSS Classes</strong></summary>
+<summary>Draggable Widgets, Mobile Stage Toggle, and History (Undo/Redo) CSS Classes</summary>
 
 ### 1. Draggable Widgets
 
-**UI Area: Sidebar Content Tab / Tiles Panel**
+**UI Area:** Sidebar Content Tab / Tiles Panel\
+🔄 **What’s Changing**
 
-#### 🔄 What’s Changing
+* A wrapper `<div>` has been removed.
+* Several class names have been updated for consistency.
 
-* A wrapper `<div>` has been **removed**.
-* Several class names have been **updated for consistency**.
-
-#### ❌ Removed Classes
+❌ **Removed Classes**
 
 * `sidebar__draggablewrapper--cs`
 * `sidebar__draggablewrapper`
 * `sidebar__draggablewrapper--DraggableModule`
-* `sidebar__draggablewrapper--modules-***` (e.g., `heading`, `form`, `button`)
+* `sidebar__draggablewrapper--modules-***` (all the classes of this type where \*\*\* is the element type, e.g. heading,form, button... )
 * `sidebar__draggablewrapper--rowAddon`
 * `panel--cs`
 * `panel`
 * `panel--default`
 * `panel--module`
 * `panel--locked`
-* `panel--***` (e.g., `heading`, `form`, `button`)
-* `panel--body`
-* Internal: `Draggable_Sidebar_*`
+* `panel--***` (all the classes of this type where \*\*\* is the element type, e.g. heading, form., button.. )
+* panel--body
 
-#### ✅ New Classes
+✅ **New Classes**
 
 * `sidebar-draggable--cs`
+* `sidebar-draggable-fullwidth--cs`
+* `sidebar-draggable-locked--cs`
+* `sidebar-draggable-***--cs` (where \*\*\* is the element type, e.g. heading,form, button... )
+* `sidebar-draggable-[addon-name]--cs`
 
-- `sidebar-draggable-fullwidth--cs`
-- `sidebar-draggable-locked--cs`
-- `sidebar-draggable-***--cs` (where \*\*\* represents the element type, e.g., `heading`, `form`, `button`)
-- `sidebar-draggable-[addon-name]--cs`
+***
 
-### 2. Draggable Rows
+### 2. Draggable Rows – Empty Rows
 
-**UI Area: Sidebar Rows Tab / Empty Rows**
+**UI Area:** Sidebar Rows Tab / Empty Rows\
+🔄 **What’s Changing**
 
-#### 🔄 What’s Changing
-
-* A wrapper `<div>` has been **removed**.
+* A wrapper `<div>` has been removed.
 * Class names updated for consistency.
 
-#### ❌ Removed Classes
+❌ **Removed Classes**
 
 * `sidebar__draggablewrapper--cs`
 * `sidebar__draggablewrapper_fullwidth--cs`
 * `sidebar__draggablewrapper`
 * `sidebar__draggablewrapper--DraggableRow`
-* `sidebar__draggablewrapper--***` (e.g., `one-column-empty`, `two-columns-3-9-empty`)
+* `sidebar__draggablewrapper--***` (all the classes of this type where \*\*\* is the element type, e.g. one-column-empty, two-columns-3-9-empty... )
 * `fullWidth`
-* `panel--cs`, `panel`, `panel--default`, `panel--row`
-* `panel--customrow`, `panel--customrow--cs`
-* `panel--customrow--***` (element type or custom row name)
-* Internal: `Draggable_Sidebar_*`
-* `sidebar-draggable-fullwidth--cs`
-* `sidebar-draggable-locked--cs`
-* `sidebar-draggable-***--cs`
+* `panel--cs`
+* `panel`
+* `panel--default`
+* `panel--row`
+* `panel--customrow`
+* `panel--customrow--cs`
+* `panel--customrow--***` (all the classes of this type where \*\*\* is the element type, e.g. one-column-empty, two-columns-3-9-empty... )
+* `panel--customrow--***` (all the classes of this type where \*\*\* is the element name )
 
-#### ✅ New Classes
+✅ **New Classes**
 
 * `sidebar-draggable--cs`
+* `sidebar-draggable-fullwidth--cs`
+* `sidebar-draggable-locked--cs`
+* `sidebar-draggable-***--cs` (where \*\*\* is the element type, e.g. one-column-empty, two-columns-3-9-empty... )
 
-- `sidebar-draggable-fullwidth--cs`
-- `sidebar-draggable-locked--cs`
-- `sidebar-draggable-***--cs` (where \*\*\* represents the element type, e.g., `one-column-empty`, `two-columns-3-9-empty`)
+***
 
-### 3. Draggable Rows
+### 3. Draggable Rows – Other Rows
 
-**UI Area: Sidebar Rows Tab / Other Rows**
+**UI Area:** Sidebar Rows Tab / Other Rows\
+🔄 **What’s Changing**
 
-#### 🔄 What’s Changing
+* A wrapper `<div>` has been removed.
 
-* A wrapper `<div>` has been **removed**.
-
-#### ❌ Removed Classes
+❌ **Removed Classes**
 
 * `fullWidth`
-* `panel--cs`, `panel`, `panel--default`, `panel--row`
-* `panel--customrow`, `panel--customrow--cs`
-* `panel--customrow--***` (element type or custom row name)
-* Internal: `CustomRowDraggable_*`
+* `panel--cs`
+* `panel`
+* `panel--default`
+* `panel--row`
+* `panel--customrow`
+* `panel--customrow--cs`
+* `panel--customrow--***` (all the classes of this type where \*\*\* is the element type, e.g. one-column-empty, two-columns-3-9-empty... )
+* `panel--customrow--***` (all the classes of this type where \*\*\* is the element name )
 
-#### ✅ New Classes
+✅ **New Classes**
 
 * `sidebar-draggable-customrow--cs`
+* `sidebar-draggable-fullwidth--cs`
+* `sidebar-draggable-locked--cs`
+* `sidebar-draggable-***--cs` (where \*\*\* is the element type, e.g. one-column-empty, two-columns-3-9-empty... )
 
-- `sidebar-draggable-fullwidth--cs`
-- `sidebar-draggable-locked--cs`
-- `sidebar-draggable-***--cs` (where \*\*\* represents the element type, e.g., `one-column-empty`, `two-columns-3-9-empty`)
+***
 
 ### 4. Mobile Stage Toggle
 
-#### 🔄 What’s Changing
+🔄 **What’s Changing**
 
-* Updated class names for **Desktop/Mobile toggle** and **Blur/Hide** functionality for better clarity.
+* Updated class names for Desktop/Mobile toggle and Blur/Hide functionality for better clarity.
 
-#### ❌ Removed Classes
+#### **Desktop / Mobile RadioGroup**
 
-* `stagemode__button`, `stagemode__button__desktop`, `stagemode__button__mobile`
-* `stagemode__button--active`, `stagemode__radiogroup--cs`
-* `radiogroup-mobile--cs`, `radiogroup-desktop--cs`, `active--cs`
-* `stagemode__button__display`
+❌ **Removed Classes**
 
-#### ✅ New Classes
-
+* `stagemode__button`
 * `stagemode__button--cs`
+* `stagemode__button__desktop`
 * `stagemode__button__desktop--cs`
+* `stagemode__button__mobile`
 * `stagemode__button__mobile--cs`
-* `button-icon--cs`, `button-small--cs`, `button-primary--cs`
-* `button--cs`, `button-active--cs`
+* `stagemode__button--active`
+
+✅ **New Classes**
+
+* `stagemode__radiogroup--cs`
+* `radiogroup-mobile--cs`
+* `radiogroup-desktop--cs`
+* `active--cs`&#x20;
+
+#### Blur / Hide toggle
+
+❌ **Removed Classes**
+
+* `stagemode__button__display`
+* `stagemode__button`
+
+✅ **New Classes**
+
+* `button-icon--cs`
+* `button-small--cs`
+* `button-primary--cs`
+* `button--cs`
+* `button-active--cs`
+
+***
 
 ### 5. History (Undo/Redo)
 
-#### 🔄 What’s Changing
+🔄 **What’s Changing**
 
-* Structural changes to wrappers and class names for **undo/redo functionality**.
+* Structural changes to wrappers and class names for undo/redo functionality.
 
-#### ❌ Removed Elements and Classes
+#### Undo/redo - wrapper
 
-* `History_undoRedoWrapper__*` (outer `<div>`)
-* `History_undoRedoActionsArrowsContainer__* > span` (spans inside arrows container)
-* `<div id="undo-redo__history" class="undo-redo__history--open">`
-* `<span class="history__step__borderline">` inside history items
-* `history-event-time` tag (now replaced with `<time>`)
+Markup Variations
 
-#### ✅ New Elements and Classes
+* removed div History\_undoRedoHistoryWrapper\_\_\*
+
+#### Undo/redo - arrows container
+
+Markup Variations
+
+* removed span History\_undoRedoActionsArrowsContainer\_\_\* > span
+
+#### Undo/redo - toggle button
+
+❌ **Removed Elements and Classes**
 
 * `undo-redo__toggleButton`
-* `undo-redo__undoButton`, `undo-redo__redoButton`
-* `undo-redo__history`, `undo-redo__history--open--cs`
-* `<div role="menuitem">` wrapping history steps
-* `history__step`, `history__step--active`
-* `history__step--disabled--cs`, `history__step--active--cs`
+
+✅ **New Elements and Classes**
+
+* `button-active--cs`
+* `button-icon--cs`
+* `button-small--cs`
+* `button-primary--cs`
+* `button--cs`
+
+#### Undo/redo - undo button
+
+❌ **Removed Elements and Classes**
+
+* `undo-redo__undoButton`
+
+✅ **New Elements and Classes**
+
+* `button-icon--cs`
+* `button-small--cs`
+* `button-primary--cs`
+* `button--cs`
+
+#### Undo/redo - redo button
+
+❌ **Removed Elements and Classes**
+
+* `undo-redo__redoButton`
+
+✅ **New Elements and Classes**
+
+* `button-icon--cs`
+* `button-small--cs`
+* `button-primary--cs`
+* `button--cs`
+
+#### History menu
+
+❌ **Removed Elements and Classes**
+
+* `undo-redo__history`
+* `undo-redo__history--open`
+* `#undo-redo__history`
+
+✅ **New Elements and Classes**
+
+* `undo-redo__history--open--cs`
+
+#### History menu - menu item
+
+❌ **Removed Elements and Classes**
+
+* `history__step`
+* `history__step--active`
+* `history__step__borderline`
+
+✅ **New Elements and Classes**
+
+* `history__step--disabled--cs`
+* `history__step--active--cs`
 
 </details>
 
