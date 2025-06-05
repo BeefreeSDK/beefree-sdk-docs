@@ -28,6 +28,15 @@ Simple Schema also enhances [Custom AddOns development](../../builder-addons/add
 Reference the [Simple Schema GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main) for more information.
 {% endhint %}
 
+## Simple Unified Schema
+
+There are two ways you can use the schemas available in the documentation and the GitHub repository to implement Simple Schema.
+
+These approaches are:
+
+* Use the [Simple Unified Schema](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/blob/main/simple_unified.schema.json). This option allows you to use one reference file to structure your templates and validate them prior to sending them to the endpoint. Learn more about the Simple Unified Schema in the [Simple Schema GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/blob/main/simple_unified.schema.json).&#x20;
+* Use the individual, but connected, simple schemas for templates, rows, columns, and modules. This option allows you to use multiple focused schema files to structure your templates and validate them prior to sending them to the endpoint. These schemas are detailed in the [subsequent pages](template-schema.md).&#x20;
+
 ## Webinar
 
 The following webinar includes an in-depth exploration of [Simple Schema](https://github.com/BeefreeSDK/beefree-sdk-simple-schema), the `/simple-to-full-json` API endpoint, and covers two example scenarios and applications of Simple Schema.

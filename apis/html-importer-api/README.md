@@ -42,6 +42,12 @@ Beefree SDK requires that you [authenticate](authentication.md) prior to accessi
 
 The resource in HTML Importer API is a synchronous endpoint that accepts the email HTML as the body of a `POST` request and returns the Beefree JSON in the response.&#x20;
 
+## Webinar
+
+The following webinar utilizes the demo code in the [html-importer-spotlight repository](https://github.com/BeefreeSDK/html-importer-spotlight) to demonstrate an example of how to use the HTML Importer API along with the [Brand Style endpoint](../content-services-api/brand-style-management.md) to create a compelling import and brand styling experience for your application's end users.
+
+{% embed url="https://www.youtube.com/watch?v=EkcLaDR2kpc" %}
+
 ### How the HTML Importer API works
 
 This section provides a high-level overview of the concepts related to the HTML Importer API. For detailed information on how to activate, use, and implement the endpoint, [visit the Import HTML page](import-html.md), which includes comprehensive implementation steps and considerations. The HTML Importer leverages a series of algorithms to map and classify all the content elements available in the email, label them, and then translate them into Beefree's JSON format.
