@@ -42,11 +42,22 @@ Below is the JSON Schema definition and a detailed breakdown of each property.
       "type": "string",
       "format": "noAnchorTags"
     },
+    "align": {
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ]
+    },
     "href": {
       "type": "string"
     },
     "target": {
-      "enum": ["_blank", "_self", "_top"]
+      "enum": [
+        "_blank",
+        "_self",
+        "_top"
+      ]
     },
     "size": {
       "type": "integer",
@@ -111,6 +122,7 @@ Below is the JSON Schema definition and a detailed breakdown of each property.
     }
   }
 }
+
 ```
 
 ### Field Descriptions

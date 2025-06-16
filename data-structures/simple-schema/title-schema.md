@@ -32,7 +32,10 @@ Below is the JSON Schema definition and a detailed breakdown of each property.
   "additionalProperties": false,
   "properties": {
     "type": {
-      "enum": ["title", "heading"]
+      "enum": [
+        "title",
+        "heading"
+      ]
     },
     "underline": {
       "type": "boolean"
@@ -50,10 +53,19 @@ Below is the JSON Schema definition and a detailed breakdown of each property.
       "type": "string"
     },
     "align": {
-      "enum": ["left", "center", "right"]
+      "enum": [
+        "left",
+        "center",
+        "right",
+        "justify"
+      ]
     },
     "title": {
-      "enum": ["h1", "h2", "h3"]
+      "enum": [
+        "h1",
+        "h2",
+        "h3"
+      ]
     },
     "size": {
       "type": "integer",
@@ -77,7 +89,10 @@ Below is the JSON Schema definition and a detailed breakdown of each property.
       "multipleOf": 0.00001
     },
     "direction": {
-      "enum": ["ltr", "rtl"]
+      "enum": [
+        "ltr",
+        "rtl"
+      ]
     },
     "padding-top": {
       "$ref": "definitions.schema.json#/definitions/padding"
@@ -99,6 +114,7 @@ Below is the JSON Schema definition and a detailed breakdown of each property.
     }
   }
 }
+
 ```
 
 ### Field Descriptions

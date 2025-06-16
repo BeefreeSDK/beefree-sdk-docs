@@ -50,7 +50,12 @@ Below is the JSON Schema definition and a detailed breakdown of each property.
       "type": "string"
     },
     "align": {
-      "enum": ["left", "center", "right"]
+      "enum": [
+        "left",
+        "center",
+        "right",
+        "justify"
+      ]
     },
     "size": {
       "type": "integer",
@@ -74,7 +79,10 @@ Below is the JSON Schema definition and a detailed breakdown of each property.
       "multipleOf": 0.00001
     },
     "direction": {
-      "enum": ["ltr", "rtl"]
+      "enum": [
+        "ltr",
+        "rtl"
+      ]
     },
     "padding-top": {
       "$ref": "definitions.schema.json#/definitions/padding"
@@ -96,6 +104,7 @@ Below is the JSON Schema definition and a detailed breakdown of each property.
     }
   }
 }
+
 ```
 
 ### Field Descriptions
