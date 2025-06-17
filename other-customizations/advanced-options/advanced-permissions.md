@@ -541,7 +541,7 @@ The following code snippet shows an example of a configuration for a [Row AddOn]
 ```javascript
 advancedPermissions: {
   rows: {
-    rowAddon: {
+    addon: {
       customRowAddonHandle: {
         toolbar: {
           save: {
@@ -740,7 +740,7 @@ The following code demonstrates how to specify toolbar settings for Row AddOns. 
 ```javascript
 advancedPermissions: {
   rows: {
-    rowAddon: {
+    addon: {
       customRowAddonHandle: {
         toolbar: {
           save: {
