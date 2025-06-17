@@ -21,6 +21,10 @@ To apply a style globally, take the following steps:
 4. **API Processing:** The API will take care of processing your request. It will automatically merge the specified brand styles into the template, applying the desired changes globally.
 5. **Receive Modified Template:** After the API processes your request, it will return the modified JSON template with the updated styles. This template is now ready to be used in your marketing campaigns with the consistent branding you've defined.
 
+{% hint style="info" %}
+**Important:** `collection` is a placeholder within the URL. This placeholder can be replaces with any of the `collection` options available for the Brand Style resource. Reference the [Brand Style Resource and Collection Options table](./#brand-style) for a list of available option.
+{% endhint %}
+
 ### Endpoints <a href="#tjfpide02wrb" id="tjfpide02wrb"></a>
 
 `/template/brand` or `/row/brand`

@@ -9,7 +9,11 @@ description: >-
 
 ## Conversion Collection
 
-The Conversion Collection provides you with endpoints that enable you to convert templates from one format to another. With the [Email to Page](convert.md#email-to-page-conversion-important-behaviors) endpoint, you can easily convert your email JSON templates into page JSON. The [Page to Email](convert.md#page-to-email-conversion-important-behaviors) endpoint lets you turn your page JSON templates into email-ready JSON, with the option to disable the HTML sanitizer if needed. The Simple to Full JSON endpoint enables you to convert [Simple Schema](../../data-structures/simple-schema/) templates into full Beefree JSON templates that can be loaded in the builder.&#x20;
+The Conversion Collection provides you with endpoints that enable you to convert templates from one format to another. With the [Email to Page](convert.md#email-to-page-conversion-important-behaviors) endpoint, you can easily convert your email JSON templates into page JSON. The [Page to Email](convert.md#page-to-email-conversion-important-behaviors) endpoint lets you turn your page JSON templates into email-ready JSON, with the option to disable the HTML sanitizer if needed. The Simple to Full JSON endpoint enables you to convert [Simple Schema](../../data-structures/simple-schema/) templates into full Beefree JSON templates that can be loaded in the builder.
+
+{% hint style="info" %}
+**Important:** For all endpoints in this category, the value for `collection` is `conversion`. When making API calls, replace the `collection` placeholder within the URL with `conversion` to execute the call.
+{% endhint %}
 
 ### Email to Page Conversion: Important Behaviors
 

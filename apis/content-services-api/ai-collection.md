@@ -11,6 +11,10 @@ description: >-
 
 The resources in the AI collection accept your template JSON and use generative AI to return text within a JSON object to you.
 
+{% hint style="info" %}
+**Important:** `collection` is a placeholder within the URL. This placeholder can be replaces with any of the `collection` options available for the AI Collection resource. Reference the [AI Collection Resource and Collection Options table ](./#ai-collection)for a list of available option.
+{% endhint %}
+
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 Prior to getting started with the resources in this collection, ensure you have the following:

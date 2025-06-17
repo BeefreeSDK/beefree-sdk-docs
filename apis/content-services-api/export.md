@@ -13,6 +13,10 @@ description: >-
 
 This endpoint allows you to retrieve the full or partial HTML output of a template (email, page, or popup).
 
+{% hint style="info" %}
+**Important:** `collection` is a placeholder within the URL. This placeholder can be replaces with any of the `collection` options available for the HTML resource. Reference the [Export Resource and Collection Options table](./#export) for a list of available option.
+{% endhint %}
+
 #### How It Works
 
 To generate HTML from a template's JSON:
@@ -46,7 +50,21 @@ To generate HTML from a template's JSON:
 
 ## Plain Text
 
-**Endpoint:** `/message/plain-text`
+**URL:** `https://api.getbee.io/v1/{collection}/html`
+
+This endpoint allows you to retrieve the full or partial HTML output of a template (email, page, or popup).
+
+{% hint style="info" %}
+**Important:** `collection` is a placeholder within the URL. This placeholder can be replaces with any of the `collection` options available for the Plain Text resource. Reference the [Export Resource and Collection Options table](./#export) for a list of available option.
+{% endhint %}
+
+#### How It Works
+
+To generate plain text from a template's JSON:
+
+1. Capture or store the latest JSON output from the builder using [callbacks](../../getting-started/readme/installation/methods-and-events.md) such as `onChange` or `autosave`.
+2. Send this JSON payload to the `/plain-text` endpoint.
+3. Receive the plain text as the response.
 
 {% openapi src="../../.gitbook/assets/plain_text_endpoint.yaml" path="/v1/{collection}/plain-text" method="post" %}
 [plain_text_endpoint.yaml](../../.gitbook/assets/plain_text_endpoint.yaml)
@@ -57,6 +75,10 @@ To generate HTML from a template's JSON:
 **URL:** `https://api.getbee.io/v1/{collection}/pdf`
 
 You can generate a PDF file from valid HTML content using the dedicated PDF generation endpoint. This operation requires a JSON payload with specific fields to configure the output.
+
+{% hint style="info" %}
+**Important:** `collection` is a placeholder within the URL. This placeholder can be replaces with any of the `collection` options available for the PDF resource. Reference the [Export Resource and Collection Options table](./#export) for a list of available option.
+{% endhint %}
 
 #### Required Request Payload
 
@@ -109,6 +131,10 @@ To generate a PDF from a template:
 **URL:** `https://api.getbee.io/v1/{collection}/image`
 
 This endpoint allows you to generate an image file (for example, PNG) from a template's HTML. You can control the image output by specifying the dimensions.
+
+{% hint style="info" %}
+**Important:** `collection` is a placeholder within the URL. This placeholder can be replaces with any of the `collection` options available for the Image resource. Reference the [Export Resource and Collection Options table](./#export) for a list of available option.
+{% endhint %}
 
 #### Required Request Payload
 

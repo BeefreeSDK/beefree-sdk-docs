@@ -504,6 +504,57 @@ Hosted Saved Rows includes advanced permissions to control how rows and categori
 * If both `canDeleteHostedRow` and `canEditHostedRow` are set to `false`, the row menu will be hidden.
 * If both `canManageHostedRowCategory` and `canAddHostedRowCategory` are set to `false`, the category management menu will be hidden.
 
+### **Lock or Hide the Save Icon**
+
+You can lock or hide the **Save** icon for a row. The permissions in this section apply to Self-hosted Saved Rows. For information on controlling access to rows for [Hosted Saved Rows](../../rows/reusable-content/create/save/implement-hosted-saved-rows.md), see the [Hosted Saved Rows section](advanced-permissions.md#hosted-saved-rows).
+
+#### Available Permissions
+
+*   `show`: This results in a visible save icon that end users can interact with when set to `true`. The following image displays how this looks within the builder.
+
+    <figure><img src="../../.gitbook/assets/CleanShot 2025-06-17 at 12.29.24.png" alt="How the save icon looks in the builder"><figcaption></figcaption></figure>
+*   `locked`: This results in a visible, but locked icon when set to `true`. This means end users can see the icon, but not interact with it. The following image displays how this looks within the builder.
+
+    <figure><img src="../../.gitbook/assets/CleanShot 2025-06-17 at 12.30.15.png" alt="How the locked save icon looks in the builder"><figcaption></figcaption></figure>
+
+#### Example Configuration
+
+The following code snippet shows an example of a configuration where the save icon is shown and locked.
+
+```javascript
+advancedPermissions: {
+  rows: {
+    toolbar: {
+      save: {
+        show: true, // false to hide it
+        locked: true
+      }
+    }
+  }
+}
+```
+
+#### Example Configuration for a Row AddOn
+
+The following code snippet shows an example of a configuration for a [Row AddOn](advanced-permissions.md#rows-addon).
+
+```javascript
+advancedPermissions: {
+  rows: {
+    rowAddon: {
+      customRowAddonHandle: {
+        toolbar: {
+          save: {
+            show: true, // false to hide it
+            locked: true
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 ### **Edit Synced Row Button**
 
 You can set Advanced Permissions for the **Edit Synced Row** button in the toolbar.
@@ -647,7 +698,7 @@ The following code demonstrates how to specify behavior settings for individual 
 
 <summary>View a Rows AddOn example</summary>
 
-The following sample code dispays a Rows AddOn example.
+The following sample code displays a Rows AddOn example.
 
 ```javascript
 beeConfig: {
@@ -683,6 +734,25 @@ beeConfig: {
 ```
 
 </details>
+
+The following code demonstrates how to specify toolbar settings for Row AddOns. These settings allow you to control whether Row AddOns can be saved or not saved by hiding or showing the save icon.
+
+```javascript
+advancedPermissions: {
+  rows: {
+    rowAddon: {
+      customRowAddonHandle: {
+        toolbar: {
+          save: {
+            show: true, // false to hide it
+            locked: true
+          }
+        }
+      }
+    }
+  }
+}
+```
 
 ## Columns
 

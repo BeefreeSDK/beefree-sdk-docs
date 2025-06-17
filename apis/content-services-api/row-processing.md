@@ -11,6 +11,10 @@ description: >-
 
 The `merge` method allows you to update a row across multiple templates. Specifically, it enables the host application to modify an element within an existing JSON document. This means you can implement a feature that updates templates in the background—without requiring any action from your users. It's ideal for merging shared content ([saved rows](../../rows/reusable-content/create/save/)) into templates that use it—for example, updating the same footer across 30 different email or page templates.
 
+{% hint style="info" %}
+**Important:** `collection` is a placeholder within the URL. This placeholder can be replaces with any of the `collection` options available for the Row Processing resource. Reference the [Row Processing Resource and Collection Options table](./#row-processing) for a list of available option.
+{% endhint %}
+
 **URL:** `https://api.getbee.io/v1/{collection}/merge`
 
 {% openapi src="../../.gitbook/assets/merge_endpoint.yaml" path="/v1/{collection}/merge" method="post" %}
