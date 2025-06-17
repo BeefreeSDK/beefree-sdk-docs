@@ -1,5 +1,9 @@
 # Self-Hosted Saved Rows
 
+{% hint style="info" %}
+This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above. Upgrade a [development application](../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
+{% endhint %}
+
 ## Overview
 
 **Self-Hosted Saved Rows** allow you to control where and how your rows are stored and managed, offering flexibility to meet your application's unique requirements. This option is ideal for teams with development resources who want to integrate row storage into their existing infrastructure.
