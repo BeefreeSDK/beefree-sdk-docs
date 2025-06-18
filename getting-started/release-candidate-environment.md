@@ -31,61 +31,7 @@ Reference the following requirements for accessing the Release Candidate Environ
 * Only available to Enterprise plan customers with Developer applications.
 * Contact the Beefree SDK team using this [contact form](https://developers.beefree.io/talk-to-sales) and request access to the Release Candidate Environment.
 * Customers must be aware that while the RC version is production-ready, it is still subject to final testing and potential bug fixes.
-* The program does not allow for customized release schedules per customer; all Enterprise customers follow the same cycle. Customized release schedules are available on VPC plans. For more information, contact the Beefree SDK team using this [contact form](https://developers.beefree.io/talk-to-sales) and request more information about customized release schedules with VPC plans.&#x20;
-
-### How to Use the Release Candidate Environment
-
-This section discusses how to access the release candidate environment and use it.
-
-#### Instructions
-
-To get the HTML version of a Beefree SDK message in the Release Candidate (RC) environment, you will need the following:
-
-1. The Beefree SDK Support Team will provide you with a username and password (we will need a user’s email address to enable this).
-2. A Beefree SDK JSON source file.
-3. The ability to perform a call to a REST API. You can do that in different ways:
-   * Applications like Postman or Insomnia
-   * Use the “curl” command in a shell
-   * With a custom script
-
-The call should be addressed to one of the following endpoints, depending on the HTML output that you wish to receive back:
-
-* `https://stg-bee-multiparser.getbee.io/api/v3/parser/email` - To receive HTML for Email
-* `https://stg-bee-multiparser.getbee.io/api/v3/parser/pages` - To receive HTML for Webpages
-* `https://stg-bee-multiparser.getbee.io/api/v3/parser/amp4email` - To receive AMP for Email
-* `https://stg-bee-multiparser.getbee.io/api/v3/parser/popup` - To receive HTML for Popups
-* `https://stg-bee-multiparser.getbee.io/api/v3/parser/text` - To receive the plain text version of the message
-
-#### Additional Requirements
-
-Reference the following additional requirements for using the Release Candidate Environment.
-
-* It has to be a POST call.
-* The Beefree SDK JSON has to be sent in the body of the REST call.
-* It must include a Basic Authentication header in which you specify your username and password.
-
-Upon success, the body of the response will contain the desired output. In case of an error, the response's body will contain the error details.
-
-Please do not use this method in production. This is an RC environment, and it may change its behavior in the future.
-
-**Example**
-
-```sh
-curl --request POST \
---url "https://stg-bee-multiparser.getbee.io/api/v3/parser/email" \
---user "USERNAME:PASSWORD" \
---header "Content-Type: application/json" \
---data @"JSON_FILE.json" \
---output "OUTPUT.html"
-```
-
-**Legenda**
-
-The following fields are required in the example above.
-
-* <mark style="background-color:yellow;">USERNAME</mark> and <mark style="background-color:yellow;">PASSWORD</mark> are your credentials provided by the Beefree SDK team.
-* <mark style="background-color:yellow;">JSON\_FILE.json</mark> is the Beefree SDK source file.
-* <mark style="background-color:yellow;">OUTPUT.html</mark> is the desired output file.
+* The program does not allow for customized release schedules per customer; all Enterprise customers follow the same cycle. Customized release schedules are available on VPC plans. For more information, contact the Beefree SDK team using this [contact form](https://developers.beefree.io/talk-to-sales) and request more information about customized release schedules with VPC plans.
 
 ### Additional Considerations
 

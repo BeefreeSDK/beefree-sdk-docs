@@ -43,6 +43,7 @@
   * [Row Processing](apis/content-services-api/row-processing.md)
   * [AI Collection](apis/content-services-api/ai-collection.md)
   * [Brand Style](apis/content-services-api/brand-style-management.md)
+  * [Check](apis/content-services-api/check.md)
 * [Template Catalog API](apis/template-catalog-api/README.md)
   * [Authentication](apis/template-catalog-api/authentication.md)
   * [Templates](apis/template-catalog-api/templates.md)
@@ -135,6 +136,7 @@
 * [Hover Effect for Buttons](other-customizations/hover-effect-for-buttons.md)
 * [Content Area Padding](other-customizations/content-area-padding.md)
 * [Line Height](other-customizations/line-height.md)
+* [Frontend Commands](other-customizations/frontend-commands.md)
 
 ## Data Structures
 

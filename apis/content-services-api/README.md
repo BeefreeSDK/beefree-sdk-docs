@@ -39,10 +39,11 @@ These categories are the following:
 * **AI Collection**: AI-powered capabilities for text generation, such as creating metadata for emails, summarizing content, or creating SMS messages.
 * **Row Processing**: Services that operate at the structural level, such as analyzing, modifying, or extracting specific rows or sections within a design for granular control over the content layout.
 * **Brand Style**: Resources focused on enforcing or applying brand guidelines, including applying consistent colors, typography, and spacing rules to ensure brand integrity across all generated content.
+* **Check:** Perform checks on email, page, and row content. Report design feedback to end users.
 
-The following diagram displays each of the five categories within the Content Services API, and their corresponding resources. &#x20;
+The following diagram displays each of the five categories within the Content Services API, and their corresponding resources.
 
-<figure><img src="../../.gitbook/assets/mermaid-diagram-CSAPI (1).png" alt=""><figcaption><p>Content Services API Resource Categories and Functionality</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/mermaid-diagram-2025-06-10-163636.png" alt=""><figcaption><p>Content Services API Offering</p></figcaption></figure>
 
 ### Use Cases and Capabilities
 
@@ -90,6 +91,18 @@ These endpoints manage rows within templates to maintain consistency and reduce 
 Brand consistency can be enforced or retroactively applied across templates:
 
 * **/templates and /rows** endpoints allow updating visual properties (colors, fonts, spacings, etc.) across multiple templates or rows based on defined brand styles.
+
+#### **Check**
+
+The Check group of endpoints enables you to provide content feedback to your end users directly within the builder. With the Check endpoints, you can inform your end users when their emails, pages, or rows are missing valuable information (for example, links for Calls-to-Action), before they export their designs.
+
+You can use these endpoints to provide feedback on:
+
+* Email designs
+* Page designs
+* Rows within designs
+
+Learn more about all the available checks in the [Check section of the API documentation](check.md).
 
 ## Base URL
 
@@ -154,6 +167,14 @@ The following table lists the resources available in this category of endpoints 
 | Resource | Collection Options                                                 |
 | -------- | ------------------------------------------------------------------ |
 | `/brand` | <ul><li><code>/template</code></li><li><code>/row</code></li></ul> |
+
+#### Check
+
+The following table lists the resources available in this category of endpoints and their corresponding collection option.
+
+| Resource | Collection Options                                                                           |
+| -------- | -------------------------------------------------------------------------------------------- |
+| `/check` | <ul><li><code>/message</code></li><li><code>/page</code></li><li><code>/row</code></li></ul> |
 
 #### Example URLs
 

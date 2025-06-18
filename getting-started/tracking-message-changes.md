@@ -6,57 +6,81 @@ This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/plu
 
 ## Overview of Tracking Message Changes <a href="#overview" id="overview"></a>
 
-This page discusses how to effectively track message changes in the Beefree SDK. It explains how you can use the `onChange` function to monitor real-time JSON updates, enabling efficient application updates and debugging, if needed. It also covers how to implement the `onRemoteChange` function to track edits made by other users, ensuring that team projects remain synchronized and consistent. By leveraging these two callbacks, you can develop a workflow for tracking design changes your end users make, whether they are within single session or a [collaborative editing](../other-customizations/collaborative-editing/) session.
+This page discusses how to effectively track message and UI changes in Beefree SDK. It explains how you can use the `onChange` function to monitor real-time JSON updates, enabling efficient application updates and debugging, if needed. It also covers how to implement the `onRemoteChange` function to track edits made by other users for [Collaborative Editing](../other-customizations/collaborative-editing/).
 
-This page explores and answers the following questions:
+In addition to these, the `onViewChange` callback offers a way to monitor changes in the SDK’s interface — such as when users open or close the File Manager, Preview, or Image Editor. This allows you to better understand user behavior, enhance session monitoring, and potentially optimize UX flows based on user navigation.
+
+By leveraging these three callbacks — `onChange`, `onRemoteChange`, and `onViewChange` — you can develop a comprehensive workflow for tracking both content and interaction changes your end users make, whether they are within a single session or a collaborative editing session.
+
+### Callback Reference for Tracking Changes
+
+The following table provides a quick reference of callbacks related to tracking changes.
+
+| Event            | Description                                                                                         | Returned Values                                                    |
+| ---------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `onChange`       | Fired when the message JSON is updated locally.                                                     | The new message JSON object.                                       |
+| `onRemoteChange` | Fired when changes are made to the message by a different user in a collaborative session.          | The updated JSON from the remote user.                             |
+| `onViewChange`   | Fired when the user navigates between different views in the SDK interface (e.g., opening preview). | One of: `'fileManager'`, `'editor'`, `'preview'`, `'imageEditor'`. |
+
+#### This page explores and answers the following questions:
 
 * How can I monitor what my customers do in the builder?
 * How can I tell when a message has actually been updated?
-* How can I tell when a [collaborative editing](../other-customizations/collaborative-editing/) session has been updated?
+* How can I tell when a collaborative editing session has been updated?
+* How can I track which part of the UI a user is interacting with?
 
-### Use cases <a href="#use-cases" id="use-cases"></a>
+### Use Cases for Tracking Message Changes
 
-This section discusses use cases for tracking message changes.
+This section includes use cases for the `onChange`, `onRemoteChange`, and `onViewChange` callbacks.&#x20;
 
-#### **Usage tracking**
+#### Usage Tracking
 
-In today’s software, knowing how customers use an application is essential if you want to provide a good user experience (UX) and eliminate friction points. It’s also a valuable resource to understand where to invest future development effort and build something that customers love.
+Understanding how users interact with the builder helps improve UX, prioritize development, and identify friction points.\
+The `onChange` callback lets your app detect when users are actively editing a message, using specific features, or possibly reproducing a reported issue.
 
-_onChange_ tracking gives you – the host application – the opportunity to get this information when your customers are creating designs in the builder.
+Use it to:
 
-You can use the _onChange_ callback to:
+* Detect active vs. abandoned editing sessions
+* Monitor usage of new features
+* Investigate and reproduce bugs
 
-* Understand if your customers are actively working on the message they opened (or if instead they temporarily abandoned that task to work on something else).
-* Discover if they are using one of the great new features that your team recently enabled.
-* Dismiss or confirm a bug by reproducing a customer’s steps.
+#### Autosave
 
-#### **Autosave**
+Unlike the default [autosave](readme/installation/configuration-parameters/) (which triggers at fixed intervals regardless of changes), `onChange` enables saving only when actual edits occur. This reduces false-positive recovery dialogs and improves the message recovery experience.
 
-So you might be asking: “Isn’t this similar to the existing [Autosave](readme/installation/configuration-parameters/) feature?” The simple answer is “No!”.
+#### History
 
-The [Autosave](readme/installation/configuration-parameters/) function is triggered at regular intervals, whether anything has even changed since the last _Autosave_ event or not, which could result in the user seeing a ‘recovery dialog’ window even if there weren’t any changes between the previously saved message and the most recent automatically saved one.
+Tracking changes over time allows users to compare and restore previous message versions — especially helpful in collaborative environments where mistakes can lead to lost work.
 
-Now you can invoke the Autosave event only when something has been added or updated, resulting in a better message recovery experience.
+#### Content Checks
 
-#### **History**
+When users edit text or images, `onChange` returns the updated content, enabling your app to run validations or custom logic.
 
-Why is having a historical log of message changes so important? As with the previous cases, this will allow you to provide a better overall user experience. Creating a good email message or campaign typically involves input from several people or departments before it’s finally ready to send, but that can lead to inadvertent mistakes that might cause hours of work to be lost. Saving the differences between versions of a message created during the email production workflow – and allowing your users to compare & restore them – could be a huge time-saver in those cases.
-
-#### **Content check**
-
-When one of your users adds or updates text or images, the _onChange_ callback returns the new input to your application, allowing you to trigger a complementary function based on it.
-
-The use cases change from application-to-application, but the feature is flexible enough to accommodate a wide variety of scenarios. Here are just a few:
+Example use cases:
 
 * Content suggestions
-* Prevent unwanted content
-* Link validation
-* Link reputation check
-* Custom HTML validation
-* Set up an alternative workflow when conditional syntax is applied
-* …
+* Blocking restricted content
+* Validating links and their reputation
+* Checking custom HTML
+* Handling conditional syntax with custom workflows
 
-## How it works <a href="#how-it-works" id="how-it-works"></a>
+## Prerequisites
+
+To enable tracking message changes, you need to add the following in the [beeConfig](readme/installation/configuration-parameters/):
+
+* Add `trackChanges`  and set it to `true`.
+* The `onChange` callback, with the related response function.
+* (Optional) Add and set the `onRemoteChange` boolean to `true` for multi-user message tracking during [collaborative editing session](../other-customizations/collaborative-editing/).
+
+**Enable "onChange" Event**
+
+Set the following parameter to `true` in the `beeConfig` file to enable `onChange`.
+
+```javascript
+trackChanges: true, // boolean
+```
+
+### onChange <a href="#how-it-works" id="how-it-works"></a>
 
 When you enable `onChange` and your end users edit their message, the callback provides you with:
 
@@ -239,19 +263,7 @@ The following JSON displays an example of what you can expect to receive from th
 **Note:** `onChange` is also the foundation on which the [Undo, Redo & Edit History](../server-side-configurations/server-side-options/undo-and-changes-history.md) feature was built on.
 {% endhint %}
 
-### Prerequisites
-
-To enable tracking message changes, you need to add the following in the [beeConfig](readme/installation/configuration-parameters/):
-
-* Add `trackChanges`  and set it to `true`.
-* The `onChange` callback, with the related response function.
-* (Optional) Add and set the `onRemoteChange` boolean to `true` for multi-user message tracking during [collaborative editing session](../other-customizations/collaborative-editing/).
-
-#### **Enable "onChange" Event**
-
-```javascript
-trackChanges: true, // boolean
-```
+#### Example Function
 
 The following code provides an example callback function for `onChange`.
 
@@ -450,11 +462,33 @@ The following JSON displays an example of the onRemoteChange callback response.
 
 </details>
 
-{% hint style="info" %}
-**Note:** The following section discusses how to configure both `onChange` and `onRemoteChange`. Please keep in mind that the configurations apply to both callbacks.
-{% endhint %}
+### **onViewChange**
+
+The `onViewChange` callback differs from `onChange` and `onRemoteChange` because it doesn't track content changes in the message itself — instead, it fires when the user interacts with different interface views inside the Beefree SDK. This includes navigating to the File Manager, opening the Preview mode, or launching the Image Editor. It’s especially useful for understanding user behavior, enhancing user experience analytics, or conditionally triggering application logic based on view changes.
+
+Consider the following when using the `onViewChange` callback:
+
+* `onViewChange` does **not** return a message JSON object like `onChange` or `onRemoteChange`.
+* It returns a single string representing the current view.
+* Typical values include:
+  * `'fileManager'` – when the File Manager is opened
+  * `'editor'` – when the user returns to the main editor (including on initial load)
+  * `'preview'` – when the Preview mode is opened
+  * `'imageEditor'` – when the Image Editor is opened
+
+The following code provides an example callback function for `onViewChange`:
+
+```javascript
+onViewChange: function (view) {
+  console.log('Current SDK view:', view);
+}
+```
 
 ### **Configure onChange and onRemoteChange**
+
+{% hint style="info" %}
+**Note:** This section discusses how to configure both `onChange` and `onRemoteChange`. Please keep in mind that the configurations apply to both callbacks.
+{% endhint %}
 
 This section discusses how to configure `onChange` and `onRemoteChange`.
 
