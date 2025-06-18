@@ -85,7 +85,7 @@ Comprehensively, across all endpoints, the available checks are the following:
 
 ### Missing Alt Text
 
-This section covers the Missing Alt Text check, detailing the relevant endpoints, the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
+This section covers the Missing Alt Text check, detailing the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
 
 <table><thead><tr><th width="213.6796875">Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Warning</td></tr><tr><td><strong>Available for</strong></td><td>Email and page messages, email and page templates, rows</td></tr><tr><td><strong>Applicable widgets</strong></td><td>Image, gif, sticker, icon, social</td></tr></tbody></table>
 
@@ -169,7 +169,7 @@ The following table lists and defines all the fields related to the `missingAltT
 
 ### Missing Link on Copy
 
-This section covers the Missing Link on Copy check, detailing the relevant endpoints, the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
+This section covers the Missing Link on Copy check, detailing the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
 
 <table><thead><tr><th width="213.6796875">Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Warning</td></tr><tr><td><strong>Available for</strong></td><td>Email and page messages, email and page templates, rows</td></tr><tr><td><strong>Applicable widgets</strong></td><td>Button, social, menu</td></tr></tbody></table>
 
@@ -239,7 +239,7 @@ The following table lists and defines all the fields related to the `missingCopy
 
 ### Missing Link on Images
 
-This section covers the Missing Link on Images check, detailing the relevant endpoints, the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
+This section covers the Missing Link on Images check, detailing the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
 
 <table><thead><tr><th width="213.6796875">Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Suggestion</td></tr><tr><td><strong>Available for</strong></td><td>Email and page messages, email and page templates, rows</td></tr><tr><td><strong>Applicable widgets</strong></td><td>Image, gif, sticker, icon</td></tr></tbody></table>
 
@@ -316,7 +316,7 @@ The following table lists and defines all the fields related to the `missingImag
 
 ### Image Overage Weight
 
-This section covers the Image Overage Weight check, detailing the relevant endpoints, the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
+This section covers the Image Overage Weight check, detailing the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
 
 In the example detailed in this section, the weight limit is set to 500KB for emails and rows, and 700KB for pages. The "Content-Length" header in the response of HEAD requests from image, gif, sticker, icon, and social URLs is used to determine if the content size exceeds the specified limits. If the header is missing or the URL cannot be evaluated within 20 seconds, it is considered an error, and the URL is logged for review.
 
@@ -421,7 +421,7 @@ The following table lists and defines all the fields related to the `overageImag
 
 ### Missing Email Details
 
-This section covers the Missing Email Details check, detailing the relevant endpoints, the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
+This section covers the Missing Email Details check, detailing the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
 
 <table><thead><tr><th width="213.6796875">Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Suggestion</td></tr><tr><td><strong>Available for</strong></td><td>Email messages</td></tr><tr><td><strong>Use general features in JSON</strong></td><td>Head</td></tr></tbody></table>
 
@@ -465,7 +465,7 @@ The following table lists and defines all the fields related to the `missingDeta
 
 ### Missing Page Details
 
-This section covers the Missing Page Details check, detailing the relevant endpoints, the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
+This section covers the Missing Page Details check, detailing the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
 
 <table><thead><tr><th width="213.6796875">Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Suggestion</td></tr><tr><td><strong>Available for</strong></td><td>Page messages</td></tr><tr><td><strong>Use general features in JSON</strong></td><td>Head</td></tr></tbody></table>
 
@@ -509,7 +509,7 @@ The following table lists and defines all the fields related to the `missingDeta
 
 ### HTML Overage Size
 
-This section covers the HTML Overage Weight check, detailing the relevant endpoints, the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
+This section covers the HTML Overage Weight check, detailing the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
 
 In the example detailed in this section, the weight limit is set to 80KB for emails and rows, and 700KB for pages. The given JSON HTML is translated and the weight is checked against the specified limit, with the "beautified" boolean determining whether the check applies to the beautified HTML or not. If the weight exceeds the limit, it is considered an error and should be flagged for review.
 
@@ -782,7 +782,7 @@ This section lists and describes each of the Check endpoints. You can use this s
 This section includes details on how to make an API call using the email check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="message-check" path="/v1/message/check" method="post" %}
-[OpenAPI message-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/a0a803fcab82fc94a75d76e02422bbaee4b3d159b979391ed8095e475d723f49.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250618%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250618T155251Z&X-Amz-Expires=172800&X-Amz-Signature=d9f80d537b96de736471d0aa000ec46fad117b736b85e395e0930c68ab5b3326&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI message-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/a0a803fcab82fc94a75d76e02422bbaee4b3d159b979391ed8095e475d723f49.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250618%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250618T161121Z&X-Amz-Expires=172800&X-Amz-Signature=03127c13874f053725868618422e686ca27e3ab10506d94146040be509a64155&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
@@ -984,7 +984,7 @@ Reference the following example email response:
 This section includes details on how to make an API call using the page check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="page-check" path="/v1/page/check" method="post" %}
-[OpenAPI page-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/4308febd44d915cc101689a737e2381eb1c6723b5e3d523e010547c938a72ba9.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250618%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250618T155251Z&X-Amz-Expires=172800&X-Amz-Signature=9316c073ff1449c59769b625c9634538a045939fc9c69cc047757e2c365f45a1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI page-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/4308febd44d915cc101689a737e2381eb1c6723b5e3d523e010547c938a72ba9.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250618%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250618T161121Z&X-Amz-Expires=172800&X-Amz-Signature=532dc12f3f00795e920952a92560f34dd9fec9bedbbe311d8e165a8abfcc3b68&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
@@ -1169,7 +1169,7 @@ Reference an example page response:
 This section includes details on how to make an API call using the row check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="row-check" path="/v1/row/check" method="post" %}
-[OpenAPI row-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/fd96add5eb3171c8641c68e85b13ca24fd76b94debf20b7a3b25a7b5e4c01264.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250618%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250618T155252Z&X-Amz-Expires=172800&X-Amz-Signature=0c49ebf04ec9ee9d2c3e79934d18513b3baf0191839cece71cc41a15c218da4d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI row-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/fd96add5eb3171c8641c68e85b13ca24fd76b94debf20b7a3b25a7b5e4c01264.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250618%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250618T161121Z&X-Amz-Expires=172800&X-Amz-Signature=48a0eebcd3a303543a072596b7474860b7d7432c11d7ee1e8059219f287abfdd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
