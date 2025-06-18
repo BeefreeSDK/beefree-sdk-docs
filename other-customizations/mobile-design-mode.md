@@ -1,5 +1,9 @@
 # Mobile Design Mode
 
+{% hint style="info" %}
+Mobile Design Mode is available on all [Beefree SDK plan types](https://developers.beefree.io/pricing-plans).
+{% endhint %}
+
 ## Overview <a href="#overview" id="overview"></a>
 
 Thanks to Mobile Design Mode, your customers can easily design responsive emails,  pages, and popups for mobile without switching between the builder stage and preview mode. When enabled, your customers will be able to:
