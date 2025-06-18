@@ -309,6 +309,72 @@ beeConfig: {
 If you are using a React application, be sure to pass a new rows array and not a reference to a row state. Otherwise, the rows state may be “stale” and won’t update in the side panel.
 {% endhint %}
 
+## Chunking for Self-Hosted Saved Rows
+
+You can now deliver saved rows to the editor in chunks, which improves performance for large datasets.
+
+### Why this matters
+
+Chunking avoids loading all saved rows at once. The editor progressively fetches them in smaller parts, which is more efficient and responsive.
+
+### How it works
+
+To enable chunking:
+
+1. In `rowsConfiguration`, set `isChunked: true`.
+2. Optionally, customize the request interval using `chunkPageInterval` (default is 1000ms).
+3. In your `getRows` hook, use the `args.chunk` parameter to return the correct subset of rows.
+4. The editor will automatically call the hook again every interval until it gets an empty array (`[]`), which tells it to stop.
+
+### Setup Example
+
+This section includes sample code related to implementing Chunking for Self-hosted Saved Rows.
+
+The following code snippet shows an example rowsConfiguration:
+
+```js
+rowsConfiguration: {
+  externalContentURLs: [
+    {
+      name: "Saved Rows via Hooks",
+      value: "category-value",
+      handle: "category-handle",
+      isLocal: true,
+      isChunked: true, // mandatory for sending chunked responses
+      chunkPageInterval: 2000, // optional to change the chunks interval
+    }
+  ]
+}
+```
+
+The following code snippet shows an example beeConfig with `getRows` hook:
+
+```js
+beeConfig: {
+  uid: 'CmsUserName', // [mandatory]
+  container: 'bee-plugin-container', // [mandatory]
+  hooks: {
+    getRows: {
+      handler: async (resolve, reject, args) => {
+        // get the handle
+        const handle = args.handle
+        // get the chunk requested (first is 0)
+        const chunk = args.chunk
+        // pseudo code to get the rows with the handle...
+        const rows = await fakeRowsService(handle, chunk)
+        resolve([ ...rows ]) 
+      }
+    }
+  },
+}
+```
+
+### Behavior Details
+
+* **Stopping condition:** When your handler returns `[]`, the editor stops requesting more chunks.
+* **Chunk size:** You define it on your backend. The editor just shows whatever the hook returns.
+* **Compatibility:** This feature is **optional**, **backward compatible**, and **only works with `getRows` hooks** (not with static `externalContentURLs`).
+
 ## Saved rows schema <a href="#saved-rows-schema" id="saved-rows-schema"></a>
 
 The following is the basic structure of the row’s JSON schema. Simply put, the schema is the structure of your saved rows data feed.

@@ -14,7 +14,7 @@ The following video tutorial discusses what Saved Rows are, how reusable content
 Save Time with Hosted Rows Video Tutorial
 {% endembed %}
 
-### **Enable Hosted Saved Rows**
+## **Enable Hosted Saved Rows**
 
 To enable Hosted Saved Rows for your application, follow these steps:
 
@@ -49,7 +49,7 @@ Once you've successfully enabled Hosted Saved Rows in the [Developer Console](ht
 * Rows saved by your application's end users will be stored and hosted in the Beefree SDK storage option.
 * End users can save rows directly to the hosted infrastructure and retrieve them as needed.
 
-### User Interface and End User Experience
+## User Interface and End User Experience
 
 Once you successfully enable Hosted Saved Rows within the Developer Console, your application's end users will have access to a new **Save** icon for each row, and other options for managing the rows they save.
 
@@ -73,11 +73,78 @@ The Hosted Saved Rows UI includes the following experience for end users:
 
 Reference the [Hosted Saved Rows end user documentation](https://docs.beefree.io/end-user-guide/hosted-saved-rows) for more information on the end user steps and experience.
 
-### **Configure Advanced Permissions**
+## Limit the Number of Hosted Saved Rows by UID
+
+You can limit the number of Hosted Saved Rows an end user can save by their unique UID. The `maxHostedRowsLimit` parameter lets you define the maximum number of Hosted Saved Rows an end user can create in your Beefree SDK configuration. Use this parameter to establish predictable saving patterns for Hosted Saved Rows within your application.
+
+**Why use `maxHostedRowsLimit`?**
+
+* **Customize at the user level:** Set unique limits per user ID (UID), giving you flexibility to adapt quotas based on specific needs or plan tiers.
+* **Control usage and make costs more predictable:** Prevent scenarios where users save large numbers of rows, leading to unexpected usage-based charges. By setting a clear upper limit, you can better forecast and manage your costs.
+* **Differentiate your pricing plans:** Create customized experiences for different user segments. For example, offer 3 saved rows to free-tier users and unlock higher limits for premium users. This allows you to align features with your pricing model and incentivize upgrades.
+
+**Code Snippet Example**
+
+The following code snippet shows an example of how to use the `maxHostedRowsLimit` parameter in your `beeConfig` file.
+
+```javascript
+const beeConfig = {
+  rowsConfiguration: {
+    // Define custom row behavior or limitations here
+    // e.g., maxColumnsPerRow: 2,
+  },
+  maxHostedRowsLimit: 10, // Maximum number of hosted saved rows the user can save
+};
+```
+
+In this example, the user can save up to 10 Hosted Saved Rows. Beefree SDK will block attempts to save more than this limit. &#x20;
+
+### **Custom the Toast Message**
+
+When you limit the number Hosted Saved Rows for an end user, they will see a toast message on the lower right-hand side of the screen when their limit is reached. The default message for this toast message is the following:
+
+> **Title:** Saved rows limit reached
+>
+> **Description:** You've saved 5 of 5 rows. To save a new row, please delete an existing one first.
+
+The following image shows how this default toast message looks within the user interface.
+
+<figure><img src="../../../../.gitbook/assets/CleanShot 2025-06-07 at 16.14.11.png" alt="Default toast message the end user sees when they&#x27;ve reached their saved rows limit"><figcaption></figcaption></figure>
+
+You can use [Custom Languages](../../../../other-customizations/advanced-options/custom-languages.md) to customize both the title and description text within this message. For example, if you have more of playful brand tone within your application, and want to adjust the message accordingly, you can.&#x20;
+
+In the following code snippet, the default text was changed to the following:&#x20;
+
+> **Title:** Whoa there, design superstar!&#x20;
+>
+> **Description:** You’ve hit your 5-row max—time to let one go before saving another.
+
+This was achieved by adding the `translations` object to the `beeConfig`, and then adding the strings within the object with the new text.
+
+#### Code Snippet of Example Toast Message Customization
+
+```javascript
+var beeConfig = {
+  uid: uid, // [mandatory]
+  container: "bee-plugin-container", // [mandatory]
+  language: "en-US",
+  trackChanges: true,
+  mergeTags: mergeTags,
+  translations: {
+    "hosted-content": {
+      "save-row-max-limit-error-toast-title": "Whoa there, design superstar! ", // Title text
+      "save-row-max-limit-error-toast-description": "You’ve hit your 5-row max—time to let one go before saving another.", // Message text
+    },
+  },
+  saveRows: uid === "Admin" || uid === "Designer",
+};
+```
+
+## **Configure Advanced Permissions**
 
 Hosted Saved Rows includes [advanced permissions](../../../../other-customizations/advanced-options/advanced-permissions.md#hosted-saved-rows) to control how rows and categories are accessed and managed. These permissions allow you to define user capabilities, such as editing or deleting rows.
 
-#### **Available Permissions**
+### **Available Permissions**
 
 The permissions you can control for Hosted Saved Rows through Advanced Permissions are the following:
 
@@ -86,7 +153,7 @@ The permissions you can control for Hosted Saved Rows through Advanced Permissio
 * **`canManageHostedRowCategory`:** Controls whether end users can manage row categories.
 * **`canAddHostedRowCategory`:** Determines if end users can add new categories.
 
-#### **Permission Behavior**
+### **Permission Behavior**
 
 Keep the following behaviors in mind when setting advanced permissions:
 
@@ -191,7 +258,7 @@ Reference the [Hosted Saved Rows Webinar](../../../storage/hosted-saved-rows.md#
 * How to use [Advanced Permissions](../../../../other-customizations/advanced-options/advanced-permissions.md#hosted-saved-rows) with Hosted Saved Rows
 * How to restrict which end users can save rows
 * How to customize the modals related to Hosted Saved Rows
-* How to use Hosted Saved Rows with [Content Services API](broken-reference)
+* How to use Hosted Saved Rows with [Content Services API](../../../../apis/content-services-api/)
 
 Reference the [sample code in this GitHub repository](https://github.com/mailupinc/beefree-sdk-hosted-saved-rows-demo) to follow along with the [webinar tutorial](../../../storage/hosted-saved-rows.md#webinar-tutorial).
 
