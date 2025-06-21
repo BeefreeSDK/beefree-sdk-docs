@@ -6,9 +6,421 @@ description: >-
 
 # Change Log
 
-## Release Scheduled for May 2025
+## Release schedule for July 2025
 
-Reference the CSS changes scheduled to go live May 2025 in the following expandable section.
+Reference the upcoming CSS changes to the Preview Widgets in the following expandable section.
+
+<details>
+
+<summary>Preview Widgets</summary>
+
+#### 1. Wrapper
+
+**UI Area:** Preview / Wrapper
+
+**New Classnames**\
+`.preview--cs`
+
+#### 2. Header
+
+**UI Area:** Preview / Preview header
+
+**Classnames Removed**
+
+* `.page-preview-titlebar--cs`&#x20;
+* `.page-preview-choice--cs`
+
+**New Classnames**
+
+* `.preview-header--cs`
+
+#### 3. Title
+
+**UI Area:** Preview / Preview header
+
+**Markup variations:** `span -> h3`
+
+**New Classnames**
+
+* `.preview-title--cs`
+
+#### 4. Multi-Language
+
+**UI Area:** Preview / Preview header
+
+**Classnames Removed**
+
+* `.header-dropdown--cs`
+
+**New Classnames**
+
+* `.header-select--cs`
+* `.preview-language--cs`
+* `.dropdown-custom--cs`
+
+#### 5. Display Conditions
+
+**UI Area:** Preview / Preview header
+
+**Classname Removed**
+
+* `.top-bar-action-list--closed`
+* `.top-bar-action-list—open`
+* `.toggle-wrapper--cs`
+* `.toggle-input--cs`
+* `.toggle-slider—cs`
+
+**New Classnames**
+
+* `.preview-displayconditions--cs`
+* `.dropdown-menu--cs`
+* `.dropdown-menu-button--cs`
+* `.dropdown-menu-item--cs`
+* `.checkbox-wrapper--cs`
+* `.readonly-checkbox--cs`
+* `.dropdown-menu-scrollable--cs`
+* `.preview-displaycondition-label--cs`
+* `.preview-displaycondition-description--cs`
+
+#### 6. Dark mode
+
+**UI Area:** Preview / Preview header
+
+**Classnames Removed**
+
+* `.toggle-wrapper--cs`
+* `.preview-dark-mode-toggle--cs`
+* `.toggle-input--cs`
+* `.toggle-slider—cs`
+
+**New Classnames**
+
+* `.radiogroup--cs`
+* `.preview-dark-mode--cs`
+* `.radiogroup-options--cs`
+* `.radiogroup-options--button--cs`
+* `.radiogroup-button--cs`
+* `.radiogroup-light--cs`
+* `.active--cs`
+* `.radiogroup-dark--cs`
+
+#### 7. AMP
+
+**UI Area:** Preview / Preview header
+
+**Classnames Removed**
+
+* `.preview-amp-toggle--cs`
+
+**New Classnames**
+
+* `.radiogroup--cs`
+* `.preview-amp--cs`
+* `.radiogroup-options--cs`
+* `.radiogroup-options--button--cs`
+* `.radiogroup-button--cs`
+* `.radiogroup-amp--cs`
+* `.active--cs`
+* `.radiogroup-html--cs`
+
+#### 8. Device
+
+**UI Area:** Preview / Preview header
+
+**Classnames Removed**
+
+* `.preview-device-toggle--cs`
+* `.preview-laptop-item--cs`
+* `.preview-mobile-item--cs`
+* `.preview_choice--fullscreen`
+* `.preview_choice--computer`
+* `.preview_choice—tablet`
+* `.preview_choice—phone`
+
+**New Classnames**
+
+* `.radiogroup--cs`
+* `.preview-device--cs`
+* `.radiogroup-options--cs`
+* `.radiogroup-options--button--cs`
+* `.radiogroup-button--cs`
+* `.radiogroup-computer--cs`
+* `.active--cs`
+* `.radiogroup-tablet--cs`
+* `.radiogroup-phone--cs`
+
+#### 9. Viewport
+
+**UI Area:** Preview / Preview header
+
+**Classnames Removed**
+
+* `.number-selector--cs`
+
+**New Classnames**
+
+* `.radiogroup--cs`
+* `.preview-viewport-width--cs`
+* `.preview-viewport-height--cs`
+
+#### 10. Close box
+
+**UI Area:** Preview / Preview header
+
+**New Classnames**
+
+* `.preview-close-button--cs`
+
+#### 11. iframe
+
+**UI Area:** Preview / Preview body
+
+**Classnames Removed**
+
+* No classnames were removed
+
+**New Classnames**
+
+* No classnames were added
+
+#### 12. Resize Handles
+
+**UI Area:** Preview / Preview body
+
+**New Classnames**
+
+* `.preview-resize-handle--cs`
+
+</details>
+
+Reference the upcoming CSS changes to the Stage Placeholders in the following expandable section.
+
+<details>
+
+<summary>Stage Placeholders</summary>
+
+#### 1. Stage Module - Addon Placeholder
+
+* **UI Area**: Stage Module
+* **Widget:** Addon
+* **Sub-element:** Placeholder&#x20;
+
+**Classnames Removed**:
+
+* `btn`
+* `btn-default`
+
+**New Classnames**
+
+* `stage-placeholder--cs`
+* `stage-placeholder-icon--cs`
+* `stage-placeholder-text--cs`
+* `stage-placeholder-button--cs`
+
+#### 2. Stage Module - Carousel Placeholder
+
+* **UI Area**: Stage Module
+* **Widget:** Carousel
+* **Sub-element:** Placeholder
+
+**Classnames Removed**:
+
+* `image-placeholder`
+* `description`
+* `btn`
+* `btn-default`
+
+**New Classnames:**
+
+* `stage-module_carousel_placeholder--cs`
+* `stage-placeholder--cs`
+* `stage-placeholder-icon--cs`
+* `stage-placeholder-text--cs`
+* `stage-placeholder-button--cs`
+
+#### 3. Stage Module - Dynamic Content Placeholder
+
+* **UI Area**: Stage Module
+
+- **Widget:** Dynamic Content
+
+* **Sub-widget:** Placeholder
+* **Markup Variations**: Removed a wrapper div
+
+**Classnames Removed**:
+
+* `merge-content-placeholder`
+* `description`
+
+**Classnames Added**:
+
+* `stage-placeholder--cs`
+* `stage-placeholder-icon--cs`
+* `stage-placeholder-text--cs`
+* `stage-placeholder-button--cs`
+
+#### 4. Stage Module - Form Placeholder
+
+* **UI Area**: Stage Module
+* **Widget:** Form
+* **Sub-element:** Placeholder
+* **Markup Variations**: Removed a wrapper div
+
+**Classnames Removed**:
+
+* `description`
+* `btn`
+* `btn-default`
+
+**Classnames Added**:
+
+* `stage-placeholder--cs`
+* `stage-placeholder-icon--cs`
+* `stage-placeholder-text--cs`
+* `stage-placeholder-button--cs`
+
+#### 5. Stage Module - Icons Placeholder
+
+* **UI Area**: Stage Module
+* **Widget:** Icons
+* **Sub-element:** Placeholder
+
+**Classnames Removed**:
+
+* `stage_module_icons--placeholder`
+* `stage_module_icons--placeholdericon`
+* `description`
+
+**Classnames Added**:
+
+* `stage-placeholder--cs`
+* `stage-placeholder-icon--cs`
+* `stage-placeholder-text--cs`
+* `stage-placeholder-button--cs`
+
+#### 6. Stage Module - Image Placeholder
+
+* **UI Area**: Stage Module
+* **Widget:** Image
+* **Sub-element:** Placeholder
+* **Markup Variations**: Removed a wrapper div
+
+**Classnames Removed**:
+
+* `image-placeholder`
+* `description`
+* `btn`
+* `btn-default`
+
+**Classnames Added**:
+
+* `stage-placeholder--cs`
+* `stage-placeholder-icon--cs`
+* `stage-placeholder-text--cs`
+* `stage-placeholder-button--cs`
+
+#### 7. Stage Module - Menu Placeholder
+
+* **UI Area**: Stage Module
+* **Widget:** Menu
+* **Sub-element:** Placeholder
+
+**Classnames Removed**:
+
+* `stage_module_menu--placeholder`
+* `stage_module_menu--placeholdericon`
+* `description`
+
+**Classnames Added**:
+
+* `stage-placeholder--cs`
+* `stage-placeholder-icon--cs`
+* `stage-placeholder-text--cs`
+* `stage-placeholder-button--cs`
+
+#### 8. Stage Module - Social Placeholder
+
+* **UI Area**: Stage Module
+* **Widget:** Social
+* **Sub-element:** Placeholder
+* **Markup Variations**: Removed a wrapper div
+
+**Classnames Added**:
+
+* `stage-placeholder--cs`
+* `stage-placeholder-icon--cs`
+* `stage-placeholder-text--cs`
+* `stage-placeholder-button--cs`
+
+#### 9. Stage Module - Video Placeholder
+
+* **UI Area**: Stage Module
+* **Widget:** Video
+* **Sub-element:** Placeholder
+* **Markup Variations**: Removed a wrapper div
+
+**Classnames Removed**:
+
+* `video-placeholder`
+* `stage_module_video`
+* `stage_module_video--placeholder`
+* `description`
+* `btn`
+* `btn-default`
+
+**Classnames Added**:
+
+* `stage-row-addon-placeholder--cs`
+* `stage-placeholder--cs`
+* `stage-placeholder-icon--cs`
+* `stage-placeholder-text--cs`
+* `stage-placeholder-button--cs`
+
+#### 10. Stage Row - RowAddon Placeholder
+
+* **UI Area**: Stage Row
+* **Widget:** RowAddon
+* **Sub-element:** Placeholder
+
+**Classnames Removed**:
+
+* `description`
+* `btn`
+* `stage_empty_state--cs`
+
+**Classnames Added**:
+
+* `stage-row-addon-placeholder--cs`
+* `stage-placeholder--cs`
+* `stage-placeholder-icon--cs`
+* `stage-placeholder-text--cs`
+* `stage-placeholder-button--cs`
+
+</details>
+
+Reference the upcoming CSS changes to the Rows Tab in the following expandable section.
+
+<details>
+
+<summary>Sidebar Rows Tab</summary>
+
+**UI Area:** Sidebar Rows Tab
+
+**Markup variations:** Removed a wrapper div
+
+**Removed Classnames**
+
+* `rows-wrapper`
+
+**New Classes**
+
+* `rows-wrapper--cs`
+
+</details>
+
+## Release May 2025
+
+Reference the CSS changes for May 2025 in the following expandable section.
 
 <details>
 
