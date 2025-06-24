@@ -159,7 +159,6 @@ Reference the upcoming CSS changes to the Preview Widgets in the following expan
 
 **New Classnames**
 
-* `.radiogroup--cs`
 * `.preview-viewport-width--cs`
 * `.preview-viewport-height--cs`
 
@@ -370,7 +369,6 @@ Reference the upcoming CSS changes to the Stage Placeholders in the following ex
 
 **Classnames Added**:
 
-* `stage-row-addon-placeholder--cs`
 * `stage-placeholder--cs`
 * `stage-placeholder-icon--cs`
 * `stage-placeholder-text--cs`
