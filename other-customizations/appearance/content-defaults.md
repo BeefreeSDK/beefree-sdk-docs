@@ -61,11 +61,13 @@ To set up the content styles you will need to add the `contentDefaults` object t
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'bee-plugin-container', // [mandatory]
   ...
+  titleDefaultConfig: {
+    bold: true
+  },
+  titleDefaultStyles: { ... },
   contentDefaults: {
-    title: { ... },
     text: { ... },
     image: { ... },
     row: { ... },
@@ -86,6 +88,10 @@ beeConfig: {
   }
 }
 ```
+
+{% hint style="info" %}
+**Note:** The **Title block** is the only block that is configured on the root level of the `beeConfig` object. Ensure it is on the correct level prior to configuring.&#x20;
+{% endhint %}
 
 ## Available content settings <a href="#available-content-settings" id="available-content-settings"></a>
 
@@ -828,3 +834,7 @@ general: {
 }
 
 ```
+
+{% hint style="info" %}
+I**mportant:** `contentAreaWidth` has both **upper and lower limits**, which are the minimum and maximum values you can set it equal to. Email builder has a minimum limit of **480px** and a maximum limit of **900px**. Page builder has a minimum limit of **320px** and a maximum limit of **1440px**.
+{% endhint %}

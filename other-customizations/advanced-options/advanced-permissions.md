@@ -196,6 +196,21 @@ beeConfig: {
       content: { locked: false, show: true }
     },
     rows: {
+      addon: {
+        customRowAddonHandle: {
+        behaviors: {
+          canSelect: true,
+          canAdd: true,
+          canViewSidebar: true,
+          hiddenOnAmp: false,
+          hiddenOnHtml: false,
+          hiddenOnMobile: false,
+          hiddenOnDesktop: false,
+          canResize: true,
+          canResetMobile: true
+        }
+      }
+    },
       behaviors: {
         canSelect: true,
         canAdd: true,
@@ -245,21 +260,6 @@ beeConfig: {
       anchor: { show: true }
     }
   },
-  rowAddon: {
-    customRowAddonHandle: {
-      behaviors: {
-        canSelect: true,
-        canAdd: true,
-        canViewSidebar: true,
-        hiddenOnAmp: false,
-        hiddenOnHtml: false,
-        hiddenOnMobile: false,
-        hiddenOnDesktop: false,
-        canResize: true,
-        canResetMobile: true
-      }
-    }
-  },
   workspace: {
     stageToggle: { locked: false, show: true },
     historyButtons: { show: true }
@@ -279,7 +279,7 @@ The following table provides the name, data type, description, and an example va
 | `container`            | `string`  | HTML container element ID for embedding Beefree SDK (mandatory).                 | `'bee-plugin-container'`                       |
 | `advanced permissions` | `object`  | Contains settings for content elements, rows, settings, and tabs configurations. | See configuration object for details.          |
 | `components`           | `object`  | Specifies available components like file picker and link types.                  | `{ filePicker: {...}, linkTypes: {...} }`      |
-| `rowAddOn`             | `object`  | Settings for custom row add-ons, such as custom behaviors.                       | `{ customRowAddonHandle: {...} }`              |
+| `row`                  | `object`  | Settings for rows, custom row add-ons, custom behaviors, and more.               | `{ customRowAddonHandle: {...} }`              |
 | `workspace`            | `object`  | Defines workspace settings, such as stage toggle and history buttons visibility. | `{ stageToggle: {...}, historyButtons: true }` |
 
 ## Available permissions and behaviors <a href="#available-permissions-and-behaviors" id="available-permissions-and-behaviors"></a>
@@ -706,31 +706,29 @@ beeConfig: {
   container: 'bee-plugin-container', // [mandatory]
   advancedPermissions: {
     rows: {
-      ...
-    },
-    rowAddon: {
-      customRowAddonHandle: {
-        behaviors: {
-          canSelect: true,
-          canAdd: true,
-          canViewSidebar: true,
-          hiddenOnAmp: false,
-          hiddenOnHtml: false,
-          hiddenOnMobile: false,
-          hiddenOnDesktop: false,
-          canResize: true,
-          canResetMobile: true
+      addon: {
+        customRowAddonHandle: {
+          behaviors: {
+            canSelect: true,
+            canAdd: true,
+            canViewSidebar: true,
+            hiddenOnAmp: false,
+            hiddenOnHtml: false,
+            hiddenOnMobile: false,
+            hiddenOnDesktop: false,
+            canResize: true,
+            canResetMobile: true
+          }
+          ... // properties example
+          padding: {
+            show: true,
+            locked: true
+          }
+          ...
         }
-        ... // properties example
-        padding: {
-          show: true,
-          locked: true
-        }
-        ...
       }
     }
   }
-}
 ```
 
 </details>
@@ -2171,43 +2169,31 @@ content: {
 The following code defines specific permissions and behaviors for different modules within a Row AddOn.&#x20;
 
 ```javascript
-content: {
-  addon: {
-    // This block allows the addition of custom addons and controls their behaviors.
-    customImageHandle: {
-      behaviors: {
-        canViewSidebar: true, // Enables the sidebar for this specific addon.
-      },
-    },
-    customRowAddonHandle: {
-      // Custom row-specific behaviors and permissions for an addon inside a row.
-      behaviors: {
-        canAdd: true, // Allows adding a new row.
-        canClone: false, // Disables cloning of this row.
-        canDelete: false // Disables deleting of this row.
-      },
-      image: {
-        // Controls behaviors and properties for image modules within this row addon.
-        behaviors: {
-          canSelect: true // Allows image selection inside the row addon.
-        },
-        properties: {
-          textAlign: {
-            show: false // Hides the text alignment control for images in this row addon.
-          }
-        }
-      }
-    },
-    mixed: {
-      // Handles behaviors for mixed content addons (those containing multiple types of content).
-      behaviors: {
-        canAdd: false // Disables the ability to add mixed content.
-      }
-    },
-    rowAddon: {
-      // Controls behaviors for all row content addons.
-      behaviors: {
-        canAdd: false // Disables adding new row content addons.
+{
+  "content": {
+    "title": { ... },
+    "image": { ... },
+    "text": { ... },
+    "button": { ... },
+    "divider": { ... },
+    "spacer": { ... },
+    "paragraph": { ... },
+    "list": { ... },
+    "social": { ... },
+    "dynamic": { ... },
+    "html": { ... },
+    "video": { ... },
+    "carousel": { ... },
+    "form": { ... },
+    "icons": { ... },
+    "menu": { ... },
+    "table": { ... },
+    "mixed": { ... },
+    "addon": {
+      "customImageHandle": { ... },
+      "customMixedHandle": { ... },
+      "customRowAddonHandle": {
+        "image": { ... }
       }
     }
   }

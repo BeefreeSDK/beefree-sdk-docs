@@ -38,8 +38,7 @@ var rowDisplayConditions = [{
   type: 'Last ordered catalog',
   label: 'Women',
   description: 'Only people whose last ordered item is part of the Women catalog will see this',
-  before: '{% raw %}
-{% if lastOrder.catalog == \'Women\' %}',
+  before: '{% if lastOrder.catalog == \'Women\' %}',
   after: '{% endif %}',
 }, {
   type: 'Last ordered catalog',
@@ -52,8 +51,7 @@ var rowDisplayConditions = [{
   label: 'Children',
   description: 'Only people whose last ordered item is part of the Children catalog will see this',
   before: '{% if lastOrder.catalog == \'Children\' %}',
-  after: '{% endif %}
-{% endraw %}',
+  after: '{% endif %}',
 }, { ... }]
 
 ```

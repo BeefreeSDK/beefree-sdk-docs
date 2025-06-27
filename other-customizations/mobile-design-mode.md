@@ -1,8 +1,12 @@
 # Mobile Design Mode
 
+{% hint style="info" %}
+Mobile Design Mode is available on all [Beefree SDK plan types](https://developers.beefree.io/pricing-plans). Important: While Mobile Design Mode is available on all plan types, there associated advanced features (such as Stack on Mobile) that are only available on [Beefree SDK paid plans](https://developers.beefree.io/pricing-plans). This page outlines which Mobile Design Mode features correspond with each plan type.&#x20;
+{% endhint %}
+
 ## Overview <a href="#overview" id="overview"></a>
 
-Thanks to Mobile Design Mode, your customers can easily design responsive emails,  pages, and popups for mobile without switching between the builder stage and preview mode. When enabled, your customers will be able to:
+Your customers can easily design responsive emails, pages, and popups for mobile using **Mobile Design Mode**. When enabled, your customers will be able to:
 
 * Easily switch between desktop and mobile view to access and edit content;
 * Edit padding, text alignment, and font size optimized for Mobile;
@@ -25,7 +29,7 @@ bee.loadStageMode({
 
 ```
 
-You can also use the loadStageMode method to disable Mobile editing mode.
+You can also use the `loadStageMode` method to disable Mobile editing mode.
 
 ```javascript
 
@@ -43,19 +47,18 @@ Here is a video explaining **why we built Mobile design mode** and how it **enha
 
 ## How to enable Mobile Design Mode <a href="#how-to-enable-mobile-design-mode" id="how-to-enable-mobile-design-mode"></a>
 
-If your application doesn’t have Mobile Design Mode enabled yet, you need to enable it. It takes just a few clicks:
+Take the following steps to enable Mobile Design Mode within your application:
 
-1. [Login into developers.beefree.io](https://dam.beefree.io/devmain)
-2.  Select the application you want to configure > Click Details
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+2. Navigate to the application you want to configure **Mobile Design Mode** for.&#x20;
+3.  Click the application's **Details** button.
 
-    We recommend testing the feature first with a DEV or QA application
-3. Go to Application Configuration > View More
-4. Go to Services > Toggle Enable mobile design mode ON&#x20;
-5.  Click Save on the top-right corner of the page.
+    **Note:** We recommend testing the feature first with a DEV or QA application
+4. On the next page, navigate to the **Application Configuration** section and click **View More**.
+5. Go to the **Services** section and toggle **Enable mobile design mode** on. ![](<../.gitbook/assets/CleanShot 2025-06-27 at 15.27.36.png>)
+6. Click **Save** on the top-right corner of the page to save the server-side configuration.
 
-    Congrats! You’ve successfully enabled Mobile Design Mode!
-
-## How it works <a href="#how-it-works" id="how-it-works"></a>
+## How it works in the user Interface <a href="#how-it-works" id="how-it-works"></a>
 
 When Mobile Design Mode is enabled for an application at [developers.beefree.io](https://devportal.beefree.io/hc/en-us), the builder will display two new icons in the upper-left corner of the content area, as highlighted below.&#x20;
 
@@ -70,46 +73,6 @@ The _mobile view_ (mobile icon on the right) will resize the work area width to 
 {% hint style="info" %}
 **Note:** When Mobile design mode is enabled, users will work on a single template that will include both the desktop design and the mobile one. The template doesn’t require any duplicates. The mobile edits will be automatically saved and reflected in the templates.
 {% endhint %}
-
-## Mobile optimization settings
-
-Beefree SDK provides settings both for rows and content blocks.&#x20;
-
-To change how content behaves on mobile and create a mobile version of an email, page, or popup:
-
-* Hide on mobile/Hide on desktop (available on developers.beefree.io)
-  * A content property to hide a block when displaying the email/page on a specific device.
-* Do not stack on mobile (available on developers.beefree.io)
-  * When this option is enabled for a row, adjacent columns will not be stacked on mobile devices. The columns will stay side-by-side, as in the desktop view.
-* Reverse stacking on mobile (available on developers.beefree.io)
-  * When turned on for a row, columns for that row will stack in reverse order, i.e., from the rightmost to the leftmost.
-
-These settings become more accessible with Mobile Design Mode, as users can immediately view the desktop vs. mobile design.
-
-## Displaying hidden elements
-
-There is an additional setting to preview hidden elements included in a template. With the Hide-on enabled a “Visibility” icon will appear next to the Desktop vs. Mobile stage icons.
-
-<figure><img src="../.gitbook/assets/3visibility-icon.png" alt=""><figcaption></figcaption></figure>
-
-When the Visibility button is ON (default behavior):
-
-* The builder will display content blocks set as hidden for the current device;
-* Hidden elements will be blurred out;
-* A small icon in the outline of the block will appear whenever hovering with the mouse on the hidden element.
-
-<figure><img src="../.gitbook/assets/4hidden-element.png" alt=""><figcaption></figcaption></figure>
-
-When Visibility is OFF:
-
-* Hidden elements won’t be visible in the content area;
-* The template will be available as it is;
-
-Here is how the Visibility toggle changes the experience when editing a recent Beefree SDK newsletter.
-
-<figure><img src="../.gitbook/assets/5Visibility-icon-in-a-newsletter.gif" alt=""><figcaption></figcaption></figure>
-
-The device preview matches the stage selected when accessing the design preview. This doesn’t apply if you have implemented a custom-built preview.
 
 ## Builder limitations in mobile view
 
@@ -190,3 +153,50 @@ workspace: {
 Here is a brief description of the parameters and their options. They are all optional.
 
 <table><thead><tr><th width="209">Parameter</th><th width="197">Description</th><th width="154">Values</th><th>Default</th></tr></thead><tbody><tr><td><code>type</code></td><td>loads different workspace types (currently used to handle <a href="amp-for-email.md">AMP content visibility</a>).</td><td>default, mixed, amp_only, html_only</td><td><code>default</code></td></tr><tr><td><code>stage</code></td><td>Define if the builder starts in desktop view, mobile view, or global (i.e. without desktop/mobile views.)</td><td>desktop, mobile, global</td><td>inherits Developer account configuration</td></tr><tr><td><code>displayHidden</code></td><td>if defined, hidden elements will behave based on the parameter value.</td><td>blur, hide</td><td><code>blur</code></td></tr><tr><td><code>hideStageToggle</code></td><td>if true, the mobile/desktop icons to switch view are not visible</td><td>true, false</td><td><code>false</code></td></tr></tbody></table>
+
+## Mobile optimization settings
+
+{% hint style="info" %}
+**Important:** The **Mobile Optimization Settings** listed in this section are available on [Beefree SDK paid plans](https://developers.beefree.io/pricing-plans).
+{% endhint %}
+
+Beefree SDK provides addition mobile optimization settings both for rows and content blocks. These are available on [paid plans](https://developers.beefree.io/pricing-plans).&#x20;
+
+To change how content behaves on mobile and create a mobile version of an email, page, or popup, you can add the following enhancements to your application:
+
+* **Hide on mobile/Hide on desktop:** A content property to hide a block when displaying the email/page on a specific device.&#x20;
+  * **Server-side configuration:** ![](<../.gitbook/assets/CleanShot 2025-06-27 at 15.31.57.png>)
+  * **User interface:** ![](<../.gitbook/assets/CleanShot 2025-06-27 at 15.33.03.png>)
+* **Do not stack on mobile:** When this option is enabled for a row, adjacent columns will not be stacked on mobile devices. The columns will stay side-by-side, as in the desktop view.
+  * **Server-side configuration:**  ![](<../.gitbook/assets/CleanShot 2025-06-27 at 15.34.42.png>)
+  * **User interface:**  ![](<../.gitbook/assets/CleanShot 2025-06-27 at 15.35.10.png>)
+* **Reverse stacking on mobile:** When turned on for a row, columns for that row will stack in reverse order, i.e., from the rightmost to the leftmost.
+  * **Server-side configuration:**  ![](<../.gitbook/assets/CleanShot 2025-06-27 at 15.35.39.png>)
+  * **User interface:**  ![](<../.gitbook/assets/CleanShot 2025-06-27 at 15.36.13.png>)&#x20;
+
+These settings enhance Mobile Design Mode by allowing end users to immediately view desktop vs. mobile designs.
+
+### Displaying hidden elements
+
+There is an additional setting to preview hidden elements included in a template. With the Hide-on enabled a “Visibility” icon will appear next to the Desktop vs. Mobile stage icons.
+
+<figure><img src="../.gitbook/assets/3visibility-icon.png" alt=""><figcaption></figcaption></figure>
+
+When the Visibility button is ON (default behavior):
+
+* The builder will display content blocks set as hidden for the current device;
+* Hidden elements will be blurred out;
+* A small icon in the outline of the block will appear whenever hovering with the mouse on the hidden element.
+
+<figure><img src="../.gitbook/assets/4hidden-element.png" alt=""><figcaption></figcaption></figure>
+
+When Visibility is OFF:
+
+* Hidden elements won’t be visible in the content area;
+* The template will be available as it is;
+
+Here is how the Visibility toggle changes the experience when editing a recent Beefree SDK newsletter.
+
+<figure><img src="../.gitbook/assets/5Visibility-icon-in-a-newsletter.gif" alt=""><figcaption></figcaption></figure>
+
+The device preview matches the stage selected when accessing the design preview. This doesn’t apply if you have implemented a custom-built preview.

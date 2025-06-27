@@ -574,10 +574,8 @@ The following code snippet configures a display condition with a specific label,
 	type: 'A category for this condition', // Will not be shown
 	label: 'Condition', // Will be displayed as the condition name
 	description: 'Small text describing what the condition does', // Will be displayed in the editor UI to identify the condition action
-	before: '{% raw %}
-{% if something == \'Condition\' %}', // Will be added before the selected row
-	after: '{% endif %}
-{% endraw %}', // Will be added after the selected row
+	before: '{% if something == \'Condition\' %}', // Will be added before the selected row
+	after: '{% endif %}', // Will be added after the selected row
 }
 ```
 

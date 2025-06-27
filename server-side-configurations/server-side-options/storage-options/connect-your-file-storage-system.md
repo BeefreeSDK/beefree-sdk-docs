@@ -352,7 +352,40 @@ The following code shows an example response for deleting a directory.
 
 ## Uploading a file
 
-**Description:** Use this method when uploading a file to the File manager.
+This section discusses how the Beefree editor interacts with a Custom File Storage Provider (FSP) when uploading images generated or modified via client-side features like **Apply Effects** or **AI Image Generator**.
+
+When an end user finishes applying visual effects to an image or generates a new image via AI within the Beefree editor, the application performs the following:
+
+* Applies the effect **client-side**
+* Uploads the modified or generated image via a **`POST`** request to the `FSP`, using the following path structure:
+
+```
+POST /editor_images/random-file-name.ext
+```
+
+{% hint style="info" %}
+**Important:** This behavior occurs for both **Apply Effects** and **AI Image Generator features**.
+{% endhint %}
+
+### Folder Management Requirement
+
+The custom FSP must handle folder creation dynamically based on the request path. If the `/editor_images/` folder does not exist, it must be created programmatically before saving the uploaded file.
+
+#### Implementation Notes
+
+To support this functionality, your FSP should:
+
+1. **Inspect the request path:** Check if `/editor_images/` is part of the URL path.
+2. **Ensure the target folder exists:** If it does not, create it before handling the file write.
+3. **Continue with the upload process:** Once everything looks good, perform the upload.
+
+### Identifying Uploads from Editor Features
+
+Currently, there's no payload-based indicator to distinguish between uploads originating from **Apply Effects**, **AI Image Generator**, or other direct uploads. Uploads from both **Apply Effects** and **AI Generator** will include `/editor_images/` in the request URL.
+
+### Example Upload Request and Response
+
+This section includes an example upload request and response for additional reference.
 
 #### **Request**
 
