@@ -1,16 +1,5 @@
 ---
 description: Learn how to create an application within the Beefree SDK Developer Console.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Create an Application

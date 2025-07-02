@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Advanced options
 
 Advanced options are available with Beefree SDK. Learn more about the advanced options you can integrate within your web application. Beefree SDK's advanced options include the following capabilities.&#x20;
