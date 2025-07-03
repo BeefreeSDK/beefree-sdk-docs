@@ -55,9 +55,9 @@ Now that the package is installed, the next step is to create a simple user inte
 
 ### **3. Create a Simple UI**
 
-The simple UI for this step is creating a "Read the Docs" Button with a link to the docs site. This servers as a simple visual to see the contrast between the application and builder UI once the app is running locally.&#x20;
+The simple UI for this step is creating a "Read the Docs" Button with a link to the docs site. This serves as a simple visual to see the contrast between the application and builder UI once the app is running locally.&#x20;
 
-Copy and paste the code below in your **`App.tsx`** file to modify it to include a button linking to Beefree SDK's docs. You can use any url of you'd like to experiment with this locally, simply replace `href="https://docs.beefree.io/beefree-sdk"` in the code below with your preferred url.&#x20;
+Copy and paste the code below in your **`App.tsx`** file to modify it to include a button linking to Beefree SDK's docs. You can use any url you'd like to experiment with this locally, simply replace `href="https://docs.beefree.io/beefree-sdk"` in the code below with your preferred url.&#x20;
 
 #### **Update `App.tsx`**
 
@@ -156,14 +156,14 @@ export default function BeefreeEditor() {
 }
 ```
 
-In the code above code, there are a few concepts related to both React and Beefree SDK that are important to be aware of for successfully lauching your local environment. These concepts are the following:
+In the code above code, there are a few concepts related to both React and Beefree SDK that are important to be aware of for successfully launching your local environment. These concepts are the following:
 
 * [Beefree SDK initialization](react-no-code-email-builder.md#beefree-sdk-initialization)
 * [Container setup with useRef](react-no-code-email-builder.md#container-setup-with-useref)
 * [Token Process](react-no-code-email-builder.md#token-process)
 * [Beefree SDK Callbacks](react-no-code-email-builder.md#beefree-sdk-callbacks)
 
-The following section discusses these concepts throughly.
+The following section discusses these concepts thoroughly.
 
 #### Beefree SDK Initialization
 
