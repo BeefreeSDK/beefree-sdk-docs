@@ -33,11 +33,10 @@ Throughout this guide, you'll learn how to:
 
 First, set up a React app with TypeScript. Navigate to your terminal and run the following commands to create a React app with TypeScript. In the following example, the app is called **beefree-demo**. After creating the app, navigate to its directory.
 
-```bash
-npx create-react-app beefree-demo --template typescript
-cd beefree-demo
-npm start
-```
+<pre class="language-bash"><code class="lang-bash"><strong>npm create vite@latest beefree-react-demo -- --template react-ts
+</strong>cd beefree-react-demo
+npm install
+</code></pre>
 
 ### **2. Install Beefree SDK**
 
@@ -62,7 +61,6 @@ Copy and paste the code below in your **`App.tsx`** file to modify it to include
 #### **Update `App.tsx`**
 
 ```tsx
-import React from 'react';
 import './App.css';
 
 function DocsButton() {
@@ -115,12 +113,12 @@ export default function BeefreeEditor() {
     async function initializeEditor() {
       // Beefree SDK configuration
       const beeConfig = {
-        container: 'beefree-container',
+        container: 'beefree-react-demo',
         language: 'en-US',
-        onSave: (json: any, html: string) => {
-          console.log('Saved!', { json, html });
+        onSave: (pageJson: string, pageHtml: string, ampHtml: string | null, templateVersion: number, language: string | null) => {
+          console.log('Saved!', { pageJson, pageHtml, ampHtml, templateVersion, language });
         },
-        onError: (error: any) => {
+        onError: (error: unknown) => {
           console.error('Error:', error);
         }
       };
@@ -142,10 +140,10 @@ export default function BeefreeEditor() {
 
   return (
     <div
-      id="beefree-container"
+      id="beefree-react-demo"
       ref={containerRef}
       style={{
-        height: '600px', // Larger container
+        height: '600px',
         width: '90%',
         margin: '20px auto',
         border: '1px solid #ddd',
@@ -174,12 +172,12 @@ useEffect(() => {
     async function initializeEditor() {
       // Beefree SDK configuration
       const beeConfig = {
-        container: 'beefree-container',
+        container: 'beefree-react-demo',
         language: 'en-US',
-        onSave: (json: any, html: string) => {
-          console.log('Saved!', { json, html });
+        onSave: (pageJson: string, pageHtml: string, ampHtml: string | null, templateVersion: number, language: string | null) => {
+          console.log('Saved!', { pageJson, pageHtml, ampHtml, templateVersion, language });
         },
-        onError: (error: any) => {
+        onError: (error: unknown) => {
           console.error('Error:', error);
         }
       };
@@ -208,9 +206,12 @@ Create `proxy-server.js` in the **root directory**. Copy and paste the code in t
 #### **`proxy-server.js`**
 
 ```javascript
-const express = require('express');
-const cors = require('cors');
-const axios = require('axios');
+import express from 'express';
+import cors from 'cors';
+import axios from 'axios';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const PORT = 3001;
@@ -218,9 +219,8 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
-// Replace with your Beefree credentials
-const BEE_CLIENT_ID = 'YOUR_CLIENT_ID';
-const BEE_CLIENT_SECRET = 'YOUR_CLIENT_SECRET';
+const BEE_CLIENT_ID = process.env.BEE_CLIENT_ID;
+const BEE_CLIENT_SECRET = process.env.BEE_CLIENT_SECRET;
 
 // V2 Auth Endpoint
 app.post('/proxy/bee-auth', async (req, res) => {
@@ -249,12 +249,19 @@ app.listen(PORT, () => {
 });
 ```
 
+Create a .env file and copy and paste your credentials from the Beefree SDK Developer Console securely into the file.
+
+```javascript
+BEE_CLIENT_ID='YOUR-CLIENT-ID'
+BEE_CLIENT_SECRET='YOUR-CLIENT-SECRET'
+```
+
 #### **Run the Proxy Server**
 
 Once the authorization process is complete, it is important to run the proxy sever prior to launching the frontend. Run the following commands in your terminal to complete this step.
 
 ```bash
-npm install express cors axios
+npm install express cors axios dotenv
 node proxy-server.js
 ```
 
@@ -263,7 +270,6 @@ node proxy-server.js
 Now that the [Beefree SDK editor component](react-no-code-email-builder.md#id-4.-set-up-the-beefree-editor-component) is set up and so is the [proxy server](react-no-code-email-builder.md#id-5.-set-up-the-proxy-server-v2-auth), the `App.tsx` file can be updated to include the Beefree SDK builder. Copy and paste the following code into the `App.tsx` file to update it accordingly.
 
 ```tsx
-import React from 'react';
 import './App.css';
 import BeefreeEditor from './BeefreeEditor';
 
@@ -305,7 +311,7 @@ The terminal commands for running the application and proxy server are the follo
 *   **Terminal 1 (React):**
 
     ```bash
-    npm start
+    npm run dev
     ```
 *   **Terminal 2 (Proxy):**
 
@@ -313,9 +319,9 @@ The terminal commands for running the application and proxy server are the follo
     node proxy-server.js
     ```
 
-Now you can visit [**http://localhost:3000**](http://localhost:3000) and start experimenting with your new React application with Beefree SDK embedded. The following image shows what the final result should look like:&#x20;
+Now you can visit [**http://localhost:3000**](http://localhost:3000) and start experimenting with your new React application with Beefree SDK embedded. The following image shows what the final result should look like:
 
-<figure><img src="../.gitbook/assets/CleanShot 2025-07-02 at 15.02.57.png" alt="Local React App with Beefree SDK Email Builder Embedded"><figcaption><p>Local React App with Beefree SDK Email Builder Embedded</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/CleanShot 2025-07-11 at 17.48.08@2x.png" alt=""><figcaption></figcaption></figure>
 
 ### **Summary**
 

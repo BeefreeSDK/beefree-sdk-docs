@@ -24,6 +24,7 @@
 ## Quickstart Guides
 
 * [React No-code Email Builder](quickstart-guides/react-no-code-email-builder.md)
+* [Vue.js No-code Email Builder](quickstart-guides/vue.js-no-code-email-builder.md)
 
 ## Visual Builders
 
@@ -203,3 +204,13 @@
   * [Template Validation and Update](resources/error-management/template-validation-and-update.md)
   * [Template validation and update errors](resources/error-management/template-validation-and-update-errors.md)
 * [Scheduled maintenances](resources/scheduled-maintenances.md)
+
+***
+
+* [Videos](videos/README.md)
+  * [Build better, faster: Your one-stop guide for Beefree SDK resources](videos/build-better-faster-your-one-stop-guide-for-beefree-sdk-resources.md)
+  * [HTML Importer](videos/html-importer.md)
+  * [Beefree SDK Spotlight Session: Simple Schema](videos/beefree-sdk-spotlight-session-simple-schema.md)
+  * [The BEST Way to Balance Customization and Simplicity in SDK Development](videos/the-best-way-to-balance-customization-and-simplicity-in-sdk-development.md)
+  * [Hosted Saved Rows](videos/hosted-saved-rows.md)
+  * [Unleash Business Growth with Email Templates for a Winning Edge](videos/unleash-business-growth-with-email-templates-for-a-winning-edge.md)
