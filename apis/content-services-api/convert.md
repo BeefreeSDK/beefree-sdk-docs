@@ -15,7 +15,7 @@ The Conversion Collection provides you with endpoints that enable you to convert
 **Important:** For all endpoints in this category, the value for `collection` is `conversion`. When making API calls, replace the `collection` placeholder within the URL with `conversion` to execute the call.
 {% endhint %}
 
-### Email to Page Conversion: Important Behaviors
+## Email to Page Conversion: Important Behaviors
 
 The Email to Page endpoint converts a JSON template created for email into a JSON template optimized for web pages. During this conversion, the following adjustments are applied:
 
@@ -34,7 +34,7 @@ The Email to Page endpoint converts a JSON template created for email into a JSO
 [email-to-page-conversion.yaml](../../.gitbook/assets/email-to-page-conversion.yaml)
 {% endopenapi %}
 
-### Page to Email Conversion: Important Behaviors
+## Page to Email Conversion: Important Behaviors
 
 The Page to Email endpoint transforms a JSON template designed for a web page into a JSON template optimized for email. During this conversion process, the following adjustments are made:
 
@@ -65,7 +65,7 @@ The Page to Email endpoint transforms a JSON template designed for a web page in
 [page-to-emai-conversion.yaml](../../.gitbook/assets/page-to-emai-conversion.yaml)
 {% endopenapi %}
 
-### Simple to Full JSON
+## Simple to Full JSON
 
 {% hint style="info" %}
 Simple Schema is available on [Superpowers and Enterprise plans](https://developers.beefree.io/pricing-plans).
@@ -148,3 +148,7 @@ The following table lists and describes **optional** object parameters nested wi
 | `description` | string | ❌ No     | A short description of the template.                             |
 | `subject`     | string | ❌ No     | The subject line of the email (if applicable).                   |
 | `preheader`   | string | ❌ No     | The preheader text for the email (if applicable).                |
+
+{% openapi-operation spec="simple-to-full-json" path="/v1/{collection}/simple-to-full-json" method="post" %}
+[OpenAPI simple-to-full-json](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/9cfe21ce15319f492d5c8677e6dceace21a4991dc1a3965f3f56d170861800aa.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250715%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250715T222648Z&X-Amz-Expires=172800&X-Amz-Signature=b219ad141fbc3cfdb731133c4e839f7b4f6f716ca299fc68e9cdae93971bbbe6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% endopenapi-operation %}
