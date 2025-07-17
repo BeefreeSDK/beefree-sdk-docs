@@ -84,17 +84,7 @@ Create a free account and obtain your Client ID and Client Secret in the [Develo
 * [Vue.js No-code Email Builder](quickstart-guides/vue.js-no-code-email-builder.md)
 * [GitHub Resources](https://github.com/BeefreeSDK)
 
-{% columns %}
-{% column width="25%" %}
-## Videos <a href="#about-this-documentation" id="about-this-documentation"></a>
-
-Learn more about Beefree SDK through [video tutorials](videos/).
-
-<div align="center"><figure><img src=".gitbook/assets/Play thumbnail Beefree sdk.png" alt=""><figcaption></figcaption></figure></div>
-{% endcolumn %}
-
-{% column %}
-## Sample Code
+### Sample Code
 
 Learn more about Beefree SDK through available sample code and example projects in [GitHub](https://github.com/BeefreeSDK).
 
@@ -103,15 +93,7 @@ Learn more about Beefree SDK through available sample code and example projects 
 * [NPM official package](https://github.com/BeefreeSDK/beefree-sdk-npm-official)
 * [Simple Schema and AI-generated templates](https://github.com/BeefreeSDK/beefree-sdk-simple-schema)
 * [Sample project with Next.js](https://github.com/BeefreeSDK/beefree-sdk-sample-nextjs)
-{% endcolumn %}
-{% endcolumns %}
 
-{% columns %}
-{% column %}
+### Videos <a href="#about-this-documentation" id="about-this-documentation"></a>
 
-{% endcolumn %}
-
-{% column %}
-
-{% endcolumn %}
-{% endcolumns %}
+Learn more about Beefree SDK through [videos](resources/videos/). Explore [Tutorials](resources/videos/#tutorials), [Spotlight Sessions](resources/videos/#spotlight-sessions), and [Case Studies](resources/videos/#case-studies).&#x20;

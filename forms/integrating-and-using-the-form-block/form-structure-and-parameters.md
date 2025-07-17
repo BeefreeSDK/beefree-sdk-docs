@@ -75,23 +75,22 @@ Each `layout` element is an array itself and represents a single line of fields.
 
 Probably the best way to represent this is with an example:
 
-| <pre><code>"layout":[
+<table data-header-hidden><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><pre><code>"layout":[
 ["name"],
 ["surname"],
 ["email"],
 ["privacy_checkbox"],
 ["submit"]
 ]
-</code></pre> | <pre><code>"layout":[
+</code></pre></td><td><pre><code>"layout":[
 ["email","telephone"],
 ["notes"],
 ["privacy_checkbox"],
 ["submit"]
 ]
-</code></pre> |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+</code></pre></td></tr></tbody></table>
 
-<figure><img src="../../../.gitbook/assets/forms-layout.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/forms-layout.png" alt=""><figcaption></figcaption></figure>
 
 ## Title and description <a href="#title-and-description" id="title-and-description"></a>
 
