@@ -124,11 +124,13 @@ export default function BeefreeEditor() {
       };
 
       // Get a token from your backend
-      const token = await fetch('http://localhost:3001/proxy/bee-auth', {
+      const response = await fetch('http://localhost:3001/proxy/bee-auth', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ uid: 'demo-user' })
-      }).then(res => res.json());
+      })
+    
+      const token = await response.json();
 
       // Initialize the editor
       const bee = new BeefreeSDK(token);
@@ -249,7 +251,7 @@ app.listen(PORT, () => {
 });
 ```
 
-Create a .env file and copy and paste your credentials from the Beefree SDK Developer Console securely into the file.
+The `.env.example` file in the root of the GitHub repository includes an example of a `.env` file. To create a .env file, rename this file to `.env`. Copy and paste your credentials from the Beefree SDK Developer Console securely into the file's placeholders. The following code shows an example of what these placeholders look like inside the file.
 
 ```javascript
 BEE_CLIENT_ID='YOUR-CLIENT-ID'

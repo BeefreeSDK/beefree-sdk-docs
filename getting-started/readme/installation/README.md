@@ -9,6 +9,8 @@ coverY: 0
 
 Congratulations on [creating your first application](../create-an-application.md)!  Now it’s time to install it. The first step is to add the Beefree SDK library to your application. You can use our [convenient NPM module](https://www.npmjs.com/package/@beefree.io/sdk) to add it. This guide discusses how you can set up a local environment, install the package, authenticate, and get started with Beefree SDK.
 
+For a quickstart, visit our [React](../../../quickstart-guides/react-no-code-email-builder.md), [Angular](../../../quickstart-guides/angular-no-code-email-builder.md), and [Vue.js](../../../quickstart-guides/vue.js-no-code-email-builder.md) Quickstart guides.
+
 ## **Introduction**
 
 Beefree SDK is an embeddable no-code content builder that enables your end users to build stunning marketing assets, such as emails, landing pages, and popups, without writing a single line of code.&#x20;
@@ -113,25 +115,29 @@ The following table lists and descibes the required authentication parameters.
 **Example Implementation (Node.js)**
 
 ```javascript
-var req = new XMLHttpRequest();
-req.onreadystatechange = function() {
-  if (req.readyState === 4 && req.status === 200) {
-    // Obtain token
-    var token = req.responseText;
-    // Call create method and pass token and beeConfig to obtain an instance of BEE Plugin
-    BeePlugin.create(token, beeConfig, function(beePluginInstance) {
-	// Call start method of bee plugin instance
-	beePluginInstance.start(template); // template is the json to be loaded in BEE
+async function initializeBeefreeEditor(templateJson, beeConfig) {
+  try {
+    const response = await fetch('http://localhost:3001/proxy/bee-auth', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ uid: 'demo-user' }) // customize UID if needed
     });
-  }
-};
 
-// This is a sample call to YOUR server side application that calls the loginV2 endpoint on BEE the side
-req.open(
-	'POST', 	// Method
-	'/YOUR_BACKEND_TOKEN_ENDPOINT', // your server endpoint
-	false 		// sync request
-);
+    if (!response.ok) {
+      throw new Error('Failed to fetch token from proxy server');
+    }
+
+    const { token } = await response.json();
+
+    BeefreeSDK.create(token, beeConfig, (beeInstance) => {
+      beeInstance.start(templateJson); // templateJson is your design content
+    });
+  } catch (error) {
+    console.error('Error initializing Beefree SDK:', error);
+  }
+}
 ```
 
 {% hint style="warning" %}

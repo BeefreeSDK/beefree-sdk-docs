@@ -166,11 +166,13 @@ onMounted(async () => {
       }
     }
 
-    const token = await fetch('http://localhost:3001/proxy/bee-auth', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ uid: 'demo-user' })
-    }).then(res => res.json())
+    const response = await fetch('http://localhost:3001/proxy/bee-auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ uid: 'demo-user' })
+      })
+    
+    const token = await response.json();
 
     const bee = new BeefreeSDK(token)
     bee.start(beeConfig, {})
@@ -208,10 +210,17 @@ To authenticate securely using `/loginV2`, create a lightweight proxy server wit
 
 #### **Why a Proxy is Required**
 
-The Beefree SDK requires authentication via Client ID and Client Secret, which must **not** be exposed in frontend code. The proxy server allows you to:
+The Beefree SDK requires authentication via Client ID and Client Secret, which must not be exposed in frontend code. The proxy server allows you to:
 
 * Keep credentials safe
 * Fetch access tokens securely
+
+The `.env.example` file in the root of the GitHub repository includes an example of a `.env` file. To create a .env file, rename this file to `.env`. Copy and paste your credentials from the Beefree SDK Developer Console securely into the file's placeholders. The following code shows an example of what these placeholders look like inside the file.
+
+```javascript
+BEE_CLIENT_ID='YOUR-CLIENT-ID'
+BEE_CLIENT_SECRET='YOUR-CLIENT-SECRET'
+```
 
 #### **File: `proxy-server.js` (root directory)**
 
@@ -227,8 +236,10 @@ app.use(cors())
 app.use(express.json())
 
 // Replace with your actual credentials
-const BEE_CLIENT_ID = 'YOUR-CLIENT-ID'
-const BEE_CLIENT_SECRET = 'YOUR-CLIENT-SECRET'
+import dotenv from 'dotenv'
+dotenv.config()
+const BEE_CLIENT_ID = process.env.BEE_CLIENT_ID
+const BEE_CLIENT_SECRET = process.env.BEE_CLIENT_SECRET
 
 app.post('/proxy/bee-auth', async (req, res) => {
   try {
