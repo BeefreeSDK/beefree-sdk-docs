@@ -39,13 +39,13 @@ Take the following steps to sign up for a Beefree SDK account and subscribe to t
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-07-11 at 14.05.21@2x.png" alt="" width="375"><figcaption></figcaption></figure>
 
-10. Enter and confirm your billing address.
-11. Enter and confirm your card information by clicking **Place Order.**
+7. Enter and confirm your billing address.
+8.  Enter and confirm your card information by clicking **Place Order.**
 
     You will be redirected your new Free plan subscription.
 
 {% hint style="info" %}
-**Important:** Keep in mind that Beefree SDK will not change you for using the Free plan. However, there are charges related to [user and CDN overages](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees). Ensure you review our plans and familiarize yourself with these cost structures as you proceed to use the Free plan.
+**Important:** Keep in mind that Beefree SDK will not charge you for using the Free plan. However, there are charges related to [user and CDN overages](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees). Ensure you review our plans and familiarize yourself with these cost structures as you proceed to use the Free plan.
 {% endhint %}
 
 ## How to create an application
