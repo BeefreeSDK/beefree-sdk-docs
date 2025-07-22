@@ -1,72 +1,49 @@
 ---
-description: Install Beefree SDK to get started with your implementation.
+description: >-
+  Learn and understand the core concepts related to how you can install the
+  Beefree SDK npm package, authenticate, and get started with Beefree SDK.
 coverY: 0
 ---
 
 # Installation and Fundamentals
 
-## Add JavaScript Library <a href="#add-javascript-library" id="add-javascript-library"></a>
+## Introduction <a href="#add-javascript-library" id="add-javascript-library"></a>
 
-Congratulations on [creating your first application](../create-an-application.md)!  Now it’s time to install it. The first step is to add the Beefree SDK library to your application. You can use our [convenient NPM module](https://www.npmjs.com/package/@beefree.io/sdk) to add it. This guide discusses how you can set up a local environment, install the package, authenticate, and get started with Beefree SDK.
+This page discusses the core concepts related to installing Beefree SDK within your application. These core concepts are the following:
 
-For a quickstart, visit our [React](../../../quickstart-guides/react-no-code-email-builder.md), [Angular](../../../quickstart-guides/angular-no-code-email-builder.md), and [Vue.js](../../../quickstart-guides/vue.js-no-code-email-builder.md) Quickstart guides.
+* Installing the [Beefree SDK npm package](https://app.gitbook.com/o/hABGoPMOKISmuDmz4fbV/s/xZgBDrdhQLtWmkGqVR59/) within your application.
+* Understanding the [Authorization process](authorization-process-in-detail.md) and how to successfully authenticate server-to-server.
+* Adding the required [Beefree SDK configuration](configuration-parameters/) to your application.&#x20;
 
-## **Introduction**
+By the end of this guide, you'll understand the core concepts related to how you can install the package, authenticate, and get started with Beefree SDK. You'll have working a local environment set up on your machine to experiment with.
 
-Beefree SDK is an embeddable no-code content builder that enables your end users to build stunning marketing assets, such as emails, landing pages, and popups, without writing a single line of code.&#x20;
+For a quick start, visit our [React](../../../quickstart-guides/react-no-code-email-builder.md), [Angular](../../../quickstart-guides/angular-no-code-email-builder.md), and [Vue.js](../../../quickstart-guides/vue.js-no-code-email-builder.md) Quickstart guides, which each include complete sample code by framework.
 
-The following list includes a few key features within Beefree SDK:
+## **Prerequisites**
 
-* Drag-and-drop visual editors
-* File manager
-* Multi-user collaboration
-* Responsive design capabilities
-* Extensive template library
-* Secure authentication workflow
+Prior to integrating Beefree SDK, ensure you have completed the following:
 
-This guide provides comprehensive instructions and best practices for implementing Beefree SDK.
-
-### **Getting Started**
-
-This section discusses how to get started with Beefree SDK.&#x20;
-
-#### **Prerequisites**
-
-Prior to integrating Beefree SDK, ensure you have:
-
-1. A Beefree SDK [developer account](https://developers.beefree.io/signup).
+1. Signed up for a [Beefree SDK Developer Console](https://developers.beefree.io/signup) account.
+   1. [Created an application](../create-an-application.md) within the Developer Console
+   2. Obtained a Client ID and Client Secret for that application
 2. Node.js (v14 or higher) installed.
 3. A modern web browser (Chrome, Firefox, Safari, Edge).
 
-#### **Local Development Setup**
+## **Core Concepts**
 
-To test the SDK locally before production deployment:
+This section covers the core concepts for installing Beefree SDK within your application and launching a local environment.
 
-1.  Clone the demo repository:
+The concepts covered in this section are the following:
 
-    ```bash
-    git clone https://github.com/BeefreeSDK/beefree-sdk-npm-official.git
-    ```
-2.  Install dependencies:
+* [npm package installation](./#package-installation)
+* [Authentication Process](./#authentication-process)
+* [Beefree SDK Initialization](./#beefree-sdk-initialization) &#x20;
 
-    ```bash
-    npm install
-    # or
-    yarn install
-    ```
-3.  Configure environment:
+{% hint style="info" %}
+**Note:** Reference the [React](../../../quickstart-guides/react-no-code-email-builder.md), [Angular](../../../quickstart-guides/angular-no-code-email-builder.md), or[ Vue.js](../../../quickstart-guides/vue.js-no-code-email-builder.md) Quickstart Guides for a guided walkthrough by framework and sample code using a simple implementations.
+{% endhint %}
 
-    ```bash
-    cp .env.sample .env
-    ```
-4.  Start the dev server:
-
-    ```bash
-    npm start
-    ```
-5. Access at `http://localhost:8081`
-
-#### **Package Installation**
+### **Package Installation**
 
 You can install Beefree SDK using either [npm](https://www.npmjs.com/package/@beefree.io/sdk) or [yarn](https://yarnpkg.com/):
 
@@ -90,21 +67,39 @@ yarn add @beefree.io/sdk
 
 ### **Authentication Process**
 
-This section discusses the authentication process.
-
-#### **Server-Side Authentication**
+This section discusses the authentication process. It explains important concepts related to how to successfully authenticate using a server-to-server call.&#x20;
 
 The secure authentication flow requires a server-to-server call to obtain a JWT token. This process ensures your client credentials remain protected.
 
-**Authentication Endpoint**
+At a high level, the steps you need to take throughout the authentication process are the following:
 
-```
+1. **Secure Credentials**
+   1. Never expose `client_id` or `client_secret` in frontend code.
+   2. Store them in backend environment variables (`.env`).
+2. **Backend Proxy Setup**
+   1. Set up a server-to-server call.
+   2. Forward the complete response `access_token` and `v2` to the frontend.
+3. **Auth Request from Backend**
+
+* Call Beefree SDK’s `loginV2` and include the following required parameters:
+  * `client_id`&#x20;
+  * `client_secret`&#x20;
+  * `uid`
+
+4. **Frontend Handling**
+   1. Fetch token only from your proxy.
+   2. Extract `access_token` from response.
+   3. Initialize SDK: `new BeefreeSDK(access_token)`.
+
+#### **Authentication Endpoint**
+
+```hpkp
 POST https://auth.getbee.io/loginV2
 ```
 
-**Required Parameters**
+#### **Required Parameters**
 
-The following table lists and descibes the required authentication parameters.
+The following table lists and describes the required authentication parameters.
 
 | Parameter       | Type   | Description                 | Example             |
 | --------------- | ------ | --------------------------- | ------------------- |
@@ -148,7 +143,7 @@ async function initializeBeefreeEditor(templateJson, beeConfig) {
 * Ensure client\_secret and client\_id aren't exposed in the client-side code.
 {% endhint %}
 
-**JSON Authorization Response**
+#### **JSON Authorization Response**
 
 ```json
 {
@@ -166,12 +161,14 @@ This section discusses how to initialize Beefree SDK.
 Create a container element in your HTML where the editor will render:
 
 ```html
-<div id="bee-plugin-container" style="width: 100%; height: 800px;"></div>
+<div id="beefree-sdk-container" style="width: 100%; height: 800px;"></div>
 ```
 
 #### **Configuration Options**
 
-Beefree SDK requires a configuration object with the following essential property:
+Beefree SDK requires a configuration object with the required `container` property. [Optional parameters](configuration-parameters/) are also available to customize the builder, but `container` is the only required one for initializing Beefree SDK.
+
+The following code snippet shows an example of this:
 
 ```javascript
 var config = {
@@ -179,7 +176,7 @@ var config = {
 }
 ```
 
-**Full Configuration Reference**
+#### **Full Configuration Reference**
 
 The following table explains the container property.
 
@@ -251,29 +248,13 @@ How to use:
 1. Generate a unique `session-id` on your server
 2. Call `join()` with the same ID for all collaborators
 
-### **Troubleshooting**
-
-The following list includes the most common issues and steps for troubleshooting them.
-
-* **Authentication Failures**
-  * Verify `client_id` and `client_secret`
-  * Ensure UID matches between auth and config
-  * Check network connectivity to auth.getbee.io
-* **Editor Not Loading**
-  * Confirm container element exists
-  * Verify container ID matches config
-  * Check for JavaScript errors in console
-* **Token Expiration Issues**
-  * Implement `onTokenExpired` callback
-  * Test token refresh flow
-
 ### **Frequently Asked Questions**
 
 **Q: Can I use the SDK without server-side authentication?**\
 A: While possible for testing, production implementations must use server-side auth for security.
 
 **Q: How do I customize the editor's appearance?**\
-A: The SDK supports UI customization through configuration options. Refer to the advanced documentation.
+A: The SDK supports UI customization through [configuration options](configuration-parameters/). While the Configuration parameters provides a high level example, there are several configuration options outlined throughout the comprehensive technical documentation.
 
 **Q: What happens when the token expires?**\
 A: When your token expires after 12 hours:
@@ -302,4 +283,4 @@ Remember to:
 * Always use server-side authentication
 * Implement proper token refresh logic
 * Test thoroughly before production deployment
-* Monitor for SDK updates and new features
+* Monitor for Beefree SDK updates and new features

@@ -50,6 +50,7 @@ Reference Quick Start Guides specific to your tech stack:
 
 * [React No-code Email Builder](quickstart-guides/react-no-code-email-builder.md)
 * [Vue.js No-code Email Builder](quickstart-guides/vue.js-no-code-email-builder.md)
+* [Angular No-code Email Builder](quickstart-guides/angular-no-code-email-builder.md)
 
 ## Beefree SDK's Embeddable Builders <a href="#welcome" id="welcome"></a>
 
