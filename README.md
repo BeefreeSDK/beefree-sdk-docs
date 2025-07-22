@@ -3,18 +3,6 @@ description: >-
   Welcome to the Beefree SDK technical documentation! This page discusses what
   Beefree SDK is and outlines resources you can use to get started with
   integrating our no-code embeddable builders.
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Introduction to Beefree SDK
@@ -67,7 +55,7 @@ Reference Quick Start Guides specific to your tech stack:
 
 Learn more about our three embeddable builders.
 
-<table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><a href="visual-builders/email-builder.md">email-builder.md</a></td></tr><tr><td><a href="visual-builders/page-builder/">page-builder</a></td></tr><tr><td><a href="visual-builders/popup-builder/">popup-builder</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="visual-builders/email-builder.md">email-builder.md</a></td><td><a href=".gitbook/assets/emailbuilder-e1629383000405.png">emailbuilder-e1629383000405.png</a></td></tr><tr><td><a href="visual-builders/page-builder/">page-builder</a></td><td><a href=".gitbook/assets/Page-Builder.jpg">Page-Builder.jpg</a></td></tr><tr><td><a href="visual-builders/popup-builder/">popup-builder</a></td><td><a href=".gitbook/assets/popupbuilder-e1629383038360.png">popupbuilder-e1629383038360.png</a></td></tr></tbody></table>
 
 ## File Manager
 

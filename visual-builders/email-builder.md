@@ -47,22 +47,30 @@ There are various tools you can use to experiment with and test out the Email bu
 
 The following resources are a great start to learn more:
 
-* [Playground](https://developers.beefree.io/playground)
-  * You do not need a Client ID or Client Secret to experiment with the Email builder in this environment.
 * [Coral Demo](https://bee-plugin-demos.getbee.io/#/)
-  * You do not need a Client ID or Client Secret to experiment with the Email builder in this environment.
-* [GitHub Repository](https://github.com/BeefreeSDK/beefree-sdk-sample-client)
-  * You do need a [Client ID or Client Secret](https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application) to experiment with the Email builder in this environment.
+
+{% hint style="info" %}
+**Note:** You do not need a Client ID or Client Secret to experiment with the Email builder in this environment.
+{% endhint %}
+
+* Quickstart Guides
+  * [React No-code Email Builder](../quickstart-guides/react-no-code-email-builder.md)
+  * [Vue.js No-code Email Builder](../quickstart-guides/vue.js-no-code-email-builder.md)
+  * [Angular No-code Email Builder](../quickstart-guides/angular-no-code-email-builder.md)
+
+{% hint style="info" %}
+**Note:** You do need a Client ID and Client Secret to use these Quickstart Guides. Reference the [Create an Application](../getting-started/readme/create-an-application.md) page to learn how to obtain them.
+{% endhint %}
 
 ### Integrate the Email builder
 
 To integrate the Email builder, take the following steps:
 
-1. [Create your Beefree SDK account](https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application) in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu)
-2. [Create an email application](https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application) within the Developer Console
-3. Obtain your Client ID and Client Secret
-4. Authenticate
-5. Use the [npm package](https://www.npmjs.com/package/@beefree.io/sdk) to [install](https://docs.beefree.io/beefree-sdk/getting-started/readme/installation) and embed Beefree SDK&#x20;
+1. [Create your Beefree SDK account](https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application) in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+   1. [Create an email application](https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application) within the Developer Console.
+   2. Obtain your Client ID and Client Secret.
+2. Authenticate using the [Authorization Process](../getting-started/readme/installation/authorization-process-in-detail.md).
+3. Use the [npm package](https://www.npmjs.com/package/@beefree.io/sdk) to [install](https://docs.beefree.io/beefree-sdk/getting-started/readme/installation) and embed Beefree SDK.&#x20;
 
 \
-Visit [Installation and Fundamentals](https://docs.beefree.io/beefree-sdk/getting-started/readme/installation) to learn more about installing Beefree SDK.
+Visit the [React](../quickstart-guides/react-no-code-email-builder.md), [Vue.js](../quickstart-guides/vue.js-no-code-email-builder.md), or [Angular](../quickstart-guides/angular-no-code-email-builder.md) Qucikstart Guides to learn more about installing Beefree SDK.
