@@ -33,7 +33,7 @@ Learn more about how to enable and customize Hosted Saved Rows in the following 
 * How to customize the modals related to Hosted Saved Rows
 * How to use Hosted Saved Rows with [Content Services API](../../apis/content-services-api/)
 
-Reference the [sample code in this GitHub repository](https://github.com/mailupinc/beefree-sdk-hosted-saved-rows-demo) to follow along with the webinar tutorial.
+Reference the [sample code in this GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-hosted-saved-rows-demo) to follow along with the webinar tutorial.
 
 {% embed url="https://www.youtube.com/watch?v=BSqWRusx2fg" %}
 Webinar on Hosted Saved Rows

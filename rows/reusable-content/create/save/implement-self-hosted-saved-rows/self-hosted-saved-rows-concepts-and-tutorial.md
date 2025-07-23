@@ -7,12 +7,6 @@ description: >-
 
 # Self-hosted Saved Rows Concepts and Tutorial
 
-## Clone the Sample Project Demo
-
-Clone the the sample project demo to follow along with the steps outlined on this page.
-
-{% embed url="https://github.com/mailupinc/beefree-sdk-self-hosted-saved-rows-demo" %}
-
 ## Overview
 
 In this guide you will:
@@ -27,7 +21,7 @@ In this guide you will:
 * Test your endpoints using tools like Postman or Insomnia.
 
 {% hint style="success" %}
-**Important:** This guide includes sample code snippets from a [simple self-hosted saved rows implementation](https://github.com/mailupinc/beefree-sdk-self-hosted-saved-rows-demo). You can reference the code for this sample integration in [this GitHub repository](https://github.com/mailupinc/beefree-sdk-self-hosted-saved-rows-demo). As you read along in this tutorial, you can copy, edit, and customize the sample code for your own use and experimentation. &#x20;
+**Important:** This guide includes sample code snippets from a simple implementation. As you read along in this tutorial, you can copy, edit, and customize the sample code for your own use and experimentation. &#x20;
 {% endhint %}
 
 Each step below is designed to build upon the previous ones, guiding you from initial setup to the final integration. This guide explains not only what to do, but also why each step is important and how it interacts with the other parts of the overall solution.
@@ -348,7 +342,7 @@ app.post('/rows', (req, res) => {
 
 **Additional Context**
 
-This endpoint not only creates new rows but also validates incoming data, ensuring data integrity. Similar endpoints (PUT, DELETE, GET) must be implemented to support full CRUD functionality. You can reference the full code for each endpoint in the sever.js file in [this GitHub repository](https://github.com/mailupinc/beefree-sdk-self-hosted-saved-rows-demo).
+This endpoint not only creates new rows but also validates incoming data, ensuring data integrity. Similar endpoints (PUT, DELETE, GET) must be implemented to support full CRUD functionality.
 
 ### 6. Set Up the Database
 
@@ -440,4 +434,4 @@ By following this guide you have:
 7. Connected the frontend to the backend using standard HTTP requests.
 8. Tested your endpoints to ensure a smooth integration.
 
-Each step is interconnected: enabling the feature makes it available in Beefree SDK, the frontend's modals interact with backend endpoints, and the dynamic configuration ensures that data remains consistent and up-to-date. The full code files (including the complete Beefree SDK configuration, server code, and database set up) are available in this [GitHub repository](https://github.com/mailupinc/beefree-sdk-self-hosted-saved-rows-demo). This guide shows more concise, focused snippets to help you quickly understand the implementation while leaving the complete examples for additional reference in the repository.
+Each step is interconnected: enabling the feature makes it available in Beefree SDK, the frontend's modals interact with backend endpoints, and the dynamic configuration ensures that data remains consistent and up-to-date.

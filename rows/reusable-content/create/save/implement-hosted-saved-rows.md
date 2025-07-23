@@ -10,6 +10,8 @@ With Hosted Saved Rows, you can provide your end users with the option to save a
 
 The following video tutorial discusses what Saved Rows are, how reusable content can support your end users throughout their content creation journeys, and how you can implement Hosted Saved Rows in your application.
 
+Reference the [GitHub repository with a sample implementation](https://github.com/BeefreeSDK/beefree-sdk-hosted-saved-rows-demo) of Hosted Saved Rows to learn more.
+
 {% embed url="https://www.youtube.com/watch?v=5m80DgKW0x8" %}
 Save Time with Hosted Rows Video Tutorial
 {% endembed %}
@@ -260,7 +262,7 @@ Reference the [Hosted Saved Rows Webinar](../../../storage/hosted-saved-rows.md#
 * How to customize the modals related to Hosted Saved Rows
 * How to use Hosted Saved Rows with [Content Services API](../../../../apis/content-services-api/)
 
-Reference the [sample code in this GitHub repository](https://github.com/mailupinc/beefree-sdk-hosted-saved-rows-demo) to follow along with the [webinar tutorial](../../../storage/hosted-saved-rows.md#webinar-tutorial).
+Reference the [sample code in this GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-hosted-saved-rows-demo) to follow along with the [webinar tutorial](../../../storage/hosted-saved-rows.md#webinar-tutorial).
 
 Visit the [Hosted Saved Rows page](../../../storage/hosted-saved-rows.md) to also learn more about the following topics:
 
