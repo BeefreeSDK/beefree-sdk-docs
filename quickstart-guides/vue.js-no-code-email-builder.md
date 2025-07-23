@@ -10,6 +10,10 @@ description: >-
 
 This Quickstart Guide walks you through embedding the Beefree SDK’s no-code email builder into a Vue 3 application using the [`/loginV2`](https://docs.beefree.io/beefree-sdk/docs/authorization-process-in-detail) authorization process. By the end of this guide, you’ll have a fully functional Vue app running locally with the builder embedded, authenticated, and ready to use—following Vue best practices.
 
+Reference the [following GitHub repository](https://github.com/BeefreeSDK/beefree-vue-demo) with the complete code for this project to follow along in this Vue.js Quickstart Guide.
+
+{% embed url="https://github.com/BeefreeSDK/beefree-vue-demo" %}
+
 ### **Prerequisites**
 
 Before you begin, make sure you:

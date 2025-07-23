@@ -12,6 +12,10 @@ Welcome to the Angular Quickstart Guide for embedding the Beefree SDK’s no-cod
 
 This step-by-step tutorial demonstrates how to set up and run a fully functional Angular app integrated with the Beefree SDK using the [`/loginV2`](../getting-started/readme/installation/authorization-process-in-detail.md) authentication process. By the end of this guide, you’ll have a live development environment showcasing the Beefree email editor embedded in Angular—following best practices for this framework.
 
+Reference the [following GitHub repository](https://github.com/BeefreeSDK/beefree-angular-demo) with the complete code for this project to follow along in this Angular Quickstart Guide.
+
+{% embed url="https://github.com/BeefreeSDK/beefree-angular-demo" %}
+
 ## **Prerequisites**
 
 Before starting, ensure you have the following:
