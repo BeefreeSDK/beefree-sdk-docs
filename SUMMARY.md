@@ -211,6 +211,7 @@
   * [How to Change your AI Provider](resources/videos/how-to-change-your-ai-provider.md)
   * [Unleash Business Growth with Email Templates for a Winning Edge](resources/videos/unleash-business-growth-with-email-templates-for-a-winning-edge.md)
   * [Build better, faster: Your one-stop guide for Beefree SDK resources](resources/videos/build-better-faster-your-one-stop-guide-for-beefree-sdk-resources.md)
+  * [Build QA Tools into Your App with the Beefree SDK Check API and Frontend Commands](resources/videos/build-qa-tools-into-your-app-with-the-beefree-sdk-check-api-and-frontend-commands.md)
   * [Beefree SDK Spotlight Session: Using the HTML Importer API](resources/videos/beefree-sdk-spotlight-session-using-the-html-importer-api.md)
   * [Beefree SDK Spotlight Session: Simple Schema](resources/videos/beefree-sdk-spotlight-session-simple-schema.md)
   * [Beefree SDK Spotlight Session: Hosted Saved Rows](resources/videos/beefree-sdk-spotlight-session-hosted-saved-rows.md)
