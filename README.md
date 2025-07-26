@@ -30,7 +30,7 @@ Beefree SDK includes the following features and more:
 
 This site discusses the technical capabilities of Beefree SDK, and how to embed it into your web application. To learn more about the end user experience, and how your end users will interact with Beefree SDK on the frontend of your application, reference the [White Label End User Guide](https://docs.beefree.io/end-user-guide). Markdown files for this guide are available in this [GitHub repository](https://github.com/mailupinc/beefreeSDKwhiteLabelDocs), which you can clone and use as a starting point for building a knowledge base for your end users.&#x20;
 
-## Quick Start <a href="#welcome" id="welcome"></a>
+## Start a Simple Implementation <a href="#welcome" id="welcome"></a>
 
 Take the following steps to get started with Beefree SDK in a few minutes:
 
@@ -44,9 +44,9 @@ Take the following steps to get started with Beefree SDK in a few minutes:
 
 **Note:** Visit the [Beefree SDK pricing page](https://developers.beefree.io/pricing-plans) for a comprehensive list of features and the plan type they correspond to.
 
-## Quick Start Guides <a href="#welcome" id="welcome"></a>
+## Quickstart Guides by Framework <a href="#welcome" id="welcome"></a>
 
-Reference Quick Start Guides specific to your tech stack:
+Reference Quickstart Guides specific to your tech stack:
 
 * [React No-code Email Builder](quickstart-guides/react-no-code-email-builder.md)
 * [Vue.js No-code Email Builder](quickstart-guides/vue.js-no-code-email-builder.md)
@@ -86,3 +86,12 @@ Learn more about Beefree SDK through available sample code and example projects 
 ### Videos <a href="#about-this-documentation" id="about-this-documentation"></a>
 
 Learn more about Beefree SDK through [videos](resources/videos/). Explore [Tutorials](resources/videos/#tutorials), [Spotlight Sessions](resources/videos/#spotlight-sessions), and [Case Studies](resources/videos/#case-studies).&#x20;
+
+## Contribute to the Docs
+
+The Beefree SDK technical documentation is available at docs.beefree.io/beefree-sdk and in the [beefree-sdk-docs GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-docs).
+
+You can contribute feedback to the documentation in one of the following ways:
+
+* On docs.beefree.io/beefree-sdk use the **Was this helpful?** emoji option on the right hand side of each page. After selecting an emoji, you'll have the option to submit written feedback on what you'd like to see in the documentation. This feedback goes directly to the documentation team and is integrated frequently.
+* Creating a pull request using the [beefree-sdk-docs GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-docs). Use this option in the event you find a typo, broken link, or small fix.  &#x20;
