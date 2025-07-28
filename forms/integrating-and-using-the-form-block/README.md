@@ -12,8 +12,10 @@ You can enable your users to add forms in Beefree SDK with two methods:
 * by implementing a [content dialog](../../other-customizations/advanced-options/content-dialog.md) on top of the form content block and building a user interface on top of the builder, so that your users can either **browse and select pre-built forms** or **build a new form.**
 
 {% hint style="info" %}
-**Note:** For the "Form" tile to appear in the "Content" of the builder, you must successfully implement one of the two methods mentioned above.
+**Note:** For the **Form Block** to appear in the **Content** tab of the builder, you must successfully implement one of the two methods mentioned above.
 {% endhint %}
+
+Reference the [Form Block Demo GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-form-block-demo) to reference the code for three sample implementations of the Form Block within Beefree SDK.&#x20;
 
 ## Pass a Single Form
 
@@ -193,18 +195,10 @@ Any other post-submission validation and action must be defined and performed by
 
 ### Developer resources <a href="#developer-resources" id="developer-resources"></a>
 
-[**Passing forms to the Builder**](passing-forms-to-the-builder.md)
-
-Learn how to implement the different methods to pass forms to the Builder
-
-[**Form structure and parameters**](form-structure-and-parameters.md)
-
-A closer look at how to structure a JSON form
-
-[**Sample forms and templates**](https://dam.beefree.io/githubbeeforms)
-
-Visit our [GitHub account](https://dam.beefree.io/githubbeeforms) to:
-
-* dive into some sample forms and quick start your integration;
-* download templates that include those forms;
-* get a validation JSON schema to test your forms with.
+* [Passing forms to the Builder](passing-forms-to-the-builder.md): Learn how to implement the different methods to pass forms to the Builder
+* [Form Block Demo](https://github.com/BeefreeSDK/beefree-sdk-form-block-demo): Reference the sample code for three sample integrations of the Form based on three distinct use cases.&#x20;
+* [Form structure and parameters](form-structure-and-parameters.md): A closer look at how to structure a JSON form
+* [Sample forms and templates](https://dam.beefree.io/githubbeeforms): Visit our [GitHub account](https://dam.beefree.io/githubbeeforms) to:
+  * dive into some sample forms and quick start your integration;
+  * download templates that include those forms;
+  * get a validation JSON schema to test your forms with.
