@@ -199,12 +199,12 @@
 ## Resources
 
 * [Error Management](resources/error-management/README.md)
-  * [onWarning](resources/error-management/onwarning.md)
+  * [Warning, Error, and Info Callbacks](resources/error-management/warning-error-info-callbacks.md)
   * [Beefree SDK Editor Errors](resources/error-management/beefree-sdk-editor-errors.md)
-  * [File System Provider errors](resources/error-management/file-system-provider-errors.md)
-  * [JSON Parser errors](resources/error-management/json-parser-errors.md)
+  * [File System Provider Errors](resources/error-management/file-system-provider-errors.md)
+  * [JSON Parser Errors](resources/error-management/json-parser-errors.md)
   * [Template Validation and Update](resources/error-management/template-validation-and-update.md)
-  * [Template validation and update errors](resources/error-management/template-validation-and-update-errors.md)
+  * [Template Validation and Update Errors](resources/error-management/template-validation-and-update-errors.md)
 * [Scheduled maintenances](resources/scheduled-maintenances.md)
 * [Videos](resources/videos/README.md)
   * [Easily Add and Customize Forms in Beefree SDK](resources/videos/easily-add-and-customize-forms-in-beefree-sdk.md)

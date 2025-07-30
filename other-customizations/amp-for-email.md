@@ -90,7 +90,7 @@ Visit [Workspaces](../getting-started/readme/installation/configuration-paramete
 
 ## Loading a template with AMP content
 
-If you don’t set a workspace when loading the builder, AMP widgets are not visible in the Content tab. However, if a message or template containing AMP is loaded, the builder will send an [`onWarning`](https://about/error-management/#warning-codes) [callback](../resources/error-management/onwarning.md) to your application. At that point, you may decide to switch to an AMP-compatible workspace, using the [`loadWorkspace`](https://about/workspaces/#switching-workspaces) [method](../getting-started/readme/installation/configuration-parameters/workspaces.md).
+If you don’t set a workspace when loading the builder, AMP widgets are not visible in the Content tab. However, if a message or template containing AMP is loaded, the builder will send an [`onWarning`](https://about/error-management/#warning-codes) [callback](../resources/error-management/warning-error-info-callbacks.md) to your application. At that point, you may decide to switch to an AMP-compatible workspace, using the [`loadWorkspace`](https://about/workspaces/#switching-workspaces) [method](../getting-started/readme/installation/configuration-parameters/workspaces.md).
 
 ## How to use the AMP carousel <a href="#how-to-use-the-amp-carousel" id="how-to-use-the-amp-carousel"></a>
 
