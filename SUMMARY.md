@@ -105,6 +105,7 @@
   * [Services options](server-side-configurations/server-side-options/services-options.md)
   * [Undo & Changes history](server-side-configurations/server-side-options/undo-and-changes-history.md)
   * [Custom JavaScript Libraries Injection](server-side-configurations/server-side-options/custom-javascript-libraries-injection.md)
+* [Custom Head HTML](server-side-configurations/custom-head-html.md)
 
 ## Other Customizations
 

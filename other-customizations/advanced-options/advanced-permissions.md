@@ -891,11 +891,13 @@ beeConfig: {
         locked: false,
         show: true
       }
+      customHeadTags: {
+        show: true,
+        locked: false
+      }
     }
   }
 }
-
-
 ```
 
 ## Content

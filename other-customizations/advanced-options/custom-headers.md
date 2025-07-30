@@ -2,6 +2,8 @@
 
 {% hint style="info" %}
 This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. Upgrade a [development application](../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
+
+Are you looking to add custom HTML tags to the head section of your designs? Find more information in our [Custom Head HTML page](../../server-side-configurations/custom-head-html.md).
 {% endhint %}
 
 ## When to use it <a href="#when-to-use-it" id="when-to-use-it"></a>
