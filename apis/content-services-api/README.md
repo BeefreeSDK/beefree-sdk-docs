@@ -43,7 +43,7 @@ These categories are the following:
 
 The following diagram displays each of the five categories within the Content Services API, and their corresponding resources.
 
-<figure><img src="../../.gitbook/assets/mermaid-diagram-2025-06-10-163636.png" alt=""><figcaption><p>Content Services API Offering</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/mermaid-diagram-2025-07-15-163938.png" alt=""><figcaption></figcaption></figure>
 
 ### Use Cases and Capabilities
 
@@ -138,6 +138,7 @@ The following table lists the resources available in this category of endpoints 
 | `/page-to-email`       | <ul><li><code>/conversion</code></li></ul> |
 | `/email-to-page`       | <ul><li><code>/conversion</code></li></ul> |
 | `/simple-to-full-json` | <ul><li><code>/conversion</code></li></ul> |
+| `/full-to-simple-json` | <ul><li><code>/conversion</code></li></ul> |
 
 #### AI Collection
 

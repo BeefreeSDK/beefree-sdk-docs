@@ -69,6 +69,7 @@ Below is a representative structure of the Column object and a breakdown of each
     },
     "modules": {
       "type": "array",
+      "minItems": 0,
       "items": {
         "type": "object",
         "required": [

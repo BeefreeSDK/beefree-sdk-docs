@@ -57,7 +57,7 @@ Below is the JSON Schema definition and a detailed breakdown of each property.
           },
           "href": {
             "type": "string",
-            "format": "urlOrMergeTags"
+            "format": "urlOrMergeTagsOrEmpty"
           },
           "height": {
             "type": "string"

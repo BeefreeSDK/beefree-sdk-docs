@@ -150,5 +150,71 @@ The following table lists and describes **optional** object parameters nested wi
 | `preheader`   | string | ❌ No     | The preheader text for the email (if applicable).                |
 
 {% openapi-operation spec="simple-to-full-json" path="/v1/{collection}/simple-to-full-json" method="post" %}
-[OpenAPI simple-to-full-json](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/9cfe21ce15319f492d5c8677e6dceace21a4991dc1a3965f3f56d170861800aa.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250715%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250715T222648Z&X-Amz-Expires=172800&X-Amz-Signature=b219ad141fbc3cfdb731133c4e839f7b4f6f716ca299fc68e9cdae93971bbbe6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI simple-to-full-json](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/9cfe21ce15319f492d5c8677e6dceace21a4991dc1a3965f3f56d170861800aa.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250730%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250730T161347Z&X-Amz-Expires=172800&X-Amz-Signature=2d6b07715edfbec133d6b1ff242a5b0c5f19e9f183817f654fb8a60a5e504501&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
+
+## Full to Simple JSON
+
+{% hint style="warning" %}
+This endpoint is in beta.&#x20;
+
+If you'd like to try it out, please reach out to [beta-feedback@beefree.io](mailto:beta-feedback@beefree.io) and we'll help you get set up!&#x20;
+{% endhint %}
+
+The Full to Simple endpoint provides a service that converts Beefree SDK's rich design documents (Full JSON) into simplified representations ([Simple Schema](../../data-structures/simple-schema/)). This enables a new layer of AI integration and workflows, making Beefree SDK's content understandable to large language models (LLMs) and other generative tools. If you’re building with LLMs or generative design systems, this endpoint is your bridge between rich visual design and structured AI-compatible data. When paired with the [Simple to Full conversion](convert.md#simple-to-full-json) endpoint, you'll unlock a complete AI-human collaborative design loop.&#x20;
+
+### Use Cases
+
+The Full to Simple endpoint is particularly useful in the following scenarios:
+
+* **AI Iteration Workflows**: Use the [Simple Schema](../../data-structures/simple-schema/) output to feed an AI agent that proposes changes or creates design variations. After AI-generated suggestions are returned in Simple Schema format from the AI agent, use the existing [Simple to Full endpoint](convert.md#simple-to-full-json) to convert back to full JSON and load the new version of the design in the Beefree SDK builder. From there, the end user can review the updated design, apply edits within the no-code builder, and [export](export.md) the design once they reach a final version.
+* **Selective Design Adjustments by AI**: AI tools can target individual components in a simplified layout—for example, change a CTA, adjust text, or move sections—without dealing with full schema complexity.
+* **Training AI Models**: Convert your library of full Beefree templates into simplified JSON to use as training input for generative design agents, enforcing brand consistency or layout structure in AI-created outputs.
+
+### Round-Trip Workflow
+
+When couple with the [Simple to Full endpoint](convert.md#simple-to-full-json), this endpoint lets you:
+
+1. Export a full design created by a human in [Simple Schema](../../data-structures/simple-schema/) format.
+2. Modify or generate variants using generative AI.
+3. Convert the simplified output back to [full schema](convert.md#full-to-simple-json).
+4. Reopen the design in the Beefree SDK builder for the end user to apply light edits, customize, and [export](export.md).
+
+<figure><img src="../../.gitbook/assets/mermaid-diagram-2025-07-21-195357.png" alt="" width="563"><figcaption></figcaption></figure>
+
+### Request Parameters
+
+The following request parameter is required to perform the Full to Simple API call.
+
+| Name   | Type | Required | Description                                                                                                                            |
+| ------ | ---- | -------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `page` | JSON | Yes      | The full template structure in Beefree JSON format. This is the same structure returned by the builder or captured from its callbacks. |
+
+{% openapi-operation spec="full-to-simple-json" path="/v1/{collection}/full-to-simple-json" method="post" %}
+[OpenAPI full-to-simple-json](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/6bce25195f3804340800ec546d5ffc98b2179168e1f0f04198652d5688064c66.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250730%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250730T161347Z&X-Amz-Expires=172800&X-Amz-Signature=02b681dbaf9c9e5a5005b8bb7bd7d683f43983ab900289220ab77f1e490799aa&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% endopenapi-operation %}
+
+### Full to Simple Limitations
+
+Consider the following behaviors and feature limitations when using the Full to Simple endpoint.
+
+Your conversion is limited to the existing [Simple Schema](../../data-structures/simple-schema/) only.
+
+* Any blocks not available in the Simple Schema will not be supported during conversion.
+* Refer to the [Simple Schema definitions](https://github.com/BeefreeSDK/beefree-sdk-simple-schema) to check which modules are supported.
+
+If you pass an unsupported module to the API:
+
+* It will be ignored silently — no error will be thrown.
+
+Only the properties defined in the [Simple Schema](../../data-structures/simple-schema/) are supported.
+
+* If you pass an unsupported property within a supported module, that property will be ignored, and the related information will be lost.
+* Reference the [Simple Schema definitions](https://github.com/BeefreeSDK/beefree-sdk-simple-schema) for the list of supported properties.
+
+The following style-related properties are not supported in the Full to Simple JSON conversion:
+
+* &#x20;`border-top`, `border-bottom`, `border-right`, `border-left`
+* `border-radius`
+
+When converting from Full to Simple, all border-related styles will be lost.

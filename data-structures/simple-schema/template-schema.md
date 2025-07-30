@@ -34,7 +34,7 @@ The following table lists and describes both **required** and **optional** objec
 
 | Name       | Type   | Required | Description                                                                                                                                                                                         |
 | ---------- | ------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `type`     | String | ✅ Yes    | Specifies the template type. Possible values include: `email`, `page`, `popup`.                                                                                                                     |
+| `type`     | String | ❌ No     | Specifies the template type. Possible values include: `email`, `page`, `popup`.                                                                                                                     |
 | `rows`     | Array  | ✅ Yes    | Array containing at least one row. Reference the [simple row schema](https://github.com/mailupinc/simple-schema-beefree-sdk/blob/main/simple_row.schema.json).                                      |
 | `settings` | Object | ❌ No     | Configuration settings. Reference the [Settings Object Parameters](template-schema.md#settings-object-parameters-request-greater-than-template-greater-than-settings) section for more information. |
 | `metadata` | Object | ❌ No     | Metadata information. Reference the [Metadata Object Parameters section](template-schema.md#metadata-object-parameters-request-greater-than-template-greater-than-metadata) for more information.   |
@@ -97,7 +97,7 @@ The following JSON Schema is related to the request parameters for this endpoint
     "template": {
     "additionalProperties": false,
       "type": "object",
-      "required": ["type", "rows"],
+      "required": ["rows"],
       "properties": {
         "type": {
           "type": "string",
@@ -112,16 +112,16 @@ The following JSON Schema is related to the request parameters for this endpoint
         },
         "settings":{
           "additionalProperties": false,
-          "type": "object",
+          "type":"object",
           "properties":{
             "linkColor":{
-              "type": "string"
+              "type":"string"
             },
             "background-color":{
-              "type": "string"
+              "type":"string"
             },
             "contentAreaBackgroundColor":{
-              "type": "string"
+              "type":"string"
             },
             "width": {
               "type": "integer",

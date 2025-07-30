@@ -43,7 +43,7 @@ The following webinar includes an in-depth exploration of [Simple Schema](https:
 
 {% embed url="https://www.youtube.com/watch?v=DEpQERhWV9E" %}
 
-## API Endpoint: Convert Simple Schema to Full JSON
+## API Endpoints: Convert Simple Schema to Full JSON (or the other way around)
 
 You can convert Simple Schema into fully functional Beefree native JSON using the following endpoint:
 
@@ -51,9 +51,15 @@ You can convert Simple Schema into fully functional Beefree native JSON using th
 POST /v1/conversion/simple-to-full-json
 ```
 
-This endpoint is essential for building headless template workflows, where templates are generated or assembled programmatically—by AI models, config files, or external systems—and later converted for use inside the builder.
+Or you can use the following endpoint to turn an existing Beefree design (Full JSON) into the Simple Schema:
 
-Visit the [Content Services API Simple to Full JSON documentation](../../apis/content-services-api/convert.md) to learn more about how to use this endpoint.
+```
+POST /v1/conversion/full-to-simple-json
+```
+
+These endpoints are essential for building headless template workflows, where templates are generated, assembled, or adjusted programmatically—by AI models, config files, or external systems—and later converted for use inside the builder.
+
+Visit the [Content Services API Simple to Full JSON](https://docs.beefree.io/beefree-sdk/apis/content-services-api/convert#post-v1-collection-simple-to-full-json) and Full to Simple documentation to learn more about how to use these endpoints.
 
 {% hint style="warning" %}
 **Tip:** Reference an [example valid request body in the GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/blob/main/example_valid_request.json) to experiment with the API endpoint and see it in action.
@@ -121,28 +127,7 @@ To develop your own [Custom AddOn](../../builder-addons/addons/custom-addons/add
 
 Simple Schema provides a comprehensive set of properties for customizing and creating [Custom Rows](./#custom-rows).
 
-## Simple Schema Relationships at a Glance
-
-```plaintext
-simple_template
-  └── rows[] (simple_row)
-         └── columns[] (simple_column)
-                └── modules[] (discriminator on "type")
-                        ├── simple_button
-                        ├── simple_divider
-                        ├── simple_image
-                        ├── simple_html
-                        ├── simple_list
-                        ├── simple_menu
-                        ├── simple_paragraph
-                        ├── simple_title
-                        └── [etc.]
-```
-
-* **`definitions.schema.json`** is referenced across almost all module and container schemas for styling props.
-* **Modules are polymorphic**, distinguished by their `"type"` and validated using the `oneOf` structure in `simple_column`.
-
-### Which Schema Should You Use?
+## Which Schema Should You Use?
 
 | Scenario                   | Schema(s) to Use                                                                         |
 | -------------------------- | ---------------------------------------------------------------------------------------- |
@@ -156,17 +141,17 @@ simple_template
 The following code snippet provides an example of custom Simple Schema fields for merge tag support, and custom validations.
 
 ```ts
-urlOrMergeTags: (text: string): boolean => {
-  try {
-    new URL(text)
-    return true
-  } catch (e) {
-    return /{{.*}}/.test(text)
-  }
-},
-
-noAnchorTags: (text: string): boolean =>
-  !/<a[^>]*>[\s\S]*?<\/a>|<a\s*\/>/i.test(text),
+urlOrMergeTagsOrEmpty: (text: string): boolean => {
+      try {
+        if (text === '') {
+          return true
+        }
+        new URL(text)
+        return true
+      } catch (e) {
+        return /{{.*}}/.test(text)
+      }
+    },
 ```
 
 These validators ensure generated content is correct and aligns with the data structure defined within the Simple Schema.
