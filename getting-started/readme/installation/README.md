@@ -26,7 +26,7 @@ Prior to integrating Beefree SDK, ensure you have completed the following:
 1. Signed up for a [Beefree SDK Developer Console](https://developers.beefree.io/signup) account.
    1. [Created an application](../create-an-application.md) within the Developer Console
    2. Obtained a Client ID and Client Secret for that application
-2. Node.js (v14 or higher) installed.
+2. Node.js installed.
 3. A modern web browser (Chrome, Firefox, Safari, Edge).
 
 ## **Core Concepts**

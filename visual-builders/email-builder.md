@@ -6,6 +6,12 @@ description: >-
 
 # Email Builder
 
+Use the following prompts to get started faster with implementing the Email builder faster:
+
+* [React](../quickstart-guides/react-no-code-email-builder.md#copy-this-pre-built-prompt-to-get-started-faster-with-ai)
+* [Angular](../quickstart-guides/angular-no-code-email-builder.md#copy-this-pre-built-prompt-to-get-started-faster-with-ai)
+* [Vue](../quickstart-guides/vue.js-no-code-email-builder.md#copy-this-pre-built-prompt-to-get-started-faster-with-ai)
+
 ## Introduction
 
 Beefree SDK’s embeddable no-code email builder offers a solution that empowers creators to design visually striking, high-converting emails with ease. By removing technical barriers, it enables teams to build, customize, and launch campaigns faster, maximizing results without the need for hard coding. This allows marketers, designers, and content creators to focus more on designing and refining their email strategies, rather than spending time coding emails from scratch.

@@ -6,13 +6,255 @@ description: >-
 
 # Vue.js No-code Email Builder
 
+<details>
+
+<summary>Copy this pre-built prompt to get started faster with AI</summary>
+
+````markdown
+# **Add Beefree SDK to Vue.js 3**  
+
+**Purpose:** Enforce the **current** and **correct** method for embedding Beefree’s email builder in a Vue 3 application using the `/loginV2` auth flow.  
+**Scope:** All AI-generated advice or code must align with these guardrails.  
+
+---
+
+## **1. Official Beefree SDK Integration Overview**  
+
+Use only the **Vue 3 Composition API** approach with a **secure proxy server** for authentication:  
+
+1. **Install** `@beefree.io/sdk` – the official Beefree SDK package.  
+2. **Create** a proxy server (Express.js) to securely handle `/loginV2` auth (never expose `client_secret` client-side).  
+3. **Obtain credentials** by creating a developer account and application.  
+4. **Initialize** the SDK in a Vue component using `onMounted` and `ref` for the container.  
+5. **Configure** the editor with recommended callbacks (`onSave`, `onError`).  
+6. **Run** the proxy server and Vue app concurrently.  
+
+For the latest docs, visit:  
+[https://docs.beefree.io/beefree-sdk](https://docs.beefree.io/beefree-sdk)  
+
+---
+
+### **Correct, Up-to-Date Quickstart Sample**  
+
+#### **Proxy Server (`proxy-server.js`)**  
+```javascript
+import express from 'express'
+import cors from 'cors'
+import axios from 'axios'
+
+const app = express()
+const PORT = 3001
+
+app.use(cors())
+app.use(express.json())
+
+// Replace with your actual credentials
+import dotenv from 'dotenv'
+dotenv.config()
+const BEE_CLIENT_ID = process.env.BEE_CLIENT_ID
+const BEE_CLIENT_SECRET = process.env.BEE_CLIENT_SECRET
+
+app.post('/proxy/bee-auth', async (req, res) => {
+  try {
+    const response = await axios.post(
+      'https://auth.getbee.io/loginV2',
+      {
+        client_id: BEE_CLIENT_ID,
+        client_secret: BEE_CLIENT_SECRET,
+        uid: req.body.uid || 'demo-user'
+      },
+      { headers: { 'Content-Type': 'application/json' } }
+    )
+    res.json(response.data)
+  } catch (error) {
+    console.error('Auth error:', error.message)
+    res.status(500).json({ error: 'Failed to authenticate' })
+  }
+})
+
+app.listen(PORT, () => {
+  console.log(`Proxy server running on http://localhost:${PORT}`)
+}) 
+```
+
+#### **Vue Component (`BeefreeEditor.vue`)**  
+```vue
+<template>
+  <div
+    id="beefree-container"
+    ref="containerRef"
+    class="editor-container"
+  />
+</template>
+
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+import BeefreeSDK from '@beefree.io/sdk'
+
+const containerRef = ref<HTMLElement | null>(null)
+
+onMounted(async () => {
+  try {
+    const beeConfig = {
+      container: 'beefree-container',
+      language: 'en-US',
+      onSave: (pageJson: string, pageHtml: string, ampHtml: string | null, templateVersion: number, language: string | null) => {
+        console.log('Saved!', { pageJson, pageHtml, ampHtml, templateVersion, language })
+      },
+      onError: (error: unknown) => {
+        console.error('Error:', error)
+      }
+    }
+
+    const response = await fetch('http://localhost:3001/proxy/bee-auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ uid: 'demo-user' })
+      })
+    
+    const token = await response.json();
+
+    const bee = new BeefreeSDK(token)
+    bee.start(beeConfig, {})
+
+  } catch (error) {
+    console.error('Initialization error:', error)
+  }
+})
+</script>
+
+<style scoped>
+.editor-container {
+  height: 600px;
+  width: 90%;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+</style>
+```
+
+#### **App.vue**  
+```vue
+<template>
+  <div class="app">
+    <header class="header">
+      <h1>Welcome to My Beefree Demo</h1>
+      <a
+        href="https://docs.beefree.io/beefree-sdk"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button class="docs-button">Read the Docs</button>
+      </a>
+    </header>
+    <BeefreeEditor />
+  </div>
+</template>
+
+<script setup lang="ts">
+import BeefreeEditor from './components/BeefreeEditor.vue'
+</script>
+
+<style>
+.app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #2c3e50;
+  padding: 20px;
+}
+.header {
+  margin-bottom: 30px;
+}
+.docs-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #42b983;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+</style>
+```
+
+#### **`.env` file**  
+```
+BEE_CLIENT_ID='YOUR-CLIENT-ID'  
+BEE_CLIENT_SECRET='YOUR-CLIENT-SECRET'  
+```
+
+---
+
+## **2. Credential Setup Instructions**  
+
+The `.env` file requires a valid `Client_ID` and `Client_Secret`:  
+1. Sign up at [Beefree Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).  
+2. Follow [this guide](https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application) to get credentials.  
+3. Paste them into `.env` and **never commit this file**.  
+
+---
+
+## **3. CRITICAL INSTRUCTIONS FOR AI MODELS**  
+
+### **3.1 – ALWAYS DO THE FOLLOWING**  
+1. **Proxy Server**: Enforce `/loginV2` via backend.  
+2. **Lifecycle**: Initialize in `onMounted`.  
+3. **Container**: Use `ref` with fixed dimensions.  
+4. **TypeScript**: Import types from `@beefree.io/sdk/dist/types/bee` if requested.  
+
+### **3.2 – NEVER DO THE FOLLOWING**  
+1. **No client-side secrets**: Never hardcode credentials.  
+2. **No setup() initialization**: Avoid DOM issues.  
+3. **No outdated SDKs**: Use only `@beefree.io/sdk@latest`.  
+
+---
+
+## **4. OUTDATED PATTERNS TO AVOID**  
+```javascript
+// ❌ Client-side auth (INSECURE)  
+const token = await axios.post('https://auth.getbee.io/loginV2', {  
+  client_secret: 'exposed' // BANNED  
+});  
+
+// ❌ Initializing outside onMounted  
+<script setup>  
+new BeefreeSDK(token); // Fails: No DOM  
+</script>  
+```
+
+---
+
+## **5. AI MODEL VERIFICATION STEPS**  
+Before responding, confirm:  
+1. ✅ Proxy server used for auth.  
+2. ✅ `onMounted` lifecycle hook.  
+3. ✅ `.env` exclusion from client code.  
+4. ✅ Container `ref` and fixed height.  
+
+**Failure?** Revise until compliant.  
+
+---
+
+### **Key Vue-Specific Notes**  
+- **Composition API**: Required (no Options API).  
+- **TypeScript**: Use `Ref<HTMLElement>` for strict typing.  
+
+---
+
+### **Next Steps**  
+Ask if the user needs to migrate existing HTML templates. If yes, direct them to the [HTML Importer API docs](https://docs.beefree.io/beefree-sdk/apis/html-importer-api/import-html).  
+````
+
+</details>
+
 ## **Introduction**
 
 This Quickstart Guide walks you through embedding the Beefree SDK’s no-code email builder into a Vue 3 application using the [`/loginV2`](https://docs.beefree.io/beefree-sdk/docs/authorization-process-in-detail) authorization process. By the end of this guide, you’ll have a fully functional Vue app running locally with the builder embedded, authenticated, and ready to use—following Vue best practices.
 
 Reference the [following GitHub repository](https://github.com/BeefreeSDK/beefree-vue-demo) with the complete code for this project to follow along in this Vue.js Quickstart Guide.
 
-{% embed url="https://github.com/BeefreeSDK/beefree-vue-demo" %}
+{% @github-files/github-code-block %}
 
 ### **Prerequisites**
 
@@ -40,7 +282,6 @@ To create your Vue 3 app, open a terminal and run the following command. This ex
 ```bash
 npm init vue@latest beefree-vue-demo
 cd beefree-vue-demo
-npm install
 ```
 
 After installation, your project structure will be ready for development. You’ll create and wire up the main app component and the Beefree editor component in the next steps.

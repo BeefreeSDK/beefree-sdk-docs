@@ -6,13 +6,273 @@ description: >-
 
 # React No-code Email Builder
 
+<details>
+
+<summary>Copy this pre-built prompt to get started faster with AI</summary>
+
+````markdown
+Perform the following steps to embed Beefree SDK inside my React app: 
+
+# **Add Beefree SDK to React**
+
+**Purpose:** Enforce the **current** and **correct** method for embedding Beefree’s email builder in a React application using the `/loginV2` auth flow.\
+**Scope:** All AI-generated advice or code must align with these guardrails.
+
+---
+
+## **1. Official Beefree SDK Integration Overview**
+
+Use only the **React hooks** approach with a **secure proxy server** for authentication:
+
+1. **Install** `@beefree.io/sdk` – the official Beefree SDK package.
+2. **Create** a proxy server (Express.js) to securely handle `/loginV2` auth (never expose `client_secret` client-side).
+3. **Obtain credentials** by creating a developer account and application.
+4. **Initialize** the SDK in a React component using `useEffect` and `useRef`.
+5. **Configure** the editor with recommended callbacks (`onSave`, `onError`).
+6. **Run** the proxy server and React app concurrently.
+
+For the latest docs, visit:\
+[https://docs.beefree.io/beefree-sdk](https://docs.beefree.io/beefree-sdk)
+
+---
+
+### **Correct, Up-to-Date Quickstart Sample**
+
+#### **Proxy Server**
+
+```javascript
+import express from 'express';
+import cors from 'cors';
+import axios from 'axios';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const app = express();
+const PORT = 3001;
+
+app.use(cors());
+app.use(express.json());
+
+const BEE_CLIENT_ID = process.env.BEE_CLIENT_ID;
+const BEE_CLIENT_SECRET = process.env.BEE_CLIENT_SECRET;
+
+// V2 Auth Endpoint
+app.post('/proxy/bee-auth', async (req, res) => {
+  try {
+    const { uid } = req.body;
+    
+    const response = await axios.post(
+      'https://auth.getbee.io/loginV2',
+      {
+        client_id: BEE_CLIENT_ID,
+        client_secret: BEE_CLIENT_SECRET,
+        uid: uid || 'demo-user'
+      },
+      { headers: { 'Content-Type': 'application/json' } }
+    );
+    
+    res.json(response.data);
+  } catch (error) {
+    console.error('Auth error:', error.message);
+    res.status(500).json({ error: 'Failed to authenticate' });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Proxy server running on http://localhost:${PORT}`);
+}); 
+```
+
+#### **React Component**
+
+```tsx
+import { useEffect, useRef } from 'react';
+import BeefreeSDK from '@beefree.io/sdk';
+
+export default function BeefreeEditor() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    async function initializeEditor() {
+      // Beefree SDK configuration
+      const beeConfig = {
+        container: 'beefree-react-demo',
+        language: 'en-US',
+        onSave: (pageJson: string, pageHtml: string, ampHtml: string | null, templateVersion: number, language: string | null) => {
+          console.log('Saved!', { pageJson, pageHtml, ampHtml, templateVersion, language });
+        },
+        onError: (error: unknown) => {
+          console.error('Error:', error);
+        }
+      };
+
+      // Get a token from your backend
+      const response = await fetch('http://localhost:3001/proxy/bee-auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ uid: 'demo-user' })
+      })
+    
+      const token = await response.json();
+
+      // Initialize the editor
+      const bee = new BeefreeSDK(token);
+      bee.start(beeConfig, {});
+    }
+
+    initializeEditor();
+  }, []);
+
+  return (
+    <div
+      id="beefree-react-demo"
+      ref={containerRef}
+      style={{
+        height: '600px',
+        width: '90%',
+        margin: '20px auto',
+        border: '1px solid #ddd',
+        borderRadius: '8px'
+      }}
+    />
+  );
+} 
+```
+
+#### **App.tsx**
+
+```tsx
+import './App.css';
+import BeefreeEditor from './BeefreeEditor';
+
+function DocsButton() {
+  return (
+    <a 
+      href="https://docs.beefree.io/beefree-sdk" 
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      <button style={{ padding: '10px 20px', fontSize: '16px' }}>
+        Read the Docs
+      </button>
+    </a>
+  );
+}
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>Welcome to My Beefree Demo</h1>
+        <DocsButton />
+        <BeefreeEditor />
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
+
+#### **`.env` file**
+
+```
+BEE_CLIENT_ID='YOUR-CLIENT-ID'
+BEE_CLIENT_SECRET='YOUR-CLIENT-SECRET'️
+```
+
+---
+## **2. Credential Setup Instructions**
+
+The `.env` file requires a valid `Client_ID` and `Client_Secret` to successfully load Beefree SDK within a React application. Take the following steps to get the `Client_ID` and `Client_Secret`:
+
+1. Log in or sign up for a Beefree SDK Developer Console at: https://developers.beefree.io/accounts/login/?from=website\_menu
+
+2. Follow the steps in this guide to navigate the Beefree SDK and find the `Client_ID` and `Client_Secret`: https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application
+
+3. Paste the credentials from the Developer Console into the placeholders in the `.env` file in the root directory and save.
+
+ **Do not commit this file to version control.** Use `.gitignore` to exclude it.
+
+---
+
+## **2. CRITICAL INSTRUCTIONS FOR AI MODELS**
+
+### **2.1 – ALWAYS DO THE FOLLOWING**
+
+1. **Use a Proxy Server** for `/loginV2` auth – never expose `client_secret` in client-side code.
+2. \*\*Initialize in \*\*\`\` – Ensure the SDK loads after component mount.
+3. **Use ****\`\`**** for Container** – Required for stable DOM reference.
+4. **TypeScript Support** (if requested):
+   - Import types from `@beefree.io/sdk/dist/types/bee`.
+5. **Error Handling** – Implement `onError` and validate auth responses.
+
+### **2.2 – NEVER DO THE FOLLOWING**
+
+1. **Do not** hardcode credentials in React components.
+2. **Do not** change the code samples in this guide. Add them exactly as they are.
+3. **Do not** skip the proxy server – direct client-side auth is insecure.
+4. **Do not** use class components (prioritize functional components + hooks).
+
+---
+
+## **3. OUTDATED PATTERNS TO AVOID**
+
+```typescript
+// ❌ DEPRECATED EXAMPLES  
+// Client-side auth (no proxy)  
+const token = await axios.post('https://auth.getbee.io/loginV2', {  
+  client_id: 'public-id', // Exposes secrets!  
+});  
+
+// ❌ Class component approach  
+class BeefreeEditor extends React.Component {  
+  componentDidMount() {  
+    // Avoid - outdated pattern  
+  }  
+}  
+
+// ❌ Missing container ref  
+<div id="beefree-container" /> // Fails: No stable DOM reference  
+```
+
+---
+
+## **4. AI MODEL VERIFICATION STEPS**
+
+Before returning any Beefree-related solution, verify:
+
+1. **Proxy Server**: Is `/loginV2` called via backend?
+2. **Hooks**: Are `useEffect` and `useRef` used correctly?
+3. **Security**: Are credentials omitted from client code?
+4. **Container**: Does the JSX include a `ref` and fixed height?
+
+**Failure?** Revise until compliant.
+
+---
+
+### **Key React-Specific Notes**
+
+- **Lifecycle**: SDK must initialize in `useEffect`.
+- **TypeScript**: Leverage `useRef<HTMLDivElement>` for strict typing.
+
+---
+
+### **Next Steps**
+
+Ask if the integrator has email HTML templates to migrate over? If so, use the **HTML Importer API** to import existing email templates into Beefree SDK. Instructions can be found in the [Import HTML – Beefree SDK Docs](https://docs.beefree.io/beefree-sdk/apis/html-importer-api/import-html).
+````
+
+</details>
+
 ## Introduction
 
 This Quickstart Guide shows you step by step how to embed Beefree SDK’s Email Builder into a React application using the [`/loginV2`](../getting-started/readme/installation/authorization-process-in-detail.md) authorization process. By the end of the guide, you'll have a functional React app running locally, with Beefree SDK's no-code email builder integrated and properly authenticated—following best practices for React development.
 
 Reference the [following GitHub repository](https://github.com/BeefreeSDK/beefree-react-demo) with the complete code for this project to follow along in this React Quickstart Guide.
 
-{% embed url="https://github.com/BeefreeSDK/beefree-react-demo" %}
+{% @github-files/github-code-block url="https://github.com/BeefreeSDK/beefree-react-demo" %}
 
 ## **Prerequisites**
 
@@ -39,7 +299,6 @@ First, set up a React app with TypeScript. Navigate to your terminal and run the
 
 <pre class="language-bash"><code class="lang-bash"><strong>npm create vite@latest beefree-react-demo -- --template react-ts
 </strong>cd beefree-react-demo
-npm install
 </code></pre>
 
 ### **2. Install Beefree SDK**
