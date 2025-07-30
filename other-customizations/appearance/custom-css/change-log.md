@@ -6,7 +6,7 @@ description: >-
 
 # Change Log
 
-## Release schedule for July 2025
+## Release July 2025
 
 Reference the upcoming CSS changes to the Preview Widgets in the following expandable section.
 

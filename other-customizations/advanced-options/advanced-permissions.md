@@ -480,6 +480,30 @@ const advancedPermissions = {
 }
 ```
 
+### advancedPreview
+
+The following example code snippet defines advanced preview settings for a component, enabling a preview window with customizable title and close button visibility. It also specifies required device preset sizes—computer, tablet, and phone—with exact width and height values to simulate different screen resolutions.
+
+```javascript
+...
+advancedPermissions: {
+  ...
+  components: {
+    advancedPreview: {
+      showTitle: true, // default = true
+      showCloseBox: true, // default = true
+      devicePresetSizes: { // at least one is required
+        computer: { width: 1024, height: 768 },
+        tablet: { width: 800, height: 600 },
+        phone: { width: 375, height: 667 },        
+      },
+    },
+  },
+  ...
+},
+...
+```
+
 ## Rows
 
 The **`rows`** object in **Beefree SDK** allows you to manage the behavior and appearance of rows in the editor. You can control what users can do with rows, such as adding, deleting, or moving them. Additionally, you can set permissions for properties like background color, stacking behavior on mobile, and visibility settings. Configuring the **`rows`** object ensures users can work with rows in a controlled way, customizing their content without altering crucial layout elements.
