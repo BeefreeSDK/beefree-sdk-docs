@@ -67,10 +67,6 @@ The Page to Email endpoint transforms a JSON template designed for a web page in
 
 ## Simple to Full JSON
 
-{% hint style="info" %}
-Simple Schema is available on [Superpowers and Enterprise plans](https://developers.beefree.io/pricing-plans).
-{% endhint %}
-
 This section discusses what the `/simple-to-full-json` endpoint is and how you can use it for AI-driven designs. Beefree SDK template JSON is long and includes many properties. For this reason, it does not provide the best structure for training AI models in workflows that include AI-driven design creation. Beefree SDK's [Simple schema](../../data-structures/simple-schema/) is a lightweight alternative that is optimized for training AI models. [Simple schema](../../data-structures/simple-schema/), which is several lines shorter than Beefree SDK's template JSON, is a great solution for AI-generated schemas. This endpoint accepts [Simple schema](../../data-structures/simple-schema/) as the body of the `POST` request, and returns the full Beefree SDK template JSON, which can then be loaded in the Beefree SDK editor for an end user to view and edit accordingly. There are many creative ways to use and implement this endpoint, because it provides a pathway to programmatically creating full Beefree SDK-compatible templates completely outside of the Beefree SDK builder.        &#x20;
 
 #### Request Parameters
@@ -150,7 +146,7 @@ The following table lists and describes **optional** object parameters nested wi
 | `preheader`   | string | ❌ No     | The preheader text for the email (if applicable).                |
 
 {% openapi-operation spec="simple-to-full-json" path="/v1/{collection}/simple-to-full-json" method="post" %}
-[OpenAPI simple-to-full-json](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/9cfe21ce15319f492d5c8677e6dceace21a4991dc1a3965f3f56d170861800aa.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250731%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250731T101326Z&X-Amz-Expires=172800&X-Amz-Signature=dc980d7f819e762418042084cbefe55d8a5c33947f358f699a3bd7ef11359c68&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI simple-to-full-json](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/9cfe21ce15319f492d5c8677e6dceace21a4991dc1a3965f3f56d170861800aa.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250801%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250801T064940Z&X-Amz-Expires=172800&X-Amz-Signature=eb95c595c5b1ae40cd23876915f6480959c8fe27324a7f90ea9dbb6db906d9f2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## Full to Simple JSON
@@ -193,7 +189,7 @@ The following request parameter is required to perform the Full to Simple API ca
 | `page` | JSON | Yes      | The full template structure in Beefree JSON format. This is the same structure returned by the builder or captured from its callbacks. |
 
 {% openapi-operation spec="full-to-simple-json" path="/v1/{collection}/full-to-simple-json" method="post" %}
-[OpenAPI full-to-simple-json](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/6bce25195f3804340800ec546d5ffc98b2179168e1f0f04198652d5688064c66.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250731%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250731T101326Z&X-Amz-Expires=172800&X-Amz-Signature=aabb25bcd504300462b39d2824ba18faca9e84ade3fddaa21a9b51905d4d0d45&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI full-to-simple-json](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/6bce25195f3804340800ec546d5ffc98b2179168e1f0f04198652d5688064c66.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250801%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250801T064940Z&X-Amz-Expires=172800&X-Amz-Signature=96acd3c4cc15073c1506c23e1178a9af4a7d4799c41a727241e8535caaeacf51&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ### Full to Simple Limitations
