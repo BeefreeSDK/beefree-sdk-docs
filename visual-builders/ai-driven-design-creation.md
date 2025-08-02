@@ -4,7 +4,7 @@
 **Simple Schema Features by Plan Type:**
 
 * **Superpowers & Enterprise Plans:** Access to Simple Schema for [Custom AddOns](ai-driven-design-creation.md#custom-addons) and [Custom Rows](../rows/reusable-content/create/pre-build/implement-custom-rows.md).
-* **All Paid Plans:** Access the [Simple Schema API](broken-reference) through the [Content Services API](broken-reference) (CSAPI).
+* **All Paid Plans:** Access the [Simple Schema API](../apis/content-services-api/convert.md#simple-to-full-json) through the [Content Services API](../apis/content-services-api/) (CSAPI).
 {% endhint %}
 
 ## Overview
@@ -18,17 +18,15 @@ Saving your end users time when creating designs is more important than ever—e
 [Simple Schema](../data-structures/simple-schema/) is designed for flexibility, making it ideal for AI-assisted and headless workflows. Imagine a tool where users describe the design they want in plain language, and submit that description to an AI agent. On the backend:
 
 * An AI model receives the description and generates a Simple Schema-compatible template.
-* This template is passed to the `/v1/conversion/simple-to-full-json` [API endpoint](broken-reference).
+* This template is passed to the `/v1/conversion/simple-to-full-json` [API endpoint](../apis/content-services-api/convert.md#simple-to-full-json).
 * The API returns the complete Beefree JSON for the entire template.
 * The template is loaded in the builder, and the end user can start applying edits in a no-code environment.
 
-The following image displays an example UI with a basic AI Email Design Assistant that connects to Simple Schema on the backend. By building your own UI and AI agent, you can leverage Simple Schema on the backend to programmatically build templates and load them in the Beefree SDK builder for your end users to use.
+The following GIF displays an example UI with a basic AI Email Design Assistant that connects to Simple Schema on the backend. By building your own UI and AI agent, you can leverage Simple Schema on the backend to programmatically build templates and load them in the Beefree SDK builder for your end users to use. The programmatically-created email template is loaded within the Beefree SDK builder, and ready for editing.
 
-<figure><img src="../.gitbook/assets/CleanShot 2025-04-09 at 14.46.24.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/CleanShot 2025-08-01 at 20.26.55.gif" alt=""><figcaption></figcaption></figure>
 
-In the following image, the programmatically-created email template is loaded within the Beefree SDK builder, and ready for editing. &#x20;
-
-<figure><img src="../.gitbook/assets/CleanShot 2025-04-09 at 14.51.41.png" alt=""><figcaption></figcaption></figure>
+Navigate to the [Simple Schema GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main) to run the code for this demo locally on your machine and experiment with [Claude AI and Simple Schema](../resources/cookbook/create-ai-generated-emails-in-beefree-sdk-with-claude-ai.md).
 
 ## Benefits
 
@@ -41,4 +39,4 @@ Using [Simple Schema](../data-structures/simple-schema/) for AI-driven design cr
 
 ## Simple to Full JSON API Endpoint
 
-This endpoint is essential for converting AI-generated or manually assembled Simple Schema templates into full, builder-compatible Beefree JSON. Learn more about how to use this endpoint in the [Content Services API Reference](broken-reference).
+This endpoint is essential for converting AI-generated or manually assembled Simple Schema templates into full, builder-compatible Beefree JSON. Learn more about how to use this endpoint in the [Content Services API Reference](../apis/content-services-api/).
