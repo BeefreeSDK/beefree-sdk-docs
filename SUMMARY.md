@@ -220,5 +220,5 @@
   * [How TruCentive Slashed Email Builder Development Time with Beefree SDK](resources/videos/how-trucentive-slashed-email-builder-development-time-with-beefree-sdk.md)
   * [Stop Building, Start Scaling: How emBlue Eliminated Engineering Headaches with Beefree SDK](resources/videos/stop-building-start-scaling-how-emblue-eliminated-engineering-headaches-with-beefree-sdk.md)
 * [Cookbook](resources/cookbook/README.md)
-  * [Create AI-generated Emails with Anthropic's Claude AI](resources/cookbook/create-ai-generated-emails-with-anthropics-claude-ai.md)
+  * [Create AI-generated Emails in Beefree SDK with Claude AI](resources/cookbook/create-ai-generated-emails-in-beefree-sdk-with-claude-ai.md)
   * [AI-generated Email Sequences in Beefree SDK with Claude AI](resources/cookbook/ai-generated-email-sequences-in-beefree-sdk-with-claude-ai.md)
