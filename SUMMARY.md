@@ -207,6 +207,7 @@
   * [Template Validation and Update Errors](resources/error-management/template-validation-and-update-errors.md)
 * [Scheduled maintenances](resources/scheduled-maintenances.md)
 * [Videos](resources/videos/README.md)
+  * [How to Import HTML Emails into Beefree SDK with the New HTML Importer API](resources/videos/how-to-import-html-emails-into-beefree-sdk-with-the-new-html-importer-api.md)
   * [Easily Add and Customize Forms in Beefree SDK](resources/videos/easily-add-and-customize-forms-in-beefree-sdk.md)
   * [The BEST Way to Balance Customization and Simplicity in SDK Development](resources/videos/the-best-way-to-balance-customization-and-simplicity-in-sdk-development.md)
   * [Hosted Saved Rows: A Faster Way to Save and Reuse Content](resources/videos/hosted-saved-rows-a-faster-way-to-save-and-reuse-content.md)
