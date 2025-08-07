@@ -4,38 +4,53 @@ description: >-
   Simple Schema
 ---
 
-# Create AI-generated Emails with Anthropic's Claude AI
+# Create AI-generated Emails in Beefree SDK with Claude AI
 
-This recipe demonstrates how to build an AI-powered email creation system that generates email templates using Anthropic's Claude API and converts them to full Beefree SDK templates using the Simple Schema format.
+## Overview
 
-Reference the full code for this project in the [simple-schema-concept](https://app.gitbook.com/o/hABGoPMOKISmuDmz4fbV/s/xZgBDrdhQLtWmkGqVR59/) folder in the [Simple Schema GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main).
-
-{% embed url="https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main/simple-schema-concept" %}
-
-### Overview
+This recipe explains how to build an AI-powered email creation system that generates email templates using [Anthropic's Messages API](https://docs.anthropic.com/en/api/messages), along with the [Claude Sonnet 4 model](https://docs.anthropic.com/en/docs/about-claude/models/overview#model-names), and converts them to full Beefree SDK templates using both [Simple Schema](../../data-structures/simple-schema/) and the [Content Services API](../../apis/content-services-api/).
 
 This recipe covers:
 
-1. **Simple Schema**: Understanding the template structure and unified schema
-2. **Anthropic API Integration**: Structuring API calls and handling responses
-3. **Frontend Integration**: Capturing user input and sending to AI
-4. **Response Parsing**: Extracting and validating JSON from AI responses
-5. **Beefree SDK Integration**: Converting simple templates to full templates and loading in the builder
+1. **Simple Schema**: Understanding the [template structure](../../data-structures/simple-schema/template-schema.md) and [unified schema](../../data-structures/simple-schema/#simple-unified-schema).
+2. **Anthropic API Integration**: [Structuring API calls](https://docs.anthropic.com/en/api/messages) and handling responses.
+3. **Frontend Integration**: Capturing end user email descriptions and sending it to Anthropic inside a detailed prompt.
+4. **Response Parsing**: Extracting and validating JSON from Anthropic's responses.
+5. **Beefree SDK Integration**: Converting [simple templates to full templates](../../apis/content-services-api/convert.md#simple-to-full-json) and [loading them in the builder](../../getting-started/readme/installation/methods-and-events.md).
 
-### Prerequisites
+Reference the complete code for this project in the [simple-schema-concept](https://app.gitbook.com/o/hABGoPMOKISmuDmz4fbV/s/xZgBDrdhQLtWmkGqVR59/) folder inside the [Simple Schema GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main).
 
-* Node.js (v14 or higher)
-* Anthropic API key
-* Beefree SDK credentials
-* Basic knowledge of JavaScript and Express.js
+{% embed url="https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main/simple-schema-concept" %}
 
-### Core Concepts
+## Prerequisites
 
-#### 1. Simple Schema Structure
+* [Node.js](https://app.gitbook.com/o/hABGoPMOKISmuDmz4fbV/s/xZgBDrdhQLtWmkGqVR59/)
+* [Anthropic API key](https://docs.anthropic.com/en/api/overview)
+* [Beefree SDK credentials](../../getting-started/readme/create-an-application.md#obtain-your-client-id-and-client-secret)
+* Understanding of Beefree SDK's [Simple Schema](../../data-structures/simple-schema/)
+* Knowledge of Beefree SDK's [Content Services API](../../apis/content-services-api/) and [`/simple-to-full-json endpoint`](../../apis/content-services-api/convert.md#simple-to-full-json)&#x20;
 
-The Simple Schema is a simplified JSON format that makes it easy to generate email templates programmatically. It uses a hierarchical structure with templates, rows, columns, and modules.
+## Core Concepts and Steps
 
-**Template Structure**
+This section details all of the core concepts required to integrate AI-generated emails within Beefree SDK. It includes descriptions of each concept, sample code, and a the complete implementation at the end, along with customization tips.
+
+As a reminder, the complete code for this recipe is available for reference in [GitHub](https://app.gitbook.com/o/hABGoPMOKISmuDmz4fbV/s/xZgBDrdhQLtWmkGqVR59/).
+
+The following video shows the final result, and how the code for this recipe looks when you run it locally on your machine. &#x20;
+
+{% embed url="https://screen.studio/share/G7GQSZet" %}
+
+&#x20;The following diagram shows how these core concepts relate to one another to create the experience shown in the video above.
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+## 1. Simple Schema Structure
+
+[Simple Schema](../../data-structures/simple-schema/) is a simplified JSON format that makes it easy to generate email templates programmatically. It uses a hierarchical structure with templates, rows, columns, and modules. Understanding and using Simple Schema is critical for building AI-powered workflows, because it's simpler JSON makes it much easier for AI to read, understand, and build. Beefree SDK's full JSON is complex and feature-rich, making it difficult to train AI on.&#x20;
+
+#### **Template Structure**
+
+The following code snippet shows the template structure for simple JSON.&#x20;
 
 ```json
 {
@@ -73,7 +88,9 @@ The Simple Schema is a simplified JSON format that makes it easy to generate ema
 }
 ```
 
-**Supported Module Types**
+#### **Supported Module Types**
+
+Simple Schema supports the following module types:
 
 * `title` - Email titles and headings
 * `paragraph` - Text content
@@ -82,12 +99,16 @@ The Simple Schema is a simplified JSON format that makes it easy to generate ema
 * `divider` - Visual separators
 * `html` - Custom HTML content
 * `list` - Bulleted or numbered lists
-* `menu` - Navigation menus
-* `icons` - Social media icons
+* `menu` - Menus
+* `icons` - Social media and other icons
 
-#### 2. Anthropic API Integration
+### 2. Anthropic API Integration
 
-**API Call Structure**
+This section discusses how to structure and make an API call to Anthropic.
+
+#### **API Call Structure**
+
+The following code snippet shows an example API call to Anthropic.
 
 ```javascript
 const response = await fetch('https://api.anthropic.com/v1/messages', {
@@ -108,7 +129,9 @@ const response = await fetch('https://api.anthropic.com/v1/messages', {
 });
 ```
 
-**Sample Request**
+#### **Sample Request**
+
+The following code snippet shows an example prompt. It includes pre-defined instructions, and the end user's input on the frontend to guide the creation of the email template.&#x20;
 
 ```javascript
 const prompt = `Use this email marketer's description of their dream email to design a stunning email that meets all of the requirements they outlined in their description. Here is the description: "${userDescription}". The email you deliver should meet industry best practices in email marketing and adhere to trending design tips from the best email designers in the industry. The final output should be in Beefree SDK's simple template schema format. 
@@ -165,7 +188,9 @@ For each module type, include appropriate content. For example:
 Do NOT invent any properties or structures that do not exist in this simple unified schema, strictly use only what is available here. The final email should be delivered in the response as a simple schema template. Make sure the JSON is valid and complete.`;
 ```
 
-**Sample Response**
+#### **Sample Response**
+
+The following code snippet shows an example response from Anthropic.
 
 ````json
 {
@@ -187,9 +212,11 @@ Do NOT invent any properties or structures that do not exist in this simple unif
 }
 ````
 
-#### 3. Frontend Integration
+### 3. Frontend Integration
 
-**Capturing User Input**
+This section discusses the Frontend integration and how to capture an end user's email description prompt, and pass it to the Anthropic API call for context on what type of email template it should build.
+
+#### **Capturing User Input**
 
 ```javascript
 function sendMessage() {
@@ -206,7 +233,7 @@ function sendMessage() {
 }
 ```
 
-**Sending to Anthropic API**
+#### **Sending to Anthropic API**
 
 ```javascript
 async function processEmailRequest(userDescription) {
@@ -250,9 +277,11 @@ async function processEmailRequest(userDescription) {
 }
 ```
 
-#### 4. Response Parsing
+### 4. Response Parsing
 
-**Extracting JSON from Response**
+This section includes two important topics. The first is how to parse the response from Anthropic to only get the simple JSON and pass it to the `/simple-to-full-json` endpoint. The second is how to configure a second API call in the event the first one fails. Beefree SDK provides comprehensive feedback in the error message for a failed `/simple-to-full-json` API call. By applying this comprehensive feedback in a second API, the AI model being used can tyically return a valid simple JSON ready for conversion to full JSON.
+
+#### **Extracting JSON from Response**
 
 ````javascript
 // Extract the text content from the response
@@ -300,7 +329,7 @@ try {
 }
 ````
 
-**Error Correction Loop**
+#### **Error Correction Loop**
 
 ```javascript
 // If Beefree CSAPI returns validation errors, send back to Anthropic for correction
@@ -349,9 +378,11 @@ const correctionResponse = await fetch('/api/anthropic', {
 // Process the corrected response...
 ```
 
-#### 5. Beefree SDK Integration
+### 5. Beefree SDK Integration
 
-**Converting Simple to Full JSON**
+This section discusses the Beefree SDK integration. Beefree SDK provides the editing environment to load the full JSON into once it is created. Once it is loaded within the editor, the end user can begin customizing their AI-generated email design.
+
+#### **Converting Simple to Full JSON**
 
 ```javascript
 // Convert simple JSON to full JSON using Beefree CSAPI
@@ -377,7 +408,7 @@ console.log('Full JSON from Beefree:', fullJson);
 localStorage.setItem('fullEmailJson', JSON.stringify(fullJson));
 ```
 
-**Loading in Beefree SDK Builder**
+#### **Loading in Beefree SDK Builder**
 
 ```javascript
 // In builder.html
@@ -465,7 +496,9 @@ function initializeBeefree(authResponse) {
 }
 ```
 
-### Complete Implementation
+## Complete Implementation
+
+This section includes the code for both APIs together (Anthropic API call and `/simple-to-full-json` API call), and the dependencies they require.&#x20;
 
 #### Proxy Server (proxy-server.js)
 
@@ -569,20 +602,23 @@ app.listen(PORT, () => {
 });
 ```
 
-### Customization Tips
+## Customization Tips
 
-1. **Prompt Engineering**: Modify the prompt to generate different types of emails or include specific branding requirements
-2. **Module Types**: Add custom module types or modify existing ones based on your needs
-3. **Error Handling**: Implement more sophisticated error correction logic
-4. **Template Validation**: Add additional validation before sending to Beefree API
-5. **Caching**: Implement caching for frequently requested email types
-6. **User Experience**: Add progress indicators and better error messages
+This section list a few customization tips you can apply to the code in your own environment.&#x20;
 
-### Troubleshooting
+* **Prompt Engineering**: Modify the prompt to generate different types of emails or include specific branding requirements
+* **Module Types**: Add custom module types or modify existing ones based on your needs
+* **Error Handling**: Implement more sophisticated error correction logic
+* **Template Validation**: Add additional validation before sending to Beefree API
+* **User Experience**: Add progress indicators and better error messages
+
+## Troubleshooting
+
+If you encounter any errors, try troubleshooting the following:
 
 * **JSON Parsing Errors**: Check the raw response from Anthropic and adjust parsing logic
 * **Beefree Validation Errors**: Review the error details and update the correction prompt
 * **API Rate Limits**: Implement rate limiting and retry logic
 * **Template Loading Issues**: Verify localStorage permissions and data format
 
-This recipe provides a complete foundation for building AI-powered email creation systems with Beefree SDK and Anthropic's Claude API.
+This recipe provides a complete foundation for building AI-powered email creation systems with Beefree SDK and Anthropic's Messages API and Claude Sonnet 4 model.

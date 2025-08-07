@@ -6,36 +6,53 @@ description: >-
 
 # AI-generated Email Sequences in Beefree SDK with Claude AI
 
-This recipe demonstrates how to build an AI-powered email sequence creation system that generates three strategically designed emails using Anthropic's Claude API and converts them to full Beefree SDK templates using the Simple Schema format.
+## Overview
 
-Reference the full code for this project in the [multiple-versions-concept](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main/multiple-versions-concept) folder in the [Simple Schema GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main).
-
-{% embed url="https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main/multiple-versions-concept" %}
-
-### Overview
+This recipe explains how to build an AI-powered email sequence creation system that generates three strategically designed emails using [Anthropic's Messages API](https://docs.anthropic.com/en/api/messages), along with the [Claude Sonnet 4 model](https://docs.anthropic.com/en/docs/about-claude/models/overview#model-names), and converts them to full Beefree SDK templates using both Simple Schema and the Content Services API.
 
 This recipe covers:
 
-1. **Simple Schema**: Understanding the template structure and unified schema for multiple emails
-2. **Anthropic API Integration**: Structuring sequential API calls with different contexts
-3. **Frontend Integration**: Capturing user input and managing multiple email generation
-4. **Response Parsing**: Extracting and validating JSON from multiple AI responses
-5. **Beefree SDK Integration**: Converting multiple simple templates to full templates and managing navigation
+1. **Simple Schema**: Understanding the template structure and unified schema for multiple emails.
+2. **Anthropic API Integration**: [Structuring sequential API calls](https://docs.anthropic.com/en/api/messages) with different contexts for each email type.
+3. **Frontend Integration**: Capturing end user email descriptions and managing progressive UI updates for multiple email generation.
+4. **Response Parsing**: Extracting and validating JSON from multiple AI responses with error correction loops.
+5. **Beefree SDK Integration**: Converting multiple simple templates to full templates and managing navigation between emails.
 
-### Prerequisites
+Reference the complete code for this project in the multiple-versions-concept folder inside the [Simple Schema GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main).
 
-* Node.js (v14 or higher)
-* Anthropic API key
+{% embed url="https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main/multiple-versions-concept" %}
+
+## Prerequisites
+
+* Node.js
+* [Anthropic API key](https://docs.anthropic.com/en/api/overview)
 * Beefree SDK credentials
-* Basic knowledge of JavaScript and Express.js
+* Understanding of Beefree SDK's Simple Schema
+* Knowledge of Beefree SDK's Content Services API and `/simple-to-full-json endpoint`
 
-### Core Concepts
+## Core Concepts and Steps
 
-#### 1. Simple Schema Structure for Sequences
+This section details all of the core concepts required to integrate AI-generated email sequences within Beefree SDK. It includes descriptions of each concept, sample code, and the complete implementation at the end, along with customization tips.
 
-The Simple Schema remains the same for each email, but we generate three different emails with specific purposes:
+As a reminder, the complete code for this recipe is available for reference in GitHub.
+
+The following video shows the final result, and how the code for this recipe looks when you run it locally on your machine.
+
+{% embed url="https://screen.studio/share/Mw1JHW6u" %}
+
+The following diagram shows how these core concepts relate to one another to create the experience shown in the video above.
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+### 1. Simple Schema Structure for Sequences
+
+Simple Schema is a simplified JSON format that makes it easy to generate email templates programmatically. It uses a hierarchical structure with templates, rows, columns, and modules. Understanding and using Simple Schema is critical for building AI-powered workflows, because it's simpler JSON makes it much easier for AI to read, understand, and build. Beefree SDK's full JSON is complex and feature-rich, making it difficult to train AI on.
+
+For email sequences, the Simple Schema remains the same for each email, but we generate three different emails with specific purposes and contexts.
 
 **Email Types and Contexts**
+
+The following code snippet shows how to define different email types with specific contexts for sequence generation.
 
 ```javascript
 const emailTypes = [
@@ -58,6 +75,8 @@ const emailTypes = [
 ```
 
 **Template Structure (Same for all emails)**
+
+The following code snippet shows the template structure for simple JSON that applies to all emails in the sequence.
 
 ```json
 {
@@ -95,9 +114,27 @@ const emailTypes = [
 }
 ```
 
-#### 2. Sequential Anthropic API Integration
+**Supported Module Types**
+
+Simple Schema supports the following module types:
+
+* `title` - Email titles and headings
+* `paragraph` - Text content
+* `button` - Call-to-action buttons
+* `image` - Images and graphics
+* `divider` - Visual separators
+* `html` - Custom HTML content
+* `list` - Bulleted or numbered lists
+* `menu` - Menus
+* `icons` - Social media and other icons
+
+### 2. Sequential Anthropic API Integration
+
+This section discusses how to structure and make sequential API calls to Anthropic for generating multiple emails with different contexts.
 
 **Sequential Email Creation Function**
+
+The following code snippet shows how to create emails sequentially with different contexts for each email type.
 
 ```javascript
 async function createEmail(index, description) {
@@ -219,9 +256,36 @@ async function createEmail(index, description) {
 }
 ```
 
-#### 3. Frontend Integration for Sequences
+**API Call Structure**
+
+The following code snippet shows an example API call to Anthropic for sequential email generation.
+
+```javascript
+const response = await fetch('https://api.anthropic.com/v1/messages', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'x-api-key': 'your-anthropic-api-key',
+    'anthropic-version': '2023-06-01'
+  },
+  body: JSON.stringify({
+    model: 'claude-sonnet-4-20250514',
+    max_tokens: 8000,
+    messages: [{
+      role: 'user',
+      content: prompt
+    }]
+  })
+});
+```
+
+### 3. Frontend Integration for Sequences
+
+This section discusses the Frontend integration and how to capture an end user's email description prompt, manage progressive UI updates, and handle navigation between multiple emails.
 
 **Sequence Initialization**
+
+The following code snippet shows how to initialize the email sequence creation process.
 
 ```javascript
 async function processEmailSequence(userDescription) {
@@ -235,7 +299,26 @@ async function processEmailSequence(userDescription) {
 }
 ```
 
+**Capturing User Input**
+
+```javascript
+function sendMessage() {
+  if (isProcessing) return;
+  
+  const message = userInput.value.trim();
+  if (!message) return;
+
+  addMessage('user', message);
+  userInput.value = '';
+  userInput.style.height = 'auto';
+  
+  processEmailSequence(message);
+}
+```
+
 **Progressive UI Updates**
+
+The following code snippet shows how to update the UI progressively as each email is created.
 
 ```javascript
 function displayEmailButton(emailName, storageKey) {
@@ -288,9 +371,13 @@ function displayAllEmailButtons() {
 }
 ```
 
-#### 4. Response Parsing for Multiple Emails
+### 4. Response Parsing for Multiple Emails
+
+This section includes two important topics. The first is how to parse the response from Anthropic to only get the simple JSON and pass it to the `/simple-to-full-json` endpoint. The second is how to configure a second API call in the event the first one fails. Beefree SDK provides comprehensive feedback in the error message for a failed `/simple-to-full-json` API call. By applying this comprehensive feedback in a second API, the AI model being used can typically return a valid simple JSON ready for conversion to full JSON.
 
 **Sequential Parsing Logic**
+
+The following code snippet shows how to parse responses for multiple emails in sequence.
 
 ````javascript
 // Extract the text content from the response
@@ -387,9 +474,13 @@ const correctionResponse = await fetch('/api/anthropic', {
 // Process the corrected response...
 ```
 
-#### 5. Beefree SDK Integration for Sequences
+### 5. Beefree SDK Integration for Sequences
+
+This section discusses the Beefree SDK integration for managing multiple emails. Beefree SDK provides the editing environment to load the full JSON into once it is created. Once it is loaded within the editor, the end user can begin customizing their AI-generated email design and navigate between different emails in the sequence.
 
 **Multiple Template Storage**
+
+The following code snippet shows how to store multiple emails with specific keys for navigation.
 
 ```javascript
 // Store each email with a specific key
@@ -414,7 +505,35 @@ function openInBuilder(storageKey, emailName) {
 }
 ```
 
+**Converting Simple to Full JSON**
+
+```javascript
+// Convert simple JSON to full JSON using Beefree CSAPI
+const beefreeResponse = await fetch('/api/beefree/simple-to-full', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    template: emailJson.template
+  })
+});
+
+if (!beefreeResponse.ok) {
+  const errorData = await beefreeResponse.text();
+  throw new Error(`Failed to convert template: ${beefreeResponse.status} ${beefreeResponse.statusText}`);
+}
+
+const fullJson = await beefreeResponse.json();
+console.log('Full JSON from Beefree:', fullJson);
+
+// Store the full JSON locally with specific key
+localStorage.setItem(emailType.key, JSON.stringify(fullJson));
+```
+
 **Persistent Email Navigation**
+
+The following code snippet shows how to manage navigation between emails and persist state.
 
 ```javascript
 // Check if we have existing emails when page loads
@@ -506,15 +625,81 @@ function returnToChat() {
   window.location.href = 'index.html';
 }
 
-// Add back button to HTML
-// <button class="back-button" onclick="returnToChat()">
-//   ← Return to Chat
-// </button>
+// Beefree SDK configuration
+const beeConfig = {
+  container: 'bee-plugin-container',
+  uid: 'demo-user-' + Date.now(),
+  language: 'en-US',
+  specialLinks: [
+    {
+      type: "unsubscribe",
+      label: "Unsubscribe",
+      link: "http://[unsubscribe]/",
+    },
+    {
+      type: "subscribe",
+      label: "Subscribe",
+      link: "http://[subscribe]/",
+    },
+  ],
+  mergeTags: [
+    {
+      name: "First Name",
+      value: "[first_name]",
+    },
+    {
+      name: "Last Name",
+      value: "[last_name]",
+    },
+    {
+      name: "Email",
+      value: "[email]",
+    },
+  ],
+  onSave: function (jsonFile, htmlFile) {
+    console.log("Template saved:", jsonFile);
+  },
+  onAutoSave: function (jsonFile) {
+    console.log("Auto-saving template...");
+    localStorage.setItem("email.autosave", jsonFile);
+  },
+  onSend: function (htmlFile) {
+    console.log("Email ready to send:", htmlFile);
+  },
+  onError: function (errorMessage) {
+    console.error("Beefree SDK error:", errorMessage);
+  }
+};
+
+// Initialize Beefree SDK
+function initializeBeefree(authResponse) {
+  BeePlugin.create(authResponse, beeConfig, function (beePluginInstance) {
+    console.log('Beefree SDK initialized successfully');
+    
+    // Check if we have a template to load
+    if (selectedTemplate) {
+      try {
+        beePluginInstance.start(selectedTemplate);
+        console.log('Loaded template from localStorage');
+      } catch (error) {
+        console.error('Error loading template:', error);
+        // Fallback to empty template
+        beePluginInstance.start();
+      }
+    } else {
+      // Start with empty template
+      beePluginInstance.start();
+      console.log('Started with empty template');
+    }
+  });
+}
 ```
 
-### Complete Implementation
+## Complete Implementation
 
-#### Proxy Server (proxy-server.js)
+This section includes the code for both APIs together (Anthropic API call and `/simple-to-full-json` API call), and the dependencies they require.
+
+**Proxy Server (proxy-server.js)**
 
 ```javascript
 const express = require('express');
@@ -654,7 +839,7 @@ app.listen(PORT, () => {
 });
 ```
 
-### Email Sequence Strategy
+## Email Sequence Strategy
 
 #### Welcome Email
 
@@ -686,20 +871,24 @@ app.listen(PORT, () => {
   * Strong call-to-action
   * Social proof
 
-### Customization Tips
+## Customization Tips
 
-1. **Email Types**: Modify the `emailTypes` array to create different sequences (e.g., product launch, seasonal campaigns)
-2. **Context Customization**: Adjust the context prompts for each email type based on your specific needs
-3. **Sequential Logic**: Add delays between email generation or implement parallel processing
-4. **Progress Tracking**: Add more detailed progress indicators for each email
-5. **Template Validation**: Implement sequence-specific validation rules
-6. **User Experience**: Add preview functionality for the entire sequence
+This section list a few customization tips you can apply to the code in your own environment.
 
-### Troubleshooting
+* **Email Types**: Modify the `emailTypes` array to create different sequences (e.g., product launch, seasonal campaigns)
+* **Context Customization**: Adjust the context prompts for each email type based on your specific needs
+* **Sequential Logic**: Add delays between email generation or implement parallel processing
+* **Progress Tracking**: Add more detailed progress indicators for each email
+* **Template Validation**: Implement sequence-specific validation rules
+* **User Experience**: Add preview functionality for the entire sequence
+
+## Troubleshooting
+
+If you encounter any errors, try troubleshooting the following:
 
 * **Sequential Errors**: Handle failures in individual email generation without stopping the entire sequence
 * **Storage Management**: Implement cleanup for old sequences and manage localStorage limits
 * **Navigation Issues**: Ensure proper state management when switching between emails
 * **Performance**: Optimize for multiple API calls and large template storage
 
-This recipe provides a complete foundation for building AI-powered email sequence creation systems with Beefree SDK and Anthropic's Claude API.
+This recipe provides a complete foundation for building AI-powered email sequence creation systems with Beefree SDK and Anthropic's Messages API and Claude Sonnet 4 model.

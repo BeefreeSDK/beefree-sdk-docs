@@ -584,7 +584,7 @@ The terminal commands for running the application and proxy server are the follo
     node proxy-server.js
     ```
 
-Now you can visit [**http://localhost:3000**](http://localhost:3000) and start experimenting with your new React application with Beefree SDK embedded. The following image shows what the final result should look like:
+Now you can visit **https://localhost:5173** and start experimenting with your new React application with Beefree SDK embedded. The following image shows what the final result should look like:
 
 <figure><img src="../.gitbook/assets/CleanShot 2025-07-11 at 17.48.08@2x.png" alt=""><figcaption></figcaption></figure>
 
