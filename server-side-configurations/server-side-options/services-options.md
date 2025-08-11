@@ -6,7 +6,7 @@ Please note that server-side configurations are only available on [paid plans](h
 
 This page explains Service Options within the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu). You can enable these optional services to extend the functionality of the builder and add features visible in UI.
 
-## Navigate to Service Option
+## Navigate to Services
 
 Service Options are available for applications within the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu). Take the following steps to locate and enable them:
 
@@ -28,8 +28,6 @@ The following image shows what the Services section looks like within the [Devel
 
 This section lists and describes each of the options available in the **Services** section of the **Application Configurations**.&#x20;
 
-***
-
 ### Media & File
 
 **Move files between folders in the file manager**\
@@ -45,8 +43,6 @@ When enabled, adds an option in the file manager to import images from different
 
 **Apply image effects**\
 When enabled, an editor to apply image effects and transformations is available in the image module and for row background images.
-
-***
 
 ### Design & Layout
 
@@ -76,8 +72,6 @@ Learn more about [Hover Effect for Buttons](https://docs.beefree.io/end-user-gui
 **Custom social icon**\
 When enabled in the Social module, users can upload their own social media icons. A new “Add a custom icon” feature will appear in the Social content block’s property panel.
 
-***
-
 ### Content Personalization
 
 **Dynamic image**\
@@ -101,8 +95,6 @@ Lets users [manage language variants](../../other-customizations/multi-language-
 
 Learn more about [Multi-language Templates](../../other-customizations/multi-language-templates.md)
 
-***
-
 ### Editing & Collaboration
 
 **Undo and changes history**\
@@ -113,8 +105,6 @@ Allows users to leave [comments](../../other-customizations/advanced-options/com
 
 **Dark mode preview**\
 When active, adds a toggle to the toolbar that allows a user to simulate the current design in [dark mode](https://docs.beefree.io/end-user-guide/preview-options/dark-mode-preview).
-
-***
 
 ### Responsive Layout
 
@@ -137,8 +127,6 @@ When enabled, adds a new property in the “Content properties” section of any
 Enables a focused mobile editing canvas and tools tailored for small screens, making it easier to fine-tune spacing, text size, and layout for mobile.
 
 [Learn more about Mobile design mode](../../other-customizations/mobile-design-mode.md)
-
-***
 
 ### Additional Configuration & Restrictions
 
