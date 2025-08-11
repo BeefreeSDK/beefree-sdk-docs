@@ -102,7 +102,7 @@
     * [Configure your AWS S3 bucket](server-side-configurations/server-side-options/storage-options/configure-your-aws-s3-bucket.md)
     * [Connect your file storage system](server-side-configurations/server-side-options/storage-options/connect-your-file-storage-system.md)
   * [Content options](server-side-configurations/server-side-options/content-options.md)
-  * [Services options](server-side-configurations/server-side-options/services-options.md)
+  * [Services Options](server-side-configurations/server-side-options/services-options.md)
   * [Undo & Changes history](server-side-configurations/server-side-options/undo-and-changes-history.md)
   * [Custom JavaScript Libraries Injection](server-side-configurations/server-side-options/custom-javascript-libraries-injection.md)
 * [Custom Head HTML](server-side-configurations/custom-head-html.md)

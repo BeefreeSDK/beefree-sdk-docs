@@ -1,6 +1,14 @@
+---
+description: Learn how to embed Beefree SDK into your Lovable application.
+---
+
 # Build Full Stack Martech Apps with Lovable and Beefree SDK
 
-### Overview
+## Overview
+
+{% hint style="info" %}
+The demo application referenced in this recipe is available [here](https://beefree-sdk-demo-app-marketing-buddy.lovable.app/) to follow along.
+{% endhint %}
 
 This recipe explains how to effectively prompt and collaborate with [Lovable](https://lovable.dev/) to build a Martech application with [Beefree SDK](https://docs.beefree.io/beefree-sdk). The sample application for this recipe is **Marketing Buddy**, a comprehensive email marketing platform that integrates Beefree SDK's email builder. This guide focuses on prompt engineering strategies, communication best practices, and the thought process behind building martech applications using [Lovable](https://lovable.dev/) and [Beefree SDK](https://docs.beefree.io/beefree-sdk).
 
@@ -20,7 +28,17 @@ The following diagram displays the high-level approach for building Marketing Bu
 
 <figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
+### Resources
+
+Reference the following resources for this project:
+
+* Experiment with and Remix the Lovable app [Marketing Buddy](https://beefree-sdk-demo-app-marketing-buddy.lovable.app/)
+  * **Marketing Buddy app url**: [https://beefree-sdk-demo-app-marketing-buddy.lovable.app](https://beefree-sdk-demo-app-marketing-buddy.lovable.app/)
+* Reference the [GitHub repository with the project's code](https://github.com/BeefreeSDK/beefree-sdk-demo-app-marketing-buddy)
+
 ### Prerequisites
+
+Prior to getting started, ensure you meet the following prerequisites:&#x20;
 
 * Understanding of martech platform requirements and user workflows
 * Basic familiarity with email marketing concepts and campaign management
