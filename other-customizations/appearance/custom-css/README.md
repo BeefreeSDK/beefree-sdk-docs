@@ -57,13 +57,3 @@ Only class names with the `--cs` suffix are reliable for **custom CSS**. Avoid t
 
 Class names **without** the `--cs` suffix may change **without prior notice**. However, any updates to the **HTML structure** and `--cs` classes will be communicated in advance.
 {% endhint %}
-
-## Sample Custom CSS Theme <a href="#sample-custom-css-theme" id="sample-custom-css-theme"></a>
-
-Reference the following Sample Custom CSS Theme to see an example of how you can use custom CSS in your web application.
-
-```url
-
-https://gist.github.com/44daee53546a9f48ecad7f52784efa55.git
-
-```
