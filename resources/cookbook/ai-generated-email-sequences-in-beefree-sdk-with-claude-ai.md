@@ -38,11 +38,11 @@ As a reminder, the complete code for this recipe is available for reference in G
 
 The following video shows the final result, and how the code for this recipe looks when you run it locally on your machine.
 
-{% embed url="https://screen.studio/share/Mw1JHW6u" %}
+{% embed url="https://screen.studio/share/G7GQSZet" %}
 
 The following diagram shows how these core concepts relate to one another to create the experience shown in the video above.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://806400411-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F8c7XIQHfAtM23Dp3ozIC%2Fuploads%2FUM25XtPneeIwKIlBMeol%2Fimage.png?alt=media&#x26;token=ba9b41e4-be22-4c18-b79c-7d98cf232ce4" alt=""><figcaption></figcaption></figure>
 
 ### 1. Simple Schema Structure for Sequences
 
@@ -128,7 +128,7 @@ Simple Schema supports the following module types:
 * `menu` - Menus
 * `icons` - Social media and other icons
 
-### 2. Sequential Anthropic API Integration
+#### 2. Sequential Anthropic API Integration
 
 This section discusses how to structure and make sequential API calls to Anthropic for generating multiple emails with different contexts.
 
@@ -279,7 +279,7 @@ const response = await fetch('https://api.anthropic.com/v1/messages', {
 });
 ```
 
-### 3. Frontend Integration for Sequences
+#### 3. Frontend Integration for Sequences
 
 This section discusses the Frontend integration and how to capture an end user's email description prompt, manage progressive UI updates, and handle navigation between multiple emails.
 
@@ -371,7 +371,7 @@ function displayAllEmailButtons() {
 }
 ```
 
-### 4. Response Parsing for Multiple Emails
+#### 4. Response Parsing for Multiple Emails
 
 This section includes two important topics. The first is how to parse the response from Anthropic to only get the simple JSON and pass it to the `/simple-to-full-json` endpoint. The second is how to configure a second API call in the event the first one fails. Beefree SDK provides comprehensive feedback in the error message for a failed `/simple-to-full-json` API call. By applying this comprehensive feedback in a second API, the AI model being used can typically return a valid simple JSON ready for conversion to full JSON.
 
@@ -474,7 +474,7 @@ const correctionResponse = await fetch('/api/anthropic', {
 // Process the corrected response...
 ```
 
-### 5. Beefree SDK Integration for Sequences
+#### 5. Beefree SDK Integration for Sequences
 
 This section discusses the Beefree SDK integration for managing multiple emails. Beefree SDK provides the editing environment to load the full JSON into once it is created. Once it is loaded within the editor, the end user can begin customizing their AI-generated email design and navigate between different emails in the sequence.
 
@@ -671,31 +671,24 @@ const beeConfig = {
   }
 };
 
-// Initialize Beefree SDK
-function initializeBeefree(authResponse) {
-  BeePlugin.create(authResponse, beeConfig, function (beePluginInstance) {
-    console.log('Beefree SDK initialized successfully');
-    
-    // Check if we have a template to load
-    if (selectedTemplate) {
-      try {
-        beePluginInstance.start(selectedTemplate);
-        console.log('Loaded template from localStorage');
-      } catch (error) {
-        console.error('Error loading template:', error);
-        // Fallback to empty template
-        beePluginInstance.start();
-      }
-    } else {
-      // Start with empty template
-      beePluginInstance.start();
-      console.log('Started with empty template');
-    }
-  });
+// Initialize Beefree SDK (do not use .create or BeePlugin)
+async function initializeBeefree() {
+  try {
+    const json = await getTemplate(); // your function to get the template
+    const token = await getToken(); // your function to get the token from BE
+    const BeefreeSDKInstance = new BeefreeSDK(token);
+    BeefreeSDKInstance
+      .start(beeConfig, json, "", { shared: false })
+      .then((instance) => {
+        // Do things here after the editor is initialized
+      });
+  } catch (error) {
+    console.error("error during initialization --> ", error);
+  }
 }
 ```
 
-## Complete Implementation
+### Complete Implementation
 
 This section includes the code for both APIs together (Anthropic API call and `/simple-to-full-json` API call), and the dependencies they require.
 
@@ -839,7 +832,7 @@ app.listen(PORT, () => {
 });
 ```
 
-## Email Sequence Strategy
+### Email Sequence Strategy
 
 #### Welcome Email
 
@@ -871,7 +864,7 @@ app.listen(PORT, () => {
   * Strong call-to-action
   * Social proof
 
-## Customization Tips
+### Customization Tips
 
 This section list a few customization tips you can apply to the code in your own environment.
 
@@ -882,7 +875,7 @@ This section list a few customization tips you can apply to the code in your own
 * **Template Validation**: Implement sequence-specific validation rules
 * **User Experience**: Add preview functionality for the entire sequence
 
-## Troubleshooting
+### Troubleshooting
 
 If you encounter any errors, try troubleshooting the following:
 

@@ -32,11 +32,11 @@ As a reminder, the complete code for this recipe is available for reference in G
 
 The following video shows the final result, and how the code for this recipe looks when you run it locally on your machine.
 
-{% embed url="https://screen.studio/share/V2zEmMYH" %}
+{% embed url="https://screen.studio/share/G7GQSZet" %}
 
 The following diagram shows how these core concepts relate to one another to create the experience shown in the video above.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://806400411-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F8c7XIQHfAtM23Dp3ozIC%2Fuploads%2FUM25XtPneeIwKIlBMeol%2Fimage.png?alt=media&#x26;token=ba9b41e4-be22-4c18-b79c-7d98cf232ce4" alt=""><figcaption></figcaption></figure>
 
 ### 1. Simple Schema Structure for Partial Edits
 
@@ -127,7 +127,7 @@ const editTypes = [
 ];
 ```
 
-### 2. Anthropic API Integration for Partial Edits
+#### 2. Anthropic API Integration for Partial Edits
 
 This section discusses how to structure and make API calls to Anthropic for generating targeted template modifications.
 
@@ -231,7 +231,7 @@ The following code snippet shows an example response from Anthropic for partial 
 }
 ````
 
-### 3. Frontend Integration for Partial Edits
+#### 3. Frontend Integration for Partial Edits
 
 This section discusses the Frontend integration and how to capture an end user's edit requests, manage template state, and provide real-time preview of changes.
 
@@ -356,7 +356,7 @@ function updatePreview(template) {
 }
 ```
 
-### 4. Response Parsing for Partial Edits
+#### 4. Response Parsing for Partial Edits
 
 This section includes two important topics. The first is how to parse the response from Anthropic to extract the edit instructions. The second is how to apply these edits to the existing template structure.
 
@@ -506,7 +506,7 @@ function addToTemplatePath(template, path, content) {
 }
 ```
 
-### 5. Beefree SDK Integration for Partial Edits
+#### 5. Beefree SDK Integration for Partial Edits
 
 This section discusses the Beefree SDK integration for applying partial edits. Beefree SDK provides the editing environment to load the modified JSON into once the edits are applied. Once it is loaded within the editor, the end user can see the changes and continue customizing their email design.
 
@@ -600,39 +600,186 @@ const beeConfig = {
   }
 };
 
-// Initialize Beefree SDK
-function initializeBeefree(authResponse) {
-  BeePlugin.create(authResponse, beeConfig, function (beePluginInstance) {
-    console.log('Beefree SDK initialized successfully');
-    
-    // Check if we have a modified template to load
-    if (selectedTemplate) {
-      try {
-        beePluginInstance.start(selectedTemplate);
-        console.log('Loaded modified template from localStorage');
-      } catch (error) {
-        console.error('Error loading modified template:', error);
-        // Fallback to empty template
-        beePluginInstance.start();
-      }
-    } else {
-      // Start with empty template
-      beePluginInstance.start();
-      console.log('Started with empty template');
-    }
-  });
+// Initialize Beefree SDK (do not use .create or BeePlugin)
+async function initializeBeefree() {
+  try {
+    const json = await getTemplate(); // your function to get the template
+    const token = await getToken(); // your function to get the token from BE
+    const BeefreeSDKInstance = new BeefreeSDK(token);
+    BeefreeSDKInstance
+      .start(beeConfig, json, "", { shared: false })
+      .then((instance) => {
+        // Do things here after the editor is initialized
+      });
+  } catch (error) {
+    console.error("error during initialization --> ", error);
+  }
 }
 ```
 
-## Complete Implementation
+**Edit History and Undo Functionality**
+
+```javascript
+// Track edit history for undo functionality
+let editHistory = [];
+let currentHistoryIndex = -1;
+
+function saveEditState(template) {
+  // Remove any future history if we're not at the end
+  editHistory = editHistory.slice(0, currentHistoryIndex + 1);
+  
+  // Add new state
+  editHistory.push(JSON.parse(JSON.stringify(template)));
+  currentHistoryIndex++;
+  
+  // Limit history size
+  if (editHistory.length > 10) {
+    editHistory.shift();
+    currentHistoryIndex--;
+  }
+  
+  updateUndoButtons();
+}
+
+function undoEdit() {
+  if (currentHistoryIndex > 0) {
+    currentHistoryIndex--;
+    const previousTemplate = editHistory[currentHistoryIndex];
+    updateCurrentTemplate(previousTemplate);
+    updateUndoButtons();
+  }
+}
+
+function redoEdit() {
+  if (currentHistoryIndex < editHistory.length - 1) {
+    currentHistoryIndex++;
+    const nextTemplate = editHistory[currentHistoryIndex];
+    updateCurrentTemplate(nextTemplate);
+    updateUndoButtons();
+  }
+}
+
+function updateUndoButtons() {
+  const undoButton = document.getElementById('undo-button');
+  const redoButton = document.getElementById('redo-button');
+  
+  if (undoButton) {
+    undoButton.disabled = currentHistoryIndex <= 0;
+  }
+  
+  if (redoButton) {
+    redoButton.disabled = currentHistoryIndex >= editHistory.length - 1;
+  }
+}
+```
+
+### Complete Implementation
 
 This section includes the code for both APIs together (Anthropic API call and `/simple-to-full-json` API call), and the dependencies they require.
 
 **Proxy Server (proxy-server.js)**
 
-Reference the full code for the `proxy-server.js` in the [GitHub repository for this project](https://app.gitbook.com/o/hABGoPMOKISmuDmz4fbV/s/xZgBDrdhQLtWmkGqVR59/).
+```javascript
+const express = require('express');
+const cors = require('cors');
+const fetch = require('node-fetch');
+const path = require('path');
 
-## Partial Edit Strategies
+const app = express();
+const PORT = 3000;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+app.use(express.static(path.join(__dirname)));
+
+// Load credentials
+const credentials = require('./credentials.js');
+
+// Proxy endpoint for Anthropic API
+app.post('/api/anthropic', async (req, res) => {
+  try {
+    const { prompt } = req.body;
+    
+    if (!prompt) {
+      return res.status(400).json({ error: 'Prompt is required' });
+    }
+
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': credentials.anthropic_api_key,
+        'anthropic-version': '2023-06-01'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 8000,
+        messages: [{
+          role: 'user',
+          content: prompt
+        }]
+      })
+    });
+
+    if (!response.ok) {
+      const errorData = await response.text();
+      return res.status(response.status).json({ 
+        error: `Anthropic API error: ${response.status} ${response.statusText}`,
+        details: errorData
+      });
+    }
+
+    const data = await response.json();
+    res.json(data);
+    
+  } catch (error) {
+    console.error('Proxy server error:', error);
+    res.status(500).json({ error: 'Internal server error', details: error.message });
+  }
+});
+
+// Proxy endpoint for Beefree CSAPI - Simple to Full JSON
+app.post('/api/beefree/simple-to-full', async (req, res) => {
+  try {
+    const { template } = req.body;
+    
+    if (!template) {
+      return res.status(400).json({ error: 'Template is required' });
+    }
+
+    const response = await fetch('https://api.getbee.io/v1/conversion/simple-to-full-json', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${credentials.beefree_api_key}`
+      },
+      body: JSON.stringify({ template })
+    });
+
+    if (!response.ok) {
+      const errorData = await response.text();
+      return res.status(response.status).json({ 
+        error: `Beefree API error: ${response.status} ${response.statusText}`,
+        details: errorData
+      });
+    }
+
+    const data = await response.json();
+    res.json(data);
+    
+  } catch (error) {
+    console.error('Proxy server error:', error);
+    res.status(500).json({ error: 'Internal server error', details: error.message });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Proxy server running on http://localhost:${PORT}`);
+});
+```
+
+### Partial Edit Strategies
 
 #### Content Updates
 
@@ -674,7 +821,7 @@ Reference the full code for the `proxy-server.js` in the [GitHub repository for 
   * Content blocks
   * Interactive elements
 
-## Customization Tips
+### Customization Tips
 
 This section list a few customization tips you can apply to the code in your own environment.
 
@@ -685,7 +832,7 @@ This section list a few customization tips you can apply to the code in your own
 * **Template Versioning**: Implement version control for template modifications
 * **User Experience**: Add confirmation dialogs and progress indicators
 
-## Troubleshooting
+### Troubleshooting
 
 If you encounter any errors, try troubleshooting the following:
 
