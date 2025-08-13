@@ -114,9 +114,7 @@ async function initializeBeefreeEditor(templateJson, beeConfig) {
   try {
     const response = await fetch('http://localhost:3001/proxy/bee-auth', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ uid: 'demo-user' }) // customize UID if needed
     });
 
@@ -126,9 +124,9 @@ async function initializeBeefreeEditor(templateJson, beeConfig) {
 
     const { token } = await response.json();
 
-    BeefreeSDK.create(token, beeConfig, (beeInstance) => {
-      beeInstance.start(templateJson); // templateJson is your design content
-    });
+    const BeefreeSDKInstance = new BeefreeSDK(token);
+    await BeefreeSDKInstance.start(beeConfig, templateJson, "", { shared: false }); // templateJson is your design content
+
   } catch (error) {
     console.error('Error initializing Beefree SDK:', error);
   }
