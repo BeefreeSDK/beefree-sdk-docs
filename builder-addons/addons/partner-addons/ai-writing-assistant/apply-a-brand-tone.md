@@ -16,7 +16,7 @@ The **Apply a Brand Tone** feature is an optional enhancement to the [AI Writing
 
 By configuring the [AI Writing Assistant](./) to reflect a specific brand tone, you empower end users to create designs that consistently align with their brand identity, reducing the need for manual adjustments to the AI's responses. This feature can improve workflows through organic and beneficial adoption of the [AI Writing Assistant](./), positioning your application as a powerful tool.
 
-To learn more about the end user experience and what it looks like to utilize this feature on the frontend, visit the [Apply a Brand Tone](https://docs.beefree.io/end-user-guide/apply-a-brand-tone) white label end user documentation. The markdown file is also available in our [white label docs repository](https://github.com/mailupinc/beefreeSDKwhiteLabelDocs/blob/main/apply-a-brand-tone.md).
+To learn more about the end user experience and what it looks like to utilize this feature on the frontend, visit the [Apply a Brand Tone](https://docs.beefree.io/end-user-guide/ai-tools-for-content-creation/apply-a-brand-tone) white label end user documentation. The markdown file is also available in our [white label docs repository.](https://github.com/BeefreeSDK/beefree-sdk-whitelabel-docs)
 
 {% hint style="info" %}
 **Note:** OpenAI is currently the only compatible provider with this feature.
