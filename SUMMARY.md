@@ -26,6 +26,7 @@
 * [React No-code Email Builder](quickstart-guides/react-no-code-email-builder.md)
 * [Vue.js No-code Email Builder](quickstart-guides/vue.js-no-code-email-builder.md)
 * [Angular No-code Email Builder](quickstart-guides/angular-no-code-email-builder.md)
+* [Django Beefree SDK Demo](quickstart-guides/django-beefree-sdk-demo.md)
 
 ## Visual Builders
 
