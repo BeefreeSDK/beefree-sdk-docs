@@ -30,13 +30,12 @@ If you’re on a paid plan, you will also get support for forms and embedded vid
 * You can define and pass forms to the builder, and use the form content block to retrieve and style those forms.
 * You can use the video content block to embed and playback videos hosted on Youtube and Vimeo, or point to a hosted video in MP4 format.
 
-### Additional resources <a href="#additional-resources" id="additional-resources"></a>
+## Additional resources <a href="#additional-resources" id="additional-resources"></a>
 
-[**Managing forms with the Page Builder**](../../forms/integrating-and-using-the-form-block/form-structure-and-parameters.md)
+This section includes additional resources for integrating and implementing the Page Builder. It also includes resources for integrating the [Form Block ](../../forms/form-block.md)within the Page Builder.
 
-A quick primer on how to include forms in a web page.
-
-[**Developer resources on GitHub**](https://dam.beefree.io/githubbeeforms)\
-
+* [**Managing forms with the Page Builder**](../../forms/integrating-and-using-the-form-block/form-structure-and-parameters.md)**:** An introduction to creating valid Form structures within Beefree SDK.
+* [**Developer resources on GitHub**](https://github.com/BeefreeSDK/beefree-sdk-sample-forms)**:** A repository of example Forms you can reference and use to get started.&#x20;
+* [**Example Implementations**](https://github.com/BeefreeSDK/beefree-sdk-form-block-demo)**:** A repository of example implementations of Forms within Beefree SDK. These three example implementations include: creating a default form, creating a form library, and creating a Form builder all within Beefree SDK.
 
 Our Github account hosts useful resources, including sample code to quick start your integrations.

@@ -8,11 +8,11 @@ description: An overview of page builder within Beefree SDK.
 
 Beefree SDK Page Builder will help your customers create beautiful, responsive landing pages, complete with forms and embedded videos. Combined with our **Email Builder**, you’ll have the power to deliver to your customers a **single, optimized user experience** for designing both emails and web pages.
 
+You can use the [Content Services API](../../apis/content-services-api/convert.md#email-to-page-conversion-important-behaviors) to convert existing email designs into landing pages. This is useful in scenarios where you may want to reuse content across different channels.
+
 <figure><img src="../../.gitbook/assets/Page-Builder.jpg" alt=""><figcaption></figcaption></figure>
 
-With the Page Builder, your customers can create landing pages and one page sites with
-
-In addition, you will find exclusive features that make sense for web pages, such as forms, embedded videos, and the ability to paste scripts, like an embeddable SurveyMonkey or Typeform survey.
+With the Page Builder, your customers can create landing pages and one page sites. In addition, you will find exclusive features that make sense for web pages, such as forms, embedded videos, and the ability to paste scripts, like an embeddable SurveyMonkey or Typeform survey.
 
 Here are a few examples of web pages your customers can build with:
 
@@ -24,6 +24,4 @@ Here are a few examples of web pages your customers can build with:
 * Booking request
 * Portfolio
 
-They can also create fantastic one page websites, i.e. sites where all the content usually spread in different pages fits nicely into an easy-to-scroll page, complete with menu and anchors to navigate it.
-
-We are constantly improving the user experience: we see the **Page Builder** as a long-term, ongoing project at Beefree SDK.
+You can also create stunning one-page websites where all content is neatly organized on a single, scrollable page. With this approach, page viewers can easily navigate one centralized page using menus and anchors, replacing traditional multi-page layouts.
