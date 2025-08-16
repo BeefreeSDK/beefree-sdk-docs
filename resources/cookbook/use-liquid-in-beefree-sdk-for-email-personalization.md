@@ -6,6 +6,402 @@ description: >-
 
 # Use Liquid in Beefree SDK for Email Personalization
 
+<details>
+
+<summary>Copy this pre-built prompt to get started faster with AI</summary>
+
+````
+# **Beefree SDK + Liquid Templating Integration Guide**
+
+**Purpose:** Demonstrate how to integrate **Liquid templating** with **Beefree SDK** to create advanced email personalization features in React applications.
+
+**Scope:** This guide covers merge tags, display conditions, custom content dialogs, and dynamic content loading for personalized email campaigns.
+
+---
+
+## **1. Project Overview**
+
+This project showcases a complete integration of Beefree SDK with Liquid templating for email personalization, featuring:
+
+- **React-based Beefree SDK integration** using `@beefree.io/sdk`
+- **Liquid templating** for dynamic content and personalization
+- **Custom content dialogs** for managing display conditions and external content
+- **Merge tags** for drag-and-drop personalization fields
+- **External content loading** for pre-built row templates
+- **Secure proxy server** for authentication
+
+---
+
+## **2. Core Components**
+
+### **2.1 Beefree SDK Configuration with Liquid Features**
+
+```javascript
+const beeConfig = {
+  container: 'beefree-sdk-container',
+  language: 'en-US',
+  enabledAdvancedPreview: true,
+  trackChanges: true,
+  
+  // Liquid personalization features
+  mergeTags: [
+    { name: 'Customer Name', value: '{{ customer.name }}' },
+    { name: 'Customer Email', value: '{{ customer.email }}' },
+    { name: 'Order Total', value: '{{ order.total }}' },
+    { name: 'Product Name', value: '{{ product.name }}' },
+    { name: 'Product Price', value: '{{ product.price }}' },
+    { name: 'Store Name', value: '{{ shop.name }}' }
+  ],
+  
+  // Custom content dialog for Liquid features
+  contentDialog: {
+    rowDisplayConditions: {
+      title: 'Display Conditions',
+      description: 'Set conditions for when this row should be displayed',
+      handler: (data, callback) => {
+        // Custom modal for Liquid conditional logic
+        showDisplayConditionsModal(data, callback);
+      }
+    },
+    externalContentURLs: {
+      title: 'Pre-built Rows',
+      description: 'Load pre-built row templates with Liquid personalization',
+      handler: (data, callback) => {
+        // Custom modal for external content selection
+        showExternalContentModal(data, callback);
+      }
+    }
+  },
+  
+  // Rows configuration for Liquid templates
+  rowsConfiguration: {
+    emptyRows: true,
+    defaultRows: true,
+    selectedRowType: 'default',
+    externalContentURLs: 'https://qa-bee-playground-backend.getbee.io/api/customrows/?ids=1,2,3,4'
+  },
+  
+  // Event handlers
+  onChange: (pageJson) => {
+    console.log('Content changed:', pageJson);
+  },
+  onRemoteChange: (pageJson) => {
+    console.log('Remote change:', pageJson);
+  },
+  onViewChange: (view) => {
+    console.log('View changed:', view);
+  },
+  onError: (error) => {
+    console.error('Beefree SDK error:', error);
+  }
+};
+```
+
+### **2.2 Liquid Templating Examples**
+
+#### **Basic Merge Tags**
+```liquid
+Hello {{ customer.name }},
+
+Thank you for your order of {{ order.total }}. 
+Your items will be shipped from {{ shop.name }}.
+```
+
+#### **Conditional Display Logic**
+```liquid
+{% if customer.total_spent > 100 %}
+  <div class="vip-section">
+    <h2>VIP Customer Benefits</h2>
+    <p>You've earned {{ customer.reward_points }} reward points!</p>
+  </div>
+{% endif %}
+```
+
+#### **Product Loops**
+```liquid
+{% for product in products %}
+  <div class="product-item">
+    <img src="{{ product.image }}" alt="{{ product.name }}">
+    <h3>{{ product.name }}</h3>
+    <p class="price">{{ product.price }}</p>
+    {% if product.on_sale %}
+      <span class="sale-badge">SALE!</span>
+    {% endif %}
+  </div>
+{% endfor %}
+```
+
+---
+
+## **3. Custom Content Dialogs**
+
+### **3.1 Display Conditions Modal**
+
+```javascript
+const showDisplayConditionsModal = (data, callback) => {
+  const modal = document.createElement('div');
+  modal.className = 'liquid-modal';
+  modal.innerHTML = `
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Display Conditions</h3>
+        <button class="close-btn" onclick="this.parentElement.parentElement.parentElement.remove()">×</button>
+      </div>
+      <div class="modal-body">
+        <p>Set Liquid conditions for when this row should be displayed:</p>
+        <textarea 
+          id="liquid-condition" 
+          placeholder="{% if customer.total_spent > 100 %}...{% endif %}"
+          style="width: 100%; height: 100px; font-family: monospace;"
+        >${data.condition || ''}</textarea>
+        <div class="button-group">
+          <button class="btn btn-primary" onclick="applyCondition()">Apply Condition</button>
+          <button class="btn btn-secondary" onclick="this.parentElement.parentElement.parentElement.remove()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(modal);
+  
+  window.applyCondition = () => {
+    const condition = document.getElementById('liquid-condition').value;
+    callback({ condition });
+    modal.remove();
+  };
+};
+```
+
+### **3.2 External Content Modal**
+
+```javascript
+const showExternalContentModal = (data, callback) => {
+  const modal = document.createElement('div');
+  modal.className = 'liquid-modal';
+  modal.innerHTML = `
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Pre-built Rows</h3>
+        <button class="close-btn" onclick="this.parentElement.parentElement.parentElement.remove()">×</button>
+      </div>
+      <div class="modal-body">
+        <p>Select pre-built row templates with Liquid personalization:</p>
+        <div class="row-grid">
+          <div class="row-item" onclick="selectRow('product-showcase')">
+            <h4>Product Showcase</h4>
+            <p>Dynamic product display with Liquid loops</p>
+          </div>
+          <div class="row-item" onclick="selectRow('customer-greeting')">
+            <h4>Customer Greeting</h4>
+            <p>Personalized welcome message</p>
+          </div>
+          <div class="row-item" onclick="selectRow('order-summary')">
+            <h4>Order Summary</h4>
+            <p>Order details with conditional logic</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(modal);
+  
+  window.selectRow = (rowType) => {
+    callback({ rowType });
+    modal.remove();
+  };
+};
+```
+
+---
+
+## **4. Advanced Liquid Features**
+
+### **4.1 Dynamic Content Loading**
+
+```javascript
+// Load external content with Liquid variables
+const loadExternalContent = async (contentId) => {
+  try {
+    const response = await fetch(`/api/content/${contentId}`);
+    const content = await response.json();
+    
+    // Process Liquid variables in the content
+    const processedContent = processLiquidVariables(content, {
+      customer: { name: 'John Doe', email: 'john@example.com' },
+      shop: { name: 'My Store' },
+      products: [
+        { name: 'Product 1', price: '$29.99', on_sale: true },
+        { name: 'Product 2', price: '$49.99', on_sale: false }
+      ]
+    });
+    
+    return processedContent;
+  } catch (error) {
+    console.error('Error loading external content:', error);
+  }
+};
+```
+
+### **4.2 Liquid Variable Processing**
+
+```javascript
+const processLiquidVariables = (content, variables) => {
+  let processed = content;
+  
+  // Replace simple variables
+  Object.keys(variables).forEach(key => {
+    if (typeof variables[key] === 'string' || typeof variables[key] === 'number') {
+      processed = processed.replace(new RegExp(`{{ ${key} }}`, 'g'), variables[key]);
+    }
+  });
+  
+  // Handle nested objects
+  Object.keys(variables).forEach(key => {
+    if (typeof variables[key] === 'object' && !Array.isArray(variables[key])) {
+      Object.keys(variables[key]).forEach(subKey => {
+        processed = processed.replace(
+          new RegExp(`{{ ${key}.${subKey} }}`, 'g'), 
+          variables[key][subKey]
+        );
+      });
+    }
+  });
+  
+  return processed;
+};
+```
+
+---
+
+## **5. Implementation Steps**
+
+### **5.1 Setup Requirements**
+
+1. **Install dependencies:**
+   ```bash
+   npm install @beefree.io/sdk react react-dom
+   ```
+
+2. **Create `.env` file:**
+   ```
+   BEE_CLIENT_ID=your_client_id
+   BEE_CLIENT_SECRET=your_client_secret
+   ```
+
+3. **Setup proxy server** for secure authentication
+
+### **5.2 React Component Structure**
+
+```javascript
+import { useEffect, useRef, useState } from 'react';
+import BeefreeSDK from '@beefree.io/sdk';
+
+export default function BeefreeLiquidEditor() {
+  const containerRef = useRef(null);
+  const [beeInstance, setBeeInstance] = useState(null);
+  const [sdkLoaded, setSdkLoaded] = useState(false);
+
+  useEffect(() => {
+    initializeEditor();
+  }, []);
+
+  const initializeEditor = async () => {
+    try {
+      // Get authentication token
+      const response = await fetch('/proxy/bee-auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ uid: 'demo-user' })
+      });
+      const { token } = await response.json();
+
+      // Initialize Beefree SDK
+      const bee = new BeefreeSDK(token);
+      const instance = await bee.start(beeConfig, {});
+      
+      setBeeInstance(instance);
+      setSdkLoaded(true);
+    } catch (error) {
+      console.error('Initialization error:', error);
+    }
+  };
+
+  return (
+    <div>
+      <div 
+        id="beefree-sdk-container" 
+        ref={containerRef}
+        style={{ 
+          width: '90%', 
+          height: '700px',
+          margin: '0 auto',
+          background: '#ffffff'
+        }}
+      >
+        <div style={{ padding: '20px', color: '#000' }}>
+          {sdkLoaded ? 'Beefree SDK loaded!' : 'Loading Beefree SDK...'}
+        </div>
+      </div>
+      
+      <button onClick={() => beeInstance?.loadRows()}>
+        Load External Rows
+      </button>
+    </div>
+  );
+}
+```
+
+---
+
+## **6. Best Practices**
+
+### **6.1 Liquid Syntax Guidelines**
+
+- **Use descriptive variable names:** `{{ customer.first_name }}` instead of `{{ name }}`
+- **Implement proper conditionals:** Always include `{% endif %}` and `{% endfor %}`
+- **Handle edge cases:** Use `{% if customer.name %}` to check for existence
+- **Optimize loops:** Limit product loops to reasonable numbers
+
+### **6.2 Security Considerations**
+
+- **Never expose sensitive data** in Liquid variables
+- **Validate user input** before processing Liquid templates
+- **Use secure proxy server** for authentication
+- **Sanitize dynamic content** to prevent XSS attacks
+
+### **6.3 Performance Optimization**
+
+- **Cache processed templates** for frequently used content
+- **Lazy load external content** to improve initial load times
+- **Minimize API calls** by batching content requests
+- **Use efficient Liquid filters** for data transformation
+
+---
+
+## **7. Troubleshooting**
+
+### **7.1 Common Issues**
+
+- **SDK not loading:** Check authentication token and network connectivity
+- **Liquid variables not rendering:** Verify variable names and syntax
+- **External content not loading:** Check API endpoints and CORS settings
+- **Modal not displaying:** Ensure CSS styles are properly loaded
+
+### **7.2 Debug Tips**
+
+- **Enable console logging** for detailed error messages
+- **Test Liquid syntax** in a separate environment first
+- **Validate JSON structure** of external content
+- **Check browser network tab** for failed requests
+
+---
+
+This integration provides a powerful foundation for creating personalized email campaigns with dynamic content, conditional logic, and a smooth user experience through Beefree SDK's intuitive interface combined with Liquid's templating capabilities.
+````
+
+</details>
+
 ## Overview
 
 This project showcases how to configure [Beefree SDK's](https://docs.beefree.io/beefree-sdk) email editor with [Liquid](https://shopify.github.io/liquid/) templating for dynamic and personalized email content. Built with React and the `@beefree.io/sdk` [npm package](https://www.npmjs.com/package/@beefree.io/sdk), it's designed for developers and teams who need to customize Beefree SDK's email builder for end users who need to create sophisticated and highly personalized email campaigns that include conditional content and product loops.
