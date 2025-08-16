@@ -61,8 +61,8 @@ There, users can:
 
 There are two paths you can take to activate and store Saved Rows for your application:
 
-* [Hosted Saved Rows](implement-hosted-saved-rows.md)
-* [Self-Hosted Saved Rows](../../../storage/self-hosted-saved-rows.md)
+* [Hosted Saved Rows](implement-hosted-saved-rows.md): Enabled by default. Provides a storage solution and user interface.
+* [Self-Hosted Saved Rows](../../../storage/self-hosted-saved-rows.md): Requires activation in the Beefree SDK console, along with creating your own endpoints to connect a database.
 
 Both paths provide their own set of benefits and limitations. It is important to familiarize yourself with the benefits and limitations of each option to choose the storage and activation solution that is best for you and your application's needs. For more detailed information on both activation routes, reference [Implement Hosted Saved Rows](implement-hosted-saved-rows.md) and Implement [Self-Hosted Saved Rows](implement-self-hosted-saved-rows/).
 

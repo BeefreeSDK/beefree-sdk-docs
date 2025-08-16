@@ -57,15 +57,15 @@ Visit the [Beefree SDK playground](https://developers.beefree.io/playground) to 
 
 #### Hosted Saved Rows
 
-Hosted Saved Rows allow your end users to save and manage their own rows to be used later–a powerful way to help them streamline their workflows!
+Hosted Saved Rows allow your end users to save and manage their own rows. This supports them in saving the content they've created and reusing it again at a later date.
 
-Also, Hosted Saved Rows simultaneously provides both a storage solution and user interface your application's end users can engage with to save and manage their rows.
+Hosted Saved Rows provides both a storage solution and user interface your end users can engage with to save and manage their rows.
 
-In the following GIF, with Hosted Saved Rows, Beefree SDK provides the user interface and infrastructure to power Saved Rows so you can bring this feature to your end users instantly.  &#x20;
+The following GIF shows an example user interface displaying how Hosted Saved Rows will appear to your end users on the frontend of your application.  &#x20;
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-12-03 at 18.22.16.gif" alt=""><figcaption></figcaption></figure>
 
-[Implementing Hosted Saved Rows](create/save/implement-hosted-saved-rows.md) takes only a few seconds, because it activated through a toggle in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu). The following image shows how the toggle looks like in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu). &#x20;
+Hosted Saved Rows are enabled by default. The following image shows how the toggle looks like in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu). &#x20;
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-12-03 at 18.26.16.png" alt=""><figcaption></figcaption></figure>
 

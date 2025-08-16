@@ -1,14 +1,14 @@
 # Implement Hosted Saved Rows
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.
+This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above. It is enabled by default.
 {% endhint %}
 
 ## **Overview**
 
-With Hosted Saved Rows, you can provide your end users with the option to save and manage reusable content directly within the builder. Hosted Saved Rows can be activated through a toggle within the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu), which makes it an excellent option for those who are interested in a fast implementation of [Saved Rows](./). Once you toggle this feature on, your end users will be able to save the rows they create within the builder, and reuse them easily in the future. They can also perform actions to manage the rows that they save, such as renaming them, deleting them, categorizing, or recategorizing them. This page covers [the steps](implement-hosted-saved-rows.md#enable-hosted-saved-rows) you need to take to successfully implement [Hosted Saved Rows](../../../storage/hosted-saved-rows.md). &#x20;
+With Hosted Saved Rows, you can provide your end users with the option to save and manage reusable content directly within the builder. Hosted Saved Rows are on by default. You can disable and re-enable them through a check within the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu). With this feature, your end users will be able to save the rows they create within the builder, and reuse them easily in the future. They can also perform actions to manage the rows that they save, such as renaming them, deleting them, categorizing, or recategorizing them. This page covers [the steps](implement-hosted-saved-rows.md#enable-hosted-saved-rows) you need to take to successfully configure [Hosted Saved Rows](../../../storage/hosted-saved-rows.md). &#x20;
 
-The following video tutorial discusses what Saved Rows are, how reusable content can support your end users throughout their content creation journeys, and how you can implement Hosted Saved Rows in your application.
+The following video tutorial discusses what Saved Rows are, how reusable content can support your end users throughout their content creation journeys, and how you can customize Hosted Saved Rows in your application.
 
 Reference the [GitHub repository with a sample implementation](https://github.com/BeefreeSDK/beefree-sdk-hosted-saved-rows-demo) of Hosted Saved Rows to learn more.
 
@@ -16,22 +16,26 @@ Reference the [GitHub repository with a sample implementation](https://github.co
 Save Time with Hosted Rows Video Tutorial
 {% endembed %}
 
-## **Enable Hosted Saved Rows**
+## **Enable or Disable Hosted Saved Rows**
 
-To enable Hosted Saved Rows for your application, follow these steps:
+{% hint style="info" %}
+Hosted Saved Rows are enabled by default. Take the steps in this section to disable or re-enable Hosted Saved Rows.
+{% endhint %}
+
+To enable or disable Hosted Saved Rows for your application, follow these steps:
 
 1. Log in to the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
 2. Navigate to the application you'd like to configure Hosted Saved Rows for.
 3. Click on **Details.**
 4. Navigate to **Application configuration** and click **View more.**
 5. Scroll to the **Saved Rows** section.
-   1.  Toggle on the **Hosted on the Beefree SDK Infrastructure** option.
+   1.  Check the **Hosted on the Beefree SDK Infrastructure** option to on or off.
 
-       <figure><img src="../../../../.gitbook/assets/CleanShot 2024-11-20 at 20.28.15.png" alt="Beefree SDK Developer console user interface displaying the toggle options for hosted and self-hosted saved rows"><figcaption></figcaption></figure>
-   2.  Read the pricing information in the popup closely, because additional fees may apply.\*&#x20;
+       <figure><img src="../../../../.gitbook/assets/CleanShot 2024-11-20 at 20.28.15.png" alt="Beefree SDK Developer console user interface displaying the toggle options for hosted and self-hosted saved rows" width="563"><figcaption></figcaption></figure>
+   2.  (Applicable if you are enabling) Read the pricing information in the popup closely, because additional fees may apply.\*&#x20;
 
-       <figure><img src="../../../../.gitbook/assets/CleanShot 2024-11-20 at 20.28.37.png" alt="Beefree SDK Developer console user interface displaying the popup confirming usage based fees may apply"><figcaption></figcaption></figure>
-   3. If you'd like to proceed, confirm you read and understand the pricing to activate the feature.
+       <figure><img src="../../../../.gitbook/assets/CleanShot 2024-11-20 at 20.28.37.png" alt="Beefree SDK Developer console user interface displaying the popup confirming usage based fees may apply" width="443"><figcaption></figcaption></figure>
+   3. Save your changes.
 
 {% hint style="info" %}
 **Important:** Keep in mind that charges apply for saved rows that are hosted not only in your production applications, but also for your development applications.
@@ -46,14 +50,14 @@ To enable Hosted Saved Rows for your application, follow these steps:
 
 **Note:** Visit our [Usage-based fees article](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees#h_01JE4K84YM3M040X7JBQR7GVW1) to learn more about Hosted Saved Rows pricing.
 
-Once you've successfully enabled Hosted Saved Rows in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu), you'll access the following:
+Hosted Saved Rows give you access to the following:
 
 * Rows saved by your application's end users will be stored and hosted in the Beefree SDK storage option.
 * End users can save rows directly to the hosted infrastructure and retrieve them as needed.
 
 ## User Interface and End User Experience
 
-Once you successfully enable Hosted Saved Rows within the Developer Console, your application's end users will have access to a new **Save** icon for each row, and other options for managing the rows they save.
+When enabled, your application's end users will have access to a new **Save** icon for each row, and other options for managing the rows they save.
 
 The Hosted Saved Rows UI includes the following experience for end users:
 
@@ -188,7 +192,7 @@ advancedPermissions:{
 
 ## **Making Saved Rows Available to Select Users**
 
-Once Saved Rows is enabled globally in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu), you can disable it for specific users using the `saveRows` parameter in the `beeConfig` document. This lets you control access based on subscription plans, feature purchases, or beta testing.
+You can disable Saved Rows for specific users using the `saveRows` parameter in the `beeConfig` document. This lets you control access based on subscription plans, feature purchases, or beta testing.
 
 Take the following step to disable access for specific users:
 
@@ -256,7 +260,7 @@ In the following image, the **ROWS** tab is no longer available to the end user 
 
 Reference the [Hosted Saved Rows Webinar](../../../storage/hosted-saved-rows.md#webinar-tutorial) to learn more about other customizations that are compatible with Hosted Saved Rows. The webinar discusses the following topics:
 
-* How to enable Hosted Saved Rows
+* What Hosted Saved Rows are
 * How to use [Advanced Permissions](../../../../other-customizations/advanced-options/advanced-permissions.md#hosted-saved-rows) with Hosted Saved Rows
 * How to restrict which end users can save rows
 * How to customize the modals related to Hosted Saved Rows
@@ -267,5 +271,3 @@ Reference the [sample code in this GitHub repository](https://github.com/Beefree
 Visit the [Hosted Saved Rows page](../../../storage/hosted-saved-rows.md) to also learn more about the following topics:
 
 * [Troubleshooting and FAQs](../../../storage/hosted-saved-rows.md#troubleshooting-and-faqs)
-* [Deactivating Hosted Saved Rows](../../../storage/hosted-saved-rows.md#deactivating-hosted-saved-rows)
-* [What Happens When Deactivated](../../../storage/hosted-saved-rows.md#what-happens-when-deactivated)
