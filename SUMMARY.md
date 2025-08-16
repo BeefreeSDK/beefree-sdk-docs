@@ -226,3 +226,4 @@
   * [AI-generated Email Sequences in Beefree SDK with Claude AI](resources/cookbook/ai-generated-email-sequences-in-beefree-sdk-with-claude-ai.md)
   * [Build Full Stack Martech Apps with Lovable and Beefree SDK](resources/cookbook/build-full-stack-martech-apps-with-lovable-and-beefree-sdk.md)
   * [Edit Templates in Beefree SDK with Claude AI](resources/cookbook/edit-templates-in-beefree-sdk-with-claude-ai.md)
+  * [Use Liquid in Beefree SDK for Email Personalization](resources/cookbook/use-liquid-in-beefree-sdk-for-email-personalization.md)
