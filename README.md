@@ -41,7 +41,7 @@ You can explore a simple implementation of Beefree SDK in [Codepen](https://code
 * Use the JS tab to edit the `beeConfig`, which you can add [Configuration Parameters](getting-started/readme/installation/configuration-parameters/) to. This helps you customize the builder's functionality based on features you are exploring.
 * If you'd like to stay on this page, and not redirect to [Codepen](https://codepen.io/zairro/pen/EaVQdyj), you can zoom in and out of the embedded Codepen using **1x**, **0.5x**, and **0.25x** options.  &#x20;
 
-{% embed url="https://codepen.io/zairro/pen/EaVQdyj" fullWidth="true" %}
+{% embed url="https://codepen.io/zairro/pen/EaVQdyj" fullWidth="false" %}
 
 ## Start a Simple Implementation <a href="#welcome" id="welcome"></a>
 
