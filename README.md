@@ -9,6 +9,8 @@ description: >-
 
 <figure><img src=".gitbook/assets/hero-sdk.png" alt=""><figcaption></figcaption></figure>
 
+
+
 ## What is Beefree SDK?
 
 Beefree SDK is an embeddable no-code builder that gives your end users the freedom to design stunning emails, landing pages, and popups—without writing a single line of code. It’s easy to configure, intuitive to personalize, and built to scale with your needs—whether you're a startup or an enterprise. Built with both developers and end users in mind, it’s designed to integrate easily into your application, scale as your product grows, and provide a flexible, white-label design experience.&#x20;
@@ -28,7 +30,18 @@ Beefree SDK includes the following features and more:
 * **Template catalog:** A design template catalog that integrates industry best practices to support end users in quickly getting across the finish line with their creations and achieving quick design wins.
 * **API offering:** Extend the functionality of any of the builders with our comprehensive [suite of APIs](broken-reference).
 
-This site discusses the technical capabilities of Beefree SDK, and how to embed it into your web application. To learn more about the end user experience, and how your end users will interact with Beefree SDK on the frontend of your application, reference the [White Label End User Guide](https://docs.beefree.io/end-user-guide). Markdown files for this guide are available in this [GitHub repository](https://github.com/mailupinc/beefreeSDKwhiteLabelDocs), which you can clone and use as a starting point for building a knowledge base for your end users.&#x20;
+This site discusses the technical capabilities of Beefree SDK, and how to embed it into your web application. To learn more about the end user experience, and how your end users will interact with Beefree SDK on the frontend of your application, reference the [White Label End User Guide](https://docs.beefree.io/end-user-guide). Markdown files for this guide are available in this [GitHub repository](https://github.com/mailupinc/beefreeSDKwhiteLabelDocs), which you can clone and use as a starting point for building a knowledge base for your end users.
+
+## Explore Beefree SDK in Codepen
+
+You can explore a simple implementation of Beefree SDK in [Codepen](https://codepen.io/zairro/pen/EaVQdyj) to see how the builder works. To visualize the integration below, you can:
+
+* Click **Run Pen** to see the builder.
+* Navigate between the HTML and JS tabs to see the code.
+* Use the JS tab to edit the `beeConfig`, which you can add [Configuration Parameters](getting-started/readme/installation/configuration-parameters/) to. This helps you customize the builder's functionality based on features you are exploring.
+* If you'd like to stay on this page, and not redirect to [Codepen](https://codepen.io/zairro/pen/EaVQdyj), you can zoom in and out of the embedded Codepen using **1x**, **0.5x**, and **0.25x** options.  &#x20;
+
+{% embed url="https://codepen.io/zairro/pen/EaVQdyj" fullWidth="true" %}
 
 ## Start a Simple Implementation <a href="#welcome" id="welcome"></a>
 
@@ -51,6 +64,7 @@ Reference Quickstart Guides specific to your tech stack:
 * [React No-code Email Builder](quickstart-guides/react-no-code-email-builder.md)
 * [Vue.js No-code Email Builder](quickstart-guides/vue.js-no-code-email-builder.md)
 * [Angular No-code Email Builder](quickstart-guides/angular-no-code-email-builder.md)
+* [Django Beefree SDK Demo](quickstart-guides/django-beefree-sdk-demo.md)
 
 ## Beefree SDK's Embeddable Builders <a href="#welcome" id="welcome"></a>
 
@@ -68,7 +82,7 @@ Learn more about our [File Manager](file-manager/file-manager-application-overvi
 
 Create a free account and obtain your Client ID and Client Secret in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu) to get started. Set up a local environment to experiment with customizing a configuration. Watch the configuration changes and customizations come to life on the frontend.
 
-* [Create and Application](getting-started/readme/create-an-application.md)
+* [Create an Application](getting-started/readme/create-an-application.md)
 * [React No-code Email Builder](quickstart-guides/react-no-code-email-builder.md)
 * [Vue.js No-code Email Builder](quickstart-guides/vue.js-no-code-email-builder.md)
 * [GitHub Resources](https://github.com/BeefreeSDK)
