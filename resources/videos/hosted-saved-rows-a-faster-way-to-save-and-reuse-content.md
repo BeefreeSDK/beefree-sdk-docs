@@ -4,7 +4,9 @@
 
 {% tabs %}
 {% tab title="About" %}
-Are your users stuck recreating the same email header or footer over and over? Stop the endless copying and pasting! In this video, you'll discover how Hosted Saved Rows in Beefree SDK can help your end users work smarter—saving time while keeping their email and landing page designs perfectly consistent.&#x20;
+Are your users stuck recreating the same email header or footer over and over? Stop the endless copying and pasting! In this video, you'll discover how Hosted Saved Rows in Beefree SDK can help your end users work smarter—saving time while keeping their email and landing page designs perfectly consistent.
+
+\*Hosted saved rows are **on** by default in the SDK Developer Console.&#x20;
 
 What You’ll Learn:&#x20;
 
