@@ -12,7 +12,11 @@ The AI Writing Assistant AddOn is only available for [Superpowers](https://devel
 
 ## **Overview**
 
-This page discusses how to configure Azure OpenAI as a provider for the [AI Writing Assistant AddOn](../) within the Beefree SDK Developer Console. If the AI Writing Assistant AddOn is already enabled for your application, and you'd like to switch providers, take the steps outlined in the [Switch Providers](../#switch-providers) section of the [AI Writing Assistant page](../#switch-providers) to enable Azure OpenAI as your new provider.&#x20;
+This page discusses how to configure Azure OpenAI as a provider for the [AI Writing Assistant AddOn](../) within the Beefree SDK Developer Console. If the AI Writing Assistant AddOn is already enabled for your application, and you'd like to switch providers, take the steps outlined in the [Switch Providers](../#switch-providers) section of the [AI Writing Assistant page](../#switch-providers) to enable Azure OpenAI as your new provider.
+
+{% hint style="info" %}
+**NNote:** [ChatGPT4o Mini](https://platform.openai.com/docs/models) is the model used when you configure OpenAI as your provider.
+{% endhint %}
 
 ## **Prerequisites**
 

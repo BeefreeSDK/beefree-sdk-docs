@@ -14,6 +14,10 @@ The AI Writing Assistant AddOn is only available for [Superpowers](https://devel
 
 This page discusses how to configure Anthropic as a provider for the [AI Writing Assistant AddOn](../) within the Beefree SDK Developer Console. If the AI Writing Assistant AddOn is already enabled for your application, and you'd like to switch providers, take the steps outlined in the [Switch Providers](../#switch-providers) section of the [AI Writing Assistant page](../#switch-providers) to enable Anthropic as your new provider.&#x20;
 
+{% hint style="info" %}
+**Note:** [Claude Sonnet 3.5](https://docs.anthropic.com/en/docs/about-claude/models/overview) is the model used when you configure Anthropic as your provider.&#x20;
+{% endhint %}
+
 ### Prerequisites
 
 Prior to getting started, ensure you have the following:

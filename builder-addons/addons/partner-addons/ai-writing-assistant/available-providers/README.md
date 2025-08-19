@@ -25,6 +25,10 @@ This section discusses each of the available providers.
 * Extensive documentation and community resources to support implementation.
 * Highly scalable infrastructure capable of handling large user bases.
 
+{% hint style="info" %}
+**Note:** [ChatGPT4o Mini](https://platform.openai.com/docs/models) is the model used when you configure OpenAI as your provider.
+{% endhint %}
+
 ### Azure OpenAI
 
 [Azure OpenAI ](https://learn.microsoft.com/en-us/azure/ai-services/openai/)combines the power of OpenAI’s GPT models with Microsoft’s Azure cloud platform. This integration provides robust enterprise-level security, compliance, and availability while delivering powerful AI capabilities to your application's end users. With Azure OpenAI, you also benefit from seamless integration with other Microsoft services, making it ideal for organizations already using the Azure ecosystem.
@@ -36,9 +40,17 @@ This section discusses each of the available providers.
 * Flexible scaling to accommodate varying levels of user demand.
 * Support for high-availability setups, ensuring consistent performance.
 
+{% hint style="info" %}
+**Note:** [ChatGPT4o Mini](https://platform.openai.com/docs/models) is the model used when you configure OpenAI as your provider.
+{% endhint %}
+
 ### Anthrophic
 
 [Anthropic](https://docs.anthropic.com/en/docs/welcome) offers a unique approach to generative AI through its focus on safety and alignment in AI systems. Its Claude models prioritize creating helpful and ethical responses, making it an excellent option for applications where responsible AI use is a priority. Anthropic’s models are designed to work well with conversational and creative writing tasks, ensuring that your end users receive thoughtful and high-quality suggestions.
+
+{% hint style="info" %}
+**Note:** [Claude Sonnet 3.5](https://docs.anthropic.com/en/docs/about-claude/models/overview) is the model used when you configure Anthropic as your provider.&#x20;
+{% endhint %}
 
 #### **Benefits of using Anthropic:**
 
