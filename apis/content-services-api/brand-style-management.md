@@ -37,13 +37,10 @@ To apply a style globally, take the following steps:
 [template_brand.yaml](../../.gitbook/assets/template_brand.yaml)
 {% endopenapi %}
 
-
-
 **Request Parameters:**
 
 * `styles` (JSON): The brand styles to apply to the template.
 * `template` (JSON): The JSON template to be updated with the brand styles.
-* `HTML` Return the template with or without HTML.
 
 The following section displays an example request. Note that the syntax for the CSAPI Brand Style Management endpoint is similar to the syntax for [Content Defaults](../../other-customizations/appearance/content-defaults.md).
 
@@ -118,17 +115,6 @@ Response Format:
 * **400 Bad Request:** There was an issue with the request parameters.
 * **401 Unauthorized:** The API key is invalid or missing.
 * **500 Internal Server Error:** An unexpected server error occurred.
-
-Example Response:
-
-```json
-{
-  "html": “html document”,
-  "json": {
-    // Updated template JSON here
-  }
-}
-```
 
 ### Request Format <a href="#y0bhuvxyyjqv" id="y0bhuvxyyjqv"></a>
 
@@ -219,3 +205,9 @@ While both Content Defaults and the Brand Style Management endpoint aim to strea
 ### Understanding API Responses
 
 The Brand Style API includes a `422` status code (unprocessable entity). This status code is returned when an API call is successful, but the brand style defined in the body of the API call does not apply to the template specified. For example, if the brand style defined in the body of the API call applies to buttons, and there are no buttons within the specified template, no styles will be applied. In this scenario, the final result of the API call is that no styles were applied to the template because there were none applicable. Be sure to handle this specific case when implementing the API.
+
+### Validation Schema
+
+{% openapi-schemas spec="brand-styles" schemas="BrandManagementStyles" grouped="true" %}
+[OpenAPI brand-styles](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/771c6befd21a6293d26982773da33c04ac600e8c998aba46ef4ca071b4c5c830.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250821%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250821T021445Z&X-Amz-Expires=172800&X-Amz-Signature=88807f93fe8c0a04442471d3c08b81b876622e751c61e2cd28affa8ef3672dd2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% endopenapi-schemas %}
