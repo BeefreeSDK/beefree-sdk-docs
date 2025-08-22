@@ -216,14 +216,14 @@ The following table lists template management methods that are important for get
 The instance method `bee.start(template)` does not need to be called immediately after `create`. In a SPA (Single Page Application) or React app, you can `create` the editor in a hidden global state but then call the `start` method when the template is selected and available. The application loads quickly when all steps are completed consecutively. However, by separating the loading workflow into two parts, the end-user will perceive loading in a fraction of the overall time. Remember, if the `client_id` belongs to a File Manager application, `bee.start()` can be called without any parameters.
 {% endhint %}
 
-### **Advanced Features**
+### Additional Features
 
 #### **Token Refresh Implementation**
 
 Implement automatic token refresh to maintain uninterrupted sessions:
 
 ```javascript
-// Refresh expired token (call before 12-hour expiry)
+// Refresh expired token (call before 12-hour expiration)
 bee.updateToken(newToken); 
 ```
 
