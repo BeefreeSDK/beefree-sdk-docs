@@ -11,6 +11,7 @@ Use the following prompts to get started faster with implementing the Email buil
 * [React](../quickstart-guides/react-no-code-email-builder.md#copy-this-pre-built-prompt-to-get-started-faster-with-ai)
 * [Angular](../quickstart-guides/angular-no-code-email-builder.md#copy-this-pre-built-prompt-to-get-started-faster-with-ai)
 * [Vue](../quickstart-guides/vue.js-no-code-email-builder.md#copy-this-pre-built-prompt-to-get-started-faster-with-ai)
+* [Django](../quickstart-guides/django-beefree-sdk-demo.md)
 
 ## Introduction
 

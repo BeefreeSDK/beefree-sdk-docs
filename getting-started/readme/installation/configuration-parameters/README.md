@@ -14,7 +14,7 @@ The following code displays an example of a default configuration:
 ```javascript
 var beeConfig = {
     uid: 'CmsUserName', // [mandatory]
-    container: 'bee-plugin-container', // [mandatory]
+    container: 'beefree-sdk-container', // [mandatory]
     autosave: 30, // [optional, default:false]
     language: 'en-US', // [optional, default:'en-US']
     trackChanges: true, // [optional, default: false] 
@@ -65,7 +65,7 @@ var beeConfig = {
 
 The following table provides a list of the **required** parameters.
 
-<table><thead><tr><th>Parameter</th><th width="331">Description</th><th>Default</th></tr></thead><tbody><tr><td><strong>uid</strong></td><td><p>An alphanumeric string that identifies the user and allows the SDK to load resources for that user (e.g. images).</p><ul><li>Min length: 3 characters</li><li>Can contain letters from a to z (uppercase or lowercase), numbers and the special characters _ (underscore) and – (dash)</li><li>It is a string and not a numeric value</li></ul><p>It uniquely identifies a user of Beefree SDK. When we say “uniquely”, we mean that:</p><ul><li>It will be counted as a unique user for monthly billing purposes.</li><li>Images (and other files) used by the user when creating and editing messages will be associated with it and not visible to other users (when using the default storage).</li></ul></td><td></td></tr><tr><td><strong>container</strong></td><td>Identifies the id of div element that contains Beefree SDK.</td><td></td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th width="331">Description</th><th>Default</th></tr></thead><tbody><tr><td><strong>container</strong></td><td>Identifies the id of div element that contains Beefree SDK.</td><td></td></tr></tbody></table>
 
 ## Language Parameter
 
