@@ -493,7 +493,7 @@ For questions and support:
 
 ### What's Included
 
-This section list what's included within this project.
+This section lists what's included within this project.
 
 * [**React Application**](use-liquid-in-beefree-sdk-for-email-personalization.md): Modern React-based email editor
 * [**Beefree SDK Integration**](https://www.npmjs.com/package/@beefree.io/sdk): Using the official `@beefree.io/sdk` npm package

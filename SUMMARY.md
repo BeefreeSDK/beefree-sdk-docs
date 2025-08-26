@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-* [Introduction to Beefree SDK](README.md)
+* [Introduction to Beefree SDKRecipes](README.md)
   * [Create an Application](getting-started/readme/create-an-application.md)
   * [Installation and Fundamentals](getting-started/readme/installation/README.md)
     * [Configuration parameters](getting-started/readme/installation/configuration-parameters/README.md)
@@ -227,3 +227,5 @@
   * [Build Full Stack Martech Apps with Lovable and Beefree SDK](resources/cookbook/build-full-stack-martech-apps-with-lovable-and-beefree-sdk.md)
   * [Edit Templates in Beefree SDK with Claude AI](resources/cookbook/edit-templates-in-beefree-sdk-with-claude-ai.md)
   * [Use Liquid in Beefree SDK for Email Personalization](resources/cookbook/use-liquid-in-beefree-sdk-for-email-personalization.md)
+  * [Use Dynamic Images for Email Personalization](resources/cookbook/use-dynamic-images-for-email-personalization.md)
+  * [Preview Designs and Templates](resources/cookbook/preview-designs-and-templates.md)
