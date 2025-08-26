@@ -218,11 +218,10 @@ Activate this feature by adding the new [configuration parameter](https://docs.b
 The following code sample displays an example of the `templateLanguageAutoTranslation`, `templateLanguage`, and `templateLanguages` parameters.
 
 ```javascript
-// Configuration for the bee plugin
-// Configuration for the bee plugin
+// Beefree SDK Configuration
 var beeConfig = {
   uid: 'fakeUid123',
-  container: 'bee-plugin-container',
+  container: 'beefree-sdk-container',
   templateLanguageAutoTranslation: true,
   templateLanguage: {
     value: 'en-US',
@@ -245,114 +244,6 @@ If you have a custom top bar in your application, take the following additional 
    1. `translateTemplate` → `bee.translateTemplate({ language: 'it-IT' })`
 2. Describe how to reset a translation:
    1. `resetTemplateTranslation` → `bee.resetTemplateTranslation({ language: 'it-IT' })`
-
-#### Translate a Template
-
-A function to translate the template to a specified language using the Beefree SDK.
-
-{% tabs %}
-{% tab title="React" %}
-React **Translate a Template** example
-
-```jsx
-import React from 'react'; // Importing React
-import { bee } from 'bee-plugin'; // Importing the bee plugin
-
-// Define a functional component
-const TranslateTemplateButton = () => {
-  // Function to translate the template to Italian
-  const translateTemplate = () => {
-    bee.translateTemplate({ language: 'it-IT' }); // Calling the translateTemplate function with Italian language code
-  };
-
-  // Returning a button that triggers the translateTemplate function when clicked
-  return (
-    <button onClick={translateTemplate}>
-      Translate Template to Italian
-    </button>
-  );
-};
-
-export default TranslateTemplateButton; // Exporting the component
-```
-{% endtab %}
-
-{% tab title="JavaScript" %}
-JavaScript **Translate a Template** example
-
-```javascript
-// Function to translate the template to Italian
-function translateTemplate() {
-  bee.translateTemplate({ language: 'it-IT' }); // Calling the translateTemplate function with Italian language code
-}
-
-// Adding an event listener to the button with id 'translateButton'
-// When the button is clicked, the translateTemplate function is triggered
-document.getElementById('translateButton').addEventListener('click', translateTemplate);
-```
-
-HTML example
-
-```html
-<!-- Button that will translate the template to Italian when clicked -->
-<button id="translateButton">Translate Template to Italian</button>
-```
-{% endtab %}
-{% endtabs %}
-
-#### Reset a Translation
-
-A function to reset the translation of the template to its original state using Beefree SDK.
-
-{% tabs %}
-{% tab title="React " %}
-React Reset a Translation example
-
-```jsx
-import React from 'react'; // Importing React
-import { bee } from 'bee-plugin'; // Importing the bee plugin
-
-// Define a functional component
-const ResetTemplateTranslationButton = () => {
-  // Function to reset the template translation to the original state
-  const resetTemplateTranslation = () => {
-    bee.resetTemplateTranslation({ language: 'it-IT' }); // Calling the resetTemplateTranslation function with Italian language code
-  };
-
-  // Returning a button that triggers the resetTemplateTranslation function when clicked
-  return (
-    <button onClick={resetTemplateTranslation}>
-      Reset Template Translation
-    </button>
-  );
-};
-
-export default ResetTemplateTranslationButton; // Exporting the component
-```
-{% endtab %}
-
-{% tab title="JavaScript" %}
-**Reset a Translation** JavaScript example
-
-```javascript
-// Function to reset the template translation to the original state
-function resetTemplateTranslation() {
-  bee.resetTemplateTranslation({ language: 'it-IT' }); // Calling the resetTemplateTranslation function with Italian language code
-}
-
-// Adding an event listener to the button with id 'resetButton'
-// When the button is clicked, the resetTemplateTranslation function is triggered
-document.getElementById('resetButton').addEventListener('click', resetTemplateTranslation);
-```
-
-HTML example
-
-```html
-<!-- Button that will reset the template translation when clicked -->
-<button id="resetButton">Reset Template Translation</button>
-```
-{% endtab %}
-{% endtabs %}
 
 ## Error handling
 
