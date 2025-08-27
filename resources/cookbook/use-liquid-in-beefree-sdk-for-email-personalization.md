@@ -6,6 +6,10 @@ description: >-
 
 # Use Liquid in Beefree SDK for Email Personalization
 
+{% hint style="info" %}
+This tutorial uses Display Conditions, Content Dialog, and Merge Tags. Display Conditions requires a [Core plan or above](https://developers.beefree.io/pricing-plans). &#x20;
+{% endhint %}
+
 <details>
 
 <summary>Copy this pre-built prompt to get started faster with AI</summary>
@@ -416,6 +420,10 @@ This project is designed for:
 Reference the project code in the [beefree-liquid-email-personalization](use-liquid-in-beefree-sdk-for-email-personalization.md) GitHub repository.&#x20;
 
 {% embed url="https://github.com/BeefreeSDK/beefree-liquid-email-personalization" %}
+
+The video provides a visual example of the demo and how Display Conditions, Content Dialog, and Merge Tags are integrated on the frontend.
+
+{% embed url="https://drive.google.com/file/d/1YkJ9S2JGzdpKJ7qy9I6WRhD3jbbcra8O/view?usp=sharing" %}
 
 ## Getting Started
 
