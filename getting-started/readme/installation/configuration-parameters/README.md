@@ -8,12 +8,15 @@ description: Discover the configuration parameters within Beefree SDK.
 
 Once you have initialized your Beefree SDK application, you can pass a series of configuration parameters to it.
 
-The following code displays an example of a default configuration:
+{% hint style="info" %}
+**Note:** While there are several parameters in the configuration example below, this example does not comprehensively display all available parameters within Beefree SDK. Reference Beefree SDK's comprehensive technical documentation for more information on available parameters and customization options. &#x20;
+{% endhint %}
+
+The following code displays an example of a default configuration.
 
 {% code fullWidth="false" %}
 ```javascript
 var beeConfig = {
-    uid: 'CmsUserName', // [mandatory]
     container: 'beefree-sdk-container', // [mandatory]
     autosave: 30, // [optional, default:false]
     language: 'en-US', // [optional, default:'en-US']
@@ -22,6 +25,9 @@ var beeConfig = {
     mergeTags: mergeTags, // [optional, default:[]]
     mergeContents: mergeContents, // [optional, default:[]]
     preventClose: false, // [optional, default:false]
+    titleDefaultStyles: {...}
+    titleDefaultConfig: {...}
+    titleMaxLevel: 'h6' // 'h3' default (min 'h1', max 'h6')
     editorFonts : {}, // [optional, default: see description]
     contentDialog : {}, // [optional, default: see description]
     defaultForm : {}, // [optional, default: {}]
@@ -63,7 +69,7 @@ var beeConfig = {
 
 ## Parameters
 
-The following table provides a list of the **required** parameters.
+The following table provides a list of the **required** parameter for [initializing](../) Beefree SDK.
 
 <table><thead><tr><th>Parameter</th><th width="331">Description</th><th>Default</th></tr></thead><tbody><tr><td><strong>container</strong></td><td>Identifies the id of div element that contains Beefree SDK.</td><td></td></tr></tbody></table>
 

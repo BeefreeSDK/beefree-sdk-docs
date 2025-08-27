@@ -9,7 +9,7 @@ description: >-
 
 ### Overview <a href="#e7tjitffe17" id="e7tjitffe17"></a>
 
-The Brand Style endpoints enables you to manage and modify the style of email, pages, and popup templates. While the Content Defaults feature enables you to set default styles for new content elements like headings, paragraphs, and buttons, the Brand Style Management endpoint takes it a step further. It allows you to make template-wide design changes to existing templates quickly and easily, ensuring that all modules adhere to the broader design system or brand guidelines. In this article, we'll explore what this Content Services API (CSAPI) Brand Style Management endpoint is, its benefits, how to get started with it, and how it differs from Content Defaults.
+The Brand Style endpoints enables you to manage and modify the style of email, pages, and popup templates. While the [Content Defaults](../../other-customizations/appearance/content-defaults.md) feature enables you to set default styles for new content elements like headings, paragraphs, and buttons, the Brand Style Management endpoint takes it a step further. It allows you to make template-wide design changes to existing templates quickly and easily, ensuring that all modules adhere to the broader design system or brand guidelines. In this article, we'll explore what this Content Services API (CSAPI) Brand Style Management endpoint is, its benefits, how to get started with it, and how it differs from Content Defaults.
 
 ### How to Apply Styles Globally <a href="#id-7o6uselkp1bb" id="id-7o6uselkp1bb"></a>
 

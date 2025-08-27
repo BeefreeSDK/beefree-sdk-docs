@@ -74,7 +74,7 @@ advancedPermissions: {
     },
 ```
 
-Another interesting case for using advanced permissions is the possibility to set a **maximum size** **for uploads, per user**. The maximum size set per user must not exceed the **custom limitation** size set on the [Activate Custom Limitation on File Manager](../../server-side-configurations/server-side-options/services-options.md). **The default limit is 20 Mb** unless otherwise stated.\
+Another interesting case for using advanced permissions is the possibility to set a **maximum size** **for uploads, per user**. The maximum size set per user must not exceed the **custom limitation** size set on the [Activate Custom Limitation on File Manager](../../server-side-configurations/server-side-options/services-options/). **The default limit is 20 Mb** unless otherwise stated.\
 When this permission is configured, the system will check if a file exceeds the set size before uploading it; if so, Beefree SDK will return an error message, which you may customize using [Custom languages](custom-languages.md).
 
 ## **Create custom, secondary roles**
@@ -307,7 +307,7 @@ Let’s look at an example of these permissions applied to an image module. The 
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
       image: {
@@ -406,7 +406,7 @@ The following code provides an example of the `filePicker` object.
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     components: {
       filePicker: {
@@ -436,7 +436,7 @@ The following code provides an example of the `linkTypes` object.
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     components: {
       linkTypes: {
@@ -627,7 +627,7 @@ The following snippet displays an example of the `rows` object inside `advancedP
 ```javascript
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     rows: {
       toolbar: {
@@ -727,7 +727,7 @@ The following sample code displays a Rows AddOn example.
 ```javascript
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     rows: {
       addon: {
@@ -784,7 +784,7 @@ The **`columns`** object in the **Beefree SDK** lets you control the behavior an
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     columns: {
       behaviors: {
@@ -838,7 +838,7 @@ The **`tabs`** object in the **Beefree SDK** allows you to manage the visibility
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     tabs: {
       rows: {
@@ -868,7 +868,7 @@ The **`settings`** object in the **Beefree SDK** allows you to control various d
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     settings: {
       contentAreaWidth: {
@@ -934,7 +934,7 @@ The **`content`** object in the **Beefree SDK** controls the behavior and permis
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
       title: {
@@ -1032,7 +1032,7 @@ beeConfig: {
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
       text: {
@@ -1098,7 +1098,7 @@ beeConfig: {
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
       image: {
@@ -1177,7 +1177,7 @@ beeConfig: {
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
       button: {
@@ -1259,7 +1259,7 @@ beeConfig: {
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
       divider: {
@@ -1309,7 +1309,7 @@ beeConfig: {
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
       social: {
@@ -1370,7 +1370,7 @@ beeConfig: {
 <pre class="language-javascript"><code class="lang-javascript">
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
       dynamic: {
@@ -1417,7 +1417,7 @@ beeConfig: {
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
       html: {
@@ -1463,7 +1463,7 @@ beeConfig: {
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
       video: {
@@ -1522,7 +1522,7 @@ beeConfig: {
 
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
       form: {
@@ -1645,7 +1645,7 @@ You should use the Icon object to set advanced permissions when you need granula
 ```javascript
 beeConfig: {
   uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
       icons: {
@@ -1746,8 +1746,7 @@ The table below outlines the configuration elements, their data types, descripti
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
       paragraph: {
@@ -1840,8 +1839,7 @@ beeConfig: {
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
       list: {
@@ -1950,8 +1948,7 @@ beeConfig: {
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
       menu: {
@@ -2040,8 +2037,7 @@ beeConfig: {
 
 ```javascript
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
       table: {

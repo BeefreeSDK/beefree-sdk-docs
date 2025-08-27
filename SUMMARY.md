@@ -103,7 +103,9 @@
     * [Configure your AWS S3 bucket](server-side-configurations/server-side-options/storage-options/configure-your-aws-s3-bucket.md)
     * [Connect your file storage system](server-side-configurations/server-side-options/storage-options/connect-your-file-storage-system.md)
   * [Content options](server-side-configurations/server-side-options/content-options.md)
-  * [Services Options](server-side-configurations/server-side-options/services-options.md)
+  * [Services Options](server-side-configurations/server-side-options/services-options/README.md)
+    * [Image Title Attribute](server-side-configurations/server-side-options/services-options/image-title-attribute.md)
+    * [Add a Favicon to Emails](server-side-configurations/server-side-options/services-options/add-a-favicon-to-emails.md)
   * [Undo & Changes history](server-side-configurations/server-side-options/undo-and-changes-history.md)
   * [Custom JavaScript Libraries Injection](server-side-configurations/server-side-options/custom-javascript-libraries-injection.md)
 * [Custom Head HTML](server-side-configurations/custom-head-html.md)
@@ -145,6 +147,7 @@
 * [Content Area Padding](other-customizations/content-area-padding.md)
 * [Line Height](other-customizations/line-height.md)
 * [Frontend Commands](other-customizations/frontend-commands.md)
+* [Extend Title Block with H4, H5, and H6](other-customizations/extend-title-block-with-h4-h5-and-h6.md)
 
 ## Data Structures
 

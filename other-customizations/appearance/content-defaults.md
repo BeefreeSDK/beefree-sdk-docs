@@ -61,12 +61,13 @@ To set up the content styles you will need to add the `contentDefaults` object t
 ```javascript
 
 beeConfig: {
-  container: 'bee-plugin-container', // [mandatory]
+  container: 'beefree-sdk-container', // [mandatory]
   ...
   titleDefaultConfig: {
     bold: true
   },
   titleDefaultStyles: { ... },
+  titleMaxLevel: 'h6', // 'h3' default (min 'h1', max 'h6')
   contentDefaults: {
     text: { ... },
     image: { ... },
@@ -103,8 +104,9 @@ All the contents use the same pattern, but the object must match the content sch
 
 The `title` content default inside the `beeConfig` sets default properties and styling for title elements in the editor. It includes heading levels, alignment, padding, and mobile-specific styles to ensure consistency and responsiveness across different devices.
 
-```javascript
+You can use the `titleMaxLevel` parameter to extend the available header options within the builder. The default value includes H1, H2, and H3 options. You can configure `titleMaxLevel` to go up to H6. If you configure additional header options, you can use Content Defaults to set default styling for the additional headers. The [Content Defaults for Additional Title Levels](content-defaults.md#content-defaults-for-additional-title-levels) provides more details on how to achieve this.   &#x20;
 
+```javascript
 titleDefaultConfig: {
   bold: true
 },
@@ -143,6 +145,7 @@ titleDefaultStyles: {
     'letter-spacing': 0,
   },
 },
+titleMaxLevel: 'h6', // 'h3' default (min 'h1', max 'h6')
 contentDefaults: {
   title: {
     hideContentOnMobile: true,
@@ -165,6 +168,43 @@ contentDefaults: {
   }
 }
 
+```
+
+#### Content Defaults for Additional Title Levels
+
+The following code snippet shows how you can set default styles for the H4, h5, and h6 heading levels can be added in the same way as the existing levels:
+
+```json
+beeConfig: {
+    titleDefaultStyles: {
+    h1: {...},
+    h2: {...},
+    h3: {...},
+    h4: {
+      color: 'red',
+      'font-size': '13px',
+      'font-family': 'Arial, sans-serif',
+      'font-weight': '700',
+      'link-color': 'blue',
+      'line-height': '120%',
+      'text-align': 'center',
+      'direction': 'ltr',
+      'letter-spacing': 0,
+    },
+    h5: {
+      color: 'black',
+      'font-size': '12px',
+      'font-family': 'Arial, sans-serif',
+      'font-weight': '700',
+      'link-color': 'blue',
+      'line-height': '120%',
+      'text-align': 'center',
+      'direction': 'ltr',
+      'letter-spacing': 0,
+    },
+    h6: {...}
+  },
+}
 ```
 
 ### **Text**

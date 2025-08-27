@@ -1,7 +1,7 @@
 # Custom Head HTML
 
 {% hint style="info" %}
-Requires Core plan or above. Available for Email or Page Builders.&#x20;
+Requires [Core plan](https://developers.beefree.io/pricing-plans) or above. Available for Email or Page Builders.&#x20;
 {% endhint %}
 
 ## Overview <a href="#how-to-activate-the-feature" id="how-to-activate-the-feature"></a>
