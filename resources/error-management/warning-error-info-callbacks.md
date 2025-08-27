@@ -78,56 +78,6 @@ onError: function(errorMessage) { /* Implements function to handle error message
 
 ```
 
-### **Extend onError**
-
-The `extendedOnError` feedback in Beefree SDK includes API-related failures, giving you additional insights and more control over error handling. With this optional extension, you can improve debugging, frontend error handling, and track issues more effectively.
-
-You can extend `onError` to report API-related errors.&#x20;
-
-Take the following steps to extend `onError`:
-
-1. Add the `onError` callback to your beeConfig.
-2. Configure your callback function.
-3. Add `extendedOnError` to your `beeConfig` file.
-4. Set the boolean `extendedOnError` boolean to `true`.
-
-The following code snippet provides an example of how this looks in the `beeConfig`:
-
-```javascript
-const beeConfig = {
-    ...
-    extendedOnError: true // [optional, default/fallback: false]
-    ...
-};  
-```
-
-#### Error code and message <a href="#error-code-and-message" id="error-code-and-message"></a>
-
-This section lists and describes the possible error code and their corresponding codes, messages, and fixes.
-
-| Error               | Code   | Message                             | Detail                                                                                                           |
-| ------------------- | ------ | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `API_GENERIC_ERROR` | `9900` | `A generic network error occurred.` | `A network error occurred while calling service TEST` [https://beefree.io/test-url](https://beefree.io/test-url) |
-
-#### Sample Error Message
-
-```json
-{
-  code: 9900,
-  message: 'A generic network error occurred.',
-  detail: 'A network error occurred while calling service TEST https://beefree.io/test-url',
-  data: {
-    // an extract of Axios HTTP error details
-    "message":"Request failed with status code 404",
-    "status":404,
-    "code":"ERR_BAD_REQUEST",
-    "url":"https://beefree.io/test-url",
-    "method":"get",
-    "headers":{"Accept":"application/json, text/plain, */*"}
-  },
-}
-```
-
 ## `onInfo` Callback
 
 The `onInfo` callback is specifically designed for the [AI Writing Assistant AddOn](../../builder-addons/addons/partner-addons/ai-writing-assistant/) and provides real-time usage data with each response, without storing or tracking the information. It also notifies your application when a user clicks on **Apply** for any AI-generated text suggestion.
