@@ -24,7 +24,7 @@ Take the following steps:
 2. Navigate to the application where you’d like to activate favicon support.
 3. Click on the **Details** button.
 4. Navigate to **Application Configurations**.
-5. Go to the **Services** section.
+5. Go to the **Settings** section.
 6. Check the option for **Favicon enabled**.
 7. Save your configuration.
 
