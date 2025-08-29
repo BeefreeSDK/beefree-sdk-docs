@@ -20,10 +20,6 @@ This recipe covers:
 * **Design System Prompting**: How to communicate design requirements that result in cohesive, professional interfaces
 * **Architecture Communication**: Effectively describing technical requirements and integration patterns to [Lovable](https://lovable.dev/)
 
-The following video shows a visual example of **Marketing Buddy**.
-
-{% embed url="https://screen.studio/share/ryEkaMeD" %}
-
 The following diagram displays the high-level approach for building Marketing Buddy, a sample Martech app, with Lovable and Beefree SDK. &#x20;
 
 <figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
@@ -34,7 +30,7 @@ Reference the following resources for this project:
 
 * Experiment with and Remix the Lovable app [Marketing Buddy](https://beefree-sdk-demo-app-marketing-buddy.lovable.app/)
   * **Marketing Buddy app url**: [https://beefree-sdk-demo-app-marketing-buddy.lovable.app](https://beefree-sdk-demo-app-marketing-buddy.lovable.app/)
-* Reference the [GitHub repository with the project's code](https://github.com/BeefreeSDK/beefree-sdk-demo-app-marketing-buddy)
+* Reference the [GitHub repository with the project's code](https://github.com/BeefreeSDK/beefree-sdk-demo-marketing-buddy)
 
 ### Prerequisites
 
