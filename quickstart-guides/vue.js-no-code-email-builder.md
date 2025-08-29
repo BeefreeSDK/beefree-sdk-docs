@@ -256,6 +256,8 @@ Reference the [following GitHub repository](https://github.com/BeefreeSDK/beefre
 
 {% @github-files/github-code-block %}
 
+Watch the [Vue.js Video Series](../resources/videos/vue.js-video-series.md) to learn more about how to install Beefree SDK into your Vue.js application visually.
+
 ### **Prerequisites**
 
 Before you begin, make sure you:

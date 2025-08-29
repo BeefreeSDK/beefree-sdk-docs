@@ -280,6 +280,8 @@ Reference the [following GitHub repository](https://github.com/BeefreeSDK/beefre
 
 {% embed url="https://github.com/BeefreeSDK/beefree-angular-demo" %}
 
+Watch the [Angular Video Series](../resources/videos/angular-video-series.md) to learn more about how to install Beefree SDK into your Angular application visually.
+
 ## **Prerequisites**
 
 Before starting, ensure you have the following:

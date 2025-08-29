@@ -274,6 +274,8 @@ Reference the [following GitHub repository](https://github.com/BeefreeSDK/beefre
 
 {% @github-files/github-code-block url="https://github.com/BeefreeSDK/beefree-react-demo" %}
 
+Watch the [React Video Series](../resources/videos/react-video-series.md) to learn more about how to install Beefree SDK into your React application visually.
+
 ## **Prerequisites**
 
 Prior to getting started, ensure you:
