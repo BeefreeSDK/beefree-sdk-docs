@@ -1,10 +1,10 @@
 ---
 description: >-
-  Learn how to enable end users export their designs as HTML by adding a simple
-  button to your UI.
+  Learn how to enable end users to export their designs as HTML by adding a
+  simple button to your UI.
 ---
 
-# Add a “Get design HTML” Button in Beefree SDK
+# Add a “Get design HTML” Button to Beefree SDK
 
 ## Why Export HTML?
 

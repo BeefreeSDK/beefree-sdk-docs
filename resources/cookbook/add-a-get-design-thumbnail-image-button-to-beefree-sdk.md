@@ -1,10 +1,10 @@
 ---
 description: >-
-  Learn how to enable end users export their designs as an Image by adding a
+  Learn how to enable end users to export their designs as an Image by adding a
   simple button to your UI.
 ---
 
-# Add a “Get design Thumbnail image” Button in Beefree SDK
+# Add a “Get design Thumbnail image” Button to Beefree SDK
 
 ## Why Export a Thumbnail Image?
 

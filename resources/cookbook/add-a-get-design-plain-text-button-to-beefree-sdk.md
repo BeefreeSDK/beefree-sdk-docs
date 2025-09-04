@@ -4,11 +4,11 @@ description: >-
   a simple button to your UI.
 ---
 
-# Add a “Get design Plain Text” Button in Beefree SDK
+# Add a “Get design Plain Text” Button to Beefree SDK
 
 ## Why Export Plain Text?
 
-With Beefree SDK’s drag-and-drop builder, anyone can design beautiful emails without writing code. Behind the scenes, the builder [transforms the design's JSON into HTML](add-a-get-design-html-button-in-beefree-sdk.md) that can be exported to ESPs and CRMs for large-scale email campaigns. But, every email also needs a plain text version.
+With Beefree SDK’s drag-and-drop builder, anyone can design beautiful emails without writing code. Behind the scenes, the builder [transforms the design's JSON into HTML](add-a-get-design-html-button-to-beefree-sdk.md) that can be exported to ESPs and CRMs for large-scale email campaigns. But, every email also needs a plain text version.
 
 Why? Because many email clients and spam filters look for it. Some subscribers even prefer reading emails that way. Without it, carefully designed campaigns risk missing the inbox, or missing portions of audience altogether.
 

@@ -1,10 +1,10 @@
 ---
 description: >-
-  Learn how to enable end users export their designs as PDFs by adding a simple
-  button to your UI.
+  Learn how to enable end users to export their designs as PDFs by adding a
+  simple button to your UI.
 ---
 
-# Add a “Get design PDF” Button in Beefree SDK
+# Add a “Get design PDF” Button to Beefree SDK
 
 ## Why Export PDFs?
 
