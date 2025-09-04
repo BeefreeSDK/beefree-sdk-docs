@@ -16,6 +16,7 @@ These commands help you build guided experiences, automate QA checks (when coupl
 * [**Scroll**](frontend-commands.md#scroll) – Navigate to a precise part of the editor.
 * [**Highlight**](frontend-commands.md#highlight) – Briefly emphasize a target element.
 * [**Select**](frontend-commands.md#select) – Choose a row or module within the template.
+* [Tab](frontend-commands.md#tab) - Navigate to a specific tab within the builder. Options include: **Settings**, **Content**, and **Rows**.
 
 {% hint style="info" %}
 **Important:** You can use Frontend Commands to navigate to elements with the entire builder. This includes the stage and the sidebar. For example, if you want to navigate to an image on the stage missing alt text, and then indicate on the sidebar where the end user can add the alt text, both are possible with Frontend Commands.&#x20;
@@ -23,7 +24,13 @@ These commands help you build guided experiences, automate QA checks (when coupl
 
 ## Method <a href="#focus" id="focus"></a>
 
-The `execCommand` method is the central function used to trigger any Frontend Command within Beefree SDK. It allows you to execute one of the four supported actions—`focus`, `scroll`, `highlight`, or `select`—by specifying both the action name and a `target` object.
+The `execCommand` method is the central function used to trigger any Frontend Command within Beefree SDK. It allows you to execute one of the following supported actions:
+
+* `focus`
+* `scroll`
+* `highlight`
+* `select`
+* `tab`
 
 ## Target Object
 
@@ -37,6 +44,7 @@ Depending on the action being performed, certain target fields are required. The
 | `selector`                | `'.my-element-class'`          | For DOM elements (used in `focus`, `scroll`)                                    |
 | `uuid`                    | `'abc123-uuid-value'`          | For modules or rows (used in `scroll`, `highlight`, `select`)                   |
 | `row`, `column`, `module` | `row: 2, column: 1, module: 3` | For a specific module via coordinates (used in `scroll`, `highlight`, `select`) |
+| `target`                  | `settings`, `rows`, `content`  | Navigate to a specific tab within the sidebar of the builder.                   |
 
 ## How Actions Work
 
@@ -337,3 +345,60 @@ When the element can’t be located, the following error is thrown:
 
 * **What it means:** The given coordinates or UUID don’t resolve to any element in the template.
 * **How to fix:** Ensure the target exists in the current template and the row/module indexes are accurate.
+
+## Tab
+
+The tab command will open the specified tab in the Beefree SDK editor. The target must be defined as one of the supported tabs: **settings**, **rows**, or **content**.
+
+### Details
+
+The following table provides additional details on the options you can use to define a target for the tab action using the `execCommand` method.
+
+| Option   | Type   | Description                                                                          |
+| -------- | ------ | ------------------------------------------------------------------------------------ |
+| `target` | String | The tab you want to open. Supported values are: `"settings"`, `"rows"`, `"content"`. |
+
+### How to Use
+
+Take the following steps to switch to a specific tab in the Beefree SDK editor:
+
+1. Choose the target tab by specifying one of the valid values: `"settings"`, `"rows"`, or `"content"`.
+2. Call the `execCommand` method on the Beefree SDK instance.
+3. Set the action to `"tab"` and define the target.
+
+#### Examples
+
+To open the **Settings** tab:
+
+```javascript
+beeInstance.execCommand('tab', {
+  target: 'settings'
+});
+```
+
+To open the **Rows** tab:
+
+```javascript
+beeInstance.execCommand('tab', {
+  target: 'rows'
+});
+```
+
+To open the **Content** tab:
+
+```javascript
+beeInstance.execCommand('tab', {
+  target: 'content'
+});
+```
+
+#### Handle Tab Errors
+
+When working with the **tab** action, two types of errors may occur:
+
+* **Invalid Target:** An error is thrown for any value that is not one of the supported options (`settings`, `rows`, `content`).
+  * **What this means:** You passed a target that does not exist.
+  * **How to fix:** Double-check that the target is exactly `"settings"`, `"rows"`, or `"content"`.
+* **Locked or Unavailable Tab:** An error is thrown if the requested sidebar tab is currently locked or unavailable.
+  * **What this means:** The editor is preventing access to that tab due to configuration, user permissions, or current editing state.
+  * **How to fix:** Verify that the tab is enabled in the editor configuration and that you have permission to open it. Try again once it becomes available.

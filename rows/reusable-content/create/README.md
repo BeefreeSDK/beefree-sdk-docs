@@ -12,7 +12,7 @@ The [Reusable Content page](../) discusses, on a very high-level, the difference
 
 #### **User saved rows**
 
-By enabling the [Save Rows](save/implement-self-hosted-saved-rows/) feature, your end users will be able to save design elements that they want to use in other designs in the future.
+By enabling the [Save Rows](save/) feature, your end users will be able to save design elements that they want to use in other designs in the future.
 
 To display saved rows in the _Rows_ tab, add them to the list of rows available to users by leveraging the [Custom Rows feature](pre-build/implement-custom-rows.md).
 
