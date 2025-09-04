@@ -392,7 +392,7 @@ beeInstance.execCommand('tab', {
 });
 ```
 
-#### Handle Tab Errors
+### Handle Tab Errors
 
 When working with the **tab** action, two types of errors may occur:
 
