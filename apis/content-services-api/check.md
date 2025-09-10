@@ -38,9 +38,7 @@ The final URL to make the API call will be:
 
 The following table provides a comprehensive reference of all available options based on what you'd like to check.
 
-| Resource | Collection Options                                                                           |
-| -------- | -------------------------------------------------------------------------------------------- |
-| `/check` | <ul><li><code>/message</code></li><li><code>/page</code></li><li><code>/row</code></li></ul> |
+<table data-full-width="true"><thead><tr><th>Resource</th><th>Collection Options</th></tr></thead><tbody><tr><td><code>/check</code></td><td><ul><li><code>/message</code></li><li><code>/page</code></li><li><code>/row</code></li></ul></td></tr></tbody></table>
 
 ## How the Endpoints Work&#x20;
 
@@ -84,19 +82,13 @@ This section lists the each of the available check options by endpoint. The endp
 
 The following checks apply to **email (`/message/check`)**, **page (`/page/check`)**, and **row (`/row/check`)** endpoints:
 
-| Check Name                                                                               | Key                         | Description                                                                           |
-| ---------------------------------------------------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------- |
-| [Missing alt text](check.md#missing-alt-text)                                            | `missingAltText`            | Checks for images missing the `alt` attribute.                                        |
-| [Missing link on copy](check.md#missing-link-on-copy)                                    | `missingCopyLink`           | Ensures CTAs and copy elements have valid links.                                      |
-| [Missing link on images](check.md#missing-link-on-images)                                | `missingImageLink`          | Ensures images marked as clickable have links.                                        |
-| [Image overage weight](check.md#image-overage-weight)                                    | `overageImageWeight`        | Flags images that exceed size thresholds (500 KB for email and row, 700 KB for page). |
-| [Insufficient color contrast](check.md#insufficient-color-contrast-wip-not-released-yet) | `insufficientColorContrast` | Detects widgets failing WCAG 2.0 AA contrast ratios.                                  |
-| [Unreachable web link](check.md#highlight-unreachable-web-link)                          | `unreachableWebLink`        | Highlights broken or unreachable URLs.                                                |
+<table data-full-width="true"><thead><tr><th>Check Name</th><th>Key</th><th>Description</th></tr></thead><tbody><tr><td><a href="check.md#missing-alt-text">Missing alt text</a></td><td><code>missingAltText</code></td><td>Checks for images missing the <code>alt</code> attribute.</td></tr><tr><td><a href="check.md#missing-link-on-copy">Missing link on copy</a></td><td><code>missingCopyLink</code></td><td>Ensures CTAs and copy elements have valid links.</td></tr><tr><td><a href="check.md#missing-link-on-images">Missing link on images</a></td><td><code>missingImageLink</code></td><td>Ensures images marked as clickable have links.</td></tr><tr><td><a href="check.md#image-overage-weight">Image overage weight</a></td><td><code>overageImageWeight</code></td><td>Flags images that exceed size thresholds (500 KB for email and row, 700 KB for page).</td></tr><tr><td><a href="check.md#insufficient-color-contrast-wip-not-released-yet">Insufficient color contrast</a></td><td><code>insufficientColorContrast</code></td><td>Detects widgets failing WCAG 2.0 AA contrast ratios.</td></tr><tr><td><a href="check.md#highlight-unreachable-web-link">Unreachable web link</a></td><td><code>unreachableWebLink</code></td><td>Highlights broken or unreachable URLs.</td></tr></tbody></table>
 
 #### `/message/check` (Email)
 
 The following code snippet displays an example of how checks can be added to the body of the `POST` request. Test the endpoint in the [Email section](check.md#email). &#x20;
 
+{% code fullWidth="true" %}
 ```json
 {
   "checks": [
@@ -114,21 +106,17 @@ The following code snippet displays an example of how checks can be added to the
   ]
 }
 ```
+{% endcode %}
 
 **Email-specific checks:**
 
-| Check Name                                              | Key                   | Description                                                             |
-| ------------------------------------------------------- | --------------------- | ----------------------------------------------------------------------- |
-| [Missing email details](check.md#missing-email-details) | `missingDetailsEmail` | Ensures required metadata (subject, preheader, footer info) is present. |
-| [HTML overage size](check.md#html-overage-size)         | `overageHtmlWeight`   | Flags overly large HTML payloads (limit 80 KB, beautified).             |
-| [Missing headings](check.md#missing-headings)           | `missingHeadings`     | Ensures headings exist for accessibility/navigation.                    |
-| [Overage headings](check.md#overage-headings)           | `overageHeadings`     | Ensures exactly one `<h1>` exists (not missing or duplicated).          |
-| [Missing main language](check.md#missing-main-language) | `missingMainLanguage` | Verifies that a language is set in template metadata.                   |
+<table data-full-width="true"><thead><tr><th>Check Name</th><th>Key</th><th>Description</th></tr></thead><tbody><tr><td><a href="check.md#missing-email-details">Missing email details</a></td><td><code>missingDetailsEmail</code></td><td>Ensures required metadata (subject, preheader, footer info) is present.</td></tr><tr><td><a href="check.md#html-overage-size">HTML overage size</a></td><td><code>overageHtmlWeight</code></td><td>Flags overly large HTML payloads (limit 80 KB, beautified).</td></tr><tr><td><a href="check.md#missing-headings">Missing headings</a></td><td><code>missingHeadings</code></td><td>Ensures headings exist for accessibility/navigation.</td></tr><tr><td><a href="check.md#overage-headings">Overage headings</a></td><td><code>overageHeadings</code></td><td>Ensures exactly one <code>&#x3C;h1></code> exists (not missing or duplicated).</td></tr><tr><td><a href="check.md#missing-main-language">Missing main language</a></td><td><code>missingMainLanguage</code></td><td>Verifies that a language is set in template metadata.</td></tr></tbody></table>
 
 #### `/page/check` (Page)
 
 The following code snippet displays an example of how checks can be added to the body of the `POST` request. Test the endpoint in the [Page section](check.md#page).
 
+{% code fullWidth="true" %}
 ```json
 {
   "checks": [
@@ -145,20 +133,17 @@ The following code snippet displays an example of how checks can be added to the
   ]
 }
 ```
+{% endcode %}
 
 **Page-specific checks:**
 
-| Check Name                                              | Key                   | Description                                                    |
-| ------------------------------------------------------- | --------------------- | -------------------------------------------------------------- |
-| [Missing page details](check.md#missing-page-details)   | `missingDetailsPage`  | Ensures required metadata (title, description) is present.     |
-| [Missing headings](check.md#missing-headings)           | `missingHeadings`     | Ensures headings exist for accessibility/navigation.           |
-| [Overage headings](check.md#overage-headings)           | `overageHeadings`     | Ensures exactly one `<h1>` exists (not missing or duplicated). |
-| [Missing main language](check.md#missing-main-language) | `missingMainLanguage` | Verifies that a language is set in template metadata.          |
+<table data-full-width="true"><thead><tr><th>Check Name</th><th>Key</th><th>Description</th></tr></thead><tbody><tr><td><a href="check.md#missing-page-details">Missing page details</a></td><td><code>missingDetailsPage</code></td><td>Ensures required metadata (title, description) is present.</td></tr><tr><td><a href="check.md#missing-headings">Missing headings</a></td><td><code>missingHeadings</code></td><td>Ensures headings exist for accessibility/navigation.</td></tr><tr><td><a href="check.md#overage-headings">Overage headings</a></td><td><code>overageHeadings</code></td><td>Ensures exactly one <code>&#x3C;h1></code> exists (not missing or duplicated).</td></tr><tr><td><a href="check.md#missing-main-language">Missing main language</a></td><td><code>missingMainLanguage</code></td><td>Verifies that a language is set in template metadata.</td></tr></tbody></table>
 
 #### `/row/check` (Row)
 
 The following code snippet displays an example of how checks can be added to the body of the `POST` request. Test the endpoint in the [Row section](check.md#row).
 
+{% code fullWidth="true" %}
 ```json
 {
   "checks": [
@@ -171,6 +156,7 @@ The following code snippet displays an example of how checks can be added to the
   ]
 }
 ```
+{% endcode %}
 
 **Row-specific checks:**\
 All supported checks are listed in the [Common Checks Across All Endpoints section](check.md#common-checks-across-all-endpoints).
@@ -179,7 +165,7 @@ All supported checks are listed in the [Common Checks Across All Endpoints secti
 
 This section covers the Missing Alt Text check, detailing the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
 
-<table><thead><tr><th width="213.6796875">Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Warning</td></tr><tr><td><strong>Available for</strong></td><td>Email and page messages, email and page templates, rows</td></tr><tr><td><strong>Applicable widgets</strong></td><td>Image, gif, sticker, icon, social</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Warning</td></tr><tr><td><strong>Available for</strong></td><td>Email and page messages, email and page templates, rows</td></tr><tr><td><strong>Applicable widgets</strong></td><td>Image, gif, sticker, icon, social</td></tr></tbody></table>
 
 Perform this check by adding `{"category":"missingAltText"}` to your API call's request body.
 
@@ -187,6 +173,7 @@ Perform this check by adding `{"category":"missingAltText"}` to your API call's 
 
 The following JSON response shows an example of a missing alt text check that passed. This means that within the email, page, or row JSON, an instance of missing alt text was not identified, and the end user can confidently export their design knowing alt text is where it should be.
 
+{% code fullWidth="true" %}
 ```json
 {
       "type": "missingAltText",
@@ -195,11 +182,13 @@ The following JSON response shows an example of a missing alt text check that pa
        "targets": []
 }
 ```
+{% endcode %}
 
 #### Example response for a check that returned a warning
 
 The following JSON response shows an example of a missing alt text check that resulted in a warning. This means that within the email, page, or row JSON, an instance of missing alt text was identified, and the end user should resolve the missing alt text in the corresponding target prior to exporting their design.
 
+{% code fullWidth="true" %}
 ```json
                 {
                     "type": "missingAltText",
@@ -244,26 +233,17 @@ The following JSON response shows an example of a missing alt text check that re
                     ]
                 }
 ```
+{% endcode %}
 
 The following table lists and defines all the fields related to the `missingAltText` check.
 
-| Field          | Data type | Description                                                                                                           |
-| -------------- | --------- | --------------------------------------------------------------------------------------------------------------------- |
-| `type`         | string    | Check type, equal to `missingAltText`                                                                                 |
-| `targetsCount` | integer   | The number of widgets missing alt text                                                                                |
-| `checkStatus`  | string    | The status of this check: `passed` or `warning`                                                                       |
-| `targets`      | array     | The list of widgets missing alt text                                                                                  |
-| `locked`       | boolean   | If the widget missing alt text is in a locked row                                                                     |
-| `synced`       | boolean   | If the widget missing alt text is in a synced row                                                                     |
-| `uuid`         | string    | `uuid` of the row containing this widget                                                                              |
-| `widgetLabel`  | string    | Label of the widget missing alt text: filename for `icon`, url for `image`, `gif` and `sticker` and name for `social` |
-| `widgetType`   | string    | Type of the widget missing alt text: `image`, `gif`, `sticker`, `icon`, `social`                                      |
+<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>Check type, equal to <code>missingAltText</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>The number of widgets missing alt text</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>The status of this check: <code>passed</code> or <code>warning</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>The list of widgets missing alt text</td></tr><tr><td><code>locked</code></td><td>boolean</td><td>If the widget missing alt text is in a locked row</td></tr><tr><td><code>synced</code></td><td>boolean</td><td>If the widget missing alt text is in a synced row</td></tr><tr><td><code>uuid</code></td><td>string</td><td><code>uuid</code> of the row containing this widget</td></tr><tr><td><code>widgetLabel</code></td><td>string</td><td>Label of the widget missing alt text: filename for <code>icon</code>, url for <code>image</code>, <code>gif</code> and <code>sticker</code> and name for <code>social</code></td></tr><tr><td><code>widgetType</code></td><td>string</td><td>Type of the widget missing alt text: <code>image</code>, <code>gif</code>, <code>sticker</code>, <code>icon</code>, <code>social</code></td></tr></tbody></table>
 
 ### Missing Link on Copy
 
 This section covers the Missing Link on Copy check, detailing the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
 
-<table><thead><tr><th width="213.6796875">Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Warning</td></tr><tr><td><strong>Available for</strong></td><td>Email and page messages, email and page templates, rows</td></tr><tr><td><strong>Applicable widgets</strong></td><td>Button, social, menu</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Warning</td></tr><tr><td><strong>Available for</strong></td><td>Email and page messages, email and page templates, rows</td></tr><tr><td><strong>Applicable widgets</strong></td><td>Button, social, menu</td></tr></tbody></table>
 
 Perform this check by adding `{"category":"missingCopyLink"}` to your API call's request body.
 
@@ -271,6 +251,7 @@ Perform this check by adding `{"category":"missingCopyLink"}` to your API call's
 
 The following JSON response shows an example of a missing copy link check that passed. This means that within the email, page, or row JSON, an instance of a missing copy link was not identified, and the end user can confidently export their design knowing copy links are where they should be.
 
+{% code fullWidth="true" %}
 ```json
 {
       "type": "missingCopyLink",
@@ -279,11 +260,13 @@ The following JSON response shows an example of a missing copy link check that p
        "targets": []
 }
 ```
+{% endcode %}
 
 #### Example response for a check that returned a warning
 
 The following JSON response shows an example of a missing copy link check that resulted in a warning. This means that within the email, page, or row JSON, an instance of a missing copy link was identified, and the end user should resolve the missing copy link in the corresponding target prior to exporting their design.
 
+{% code fullWidth="true" %}
 ```json
                 {
                     "type": "missingCopyLink",
@@ -314,26 +297,17 @@ The following JSON response shows an example of a missing copy link check that r
                     ]
                 }
 ```
+{% endcode %}
 
 The following table lists and defines all the fields related to the `missingCopyLink` check.
 
-| Field          | Data type | Description                                                     |
-| -------------- | --------- | --------------------------------------------------------------- |
-| `type`         | string    | Check type, equal to `missingCopyLink`                          |
-| `targetsCount` | integer   | The number of widgets missing a link                            |
-| `checkStatus`  | string    | The status of this check: `passed` or `warning`                 |
-| `targets`      | array     | The list of widgets miss link                                   |
-| `locked`       | boolean   | If the widget missing link is in a locked row                   |
-| `synced`       | boolean   | If the widget missing link is in a synced row                   |
-| `uuid`         | string    | `uuid` of the row containing this widget                        |
-| `widgetLabel`  | string    | Label of the widget missing link                                |
-| `widgetType`   | string    | Type of the widget missing alt text: `button`, `menu`, `social` |
+<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>Check type, equal to <code>missingCopyLink</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>The number of widgets missing a link</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>The status of this check: <code>passed</code> or <code>warning</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>The list of widgets miss link</td></tr><tr><td><code>locked</code></td><td>boolean</td><td>If the widget missing link is in a locked row</td></tr><tr><td><code>synced</code></td><td>boolean</td><td>If the widget missing link is in a synced row</td></tr><tr><td><code>uuid</code></td><td>string</td><td><code>uuid</code> of the row containing this widget</td></tr><tr><td><code>widgetLabel</code></td><td>string</td><td>Label of the widget missing link</td></tr><tr><td><code>widgetType</code></td><td>string</td><td>Type of the widget missing alt text: <code>button</code>, <code>menu</code>, <code>social</code></td></tr></tbody></table>
 
 ### Missing Link on Images
 
 This section covers the Missing Link on Images check, detailing the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
 
-<table><thead><tr><th width="213.6796875">Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Suggestion</td></tr><tr><td><strong>Available for</strong></td><td>Email and page messages, email and page templates, rows</td></tr><tr><td><strong>Applicable widgets</strong></td><td>Image, gif, sticker, icon</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Suggestion</td></tr><tr><td><strong>Available for</strong></td><td>Email and page messages, email and page templates, rows</td></tr><tr><td><strong>Applicable widgets</strong></td><td>Image, gif, sticker, icon</td></tr></tbody></table>
 
 Perform this check by adding `{"category":"missingImageLink"}` to your API call's request body.
 
@@ -341,6 +315,7 @@ Perform this check by adding `{"category":"missingImageLink"}` to your API call'
 
 The following JSON response shows an example of a missing image link check that passed. This means that within the email, page, or row JSON, an instance of a missing image link was not identified, and the end user can confidently export their design knowing image links are where they should be.
 
+{% code fullWidth="true" %}
 ```json
 {
       "type": "missingImageLink",
@@ -349,11 +324,13 @@ The following JSON response shows an example of a missing image link check that 
        "targets": []
 }
 ```
+{% endcode %}
 
 #### Example response for a check that returned a warning
 
 The following JSON response shows an example of a missing image link check that resulted in a warning. This means that within the email, page, or row JSON, an instance of a missing image link was identified, and the end user should resolve the missing image link in the corresponding target prior to exporting their design.
 
+{% code fullWidth="true" %}
 ```json
                 {
                     "type": "missingImageLink",
@@ -391,20 +368,11 @@ The following JSON response shows an example of a missing image link check that 
                     ]
                 }
 ```
+{% endcode %}
 
 The following table lists and defines all the fields related to the `missingImageLink` check.
 
-| Field          | Data type | Description                                                                                 |
-| -------------- | --------- | ------------------------------------------------------------------------------------------- |
-| `type`         | string    | Check type, equal to `missingImageLink`                                                     |
-| `targetsCount` | integer   | The number of widgets miss link                                                             |
-| `checkStatus`  | string    | The status of this check: `passed` or `suggestion`                                          |
-| `targets`      | array     | The list of widgets miss link                                                               |
-| `locked`       | boolean   | If the widget missing link is in a locked row                                               |
-| `synced`       | boolean   | If the widget missing link is in a synced row                                               |
-| `uuid`         | string    | `uuid` of the row containing this widget                                                    |
-| `widgetLabel`  | string    | Label of the widget missing link: filename for `icon`, url for `image`, `gif` and `sticker` |
-| `widgetType`   | string    | Type of the widget missing alt text: `image`, `gif`, `sticker`, `icon`                      |
+<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>Check type, equal to <code>missingImageLink</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>The number of widgets miss link</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>The status of this check: <code>passed</code> or <code>suggestion</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>The list of widgets miss link</td></tr><tr><td><code>locked</code></td><td>boolean</td><td>If the widget missing link is in a locked row</td></tr><tr><td><code>synced</code></td><td>boolean</td><td>If the widget missing link is in a synced row</td></tr><tr><td><code>uuid</code></td><td>string</td><td><code>uuid</code> of the row containing this widget</td></tr><tr><td><code>widgetLabel</code></td><td>string</td><td>Label of the widget missing link: filename for <code>icon</code>, url for <code>image</code>, <code>gif</code> and <code>sticker</code></td></tr><tr><td><code>widgetType</code></td><td>string</td><td>Type of the widget missing alt text: <code>image</code>, <code>gif</code>, <code>sticker</code>, <code>icon</code></td></tr></tbody></table>
 
 ### Image Overage Weight
 
@@ -412,21 +380,18 @@ This section covers the Image Overage Weight check, detailing the process of add
 
 In the example detailed in this section, the weight limit is set to 500KB for emails and rows, and 700KB for pages. The "Content-Length" header in the response of HEAD requests from image, gif, sticker, icon, and social URLs is used to determine if the content size exceeds the specified limits. If the header is missing or the URL cannot be evaluated within 20 seconds, it is considered an error, and the URL is logged for review.
 
-<table><thead><tr><th width="213.6796875">Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Suggestion</td></tr><tr><td><strong>Available for</strong></td><td>Email and page messages, email and page templates, rows</td></tr><tr><td><strong>Applicable widgets</strong></td><td>Image, gif, sticker, icon, social</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Suggestion</td></tr><tr><td><strong>Available for</strong></td><td>Email and page messages, email and page templates, rows</td></tr><tr><td><strong>Applicable widgets</strong></td><td>Image, gif, sticker, icon, social</td></tr></tbody></table>
 
 Perform this check by adding `{"category":"overageImageWeight", "limit": 500}` to your API call's request body.
 
-| Field   | Data type | Description                                                   |
-| ------- | --------- | ------------------------------------------------------------- |
-| `limit` | int       | Other such limit the image weight is considered overage in KB |
+<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>limit</code></td><td>int</td><td>Other such limit the image weight is considered overage in KB</td></tr></tbody></table>
 
 #### Example response for a check that passed
 
 The following JSON response shows an example of an image weight overage check that passed. This means that within the email, page, or row JSON, an instance of a limit overage was not identified, and the end user can confidently export their design.
 
-```json
-{
-      "type": "overageImageWeight",
+<pre class="language-json" data-full-width="true"><code class="lang-json"><strong>{
+</strong>      "type": "overageImageWeight",
        "targetsCount": 0,
        "checkStatus": "passed",
        "targets": [],
@@ -434,12 +399,13 @@ The following JSON response shows an example of an image weight overage check th
        "evaluated": 13,
        "errored": 3
 }
-```
+</code></pre>
 
 #### Example response for a check that returned a warning
 
 The following JSON response shows an example of an image weight overage check that resulted in a warning. This means that within the email, page, or row JSON, an instance of an image weight overages was identified, and the end user should resolve the overage prior to exporting their design.
 
+{% code fullWidth="true" %}
 ```json
                 {
                     "type": "overageImageWeight",
@@ -492,30 +458,17 @@ The following JSON response shows an example of an image weight overage check th
                     ]
                 }
 ```
+{% endcode %}
 
 The following table lists and defines all the fields related to the `overageImageWeight` check.
 
-| Field          | Data type | Description                                                                      |
-| -------------- | --------- | -------------------------------------------------------------------------------- |
-| `type`         | string    | Check type, equal to `overageImageWeight`                                        |
-| `targetsCount` | integer   | The number of widgets miss alt text                                              |
-| `checkStatus`  | string    | The status of this check: `passed` or `warning`                                  |
-| `limit`        | integer   | The limit given in the request                                                   |
-| `evaluated`    | integer   | The number of evaluated images                                                   |
-| `errored`      | integer   | The number of images impossible to get the content-length in head requests       |
-| `targets`      | array     | The list of widgets miss alt text                                                |
-| `locked`       | boolean   | if the widget missing alt text is in a locked row                                |
-| `synced`       | boolean   | If the widget missing alt text is in a synced row                                |
-| `weight`       | float     | The weight of the image in KB                                                    |
-| `uuid`         | string    | `uuid` of the row containing this widget                                         |
-| `widgetLabel`  | string    | Label of the widget missing alt text                                             |
-| `widgetType`   | string    | Type of the widget missing alt text: `image`, `gif`, `sticker`, `icon`, `social` |
+<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>Check type, equal to <code>overageImageWeight</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>The number of widgets miss alt text</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>The status of this check: <code>passed</code> or <code>warning</code></td></tr><tr><td><code>limit</code></td><td>integer</td><td>The limit given in the request</td></tr><tr><td><code>evaluated</code></td><td>integer</td><td>The number of evaluated images</td></tr><tr><td><code>errored</code></td><td>integer</td><td>The number of images impossible to get the content-length in head requests</td></tr><tr><td><code>targets</code></td><td>array</td><td>The list of widgets miss alt text</td></tr><tr><td><code>locked</code></td><td>boolean</td><td>if the widget missing alt text is in a locked row</td></tr><tr><td><code>synced</code></td><td>boolean</td><td>If the widget missing alt text is in a synced row</td></tr><tr><td><code>weight</code></td><td>float</td><td>The weight of the image in KB</td></tr><tr><td><code>uuid</code></td><td>string</td><td><code>uuid</code> of the row containing this widget</td></tr><tr><td><code>widgetLabel</code></td><td>string</td><td>Label of the widget missing alt text</td></tr><tr><td><code>widgetType</code></td><td>string</td><td>Type of the widget missing alt text: <code>image</code>, <code>gif</code>, <code>sticker</code>, <code>icon</code>, <code>social</code></td></tr></tbody></table>
 
 ### Missing Email Details
 
 This section covers the Missing Email Details check, detailing the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
 
-<table><thead><tr><th width="213.6796875">Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Suggestion</td></tr><tr><td><strong>Available for</strong></td><td>Email messages</td></tr><tr><td><strong>Use general features in JSON</strong></td><td>Head</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Suggestion</td></tr><tr><td><strong>Available for</strong></td><td>Email messages</td></tr><tr><td><strong>Use general features in JSON</strong></td><td>Head</td></tr></tbody></table>
 
 Perform this check by adding `{"category": "missingDetailsEmail"}` to your API call's request body.
 
@@ -523,6 +476,7 @@ Perform this check by adding `{"category": "missingDetailsEmail"}` to your API c
 
 The following JSON response shows an example of a missing email details check that passed. This means that within the email, an instance of missing email details was not identified, and the end user can confidently export their design.
 
+{% code fullWidth="true" %}
 ```json
 {
       "type": "missingDetailsEmail",
@@ -531,11 +485,13 @@ The following JSON response shows an example of a missing email details check th
        "targets": [],
 }
 ```
+{% endcode %}
 
 #### Example response for a check that returned a warning
 
 The following JSON response shows an example of a missing email details check that resulted in a warning. This means that within the email, an instance of a missing email details was identified, and the end user should resolve the missing email details prior to exporting their design.
 
+{% code fullWidth="true" %}
 ```json
 {
         "type": "missingDetailsEmail",
@@ -544,22 +500,17 @@ The following JSON response shows an example of a missing email details check th
         "targets": [{"detailType": "subject"}, {"detailType": "preheader"}],
 }                            
 ```
+{% endcode %}
 
 The following table lists and defines all the fields related to the `missingDetailsEmail` check.
 
-| Field          | Data type | Description                                                 |
-| -------------- | --------- | ----------------------------------------------------------- |
-| `type`         | string    | Check type, equal to `missingDetailsEmail`                  |
-| `targetsCount` | integer   | The number of missing email details                         |
-| `checkStatus`  | string    | The status of this check: `passed` or `suggestion`          |
-| `targets`      | array     | The list of missing details                                 |
-| `detailType`   | string    | Type of the widget missing alt text: `subject`, `preheader` |
+<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>Check type, equal to <code>missingDetailsEmail</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>The number of missing email details</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>The status of this check: <code>passed</code> or <code>suggestion</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>The list of missing details</td></tr><tr><td><code>detailType</code></td><td>string</td><td>Type of the widget missing alt text: <code>subject</code>, <code>preheader</code></td></tr></tbody></table>
 
 ### Missing Page Details
 
 This section covers the Missing Page Details check, detailing the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a warning.
 
-<table><thead><tr><th width="213.6796875">Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Suggestion</td></tr><tr><td><strong>Available for</strong></td><td>Page messages</td></tr><tr><td><strong>Use general features in JSON</strong></td><td>Head</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Suggestion</td></tr><tr><td><strong>Available for</strong></td><td>Page messages</td></tr><tr><td><strong>Use general features in JSON</strong></td><td>Head</td></tr></tbody></table>
 
 Perform this check by adding `{"category": "missingDetailsPage"}` to your API call's request body.
 
@@ -567,6 +518,7 @@ Perform this check by adding `{"category": "missingDetailsPage"}` to your API ca
 
 The following JSON response shows an example of a missing page details check that passed. This means that within the page, an instance of missing page details was not identified, and the end user can confidently export their design.
 
+{% code fullWidth="true" %}
 ```json
 {
       "type": "missingDetailsPage",
@@ -575,11 +527,13 @@ The following JSON response shows an example of a missing page details check tha
        "targets": [],
 }
 ```
+{% endcode %}
 
 #### Example response for a check that returned a warning
 
 The following JSON response shows an example of a missing page details check that resulted in a warning. This means that within the page, an instance of a missing page details was identified, and the end user should resolve the missing details prior to exporting their design.
 
+{% code fullWidth="true" %}
 ```json
 {
         "type": "missingDetailsPage",
@@ -588,16 +542,11 @@ The following JSON response shows an example of a missing page details check tha
         "targets": [{"detailType": "title"}, {"detailType": "description"}],
 }
 ```
+{% endcode %}
 
 The following table lists and defines all the fields related to the `missingDetailsPage` check.
 
-| Field          | Data type | Description                                             |
-| -------------- | --------- | ------------------------------------------------------- |
-| `type`         | string    | Check type, equal to `missingDetailsPage`               |
-| `targetsCount` | integer   | The number of missing page details                      |
-| `checkStatus`  | string    | The status of this check: `passed` or `suggestion`      |
-| `targets`      | array     | The list of missing details                             |
-| `detailType`   | string    | Type of the widget missing text: `title`, `description` |
+<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>Check type, equal to <code>missingDetailsPage</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>The number of missing page details</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>The status of this check: <code>passed</code> or <code>suggestion</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>The list of missing details</td></tr><tr><td><code>detailType</code></td><td>string</td><td>Type of the widget missing text: <code>title</code>, <code>description</code></td></tr></tbody></table>
 
 ### HTML Overage Size
 
@@ -605,19 +554,17 @@ This section covers the HTML Overage Weight check, detailing the process of addi
 
 In the example detailed in this section, the weight limit is set to 80KB for emails and rows, and 700KB for pages. The given JSON HTML is translated and the weight is checked against the specified limit, with the "beautified" boolean determining whether the check applies to the beautified HTML or not. If the weight exceeds the limit, it is considered an error and should be flagged for review.
 
-<table><thead><tr><th width="213.6796875">Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Warning</td></tr><tr><td><strong>Available for</strong></td><td>Email messages</td></tr><tr><td><strong>Use general features in JSON</strong></td><td>displayConditions</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Warning</td></tr><tr><td><strong>Available for</strong></td><td>Email messages</td></tr><tr><td><strong>Use general features in JSON</strong></td><td>displayConditions</td></tr></tbody></table>
 
 Perform this check by adding `{"category":"overageHtmlWeight", "limit": 20, "beautified": true}` to your API call's request body.
 
-| Field         | Data type                                  | Description                                                    |
-| ------------- | ------------------------------------------ | -------------------------------------------------------------- |
-| `limit`       | int                                        | Other such limit the image weight is considered overage in KB. |
-| `beautified`  | <p>string</p><p>Optional, default true</p> | The weight is considered on beautified html or minified HTML   |
+<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>limit</code></td><td>int</td><td>Other such limit the image weight is considered overage in KB.</td></tr><tr><td><code>beautified</code> </td><td><p>string</p><p>Optional, default true</p></td><td>The weight is considered on beautified html or minified HTML</td></tr></tbody></table>
 
 #### Example response for a check that passed
 
 The following JSON response shows an example of an HTML weight overage check that passed. This means that within the email, an instance of a limit overage was not identified, and the end user can confidently export their design.
 
+{% code fullWidth="true" %}
 ```json
 {
                     "type": "overageHtmlWeight",
@@ -630,11 +577,13 @@ The following JSON response shows an example of an HTML weight overage check tha
                     "limit": 80
 }
 ```
+{% endcode %}
 
 #### Example response for a check that returned a warning
 
 The following JSON response shows an example of an HTML weight overage check that resulted in a warning. This means that within the email, an instance of an HTML weight overages was identified, and the end user should resolve the overage prior to exporting their design.
 
+{% code fullWidth="true" %}
 ```json
 {
                     "type": "overageHtmlWeight",
@@ -649,37 +598,23 @@ The following JSON response shows an example of an HTML weight overage check tha
                     "limit": 80
 }                         
 ```
+{% endcode %}
 
 The following table lists and defines all the fields related to the `overageHtmlWeight` check.
 
-| Field               | Data type     | Description                                                                                                |
-| ------------------- | ------------- | ---------------------------------------------------------------------------------------------------------- |
-| `type`              | string        | Check type, equal to `overageHtmlWeight`                                                                   |
-| `targetsCount`      | integer       | The number of widgets miss alt text                                                                        |
-| `checkStatus`       | string        | The status of this check: `passed` or `warning`                                                            |
-| `maxWeight`         | float or null | The max weight on the generated html files. null if the parser does not response                           |
-| `displayConditions` | boolean       | If the given json includes display conditions                                                              |
-| `processed`         | boolean       | If the check has been processed. It is `false` when the parser does not response                           |
-| `limit`             | integer       | The limit given in the request                                                                             |
-| `targets`           | array         | The list of html files generated if the parser is responding and at least 1 has the weight other the limit |
-| `weight`            | float         | The weight of the generated HTML in KB                                                                     |
-| `beautified`        | boolean       | If the coupled weight is related on beautified HTML                                                        |
+<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>Check type, equal to <code>overageHtmlWeight</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>The number of widgets miss alt text</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>The status of this check: <code>passed</code> or <code>warning</code></td></tr><tr><td><code>maxWeight</code></td><td>float or null</td><td>The max weight on the generated html files. null if the parser does not response</td></tr><tr><td><code>displayConditions</code></td><td>boolean</td><td>If the given json includes display conditions</td></tr><tr><td><code>processed</code></td><td>boolean</td><td>If the check has been processed. It is <code>false</code> when the parser does not response</td></tr><tr><td><code>limit</code></td><td>integer</td><td>The limit given in the request</td></tr><tr><td><code>targets</code></td><td>array</td><td>The list of html files generated if the parser is responding and at least 1 has the weight other the limit</td></tr><tr><td><code>weight</code></td><td>float</td><td>The weight of the generated HTML in KB</td></tr><tr><td><code>beautified</code></td><td>boolean</td><td>If the coupled weight is related on beautified HTML</td></tr></tbody></table>
 
 ### Missing Headings
 
 This check verifies the presence of headings within the template. Headings matter because they give every reader—especially people using screen readers—a clear, navigable map of a template's content and hierarchy. If no heading are found, a warning will be issued. &#x20;
 
-| Check details                | Corresponding options                             |
-| ---------------------------- | ------------------------------------------------- |
-| Type                         | Warning                                           |
-| Available for                | email and page messages, email and page templates |
-| Use data on widgets          | heading                                           |
-| Use general features in JSON | --                                                |
+<table data-full-width="true"><thead><tr><th>Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td>Type</td><td>Warning</td></tr><tr><td>Available for</td><td>email and page messages, email and page templates</td></tr><tr><td>Use data on widgets</td><td>heading</td></tr><tr><td>Use general features in JSON</td><td>--</td></tr></tbody></table>
 
 On requests in checks list: `{"category":"missingHeadings"}`
 
 #### Passed check response
 
+{% code fullWidth="true" %}
 ```json
 [
     {
@@ -699,9 +634,11 @@ On requests in checks list: `{"category":"missingHeadings"}`
     }
 ]
 ```
+{% endcode %}
 
 #### Warning check response
 
+{% code fullWidth="true" %}
 ```json
 [
     {
@@ -725,15 +662,11 @@ On requests in checks list: `{"category":"missingHeadings"}`
     }
 ]
 ```
+{% endcode %}
 
 The following table lists and defines all the fields related to the `missingHeadings` check.
 
-| Field          | Data type | Description                                     |
-| -------------- | --------- | ----------------------------------------------- |
-| `type`         | string    | check type, equal to `missingHeadings`          |
-| `targetsCount` | integer   | the number of missing headings warnings         |
-| `checkStatus`  | string    | the status of this check: `passed` or `warning` |
-| `targets`      | array     | the list of missing headings warnings           |
+<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>check type, equal to <code>missingHeadings</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>the number of missing headings warnings</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>the status of this check: <code>passed</code> or <code>warning</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>the list of missing headings warnings</td></tr></tbody></table>
 
 ### Overage Headings
 
@@ -742,17 +675,13 @@ This check verifies whether the template contains a proper **H1 heading**.
 * If **no H1** is found, a suggestion is issued.
 * If **more than one H1** is found, a suggestion is also issued.
 
-| Check details                | Corresponding options                             |
-| ---------------------------- | ------------------------------------------------- |
-| Type                         | Suggestion                                        |
-| Available for                | email and page messages, email and page templates |
-| Use data on widgets          | heading                                           |
-| Use general features in JSON | --                                                |
+<table data-full-width="true"><thead><tr><th>Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td>Type</td><td>Suggestion</td></tr><tr><td>Available for</td><td>email and page messages, email and page templates</td></tr><tr><td>Use data on widgets</td><td>heading</td></tr><tr><td>Use general features in JSON</td><td>--</td></tr></tbody></table>
 
 On requests in checks list: `{"category":"overageHeadings"}`
 
 #### Passed check response
 
+{% code fullWidth="true" %}
 ```json
 [
     {
@@ -772,9 +701,11 @@ On requests in checks list: `{"category":"overageHeadings"}`
     }
 ]
 ```
+{% endcode %}
 
 #### Suggestion check response - No H1 headings in the template
 
+{% code fullWidth="true" %}
 ```json
 [
     {
@@ -798,9 +729,11 @@ On requests in checks list: `{"category":"overageHeadings"}`
     }
 ]
 ```
+{% endcode %}
 
 #### Suggestion check response - More than one H1 headings in the template
 
+{% code fullWidth="true" %}
 ```json
 [
     {
@@ -837,37 +770,23 @@ On requests in checks list: `{"category":"overageHeadings"}`
     }
 ]
 ```
+{% endcode %}
 
 The following table lists and defines all the fields related to the `overageHeadings` check.
 
-| Field          | Data type | Description                                        |
-| -------------- | --------- | -------------------------------------------------- |
-| `type`         | string    | check type, equal to `overageHeadings`             |
-| `targetsCount` | integer   | the number of overage headings suggestions         |
-| `checkStatus`  | string    | the status of this check: `passed` or `suggestion` |
-| `targets`      | array     | the list of overage headings suggestions           |
-| `locked`       | boolean   | if the heading widget is in a locked row           |
-| `synced`       | boolean   | if the heading widget is in a synced row           |
-| `uuid`         | string    | uuid of the row containing this widget             |
-| `widgetLabel`  | string    | label of the heading widget                        |
-| `widgetType`   | string    | `heading`                                          |
-| `title`        | string    | title of the heading widget                        |
+<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>check type, equal to <code>overageHeadings</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>the number of overage headings suggestions</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>the status of this check: <code>passed</code> or <code>suggestion</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>the list of overage headings suggestions</td></tr><tr><td><code>locked</code></td><td>boolean</td><td>if the heading widget is in a locked row</td></tr><tr><td><code>synced</code></td><td>boolean</td><td>if the heading widget is in a synced row</td></tr><tr><td><code>uuid</code></td><td>string</td><td>uuid of the row containing this widget</td></tr><tr><td><code>widgetLabel</code></td><td>string</td><td>label of the heading widget</td></tr><tr><td><code>widgetType</code></td><td>string</td><td><code>heading</code></td></tr><tr><td><code>title</code></td><td>string</td><td>title of the heading widget</td></tr></tbody></table>
 
 ### Missing Main Language
 
 This check verifies the presence of the language property within the template (Settings > Metadata). The HTML language tag tells assistive technologies, like screen readers, what language the content is in, so words are pronounced correctly. If no language is set, a warning will be issued.
 
-| Check details                | Corresponding Options                             |
-| ---------------------------- | ------------------------------------------------- |
-| Type                         | Warning                                           |
-| Available for                | email and page messages, email and page templates |
-| Use data on widgets          | --                                                |
-| Use general features in JSON | head                                              |
+<table data-full-width="true"><thead><tr><th>Check details</th><th>Corresponding Options</th></tr></thead><tbody><tr><td>Type</td><td>Warning</td></tr><tr><td>Available for</td><td>email and page messages, email and page templates</td></tr><tr><td>Use data on widgets</td><td>--</td></tr><tr><td>Use general features in JSON</td><td>head</td></tr></tbody></table>
 
 On requests in checks list: `{"category":"missingMainLanguage"}`
 
 #### Passed check response
 
+{% code fullWidth="true" %}
 ```json
 [
     {
@@ -887,9 +806,11 @@ On requests in checks list: `{"category":"missingMainLanguage"}`
     }
 ]
 ```
+{% endcode %}
 
 #### Warning check response
 
+{% code fullWidth="true" %}
 ```json
 [
     {
@@ -913,15 +834,11 @@ On requests in checks list: `{"category":"missingMainLanguage"}`
     }
 ]
 ```
+{% endcode %}
 
 The following table lists and defines all the fields related to the `missingMainLanguage` check.
 
-| Field          | Data type | Description                                     |
-| -------------- | --------- | ----------------------------------------------- |
-| `type`         | string    | check type, equal to `missingMainLanguage`      |
-| `targetsCount` | integer   | the number of missing main language warnings    |
-| `checkStatus`  | string    | the status of this check: `passed` or `warning` |
-| `targets`      | array     | the list of missing main language warnings      |
+<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>check type, equal to <code>missingMainLanguage</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>the number of missing main language warnings</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>the status of this check: <code>passed</code> or <code>warning</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>the list of missing main language warnings</td></tr></tbody></table>
 
 ### Insufficient color contrast  <a href="#insufficient-color-contrast-wip-not-released-yet" id="insufficient-color-contrast-wip-not-released-yet"></a>
 
@@ -932,17 +849,13 @@ According to **WCAG 2.0 Level AA**:
 * **Normal text** must have a contrast ratio of at least **4.5:1**.
 * **Large-scale text** (≥ 24px, or ≥ 19px bold) must have a contrast ratio of at least **3:1**.
 
-| Check details                | Corresponding options                                   |
-| ---------------------------- | ------------------------------------------------------- |
-| Type                         | Warning                                                 |
-| Available for                | email and page messages, email and page templates, rows |
-| Use data on widgets          | button, heading                                         |
-| Use general features in JSON | --                                                      |
+<table data-full-width="true"><thead><tr><th>Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td>Type</td><td>Warning</td></tr><tr><td>Available for</td><td>email and page messages, email and page templates, rows</td></tr><tr><td>Use data on widgets</td><td>button, heading</td></tr><tr><td>Use general features in JSON</td><td>--</td></tr></tbody></table>
 
 On requests in checks list: `{"category":"insufficientColorContrast"}`
 
 #### Passed check response
 
+{% code fullWidth="true" %}
 ```json
 [
     {
@@ -962,9 +875,11 @@ On requests in checks list: `{"category":"insufficientColorContrast"}`
     }
 ]
 ```
+{% endcode %}
 
 #### Warning check response - More than one color contrast issue in the template
 
+{% code fullWidth="true" %}
 ```json
 [
     {
@@ -1030,25 +945,11 @@ On requests in checks list: `{"category":"insufficientColorContrast"}`
     },
 ]
 ```
+{% endcode %}
 
 The following table lists and defines all the fields related to the `insufficientColorContrast` check.
 
-| Field             | Data type | Description                                                                                                                   |
-| ----------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `type`            | string    | check type, equal to `insufficientColorContrast`                                                                              |
-| `targetsCount`    | integer   | the number of widgets with warnings                                                                                           |
-| `checkStatus`     | string    | the status of this check: `passed` or `warning`                                                                               |
-| `targets`         | array     | the list of widgets with warnings                                                                                             |
-| `locked`          | boolean   | if the widget is in a locked row                                                                                              |
-| `synced`          | boolean   | if the widget is in a synced row                                                                                              |
-| `uuid`            | string    | uuid of the row containing this widget                                                                                        |
-| `widgetLabel`     | string    | label of the widget                                                                                                           |
-| `widgetType`      | string    | `button`, `heading`                                                                                                           |
-| `colors`          | array     | list of color pairs with warnings. Each element contains the following fields: `backgroundColor, color, contrastRatio, label` |
-| `backgroundColor` | string    | color in hexadecimal format                                                                                                   |
-| `color`           | string    | color in hexadecimal format                                                                                                   |
-| `contrastRatio`   | float     | contrast ratio between `color` and `backgroundColor`                                                                          |
-| `label`           | string    | description of the color pairs                                                                                                |
+<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>check type, equal to <code>insufficientColorContrast</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>the number of widgets with warnings</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>the status of this check: <code>passed</code> or <code>warning</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>the list of widgets with warnings</td></tr><tr><td><code>locked</code></td><td>boolean</td><td>if the widget is in a locked row</td></tr><tr><td><code>synced</code></td><td>boolean</td><td>if the widget is in a synced row</td></tr><tr><td><code>uuid</code></td><td>string</td><td>uuid of the row containing this widget</td></tr><tr><td><code>widgetLabel</code></td><td>string</td><td>label of the widget</td></tr><tr><td><code>widgetType</code></td><td>string</td><td><code>button</code>, <code>heading</code></td></tr><tr><td><code>colors</code></td><td>array</td><td>list of color pairs with warnings. Each element contains the following fields: <code>backgroundColor, color, contrastRatio, label</code></td></tr><tr><td><code>backgroundColor</code></td><td>string</td><td>color in hexadecimal format</td></tr><tr><td><code>color</code></td><td>string</td><td>color in hexadecimal format</td></tr><tr><td><code>contrastRatio</code></td><td>float</td><td>contrast ratio between <code>color</code> and <code>backgroundColor</code></td></tr><tr><td><code>label</code></td><td>string</td><td>description of the color pairs</td></tr></tbody></table>
 
 ### Highlight unreachable web link
 
@@ -1063,17 +964,13 @@ If a link cannot be assessed, it is added to the **ignored** array. Each ignored
 * **notApplicable** – the check did not apply to this case
 * **urlValidation** – the URL itself was invalid
 
-| Check details                | Corresponding options                                   |
-| ---------------------------- | ------------------------------------------------------- |
-| Type                         | Warning                                                 |
-| Available for                | email and page messages, email and page templates, rows |
-| Use data on widgets          | button, social, menu, image, gif, sticker, icon         |
-| Use general features in JSON | --                                                      |
+<table data-full-width="true"><thead><tr><th>Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td>Type</td><td>Warning</td></tr><tr><td>Available for</td><td>email and page messages, email and page templates, rows</td></tr><tr><td>Use data on widgets</td><td>button, social, menu, image, gif, sticker, icon</td></tr><tr><td>Use general features in JSON</td><td>--</td></tr></tbody></table>
 
 On requests in checks list: `{"category":"unreachableWebLink"}`
 
 #### Passed check response
 
+{% code fullWidth="true" %}
 ```json
 {
       "type": "unreachableWebLink",
@@ -1103,9 +1000,11 @@ On requests in checks list: `{"category":"unreachableWebLink"}`
        ]
 }
 ```
+{% endcode %}
 
 #### Warning check response
 
+{% code fullWidth="true" %}
 ```json
 {
     "type": "unreachableWebLink",
@@ -1144,23 +1043,11 @@ On requests in checks list: `{"category":"unreachableWebLink"}`
     ]
 }
 ```
+{% endcode %}
 
 The following table lists and defines all the fields related to the `unreachableWebLink` check.
 
-| Field          | Data type | Description                                                                                                                     |
-| -------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `type`         | string    | check type, equal to `unreachableWebLink`                                                                                       |
-| `targetsCount` | integer   | the number of unreachable web links                                                                                             |
-| `checkStatus`  | string    | the status of this check: `passed` or `warning`                                                                                 |
-| `targets`      | array     | the list of unreachable web links                                                                                               |
-| `passed`       | array     | the list of reachable web links                                                                                                 |
-| `ignored`      | array     | the list of ignored links                                                                                                       |
-| `locked`       | boolean   | if the link is in a locked row                                                                                                  |
-| `synced`       | boolean   | if the link is in a synced row                                                                                                  |
-| `uuid`         | string    | uuid of the widget containing the link                                                                                          |
-| `widgetLabel`  | string    | label of the element in the widget containing the link                                                                          |
-| `widgetType`   | string    | type of the widget: `button`, `menu`, `social`, `image`, `gif`, `sticker`, `icon`                                               |
-| `reasons`      | array     | For ignored elements, one or more of the following values: `missingChecked`, `missingRelated`, `notApplicable`, `urlValidation` |
+<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>check type, equal to <code>unreachableWebLink</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>the number of unreachable web links</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>the status of this check: <code>passed</code> or <code>warning</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>the list of unreachable web links</td></tr><tr><td><code>passed</code></td><td>array</td><td>the list of reachable web links</td></tr><tr><td><code>ignored</code></td><td>array</td><td>the list of ignored links</td></tr><tr><td><code>locked</code></td><td>boolean</td><td>if the link is in a locked row</td></tr><tr><td><code>synced</code></td><td>boolean</td><td>if the link is in a synced row</td></tr><tr><td><code>uuid</code></td><td>string</td><td>uuid of the widget containing the link</td></tr><tr><td><code>widgetLabel</code></td><td>string</td><td>label of the element in the widget containing the link</td></tr><tr><td><code>widgetType</code></td><td>string</td><td>type of the widget: <code>button</code>, <code>menu</code>, <code>social</code>, <code>image</code>, <code>gif</code>, <code>sticker</code>, <code>icon</code></td></tr><tr><td><code>reasons</code></td><td>array</td><td>For ignored elements, one or more of the following values: <code>missingChecked</code>, <code>missingRelated</code>, <code>notApplicable</code>, <code>urlValidation</code></td></tr></tbody></table>
 
 ## Frontend Visual Feedback and Cues
 
@@ -1371,7 +1258,7 @@ This section lists and describes each of the Check endpoints. You can use this s
 This section includes details on how to make an API call using the email check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="message-check" path="/v1/message/check" method="post" %}
-[OpenAPI message-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/a0a803fcab82fc94a75d76e02422bbaee4b3d159b979391ed8095e475d723f49.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250910%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250910T191643Z&X-Amz-Expires=172800&X-Amz-Signature=6201571f968db4c0af8c6ddd392191fc433b3b4aa207d015c6cbc43e6e656ee1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI message-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/a0a803fcab82fc94a75d76e02422bbaee4b3d159b979391ed8095e475d723f49.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250910%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250910T193701Z&X-Amz-Expires=172800&X-Amz-Signature=aad443b328099b9f70e4d215b7486415e179623745940e188967bc051e32a74f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
@@ -1573,7 +1460,7 @@ Reference the following example email response:
 This section includes details on how to make an API call using the page check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="page-check" path="/v1/page/check" method="post" %}
-[OpenAPI page-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/4308febd44d915cc101689a737e2381eb1c6723b5e3d523e010547c938a72ba9.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250910%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250910T191643Z&X-Amz-Expires=172800&X-Amz-Signature=e7d2cafd492dbcb39e7a942eb6e4b11c5b2f82341360645c09ccafcf7266a152&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI page-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/4308febd44d915cc101689a737e2381eb1c6723b5e3d523e010547c938a72ba9.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250910%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250910T193701Z&X-Amz-Expires=172800&X-Amz-Signature=f561b3f3def19f20014814a91044886cfa0b7eda4dafe424ecd6d52c8c7e96ee&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
@@ -1758,7 +1645,7 @@ Reference an example page response:
 This section includes details on how to make an API call using the row check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="row-check" path="/v1/row/check" method="post" %}
-[OpenAPI row-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/fd96add5eb3171c8641c68e85b13ca24fd76b94debf20b7a3b25a7b5e4c01264.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250910%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250910T191643Z&X-Amz-Expires=172800&X-Amz-Signature=e355dcb0cf78331f00ac27e87319536c4c5ae468586e09b6cb5d3cc6630a731b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI row-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/fd96add5eb3171c8641c68e85b13ca24fd76b94debf20b7a3b25a7b5e4c01264.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250910%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250910T193701Z&X-Amz-Expires=172800&X-Amz-Signature=1c99d099f986ec24caa065ae011393b3d5ee890898e04c29f29f01782ca8099c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
