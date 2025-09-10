@@ -4,6 +4,10 @@ description: Learn more about how to use the Check endpoints.
 
 # Check
 
+{% hint style="info" %}
+Check endpoints are part of the [Content Services API](./). The Content Services API is available on [Beefree SDK plans that are Essentials or above](https://developers.beefree.io/pricing-plans).
+{% endhint %}
+
 ## Overview
 
 The Check group consists of three endpoints that scan a template's JSON or a row's JSON, to identify and report critical design elements that are missing. With these endpoints, you can bring design QA functionality into your application. They automatically check a design for common mistakes (including missing links, missing alt text, overly large images, or HTML file sizes that might cause your users' emails to get clipped in Gmail). This is possible through a `POST` request where you define the `language`, types of `checks` to perform, and the `template` or `row` JSON to check. The response will report any instances within the JSON where an item is missing, a limit is exceeded, and so on. It’ll also include the location (called `target` in the response body) of the item that needs attention within the JSON. For example, the `uuid` of an image module that is missing alt text. &#x20;
@@ -14,49 +18,46 @@ Overall, the Check endpoints identify critical design elements, while [Frontend 
 
 For a comprehensive list of all the available checks, reference the [Available Checks section](check.md#available-checks) of this page.&#x20;
 
+### Available Collection Values for Check Endpoints
+
+The following table lists the collection values available in this category of endpoints, and their corresponding collection options.
+
+Prior to referencing the table, the following example shows how you can replace the **{collection}** placeholder based on the type of content you'd like to export.
+
+#### How to Replace the {collection} Placeholder
+
+The following example URL has a **{collection}** placeholder. This placeholder needs to be filled in with a **Collection Option** prior to making an API call.
+
+`https://api.getbee.io/v1/{collection}/check`
+
+As an example, if you'd like to check an email's HTML using this endpoint, replace **{collection}** with **message**.
+
+The final URL to make the API call will be:
+
+`https://api.getbee.io/v1/message/check`
+
+The following table provides a comprehensive reference of all available options based on what you'd like to check.
+
+| Resource | Collection Options                                                                           |
+| -------- | -------------------------------------------------------------------------------------------- |
+| `/check` | <ul><li><code>/message</code></li><li><code>/page</code></li><li><code>/row</code></li></ul> |
+
 ## How the Endpoints Work&#x20;
 
 The Check endpoints accept three parameters in the request body: `languages`, `checks`, and `template` or `row`. Reference the descriptions for each parameter below:
 
 * `languages`: Define the language of the template.
-* `checks`: Define the checks you want to perform on the template or row JSON. Do this by adding the category, the check, and the details for the check if applicable. The following code snippet displays an example of this.
-
-```json
-"checks": [
-    {
-        "category": "missingAltText" // Checks for images missing the 'alt' attribute for accessibility.
-    },
-    {
-        "category": "missingImageLink" // Ensures that clickable images have a valid href/link target.
-    },
-    {
-        "category": "missingCopyLink" // Validates that "Copy" CTAs (like copy-to-clipboard buttons) are correctly linked or wired.
-    },
-    {
-        "category": "overageImageWeight", // Flags images whose file size exceeds the limit.
-        "limit": 500 // Size limit in kilobytes (KB). Images above this threshold trigger a warning.
-    },
-    {
-        "category": "missingDetailsEmail" // Checks that required email details (e.g. footer info, contact address) are included in the template.
-    },
-    {
-        "category": "overageHtmlWeight", // Detects if the total HTML weight is too large.
-        "limit": 80, // Maximum allowed HTML size in kilobytes (KB).
-        "beautified": true // Indicates the HTML should be beautified (formatted) before measuring its size.
-    }
-]
-```
-
+* `checks`: Define the checks you want to perform on the template or row JSON. Do this by adding the category, the check, and the details for the check if applicable.
 * `template` or `row`: Include the JSON for either an email template, a page template, or a row. This is the JSON that will be checked in ways defined in the checks section of the `POST` request.
 
 {% hint style="info" %}
-**IMPORTANT:** While the example in this section is for an email template, you can use these endpoints to provide feedback on:
+**IMPORTANT:** This section includes a list of checks you can perform for the following designs:
 
 * [Email designs](check.md#email)
 * [Page designs](check.md#page)
 * [Rows within designs](broken-reference)
 
-The [Check Endpoints section](check.md#check-endpoints) provides both an interactive testing environment for these endpoints, and example request bodies you can use to get started with each of the three Check endpoints.
+The [Check Endpoints section](check.md#check-endpoints) provides both an interactive testing environment for testing the checks and endpoints, and example request bodies you can use to get started with each of the three Check endpoints.
 {% endhint %}
 
 ### Authentication
@@ -73,15 +74,106 @@ Reference the available checks you can perform using the Check endpoints in this
 
 This section covers the available checks you can perform using these endpoints. Each check listed in this section will include which endpoints it applies to, how it looks in an example API request, and how it looks in an example response. It also explains each field and includes its corresponding data type and description.&#x20;
 
-Comprehensively, across all endpoints, the available checks are the following:
+Comprehensively, across all endpoints, the available checks are listed in the [Available Checks by Endpoint section](check.md#available-checks-by-endpoint).
 
-* [Missing alt text](check.md#missing-alt-text): Shown as `missingAltText` in requests and responses.&#x20;
-* [Missing link on copy](check.md#missing-link-on-copy): Shown as `missingCopyLink` in requests and responses.&#x20;
-* [Missing link on images](check.md#missing-link-on-images): Shown as `missingImageLink` in requests and responses.&#x20;
-* [Image overage weight](check.md#image-overage-weight): Shown as `overageImageWeight` in requests and responses.&#x20;
-* [Missing email details](check.md#missing-email-details): Shown as `missingEmailDetail` in requests and responses.&#x20;
-* [Missing page details](check.md#missing-page-details): Shown as `missingDetailsPage` in requests and responses&#x20;
-* [HTML overage size:](check.md#html-overage-size) Shown as `overageHtmlWeight` in requests and responses.
+### Available Checks by Endpoint
+
+This section lists the each of the available check options by endpoint. The endpoints are `/message/check`, `/page/check`, and `/row/check`.
+
+#### Common Checks Across All Endpoints
+
+The following checks apply to **email (`/message/check`)**, **page (`/page/check`)**, and **row (`/row/check`)** endpoints:
+
+| Check Name                                                                               | Key                         | Description                                                                           |
+| ---------------------------------------------------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------- |
+| [Missing alt text](check.md#missing-alt-text)                                            | `missingAltText`            | Checks for images missing the `alt` attribute.                                        |
+| [Missing link on copy](check.md#missing-link-on-copy)                                    | `missingCopyLink`           | Ensures CTAs and copy elements have valid links.                                      |
+| [Missing link on images](check.md#missing-link-on-images)                                | `missingImageLink`          | Ensures images marked as clickable have links.                                        |
+| [Image overage weight](check.md#image-overage-weight)                                    | `overageImageWeight`        | Flags images that exceed size thresholds (500 KB for email and row, 700 KB for page). |
+| [Insufficient color contrast](check.md#insufficient-color-contrast-wip-not-released-yet) | `insufficientColorContrast` | Detects widgets failing WCAG 2.0 AA contrast ratios.                                  |
+| [Unreachable web link](check.md#highlight-unreachable-web-link)                          | `unreachableWebLink`        | Highlights broken or unreachable URLs.                                                |
+
+#### `/message/check` (Email)
+
+The following code snippet displays an example of how checks can be added to the body of the `POST` request. Test the endpoint in the [Email section](check.md#email). &#x20;
+
+```json
+{
+  "checks": [
+    { "category": "missingAltText" },
+    { "category": "missingImageLink" },
+    { "category": "missingCopyLink" },
+    { "category": "overageImageWeight", "limit": 500 },
+    { "category": "missingDetailsEmail" },
+    { "category": "overageHtmlWeight", "limit": 80, "beautified": true },
+    { "category": "missingHeadings" },
+    { "category": "overageHeadings" },
+    { "category": "missingMainLanguage" },
+    { "category": "unreachableWebLink" },
+    { "category": "insufficientColorContrast" }
+  ]
+}
+```
+
+**Email-specific checks:**
+
+| Check Name                                              | Key                   | Description                                                             |
+| ------------------------------------------------------- | --------------------- | ----------------------------------------------------------------------- |
+| [Missing email details](check.md#missing-email-details) | `missingDetailsEmail` | Ensures required metadata (subject, preheader, footer info) is present. |
+| [HTML overage size](check.md#html-overage-size)         | `overageHtmlWeight`   | Flags overly large HTML payloads (limit 80 KB, beautified).             |
+| [Missing headings](check.md#missing-headings)           | `missingHeadings`     | Ensures headings exist for accessibility/navigation.                    |
+| [Overage headings](check.md#overage-headings)           | `overageHeadings`     | Ensures exactly one `<h1>` exists (not missing or duplicated).          |
+| [Missing main language](check.md#missing-main-language) | `missingMainLanguage` | Verifies that a language is set in template metadata.                   |
+
+#### `/page/check` (Page)
+
+The following code snippet displays an example of how checks can be added to the body of the `POST` request. Test the endpoint in the [Page section](check.md#page).
+
+```json
+{
+  "checks": [
+    { "category": "missingAltText" },
+    { "category": "missingImageLink" },
+    { "category": "missingCopyLink" },
+    { "category": "overageImageWeight", "limit": 700 },
+    { "category": "missingDetailsPage" },
+    { "category": "missingHeadings" },
+    { "category": "overageHeadings" },
+    { "category": "missingMainLanguage" },
+    { "category": "unreachableWebLink" },
+    { "category": "insufficientColorContrast" }
+  ]
+}
+```
+
+**Page-specific checks:**
+
+| Check Name                                              | Key                   | Description                                                    |
+| ------------------------------------------------------- | --------------------- | -------------------------------------------------------------- |
+| [Missing page details](check.md#missing-page-details)   | `missingDetailsPage`  | Ensures required metadata (title, description) is present.     |
+| [Missing headings](check.md#missing-headings)           | `missingHeadings`     | Ensures headings exist for accessibility/navigation.           |
+| [Overage headings](check.md#overage-headings)           | `overageHeadings`     | Ensures exactly one `<h1>` exists (not missing or duplicated). |
+| [Missing main language](check.md#missing-main-language) | `missingMainLanguage` | Verifies that a language is set in template metadata.          |
+
+#### `/row/check` (Row)
+
+The following code snippet displays an example of how checks can be added to the body of the `POST` request. Test the endpoint in the [Row section](check.md#row).
+
+```json
+{
+  "checks": [
+    { "category": "missingAltText" },
+    { "category": "missingImageLink" },
+    { "category": "missingCopyLink" },
+    { "category": "overageImageWeight", "limit": 500 },
+    { "category": "unreachableWebLink" },
+    { "category": "insufficientColorContrast" }
+  ]
+}
+```
+
+**Row-specific checks:**\
+All supported checks are listed in the [Common Checks Across All Endpoints section](check.md#common-checks-across-all-endpoints).
 
 ### Missing Alt Text
 
@@ -573,9 +665,506 @@ The following table lists and defines all the fields related to the `overageHtml
 | `weight`            | float         | The weight of the generated HTML in KB                                                                     |
 | `beautified`        | boolean       | If the coupled weight is related on beautified HTML                                                        |
 
+### Missing Headings
+
+This check verifies the presence of headings within the template. Headings matter because they give every reader—especially people using screen readers—a clear, navigable map of a template's content and hierarchy. If no heading are found, a warning will be issued. &#x20;
+
+| Check details                | Corresponding options                             |
+| ---------------------------- | ------------------------------------------------- |
+| Type                         | Warning                                           |
+| Available for                | email and page messages, email and page templates |
+| Use data on widgets          | heading                                           |
+| Use general features in JSON | --                                                |
+
+On requests in checks list: `{"category":"missingHeadings"}`
+
+#### Passed check response
+
+```json
+[
+    {
+        "language": "default",
+        "checks": [
+            {
+                "type": "missingHeadings",
+                "targetsCount": 0,
+                "checkStatus": "passed",
+                "targets": []
+            }
+        ],
+        "checksFailedCount": 0,
+        "checksWarningCount": 0,
+        "checksSuggestionCount": 0,
+        "status": "passed"
+    }
+]
+```
+
+#### Warning check response
+
+```json
+[
+    {
+        "language": "default",
+        "checks": [
+            {
+                "type": "missingHeadings",
+                "targetsCount": 1,
+                "checkStatus": "warning",
+                "targets": [
+                    {
+                        "detailType": "no-heading"
+                    }
+                ]
+            }
+        ],
+        "checksFailedCount": 1,
+        "checksWarningCount": 1,
+        "checksSuggestionCount": 0,
+        "status": "warning"
+    }
+]
+```
+
+The following table lists and defines all the fields related to the `missingHeadings` check.
+
+| Field          | Data type | Description                                     |
+| -------------- | --------- | ----------------------------------------------- |
+| `type`         | string    | check type, equal to `missingHeadings`          |
+| `targetsCount` | integer   | the number of missing headings warnings         |
+| `checkStatus`  | string    | the status of this check: `passed` or `warning` |
+| `targets`      | array     | the list of missing headings warnings           |
+
+### Overage Headings
+
+This check verifies whether the template contains a proper **H1 heading**.
+
+* If **no H1** is found, a suggestion is issued.
+* If **more than one H1** is found, a suggestion is also issued.
+
+| Check details                | Corresponding options                             |
+| ---------------------------- | ------------------------------------------------- |
+| Type                         | Suggestion                                        |
+| Available for                | email and page messages, email and page templates |
+| Use data on widgets          | heading                                           |
+| Use general features in JSON | --                                                |
+
+On requests in checks list: `{"category":"overageHeadings"}`
+
+#### Passed check response
+
+```json
+[
+    {
+        "language": "default",
+        "checks": [
+            {
+                "type": "overageHeadings",
+                "targetsCount": 0,
+                "checkStatus": "passed",
+                "targets": []
+            }
+        ],
+        "checksFailedCount": 0,
+        "checksWarningCount": 0,
+        "checksSuggestionCount": 0,
+        "status": "passed"
+    }
+]
+```
+
+#### Suggestion check response - No H1 headings in the template
+
+```json
+[
+    {
+        "language": "default",
+        "checks": [
+            {
+                "type": "overageHeadings",
+                "targetsCount": 1,
+                "checkStatus": "suggestion",
+                "targets": [
+                    {
+                        "detailType": "no-h1-heading"
+                    }
+                ]
+            }
+        ],
+        "checksFailedCount": 1,
+        "checksWarningCount": 0,
+        "checksSuggestionCount": 1,
+        "status": "suggestion"
+    }
+]
+```
+
+#### Suggestion check response - More than one H1 headings in the template
+
+```json
+[
+    {
+        "language": "default",
+        "checks": [
+            {
+                "type": "overageHeadings",
+                "targetsCount": 2,
+                "checkStatus": "suggestion",
+                "targets": [
+                    {
+                        "uuid": "5ea9388b-0dc5-4354-917d-638442bf63d2",
+                        "widgetType": "heading",
+                        "widgetLabel": "Title 1",
+                        "locked": false,
+                        "synced": false,
+                        "title": "h1"
+                    },
+                    {
+                        "uuid": "463d7acb-2e47-4b97-946b-8cd443af8eb0",
+                        "widgetType": "heading",
+                        "widgetLabel": "Title 2",
+                        "locked": false,
+                        "synced": false,
+                        "title": "h1"
+                    }
+                ]
+            }
+        ],
+        "checksFailedCount": 2,
+        "checksWarningCount": 0,
+        "checksSuggestionCount": 2,
+        "status": "suggestion"
+    }
+]
+```
+
+The following table lists and defines all the fields related to the `overageHeadings` check.
+
+| Field          | Data type | Description                                        |
+| -------------- | --------- | -------------------------------------------------- |
+| `type`         | string    | check type, equal to `overageHeadings`             |
+| `targetsCount` | integer   | the number of overage headings suggestions         |
+| `checkStatus`  | string    | the status of this check: `passed` or `suggestion` |
+| `targets`      | array     | the list of overage headings suggestions           |
+| `locked`       | boolean   | if the heading widget is in a locked row           |
+| `synced`       | boolean   | if the heading widget is in a synced row           |
+| `uuid`         | string    | uuid of the row containing this widget             |
+| `widgetLabel`  | string    | label of the heading widget                        |
+| `widgetType`   | string    | `heading`                                          |
+| `title`        | string    | title of the heading widget                        |
+
+### Missing Main Language
+
+This check verifies the presence of the language property within the template (Settings > Metadata). The HTML language tag tells assistive technologies, like screen readers, what language the content is in, so words are pronounced correctly. If no language is set, a warning will be issued.
+
+| Check details                | Corresponding Options                             |
+| ---------------------------- | ------------------------------------------------- |
+| Type                         | Warning                                           |
+| Available for                | email and page messages, email and page templates |
+| Use data on widgets          | --                                                |
+| Use general features in JSON | head                                              |
+
+On requests in checks list: `{"category":"missingMainLanguage"}`
+
+#### Passed check response
+
+```json
+[
+    {
+        "language": "default",
+        "checks": [
+            {
+                "type": "missingMainLanguage",
+                "targetsCount": 0,
+                "checkStatus": "passed",
+                "targets": []
+            }
+        ],
+        "checksFailedCount": 0,
+        "checksWarningCount": 0,
+        "checksSuggestionCount": 0,
+        "status": "passed"
+    }
+]
+```
+
+#### Warning check response
+
+```json
+[
+    {
+        "language": "default",
+        "checks": [
+            {
+                "type": "missingMainLanguage",
+                "targetsCount": 1,
+                "checkStatus": "warning",
+                "targets": [
+                    {
+                        "detailType": "no-main-language"
+                    }
+                ]
+            }
+        ],
+        "checksFailedCount": 1,
+        "checksWarningCount": 1,
+        "checksSuggestionCount": 0,
+        "status": "warning"
+    }
+]
+```
+
+The following table lists and defines all the fields related to the `missingMainLanguage` check.
+
+| Field          | Data type | Description                                     |
+| -------------- | --------- | ----------------------------------------------- |
+| `type`         | string    | check type, equal to `missingMainLanguage`      |
+| `targetsCount` | integer   | the number of missing main language warnings    |
+| `checkStatus`  | string    | the status of this check: `passed` or `warning` |
+| `targets`      | array     | the list of missing main language warnings      |
+
+### Insufficient color contrast  <a href="#insufficient-color-contrast-wip-not-released-yet" id="insufficient-color-contrast-wip-not-released-yet"></a>
+
+This check identifies color contrast issues in selected widgets within the template. If one or more issues are detected, a warning is issued.
+
+According to **WCAG 2.0 Level AA**:
+
+* **Normal text** must have a contrast ratio of at least **4.5:1**.
+* **Large-scale text** (≥ 24px, or ≥ 19px bold) must have a contrast ratio of at least **3:1**.
+
+| Check details                | Corresponding options                                   |
+| ---------------------------- | ------------------------------------------------------- |
+| Type                         | Warning                                                 |
+| Available for                | email and page messages, email and page templates, rows |
+| Use data on widgets          | button, heading                                         |
+| Use general features in JSON | --                                                      |
+
+On requests in checks list: `{"category":"insufficientColorContrast"}`
+
+#### Passed check response
+
+```json
+[
+    {
+        "language": "default",
+        "checks": [
+            {
+                "type": "insufficientColorContrast",
+                "targetsCount": 0,
+                "checkStatus": "passed",
+                "targets": []
+            }
+        ],
+        "checksFailedCount": 0,
+        "checksWarningCount": 0,
+        "checksSuggestionCount": 0,
+        "status": "passed"
+    }
+]
+```
+
+#### Warning check response - More than one color contrast issue in the template
+
+```json
+[
+    {
+        "checks": [
+            {
+                "checkStatus": "warning",
+                "targets": [
+                    {
+                        "colors": [
+                            {
+                                "backgroundColor": "#5aff47",
+                                "color": "#ff0000",
+                                "contrastRatio": 3.01,
+                                "label": "hover",
+                            },
+                        ],
+                        "locked": False,
+                        "synced": False,
+                        "uuid": "7e1fd777-f64f-45a9-8a96-685694c77d60",
+                        "widgetLabel": "Button 1",
+                        "widgetType": "button",
+                    },
+                    {
+                        "colors": [
+                            {
+                                "backgroundColor": "#5aff47",
+                                "color": "#ff0000",
+                                "contrastRatio": 3.01,
+                                "label": "default",
+                            },
+                        ],
+                        "locked": False,
+                        "synced": False,
+                        "uuid": "fd4b8232-43b2-4f78-b322-4d3c21b68d21",
+                        "widgetLabel": "Button 2",
+                        "widgetType": "button",
+                    },
+                    {
+                        "colors": [
+                            {
+                                "backgroundColor": "#5aff47",
+                                "color": "#ff0000",
+                                "contrastRatio": 3.01,
+                                "label": "default",
+                            },
+                        ],
+                        "locked": False,
+                        "synced": False,
+                        "uuid": "4a3a0049-f236-44dd-b4b8-4896ffbc15d6",
+                        "widgetLabel": "Heading 1",
+                        "widgetType": "heading",
+                    },
+                ],
+                "targetsCount": 3,
+                "type": "insufficientColorContrast",
+            },
+        ],
+        "checksFailedCount": 3,
+        "checksSuggestionCount": 0,
+        "checksWarningCount": 3,
+        "language": "default",
+        "status": "warning",
+    },
+]
+```
+
+The following table lists and defines all the fields related to the `insufficientColorContrast` check.
+
+| Field             | Data type | Description                                                                                                                   |
+| ----------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `type`            | string    | check type, equal to `insufficientColorContrast`                                                                              |
+| `targetsCount`    | integer   | the number of widgets with warnings                                                                                           |
+| `checkStatus`     | string    | the status of this check: `passed` or `warning`                                                                               |
+| `targets`         | array     | the list of widgets with warnings                                                                                             |
+| `locked`          | boolean   | if the widget is in a locked row                                                                                              |
+| `synced`          | boolean   | if the widget is in a synced row                                                                                              |
+| `uuid`            | string    | uuid of the row containing this widget                                                                                        |
+| `widgetLabel`     | string    | label of the widget                                                                                                           |
+| `widgetType`      | string    | `button`, `heading`                                                                                                           |
+| `colors`          | array     | list of color pairs with warnings. Each element contains the following fields: `backgroundColor, color, contrastRatio, label` |
+| `backgroundColor` | string    | color in hexadecimal format                                                                                                   |
+| `color`           | string    | color in hexadecimal format                                                                                                   |
+| `contrastRatio`   | float     | contrast ratio between `color` and `backgroundColor`                                                                          |
+| `label`           | string    | description of the color pairs                                                                                                |
+
+### Highlight unreachable web link
+
+This check highlights web links that aren't working properly, helping users catch and fix broken links.
+
+The reachability of a web link is checked using **HEAD requests**. A link is considered reachable if it returns an HTTP status code in the **2xx range**.
+
+If a link cannot be assessed, it is added to the **ignored** array. Each ignored element includes a **reasons** array, which lists one or more of the following values explaining why reachability could not be determined:
+
+* **missingChecked** – required information was not available for the check
+* **missingRelated** – related data needed for validation was missing
+* **notApplicable** – the check did not apply to this case
+* **urlValidation** – the URL itself was invalid
+
+| Check details                | Corresponding options                                   |
+| ---------------------------- | ------------------------------------------------------- |
+| Type                         | Warning                                                 |
+| Available for                | email and page messages, email and page templates, rows |
+| Use data on widgets          | button, social, menu, image, gif, sticker, icon         |
+| Use general features in JSON | --                                                      |
+
+On requests in checks list: `{"category":"unreachableWebLink"}`
+
+#### Passed check response
+
+```json
+{
+      "type": "unreachableWebLink",
+       "targetsCount": 0,
+       "checkStatus": "passed",
+       "targets": [],
+       "passed": [
+           {
+               "checkedElement": "https://beefree.io",
+               "locked": false,
+               "synced": false,
+               "uuid": "ab6589c0-414f-4075-ac31-28369511be4d",
+               "widgetLabel": "icon-placeholder.png",
+               "widgetType": "icon"
+           }
+       ],
+       "ignored": [
+           {
+               "checkedElement": "",
+               "locked": false,
+               "reasons": ["missingChecked"],
+               "synced": false,
+               "uuid": "27386d37-df5b-4f5a-b3df-f3e8a2c9d640",
+               "widgetLabel": "Menu item name",
+               "widgetType": "menu"
+           }
+       ]
+}
+```
+
+#### Warning check response
+
+```json
+{
+    "type": "unreachableWebLink",
+    "targetsCount": 1,
+    "checkStatus": "warning",
+    "targets": [
+        {
+            "checkedElement": "https://beefree.io/unreachable-link",
+            "locked": false,
+            "synced": false,
+            "uuid": "9c38bcc0-71a0-4baa-9b61-43b3c30a620d",
+            "widgetLabel": "Button name 1",
+            "widgetType": "button"
+        }
+    ],
+    "passed": [
+        {
+            "checkedElement": "https://beefree.io",
+            "locked": false,
+            "synced": false,
+            "uuid": "ab6589c0-414f-4075-ac31-28369511be4d",
+            "widgetLabel": "icon-placeholder.png",
+            "widgetType": "icon"
+        }
+    ],
+    "ignored": [
+        {
+            "checkedElement": "beefree.io",
+            "locked": false,
+            "reasons": ["urlValidation"],
+            "synced": false,
+            "uuid": "27386d37-df5b-4f5a-b3df-f3e8a2c9d640",
+            "widgetLabel": "Menu item name",
+            "widgetType": "menu"
+        }
+    ]
+}
+```
+
+The following table lists and defines all the fields related to the `unreachableWebLink` check.
+
+| Field          | Data type | Description                                                                                                                     |
+| -------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `type`         | string    | check type, equal to `unreachableWebLink`                                                                                       |
+| `targetsCount` | integer   | the number of unreachable web links                                                                                             |
+| `checkStatus`  | string    | the status of this check: `passed` or `warning`                                                                                 |
+| `targets`      | array     | the list of unreachable web links                                                                                               |
+| `passed`       | array     | the list of reachable web links                                                                                                 |
+| `ignored`      | array     | the list of ignored links                                                                                                       |
+| `locked`       | boolean   | if the link is in a locked row                                                                                                  |
+| `synced`       | boolean   | if the link is in a synced row                                                                                                  |
+| `uuid`         | string    | uuid of the widget containing the link                                                                                          |
+| `widgetLabel`  | string    | label of the element in the widget containing the link                                                                          |
+| `widgetType`   | string    | type of the widget: `button`, `menu`, `social`, `image`, `gif`, `sticker`, `icon`                                               |
+| `reasons`      | array     | For ignored elements, one or more of the following values: `missingChecked`, `missingRelated`, `notApplicable`, `urlValidation` |
+
 ## Frontend Visual Feedback and Cues
 
-This page discusses how to perform API calls on the backend in order to run checks again email, page, and row JSON. An important part of connecting the backend API calls to frontend feedback is the response body of these API calls. When a check is performed against the JSON, if an issue is identified, the `target` in the API response specifies the element that needs attention. This target is what connects to [Frontend Commands](../../other-customizations/frontend-commands.md), the `execCommand` method and actions (`select`, `highlight`, `scroll`, and `focus`), and provides feedback visually to the end users on the frontend.
+This section discusses how to perform API calls on the backend in order to run checks against email, page, and row JSON. An important part of connecting the backend API calls to frontend feedback is the response body of these API calls. When a check is performed against the JSON, if an issue is identified, the `target` in the API response specifies the element that needs attention. This target is what connects to [Frontend Commands](../../other-customizations/frontend-commands.md), the `execCommand` method and actions (`select`, `highlight`, `scroll`, and `focus`), and provides feedback visually to the end users on the frontend.
 
 The following code snippet provides an example email check response from an API call to the `v1/message/check` endpoint.
 
@@ -782,7 +1371,7 @@ This section lists and describes each of the Check endpoints. You can use this s
 This section includes details on how to make an API call using the email check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="message-check" path="/v1/message/check" method="post" %}
-[OpenAPI message-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/a0a803fcab82fc94a75d76e02422bbaee4b3d159b979391ed8095e475d723f49.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250618%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250618T161121Z&X-Amz-Expires=172800&X-Amz-Signature=03127c13874f053725868618422e686ca27e3ab10506d94146040be509a64155&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI message-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/a0a803fcab82fc94a75d76e02422bbaee4b3d159b979391ed8095e475d723f49.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250910%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250910T191643Z&X-Amz-Expires=172800&X-Amz-Signature=6201571f968db4c0af8c6ddd392191fc433b3b4aa207d015c6cbc43e6e656ee1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
@@ -984,7 +1573,7 @@ Reference the following example email response:
 This section includes details on how to make an API call using the page check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="page-check" path="/v1/page/check" method="post" %}
-[OpenAPI page-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/4308febd44d915cc101689a737e2381eb1c6723b5e3d523e010547c938a72ba9.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250618%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250618T161121Z&X-Amz-Expires=172800&X-Amz-Signature=532dc12f3f00795e920952a92560f34dd9fec9bedbbe311d8e165a8abfcc3b68&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI page-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/4308febd44d915cc101689a737e2381eb1c6723b5e3d523e010547c938a72ba9.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250910%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250910T191643Z&X-Amz-Expires=172800&X-Amz-Signature=e7d2cafd492dbcb39e7a942eb6e4b11c5b2f82341360645c09ccafcf7266a152&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
@@ -1169,7 +1758,7 @@ Reference an example page response:
 This section includes details on how to make an API call using the row check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="row-check" path="/v1/row/check" method="post" %}
-[OpenAPI row-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/fd96add5eb3171c8641c68e85b13ca24fd76b94debf20b7a3b25a7b5e4c01264.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250618%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250618T161121Z&X-Amz-Expires=172800&X-Amz-Signature=48a0eebcd3a303543a072596b7474860b7d7432c11d7ee1e8059219f287abfdd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI row-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/fd96add5eb3171c8641c68e85b13ca24fd76b94debf20b7a3b25a7b5e4c01264.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250910%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250910T191643Z&X-Amz-Expires=172800&X-Amz-Signature=e355dcb0cf78331f00ac27e87319536c4c5ae468586e09b6cb5d3cc6630a731b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>

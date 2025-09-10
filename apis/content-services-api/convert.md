@@ -7,13 +7,48 @@ description: >-
 
 # Convert
 
-## Conversion Collection
+{% hint style="info" %}
+Convert endpoints are part of the [Content Services API](./). The Content Services API is available on [Beefree SDK plans that are Essentials or above](https://developers.beefree.io/pricing-plans).
+{% endhint %}
+
+## Overview
 
 The Conversion Collection provides you with endpoints that enable you to convert templates from one format to another. With the [Email to Page](convert.md#email-to-page-conversion-important-behaviors) endpoint, you can easily convert your email JSON templates into page JSON. The [Page to Email](convert.md#page-to-email-conversion-important-behaviors) endpoint lets you turn your page JSON templates into email-ready JSON, with the option to disable the HTML sanitizer if needed. The Simple to Full JSON endpoint enables you to convert [Simple Schema](../../data-structures/simple-schema/) templates into full Beefree JSON templates that can be loaded in the builder.
 
 {% hint style="info" %}
 **Important:** For all endpoints in this category, the value for `collection` is `conversion`. When making API calls, replace the `collection` placeholder within the URL with `conversion` to execute the call.
 {% endhint %}
+
+### Available Collection Value for Convert Endpoints
+
+The following table lists the collection values available in this category of endpoints, and their corresponding collection options.
+
+{% hint style="info" %}
+Note: The only collection value available for this category of endpoints is **conversion**. Therefore, all **{collection}** placeholders in the URL in this category should be replaced with **conversion**. &#x20;
+{% endhint %}
+
+Prior to referencing the table, the following example shows how you can replace the **{collection}** placeholder with **conversion**.
+
+#### How to Replace the {collection} Placeholder
+
+The following example URL has a **{collection}** placeholder. This placeholder needs to be filled in with a **Collection Option** prior to making an API call.
+
+`https://api.getbee.io/v1/{collection}/simple-to-full-json`
+
+As an example, if you'd like to convert Simple Schema JSON to Full JSON using this endpoint, replace **{collection}** with conversion.
+
+The final URL to make the API call will be:
+
+`https://api.getbee.io/v1/conversion/simple-to-full-json`
+
+The following table provides a comprehensive reference of all available options based on what you'd like to convert.
+
+| Resource               | Collection Options                         |
+| ---------------------- | ------------------------------------------ |
+| `/page-to-email`       | <ul><li><code>/conversion</code></li></ul> |
+| `/email-to-page`       | <ul><li><code>/conversion</code></li></ul> |
+| `/simple-to-full-json` | <ul><li><code>/conversion</code></li></ul> |
+| `/full-to-simple-json` | <ul><li><code>/conversion</code></li></ul> |
 
 ## Email to Page Conversion: Important Behaviors
 
@@ -146,7 +181,7 @@ The following table lists and describes **optional** object parameters nested wi
 | `preheader`   | string | ❌ No     | The preheader text for the email (if applicable).                |
 
 {% openapi-operation spec="simple-to-full-json" path="/v1/{collection}/simple-to-full-json" method="post" %}
-[OpenAPI simple-to-full-json](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/9cfe21ce15319f492d5c8677e6dceace21a4991dc1a3965f3f56d170861800aa.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250801%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250801T064940Z&X-Amz-Expires=172800&X-Amz-Signature=eb95c595c5b1ae40cd23876915f6480959c8fe27324a7f90ea9dbb6db906d9f2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI simple-to-full-json](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/9cfe21ce15319f492d5c8677e6dceace21a4991dc1a3965f3f56d170861800aa.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250910%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250910T191643Z&X-Amz-Expires=172800&X-Amz-Signature=9bbe5a986d4e9509e0f7648cf072f081d5dd13a3080f9b661b2142665a8fc399&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## Full to Simple JSON
@@ -189,7 +224,7 @@ The following request parameter is required to perform the Full to Simple API ca
 | `page` | JSON | Yes      | The full template structure in Beefree JSON format. This is the same structure returned by the builder or captured from its callbacks. |
 
 {% openapi-operation spec="full-to-simple-json" path="/v1/{collection}/full-to-simple-json" method="post" %}
-[OpenAPI full-to-simple-json](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/6bce25195f3804340800ec546d5ffc98b2179168e1f0f04198652d5688064c66.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250801%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250801T064940Z&X-Amz-Expires=172800&X-Amz-Signature=96acd3c4cc15073c1506c23e1178a9af4a7d4799c41a727241e8535caaeacf51&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI full-to-simple-json](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/524b0b18fa179b21aeb410442dcdd42ed8fd9be16167676d8e72e1dc29219cf2.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250910%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250910T191643Z&X-Amz-Expires=172800&X-Amz-Signature=0b62ded8b274d437528f6e8bef1bbc9dda790bace8dc8d89d2504c6af0683669&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ### Full to Simple Limitations

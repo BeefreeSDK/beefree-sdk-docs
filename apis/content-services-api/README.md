@@ -60,6 +60,8 @@ Your end users may want to export their templates into various formats in the fo
 * **PDF:** For attaching designs to emails, SMS, WhatsApp, printing hard copies, or creating flyers, while preserving the design's layout.
 * **Image:** For creating visual galleries, dashboards, social media posts, internal presentations, or campaign planning visuals.
 
+Visit the [Export API documentation](export.md) to learn more.&#x20;
+
 #### **Convert Content**
 
 Another common use case of the Content Services API is converting one format to another. The formats in the Convert category differ from those in the Export category, and serve a separate purpose. This category of endpoints is for creating designs and loading them within the builder.  &#x20;
@@ -70,6 +72,8 @@ These endpoints allow you to:
 * **Email to Page:** Convert existing email templates into page templates. This saves your end users time by allowing them to use their favorite designs across multiple content channels.
 * **Simple to Full JSON**: Convert an [AI-generated Simple Schema](../../visual-builders/ai-driven-design-creation.md) into full Beefree JSON that can be loaded within the builder for your end users to edit.&#x20;
 
+Visit the [Convert API documentation](convert.md) to learn more.&#x20;
+
 #### **AI Collection**
 
 This category of endpoints requires that you configure an AI Provider within the [Beefree SDK Developer Console](../../builder-addons/addons/partner-addons/ai-writing-assistant/available-providers/). Through the integration with your AI Provider, these endpoints generate the following supporting details for your end users templates:
@@ -77,6 +81,8 @@ This category of endpoints requires that you configure an AI Provider within the
 * **SMS**: Generates concise text versions (e.g., promotional SMS).
 * **Metadata**: Generates subject lines and preheaders based on a template's content.
 * **Summary**: Generate summaries based on a template's content.
+
+Visit the [AI Collection API documentation](ai-collection.md) to learn more.&#x20;
 
 #### **Row Processing**
 
@@ -86,11 +92,15 @@ These endpoints manage rows within templates to maintain consistency and reduce 
 * **Merge**: Merge row updates across multiple templates. Particularly useful when applying global updates.
 * **Synced Rows**: Retrieve a list of synced rows available.
 
+Visit the [Row Processing API documentation](row-processing.md) to learn more.&#x20;
+
 #### **Brand Style Management**
 
 Brand consistency can be enforced or retroactively applied across templates:
 
 * **/templates and /rows** endpoints allow updating visual properties (colors, fonts, spacings, etc.) across multiple templates or rows based on defined brand styles.
+
+Visit the [Brand Style Management API documentation](brand-style-management.md) to learn more.&#x20;
 
 #### **Check**
 
@@ -102,7 +112,7 @@ You can use these endpoints to provide feedback on:
 * Page designs
 * Rows within designs
 
-Learn more about all the available checks in the [Check section of the API documentation](check.md).
+Visit the [Check API documentation](check.md) to learn more.&#x20;
 
 ## Base URL
 
@@ -116,66 +126,22 @@ You can reference each resource and its corresponding collection options in the 
 
 ### Collections by Category
 
-The following tables list the available collection options for resources within the category.
+Each of the category pages include a table in the page's overview section. This table includes a list of all the possible collection values for that respective category.
 
-#### Export
+The following list includes links to each of the table for the category.
 
-The following table lists the resources available in this category of endpoints and their corresponding collection options.
+* [Export collection options table](export.md#available-collection-values-for-export-endpoints)
+* [Convert collection options table](convert.md#available-collection-value-for-convert-endpoints)
+* [Row Processing collection options table](row-processing.md#available-collection-values-for-row-processing-endpoints)
+* [AI Collection collection options table](ai-collection.md#available-collection-value-for-ai-endpoints)
+* [Brand Style collection options table](brand-style-management.md#available-collection-values-for-brand-style-endpoints)
+* [Check collection options table](check.md#available-collection-values-for-export-endpoints)
 
-| Resource      | Collection Options                                                                                                       |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `/html`       | <ul><li><code>/message</code></li><li><code>/page</code></li><li><code>/popup</code></li><li><code>/amp</code></li></ul> |
-| `/plain-text` | <ul><li><code>/message</code></li></ul>                                                                                  |
-| `/pdf`        | <ul><li><code>/message</code></li></ul><ul><li><code>/page</code></li></ul>                                              |
-| `/image`      | <ul><li><code>/message</code></li></ul><ul><li><code>/page</code></li></ul>                                              |
+{% hint style="info" %}
+**Note:** Some categories only include one possible collection value. If that is the case, you will see only one collection value in the table.
+{% endhint %}
 
-#### Convert
-
-The following table lists the resources available in this category of endpoints and their corresponding collection options.
-
-| Resource               | Collection Options                         |
-| ---------------------- | ------------------------------------------ |
-| `/page-to-email`       | <ul><li><code>/conversion</code></li></ul> |
-| `/email-to-page`       | <ul><li><code>/conversion</code></li></ul> |
-| `/simple-to-full-json` | <ul><li><code>/conversion</code></li></ul> |
-| `/full-to-simple-json` | <ul><li><code>/conversion</code></li></ul> |
-
-#### AI Collection
-
-The following table lists the resources available in this category of endpoints and their corresponding collection options.
-
-| Resource    | Collection Options                 |
-| ----------- | ---------------------------------- |
-| `/sms`      | <ul><li><code>/ai</code></li></ul> |
-| `/metadata` | <ul><li><code>/ai</code></li></ul> |
-| `/summary`  | <ul><li><code>/ai</code></li></ul> |
-
-#### Row Processing
-
-The following table lists the resources available in this category of endpoints and their corresponding collection options.
-
-| Resource       | Collection Options                                                          |
-| -------------- | --------------------------------------------------------------------------- |
-| `/merge`       | <ul><li><code>/message</code></li><li><code>/page</code></li></ul>          |
-| `/merge-rows`  | <ul><li><code>/message</code></li></ul><ul><li><code>/page</code></li></ul> |
-| `/synced-rows` | <ul><li><code>/message</code></li></ul><ul><li><code>/page</code></li></ul> |
-| `/merge-index` | <ul><li><code>/message</code></li></ul><ul><li><code>/page</code></li></ul> |
-
-#### Brand Style
-
-The following table lists the resources available in this category of endpoints and their corresponding collection options.
-
-| Resource | Collection Options                                                 |
-| -------- | ------------------------------------------------------------------ |
-| `/brand` | <ul><li><code>/template</code></li><li><code>/row</code></li></ul> |
-
-#### Check
-
-The following table lists the resources available in this category of endpoints and their corresponding collection option.
-
-| Resource | Collection Options                                                                           |
-| -------- | -------------------------------------------------------------------------------------------- |
-| `/check` | <ul><li><code>/message</code></li><li><code>/page</code></li><li><code>/row</code></li></ul> |
+The following section displays a few [example URLs](./#example-urls) that demonstrate what a complete URL with the {collection} placeholder filled in.&#x20;
 
 #### Example URLs
 

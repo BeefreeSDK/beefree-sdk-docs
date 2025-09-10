@@ -7,6 +7,41 @@ description: >-
 
 # Export
 
+{% hint style="info" %}
+Export endpoints are part of the [Content Services API](./). The Content Services API is available on [Beefree SDK plans that are Essentials or above](https://developers.beefree.io/pricing-plans).
+{% endhint %}
+
+## Overview
+
+The Export category is one of the most common uses of the Content Services API. After creating a design in the no-code builder, end users often need to export and share it. These endpoints let you offer multiple export options—including HTML, plain text, PDF, and image formats—so your users can easily distribute their finished designs.
+
+### Available Collection Values for Export Endpoints
+
+The following table lists the collection values available in this category of endpoints, and their corresponding collection options.
+
+Prior to referencing the table, the following example shows how you can replace the **{collection}** placeholder based on the type of content you'd like to export.
+
+#### How to Replace the {collection} Placeholder
+
+The following example URL has a **{collection}** placeholder. This placeholder needs to be filled in with a **Collection Option** prior to making an API call.
+
+`https://api.getbee.io/v1/{collection}/html`
+
+As an example, if you'd like to export an email's HTML using this endpoint, replace **{collection}** with **message**.
+
+The final URL to make the API call will be:
+
+`https://api.getbee.io/v1/message/html`
+
+The following table provides a comprehensive reference of all available options based on what you'd like to export.
+
+| Resource      | Collection Options                                                                                                       |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `/html`       | <ul><li><code>/message</code></li><li><code>/page</code></li><li><code>/popup</code></li><li><code>/amp</code></li></ul> |
+| `/plain-text` | <ul><li><code>/message</code></li></ul>                                                                                  |
+| `/pdf`        | <ul><li><code>/message</code></li></ul><ul><li><code>/page</code></li></ul>                                              |
+| `/image`      | <ul><li><code>/message</code></li></ul><ul><li><code>/page</code></li></ul>                                              |
+
 ## HTML <a href="#html" id="html"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/html`
@@ -179,5 +214,5 @@ You may override the clipping size if your layout requires a custom viewport. If
 | file\_type\* | String  | Accepts jpg or png.                                                                                                                                                                                                                                                                                                                |
 
 {% openapi-operation spec="image-endpoint" path="/v1/{collection}/image" method="post" %}
-[Broken link](broken-reference)
+[OpenAPI image-endpoint](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/9ef1477fd159d69dd4d46a9bcb0a071ad5b3a925ff92efcaebcdfc0c8a935c47.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250910%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250910T191642Z&X-Amz-Expires=172800&X-Amz-Signature=b14e3221374a431cfce7e127503d0903094805532469bff688d2a14a40c43b84&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}

@@ -7,9 +7,37 @@ description: >-
 
 # Brand Style
 
+{% hint style="info" %}
+Brand Style endpoints are part of the [Content Services API](./). The Content Services API is available on [Beefree SDK plans that are Essentials or above](https://developers.beefree.io/pricing-plans).
+{% endhint %}
+
 ### Overview <a href="#e7tjitffe17" id="e7tjitffe17"></a>
 
 The Brand Style endpoints enables you to manage and modify the style of email, pages, and popup templates. While the [Content Defaults](../../other-customizations/appearance/content-defaults.md) feature enables you to set default styles for new content elements like headings, paragraphs, and buttons, the Brand Style Management endpoint takes it a step further. It allows you to make template-wide design changes to existing templates quickly and easily, ensuring that all modules adhere to the broader design system or brand guidelines. In this article, we'll explore what this Content Services API (CSAPI) Brand Style Management endpoint is, its benefits, how to get started with it, and how it differs from Content Defaults.
+
+### Available Collection Values for Brand Style Endpoints
+
+The following table lists the collection values available in this category of endpoints, and their corresponding collection options.
+
+Prior to referencing the table, the following example shows how you can replace the **{collection}** placeholder.
+
+#### How to Replace the {collection} placeholder
+
+The following example URL has a **{collection}** placeholder. This placeholder needs to be filled in with a **Collection Option** prior to making an API call.
+
+`https://api.getbee.io/v1/{collection}/brand`
+
+As an example, if you'd like to style a template using this endpoint, replace **{collection}** with **template**.
+
+The final URL to make the API call will be:
+
+`https://api.getbee.io/v1/template/brand`
+
+The following table provides a comprehensive reference of all available options based on what you'd like to style.
+
+| Resource | Collection Options                                                 |
+| -------- | ------------------------------------------------------------------ |
+| `/brand` | <ul><li><code>/template</code></li><li><code>/row</code></li></ul> |
 
 ### How to Apply Styles Globally <a href="#id-7o6uselkp1bb" id="id-7o6uselkp1bb"></a>
 
