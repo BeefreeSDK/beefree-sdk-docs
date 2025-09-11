@@ -32,13 +32,13 @@ This section discusses how to apply each of the customization options mentioned 
 
 ### Custom Languages
 
-You can use Custom Languages to change the default "Preview mode" text on the Preview page to any text you'd like. You can also leave the string empty in the beeConfig if you'd like no text.
+You can use [Custom Languages](../../other-customizations/advanced-options/custom-languages.md) to change the default "Preview mode" text on the Preview page to any text you'd like. You can also leave the string empty in the `beeConfig` if you'd like no text.
 
 The following image shows the default "Preview mode" text on the Preview page.
 
 <figure><img src="../../.gitbook/assets/CleanShot 2025-08-25 at 20.17.06@2x.png" alt=""><figcaption></figcaption></figure>
 
-The following code snippet displays an example of how you can edit the beeConfig to change the default text on the Preview page from "Preview mode" to "Hello World!"
+The following code snippet displays an example of how you can edit the `beeConfig` to change the default text on the Preview page from "Preview mode" to "Hello World!"
 
 ```javascript
 var beeConfig = {  
@@ -54,7 +54,7 @@ The following image shows what this configuration looks like to the end user on 
 
 <figure><img src="../../.gitbook/assets/CleanShot 2025-08-25 at 20.20.35@2x.png" alt=""><figcaption></figcaption></figure>
 
-To remove the text altogether, ensure you leave a single space inside the string within the beeConfig. The following code snippet shows an example of this.
+To remove the text altogether, ensure you leave a single space inside the string within the `beeConfig`. The following code snippet shows an example of this.
 
 ```javascript
 var beeConfig = {  
@@ -72,7 +72,7 @@ The following image shows how this looks to the end user on the frontend.&#x20;
 
 ### Multi-language templates
 
-Previewing designs in Multi-language templates is not available by default. This needs to be configured within the Beefree SDK Developer Console.
+Previewing designs for [Multi-language templates](../../other-customizations/multi-language-templates.md) is not available by default. This needs to be configured within the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
 
 Take the following steps to enable **Multi-language template** for your end users:
 
@@ -85,7 +85,7 @@ Take the following steps to enable **Multi-language template** for your end user
 4. Check **Multi-language template** to on.
 5. Save and confirm your changes.
 
-Checking the feature on within the Developer Console is only the first step. Once this step is complete, you must add a configuration for Multi-language templates to your beeConfig. The following code snippet shows an example configuration.
+Checking the feature to on within the Developer Console is only the first step. Once this step is complete, you must add a configuration for Multi-language templates to your `beeConfig`. The following code snippet shows an example configuration.
 
 ```javascript
 var beeConfig = {  
@@ -106,12 +106,12 @@ The following GIF shows a visual example of what this configuration looks like t
 <figure><img src="../../.gitbook/assets/CleanShot 2025-08-25 at 21.35.19.gif" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-**Note:** Use the [DeepL integration](../../builder-addons/addons/partner-addons/deepl.md) for automatically translate a template in the primary language into other languages.
+**Note:** Use the [DeepL integration](../../builder-addons/addons/partner-addons/deepl.md) to automatically translate a template in the primary language to other languages.
 {% endhint %}
 
 ### Display Conditions
 
-Previewing designs in Display Conditions is not available by default. This needs to be configured within the Beefree SDK Developer Console.
+Previewing designs in Display Conditions is not available by default. This needs to be configured within the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
 
 Take the following steps to enable **Display Conditions** for your end users:
 
@@ -130,9 +130,9 @@ The GIF shows a visual example of what this option looks like to the end user.
 
 ### AMP or HTML view
 
-Previewing designs in AMP or HTML view is not available by default. This needs to be configured within the Beefree SDK Developer Console.
+Previewing designs in [AMP or HTML view](../../other-customizations/amp-for-email.md) is not available by default. This needs to be configured within the Beefree SDK Developer Console.
 
-Take the following steps to enable **Dark Mode Preview** for your end users:
+Take the following steps to enable **AMP or HTML view** for your end users:
 
 1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
 2. Navigate to the application you'd like to enable it for.
@@ -142,13 +142,13 @@ Take the following steps to enable **Dark Mode Preview** for your end users:
 4. Check **Enable AMP Content** to on.
 5. Save and confirm your changes.
 
-To add AMP support to your beeConfig and enable the AMP Carousel, you need to perform additional steps outside of checking the functionality to on within the Beefree SDK Developer Console. This section discussing the additional requirements.
+To add AMP support to your `beeConfig` and enable the [AMP Carousel](../../other-customizations/amp-for-email.md), you need to perform additional steps outside of checking the functionality to on within the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu). This section discussing the additional requirements.
 
-Take the following steps to configure AMP content client-side in your beeConfig:
+Take the following steps to configure AMP content client-side in your `beeConfig`:
 
-1. Update your beeConfig for AMP Add a workspace property with type: 'mixed' to your beeConfig. This enables both HTML and AMP content in the editor.
+1. Update your `beeConfig` for AMP Add a workspace property with type: 'mixed' to your `beeConfig`. This enables both HTML and AMP content in the editor.
 
-Example beeConfig with AMP:
+Example `beeConfig` with AMP:
 
 ```javascript
 var beeConfig = {  
