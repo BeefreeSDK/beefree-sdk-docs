@@ -8,13 +8,13 @@ description: Video series on how to get started with Beefree SDK in a Vue.js app
 
 This video series includes the following tutorials:
 
-* [Video #1](vue.js-video-series.md#video-1-quickstart-guide-no-code-email-builder-for-beefree-sdk-part-1): Quickstart Guide: No-code Email Builder for Beefree SDK (Part 1)
-* [Video #2](vue.js-video-series.md#video-2-quickstart-guide-vue.js-no-code-email-builder-part-2): Quickstart Guide: Vue.js No-code Email Builder (Part 2)
-* [Video #3](vue.js-video-series.md#video-3-quickstart-guide-vue.js-no-code-email-builder-part-3): [Quickstart Guide: Vue.js No-code Email Builder (Part 3)](https://www.youtube.com/watch?v=DstfPbGt6bI)
+* [Quickstart Guide: No-code Email Builder for Beefree SDK (Part 1)](vue.js-video-series.md#quickstart-guide-no-code-email-builder-for-beefree-sdk-part-1)
+* [Quickstart Guide: Vue.js No-code Email Builder (Part 2)](vue.js-video-series.md#quickstart-guide-vue.js-no-code-email-builder-part-2)
+* [Quickstart Guide: Vue.js No-code Email Builder (Part 3)](vue.js-video-series.md#quickstart-guide-vue.js-no-code-email-builder-part-3)
 
 ***
 
-### Video #1: Quickstart Guide: No-code Email Builder for Beefree SDK (Part 1)
+### Quickstart Guide: No-code Email Builder for Beefree SDK (Part 1)
 
 {% embed url="https://www.youtube.com/watch?v=Ev7ljzrTcD0" %}
 
@@ -183,7 +183,7 @@ authorization for added security.
 
 ***
 
-### Video #2: Quickstart Guide: Vue.js No-code Email Builder (Part 2)
+### Quickstart Guide: Vue.js No-code Email Builder (Part 2)
 
 {% embed url="https://www.youtube.com/watch?v=3xHfpMoxg2k" %}
 
@@ -233,7 +233,7 @@ to run and test your application locally.
 
 ***
 
-### Video #3: Quickstart Guide: Vue.js No-code Email Builder (Part 3)
+### Quickstart Guide: Vue.js No-code Email Builder (Part 3)
 
 {% embed url="https://www.youtube.com/watch?v=DstfPbGt6bI" %}
 

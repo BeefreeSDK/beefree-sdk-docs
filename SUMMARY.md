@@ -239,3 +239,6 @@
   * [Add a “Get design PDF” Button to Beefree SDK](resources/cookbook/add-a-get-design-pdf-button-to-beefree-sdk.md)
   * [Add a “Get design Thumbnail image” Button to Beefree SDK](resources/cookbook/add-a-get-design-thumbnail-image-button-to-beefree-sdk.md)
   * [Add a “Get design Plain Text” Button to Beefree SDK](resources/cookbook/add-a-get-design-plain-text-button-to-beefree-sdk.md)
+  * [Create a Default Form in Beefree SDK](resources/cookbook/create-a-default-form-in-beefree-sdk.md)
+  * [Create a Form Library in Beefree SDK](resources/cookbook/create-a-form-library-in-beefree-sdk.md)
+  * [Create a Custom Form Builder in Beefree SDK](resources/cookbook/create-a-custom-form-builder-in-beefree-sdk.md)

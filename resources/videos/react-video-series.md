@@ -8,13 +8,13 @@ description: Video series on how to get started with Beefree SDK in a React appl
 
 This video series includes the following tutorials:
 
-* [Video #1](react-video-series.md#video-1-quickstart-guide-no-code-email-builder-for-beefree-sdk-part-1): Quickstart Guide: No-code Email Builder for Beefree SDK (Part 1)
-* [Video #2](react-video-series.md#video-2-quickstart-guide-react-no-code-email-builder-for-beefree-sdk-part-2): Quickstart Guide: React No-code Email Builder for Beefree SDK (Part 2)
-* [Video #3](react-video-series.md#video-3-quickstart-guide-react-no-code-email-builder-for-beefree-sdk-part-3): Quickstart Guide: React No-code Email Builder for Beefree SDK (Part 3)
+* [Quickstart Guide: No-code Email Builder for Beefree SDK (Part 1)](react-video-series.md#quickstart-guide-no-code-email-builder-for-beefree-sdk-part-1)
+* [Quickstart Guide: React No-code Email Builder for Beefree SDK (Part 2)](react-video-series.md#quickstart-guide-react-no-code-email-builder-for-beefree-sdk-part-2)
+* [Quickstart Guide: React No-code Email Builder for Beefree SDK (Part 3)](react-video-series.md#quickstart-guide-react-no-code-email-builder-for-beefree-sdk-part-3)
 
 ***
 
-### Video #1: Quickstart Guide: No-code Email Builder for Beefree SDK (Part 1)
+### Quickstart Guide: No-code Email Builder for Beefree SDK (Part 1)
 
 {% embed url="https://www.youtube.com/watch?v=Ev7ljzrTcD0" %}
 
@@ -183,7 +183,7 @@ authorization for added security.
 
 ***
 
-### Video #2: Quickstart Guide: React No-code Email Builder for Beefree SDK (Part 2)
+### Quickstart Guide: React No-code Email Builder for Beefree SDK (Part 2)
 
 {% embed url="https://www.youtube.com/watch?v=auyOorxU7X0" %}
 
@@ -242,7 +242,7 @@ app locally on your machine. Let’s get started.
 
 ***
 
-### Video #3: Quickstart Guide: React No-code Email Builder for Beefree SDK (Part 3)
+### Quickstart Guide: React No-code Email Builder for Beefree SDK (Part 3)
 
 {% embed url="https://www.youtube.com/watch?v=TBZ1lHkPc0w" %}
 

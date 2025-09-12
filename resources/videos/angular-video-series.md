@@ -8,13 +8,13 @@ description: Video series on how to get started with Beefree SDK in an Angular a
 
 This video series includes the following tutorials:
 
-* [Video #1](angular-video-series.md#video-1-quickstart-guide-no-code-email-builder-for-beefree-sdk-part-1): Quickstart Guide: No-code Email Builder for Beefree SDK (Part 1)
-* [Video #2](angular-video-series.md#video-2-quickstart-guide-angular-no-code-email-builder-part-2): Quickstart Guide: Angular No-code Email Builder (Part 2)
-* [Video #3](angular-video-series.md#video-3-quickstart-guide-angular-no-code-email-builder-part-3):  Quickstart Guide: Angular No-code Email Builder (Part 3)
+* [Quickstart Guide: No-code Email Builder for Beefree SDK (Part 1)](angular-video-series.md#quickstart-guide-no-code-email-builder-for-beefree-sdk-part-1)
+* [Quickstart Guide: Angular No-code Email Builder (Part 2)](angular-video-series.md#quickstart-guide-angular-no-code-email-builder-part-2)
+* [Quickstart Guide: Angular No-code Email Builder (Part 3)](angular-video-series.md#quickstart-guide-angular-no-code-email-builder-part-3)
 
 ***
 
-### Video #1: Quickstart Guide: No-code Email Builder for Beefree SDK (Part 1)
+### Quickstart Guide: No-code Email Builder for Beefree SDK (Part 1)
 
 {% embed url="https://www.youtube.com/watch?v=Ev7ljzrTcD0" %}
 
@@ -183,7 +183,7 @@ authorization for added security.
 
 ***
 
-### Video #2: Quickstart Guide: Angular No-code Email Builder (Part 2)
+### Quickstart Guide: Angular No-code Email Builder (Part 2)
 
 {% embed url="https://www.youtube.com/watch?v=EJsZaVK0L50" %}
 
@@ -238,7 +238,7 @@ we'll talk you through how to run it locally.
 
 ***
 
-### Video #3:  Quickstart Guide: Angular No-code Email Builder (Part 3)
+### Quickstart Guide: Angular No-code Email Builder (Part 3)
 
 {% embed url="https://www.youtube.com/watch?v=Kw5SnJRdpGY" %}
 
