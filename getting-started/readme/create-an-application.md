@@ -14,38 +14,30 @@ This article will cover steps for the following processes:
 * [How to create an application](create-an-application.md#how-to-create-an-application)
 * [Obtain your client secret and client id](create-an-application.md#obtain-your-client-id-and-client-secret)
 
-## Sign up for account in the Developer Console
+## Sign up for a Developer Console account
 
-The first step to embedding Beefree’s visual builders in your software is to[ sign up for a Beefree SDK account](https://developers.beefree.io/accounts/signup/).&#x20;
+The first step to experimenting with and embedding Beefree SDK's visual builders is to[ sign up for a Beefree SDK account](https://developers.beefree.io/accounts/signup/).&#x20;
 
-Take the following steps to sign up for a Beefree SDK account and subscribe to the [Free plan](https://developers.beefree.io/pricing-plans):
+Take the following steps to sign up for a Beefree SDK account:
 
-1.  Navigate to the [Developer Console Sign Up page](https://developers.beefree.io/accounts/signup/).
+1. Navigate to the [Beefree SDK sign up page](https://developers.beefree.io/accounts/signup/).
+   1. Complete the required fields to create an account.&#x20;
+   2. Once the form is complete, click **Sign up to embed Beefree SDK**.&#x20;
 
-    **Note:** If you already have an account, navigate to the [Developer Console Login page instead](https://developers.beefree.io/accounts/login/?from=website_menu).
-2.  Complete the required information to sign up or login.
+<figure><img src="../../.gitbook/assets/dev-console-2.png" alt="" width="563"><figcaption></figcaption></figure>
 
-    You will be redirected to the dashboard.
-3.  In the dashboard, click **Add new subscription**.
+2. Check your inbox and verify your email address.
+   1. Once it is successfully verified, you'll be redirected to the [Log in page](https://developers.beefree.io/accounts/login/). Enter your email and password to login.
+3. You'll be redirected to a page with an active free subscription called **MyFirstSubscription**. Under this subscription, there are four applications you can activate: Email Builder, Page Builder, Popup Builder, and File manager. You can activate one or all of them if you'd like.
+   1.  Click the **Activate** button corresponding to the application type you'd like to start experimenting with. Once it is activated, you'll notice Client ID appears.  &#x20;
 
-    You will be redirected to a page that asks you to provide a name for your new subscription.
-4.  Type in a name and click **Next**.
+       <figure><img src="../../.gitbook/assets/dev-console-8.png" alt=""><figcaption></figcaption></figure>
+4. Click **Details** to obtain your Client Secret and add any **Application configurations** you'd like to start exploring.
 
-    You will be redirected to a page that asks you to select a subscription plan. If you'd like to subscribe to the Free version, click on the corresponding **Select plan** button **Free** plan type. If you'd like to subscribe to a paid plan, select the paid option that works best for your needs.
-5.  A confirmation message will appear confirming that you selected the **Free** plan and that you will not be charged anything. Click **Confirm** to confirm your subscription the the free plan.
-
-    <figure><img src="../../.gitbook/assets/CleanShot 2024-07-11 at 14.03.44@2x.png" alt="" width="563"><figcaption></figcaption></figure>
-6. While the plan is free, ensure that you familiarize yourself with the scenarios in which charges would apply. The following image shows a plan summary displaying instances of when charges apply.
-
-<figure><img src="../../.gitbook/assets/CleanShot 2024-07-11 at 14.05.21@2x.png" alt="" width="375"><figcaption></figcaption></figure>
-
-7. Enter and confirm your billing address.
-8.  Enter and confirm your card information by clicking **Place Order.**
-
-    You will be redirected your new Free plan subscription.
+<figure><img src="../../.gitbook/assets/dev-console-9.png" alt="" width="563"><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-**Important:** Keep in mind that Beefree SDK will not charge you for using the Free plan. However, there are charges related to [user and CDN overages](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees). Ensure you review our plans and familiarize yourself with these cost structures as you proceed to use the Free plan.
+**Important:** Keep in mind that Beefree SDK will not charge you for using the Free plan. However, there are charges related to UIDs, CDN overages, and using the [HTML Importer API](../../apis/html-importer-api/). Ensure you add a credit card on file if you plan on using the [HTML Importer API](../../apis/html-importer-api/import-html.md), or exceeding the thresholds for UIDs and CDN usage. Reference the [Usage-based fees article](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) for more information on thresholds.
 {% endhint %}
 
 ## How to create an application
