@@ -47,7 +47,7 @@ You can explore a simple implementation of Beefree SDK in [Codepen](https://code
 
 Take the following steps to get started with Beefree SDK in a few minutes:
 
-1. Create an account to access the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu) and obtain your credentials.
+1. Create an account to access the [Developer Console](https://developers.beefree.io/signup) and obtain your credentials.
 2. [Create a new subscription](https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application#sign-up-for-account-in-the-developer-console) to get started. Beefree SDK offers a generous Free plan that includes each builder type mentioned in the previous section.
 3. Create an application and [obtain your Client ID and Client Secret](https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application#obtain-your-client-id-and-client-secret).
 4. Clone the [beefree-sdk-sample-client repository](https://github.com/BeefreeSDK/beefree-sdk-sample-client), which includes the code for email and popup builder implementations.
