@@ -117,7 +117,7 @@ When the **saved row** action is triggered by the user, the builder starts the f
 The following describes the recommended workflow to implement saved rows in a host SaaS application.
 
 1. Enable _Saved Rows_ in the [Beefree SDK Console](https://developers.beefree.io/) as described above.
-2. Load a [Beefree SDK template](https://dam.beefree.io/githhubtemplates).
+2. Load a [Beefree SDK template](https://github.com/BeefreeSDK/beefree-sdk-assets-templates).
 3. Select the row you want to save and make note of the new save icon.
 4. Click the save icon to trigger a Metadata Content Dialog.  To successfully handle this step, you must complete these tasks:
    * Add a Metadata Content Dialog object to your _beeConfig_. This configures your handler.

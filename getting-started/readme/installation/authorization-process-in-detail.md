@@ -44,7 +44,7 @@ var config = {
 
 ### Beefree SDK Server-side Login
 
-To initialize your instance of the Beefree SDK builder, call the `/loginV2` endpoint shown in the sample code below with your Client ID, Client Secret, and UID. The Client ID and Secret are available on the application details page of the [Beefree SDK developer portal](https://dam.beefree.io/devportal). UID represents your user as described in [How the UID parameter works](https://docs.beefree.io/how-the-uid-parameter-works/).
+To initialize your instance of the Beefree SDK builder, call the `/loginV2` endpoint shown in the sample code below with your Client ID, Client Secret, and UID. The Client ID and Secret are available on the application details page of the [Beefree SDK developer portal](https://devportal.beefree.io/hc/en-us). UID represents your user as described in [How the UID parameter works](https://docs.beefree.io/how-the-uid-parameter-works/).
 
 {% hint style="danger" %}
 **Important:** Do not put your Beefree SDK credentials in client-side code.

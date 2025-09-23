@@ -33,7 +33,7 @@ customHeaders: [
 Please note that **all custom headers will be prefixed with “X-BEE-“** identifier. For instance, in the example above, the header will be sent to the host app as `X-BEE-Authorization`.
 
 {% hint style="info" %}
-Please note that custom headers must be whitelisted by our team before using them. Please open a support ticket via the [Beefree SDK Console](https://dam.beefree.io/devportal) if you’re planning to use this feature.
+Please note that custom headers must be whitelisted by our team before using them. Please open a support ticket via the [Beefree SDK Console](https://devportal.beefree.io/hc/en-us) if you’re planning to use this feature.
 {% endhint %}
 
 ### Using Pre-approved Custom Headers
