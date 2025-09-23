@@ -38,7 +38,7 @@ On top of this, you can pass sample content for each merge tag, so that users ca
 
 Smart merge tags are **disabled by default**. If your application doesn’t have Smart merge tags, you need to activate it. It takes just a few clicks:
 
-* [Login into the Beefree SDK Console](https://dam.beefree.io/devmain)
+* [Login into the Beefree SDK Console](https://developers.beefree.io/)
 * Click **Details** next to the application you want to configure
   * We recommend you first familiarize yourself with this feature under a DEV or QA application
 * Click view more under **Application configuration**.

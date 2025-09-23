@@ -34,7 +34,7 @@ With Commenting,  you enable **asynchronous, visual collaboration** when multipl
 
 To do so:
 
-* [Login into the Beefree SDK Console](https://dam.beefree.io/devmain)
+* [Login into the Beefree SDK Console](https://developers.beefree.io/)
 * Click **Details** next to the application you want to configure
   * We recommend you first familiarize with Commenting in a Development or QA application
   * Learn more about [Production vs. Development application here](../../getting-started/readme/development-applications.md)

@@ -108,4 +108,4 @@ No, this is not possible. You can either connect production apps included in the
 
 #### **Can I get a history of my monthly traffic usage?**
 
-Please contact your account manager for this. If you are not sure how to do this, please [log into the Beefree SDK Console](https://dam.beefree.io/devmain) and submit a support ticket asking for your usage history.
+Please contact your account manager for this. If you are not sure how to do this, please [log into the Beefree SDK Console](https://developers.beefree.io/) and submit a support ticket asking for your usage history.

@@ -10,7 +10,7 @@ Instead of having to switch between different applications or tools, they can ac
 
 ## Testing and integrating the File Manager <a href="#testing-and-integrating-the-file-manager" id="testing-and-integrating-the-file-manager"></a>
 
-When you create an application in the [Beefree SDK Console](https://dam.beefree.io/devmain), you’ll have the option to create a File Manager application.
+When you create an application in the [Beefree SDK Console](https://developers.beefree.io/), you’ll have the option to create a File Manager application.
 
 <figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.30.26.png" alt=""><figcaption></figcaption></figure>
 

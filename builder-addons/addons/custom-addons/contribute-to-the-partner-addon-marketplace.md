@@ -26,11 +26,11 @@ You will be completely in charge of the business relationship with those compani
 
 The following is a list of requirements for getting an AddOn listed in the Partner AddOn Directory:
 
-1. You have signed the Beefree SDK AddOn License and Distribution Agreement. Contact your Account Manager or log in to the [Beefree SDK Console](https://dam.beefree.io/devmain) and submit a ticket for details.
+1. You have signed the Beefree SDK AddOn License and Distribution Agreement. Contact your Account Manager or log in to the [Beefree SDK Console](https://developers.beefree.io/) and submit a ticket for details.
 2. You have built an AddOn that:
    1. Uses the External iFrame Method (see [AddOn Development](addon-development.md))
    2. Uses the optional health check endpoint
 3. You have thoroughly tested the AddOn before submitting it to our test for a final review.
 4. You have a demo of the AddOn that we can access.
 
-When you have completed all of the above, contact your Account Manager or log in to the [Developer Portal](https://dam.beefree.io/devmain) and submit a ticket to complete the review and approval process.
+When you have completed all of the above, contact your Account Manager or log in to the [Developer Portal](https://developers.beefree.io/) and submit a ticket to complete the review and approval process.

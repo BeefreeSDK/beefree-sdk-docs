@@ -23,7 +23,7 @@ Once you have a development application on the Superpowers plan or above, procee
 
 ## Getting started <a href="#getting-started" id="getting-started"></a>
 
-The process all starts in the [Beefree SDK Console](https://dam.beefree.io/devmain):
+The process all starts in the [Beefree SDK Console](https://developers.beefree.io/):
 
 1. Log into the Console at [developers.beefree.io](http://developers.beefree.io/)
 2. If you have not done so yet, create a development app as indicated above

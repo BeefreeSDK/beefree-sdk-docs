@@ -12,7 +12,7 @@ An addon is an application that extends the functionality of the Beefree SDK edi
 
 Software companies can both **use** addons and **build** addons.
 
-You **use** an addon when you need a new feature for Beefree SDK (e.g. you want your end-users to be able to insert a _countdown timer_ in an email) and find an addon that meets your needs. You will search, find, and install addons in the [Beefree SDK Console](https://dam.beefree.io/devmain), in the application configuration area. The [end-user experience](https://docs.beefree.io/addon-end-user-experience/) will vary depending on the addon.
+You **use** an addon when you need a new feature for Beefree SDK (e.g. you want your end-users to be able to insert a _countdown timer_ in an email) and find an addon that meets your needs. You will search, find, and install addons in the [Beefree SDK Console](https://developers.beefree.io/), in the application configuration area. The [end-user experience](https://docs.beefree.io/addon-end-user-experience/) will vary depending on the addon.
 
 In some case you might decide to build addons for Beefree SDK. In that case:
 
@@ -21,12 +21,12 @@ In some case you might decide to build addons for Beefree SDK. In that case:
 
 ## How to Use (Not Build) an AddOn?
 
-That’s precisely why we’re excited about addons: companies like yours can easily turn on all kinds of additional features (i.e. addons), with minimal effort. You will find, select, and install the addons that meet your needs directly from within the [Beefree SDK Console](https://dam.beefree.io/devmain).
+That’s precisely why we’re excited about addons: companies like yours can easily turn on all kinds of additional features (i.e. addons), with minimal effort. You will find, select, and install the addons that meet your needs directly from within the [Beefree SDK Console](https://developers.beefree.io/).
 
 More specifically:
 
 * The Partner AddOn Directory will go live by mid-March, 2020. [Sign up to receive updates](https://docs.beefree.io/updates/) from us on this.
-* You will access the directory from within the [Beefree SDK Console](https://dam.beefree.io/devmain), from the _Details_ page of any application that you have created.
+* You will access the directory from within the [Beefree SDK Console](https://developers.beefree.io/), from the _Details_ page of any application that you have created.
 * There will be several addons listed that will help your end-users with things like countdown timers, dynamic maps, personalized cards, etc. ([here is an example](https://docs.beefree.io/addon-end-user-experience/))
 * You will be able to install many addons with just a few clicks (but some addons will require that you become a customer of the addon provider and obtain an API key).
 * You will be able to customize things like the name of the feature shown to your end-users in the _Content_ tab of the editor, the icon used, etc.

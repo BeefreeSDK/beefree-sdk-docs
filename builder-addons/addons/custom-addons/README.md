@@ -46,7 +46,7 @@ Of course, there are exceptions to this requirement.
 
 ## Getting started <a href="#getting-started" id="getting-started"></a>
 
-Log into the [Beefree SDK Console](https://dam.beefree.io/devmain) and locate any application that is on the Superpowers or Enterprise plans. Click on _Details_ to navigate to the application details page. In the lower part of the page, locate the _Application configuration_ section and click on AddOns.
+Log into the [Beefree SDK Console](https://developers.beefree.io/) and locate any application that is on the Superpowers or Enterprise plans. Click on _Details_ to navigate to the application details page. In the lower part of the page, locate the _Application configuration_ section and click on AddOns.
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2025-03-13 at 15.01.17.png" alt=""><figcaption></figcaption></figure>
 

@@ -27,7 +27,7 @@ The AMP Carousel is OFF by default and you must first activate it in the Beefree
 
 To do so:
 
-* [Login into the Beefree SDK Console](https://dam.beefree.io/devmain)
+* [Login into the Beefree SDK Console](https://developers.beefree.io/)
 * Click **Details** next to the application you want to configure
   * We recommend you first try the AMP carousel under a DEV or QA application
 * Click view more under **Application configuration**.
