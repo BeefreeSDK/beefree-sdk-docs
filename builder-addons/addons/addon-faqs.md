@@ -51,8 +51,8 @@ Any Beefree SDK customer will see it and will be able to install it, as Partner 
 
 To build an addon, you need an eligible Beefree SDK subscription plan, including any one of the following:
 
-1. [Superpowers plan](https://dam.beefree.io/pluginpricing)
-2. [Enterprise plan](https://dam.beefree.io/pluginpricing)
+1. [Superpowers plan](https://developers.beefree.io/pricing-plans)
+2. [Enterprise plan](https://developers.beefree.io/pricing-plans)
 
 If you are on a lower-level plan and wish to test building an addon, you can simply [upgrade a development application](../../getting-started/readme/development-applications.md) to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
 

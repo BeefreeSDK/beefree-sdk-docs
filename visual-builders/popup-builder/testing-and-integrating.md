@@ -43,7 +43,7 @@ The HTML partial will come with all the CSS required to look as it did in the pr
 
 Our Github account has some resources that might help you out when testing and integrating the Popup Builder.
 
-[**Sample code**](https://dam.beefree.io/pluginsamplecode)
+[**Sample code**](https://github.com/BeefreeSDK/beefree-sdk-sample-client)
 
 Examples of different implementations and configurations that you can draw from to speed up your development.
 

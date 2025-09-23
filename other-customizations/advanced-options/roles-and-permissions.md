@@ -1,7 +1,7 @@
 # Roles and Permissions
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+This feature is available on Beefree SDK [paid plans](https://developers.beefree.io/pricing-plans) only.
 {% endhint %}
 
 ## About roles and permissions <a href="#about-roles-and-permissions" id="about-roles-and-permissions"></a>

@@ -7,7 +7,7 @@ description: >-
 # Custom AddOns
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. Upgrade a [development application](../../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
+This feature is available on Beefree SDK [Superpowers plan](https://developers.beefree.io/pricing-plans) and above. Upgrade a [development application](../../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
 {% endhint %}
 
 ## Introduction <a href="#introduction" id="introduction"></a>
@@ -28,7 +28,7 @@ Let’s say you embedded our email editor in your **event engagement platform**,
 
 ## Availability <a href="#availability" id="availability"></a>
 
-Custom AddOns are an advanced feature. As a result, the feature is available on the following [plans](https://dam.beefree.io/pluginpricing):
+Custom AddOns are an advanced feature. As a result, the feature is available on the following [plans](https://developers.beefree.io/pricing-plans):
 
 * Superpowers
 * Enterprise

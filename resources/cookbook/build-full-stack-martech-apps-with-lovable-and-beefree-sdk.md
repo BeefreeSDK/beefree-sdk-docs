@@ -38,7 +38,7 @@ Prior to getting started, ensure you meet the following prerequisites:&#x20;
 
 * Understanding of martech platform requirements and user workflows
 * Basic familiarity with email marketing concepts and campaign management
-* [Beefree SDK developer account](https://developers.beefree.io/accounts/login/?from=website_menu) (for actual implementation)
+* [Beefree SDK developer account](https://developers.beefree.io/login?from=website_menu) (for actual implementation)
 * Comfort with iterative, conversational development approaches
 
 ### Prompt Engineering Strategies for Martech Development
@@ -387,6 +387,6 @@ Building sophisticated martech applications with [Lovable](https://lovable.dev) 
 
 Success comes from treating [Lovable](https://lovable.dev) as a collaborative partner in the development process, providing clear context and requirements while allowing the AI to leverage its strengths in implementation and design system consistency. The most effective prompts combine business understanding, user empathy, and technical clarity to create applications that feel cohesive, professional, and genuinely useful.
 
-Successfully integrating SDKs into your [Lovable](https://lovable.dev) application requires providing Lovable with the context from the documentation. For integrating [Beefree SDK](../../) into your Martech application, visit the technical documentation and use the **Copy** button to copy the pages Lovable requires for a successful integration. Also, ensure you create a [Developer account](https://developers.beefree.io/accounts/login/?from=website_menu) with [Beefree SDK](../../) and securely add them to your Lovable Martech application to initialize the no-code email editor. &#x20;
+Successfully integrating SDKs into your [Lovable](https://lovable.dev) application requires providing Lovable with the context from the documentation. For integrating [Beefree SDK](../../) into your Martech application, visit the technical documentation and use the **Copy** button to copy the pages Lovable requires for a successful integration. Also, ensure you create a [Developer account](https://developers.beefree.io/login?from=website_menu) with [Beefree SDK](../../) and securely add them to your Lovable Martech application to initialize the no-code email editor. &#x20;
 
 Remember: great martech tools aren't just technically sophisticated—they make complex marketing workflows feel simple and intuitive. Your prompts should reflect this philosophy by focusing on user value first, then building the technical foundation to deliver that value effectively.

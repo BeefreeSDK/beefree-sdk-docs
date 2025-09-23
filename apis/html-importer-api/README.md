@@ -26,7 +26,7 @@ This section of the documentation discusses the [HTML Importer API](./#overview-
 
 ## Overview of HTML Importer API
 
-The HTML Importer API allows you to import your own HTML files into Beefree SDK. To use the HTML Importer API, you'll need to [create an API key](authentication.md) for the HTML Importer in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu). Visit the [Import HTML page](import-html.md) to learn how to make API calls with the HTML Importer API.&#x20;
+The HTML Importer API allows you to import your own HTML files into Beefree SDK. To use the HTML Importer API, you'll need to [create an API key](authentication.md) for the HTML Importer in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu). Visit the [Import HTML page](import-html.md) to learn how to make API calls with the HTML Importer API.&#x20;
 
 Manually migrating your existing templates can be time-consuming, but with the HTML Importer API you can:
 

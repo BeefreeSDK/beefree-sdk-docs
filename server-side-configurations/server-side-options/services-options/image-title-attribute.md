@@ -10,7 +10,7 @@ The Image Title Attribute allows end users to add a [custom title attribute](htt
 
 Adding a title attribute is an important step toward improving accessibility and user experience. When present, the title attribute provides additional context when a user hovers over an image. Also, screen readers can use it to deliver a verbal description, helping visually impaired users better understand the image in context.
 
-By enabling the title attribute option in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu), your end users can add a custom title attribute to images in their designs, which serves a different purpose than [alt text](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/alt).
+By enabling the title attribute option in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu), your end users can add a custom title attribute to images in their designs, which serves a different purpose than [alt text](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/alt).
 
 When activated, the **Image Properties** in the editor will show a new **Title attribute** field. The following image shows an example of what this looks like in the builder.
 
@@ -18,11 +18,11 @@ When activated, the **Image Properties** in the editor will show a new **Title a
 
 ## How to Activate the Feature
 
-The Image Title Attribute is off by default and can be enabled through the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+The Image Title Attribute is off by default and can be enabled through the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 
 Take the following steps:
 
-1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 2. Navigate to the application where you want to enable the feature.
 3. Click on the **Details** button.
 4. Navigate to **Application Configurations**.

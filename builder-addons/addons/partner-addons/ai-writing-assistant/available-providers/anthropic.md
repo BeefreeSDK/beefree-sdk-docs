@@ -23,7 +23,7 @@ This page discusses how to configure Anthropic as a provider for the [AI Writing
 Prior to getting started, ensure you have the following:
 
 * A [Superpowers or Enterprise Beefree SDK plan](https://developers.beefree.io/pricing-plans)
-* The AI Writing Assistant AddOn enabled in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+* The AI Writing Assistant AddOn enabled in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 * An API Key for [Anthropic](https://www.anthropic.com/)&#x20;
   * **Note:** Refer to [Anthropic’s documentation](https://www.anthropic.com/) for instructions on creating an account and generating your API key.
 
@@ -31,7 +31,7 @@ Prior to getting started, ensure you have the following:
 
 Take the following steps to configure this provider:
 
-1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 2. Navigate to the application with the AI Writing Assistant enabled.
    1. Click **Details**.
 3. Navigate to the **AddOns** under **Application configuration** section.

@@ -21,7 +21,7 @@ Prerequisites
 
 Take the following steps to activate this feature:
 
-1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu).
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website\_menu).
 2. Navigate to the application you'd like install the addOn in.
 3. Install the [Stability AI](https://stability.ai/) addOn.
 4. Provide the requested details.

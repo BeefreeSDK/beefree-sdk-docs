@@ -49,7 +49,7 @@ Here is a video explaining **why we built Mobile design mode** and how it **enha
 
 Take the following steps to enable Mobile Design Mode within your application:
 
-1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 2. Navigate to the application you want to configure **Mobile Design Mode** for.&#x20;
 3.  Click the application's **Details** button.
 

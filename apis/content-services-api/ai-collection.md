@@ -54,7 +54,7 @@ The following table provides a comprehensive reference of all available options 
 Prior to getting started with the resources in this collection, ensure you have the following:
 
 * **Superpowers** subscription or higher.
-* An [AI Provider](../../builder-addons/addons/partner-addons/ai-writing-assistant/available-providers/) configured within the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+* An [AI Provider](../../builder-addons/addons/partner-addons/ai-writing-assistant/available-providers/) configured within the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 * Content Services **API key.**
 
 {% hint style="info" %}

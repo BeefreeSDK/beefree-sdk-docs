@@ -34,14 +34,14 @@ The following image displays an example of a button within an email sent to an e
 
 Prior to implementing the Hover Effect button, ensure you have the following:
 
-* [Beefree SDK Developer Console account](https://developers.beefree.io/accounts/login/?from=website_menu)
+* [Beefree SDK Developer Console account](https://developers.beefree.io/login?from=website_menu)
 * [Any Beefree SDK plan type](https://developers.beefree.io/pricing-plans)
 
 ## Activation Steps
 
 Take the following steps to toggle on and activate the Hover Effect for Buttons for your application:
 
-1. Log in to your [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. Log in to your [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 2. Navigate to the application where you'd like to enable Hover Effect for Buttons.&#x20;
 3. Click **Details** to navigate to the application's details.
 4. Click **Application configuration.**

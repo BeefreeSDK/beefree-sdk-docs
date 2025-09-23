@@ -20,7 +20,7 @@ You can create a development application within your Beefree SDK console. Prior 
 
 To create a development application, take the following steps:
 
-1. Log in to your [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?next=/subscriptions/)
+1. Log in to your [Beefree SDK Developer Console](https://developers.beefree.io/login?next=/subscriptions/)
 
 <figure><img src="https://lh7-eu.googleusercontent.com/rCxxb0ghZVKgizBbL2U0gT4JrqStV7fVYO4dQ0GYHPGQel576BhNywBvoQgdPSUHkgz4q5v79YKG1zvS4q6AqwQ6lBy_GPhsHcSAOTO6DRYBEXuz0PPJ1gJ3oWKrMLKfOBPVLBBIyBJxitRCqsWRhdk" alt="" width="563"><figcaption></figcaption></figure>
 
@@ -75,4 +75,4 @@ If, in your development application, you're using any of the Beefree SDK feature
 \
 [Learn more about usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees). \
 \
-You can view usage statistics for your development applications by logging into the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu), locating the development application you are working with, and looking at the Statistics widget on the application details page.&#x20;
+You can view usage statistics for your development applications by logging into the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu), locating the development application you are working with, and looking at the Statistics widget on the application details page.&#x20;

@@ -124,5 +124,5 @@ You can use the following template if you'd like to test a conversion now:
 {% endopenapi-operation %}
 
 {% hint style="warning" %}
-**Note:** You will still need to authenticate in the **Test it** environment before making an API call. Visit the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu) to obtain your API key and enter it in the `bearerAuth` field.&#x20;
+**Note:** You will still need to authenticate in the **Test it** environment before making an API call. Visit the [Developer Console](https://developers.beefree.io/login?from=website_menu) to obtain your API key and enter it in the `bearerAuth` field.&#x20;
 {% endhint %}

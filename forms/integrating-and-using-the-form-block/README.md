@@ -35,7 +35,7 @@ This is the **quickest way** to get started using forms. You may also decide to 
 ## Pass Multiple Forms
 
 {% hint style="info" %}
-The Content Dialog feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+The Content Dialog feature is available on Beefree SDK [paid plans](https://developers.beefree.io/pricing-plans) only.
 {% endhint %}
 
 If you want to pass more than one form to the builder, you can do so by implementing a [Content dialog](../../other-customizations/advanced-options/content-dialog.md) on top of the form content block.
@@ -63,7 +63,7 @@ You may even want to go a step further and use the Content dialog to load your U
 ## Embed a Third-Party Form
 
 {% hint style="info" %}
-The HTML Block is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+The HTML Block is available on Beefree SDK [paid plans](https://developers.beefree.io/pricing-plans) only.
 {% endhint %}
 
 As an alternative to the above-mentioned methods, your users can add an **HTML block** and easily **embed forms** created with [any form builder](https://www.g2.com/categories/online-form-builder) available on the market (e.g. Typeform, JotForm, etc.).

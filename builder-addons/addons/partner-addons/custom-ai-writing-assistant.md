@@ -35,7 +35,7 @@ Prior to getting started with the configuration, ensure you have the following:
 
 * Enterprise plan
 * A custom LLM service to call from within the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md)
-* Access to the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu)
+* Access to the [Developer Console](https://developers.beefree.io/login?from=website_menu)
 
 ## **Configuration Steps**
 
@@ -51,7 +51,7 @@ These steps are the following:
 
 Take the following steps to install and enable the AddOn:
 
-1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 2. Click on the **Details** button corresponding to the application you'd like to configure the AddOn for.
 3. Go to the **AddOns** section and click **Browse AddOns**.
 4. Search for and select the **Custom AI Writing Assistant** AddOn.

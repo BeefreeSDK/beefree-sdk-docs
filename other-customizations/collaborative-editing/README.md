@@ -1,7 +1,7 @@
 # Collaborative Editing
 
 {% hint style="info" %}
-This feature is available on the Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. Additional limitations apply ([learn more](./#monitor-a-session)). Upgrade a [development application](../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
+This feature is available on the Beefree SDK [Superpowers plan](https://developers.beefree.io/pricing-plans) and above. Additional limitations apply ([learn more](./#monitor-a-session)). Upgrade a [development application](../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
 {% endhint %}
 
 ## Overview
@@ -28,7 +28,7 @@ If you add [Commenting](../advanced-options/commenting.md) to the mix, Beefree S
 
 ### Availability <a href="#availability" id="availability"></a>
 
-Co-editing is available for Beefree SDK [Superpowers](https://dam.beefree.io/pluginpricing) and [Enterprise](https://dam.beefree.io/pluginpricing) plans:
+Co-editing is available for Beefree SDK [Superpowers](https://developers.beefree.io/pricing-plans) and [Enterprise](https://developers.beefree.io/pricing-plans) plans:
 
 * Superpowers plans are limited to a maximum of **5 co-editors per session**.
 * **Enterprise** plans are limited to a maximum of **20 co-editors per session.**

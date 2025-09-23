@@ -1,7 +1,7 @@
 # Custom Color Palette
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+This feature is available on Beefree SDK [paid plans](https://developers.beefree.io/pricing-plans) only.
 {% endhint %}
 
 ## Color picker palette overview <a href="#color-picker-palette-overview" id="color-picker-palette-overview"></a>

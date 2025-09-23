@@ -153,7 +153,7 @@ but then, the user can toggle on the available fields to transform it:
 ## Implementing a content dialog <a href="#implementing-a-content-dialog" id="implementing-a-content-dialog"></a>
 
 {% hint style="info" %}
-The Content Dialog feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+The Content Dialog feature is available on Beefree SDK [paid plans](https://developers.beefree.io/pricing-plans) only.
 {% endhint %}
 
 The content dialog allows you to build a user interface for selecting a form, on top of the builder. It can be a simple list with prebuilt forms, a search through categorized forms, a small form configurator or wizard, or even a complete form builder tailored for your application’s data.

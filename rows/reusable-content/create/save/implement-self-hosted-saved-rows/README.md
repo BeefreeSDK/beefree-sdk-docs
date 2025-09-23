@@ -7,7 +7,7 @@ description: >-
 # Implement Self-hosted Saved Rows
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above. Upgrade a [development application](../../../../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
+This feature is available on Beefree SDK [Core plan](https://developers.beefree.io/pricing-plans) and above. Upgrade a [development application](../../../../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
 {% endhint %}
 
 ## Overview <a href="#overview" id="overview"></a>
@@ -47,7 +47,7 @@ The host application needs to determine the following:
 
 ## **Enable Self-Hosted Saved Rows in the Developer Console**
 
-Take the following steps to enable Self-hosted Saved Rows in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu):
+Take the following steps to enable Self-hosted Saved Rows in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu):
 
 1. Log in to the [Beefree SDK Console](https://developers.beefree.io/).
 2. Locate the application you'd like to activate Self-hosted Saved Rows for.
@@ -59,7 +59,7 @@ Take the following steps to enable Self-hosted Saved Rows in the [Beefree SDK De
 6. Toggle on the **Self-hosted on your own infrastructure** option.
 7. Click **Save** on the upper right-hand corner to save your changes.
 
-The following image displays where the toggle is located in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+The following image displays where the toggle is located in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 
 <figure><img src="../../../../../.gitbook/assets/CleanShot 2024-12-03 at 21.46.45.png" alt=""><figcaption></figcaption></figure>
 

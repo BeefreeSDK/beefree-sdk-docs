@@ -6,7 +6,7 @@ Using this simple, client-side example, you can literally try out Beefree SDK in
 
 1. Obtain your application keys (**Client ID** and **Client Secret**) [by signing up here](https://dam.beefree.io/devportalsignup) (there is a free plan).
 2. Create a new application: you will find your keys in the project’s details page
-3. [Download](https://dam.beefree.io/pluginsamplecode) the client-side sample code.
+3. [Download](https://github.com/BeefreeSDK/beefree-sdk-sample-client) the client-side sample code.
 4. Open `index.html` with your favorite code editor
 5. Locate `client_id` and replace **“YOUR\_CLIENT\_ID”** with yours
 6. Locate `client_secret` and replace **“YOUR\_CLIENT\_SECRET”** with yours

@@ -46,7 +46,7 @@ Enabling this toggle is a prerequisite for all the integration steps outlined in
 
 To enable Self-hosted saved rows for your application, follow these steps:
 
-1. Log in to the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. Log in to the [Developer Console](https://developers.beefree.io/login?from=website_menu).
 2. Navigate to the application you'd like to configure Self-hosted saved rows for.
 3. Click on **Details**.
 4. Navigate to **Application configuration** and click **View more**.

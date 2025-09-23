@@ -23,13 +23,13 @@ Dynamic images let your end users personalize email designs by swapping static i
 
 ## How to Activate
 
-By default, the Dynamic images are off. You can enable them by checking them to on within the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+By default, the Dynamic images are off. You can enable them by checking them to on within the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 
 ### Developer Console Steps
 
 Take the following steps within the Developer Console to enable Dynamic images.
 
-1. Navigate to the application you'd like to activate Dynamic images for in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. Navigate to the application you'd like to activate Dynamic images for in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 2. Click on the application’s **Details**.
 3. Select **Configure Application**.
 4. Scroll to the **Services** section.
@@ -44,7 +44,7 @@ The following GIF displays a visual example of what this toggle looks like in th
 
 ### End User Workflow
 
-This section discusses what an end user workflow could look like once Dynamic images are enabled within the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu) and available on the email editor's frontend for the end user to use.
+This section discusses what an end user workflow could look like once Dynamic images are enabled within the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu) and available on the email editor's frontend for the end user to use.
 
 1. **Drag an Image block** into a row.
 2. In the **Content** tab, navigate to **Image Properties** and toggle **Dynamic image ON**.

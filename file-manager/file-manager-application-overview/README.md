@@ -24,7 +24,7 @@ File manager applications share the same core functionalities as all other build
 
 For those who are new to our platform, our documentation includes a comprehensive [Getting Started](../../getting-started/readme/installation/) section that provides detailed instructions on how to set up and use our builders. This section is applicable to all products.
 
-File Manager and all builders are available to  customers under the same [all-in-one pricing.](https://dam.beefree.io/pluginpricing) Please contact your Customer Success Manager for more details.
+File Manager and all builders are available to  customers under the same [all-in-one pricing.](https://developers.beefree.io/pricing-plans) Please contact your Customer Success Manager for more details.
 
 ## Configure "Insert" and "X" Buttons
 

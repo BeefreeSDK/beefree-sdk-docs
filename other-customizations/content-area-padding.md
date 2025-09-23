@@ -30,7 +30,7 @@ Reference the [white label end user guide ](https://docs.beefree.io/end-user-gui
 Prior to activating Content Area Padding, ensure you have the following:
 
 * A [Beefree SDK plan](https://beefree-sdk-testing.webflow.io/pricing-plans)
-* An application in the [Developer Console with a Client ID and Client Secret](https://developers.beefree.io/accounts/login/?from=website_menu)
+* An application in the [Developer Console with a Client ID and Client Secret](https://developers.beefree.io/login?from=website_menu)
 
 ## Activation
 
@@ -39,14 +39,14 @@ To activate Content Area Padding, you'll need to complete the following:
 * Enable the toggle in the [Developer Console](content-area-padding.md#developer-console).
 
 {% hint style="info" %}
-**Note:** Content Area Padding is on by default for new applications. For existing applications, it is off by default and will need to be toggled on in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+**Note:** Content Area Padding is on by default for new applications. For existing applications, it is off by default and will need to be toggled on in the [Developer Console](https://developers.beefree.io/login?from=website_menu).
 {% endhint %}
 
 ### Developer Console Steps
 
-Take the following steps to activate the feature within the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu):
+Take the following steps to activate the feature within the [Developer Console](https://developers.beefree.io/login?from=website_menu):
 
-1. Log in to your [Developer Console account](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. Log in to your [Developer Console account](https://developers.beefree.io/login?from=website_menu).
 2. Navigate to the application you'd like to activate it for.
 3. Click on **Details**.
 4. Click **Application configuration**.

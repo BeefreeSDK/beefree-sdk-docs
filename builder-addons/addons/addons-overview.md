@@ -70,7 +70,7 @@ Interested in partnering with us? Learn how to submit a [Partner AddOn](addons-o
 
 Here is how you can locate and [install ready-to-go AddOns](partner-addons/installing-partner-addons.md):
 
-* Access the directory from within the [Beefree SDK Console](https://developers.beefree.io/accounts/login/), from the _Details_ page of any application that you have created.
+* Access the directory from within the [Beefree SDK Console](https://developers.beefree.io/login), from the _Details_ page of any application that you have created.
 * Browse the list. These AddOns can help your end-users with things like countdown timers, dynamic maps, personalized cards, etc.
 * Install any AddOn with just a few clicks. Please note that some AddOns will require that you become a customer of the AddOn provider and obtain an API key.
 

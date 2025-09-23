@@ -187,7 +187,7 @@ BEE_CLIENT_SECRET='YOUR-CLIENT-SECRET'️
 
 The `.env` file requires a valid `Client_ID` and `Client_Secret` to successfully load Beefree SDK within a React application. Take the following steps to get the `Client_ID` and `Client_Secret`:
 
-1. Log in or sign up for a Beefree SDK Developer Console at: https://developers.beefree.io/accounts/login/?from=website\_menu
+1. Log in or sign up for a Beefree SDK Developer Console at: https://developers.beefree.io/login?from=website\_menu
 
 2. Follow the steps in this guide to navigate the Beefree SDK and find the `Client_ID` and `Client_Secret`: https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application
 
@@ -279,7 +279,7 @@ Watch the [React Video Series](../resources/videos/react-video-series.md) to lea
 Prior to getting started, ensure you:
 
 * Understand the [React framework](https://react.dev/learn) and what it is.
-* Have a [Beefree SDK account](https://developers.beefree.io/accounts/login/?from=website_menu).&#x20;
+* Have a [Beefree SDK account](https://developers.beefree.io/login?from=website_menu).&#x20;
 * [Create an application](../getting-started/readme/create-an-application.md) within the Developer Console. &#x20;
   * Obtain your [Client ID and Client Secret](../getting-started/readme/create-an-application.md#obtain-your-client-id-and-client-secret).
 

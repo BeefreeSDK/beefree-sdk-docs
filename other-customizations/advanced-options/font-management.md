@@ -1,7 +1,7 @@
 # Font management
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+This feature is available on Beefree SDK [paid plans](https://developers.beefree.io/pricing-plans) only.
 {% endhint %}
 
 ## Introduction

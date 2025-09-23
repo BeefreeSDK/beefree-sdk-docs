@@ -1,7 +1,7 @@
 # Reusable Content
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above. Upgrade a [development application](../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
+This feature is available on Beefree SDK [Core plan](https://developers.beefree.io/pricing-plans) and above. Upgrade a [development application](../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
 {% endhint %}
 
 Beefree SDK offers a comprehensive suite of features that enable your application's end users to save and manage reusable content. Rows are a core feature of the visual builders within Beefree SDK that provide end users with an intuitive avenue for saving and reusing content throughout their design creation workflows. They provide a structured method to house various types of content such as headers, paragraphs, images, and buttons.
@@ -65,7 +65,7 @@ The following GIF shows an example user interface displaying how Hosted Saved Ro
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-12-03 at 18.22.16.gif" alt=""><figcaption></figcaption></figure>
 
-Hosted Saved Rows are enabled by default. The following image shows how the toggle looks like in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu). &#x20;
+Hosted Saved Rows are enabled by default. The following image shows how the toggle looks like in the [Developer Console](https://developers.beefree.io/login?from=website_menu). &#x20;
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-12-03 at 18.26.16.png" alt=""><figcaption></figcaption></figure>
 

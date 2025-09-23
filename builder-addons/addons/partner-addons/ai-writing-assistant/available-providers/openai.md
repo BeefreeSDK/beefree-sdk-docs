@@ -23,14 +23,14 @@ This page discusses how to configure OpenAI as a provider for the [AI Writing As
 Prior to getting started, ensure you have the following:
 
 * An OpenAI account and API Key.
-* The AI Writing Assistant AddOn enabled in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+* The AI Writing Assistant AddOn enabled in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 * Beefree SDK [Superpowers or Enterprise plan](https://app.gitbook.com/s/svPtAq2FGbWqZBP0UXk1/).
 
 ## **Configuration Steps**
 
 Take the following steps to configure this provider:
 
-1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 2. Navigate to the application with the AI Writing Assistant enabled.
    1. Click **Details**.
 3. Navigate to the **AddOns** under **Application configuration** section.

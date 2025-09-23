@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction <a href="#introduction" id="introduction"></a>
 
-Partner AddOns can easily be integrated with your application in a matter of minutes by installing them inside of the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu). You can reference available Partner AddOns inside of the [Partner AddOn Directory](../partner-addons/partner-addons-directory.md). If the AddOn with the functionality you are looking for is not offered within the Partner Directory, you also have the option to create your own [Custom AddOn](./). If you'd like to add your Custom AddOn to Partner AddOn Marketplace within the Beefree SDK Developer Console, you have the option to do that.&#x20;
+Partner AddOns can easily be integrated with your application in a matter of minutes by installing them inside of the [Developer Console](https://developers.beefree.io/login?from=website\_menu). You can reference available Partner AddOns inside of the [Partner AddOn Directory](../partner-addons/partner-addons-directory.md). If the AddOn with the functionality you are looking for is not offered within the Partner Directory, you also have the option to create your own [Custom AddOn](./). If you'd like to add your Custom AddOn to Partner AddOn Marketplace within the Beefree SDK Developer Console, you have the option to do that.&#x20;
 
 Throughout this page, we will discuss at a high-level how you can list the Custom AddOn you created as a Partner AddOns within the Partner AddOn Marketplace. &#x20;
 

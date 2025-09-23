@@ -35,7 +35,7 @@ In the following GIF, you can see an example of differently customized experienc
 
 On a foundational level, the Email builder includes the capabilities detailed in the following table.&#x20;
 
-**Note:** Additional capabilities and features can be added on top of these through [AddOns](../builder-addons/addons/), toggle on options in the [developer console](https://developers.beefree.io/accounts/login/?from=website_menu), [Advanced Options](../other-customizations/advanced-options/), [Template Catalog API](../apis/template-catalog-api/), [Content Services API](broken-reference), and more.&#x20;
+**Note:** Additional capabilities and features can be added on top of these through [AddOns](../builder-addons/addons/), toggle on options in the [developer console](https://developers.beefree.io/login?from=website_menu), [Advanced Options](../other-customizations/advanced-options/), [Template Catalog API](../apis/template-catalog-api/), [Content Services API](broken-reference), and more.&#x20;
 
 | Foundational feature                                                                          | Description                                                                                                                                                                                                                                                                                                                                                                                       | Image                                                                                                                                                                                                                                                                          |
 | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -73,7 +73,7 @@ The following resources are a great start to learn more:
 
 To integrate the Email builder, take the following steps:
 
-1. [Create your Beefree SDK account](https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application) in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. [Create your Beefree SDK account](https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application) in the [Developer Console](https://developers.beefree.io/login?from=website_menu).
    1. [Create an email application](https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application) within the Developer Console.
    2. Obtain your Client ID and Client Secret.
 2. Authenticate using the [Authorization Process](../getting-started/readme/installation/authorization-process-in-detail.md).
