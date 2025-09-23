@@ -8,7 +8,7 @@ Besides the client-side configuration parameters that you can set for your insta
 
 ## Access Server-side Configurations
 
-To access server-side configurations, log into your [Beefree SDK Console](https://dam.beefree.io/devportal) and select the application that you wish to configure.
+To access server-side configurations, log into your [Beefree SDK Console](https://devportal.beefree.io/hc/en-us) and select the application that you wish to configure.
 
 In the application’s details page, locate the area called _Application configuration._
 

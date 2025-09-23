@@ -2,7 +2,7 @@
 
 ## Creating an application <a href="#creating-an-application" id="creating-an-application"></a>
 
-When you log into the [Beefree SDK Console](https://dam.beefree.io/devmain) you can immediately see what type of applications you have already created under your Beefree SDK subscriptions. To create a Popup application, head over to the **Popup Builder Application** section and click on **Activate**.
+When you log into the [Beefree SDK Console](https://developers.beefree.io/) you can immediately see what type of applications you have already created under your Beefree SDK subscriptions. To create a Popup application, head over to the **Popup Builder Application** section and click on **Activate**.
 
 <figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.09.44.png" alt=""><figcaption></figcaption></figure>
 
@@ -43,7 +43,7 @@ The HTML partial will come with all the CSS required to look as it did in the pr
 
 Our Github account has some resources that might help you out when testing and integrating the Popup Builder.
 
-[**Sample code**](https://dam.beefree.io/pluginsamplecode)
+[**Sample code**](https://github.com/BeefreeSDK/beefree-sdk-sample-client)
 
 Examples of different implementations and configurations that you can draw from to speed up your development.
 

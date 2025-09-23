@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction <a href="#introduction" id="introduction"></a>
 
-Partner AddOns can easily be integrated with your application in a matter of minutes by installing them inside of the [Developer Console](https://developers.beefree.io/accounts/login/?from=website\_menu). You can reference available Partner AddOns inside of the [Partner AddOn Directory](../partner-addons/partner-addons-directory.md). If the AddOn with the functionality you are looking for is not offered within the Partner Directory, you also have the option to create your own [Custom AddOn](./). If you'd like to add your Custom AddOn to Partner AddOn Marketplace within the Beefree SDK Developer Console, you have the option to do that.&#x20;
+Partner AddOns can easily be integrated with your application in a matter of minutes by installing them inside of the [Developer Console](https://developers.beefree.io/login?from=website\_menu). You can reference available Partner AddOns inside of the [Partner AddOn Directory](../partner-addons/partner-addons-directory.md). If the AddOn with the functionality you are looking for is not offered within the Partner Directory, you also have the option to create your own [Custom AddOn](./). If you'd like to add your Custom AddOn to Partner AddOn Marketplace within the Beefree SDK Developer Console, you have the option to do that.&#x20;
 
 Throughout this page, we will discuss at a high-level how you can list the Custom AddOn you created as a Partner AddOns within the Partner AddOn Marketplace. &#x20;
 
@@ -26,11 +26,11 @@ You will be completely in charge of the business relationship with those compani
 
 The following is a list of requirements for getting an AddOn listed in the Partner AddOn Directory:
 
-1. You have signed the Beefree SDK AddOn License and Distribution Agreement. Contact your Account Manager or log in to the [Beefree SDK Console](https://dam.beefree.io/devmain) and submit a ticket for details.
+1. You have signed the Beefree SDK AddOn License and Distribution Agreement. Contact your Account Manager or log in to the [Beefree SDK Console](https://developers.beefree.io/) and submit a ticket for details.
 2. You have built an AddOn that:
    1. Uses the External iFrame Method (see [AddOn Development](addon-development.md))
    2. Uses the optional health check endpoint
 3. You have thoroughly tested the AddOn before submitting it to our test for a final review.
 4. You have a demo of the AddOn that we can access.
 
-When you have completed all of the above, contact your Account Manager or log in to the [Developer Portal](https://dam.beefree.io/devmain) and submit a ticket to complete the review and approval process.
+When you have completed all of the above, contact your Account Manager or log in to the [Developer Portal](https://developers.beefree.io/) and submit a ticket to complete the review and approval process.

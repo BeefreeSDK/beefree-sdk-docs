@@ -17,7 +17,7 @@ layout:
 
 ## Create an Application
 
-The first step to embedding Beefree’s visual builders in your software is to[ sign up for a Beefree SDK account](https://developers.beefree.io/accounts/signup/). Once that’s done, you will be able to [log into the Beefree SDK Console](https://developers.beefree.io/accounts/login/).  That’s where you will:
+The first step to embedding Beefree’s visual builders in your software is to[ sign up for a Beefree SDK account](https://developers.beefree.io/accounts/signup/). Once that’s done, you will be able to [log into the Beefree SDK Console](https://developers.beefree.io/login).  That’s where you will:
 
 * Create applications (e.g. an email builder and a landing page builder).
 * Create development apps for all sorts of dev, QA, or staging environments.

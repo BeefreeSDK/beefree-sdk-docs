@@ -9,7 +9,7 @@ Here is a list of terms used frequently throughout the Beefree SDK technical doc
 * **Beefree SDK**\
   A toolkit that includes white-label, no-code builders for emails, landing pages, and popups. The toolkit also provides a range of components, APIs, sample code, and support services to help you seamlessly integrate into your software a content creation workflow that your customers will love.
 * **Beefree SDK subscription**\
-  A subscription to the _Beefree SDK_. There are different [subscription plans](https://dam.beefree.io/pluginpricing), starting with a Free plan. Once you have a subscription, you can create one or more _Beefree applications_.
+  A subscription to the _Beefree SDK_. There are different [subscription plans](https://developers.beefree.io/pricing-plans), starting with a Free plan. Once you have a subscription, you can create one or more _Beefree applications_.
 * **Beefree application**\
   An instance of any of the no-code tools that can be embedded in your software. They include:
   * Email Builder

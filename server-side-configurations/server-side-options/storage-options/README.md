@@ -29,7 +29,7 @@ If you need more control on what files users should be able to upload, you may a
 
 ### **How images are stored & delivered**
 
-By default, images used in emails and pages created with the builder are stored in Beefree SDK’s file storage system. Beefree SDK uses [Amazon Web Service’s S3](https://dam.beefree.io/amazons3) service for storage, and leverages Amazon’s Content Delivery Network ([CloudFront](https://dam.beefree.io/amazoncloudfront)) for fast content delivery.
+By default, images used in emails and pages created with the builder are stored in Beefree SDK’s file storage system. Beefree SDK uses [Amazon Web Service’s S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingObjects.html) service for storage, and leverages Amazon’s Content Delivery Network ([CloudFront](https://aws.amazon.com/cloudfront/)) for fast content delivery.
 
 ### **Storage and delivery fees**
 
@@ -49,7 +49,7 @@ If you are using the Beefree AWS S3 Bucket, take the following steps to enable t
 If you are using your own AWS S3 bucket, take the following steps to activate the **Move File** feature:
 
 1. Ensure that your FSP is updated to the latest version.&#x20;
-2. Navigate to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+2. Navigate to the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 3. Locate the **Move File** configuration toggle.
 4. Toggle the feature on.
 
@@ -108,4 +108,4 @@ No, this is not possible. You can either connect production apps included in the
 
 #### **Can I get a history of my monthly traffic usage?**
 
-Please contact your account manager for this. If you are not sure how to do this, please [log into the Beefree SDK Console](https://dam.beefree.io/devmain) and submit a support ticket asking for your usage history.
+Please contact your account manager for this. If you are not sure how to do this, please [log into the Beefree SDK Console](https://developers.beefree.io/) and submit a support ticket asking for your usage history.

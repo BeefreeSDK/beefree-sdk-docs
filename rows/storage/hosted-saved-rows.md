@@ -1,7 +1,7 @@
 # Hosted Saved Rows
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [Core plan](https://dam.beefree.io/pluginpricing) and above.
+This feature is available on Beefree SDK [Core plan](https://developers.beefree.io/pricing-plans) and above.
 {% endhint %}
 
 ## **Overview**
@@ -43,7 +43,7 @@ Webinar on Hosted Saved Rows
 
 To disable or enable Hosted Saved Rows for your application, follow these steps:
 
-1. Log in to the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. Log in to the [Developer Console](https://developers.beefree.io/login?from=website_menu).
 2. Navigate to the application you'd like to configure Hosted Saved Rows for.
 3. Click on **Details.**
 4. Navigate to **Application configuration** and click **View more.**
@@ -103,7 +103,7 @@ End users can now easily save and reuse rows across multiple designs, including 
 
 #### What is the difference between Hosted Saved Rows and Self-Hosted Saved Rows? <a href="#what-is-the-difference-between-hosted-rows-and-saved-rows" id="what-is-the-difference-between-hosted-rows-and-saved-rows"></a>
 
-The benefit for your users remains the same—they can save and reuse rows instead of rebuilding them every time. The only difference is that with Hosted Saved Rows, you don't have to develop all the necessary steps within your application on your own. All you need to do is activate the feature through a toggle in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+The benefit for your users remains the same—they can save and reuse rows instead of rebuilding them every time. The only difference is that with Hosted Saved Rows, you don't have to develop all the necessary steps within your application on your own. All you need to do is activate the feature through a toggle in the [Developer Console](https://developers.beefree.io/login?from=website_menu).
 
 #### Where are the Hosted Saved Rows stored? <a href="#where-are-the-hosted-rows-stored" id="where-are-the-hosted-rows-stored"></a>
 

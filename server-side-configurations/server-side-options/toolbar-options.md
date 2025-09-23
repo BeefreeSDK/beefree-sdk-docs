@@ -1,7 +1,7 @@
 # Toolbar options
 
 {% hint style="info" %}
-Please note that server-side configurations are only available on [paid plans](https://dam.beefree.io/pluginpricing).
+Please note that server-side configurations are only available on [paid plans](https://developers.beefree.io/pricing-plans).
 {% endhint %}
 
 ## Toolbar Options

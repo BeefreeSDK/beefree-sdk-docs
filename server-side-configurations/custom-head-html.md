@@ -20,7 +20,7 @@ This is a server-side configuration. You can activate the Custom Head HTML optio
 
 Take the following steps to enable Custom Head HTML in your server-side configurations:
 
-1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 2. Navigate to the application you’d like to activate Custom Head HTML for.
 3. Click the **Details** button for that application.
 4. Navigate to the **Application Configuration** section of the **Details** page and click View more under **Application Configuration**.

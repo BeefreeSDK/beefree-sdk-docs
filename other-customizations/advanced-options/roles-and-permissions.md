@@ -1,7 +1,7 @@
 # Roles and Permissions
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+This feature is available on Beefree SDK [paid plans](https://developers.beefree.io/pricing-plans) only.
 {% endhint %}
 
 ## About roles and permissions <a href="#about-roles-and-permissions" id="about-roles-and-permissions"></a>
@@ -74,7 +74,7 @@ To accomplish the above, a user with higher permissions needs to:
 
 ## Creating and editing user roles <a href="#creating-and-editing-user-roles" id="creating-and-editing-user-roles"></a>
 
-Log into the [Beefree SDK Console](https://dam.beefree.io/devmain) and click on **Manage roles** under Application configuration for the selected application:
+Log into the [Beefree SDK Console](https://developers.beefree.io/) and click on **Manage roles** under Application configuration for the selected application:
 
 <figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.40.52.png" alt=""><figcaption></figcaption></figure>
 

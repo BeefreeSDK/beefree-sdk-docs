@@ -27,7 +27,7 @@ To learn more about the end user experience and what it looks like to utilize th
 Prior to getting started, ensure you have the following:
 
 * A [Superpowers or Enterprise Beefree SDK plan](https://developers.beefree.io/pricing-plans)
-* The AI Writing Assistant AddOn enabled in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+* The AI Writing Assistant AddOn enabled in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 * OpenAI API Key
 
 ## Integrating Brand Tone <a href="#simple-guide-for-integrating-brand-tone" id="simple-guide-for-integrating-brand-tone"></a>

@@ -8,7 +8,7 @@ description: Learn more about client-side configuration for Custom and Partner A
 
 Once you have initialized Beefree SDK, you can pass a series of [configuration parameters](../../getting-started/readme/installation/configuration-parameters/) to it.
 
-The **AddOn section** of the configuration allows you to override the parameters you configured in the [Beefree SDK Console](https://dam.beefree.io/devmain), on a per-user basis.
+The **AddOn section** of the configuration allows you to override the parameters you configured in the [Beefree SDK Console](https://developers.beefree.io/), on a per-user basis.
 
 For example:
 

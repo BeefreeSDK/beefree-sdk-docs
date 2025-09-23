@@ -1,7 +1,7 @@
 # Custom Headers
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [Superpowers plan](https://dam.beefree.io/pluginpricing) and above. Upgrade a [development application](../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
+This feature is available on Beefree SDK [Superpowers plan](https://developers.beefree.io/pricing-plans) and above. Upgrade a [development application](../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
 
 Are you looking to add custom HTML tags to the head section of your designs? Find more information in our [Custom Head HTML page](../../server-side-configurations/custom-head-html.md).
 {% endhint %}
@@ -33,7 +33,7 @@ customHeaders: [
 Please note that **all custom headers will be prefixed with “X-BEE-“** identifier. For instance, in the example above, the header will be sent to the host app as `X-BEE-Authorization`.
 
 {% hint style="info" %}
-Please note that custom headers must be whitelisted by our team before using them. Please open a support ticket via the [Beefree SDK Console](https://dam.beefree.io/devportal) if you’re planning to use this feature.
+Please note that custom headers must be whitelisted by our team before using them. Please open a support ticket via the [Beefree SDK Console](https://devportal.beefree.io/hc/en-us) if you’re planning to use this feature.
 {% endhint %}
 
 ### Using Pre-approved Custom Headers

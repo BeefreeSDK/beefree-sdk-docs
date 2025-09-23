@@ -20,7 +20,7 @@ These folders can be root folders or can be part of a more complex directory str
 A few notes and recommendations:
 
 * These folders should not be parents/children between themselves.
-* Their name is restricted by [AWS standard naming restrictions](https://dam.beefree.io/awsnames).
+* Their name is restricted by [AWS standard naming restrictions](https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingObjects.html).
 * For performance reasons, you should use a dedicated bucket and place these folders in the root.
 
 ## Shared Assets
@@ -39,11 +39,11 @@ To use this option you need to set-up two additional folders:
 
 ## S3 configuration <a href="#s3-configuration" id="s3-configuration"></a>
 
-This section discusses how you can configure your own custom S3 bucket within the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu), and also provides an example JSON of the Permission policy.&#x20;
+This section discusses how you can configure your own custom S3 bucket within the [Developer Console](https://developers.beefree.io/login?from=website_menu), and also provides an example JSON of the Permission policy.&#x20;
 
 ### Configure Access keys in the Developer Console
 
-Prior to configuring your custom S3 bucket, ensure you configure Access keys in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).&#x20;
+Prior to configuring your custom S3 bucket, ensure you configure Access keys in the [Developer Console](https://developers.beefree.io/login?from=website_menu).&#x20;
 
 Take the following steps to configure Access keys in the Developer Console:
 
@@ -57,7 +57,7 @@ Take the following steps to configure Access keys in the Developer Console:
 6. Complete the required fields.\*
 7. Click the **Test S3 settings** button.
 
-\*The following image shows an example of the required fields within the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu) for configuring your own S3 bucket:
+\*The following image shows an example of the required fields within the [Developer Console](https://developers.beefree.io/login?from=website_menu) for configuring your own S3 bucket:
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2024-09-06 at 14.14.27@2x.png" alt=""><figcaption><p>Image of required fields to configure your own S3 bucket within the Developer Console.</p></figcaption></figure>
 
@@ -131,7 +131,7 @@ If you are using a Custom AWS S3 Bucket, take the following steps to enable this
 
 Take the following steps to enable the Move icon for your end users:
 
-1. Log in to the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. Log in to the [Developer Console](https://developers.beefree.io/login?from=website_menu).
 2. Navigate to the application you'd like to activate it for.
 3. Click on the **Details** button.
 4. Select the **View more** option located under **Application configuration**.
@@ -192,7 +192,7 @@ This is a description of the form fields and what information you will need to p
 
 ### Steps to Configure Storage Paths for Single Folders in the Bucket Root
 
-To store images and thumbnails in separate folders at the root of your S3 bucket in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu), follow these steps:
+To store images and thumbnails in separate folders at the root of your S3 bucket in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu), follow these steps:
 
 1. **Configure the Images Path**
    * **Field Name:** `Images path`
@@ -218,7 +218,7 @@ To store images and thumbnails in separate folders at the root of your S3 bucket
    * Click **Test S3 settings** to validate the setup.
    * If successful, your files will be stored in the specified root-level folders in your S3 bucket.
 
-The following image shows an example of how to configure single folders in the bucket root inside of the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+The following image shows an example of how to configure single folders in the bucket root inside of the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2025-03-15 at 13.04.08.png" alt=""><figcaption></figcaption></figure>
 
@@ -254,7 +254,7 @@ To store images and thumbnails inside a **single nested folder** within your S3 
 * **Format:** Use a parent folder (for example, `inner/`) followed by the subfolder name for shared thumbnails.
 * **Example:** `inner/usersSharedThumb`
 
-The following image shows an example of how to configure a single nested folder in the bucket root inside of the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+The following image shows an example of how to configure a single nested folder in the bucket root inside of the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2025-03-15 at 13.01.38.png" alt=""><figcaption></figcaption></figure>
 
@@ -305,4 +305,4 @@ When uploading `image2.jpg` in `mydir` inside the root dir, this key is created 
 
 ## Moving from the default S3 bucket <a href="#moving-from-the-default-s3-bucket" id="moving-from-the-default-s3-bucket"></a>
 
-If your Beefree application is currently using the default S3 bucket, you wish to switch to your own bucket, and you have files that you want to transfer between the two, please please [log into the Beefree SDK Console](https://dam.beefree.io/devmain) and submit a support ticket.
+If your Beefree application is currently using the default S3 bucket, you wish to switch to your own bucket, and you have files that you want to transfer between the two, please please [log into the Beefree SDK Console](https://developers.beefree.io/) and submit a support ticket.

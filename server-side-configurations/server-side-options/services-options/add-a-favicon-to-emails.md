@@ -8,7 +8,7 @@ Available for [Email](../../../visual-builders/email-builder.md) and [Page](../.
 
 You can add favicons to email designs in the email builder. Adding a favicon directly to an email's HTML is beneficial when the email is viewed in a browser, and the end user would like a favicon to display in the browser tab.
 
-When activated in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu), a new **Configure favicon** option becomes available in the **Settings tab** of the builder, where end users can select or edit their favicon.
+When activated in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu), a new **Configure favicon** option becomes available in the **Settings tab** of the builder, where end users can select or edit their favicon.
 
 The following image shows an example of what this looks like in the builder.
 
@@ -16,11 +16,11 @@ The following image shows an example of what this looks like in the builder.
 
 ## How to Activate the Feature
 
-The Favicon option is off by default and must be enabled in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+The Favicon option is off by default and must be enabled in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 
 Take the following steps:
 
-1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 2. Navigate to the application where you’d like to activate favicon support.
 3. Click on the **Details** button.
 4. Navigate to **Application Configurations**.

@@ -8,7 +8,7 @@ Visit our [Partner AddOn directory](partner-addons-directory.md) for a list of a
 
 You can **use** ready-to-go AddOns to extend the functionality of Beefree SDK (you can also [build new AddOns](../custom-addons/)).
 
-To browse and install existing AddOns, log into the [Beefree SDK Console](https://dam.beefree.io/devmain) and click on _Details_ to navigate to the application details page.
+To browse and install existing AddOns, log into the [Beefree SDK Console](https://developers.beefree.io/) and click on _Details_ to navigate to the application details page.
 
 In the lower part of the page, locate the **Application configuration** section and click on AddOns.
 

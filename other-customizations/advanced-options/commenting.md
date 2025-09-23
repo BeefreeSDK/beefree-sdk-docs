@@ -34,7 +34,7 @@ With Commenting,  you enable **asynchronous, visual collaboration** when multipl
 
 To do so:
 
-* [Login into the Beefree SDK Console](https://dam.beefree.io/devmain)
+* [Login into the Beefree SDK Console](https://developers.beefree.io/)
 * Click **Details** next to the application you want to configure
   * We recommend you first familiarize with Commenting in a Development or QA application
   * Learn more about [Production vs. Development application here](../../getting-started/readme/development-applications.md)
@@ -201,7 +201,7 @@ Again, remember that the Beefree platform **only triggers the callback**, and it
 
 ## Sample code for email notifications <a href="#sample-code-for-email-notifications" id="sample-code-for-email-notifications"></a>
 
-We’ve put together a [sample code](https://dam.beefree.io/pluginsamplecode) that illustrates how to send email notifications, triggered by a mention in a comment. This code shows how to:
+We’ve put together a [sample code](https://github.com/BeefreeSDK/beefree-sdk-sample-client) that illustrates how to send email notifications, triggered by a mention in a comment. This code shows how to:
 
 * Define an array to hold the list of mentioned users in the comment payload.
 * Loop through the comment payload and add any strings matching a regex to the array

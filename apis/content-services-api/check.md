@@ -60,7 +60,7 @@ The [Check Endpoints section](check.md#check-endpoints) provides both an interac
 
 ### Authentication
 
-To use these endpoints, [authenticate by creating a Content Services API key](authentication.md) in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu). For steps on how to obtain a Content Services API key, visit the [Content Services API Authentication page](authentication.md).
+To use these endpoints, [authenticate by creating a Content Services API key](authentication.md) in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu). For steps on how to obtain a Content Services API key, visit the [Content Services API Authentication page](authentication.md).
 
 ## Available Checks
 

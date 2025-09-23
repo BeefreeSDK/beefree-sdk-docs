@@ -72,11 +72,11 @@ The following image shows how this looks to the end user on the frontend.&#x20;
 
 ### Multi-language templates
 
-Previewing designs for [Multi-language templates](../../other-customizations/multi-language-templates.md) is not available by default. This needs to be configured within the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+Previewing designs for [Multi-language templates](../../other-customizations/multi-language-templates.md) is not available by default. This needs to be configured within the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 
 Take the following steps to enable **Multi-language template** for your end users:
 
-1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 2. Navigate to the application you'd like to enable it for.
    1. Click on the **Details** button.
    2. Then, click **Configure Application.**
@@ -111,11 +111,11 @@ The following GIF shows a visual example of what this configuration looks like t
 
 ### Display Conditions
 
-Previewing designs in Display Conditions is not available by default. This needs to be configured within the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+Previewing designs in Display Conditions is not available by default. This needs to be configured within the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 
 Take the following steps to enable **Display Conditions** for your end users:
 
-1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 2. Navigate to the application you'd like to enable it for.
    1. Click on the **Details** button.
    2. Then, click **Configure Application.**
@@ -134,7 +134,7 @@ Previewing designs in [AMP or HTML view](../../other-customizations/amp-for-emai
 
 Take the following steps to enable **AMP or HTML view** for your end users:
 
-1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 2. Navigate to the application you'd like to enable it for.
    1. Click on the **Details** button.
    2. Then, click **Configure Application.**
@@ -142,7 +142,7 @@ Take the following steps to enable **AMP or HTML view** for your end users:
 4. Check **Enable AMP Content** to on.
 5. Save and confirm your changes.
 
-To add AMP support to your `beeConfig` and enable the [AMP Carousel](../../other-customizations/amp-for-email.md), you need to perform additional steps outside of checking the functionality to on within the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu). This section discussing the additional requirements.
+To add AMP support to your `beeConfig` and enable the [AMP Carousel](../../other-customizations/amp-for-email.md), you need to perform additional steps outside of checking the functionality to on within the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu). This section discussing the additional requirements.
 
 Take the following steps to configure AMP content client-side in your `beeConfig`:
 
@@ -202,7 +202,7 @@ Previewing designs in Dark mode is not available by default. This needs to be co
 
 Take the following steps to enable **Dark Mode Preview** for your end users:
 
-1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 2. Navigate to the application you'd like to enable it for.
    1. Click on the **Details** button.
    2. Then, click **Configure Application.**

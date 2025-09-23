@@ -21,7 +21,7 @@ This section discusses the steps you need to take to configure alternate text ge
 
 To active alternate text generation with AI in your Beefree SDK Developer Console, take the following steps:
 
-1. Go to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/)
+1. Go to the [Beefree SDK Developer Console](https://developers.beefree.io/login)
 2. Enter your application
 3. Click on “AddOns”
 4. Select the “Azure AI Vision – Image Analysis” AddOn

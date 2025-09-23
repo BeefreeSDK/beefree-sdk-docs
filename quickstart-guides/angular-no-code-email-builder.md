@@ -192,7 +192,7 @@ BEE_CLIENT_SECRET='YOUR-CLIENT-SECRET'
 ## **2. Credential Setup Instructions**  
 
 The `.env` file requires a valid `Client_ID` and `Client_Secret`:  
-1. Sign up at [Beefree Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).  
+1. Sign up at [Beefree Developer Console](https://developers.beefree.io/login?from=website_menu).  
 2. Follow [this guide](https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application) to get credentials.  
 3. Paste them into `.env` and **never commit this file** (add to `.gitignore`).  
 
@@ -286,7 +286,7 @@ Before starting, ensure you have the following:
 
 * A basic understanding of [Angular](https://angular.dev/overview) and its component-based architecture.
 * Node.js installed on your machine.
-* A [Beefree SDK Developer account](https://developers.beefree.io/accounts/login/?from=website_menu).
+* A [Beefree SDK Developer account](https://developers.beefree.io/login?from=website_menu).
 * You’ve [created an application](../getting-started/readme/create-an-application.md) in the Developer Console to obtain your `Client ID` and `Client Secret`.
 
 ## **What You'll Learn**
@@ -344,7 +344,7 @@ BEE_CLIENT_ID=your_client_id
 BEE_CLIENT_SECRET=your_client_secret
 ```
 
-Ensure you replace `your_client_id` and `your_client_secret` with values from the [Beefree Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).
+Ensure you replace `your_client_id` and `your_client_secret` with values from the [Beefree Developer Console](https://developers.beefree.io/login?from=website_menu).
 
 #### Add `.env` to `.gitignore`:
 

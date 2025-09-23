@@ -1,7 +1,7 @@
 # Content Dialog
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+This feature is available on Beefree SDK [paid plans](https://developers.beefree.io/pricing-plans) only.
 {% endhint %}
 
 ## The problem <a href="#the-problem" id="the-problem"></a>

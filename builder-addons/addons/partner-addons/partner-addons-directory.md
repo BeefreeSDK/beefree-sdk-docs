@@ -100,7 +100,7 @@ The GIFs by GIPHY AddOn gives your customers the best source for GIFs, ready to 
 
 Once installed and configured, they will see a new content tile in the builder. Once dragged into the email or page, a click on a button in the stage area will launch a GIPHY search dialog. Clicking on a GIF will import it instantly into the email or page.
 
-[Addon website](./) | [About the AddOn](./) | [Privacy Policy](https://beefree.io/privacy-policy/) | [Support](https://dam.beefree.io/devportal)
+[Addon website](./) | [About the AddOn](./) | [Privacy Policy](https://beefree.io/privacy-policy/) | [Support](https://devportal.beefree.io/hc/en-us)
 
 ## Stickers <a href="#stickers" id="stickers"></a>
 
@@ -110,4 +110,4 @@ The Stickers by GIPHY AddOn gives your customers the best source for stickers, r
 
 Once installed and configured, they will see a new content tile in the builder. Once dragged into the email or page, a click on a button in the stage area will launch a GIPHY search dialog. Clicking on a sticker will import it instantly into the email or page.
 
-[Addon website](./) | [About the AddOn](./) | [Privacy Policy](https://beefree.io/privacy-policy/) | [Support](https://dam.beefree.io/devportal)
+[Addon website](./) | [About the AddOn](./) | [Privacy Policy](https://beefree.io/privacy-policy/) | [Support](https://devportal.beefree.io/hc/en-us)

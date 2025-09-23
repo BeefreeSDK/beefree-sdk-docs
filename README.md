@@ -53,7 +53,7 @@ Take the following steps to get started with Beefree SDK in a few minutes:
 4. Clone the [beefree-sdk-sample-client repository](https://github.com/BeefreeSDK/beefree-sdk-sample-client), which includes the code for email and popup builder implementations.
 5. Add your credentials, the Client ID and Client Secret from step three, inside the placeholders in the code.
 6. Once the email builder, or popup builder, depending on which environment you chose, opens, you can start experimenting with the SDK's configuration by customizing the [configuration parameters](https://docs.beefree.io/beefree-sdk/getting-started/readme/installation/configuration-parameters) in the `beeConfig` section of the code.
-7. You can also customize the SDK's configuration inside the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu) under the [Application configuration section](https://docs.beefree.io/beefree-sdk/server-side-configurations/server-side-options) of the application you created.
+7. You can also customize the SDK's configuration inside the [Developer Console](https://developers.beefree.io/login?from=website_menu) under the [Application configuration section](https://docs.beefree.io/beefree-sdk/server-side-configurations/server-side-options) of the application you created.
 
 **Note:** Visit the [Beefree SDK pricing page](https://developers.beefree.io/pricing-plans) for a comprehensive list of features and the plan type they correspond to.
 
@@ -80,7 +80,7 @@ Learn more about our [File Manager](file-manager/file-manager-application-overvi
 
 ## Developer Essentials <a href="#about-this-documentation" id="about-this-documentation"></a>
 
-Create a free account and obtain your Client ID and Client Secret in the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu) to get started. Set up a local environment to experiment with customizing a configuration. Watch the configuration changes and customizations come to life on the frontend.
+Create a free account and obtain your Client ID and Client Secret in the [Developer Console](https://developers.beefree.io/login?from=website_menu) to get started. Set up a local environment to experiment with customizing a configuration. Watch the configuration changes and customizations come to life on the frontend.
 
 * [Create an Application](getting-started/readme/create-an-application.md)
 * [React No-code Email Builder](quickstart-guides/react-no-code-email-builder.md)

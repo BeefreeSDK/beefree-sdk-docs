@@ -6,7 +6,7 @@ description: Learn how to create an application within the Beefree SDK Developer
 
 ## Overview
 
-In this article, we will discuss how to sign up for an account in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu), create an application, and obtain your Client ID and Client Secret.&#x20;
+In this article, we will discuss how to sign up for an account in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu), create an application, and obtain your Client ID and Client Secret.&#x20;
 
 This article will cover steps for the following processes:
 
@@ -27,7 +27,7 @@ Take the following steps to sign up for a Beefree SDK account:
 <figure><img src="../../.gitbook/assets/dev-console-2.png" alt="" width="563"><figcaption></figcaption></figure>
 
 2. Check your inbox and verify your email address.
-   1. Once it is successfully verified, you'll be redirected to the [Log in page](https://developers.beefree.io/accounts/login/). Enter your email and password to login.
+   1. Once it is successfully verified, you'll be redirected to the [Log in page](https://developers.beefree.io/login). Enter your email and password to login.
 3. You'll be redirected to a page with an active free subscription called **MyFirstSubscription**. Under this subscription, there are four applications you can activate: Email Builder, Page Builder, Popup Builder, and File manager. You can activate one or all of them if you'd like.
    1.  Click the **Activate** button corresponding to the application type you'd like to start experimenting with. Once it is activated, you'll notice Client ID appears.  &#x20;
 
@@ -42,7 +42,7 @@ Take the following steps to sign up for a Beefree SDK account:
 
 ## How to create an application
 
-Once that’s done, you will be able to [log into the Beefree SDK Console](https://developers.beefree.io/accounts/login/).  Your dashboard will look like the following image.
+Once that’s done, you will be able to [log into the Beefree SDK Console](https://developers.beefree.io/login).  Your dashboard will look like the following image.
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-07-11 at 14.11.39@2x.png" alt="" width="563"><figcaption></figcaption></figure>
 
@@ -83,7 +83,7 @@ This feature applies to paid plan types.
 
 Inside the Beefree Developer Console, you have the option to **regenerate** the Client Secret for your application. To regenerate your application's Client Secret, take the following steps:
 
-1. Log in to the [Beefree SDK Console](https://developers.beefree.io/accounts/login/?next=/subscriptions/).
+1. Log in to the [Beefree SDK Console](https://developers.beefree.io/login?next=/subscriptions/).
 2. Navigate to the application you'd like to update the Client Secret for.
 3. Click on the application's **Details** button.
 

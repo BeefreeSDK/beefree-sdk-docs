@@ -21,7 +21,7 @@ Note that:
 * the Base URL **must not** end with a trailing slash (/)
 * it must be hosted on the HTTPS protocol
 
-The API uses JSON as the input and output data format: Responses are [JSEND standard compliant](https://dam.beefree.io/jsend).
+The API uses JSON as the input and output data format: Responses are [JSEND standard compliant](https://github.com/omniti-labs/jsend).
 
 In the event of a successful response, the API returns a “success” status code (ex. `200 OK`) and a JSON object such as the following:
 

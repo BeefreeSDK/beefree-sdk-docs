@@ -5,7 +5,7 @@ description: Learn more about the Content Services API offering in Beefree SDK.
 # Content Services API
 
 {% hint style="info" %}
-The Content Services API is available on Beefree SDK [paid plans](https://dam.beefree.io/pluginpricing) only.
+The Content Services API is available on Beefree SDK [paid plans](https://developers.beefree.io/pricing-plans) only.
 {% endhint %}
 
 ## Beefree SDK API Offering <a href="#in-a-nutshell" id="in-a-nutshell"></a>

@@ -10,7 +10,7 @@ Instead of having to switch between different applications or tools, they can ac
 
 ## Testing and integrating the File Manager <a href="#testing-and-integrating-the-file-manager" id="testing-and-integrating-the-file-manager"></a>
 
-When you create an application in the [Beefree SDK Console](https://dam.beefree.io/devmain), you’ll have the option to create a File Manager application.
+When you create an application in the [Beefree SDK Console](https://developers.beefree.io/), you’ll have the option to create a File Manager application.
 
 <figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.30.26.png" alt=""><figcaption></figcaption></figure>
 
@@ -24,7 +24,7 @@ File manager applications share the same core functionalities as all other build
 
 For those who are new to our platform, our documentation includes a comprehensive [Getting Started](../../getting-started/readme/installation/) section that provides detailed instructions on how to set up and use our builders. This section is applicable to all products.
 
-File Manager and all builders are available to  customers under the same [all-in-one pricing.](https://dam.beefree.io/pluginpricing) Please contact your Customer Success Manager for more details.
+File Manager and all builders are available to  customers under the same [all-in-one pricing.](https://developers.beefree.io/pricing-plans) Please contact your Customer Success Manager for more details.
 
 ## Configure "Insert" and "X" Buttons
 

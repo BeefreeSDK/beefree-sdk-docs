@@ -18,7 +18,7 @@ To use the Content Services API you will first need to obtain a your API Key—t
 
 To obtain an API Key, take the following steps:
 
-1. Log in to the [Beefree SDK Developer Console](https://dam.beefree.io/devmain).
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/).
 2. Navigate to the application you'd like to activate the Content Services API for.
 3. Click on the corresponding **Details** button.
 4. Navigate to the Content Services API section of the **Details** page.

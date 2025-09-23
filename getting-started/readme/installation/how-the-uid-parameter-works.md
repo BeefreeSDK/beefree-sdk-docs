@@ -1,6 +1,6 @@
 # How the UID parameter works
 
-[Pricing for Beefree SDK](https://dam.beefree.io/pluginpricing) is based on the concept of unique users of the editor. A unique user is one that is identified by a unique **UID**, as described below. The system counts unique UIDs within a billing period, and resets the count to zero at the start of the next billing period.
+[Pricing for Beefree SDK](https://developers.beefree.io/pricing-plans) is based on the concept of unique users of the editor. A unique user is one that is identified by a unique **UID**, as described below. The system counts unique UIDs within a billing period, and resets the count to zero at the start of the next billing period.
 
 ## Properties
 

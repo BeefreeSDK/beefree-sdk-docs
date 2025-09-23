@@ -1,16 +1,16 @@
 # Services Options
 
 {% hint style="info" %}
-Please note that server-side configurations are only available on [paid plans](https://dam.beefree.io/pluginpricing).
+Please note that server-side configurations are only available on [paid plans](https://developers.beefree.io/pricing-plans).
 {% endhint %}
 
-This page explains Service Options within the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu). You can enable these optional services to extend the functionality of the builder and add features visible in UI.
+This page explains Service Options within the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu). You can enable these optional services to extend the functionality of the builder and add features visible in UI.
 
 ## Navigate to Services
 
-Service Options are available for applications within the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu). Take the following steps to locate and enable them:
+Service Options are available for applications within the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu). Take the following steps to locate and enable them:
 
-1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu)
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu)
 2. Navigate to the application you'd like to enable them for
 3. Click **Details**
 4. Click **Configure Application** under **Application Configurations**
@@ -20,7 +20,7 @@ Service Options are available for applications within the [Beefree SDK Developer
 
 Your Service Options settings have been enabled and will be reflected in the UI of your application.
 
-The following image shows what the Services section looks like within the [Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu) and the available options.
+The following image shows what the Services section looks like within the [Developer Console](https://developers.beefree.io/login?from=website_menu) and the available options.
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2025-08-11 at 13.53.03.png" alt="Service options available within the Beefree SDK Developer Console" width="563"><figcaption></figcaption></figure>
 
@@ -165,4 +165,4 @@ Adding a title attribute is an important step toward improving accessibility and
 
 You can add favicons to email designs in the email builder. Adding a favicon directly to an email's HTML is beneficial when the email is viewed in a browser, and the end user would like a favicon to display in the browser tab.
 
-When activated in the [Beefree SDK Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu), a new **Configure favicon** option becomes available in the **Settings tab** of the builder, where end users can select or edit their favicon. Visit the [Add a Favicon to Emails page](add-a-favicon-to-emails.md) to learn more.
+When activated in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu), a new **Configure favicon** option becomes available in the **Settings tab** of the builder, where end users can select or edit their favicon. Visit the [Add a Favicon to Emails page](add-a-favicon-to-emails.md) to learn more.

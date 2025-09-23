@@ -189,7 +189,7 @@ BEE_CLIENT_SECRET='YOUR-CLIENT-SECRET'
 ## **2. Credential Setup Instructions**  
 
 The `.env` file requires a valid `Client_ID` and `Client_Secret`:  
-1. Sign up at [Beefree Developer Console](https://developers.beefree.io/accounts/login/?from=website_menu).  
+1. Sign up at [Beefree Developer Console](https://developers.beefree.io/login?from=website_menu).  
 2. Follow [this guide](https://docs.beefree.io/beefree-sdk/getting-started/readme/create-an-application) to get credentials.  
 3. Paste them into `.env` and **never commit this file**.  
 
@@ -261,7 +261,7 @@ Watch the [Vue.js Video Series](../resources/videos/vue.js-video-series.md) to l
 Before you begin, make sure you:
 
 * Understand [Vue.js](https://vuejs.org/guide/introduction.html) and its core concepts (for example,  `ref`, `onMounted`)
-* Have a [Beefree SDK account](https://developers.beefree.io/accounts/login/?from=website_menu)
+* Have a [Beefree SDK account](https://developers.beefree.io/login?from=website_menu)
 * [Create an application](https://docs.beefree.io/beefree-sdk/docs/create-an-application) in the Beefree Developer Console
 * Obtain your **Client ID** and **Client Secret** from the Developer Console
 

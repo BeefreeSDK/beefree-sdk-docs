@@ -2,7 +2,7 @@
 
 ## Integrating and Testing the Page Builder
 
-When you create an application in the [Beefree SDK Console](https://dam.beefree.io/devmain), you’ll be asked to select either Page or Email Builder. Paid applications allow you to create child development applications, to ease new feature testing, development, and maintenance.
+When you create an application in the [Beefree SDK Console](https://developers.beefree.io/), you’ll be asked to select either Page or Email Builder. Paid applications allow you to create child development applications, to ease new feature testing, development, and maintenance.
 
 <figure><img src="../../.gitbook/assets/CleanShot 2025-03-13 at 14.07.55.png" alt=""><figcaption></figcaption></figure>
 
