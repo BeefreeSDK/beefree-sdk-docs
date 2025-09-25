@@ -16,11 +16,11 @@ This article will cover steps for the following processes:
 
 ## Sign up for a Developer Console account
 
-The first step to experimenting with and embedding Beefree SDK's visual builders is to[ sign up for a Beefree SDK account](https://developers.beefree.io/accounts/signup/).&#x20;
+The first step to experimenting with and embedding Beefree SDK's visual builders is to[ sign up for a Beefree SDK account](https://developers.beefree.io/signup).&#x20;
 
 Take the following steps to sign up for a Beefree SDK account:
 
-1. Navigate to the [Beefree SDK sign up page](https://developers.beefree.io/accounts/signup/).
+1. Navigate to the [Beefree SDK sign up page](https://developers.beefree.io/signup).
    1. Complete the required fields to create an account.&#x20;
    2. Once the form is complete, click **Sign up to embed Beefree SDK**.&#x20;
 
