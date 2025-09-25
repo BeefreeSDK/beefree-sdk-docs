@@ -29,7 +29,7 @@ The following video provides a visual representation of these customization opti
 
 Prior to getting started, ensure you have the following:
 
-* [Beefree SDK Plan](https://developers.beefree.io/accounts/signup/)
+* [Beefree SDK Plan](https://developers.beefree.io/signup)
   * Page builder or Popup builder application within your [Dev Console](https://developers.beefree.io/login?from=website_menu)
 
 ## Implementing Multiple and Single Choice Orientation
