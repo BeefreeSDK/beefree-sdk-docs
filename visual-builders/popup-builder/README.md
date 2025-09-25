@@ -12,7 +12,7 @@ Emails, pages, popups: three pillars of all sorts of digital marketing initiativ
 
 A popup is a small window that appears on a website visitor’s screen, asking for an email address in the most basic interaction or other actionable messages when using more sophisticated strategies (targeted promotions, social evidence messages, shopping cart recovery, etc.).
 
-Popups are one of the most used online marketing tools. When done right, they capture visitors’ attention at the right moment, and push them forward in the customer journey. Despite attracting criticism in the past because they create a barrier between visitors and content, there’s plenty of evidence that they work. They will continue to play a strong part in any modern-day marketing strategy. [Read our blog entry](https://dam.beefree.io/popupblog) if you’re interested in learning more.
+Popups are one of the most used online marketing tools. When done right, they capture visitors’ attention at the right moment, and push them forward in the customer journey. Despite attracting criticism in the past because they create a barrier between visitors and content, there’s plenty of evidence that they work. They will continue to play a strong part in any modern-day marketing strategy. [Read our blog entry](https://techblog.beefree.io/announcement-bee-plugin-launches-popup-builder-to-bolster-digital-marketing-campaigns-bfb23006c04) if you’re interested in learning more.
 
 With this in mind, we have developed an embeddable solution for designing popups that you can easily deploy because:
 
