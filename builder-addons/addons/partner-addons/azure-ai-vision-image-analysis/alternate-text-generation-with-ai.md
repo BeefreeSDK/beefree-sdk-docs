@@ -31,7 +31,7 @@ To active alternate text generation with AI in your Beefree SDK Developer Consol
 6. Toggle “Enable” to on
 7. Insert your Azure API Key and Endpoint
 
-**Note:** If you do not yet have an Azure API Key and Endpoint, navigate to the [Microsoft Azure Configuration Steps](https://docs.google.com/document/d/1_bToJB4U06SvsxphJHKUKsssz7hzoAE4Gbqfa76Mjbo/edit#heading=h.8k1sgzr7vogd) of this guide.
+**Note:** If you do not yet have an Azure API Key and Endpoint, navigate to the [Microsoft Azure Configuration Steps](alternate-text-generation-with-ai.md#microsoft-azure-configuration-steps) of this guide.
 
 <figure><img src="../../../../.gitbook/assets/CleanShot-2023-11-03-at-12.26.07.png" alt=""><figcaption></figcaption></figure>
 
@@ -64,11 +64,11 @@ Take the following steps to configure Azure Computer Vision and successfully int
 **Note:** Version 4.0 is not yet available in all regions, but it is required for this feature to work. If you only have access to the 3.2 version, this feature will not work. Ensure that you have access to the correct version.
 
 4. Click “Review + create” to create the resource
-5. Azure will create your resource with an endpoint and API key &#x20;
+5. Azure will create your resource with an endpoint and API key
 6. Input in the endpoint in the provider url field within in the Beefree Developer Console
 7. Input in the API key within the API key field within in the Beefree Developer Console
 
-**Note:** Once you complete these steps, wait at least 15 minutes for the resources to become available. After 15 minutes, you will be able to move forward with using your API Key and Endpoint with the feature.&#x20;
+**Note:** Once you complete these steps, wait at least 15 minutes for the resources to become available. After 15 minutes, you will be able to move forward with using your API Key and Endpoint with the feature.
 
 For more information, visit the [Microsoft Azure Computer Vision documentation](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/quickstarts-sdk/image-analysis-client-library-40?tabs=visual-studio%2Clinux\&pivots=programming-language-rest-api).
 
@@ -133,7 +133,7 @@ let imagesAvailable = 5
 
 **Note:** In this example, the end user can only make five requests in total, after the fifth request, the end user will no longer be able to generate alternate text. The number five is defined in the configuration and can be customized. For example, if `imagesAvailable` is set ten, the end user will be able to perform ten requests.
 
-3. In the AddOn settings, `isIconDisabled` is configured to automatically disable the Alternate Text Generation with AI feature when the counter reaches zero. However, through the [Token Upselling](../ai-writing-assistant/token-upselling.md) notification banner, application end users will have the opportunity to purchase more images and regain access to the feature.&#x20;
+3. In the AddOn settings, `isIconDisabled` is configured to automatically disable the Alternate Text Generation with AI feature when the counter reaches zero. However, through the [Token Upselling](../ai-writing-assistant/token-upselling.md) notification banner, application end users will have the opportunity to purchase more images and regain access to the feature.
 
 ```javascript
 
@@ -161,10 +161,10 @@ let imagesAvailable = 5
 
 ## Display the Usage Widget <a href="#display-the-usage-widget" id="display-the-usage-widget"></a>
 
-To display the widget usage, take the following steps:&#x20;
+To display the widget usage, take the following steps:
 
 1. The call looks for `imagesAvailable` value and `imagesUsed` value
-2. To activate the display usage widget, provide the usage data via the AddOn settings.  Since the editor doesn’t track usage, you’ll need to refresh the values via the `bee.loadConfig` method to keep the display widget data current
+2. To activate the display usage widget, provide the usage data via the AddOn settings. Since the editor doesn’t track usage, you’ll need to refresh the values via the `bee.loadConfig` method to keep the display widget data current
 
 ```javascript
 let imagesCounter = 0
@@ -234,11 +234,11 @@ To disable prompts per user, perform the following:
 
 ```
 
-**Note:** The end user will be able to see the button, but will not be able to use the button through setting the `isIconDisabled` setting to true&#x20;
+**Note:** The end user will be able to see the button, but will not be able to use the button through setting the `isIconDisabled` setting to true
 
 You can reference the difference in appearance in the following images.
 
-Image 1.0 displays an example of the wand when the feature is not active.&#x20;
+Image 1.0 displays an example of the wand when the feature is not active.
 
 <figure><img src="../../../../.gitbook/assets/2image.png" alt=""><figcaption></figcaption></figure>
 
@@ -300,7 +300,7 @@ The AI Alternate Text Generator is compatible with token upselling. The token up
 
 ## FAQs <a href="#faqs" id="faqs"></a>
 
-**Q: Will Azure keep the photos used with this feature?**&#x20;
+**Q: Will Azure keep the photos used with this feature?**
 
 A: The following answer is directly from the [Azure Data and privacy for Image Analysis website](https://learn.microsoft.com/en-us/legal/cognitive-services/computer-vision/imageanalysis-data-privacy-security):
 
