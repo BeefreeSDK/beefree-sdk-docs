@@ -1,4 +1,4 @@
-# AI-Driven Design Creation
+# AI-assisted Content Creation
 
 {% hint style="info" %}
 **Simple Schema Features by Plan Type:**
@@ -9,9 +9,9 @@
 
 ## Overview
 
-Saving your end users time when creating designs is more important than ever—especially as AI continues to reshape expectations. Today’s users want to move fast, and increasingly expect to generate polished, on-brand designs with just a prompt or a click. [Simple Schema](../data-structures/simple-schema/) is built to meet that demand. It provides you with the building blocks you need to construct an AI-driven content creation experience for your end users. This provides them with a faster, more flexible way to build emails, landing pages, and popups instantly inside your application.
+Saving your end users time when creating designs is more important than ever—especially as AI continues to reshape expectations. Today’s users want to move fast, and increasingly expect to generate polished, on-brand designs with just a prompt or a click. [Simple Schema](../data-structures/simple-schema/) is built to meet that demand. It provides you with the building blocks you need to construct an AI-assisted content creation experience for your end users. This provides them with a faster, more flexible way to build emails, landing pages, and popups instantly inside your application.
 
-[Simple Schema](../data-structures/simple-schema/) empowers your team to unlock AI-driven design creation and headless template generation—making it easier than ever to build designs programmatically, and 100% outside of Beefree SDK's visual builders. Whether you're building emails, landing pages, or popups, you can leverage Simple Schema as a lightweight, intuitive format that AI models can easily understand and generate.
+[Simple Schema](../data-structures/simple-schema/) empowers your team to unlock AI-assisted content creation and headless template generation—making it easier than ever to build designs programmatically, and 100% outside of Beefree SDK's visual builders. Whether you're building emails, landing pages, or popups, you can leverage Simple Schema as a lightweight, intuitive format that AI models can easily understand and generate.
 
 ## Headless Template Creation with AI
 

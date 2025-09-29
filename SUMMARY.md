@@ -40,7 +40,7 @@
   * [Testing and Integrating](visual-builders/popup-builder/testing-and-integrating.md)
   * [Setting layout and size](visual-builders/popup-builder/setting-layout-and-size/README.md)
     * [Advanced settings](visual-builders/popup-builder/setting-layout-and-size/advanced-settings.md)
-* [AI-Driven Design Creation](visual-builders/ai-driven-design-creation.md)
+* [AI-assisted Content Creation](visual-builders/ai-driven-design-creation.md)
 
 ## APIs
 
