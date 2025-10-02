@@ -33,7 +33,7 @@ When used properly, it is a powerful tool that can be leveraged to accomplish an
 When misused, however, it may harm the user experience and the rendering capability of the builder’s stage. For example, styles applied to the stage via CSS will _not_ be reflected in the preview or exported HTML.
 
 {% hint style="danger" %}
-### Important Notice
+#### Important Notice
 
 For the best results, follow these best practices:
 
@@ -44,7 +44,7 @@ For the best results, follow these best practices:
 * **Avoid third-party hosting.** Do not link to CSS files hosted on GitHub or other third-party sources.
 * **Do not style elements directly on the stage.** These styles will not appear in the final HTML, which may create a confusing experience.
 
-#### Reliable Selectors
+**Reliable Selectors**
 
 Only class names with the `--cs` suffix are reliable for **custom CSS**. Avoid the following selectors:
 
@@ -53,7 +53,7 @@ Only class names with the `--cs` suffix are reliable for **custom CSS**. Avoid t
 * **Class names without `--cs`** (e.g., `.icons__item`)
 * **Prefixed class name selectors** (e.g., `div[class^="StageModuleIcons_itemRow"]`)
 
-#### :warning: Changes & Updates
+:warning: **Changes & Updates**
 
 Class names **without** the `--cs` suffix may change **without prior notice**. However, any updates to the **HTML structure** and `--cs` classes will be communicated in advance.
 {% endhint %}

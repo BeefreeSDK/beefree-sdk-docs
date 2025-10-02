@@ -27,7 +27,7 @@
 * [Vue.js No-code Email Builder](quickstart-guides/vue.js-no-code-email-builder.md)
 * [Angular No-code Email Builder](quickstart-guides/angular-no-code-email-builder.md)
 * [Django Beefree SDK Demo](quickstart-guides/django-beefree-sdk-demo.md)
-* [Connect to the Beefree SDK Docs MCP Server](quickstart-guides/connect-to-the-beefree-sdk-docs-mcp-server.md)
+* [Docs MCP](quickstart-guides/docs-mcp.md)
 
 ## Visual Builders
 

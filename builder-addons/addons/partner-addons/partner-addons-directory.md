@@ -6,11 +6,11 @@ These AddOns need to be [installed from your Beefree SDK Console](installing-par
 
 ## Custom AI Writing Assistant <a href="#openai" id="openai"></a>
 
-The Custom AI Writing Assistant AddOn enables host applications to integrate their own LLM models with Beefree SDK. This allows host applications to provide their end users with advanced AI writing capabilities that are specific to their domains. Using the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md), this AddOn employs the same entry points as the [AI writing assistant](ai-writing-assistant/), allowing full control over the AI experience within your application. Once your Custom AI Writing Assistant AddOn is fully configured, the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md) displays the modal you created within the user interface when end users click the **Write with AI** button in the sidebar.&#x20;
+The Custom AI Writing Assistant AddOn enables host applications to integrate their own LLM models with Beefree SDK. This allows host applications to provide their end users with advanced AI writing capabilities that are specific to their domains. Using the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md), this AddOn employs the same entry points as the [AI writing assistant](ai-writing-assistant/), allowing full control over the AI experience within your application. Once your Custom AI Writing Assistant AddOn is fully configured, the [Content Dialog](../../../other-customizations/advanced-options/content-dialog.md) displays the modal you created within the user interface when end users click the **Write with AI** button in the sidebar.
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2024-09-17 at 22.22.54@2x.png" alt=""><figcaption></figcaption></figure>
 
-[How do I enable the Custom AI Writing Assistant AddOn?](custom-ai-writing-assistant.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)&#x20;
+[How do I enable the Custom AI Writing Assistant AddOn?](custom-ai-writing-assistant.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)
 
 ## Stability AI <a href="#openai" id="openai"></a>
 
@@ -18,15 +18,15 @@ The Stability AI AddOn converts text to images. This feature allows your end use
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2024-09-18 at 11.01.46.png" alt=""><figcaption></figcaption></figure>
 
-[How do I enable the Stability AI AddOn?](partner-addons-directory.md#openai) | [AI Providers and Data Security](ai-writing-assistant/data-security.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)&#x20;
+[How do I enable the Stability AI AddOn?](partner-addons-directory.md#openai) | [AI Providers and Data Security](ai-writing-assistant/data-security.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)
 
-## DeepL  <a href="#openai" id="openai"></a>
+## DeepL <a href="#openai" id="openai"></a>
 
 Through this AddOn and [Multi-language templates](../../../other-customizations/multi-language-templates.md), you can empower your end users to create up to six different language versions of a single design. Once your end users create their new language versions, they can click the **Translate** button to automatically translate all the translatable content within their designs.
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2024-09-18 at 11.02.26.png" alt=""><figcaption></figcaption></figure>
 
-[How do I enable the DeepL AddOn?](deepl.md) | [AI Providers and Data Security](ai-writing-assistant/data-security.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)&#x20;
+[How do I enable the DeepL AddOn?](deepl.md) | [AI Providers and Data Security](ai-writing-assistant/data-security.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)
 
 ## AI Writing Assistant <a href="#openai" id="openai"></a>
 
@@ -42,7 +42,7 @@ Generate alt-text descriptions with the power of Computer Vision. Azure AI Visio
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2024-01-12 at 10.04.58@2x.png" alt=""><figcaption></figcaption></figure>
 
-[How do I enable the Azure AI Vision - Image Analysis AddOn?](https://app.gitbook.com/s/xZgBDrdhQLtWmkGqVR59/) | [Azure Ai Vision FAQs](https://docs.beefree.io/beefree-sdk/addons/partner-addons/alternate-text-generation-with-ai#faqs) | [Data and Privacy](https://learn.microsoft.com/en-us/legal/cognitive-services/computer-vision/imageanalysis-data-privacy-security)
+[How do I enable the Azure AI Vision - Image Analysis AddOn?](https://app.gitbook.com/o/hABGoPMOKISmuDmz4fbV/s/xZgBDrdhQLtWmkGqVR59/) | [Azure Ai Vision FAQs](https://docs.beefree.io/beefree-sdk/addons/partner-addons/alternate-text-generation-with-ai#faqs) | [Data and Privacy](https://learn.microsoft.com/en-us/legal/cognitive-services/computer-vision/imageanalysis-data-privacy-security)
 
 ## IO Monetizer <a href="#openai" id="openai"></a>
 
@@ -52,7 +52,7 @@ Over 600 digital publishers use Interactive Offers to help captivate new audienc
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2024-01-12 at 10.21.48@2x.png" alt=""><figcaption></figcaption></figure>
 
-[AddOn website](https://www.interactiveoffers.com/) | [About Ads By Interactive Offers](https://www.interactiveoffers.com/publishers) | [Privacy Policy](https://app.gitbook.com/s/xZgBDrdhQLtWmkGqVR59/) | [Support](https://www.interactiveoffers.com/knowledgeBase)
+[AddOn website](https://www.interactiveoffers.com/) | [About Ads By Interactive Offers](https://www.interactiveoffers.com/publishers) | [Privacy Policy](https://app.gitbook.com/o/hABGoPMOKISmuDmz4fbV/s/xZgBDrdhQLtWmkGqVR59/) | [Support](https://www.interactiveoffers.com/knowledgeBase)
 
 ## Countdown Timers by NiftyImages <a href="#countdown-timers-by-niftyimages" id="countdown-timers-by-niftyimages"></a>
 

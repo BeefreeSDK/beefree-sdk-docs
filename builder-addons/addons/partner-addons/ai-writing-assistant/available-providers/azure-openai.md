@@ -22,7 +22,7 @@ This page discusses how to configure Azure OpenAI as a provider for the [AI Writ
 
 Prior to getting started, ensure you have the following:
 
-* Beefree SDK [Superpowers or Enterprise plan](https://app.gitbook.com/s/svPtAq2FGbWqZBP0UXk1/).
+* Beefree SDK [Superpowers or Enterprise plan](https://app.gitbook.com/o/2zoWGxtV7bjhbwBdjGPS/s/svPtAq2FGbWqZBP0UXk1/).
 * An Azure OpenAI account, API Key, URL Provider, and Deployment ID.
 * The AI Writing Assistant AddOn enabled in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 
@@ -48,7 +48,7 @@ Consider the following shared logic when integrating the AI Writing Assistant Ad
 
 * **Methods:** The methods used for the Azure OpenAI provider are inherited from the [AI Writing Assistant AddOn](../). These include functionality for generating content for supported block types (Title, Paragraph, List, Button) and for handling metadata.
 * **Events:** The integration supports all events from the [AI Writing Assistant](../), such as tracking user actions and processing content generation requests.
-* **Callbacks:**  All callbacks associated with the Azure OpenAI provider are inherited from the [AI Writing Assistant](../). They manage notifications for successful or failed content generation attempts.
+* **Callbacks:** All callbacks associated with the Azure OpenAI provider are inherited from the [AI Writing Assistant](../). They manage notifications for successful or failed content generation attempts.
 
 ### Additional Considerations
 
