@@ -87,7 +87,7 @@ To generate HTML from a template's JSON:
 
 **URL:** `https://api.getbee.io/v1/{collection}/html`
 
-This endpoint allows you to retrieve the full or partial HTML output of a template (email, page, or popup).
+This endpoint allows you to retrieve the plain text version of an email.
 
 {% hint style="info" %}
 **Important:** `collection` is a placeholder within the URL. This placeholder can be replaces with any of the `collection` options available for the Plain Text resource. Reference the [Export Resource and Collection Options table](./#export) for a list of available option.
@@ -214,5 +214,5 @@ You may override the clipping size if your layout requires a custom viewport. If
 | file\_type\* | String  | Accepts jpg or png.                                                                                                                                                                                                                                                                                                                |
 
 {% openapi-operation spec="image-endpoint" path="/v1/{collection}/image" method="post" %}
-[OpenAPI image-endpoint](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/9ef1477fd159d69dd4d46a9bcb0a071ad5b3a925ff92efcaebcdfc0c8a935c47.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250910%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250910T191642Z&X-Amz-Expires=172800&X-Amz-Signature=b14e3221374a431cfce7e127503d0903094805532469bff688d2a14a40c43b84&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI image-endpoint](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/9ef1477fd159d69dd4d46a9bcb0a071ad5b3a925ff92efcaebcdfc0c8a935c47.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251006%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251006T151119Z&X-Amz-Expires=172800&X-Amz-Signature=6273aee7d567b63ae41d25b781220416528ba4d9895ce257feefca32a86974d2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
