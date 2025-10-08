@@ -8,6 +8,12 @@ description: An overview of page builder within Beefree SDK.
 
 Beefree SDK Page Builder will help your customers create beautiful, responsive landing pages, complete with forms and embedded videos. Combined with our **Email Builder**, you’ll have the power to deliver to your customers a **single, optimized user experience** for designing both emails and web pages.
 
+This page provides a high level overview and explanation of what the Page Builder is. Navigate to the following resources to learn more about how to get up and running with the Page Builder:
+
+* [Integrating Page Builder](integrating-page-builder.md)
+* [Embedding videos in a page](embedding-videos-in-a-page.md)
+* [Page Builder Video Series](../../resources/videos/page-builder-video-series.md)
+
 You can use the [Content Services API](../../apis/content-services-api/convert.md#email-to-page-conversion-important-behaviors) to convert existing email designs into landing pages. This is useful in scenarios where you may want to reuse content across different channels.
 
 <figure><img src="../../.gitbook/assets/Page-Builder.jpg" alt=""><figcaption></figcaption></figure>
