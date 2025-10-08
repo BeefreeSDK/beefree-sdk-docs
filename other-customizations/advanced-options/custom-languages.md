@@ -96,7 +96,7 @@ The following image shows the result of the configuration with the Spanish confi
 
 ## Using a Translation URL
 
-You can override the default Beefree SDK language file by providing a URL to your own translations.  This is an advanced feature and will replace all languages used by the editor with the languages defined in the custom file.
+You can override the default Beefree SDK language file by providing a URL to your own translations. This is an advanced feature and will replace all languages used by the editor with the languages defined in the custom file.
 
 ```javascript
 
@@ -128,7 +128,7 @@ var beeConfig = {
 };
 ```
 
-### **Additional Examples**&#x20;
+### **Additional Examples**
 
 Overriding the Help icon label in the default toolbar
 
@@ -195,7 +195,7 @@ translations: {
 
 ## Overriding AI Writing Assistant Default Text
 
-You can override the default text for the [AI Writing Assistant](../../builder-addons/addons/partner-addons/ai-writing-assistant/#customize-prompt-suggestions). The following configuration sample includes the AI component and the various default text fields you can override.
+You can override the default text for the [AI Writing Assistant](../../builder-addons/partner-addons/ai-writing-assistant/#customize-prompt-suggestions). The following configuration sample includes the AI component and the various default text fields you can override.
 
 ```typescript
 const beeConfig = {
@@ -257,7 +257,7 @@ Reference the [Customize Prompt Suggestions section of the AI Writing Assistant 
 
 ## Confirmation Dialogs <a href="#sample-language-file" id="sample-language-file"></a>
 
-The following section lists translations that correspond with Confirmation Dialogs for Rows, Columns, Modules, and the File Manager.&#x20;
+The following section lists translations that correspond with Confirmation Dialogs for Rows, Columns, Modules, and the File Manager.
 
 ### Delete Row <a href="#sample-language-file" id="sample-language-file"></a>
 
@@ -302,7 +302,7 @@ This list details the translations corresponding with the Delete Module Confirma
 * **Primary Button:** 🆕 _Delete_
   * `confirmation-dialogs.delete-button`
 
-Reference the corresponding [classnames for Delete Module](../appearance/custom-css/change-log.md#delete-module-confirmation-dialog).&#x20;
+Reference the corresponding [classnames for Delete Module](../appearance/custom-css/change-log.md#delete-module-confirmation-dialog).
 
 ### Hide Row on Mobile with Module Already Hidden on Desktop
 

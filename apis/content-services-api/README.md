@@ -12,7 +12,7 @@ The Content Services API is available on Beefree SDK [paid plans](https://develo
 
 Beefree SDK includes a comprehensive API offering designed to expand upon the builder's capabilities. By leveraging Beefree SDK's APIs, you can extend the builder's functionality into other aspects of your application.
 
-Beefree SDK's API offering includes three APIs. They are the following:&#x20;
+Beefree SDK's API offering includes three APIs. They are the following:
 
 * [Content Services API](./)
 * [Template Catalog API](../template-catalog-api/)
@@ -26,11 +26,11 @@ This section of the documentation discusses the [Content Services API](./#overvi
 
 ## Overview of Content Services API
 
-The Content Services API is a [REST](https://restfulapi.net/)-based API that enables Beefree SDK integrators to programmatically manipulate template JSON. It is built to follow predictable resource url patterns, and to utilize standard HTTP response codes and methods.    &#x20;
+The Content Services API is a [REST](https://restfulapi.net/)-based API that enables Beefree SDK integrators to programmatically manipulate template JSON. It is built to follow predictable resource url patterns, and to utilize standard HTTP response codes and methods.
 
 Beefree SDK requires that you [authenticate](authentication.md) prior to accessing the Content Services API's resources. You can generate API keys for both production and [development applications](../../getting-started/readme/development-applications.md). API keys associated with development applications are intended for pre-production environments and endpoint testing. They should not be used in production environments.
 
-There are five categories of resources within the Content Services API. Each of these categories includes a group of endpoints with resources to support various workflows.&#x20;
+There are five categories of resources within the Content Services API. Each of these categories includes a group of endpoints with resources to support various workflows.
 
 These categories are the following:
 
@@ -51,7 +51,7 @@ This section provides a high level overview of the Content Services API's capabi
 
 #### **Export Different Formats**
 
-One of the most common use cases for the Content Services API is exporting different format types. Once your end users complete their designs within the no-code builder, they'll want to export their designs and distribute them. That is where the [Export category](export.md) stands out. By using this category of endpoints, you can provide your end users with the option to export their no-code designs in HTML, plain text, PDF, or image formats.&#x20;
+One of the most common use cases for the Content Services API is exporting different format types. Once your end users complete their designs within the no-code builder, they'll want to export their designs and distribute them. That is where the [Export category](export.md) stands out. By using this category of endpoints, you can provide your end users with the option to export their no-code designs in HTML, plain text, PDF, or image formats.
 
 Your end users may want to export their templates into various formats in the following scenarios:
 
@@ -60,30 +60,30 @@ Your end users may want to export their templates into various formats in the fo
 * **PDF:** For attaching designs to emails, SMS, WhatsApp, printing hard copies, or creating flyers, while preserving the design's layout.
 * **Image:** For creating visual galleries, dashboards, social media posts, internal presentations, or campaign planning visuals.
 
-Visit the [Export API documentation](export.md) to learn more.&#x20;
+Visit the [Export API documentation](export.md) to learn more.
 
 #### **Convert Content**
 
-Another common use case of the Content Services API is converting one format to another. The formats in the Convert category differ from those in the Export category, and serve a separate purpose. This category of endpoints is for creating designs and loading them within the builder.  &#x20;
+Another common use case of the Content Services API is converting one format to another. The formats in the Convert category differ from those in the Export category, and serve a separate purpose. This category of endpoints is for creating designs and loading them within the builder.
 
 These endpoints allow you to:
 
 * **Page to Email**: Convert existing page templates into email templates. This saves your end users time by allowing them to use their favorite designs across multiple content channels.
 * **Email to Page:** Convert existing email templates into page templates. This saves your end users time by allowing them to use their favorite designs across multiple content channels.
-* **Simple to Full JSON**: Convert an [AI-generated Simple Schema](../../visual-builders/ai-driven-design-creation.md) into full Beefree JSON that can be loaded within the builder for your end users to edit.&#x20;
-* **Full JSON to Simple JSON:** Convert the full JSON of a Beefree SDK template into Simple Schema JSON.&#x20;
+* **Simple to Full JSON**: Convert an [AI-generated Simple Schema](../../visual-builders/ai-driven-design-creation.md) into full Beefree JSON that can be loaded within the builder for your end users to edit.
+* **Full JSON to Simple JSON:** Convert the full JSON of a Beefree SDK template into Simple Schema JSON.
 
-Visit the [Convert API documentation](convert.md) to learn more.&#x20;
+Visit the [Convert API documentation](convert.md) to learn more.
 
 #### **AI Collection**
 
-This category of endpoints requires that you configure an AI Provider within the [Beefree SDK Developer Console](../../builder-addons/addons/partner-addons/ai-writing-assistant/available-providers/). Through the integration with your AI Provider, these endpoints generate the following supporting details for your end users templates:
+This category of endpoints requires that you configure an AI Provider within the [Beefree SDK Developer Console](../../builder-addons/partner-addons/ai-writing-assistant/available-providers/). Through the integration with your AI Provider, these endpoints generate the following supporting details for your end users templates:
 
 * **SMS**: Generates concise text versions (e.g., promotional SMS).
 * **Metadata**: Generates subject lines and preheaders based on a template's content.
 * **Summary**: Generate summaries based on a template's content.
 
-Visit the [AI Collection API documentation](ai-collection.md) to learn more.&#x20;
+Visit the [AI Collection API documentation](ai-collection.md) to learn more.
 
 #### **Row Processing**
 
@@ -93,7 +93,7 @@ These endpoints manage rows within templates to maintain consistency and reduce 
 * **Merge**: Merge row updates across multiple templates. Particularly useful when applying global updates.
 * **Synced Rows**: Retrieve a list of synced rows available.
 
-Visit the [Row Processing API documentation](row-processing.md) to learn more.&#x20;
+Visit the [Row Processing API documentation](row-processing.md) to learn more.
 
 #### **Brand Style Management**
 
@@ -101,7 +101,7 @@ Brand consistency can be enforced or retroactively applied across templates:
 
 * **/templates and /rows** endpoints allow updating visual properties (colors, fonts, spacings, etc.) across multiple templates or rows based on defined brand styles.
 
-Visit the [Brand Style Management API documentation](brand-style-management.md) to learn more.&#x20;
+Visit the [Brand Style Management API documentation](brand-style-management.md) to learn more.
 
 #### **Check**
 
@@ -113,7 +113,7 @@ You can use these endpoints to provide feedback on:
 * Page designs
 * Rows within designs
 
-Visit the [Check API documentation](check.md) to learn more.&#x20;
+Visit the [Check API documentation](check.md) to learn more.
 
 ## Base URL
 
@@ -142,7 +142,7 @@ The following list includes links to each of the table for the category.
 **Note:** Some categories only include one possible collection value. If that is the case, you will see only one collection value in the table.
 {% endhint %}
 
-The following section displays a few [example URLs](./#example-urls) that demonstrate what a complete URL with the {collection} placeholder filled in.&#x20;
+The following section displays a few [example URLs](./#example-urls) that demonstrate what a complete URL with the {collection} placeholder filled in.
 
 #### Example URLs
 
@@ -157,8 +157,8 @@ API requests rate limits exist independently of API key’s monthly usage allowa
 By default, the API has the following rate limits:
 
 * **Per minute:** 500 requests
-* **Per second:**  100 requests
-* **X-Rate-Limit:** An integer representing the total number of requests available per cycle. Exceeding the limit per cycle results in a 429 error.  (e.g. 500)
+* **Per second:** 100 requests
+* **X-Rate-Limit:** An integer representing the total number of requests available per cycle. Exceeding the limit per cycle results in a 429 error. (e.g. 500)
 * **X-Rate-Limit-Remaining:** An integer representing the number of remaining requests before the next cycle begins, and the count resets. (e.g. 100)
 * **X-Rate-Limit-Reset:** A Unix timestamp representing the time the next cycle will begin, and the count will reset.
 * **Retry-After:** A Unix timestamp representing the time the application may resume submitting requests.
@@ -168,7 +168,7 @@ By default, the API has the following rate limits:
 To stay within the default limits and ensure reliable delivery, the following practices are recommended. These not only help distribute traffic more evenly but also provide resilience against transient network issues:
 
 * **Monitor rate limit headers and handle 429 responses gracefully.**\
-  &#x20;Response metadata indicates remaining capacity and reset timing. When receiving a `429 Too Many Requests`, it’s best to pause requests and retry after the time specified in the `Retry-After` header.
+  Response metadata indicates remaining capacity and reset timing. When receiving a `429 Too Many Requests`, it’s best to pause requests and retry after the time specified in the `Retry-After` header.
 * **Use exponential backoff.**\
   On retries, apply an exponentially increasing delay with a small random variation. This helps prevent synchronized retry storms that can worsen congestion.
 * **Throttle traffic using a queue.**\
@@ -185,7 +185,7 @@ To stay within the default limits and ensure reliable delivery, the following pr
 
 Reference the answers to the most frequently asked questions in this section.
 
-### What is the pricing by plan type?&#x20;
+### What is the pricing by plan type?
 
 The Content Services API allows you to carry out a number of useful tasks, like converting an email or a page into a thumbnail image or a PDF document, or updating a footer into all the emails that use it (for example, a [_saved row_](../../rows/reusable-content/create/save/implement-self-hosted-saved-rows/)).
 
@@ -219,4 +219,4 @@ API requests rate limits exist independently of any API key’s monthly usage al
 The API has the following rate limits:
 
 * **Per minute:** 500 requests
-* **Per second:**  100 requests
+* **Per second:** 100 requests

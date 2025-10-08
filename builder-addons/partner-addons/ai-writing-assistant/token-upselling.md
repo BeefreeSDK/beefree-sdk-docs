@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Token Upselling feature is a notification banner that you can integrate within your OpenAI AddOn. This notification banner informs your application end users of when their available tokens are running low and when they are completely out. Both notification banners display an option for the end user to purchase additional tokens. These notification banners support a healthy token management workflow, and help avoid any potential interruptions in the end user’s workflow through transparently informing them about their available tokens.
+The Token Upselling feature is a notification banner that you can integrate within your AI Writing Assistant AddOn. This notification banner informs your application end users of when their available tokens are running low and when they are completely out. Both notification banners display an option for the end user to purchase additional tokens. These notification banners support a healthy token management workflow, and help avoid any potential interruptions in the end user’s workflow through transparently informing them about their available tokens.
 
 The following notification banner will appear to an end user when their tokens are running low. “Running low” is defined as when an end user has a remaining token balance equal to or less than 20 percent of their initial token count.
 
@@ -317,9 +317,9 @@ const notificationTextWithCustomCTA = customLanguageEntries[customLanguageId];
 
 ## Configure Image Tokens
 
-You can also configure the Token Upselling feature to guide your application's end user to purchase images. Purchasing additional image tokens allows your end users to continue using features such as [Alt Text Generation with AI](../azure-ai-vision-image-analysis/alternate-text-generation-with-ai.md) and [Bulk Alt Text Generation](../azure-ai-vision-image-analysis/ai-alt-text-bulk-generation.md).
+You can also configure the Token Upselling feature to guide your application's end user to purchase images. Purchasing additional image tokens allows your end users to continue using features such as [Alt Text Generation with AI](../generate-alt-text-with-ai.md) and [Bulk Alt Text Generation](../generate-alt-text-globally-with-ai.md).
 
-The following code shows an example of a Token Upselling configuration for both text and image tokens. Purchasing text tokens supports end users as they use features connected to the [OpenAI AddOn](./), and purchasing image tokens supports ends users as they use features connected to the [Azure AI Vision AddOn](../azure-ai-vision-image-analysis/).
+The following code shows an example of a Token Upselling configuration for both text and image tokens. Purchasing text tokens supports end users as they use features connected to the [OpenAI AddOn](./), and purchasing image tokens supports ends users as they use features connected to the [Azure AI Vision AddOn](broken-reference).
 
 ```javascript
 // AddOns configuration

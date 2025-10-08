@@ -18,7 +18,7 @@ This page discusses how you can activate and customize the Preview option within
 
 There are views you can customize within the preview page. These view options include:
 
-* [Custom languages](../../other-customizations/advanced-options/custom-languages.md): Customize the "Preview Mode" text visible on the preview page. &#x20;
+* [Custom languages](../../other-customizations/advanced-options/custom-languages.md): Customize the "Preview Mode" text visible on the preview page.
 * [Multi-language templates](https://docs.beefree.io/end-user-guide/design-for-any-language/multi-language-templates): When enabled, you can enable your end users to browse how their template looks in different language versions.
 * [Display conditions](https://docs.beefree.io/end-user-guide/dynamic-content/display-conditions): Allows your end users to view how the design or template looked when different conditions they configured are applied.
 * [AMP or HTML view](https://docs.beefree.io/end-user-guide/dynamic-content/display-conditions): This option is available when AMP is enabled for email designs.
@@ -66,7 +66,7 @@ var beeConfig = {
       },
 ```
 
-The following image shows how this looks to the end user on the frontend.&#x20;
+The following image shows how this looks to the end user on the frontend.
 
 <figure><img src="../../.gitbook/assets/CleanShot 2025-08-25 at 20.22.11@2x.png" alt=""><figcaption></figcaption></figure>
 
@@ -106,7 +106,7 @@ The following GIF shows a visual example of what this configuration looks like t
 <figure><img src="../../.gitbook/assets/CleanShot 2025-08-25 at 21.35.19.gif" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-**Note:** Use the [DeepL integration](../../builder-addons/addons/partner-addons/deepl.md) to automatically translate a template in the primary language to other languages.
+**Note:** Use the [DeepL integration](../../builder-addons/partner-addons/deepl.md) to automatically translate a template in the primary language to other languages.
 {% endhint %}
 
 ### Display Conditions
@@ -229,4 +229,4 @@ The custom viewport is available by default. End users can set a custom viewport
 
 ## End User Experience
 
-The [white-label end user guide](https://docs.beefree.io/end-user-guide/preview-options/preview-designs) includes documentation you can add to your own knowledge base to support your end users as they use the Beefree SDK Preview option within your application. &#x20;
+The [white-label end user guide](https://docs.beefree.io/end-user-guide/preview-options/preview-designs) includes documentation you can add to your own knowledge base to support your end users as they use the Beefree SDK Preview option within your application.

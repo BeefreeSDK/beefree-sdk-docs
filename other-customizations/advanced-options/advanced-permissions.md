@@ -2142,7 +2142,7 @@ beeConfig: {
 
 ## **Addon**
 
-In this section, we will explore how to assign advanced permissions and behaviors for various AddOn types, specifically focusing on how to customize permissions for [Custom AddOns](../../builder-addons/addons/custom-addons/) and [Row AddOns](advanced-permissions.md#rows-addon). These permissions can override default settings to provide granular control. For instance, an image addon can have specific permissions different from the default image block permissions.
+In this section, we will explore how to assign advanced permissions and behaviors for various AddOn types, specifically focusing on how to customize permissions for [Custom AddOns](../../builder-addons/custom-addons/) and [Row AddOns](advanced-permissions.md#rows-addon). These permissions can override default settings to provide granular control. For instance, an image addon can have specific permissions different from the default image block permissions.
 
 To successfully use this feature, follow these steps:
 

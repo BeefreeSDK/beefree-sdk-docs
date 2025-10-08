@@ -19,7 +19,7 @@ As a simpler model, Simple Schema is an intuitive language you can use as a base
 
 You can convert the simple schema into native Beefree JSON using the [Content Services API endpoint](../../apis/content-services-api/convert.md) `/v1/conversion/simple-to-full-json`.
 
-Simple Schema also enhances [Custom AddOns development](../../builder-addons/addons/custom-addons/addon-development.md) by:
+Simple Schema also enhances [Custom AddOns development](broken-reference) by:
 
 * Providing a comprehensive set of properties for full flexibility in your design.
 * Consolidating the Custom Rows, Single Content AddOn, and Row Mixed schemas into a unified, compatible schema type.
@@ -106,7 +106,7 @@ Simple Schema enhances the development experience for Custom AddOns by integrati
 
 ### Content Dialog Handler Behavior
 
-To develop your own [Custom AddOn](../../builder-addons/addons/custom-addons/addon-development.md), you need to utilize Beefree SDK's [Content Dialog](../../other-customizations/advanced-options/content-dialog.md) method. The following code snippet provides and example of how to utilize the Content Dialog for Custom AddOns with Simple Schema.
+To develop your own [Custom AddOn](broken-reference), you need to utilize Beefree SDK's [Content Dialog](../../other-customizations/advanced-options/content-dialog.md) method. The following code snippet provides and example of how to utilize the Content Dialog for Custom AddOns with Simple Schema.
 
 ```json
 {

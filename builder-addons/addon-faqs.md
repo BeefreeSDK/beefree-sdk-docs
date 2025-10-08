@@ -33,7 +33,7 @@ More specifically:
 
 ## What is a Custom AddOn?
 
-A [Custom AddOn](custom-addons/) is an addon that you developed for your own use. You developed it to provide your own end-users with new features by extending the Beefree SDK editor, and those features may not  make sense for any other application.
+A [Custom AddOn](custom-addons/) is an addon that you developed for your own use. You developed it to provide your own end-users with new features by extending the Beefree SDK editor, and those features may not make sense for any other application.
 
 You will be able to install your custom addons on your own Beefree SDK host applications. No other Beefree SDK customer (i.e. no other software application that has embedded a Beefree content builder) will see it.
 
@@ -54,7 +54,7 @@ To build an addon, you need an eligible Beefree SDK subscription plan, including
 1. [Superpowers plan](https://developers.beefree.io/pricing-plans)
 2. [Enterprise plan](https://developers.beefree.io/pricing-plans)
 
-If you are on a lower-level plan and wish to test building an addon, you can simply [upgrade a development application](../../getting-started/readme/development-applications.md) to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
+If you are on a lower-level plan and wish to test building an addon, you can simply [upgrade a development application](../getting-started/readme/development-applications.md) to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
 
 ## Can a Custom AddOn Become a Partner AddOn?
 
@@ -63,17 +63,17 @@ Yes, that’s exactly the process of developing an addon that is available to th
 * First you develop a [Custom AddOn](custom-addons/)
 * Then you submit it for listing in the [Partner AddOn](partner-addons/) Directory
 
-Just remember that – technically speaking – you can only use the [iFrame Method](custom-addons/addon-development.md) when developing a Partner AddOn. So, a Custom AddOn that you want to later list in the Partner AddOn Directory, must be developed that way.
+Just remember that – technically speaking – you can only use the [iFrame Method](broken-reference) when developing a Partner AddOn. So, a Custom AddOn that you want to later list in the Partner AddOn Directory, must be developed that way.
 
 ## Where are AddOns in the Beefree SDK UI?
 
 As of January 2020, addons become visible as new _tiles_ in the _Content_ tab.
 
-<figure><img src="../../.gitbook/assets/BEE-AddOns-Yes-1024x460.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/BEE-AddOns-Yes-1024x460.png" alt=""><figcaption></figcaption></figure>
 
 An example would be a [Giphy](https://giphy.com/) tile (you can see it in the _Content_ tab in the screenshot below) that can be dragged to the editing stage to allow a Beefree SDK user to search, find and insert a GIF animation into the message or page they are designing.
 
-<figure><img src="../../.gitbook/assets/2BEE-AddOns-Giphy-1-1024x794.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/2BEE-AddOns-Giphy-1-1024x794.png" alt=""><figcaption></figcaption></figure>
 
 In the future, we may develop new types of addons that may impact other areas of the editor. If you have specific ideas or requests, certainly let us know.
 
@@ -88,7 +88,7 @@ As of October, 2022, you can generate two kinds of content with an addon:
 
 A countdown timer or a live map, for example, they will mostly likely be _image content blocks_ in Beefree SDK.
 
-For details, see: [AddOn Development](custom-addons/addon-development.md)
+For details, see: [AddOn Development](broken-reference)
 
 #### How do I know when new addons become available? <a href="#how-do-i-know-when-new-addons-become-available" id="how-do-i-know-when-new-addons-become-available"></a>
 
