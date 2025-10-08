@@ -27,7 +27,7 @@
 * [Vue.js No-code Email Builder](quickstart-guides/vue.js-no-code-email-builder.md)
 * [Angular No-code Email Builder](quickstart-guides/angular-no-code-email-builder.md)
 * [Django Beefree SDK Demo](quickstart-guides/django-beefree-sdk-demo.md)
-* [Docs MCP](quickstart-guides/docs-mcp.md)
+* [Connect the docs to your IDE](quickstart-guides/connect-the-docs-to-your-ide.md)
 
 ## Visual Builders
 
@@ -244,3 +244,7 @@
   * [Create a Default Form in Beefree SDK](resources/cookbook/create-a-default-form-in-beefree-sdk.md)
   * [Create a Form Library in Beefree SDK](resources/cookbook/create-a-form-library-in-beefree-sdk.md)
   * [Create a Custom Form Builder in Beefree SDK](resources/cookbook/create-a-custom-form-builder-in-beefree-sdk.md)
+
+## Early Access
+
+* [Beefree SDK MCP Server (Beta)](early-access/beefree-sdk-mcp-server-beta.md)

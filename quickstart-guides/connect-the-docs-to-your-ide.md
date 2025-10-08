@@ -1,10 +1,14 @@
 ---
 description: >-
-  Learn how to connect to the Beefree SDK Docs MCP Server in your IDE or
-  favorite tools.
+  Learn how to connect the Beefree docs to your IDE or favorite tools for
+  AI-assisted developer workflows.
 ---
 
-# Connect to the Beefree SDK Docs MCP Server
+# Connect the docs to your IDE
+
+{% hint style="warning" %}
+**Important:** Are you looking for our MCP server that supports AI-generated email creation? Visit the [Beefree SDK MCP Server technical documentation](../early-access/beefree-sdk-mcp-server-beta.md), which explains how you can use our Beefree SDK MCP to create powerful email creation and editing experiences for your end users. Stay on this page if you'd like to configure the Docs MCP in your IDE for AI-assisted developer workflows.&#x20;
+{% endhint %}
 
 ## Introduction
 
