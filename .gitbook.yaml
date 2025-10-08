@@ -63,16 +63,6 @@ redirects:
   form-structure-and-parameters: form-block/integrating-and-using-the-form-block/form-structure-and-parameters.md
   allowed-form-fields: form-block/integrating-and-using-the-form-block/allowed-form-fields.md
   amp-carousel: amp-for-email.md
-  addons: addons/addons-overview.md
-  custom-addons: addons/custom-addons/README.md
-  addon-development: addons/custom-addons/addon-development.md
-  addon-development-vendor: addons/partner-addons/README.md
-  partner-addons-directory: addons/partner-addons/partner-addons-directory.md
-  using-addons: addons/partner-addons/installing-partner-addons.md
-  openai-addon-customization: addons/partner-addons/openai-addon/README.md
-  open-ai-and-data-security: addons/partner-addons/openai-addon/open-ai-and-data-security.md
-  alternate-text-generation-with-ai: addons/partner-addons/alternate-text-generation-with-ai.md
-  addons-developer-faq: addons/addon-faqs.md
   co-editing: collaborative-editing.md
   mobile-design-mode: mobile-design-mode.md
   tracking-message-changes: tracking-message-changes.md
@@ -89,10 +79,6 @@ redirects:
   template-validation-errors: error-management/template-validation-and-update-errors.md
   sample-code: sample-code.md
   scheduled-maintenances: scheduled-maintenances.md
-  builder-addons/addons/partner-addons/openai-addon: builder-addons/addons/partner-addons/ai-writing-assistant.md
-  builder-addons/addons/partner-addons/openai-addon/open-ai-and-data-security: builder-addons/addons/partner-addons/ai-writing-assistant/data-security.md
-  builder-addons/addons/partner-addons/openai-addon/ai-generated-meta-tag-fields: builder-addons/addons/partner-addons/ai-writing-assistant/ai-generated-meta-tag-fields.md
-  builder-addons/addons/partner-addons/openai-addon/token-upselling: builder-addons/addons/partner-addons/ai-writing-assistant/token-upselling.md
   rows/custom-rows: rows/reusable-content/create/pre-build/implement-custom-rows.md
   rows/custom-rows/understanding-custom-rows: rows/reusable-content/create/pre-build/implement-custom-rows.md
   rows/custom-rows/how-it-works: rows/reusable-content/create/pre-build/implement-custom-rows.md
@@ -116,3 +102,25 @@ redirects:
   visual-builders/form-block/integrating-and-using-the-form-block/form-layout-customization: forms/integrating-and-using-the-form-block/form-layout-customization.md
   visual-builders/form-block/integrating-and-using-the-form-block/allowed-form-fields: forms/integrating-and-using-the-form-block/allowed-form-fields.md
   visual-builders/form-block/integrating-and-using-the-form-block/edit-form-field-modal: forms/integrating-and-using-the-form-block/edit-form-field-modal.md
+  builder-addons/addons: builder-addons/getting-started.md
+  builder-addons/addons/addons-overview: builder-addons/getting-started.md
+  builder-addons/addons/partner-addons: builder-addons/partner-addons.md
+  builder-addons/addons/partner-addons/partner-addons-directory: builder-addons/partner-addons/partner-addons-directory.md
+  builder-addons/addons/partner-addons/installing-partner-addons: builder-addons/partner-addons/installing-partner-addons.md
+  builder-addons/addons/partner-addons/deepl: builder-addons/partner-addons/deepl.md
+  builder-addons/addons/partner-addons/stability-ai: builder-addons/partner-addons/stability-ai.md
+  builder-addons/addons/partner-addons/azure-ai-vision-image-analysis/alternate-text-generation-with-ai: builder-addons/partner-addons/generate-alt-text-with-ai.md
+  builder-addons/addons/partner-addons/azure-ai-vision-image-analysis/ai-alt-text-bulk-generation: builder-addons/partner-addons/generate-alt-text-globally-with-ai.md
+  builder-addons/addons/partner-addons/ai-writing-assistant: builder-addons/partner-addons/ai-writing-assistant.md
+  builder-addons/addons/partner-addons/ai-writing-assistant/available-providers: builder-addons/partner-addons/ai-writing-assistant/available-providers.md
+  builder-addons/addons/partner-addons/ai-writing-assistant/available-providers/openai: builder-addons/partner-addons/ai-writing-assistant/available-providers/openai.md
+  builder-addons/addons/partner-addons/ai-writing-assistant/available-providers/azure-openai: builder-addons/partner-addons/ai-writing-assistant/available-providers/azure-openai.md
+  builder-addons/addons/partner-addons/ai-writing-assistant/available-providers/anthropic: builder-addons/partner-addons/ai-writing-assistant/available-providers/anthropic.md
+  builder-addons/addons/partner-addons/ai-writing-assistant/data-security: builder-addons/partner-addons/ai-writing-assistant/data-security.md
+  builder-addons/addons/partner-addons/ai-writing-assistant/ai-generated-meta-tag-fields: builder-addons/partner-addons/ai-writing-assistant/ai-generated-meta-tag-fields.md
+  builder-addons/addons/partner-addons/ai-writing-assistant/apply-a-brand-tone: builder-addons/partner-addons/ai-writing-assistant/apply-a-brand-tone.md
+  builder-addons/addons/partner-addons/custom-ai-writing-assistant: builder-addons/partner-addons/custom-ai-writing-assistant.md
+  builder-addons/addons/custom-addons: builder-addons/custom-addons.md
+  builder-addons/addons/custom-addons/contribute-to-the-partner-addon-marketplace: builder-addons/partner-addons/contribute-to-the-partner-addon-marketplace.md
+  builder-addons/addons/addons-configuration: beefree-sdk/builder-addons/addons-configuration.md
+  beefree-sdk/builder-addons/addons/addon-faqs: builder-addons/addon-faqs.md
