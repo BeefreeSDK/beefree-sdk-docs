@@ -6,7 +6,7 @@ description: >-
 
 # Direct Open
 
-### Overview
+## Overview
 
 With the Direct Open feature, you can immediately trigger your AddOn's content dialog or insert content as soon as the user drops the tile onto the editor stage. This eliminates the extra click step, creating a more efficient end user experience. With the `openOnDrop` parameter, you can determine whether or not your end user needs to perform an extra click before triggering the content dialog. The parameter can be set to `true` or `false` in your addon configuration within your `beeConfig`. It is available for Custom and Partner AddOns, and can be used for addons using content dialog or iframe method.
 

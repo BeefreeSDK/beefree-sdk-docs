@@ -1,10 +1,10 @@
 # Build AddOns with Content Dialog
 
-### Overview
+## Overview
 
 The **Content Dialog Method** is the simplest way to build Custom AddOns when your AddOn logic and UI are hosted within the same application as the Beefree SDK editor. This method allows you to use JavaScript handler functions that run in your application's context, giving you direct access to your app's data, services, and UI components without the complexity of iframe communication.
 
-#### Quick Setup
+## Quick Setup
 
 **1. Create AddOn in Console**
 
@@ -58,7 +58,7 @@ const bee = new BeePlugin(token, beeConfig);
 bee.start(template);
 ```
 
-#### Handler Function
+## Handler Function
 
 The handler is called when users interact with your AddOn. Understanding the handler function signature is crucial—it follows a promise-like pattern where you either `resolve` with content to insert or `reject` to abort. The `args` parameter provides valuable context like which specific addon was triggered and whether it was opened automatically via Direct Open, allowing you to create sophisticated conditional logic.
 
@@ -83,7 +83,7 @@ handler: (resolve, reject, args) => {
 }
 ```
 
-#### Implementation Patterns
+## Implementation Patterns
 
 **Pattern 1: Immediate Resolution**
 
@@ -256,7 +256,7 @@ handler: (resolve, reject, args) => {
 
 **Use when:** Combining Direct Open with manual triggering for flexible user workflows.
 
-#### Content Object Structure
+## Content Object Structure
 
 Every call to `resolve()` must include a properly formatted content object that matches Beefree's schema for the addon type. The `type` property specifies what kind of content you're inserting (image, html, button, etc.), the `value` object contains the type-specific properties and configuration, and the optional `mergeTags` array defines personalization fields for dynamic content. Understanding these schemas is critical—incorrect structures will cause insertion to fail silently or produce unexpected results.
 
@@ -380,11 +380,11 @@ resolve({
 });
 ```
 
-See AddOn Types for complete schemas.
+See [AddOn Types](custom-addon-types/) for complete schemas.
 
-#### Complete Example
+## Complete Example
 
-This comprehensive example demonstrates a production-ready implementation with multiple addons, Direct Open support, conditional logic, and error handling. It shows how to structure your `beeConfig` with the `addOns` array for Direct Open configuration and a unified handler that manages different addon types with appropriate workflows. This pattern represents real-world addon development—multiple addons with different behaviors, user interaction patterns, and error handling all working together in one cohesive system.
+This comprehensive example demonstrates a working implementation with multiple addons, Direct Open support, conditional logic, and error handling. It shows how to structure your `beeConfig` with the `addOns` array for Direct Open configuration and a unified handler that manages different addon types with appropriate workflows. This pattern represents real-world addon development—multiple addons with different behaviors, user interaction patterns, and error handling all working together in one cohesive system.
 
 ```javascript
 const beeConfig = {
@@ -501,7 +501,7 @@ const bee = new BeePlugin(token, beeConfig);
 bee.start(template);
 ```
 
-#### Error Handling
+## Error Handling
 
 Proper error handling is essential for production addons—it prevents silent failures, provides useful debugging information, and gives users clear feedback when something goes wrong. Always wrap async operations in try-catch blocks, validate that your content objects have the required properties before resolving, and provide meaningful error messages. Calling `reject()` with an error ensures Beefree knows the operation failed and can respond appropriately.
 
@@ -534,7 +534,7 @@ handler: async (resolve, reject, args) => {
 }
 ```
 
-#### Using Custom Metadata
+## Using Custom Metadata
 
 Custom metadata allows you to store additional information with your content that persists when users save and reopen their emails. This is incredibly powerful for creating stateful addons that remember their configuration, track content sources, or maintain relationships with external systems. When a user edits content that was inserted by your addon, Beefree provides the original metadata in `args.metadata`, allowing you to reconstruct the addon's state and pre-fill your UI with the previous configuration.
 
@@ -555,7 +555,7 @@ resolve({
 });
 ```
 
-#### Troubleshooting
+## Troubleshooting
 
 | Issue                  | Solution                                                                                      |
 | ---------------------- | --------------------------------------------------------------------------------------------- |

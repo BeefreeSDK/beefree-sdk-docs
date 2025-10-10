@@ -1,6 +1,6 @@
 # JavaScript API for Iframe AddOns
 
-### Overview
+## Overview
 
 The JavaScript API enables communication between your external iframe AddOn and the Beefree editor using the browser's `postMessage` API. This bidirectional messaging system is the foundation of all iframe-based addons—it's how your addon tells Beefree it's ready, receives context about the editor environment, sends content to be inserted, and signals when operations are complete or canceled. Understanding this API is essential for building functional iframe addons.
 
@@ -8,7 +8,7 @@ The JavaScript API enables communication between your external iframe AddOn and 
 
 * You're using the Content Dialog Method
 
-#### Communication Protocol
+## Communication Protocol
 
 **Message Structure**
 
@@ -39,7 +39,7 @@ Your Iframe                          Beefree Editor
    Send 'onCancel' ─────────────────→
 ```
 
-#### Messages Your AddOn Sends
+## Messages Your AddOn Sends
 
 **1. `loaded` — Iframe is Ready**
 
@@ -224,7 +224,7 @@ window.parent.postMessage({
 }, '*');
 ```
 
-#### Messages Your AddOn Receives
+## Messages Your AddOn Receives
 
 **1. `init` — Editor Context**
 
@@ -325,9 +325,9 @@ window.addEventListener('message', (event) => {
 }
 ```
 
-#### Complete Implementation
+## Complete Implementation
 
-This complete example demonstrates a production-ready iframe addon with proper message handling, user input validation, edit mode support, and comprehensive comments. It shows the full lifecycle: initialization, message listening, content creation, and cleanup. Use this as a template for your own addons, replacing the HTML/textarea with your actual UI components. The pattern shows immediate `loaded`, centralized message listener, validation before sending
+This complete example demonstrates a working iframe addon with proper message handling, user input validation, edit mode support, and comprehensive comments. It shows the full lifecycle: initialization, message listening, content creation, and cleanup. Use this as a template for your own addons, replacing the HTML/textarea with your actual UI components. The pattern shows immediate `loaded`, centralized message listener, validation before sending
 
 ```html
 <!DOCTYPE html>
@@ -484,7 +484,7 @@ This complete example demonstrates a production-ready iframe addon with proper m
 </html>
 ```
 
-#### Troubleshooting
+## Troubleshooting
 
 | Issue                       | Solution                                                                                                                                      |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |

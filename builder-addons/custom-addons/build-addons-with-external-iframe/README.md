@@ -1,10 +1,10 @@
 # Build AddOns with External Iframe
 
-### Overview
+## Overview
 
 The External Iframe Method allows Custom AddOns to be hosted on different domains from the host application. This method is required for Partner AddOns or any AddOn you want to distribute to other Beefree SDK applications. Unlike the Content Dialog method which runs in your application's context, the Iframe method loads your addon as a separate web application in an iframe, communicating with Beefree through the browser's postMessage API. This architecture enables cross-domain functionality and makes your addon portable across different Beefree SDK implementations.
 
-#### Required Components
+## Required Components
 
 To build an iframe-based addon, you need three main components working together. Your AddOn Application is the web interface users interact with, running in an iframe inside Beefree. The JavaScript API implements postMessage communication to send and receive data between your iframe and the Beefree editor. The Server API provides a health check endpoint that Beefree uses to verify your addon is available, and optionally handles authentication if you want to control which applications can use your addon.
 
@@ -12,7 +12,7 @@ To build an iframe-based addon, you need three main components working together.
 2. **JavaScript API** — Communication via postMessage (Details)
 3. **Server API** — Health check endpoint (authentication optional)
 
-#### Quick Setup
+## Quick Setup
 
 **1. Create AddOn in Console**
 
@@ -65,7 +65,7 @@ app.get('/api/health', (req, res) => {
 });
 ```
 
-#### JavaScript API (Quick Reference)
+## JavaScript API (Quick Reference)
 
 **1. Send "loaded"**
 
@@ -150,7 +150,7 @@ window.parent.postMessage({
 
 See JavaScript API documentation for complete details.
 
-#### Simple Working Example
+## Simple Working Example
 
 This complete HTML example demonstrates a fully functional iframe addon. It shows the entire postMessage protocol implementation: sending `loaded` on page load with proper modal configuration, listening for `init` and `load` messages, and sending `onSave` or `onCancel` based on user actions. The `load` message handler is particularly important—it pre-fills your UI when users are editing existing content, allowing them to modify what they previously inserted. This example serves as a starting point you can build upon with richer UI, validation, and features.
 
@@ -241,7 +241,7 @@ This complete HTML example demonstrates a fully functional iframe addon. It show
 </html>
 ```
 
-#### Modal Customization
+## Modal Customization
 
 The modal's appearance is controlled by the `data` object in your `loaded` message. These properties determine whether users see a full-screen takeover or a smaller centered dialog, whether there are rounded corners for a modern look, and whether a title bar provides clear context about what addon they're using. Different modal configurations suit different addon types—full-screen for complex editors, smaller dialogs for simple selectors, title bars for clarity when multiple addons are available.
 
@@ -292,7 +292,7 @@ data: {
 }
 ```
 
-#### Content Object Schemas
+## Content Object Schemas
 
 Your `onSave` message must include a valid content object that matches your addon type's schema. These schemas define the exact structure Beefree expects—missing required properties or using incorrect property names causes insertion to fail. Each addon type has different requirements: images need `src` and `alt`, HTML needs an `html` string, buttons need `label` and often `href`, and mixed content needs an array of module objects. Understanding these schemas is fundamental to iframe addon development.
 
@@ -396,7 +396,7 @@ Your `onSave` message must include a valid content object:
 
 See [AddOn Types](../custom-addon-types/) for all schemas.
 
-#### Testing Checklist
+## Testing Checklist
 
 This checklist ensures your addon implements all required functionality before going live. Test each item systematically to catch issues early—missing even one of these can cause confusing user experiences or complete addon failure.
 
@@ -414,7 +414,7 @@ This checklist ensures your addon implements all required functionality before g
 * Cross-browser testing (Chrome, Firefox, Safari, Edge)
 * Mobile/responsive behavior (if applicable)
 
-#### Troubleshooting
+## Troubleshooting
 
 | Issue                   | Solution                                                                                                               |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------- |
