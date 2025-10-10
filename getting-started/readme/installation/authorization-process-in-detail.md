@@ -2,11 +2,11 @@
 
 ## Authorization Process Overview
 
-The Authorization Process is an important step throughout your [Beefree SDK installation process](./). This step validates your Beefree SDK credentials and provides you with a token. Take the steps outlined in this document to ensure you accurately complete the authorization process.&#x20;
+The Authorization Process is an important step throughout your [Beefree SDK installation process](./). This step validates your Beefree SDK credentials and provides you with a token. Take the steps outlined in this document to ensure you accurately complete the authorization process.
 
 ### Beefree SDK NPM Package
 
-Prior to getting started with the authorization process, ensure you reference the [Beefree SDK official npm package](https://www.npmjs.com/package/@beefree.io/sdk). Reference both the [wrapper](https://www.npmjs.com/package/@beefree.io/sdk) and the [GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-npm-official) to get the latest information. &#x20;
+Prior to getting started with the authorization process, ensure you reference the [Beefree SDK official npm package](https://www.npmjs.com/package/@beefree.io/sdk). Reference both the [wrapper](https://www.npmjs.com/package/@beefree.io/sdk) and the [GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-npm-official) to get the latest information.
 
 #### **Package Installation**
 
@@ -110,16 +110,51 @@ The following code example shows how to inject the token in the current Beefree 
 beeInstance.updateToken(token);
 ```
 
+#### Handling Token Expiration with onError Callback
+
+To automatically handle token expiration scenarios, implement the `onError` callback in your Beefree SDK configuration. This callback allows you to manage both recoverable and non-recoverable token expiration cases:
+
+```javascript
+onError: function (data) {
+  const { code, detail, template } = data
+  switch (code) {
+    case 5101:
+      // Token expired and cannot be auto-refreshed
+      // Obtain a new token and update the current instance
+      const newToken = getToken() // this calls your backend
+      editorInstance.updateToken(newToken)
+      break
+    case 5102:
+      // Complete refresh required
+      // Re-mount component with the template provided in the data
+      // This preserves the user's work while initializing a fresh instance
+      break
+  }
+}
+```
+
+{% hint style="info" %}
+**Best Practice:** Implement the `onError` callback to handle token expiration gracefully. Error code 5101 allows you to extend the session, while error code 5102 requires re-initializing the editor with the current template to preserve user changes.
+{% endhint %}
+
+**Implementation Notes:**
+
+* **Error 5101**: Call your backend authorization endpoint to obtain a fresh token, then inject it using the `updateToken()` method. This maintains the current session without interrupting the user's workflow.
+* **Error 5102**: You must create a new Beefree SDK instance using the `template` property from the error data. This ensures no content is lost while addressing critical updates or security fixes.
+* The `getToken()` function should be your server-side endpoint that calls `/loginV2` and returns a new access token.
+
+For more details on error codes and error handling, see the [Error Management section.](authorization-process-in-detail.md#error-management)
+
 ## Error Management
 
 When you set up an [`onError` callback](../../../resources/error-management/warning-error-info-callbacks.md#onerror-callback) you will get the `error` object as a parameter.
 
 From that object, you can grab the `code` property and use it as explained in the table below.
 
-| Code | Message                           | Detail                                                                                                                                                                                                                                                                                       |
-| ---- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 5101 | Expired token cannot be refreshed | You need to do a new login and update the token in the current Builder instance using `updateToken` method.                                                                                                                                                                                  |
-| 5102 | Expired token must be refreshed   | <p>You need to do a new login and create a new Builder instance using the new token, and the current JSON template present in this event<br></p><p>Example scenarios:</p><ul><li>The version is outdated</li><li>Beefree SDK releases a security fix and every client must refresh</li></ul> |
+| Code | Message                           | Detail                                                                                                                                                                                                                                                                                    |
+| ---- | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 5101 | Expired token cannot be refreshed | You need to do a new login and update the token in the current Builder instance using `updateToken` method.                                                                                                                                                                               |
+| 5102 | Expired token must be refreshed   | <p>You need to do a new login and create a new Builder instance using the new token, and the current JSON template present in this event.</p><p>Example scenarios:</p><ul><li>The version is outdated</li><li>Beefree SDK releases a security fix and every client must refresh</li></ul> |
 
 ## Error Responses
 
@@ -144,7 +179,7 @@ Example error response for an invalid UID. Look at the properties of [UID parame
 
 ```
 
-Example error response for invalid credentials. Obtain your credentials using the [authorization process](authorization-process-in-detail.md).&#x20;
+Example error response for invalid credentials. Obtain your credentials using the [authorization process](authorization-process-in-detail.md).
 
 ```json
 {
