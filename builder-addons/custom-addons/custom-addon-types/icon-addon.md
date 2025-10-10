@@ -1,24 +1,28 @@
 # Icon AddOn
 
-### Overview
+## Overview
 
 The Icon AddOn (type: `icons`, plural) allows you to insert icon sets with images, text labels, and links. This is perfect for social media links, feature highlights with icons, or any visual navigation elements.
 
-#### Prerequisites
+## Prerequisites
 
 Before implementing an Icon AddOn in your code, you must first create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/):
 
-1. Log into the Developer Console and navigate to your application
-2. Create a new Custom AddOn and select "Icon" as the type
-3. Configure the addon with a unique **handle** (e.g., `my-icon-addon`)
-4. Choose your implementation method (Content Dialog or External iframe)
-5. Save the addon configuration
+1. Log in to the [Developer Console](https://developers.beefree.io/login) and navigate to your application.
+2. Create a new Custom AddOn and select **Icon** as the type.
+3. Configure the addon with a unique **handle** (for example, `my-icon-addon`).
+4. Choose your implementation method ([Content Dialog](../build-addons-with-content-dialog.md) or [External iframe](../build-addons-with-external-iframe/)).
+5. Save the addon configuration.
 
 {% hint style="info" %}
-**Important:** The handle you create in the Developer Console must match exactly with the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
+**Important:** The handle you create in the Developer Console must match the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
 {% endhint %}
 
-#### Content Object Schema
+## Content Object Schema
+
+This section discusses the Icon AddOn's object schema. Understanding this schema is a core part of successfully implementing a Custom Icon AddOn type.
+
+Visit the complete [Unified Schema in GitHub](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/blob/main/simple_unified.schema.json) to see a comprehensive reference on how to structure data for all Custom Addons.
 
 **Required Structure**
 
@@ -49,7 +53,7 @@ The Icon AddOn uses a unique plural naming convention—note that the type is `'
 
 **Basic Example**
 
-This simple example creates a set of three social media icons without any styling or advanced configuration. The minimal properties (image, href, alt, width, height) are sufficient for basic icon display, and users can further customize the appearance using the editor's sidebar after insertion.
+This simple example creates a set of three social media icons without any styling or advanced configuration. The properties (image, href, alt, width, height) are sufficient for basic icon display, and users can further customize the appearance using the editor's sidebar after insertion.
 
 ```javascript
 resolve({
@@ -129,9 +133,15 @@ resolve({
 });
 ```
 
-#### Content Dialog Implementation
+## Content Dialog Implementation
 
-**Basic Handler**
+This section covers how to implement a Custom Icon AddOn using the [Content Dialog method](../build-addons-with-content-dialog.md). It includes code snippets for three different scenarios:
+
+* **Scenario 1:** [End user input not required](icon-addon.md#end-user-input-not-required)
+* **Scenario 2:** [Dynamic Icon Generation](icon-addon.md#dynamic-icon-generation)
+* **Scenario 3:** [End User Selection ](icon-addon.md#end-user-selection)
+
+### **End user input not required**
 
 The Content Dialog method enables programmatic icon insertion through a JavaScript handler. When users drag your icon addon onto the stage, this handler function is invoked and immediately resolves with a predefined set of icons. This pattern works perfectly for static icon sets that don't require user configuration, providing instant insertion of consistently styled icon groups.
 
@@ -182,7 +192,7 @@ const beeConfig = {
 };
 ```
 
-**Pattern: Dynamic Icon Generation**
+### **Dynamic Icon Generation**
 
 This pattern demonstrates programmatic icon generation from a data structure, making it easy to maintain and update your icon sets. By defining your icon configurations in a structured object, you can map through them to generate the proper schema format. This approach is particularly useful when icon sets are managed in a configuration file or fetched from an API, allowing for centralized management of all icon properties.
 
@@ -230,7 +240,7 @@ contentDialog: {
 }
 ```
 
-**Pattern: User Selection**
+### **End User Selection**
 
 This advanced pattern shows how to let users customize which icons to include and their URLs before insertion. By opening a custom selection interface, users can choose from available social networks and provide their specific profile URLs. The handler waits for user confirmation, validates the selections, and then generates the icon set based on user input. This provides maximum flexibility while maintaining consistency in icon styling and structure.
 
@@ -273,7 +283,9 @@ contentDialog: {
 }
 ```
 
-#### Iframe Implementation
+## Iframe Implementation
+
+This section discusses how to implement the Custom Button AddOn using the Iframe implementation method. It includes the core concepts you need to understand to successfully implement Button AddOns using an Iframe workflow.
 
 **Conceptual Flow**
 
@@ -344,7 +356,7 @@ window.parent.postMessage({
 }, '*');
 ```
 
-**Simple Iframe Example**
+### **Simple Iframe Example**
 
 This complete HTML example provides a functional icon configuration interface. It demonstrates the full postMessage protocol and includes simple inputs for configuring a social media icon set. Users can enter their social profile URLs, and the interface automatically generates properly formatted icons. You can expand this basic example with icon selection, image uploads, custom styling options, or visual preview capabilities.
 
@@ -473,12 +485,3 @@ This complete HTML example provides a functional icon configuration interface. I
 </body>
 </html>
 ```
-
-#### Text Position Options
-
-The `textPosition` property determines where the label appears relative to the icon:
-
-* **`'bottom'`** - Text below icon (common for social media)
-* **`'top'`** - Text above icon
-* **`'left'`** - Text to left of icon
-* **`'right'`** - Text to right of icon

@@ -1,24 +1,28 @@
 # Paragraph AddOn
 
-### Overview
+## Overview
 
 The Paragraph AddOn type allows you to insert text paragraphs with formatting and merge tags. This is ideal for providing dynamic, personalized text content or pre-formatted text blocks to users.
 
-#### Prerequisites
+## Prerequisites
 
-Before implementing a Paragraph AddOn in your code, you must first create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/):
+Before implementing a Paragraph AddOn in your code, you must first create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/). Take the following steps to complete this:
 
-1. Log into the Developer Console and navigate to your application
-2. Create a new Custom AddOn and select "Paragraph" as the type
-3. Configure the addon with a unique **handle** (e.g., `my-paragraph-addon`)
-4. Choose your implementation method (Content Dialog or External iframe)
-5. Save the addon configuration
+1. Log into the [Developer Console](https://developers.beefree.io/login) and navigate to your application.
+2. Create a new Custom AddOn and select **Paragraph** as the type.
+3. Configure the addon with a unique **handle** (for example, `my-paragraph-addon`).
+4. Choose your implementation method ([Content Dialog ](../build-addons-with-content-dialog.md)or [External iframe](../build-addons-with-external-iframe/)).
+5. Save the addon configuration.
 
 {% hint style="info" %}
-**Important:** The handle you create in the Developer Console must match exactly with the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
+**Important:** The handle you create in the Developer Console must match the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
 {% endhint %}
 
-#### Content Object Schema
+## Content Object Schema
+
+This section discusses the Paragraph AddOn's object schema. Understanding this schema is a core part of successfully implementing a Custom Paragraph AddOn type.
+
+Visit the complete [Unified Schema in GitHub](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/blob/main/simple_unified.schema.json) to see a comprehensive reference on how to structure data for all Custom Addons
 
 **Required Structure**
 
@@ -108,9 +112,15 @@ resolve({
 });
 ```
 
-#### Content Dialog Implementation
+## Content Dialog Implementation
 
-**Basic Handler**
+This section covers how to implement a Custom Paragraph AddOn using the [Content Dialog method](../build-addons-with-content-dialog.md). It includes code snippets for three different scenarios:
+
+* **Scenario 1:** [Pre-defined text content](paragraph-addon.md#pre-defined-text-content)
+* **Scenario 2:**[ With personalization](paragraph-addon.md#with-personalization)
+* **Scenario 3:** [With user input](paragraph-addon.md#with-user-input)&#x20;
+
+### **Pre-defined text content**
 
 The Content Dialog method enables programmatic paragraph insertion through a JavaScript handler. When users drag your paragraph addon onto the stage, this handler is immediately invoked and resolves with predefined text content. This pattern works perfectly for static text blocks that don't require user input, providing instant insertion of formatted paragraphs with consistent styling.
 
@@ -153,7 +163,7 @@ const beeConfig = {
 };
 ```
 
-**Pattern: With Personalization**
+### **With Personalization**
 
 This pattern demonstrates how to create personalized text content using merge tags. By defining a set of merge fields, you enable dynamic content that changes for each email recipient. This is particularly powerful for creating personalized greetings, account-specific information, or custom messaging based on recipient data. The handler immediately resolves with the text and merge tag definitions, which your email platform will process at send time.
 
@@ -182,7 +192,7 @@ contentDialog: {
 }
 ```
 
-**Pattern: With User Input**
+### **With User Input**
 
 This advanced pattern shows how to let users create or edit text content before insertion. By opening a custom text editor interface, users can compose their message, potentially select from available merge tags, and configure styling. The handler waits for user confirmation before resolving, providing a flexible workflow that combines user control with automated formatting and merge tag support.
 
@@ -218,7 +228,9 @@ contentDialog: {
 }
 ```
 
-#### Iframe Implementation
+## Iframe Implementation
+
+This section discusses how to implement the Custom Paragraph AddOn using the Iframe implementation method. It includes the core concepts you need to understand to successfully implement Paragraph AddOns using an Iframe workflow.
 
 **Conceptual Flow**
 
@@ -304,7 +316,7 @@ window.parent.postMessage({
 }, '*');
 ```
 
-**Simple Iframe Example**
+### **Simple Iframe Example**
 
 This complete HTML example demonstrates a functional text editor interface that integrates with Beefree. It includes the full postMessage protocol implementation, a simple textarea for text input, merge tag insertion capability, and proper save/cancel handling. Users can compose text and optionally insert personalization merge tags. You can expand this basic example with rich text editing, formatting toolbar, or template selection for more sophisticated text creation.
 

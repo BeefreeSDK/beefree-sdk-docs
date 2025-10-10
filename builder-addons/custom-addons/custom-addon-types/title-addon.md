@@ -1,24 +1,28 @@
 # Title AddOn
 
-### Overview
+## Overview
 
 The Title AddOn (type: `heading`) allows you to insert heading elements (H1-H6) with custom styling. This is perfect for providing pre-formatted headlines, section titles, or branded heading styles to users.
 
-#### Prerequisites
+## Prerequisites
 
-Before implementing a Title AddOn in your code, you must first create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/):
+Before implementing a Title AddOn in your code, you must first create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/). Take the following steps to complete this:
 
-1. Log into the Developer Console and navigate to your application
-2. Create a new Custom AddOn and select "Title" as the type
-3. Configure the addon with a unique **handle** (e.g., `my-title-addon`)
-4. Choose your implementation method (Content Dialog or External iframe)
-5. Save the addon configuration
+1. Log into the [Developer Console](https://developers.beefree.io/login) and navigate to your application.
+2. Create a new Custom AddOn and select **Title** as the type.
+3. Configure the addon with a unique **handle** (for example, `my-title-addon`).
+4. Choose your implementation method ([Content Dialog](../build-addons-with-content-dialog.md) or [External iframe](../build-addons-with-external-iframe/)).
+5. Save the addon configuration.
 
 {% hint style="info" %}
-**Important:** The handle you create in the Developer Console must match exactly with the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
+**Important:** The handle you create in the Developer Console must match the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
 {% endhint %}
 
-#### Content Object Schema
+## Content Object Schema
+
+This section discusses the Title AddOn's object schema. Understanding this schema is a core part of successfully implementing a Custom Title AddOn type.
+
+Visit the complete [Unified Schema in GitHub](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/blob/main/simple_unified.schema.json) to see a comprehensive reference on how to structure data for all Custom Addons.
 
 **Required Structure**
 
@@ -73,9 +77,15 @@ resolve({
 });
 ```
 
-#### Content Dialog Implementation
+## Content Dialog Implementation
 
-**Basic Handler**
+This section covers how to implement a Custom Title AddOn using the [Content Dialog method](../build-addons-with-content-dialog.md). It includes code snippets for three different scenarios:
+
+* **Scenario 1:** [Pre-defined heading](title-addon.md#pre-defined-heading)
+* **Scenario 2:** [Heading level selector](title-addon.md#heading-level-selector)
+* **Scenario 3:** [With user input](title-addon.md#with-user-input)
+
+### **Pre-defined heading**
 
 The Content Dialog method enables programmatic heading insertion through a JavaScript handler. When users drag your title addon onto the stage, this handler is immediately invoked and resolves with a predefined heading. This pattern works perfectly for static headings or branded heading styles that don't require user input, providing instant insertion of consistently formatted headers.
 
@@ -121,7 +131,7 @@ const beeConfig = {
 };
 ```
 
-**Pattern: Heading Level Selector**
+### **Heading Level Selector**
 
 This pattern demonstrates creating a heading library with size-appropriate styling for each heading level. By mapping heading levels to appropriate font sizes, you maintain proper visual hierarchy (H1 largest, H6 smallest) while providing users with semantic heading options. This approach is ideal for template systems where consistent typographic hierarchy is important for both design and accessibility.
 
@@ -159,7 +169,7 @@ contentDialog: {
 }
 ```
 
-**Pattern: With User Input**
+### **With User Input**
 
 This advanced pattern shows how to let users provide heading text and select formatting options before insertion. By opening a custom interface, users can type their heading, choose the semantic level, set alignment, and configure other properties. The handler waits for user confirmation, then resolves with the customized heading. This provides maximum flexibility while maintaining proper heading structure and semantic HTML.
 
@@ -200,7 +210,9 @@ contentDialog: {
 }
 ```
 
-#### Iframe Implementation
+## Iframe Implementation
+
+This section discusses how to implement the Custom Title AddOn using the Iframe implementation method. It includes the core concepts you need to understand to successfully implement Title AddOns using an Iframe workflow.
 
 **Conceptual Flow**
 
@@ -279,7 +291,7 @@ window.parent.postMessage({
 }, '*');
 ```
 
-**Simple Iframe Example**
+### **Simple Iframe Example**
 
 This complete HTML example demonstrates a functional heading configuration interface. It includes the full postMessage protocol implementation, inputs for heading text and level selection, alignment options, and proper save/cancel handling. The interface automatically adjusts preview text size based on the selected heading level. You can expand this basic example with live preview, font selection, color pickers, or heading template galleries for more sophisticated heading creation.
 
@@ -450,7 +462,7 @@ This complete HTML example demonstrates a functional heading configuration inter
 </html>
 ```
 
-#### Heading Levels
+### Heading Levels
 
 Choose the appropriate semantic level:
 

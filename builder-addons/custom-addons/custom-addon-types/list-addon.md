@@ -1,24 +1,28 @@
 # List AddOn
 
-### Overview
+## Overview
 
 The List AddOn type allows you to insert ordered (numbered) or unordered (bulleted) lists with custom formatting. This is perfect for feature lists, step-by-step instructions, or any content that benefits from a list structure.
 
-#### Prerequisites
+## Prerequisites
 
-Before implementing a List AddOn in your code, you must first create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/):
+Before implementing a List AddOn in your code, you must first create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/). Take the following steps to complete this:
 
-1. Log into the Developer Console and navigate to your application
-2. Create a new Custom AddOn and select "List" as the type
-3. Configure the addon with a unique **handle** (e.g., `my-list-addon`)
-4. Choose your implementation method (Content Dialog or External iframe)
-5. Save the addon configuration
+1. Log into the [Developer Console](https://developers.beefree.io/login) and navigate to your application.
+2. Create a new Custom AddOn and select **List** as the type.
+3. Configure the addon with a unique **handle** (e.g., `my-list-addon`).
+4. Choose your implementation method (Content Dialog or External iframe).
+5. Save the addon configuration.
 
 {% hint style="info" %}
-**Important:** The handle you create in the Developer Console must match exactly with the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
+**Important:** The handle you create in the Developer Console must match the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
 {% endhint %}
 
-#### Content Object Schema
+## Content Object Schema
+
+This section discusses the List AddOn's object schema. Understanding this schema is a core part of successfully implementing a Custom List AddOn type.
+
+Visit the complete [Unified Schema in GitHub](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/blob/main/simple_unified.schema.json) to see a comprehensive reference on how to structure data for all Custom Addons.
 
 **Required Structure**
 
@@ -94,9 +98,15 @@ resolve({
 });
 ```
 
-#### Content Dialog Implementation
+## Content Dialog Implementation
 
-**Basic Handler**
+This section covers how to implement a Custom List AddOn using the [Content Dialog method](../build-addons-with-content-dialog.md). It includes code snippets for three different scenarios:
+
+* **Scenario 1:** [End user input not required](list-addon.md#end-user-input-not-required)
+* **Scenario 2:** [Dynamic list generation](list-addon.md#dynamic-list-generation)
+* **Scenario 3:** [User-defined list](list-addon.md#user-defined-list)&#x20;
+
+### **End user input not required**
 
 The Content Dialog method allows programmatic list insertion through a JavaScript handler. When users drag your list addon onto the stage, this handler is immediately invoked and resolves with a predefined list. This pattern works perfectly for static list content that doesn't require user configuration, providing instant insertion of consistently formatted lists.
 
@@ -140,7 +150,7 @@ const beeConfig = {
 };
 ```
 
-**Pattern: Dynamic List Generation**
+### **Dynamic List Generation**
 
 This pattern demonstrates programmatic list generation from an array of data, making it easy to create lists from dynamic sources like APIs, databases, or configuration files. By mapping through your data array, you can transform structured information into properly formatted list HTML, enabling dynamic content insertion while maintaining consistent markup structure.
 
@@ -177,7 +187,7 @@ contentDialog: {
 }
 ```
 
-**Pattern: User-Defined List**
+### **User-Defined List**
 
 This advanced pattern shows how to let users create custom lists through an interface before insertion. By opening a dialog where users can add, edit, or remove list items and choose between ordered or unordered formatting, you provide maximum flexibility while maintaining proper list structure. The handler filters out empty items and validates input before resolving, ensuring clean list insertion.
 
@@ -219,7 +229,9 @@ contentDialog: {
 }
 ```
 
-#### Iframe Implementation
+## Iframe Implementation
+
+This section discusses how to implement the Custom List AddOn using the Iframe implementation method. It includes the core concepts you need to understand to successfully implement List AddOns using an Iframe workflow.
 
 **Conceptual Flow**
 
@@ -297,7 +309,7 @@ window.parent.postMessage({
 }, '*');
 ```
 
-**Simple Iframe Example**
+### **Simple Iframe Example**
 
 This complete HTML example provides a functional list creation interface. It demonstrates the full postMessage protocol and includes a dynamic item input system where users can add multiple list items and choose between ordered or unordered formatting. The interface builds proper list HTML and sends it to Beefree. You can expand this basic example with rich text editing, item reordering, or pre-built list templates.
 
@@ -437,17 +449,3 @@ This complete HTML example provides a functional list creation interface. It dem
 </body>
 </html>
 ```
-
-#### List Type Differences
-
-**Unordered List (ul)**
-
-* Uses bullets (•)
-* No inherent order or sequence
-* Best for features, benefits, options
-
-**Ordered List (ol)**
-
-* Uses numbers (1, 2, 3...)
-* Implies sequence or priority
-* Best for instructions, rankings, steps

@@ -1,24 +1,28 @@
 # Menu AddOn
 
-### Overview
+## Overview
 
 The Menu AddOn type allows you to insert navigation menus with multiple linked items. This is ideal for email headers, footer navigation, quick links, or any horizontal/vertical menu structure.
 
-#### Prerequisites
+## Prerequisites
 
-Before implementing a Menu AddOn in your code, you must first create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/):
+Before implementing a Menu AddOn in your code, you must first create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/). Take the following steps to complete this:
 
-1. Log into the Developer Console and navigate to your application
-2. Create a new Custom AddOn and select "Menu" as the type
-3. Configure the addon with a unique **handle** (e.g., `my-menu-addon`)
-4. Choose your implementation method (Content Dialog or External iframe)
+1. Log into the [Developer Console](https://developers.beefree.io/login) and navigate to your application.
+2. Create a new Custom AddOn and select **Menu** as the type.
+3. Configure the addon with a unique **handle** (for example, `my-menu-addon`).
+4. Choose your implementation method ([Content Dialog](../build-addons-with-content-dialog.md) or [External iframe](../build-addons-with-external-iframe/)).
 5. Save the addon configuration
 
 {% hint style="info" %}
-**Important:** The handle you create in the Developer Console must match exactly with the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
+**Important:** The handle you create in the [Developer Console](https://developers.beefree.io/login) must match the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
 {% endhint %}
 
-#### Content Object Schema
+## Content Object Schema
+
+This section discusses the Menu AddOn's object schema. Understanding this schema is a core part of successfully implementing a Custom Menu AddOn type.
+
+Visit the complete [Unified Schema in GitHub](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/blob/main/simple_unified.schema.json) to see a comprehensive reference on how to structure data for all Custom Addons.
 
 **Required Structure**
 
@@ -126,9 +130,15 @@ resolve({
 });
 ```
 
-#### Content Dialog Implementation
+## Content Dialog Implementation
 
-**Basic Handler**
+This section covers how to implement a Custom Menu AddOn using the [Content Dialog method](../build-addons-with-content-dialog.md). It includes code snippets for three different scenarios:
+
+* **Scenario 1:** [Pre-defined menu structure](menu-addon.md#pre-defined-menu-structure)
+* **Scenario 2:** [Dynamic menu generation](menu-addon.md#dynamic-menu-generation)
+* **Scenario 3:** [User-configurable menu](menu-addon.md#user-configurable-menu)&#x20;
+
+### **Pre-defined menu structure**
 
 The Content Dialog method enables programmatic menu insertion through a JavaScript handler. When users drag your menu addon onto the stage, this handler is immediately invoked and resolves with a predefined menu structure. This pattern works perfectly for static navigation menus that don't require user configuration, providing instant insertion of consistently formatted link sets.
 
@@ -189,7 +199,7 @@ const beeConfig = {
 };
 ```
 
-**Pattern: Dynamic Menu Generation**
+### **Dynamic Menu Generation**
 
 This pattern demonstrates programmatic menu generation from a structured data array, making it easy to maintain navigation links in a centralized configuration. By mapping through your navigation data, you can transform a simple structure into the proper menu schema format. This approach is particularly useful when menu items are managed in configuration files, databases, or need to be updated frequently across multiple templates.
 
@@ -227,7 +237,7 @@ contentDialog: {
 }
 ```
 
-**Pattern: User-Configurable Menu**
+### **User-Configurable Menu**
 
 This advanced pattern shows how to let users customize menu items through an interface before insertion. By opening a dialog where users can add, edit, or remove menu items and configure their URLs, you provide maximum flexibility while maintaining proper menu structure. The handler filters out invalid items (missing text or URL) before resolving, ensuring clean menu insertion with user-defined content and links.
 
@@ -267,7 +277,9 @@ contentDialog: {
 }
 ```
 
-#### Iframe Implementation
+## Iframe Implementation
+
+This section discusses how to implement the Custom Menu AddOn using the Iframe implementation method. It includes the core concepts you need to understand to successfully implement Menu AddOns using an Iframe workflow.
 
 **Conceptual Flow**
 
@@ -349,7 +361,7 @@ window.parent.postMessage({
 }, '*');
 ```
 
-**Simple Iframe Example**
+### **Simple Iframe Example**
 
 This complete HTML example provides a functional menu creation interface. It demonstrates the full postMessage protocol and includes a dynamic item input system where users can add multiple menu links with text and URLs. The interface builds proper menu structure and sends it to Beefree. You can expand this basic example with link validation, reordering capabilities, or pre-built menu templates for common navigation patterns.
 
@@ -487,10 +499,3 @@ This complete HTML example provides a functional menu creation interface. It dem
 </body>
 </html>
 ```
-
-#### Link Target Options
-
-* **`_self`** - Opens in same tab/window (default for email)
-* **`_blank`** - Opens in new tab/window (common for email links)
-* **`_parent`** - Opens in parent frame
-* **`_top`** - Opens in full window

@@ -1,24 +1,28 @@
 # HTML AddOn
 
-### Overview
+## Overview
 
 The HTML AddOn type allows you to insert custom HTML content blocks into the Beefree SDK editor. This is ideal for embedding custom widgets, specialized markup, or any HTML content that requires flexibility beyond standard content blocks.
 
-#### Prerequisites
+## Prerequisites
 
-Before implementing an HTML AddOn in your code, you must first create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/):
+Before implementing an HTML AddOn in your code, you first need to create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/). Take the following steps to complete this:
 
-1. Log into the Developer Console and navigate to your application
-2. Create a new Custom AddOn and select "HTML" as the type
-3. Configure the addon with a unique **handle** (e.g., `my-html-addon`)
-4. Choose your implementation method (Content Dialog or External iframe)
-5. Save the addon configuration
+1. Log in to the [Developer Console](https://developers.beefree.io/login) and navigate to your application.
+2. Create a new Custom AddOn and select **HTML** as the type.
+3. Configure the addon with a unique **handle** (for example , `my-html-addon`).
+4. Choose your implementation method ([Content Dialog ](../build-addons-with-content-dialog.md)or [External iframe](../build-addons-with-external-iframe/)).
+5. Save the addon configuration.
 
 {% hint style="info" %}
-**Important:** The handle you create in the Developer Console must match exactly with the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
+**Important:** The handle you create in the Developer Console must match the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
 {% endhint %}
 
-#### Content Object Schema
+## Content Object Schema
+
+This section discusses the HTML AddOn's object schema. Understanding this schema is a core part of successfully implementing a Custom HTML AddOn type.
+
+Visit the complete [Unified Schema in GitHub](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/blob/main/simple_unified.schema.json) to see a comprehensive reference on how to structure data for all Custom Addons.
 
 **Required Structure**
 
@@ -35,7 +39,7 @@ The HTML AddOn uses a simple schema with a single `html` property containing you
 
 **Basic Example**
 
-This minimal example shows the simplest HTML addon implementation—a single div with text content. Any valid HTML can be inserted this way, from simple text containers to complex nested structures with multiple elements and inline styles.
+The following example shows a basic HTML addon implementation, and uses a single `div` with text content. Any valid HTML can be inserted this way, from simple text containers to complex nested structures with multiple elements and inline styles.
 
 ```javascript
 resolve({
@@ -69,9 +73,15 @@ resolve({
 });
 ```
 
-#### Content Dialog Implementation
+## Content Dialog Implementation
 
-**Basic Handler**
+This section covers how to implement a Custom HTML AddOn using the [Content Dialog method](../build-addons-with-content-dialog.md). It includes code snippets for three different scenarios:
+
+* **Scenario 1:** [End user input not required](html-addon.md#end-user-input-not-required-in-the-modal)
+* **Scenario 2:** [End user input required](html-addon.md#end-user-input-required)
+* **Scenario 3:** [Multiple addons](html-addon.md#multiple-addons)&#x20;
+
+#### **End user input not required**
 
 The Content Dialog method lets you insert HTML content programmatically when users drag your addon onto the stage. The handler function receives `resolve` and `reject` callbacks—call `resolve` with your HTML object to insert content, or `reject` to cancel the operation. This immediate resolution pattern is perfect for addons that don't require user input before insertion.
 
@@ -113,7 +123,7 @@ const beeConfig = {
 };
 ```
 
-**Pattern: With User Input**
+#### **End User Input Required**
 
 This pattern demonstrates how to collect user input before inserting HTML content. By opening a custom dialog or modal, you can let users provide content, configuration, or selections that determine what HTML gets generated. The handler waits for the user's confirmation before resolving, giving you full control over the insertion process and allowing for validation or transformation of user input.
 
@@ -143,7 +153,7 @@ contentDialog: {
 }
 ```
 
-**Pattern: Multiple AddOns**
+#### **Multiple AddOns**
 
 When you have multiple HTML addons registered in the console, you can handle them all in a single handler by checking the `args.contentDialogId` property. This allows you to organize different HTML content types under one handler function, making your code more maintainable while supporting various HTML insertion use cases from simple static content to complex user-driven dialogs.
 
@@ -182,15 +192,17 @@ contentDialog: {
 }
 ```
 
-#### Iframe Implementation
+## Iframe Implementation
+
+This section discusses how to implement the Custom HTML AddOn using the Iframe implementation method. It includes the core concepts you need to understand to successfully implement HTML AddOns using an Iframe workflow.
 
 **Conceptual Flow**
 
-The Iframe method provides complete UI flexibility by loading your custom web application inside the Beefree editor. Your iframe communicates with Beefree using the `postMessage` API, following a specific protocol: first notify Beefree when loaded, then receive initialization data, and finally send your HTML content when the user confirms. This approach is ideal when you need a rich, complex interface for HTML generation or configuration.
+The Iframe method provides complete UI flexibility by loading your custom web application inside the Beefree editor. Your iframe communicates with Beefree using the [`postMessage` API](../build-addons-with-external-iframe/javascript-api-for-iframe-addons.md), following a specific protocol: first notify Beefree when loaded, then receive initialization data, and finally send your HTML content when the user confirms. This approach is ideal when you need a rich, complex interface for HTML generation or configuration.
 
 **Required postMessage Communication**
 
-Your iframe must implement a specific message protocol to integrate properly with Beefree. The "loaded" message tells Beefree your UI is ready and specifies the dialog dimensions. The "init" message from Beefree provides context like locale and editor state. When ready to insert content, send "onSave" with your HTML object, or send "onCancel" if the user abandons the action. This bidirectional communication enables seamless integration between your custom UI and the Beefree editor.
+Your iframe must implement a specific message protocol to integrate properly with Beefree. The "loaded" message tells Beefree your UI is ready and specifies the dialog dimensions. The "init" message from Beefree provides context like locale and editor state. When ready to insert content, send "onSave" with your HTML object, or send "onCancel" if the user abandons the action. This bidirectional communication enables a smooth integration between your custom UI and the Beefree editor.
 
 **1. Send "loaded" when your iframe is ready:**
 
@@ -251,7 +263,7 @@ window.parent.postMessage({
 }, '*');
 ```
 
-**Simple Iframe Example**
+### **Simple Iframe Example**
 
 This complete HTML example demonstrates a functional HTML editor interface that integrates with Beefree. It includes the full postMessage protocol implementation, a simple textarea for HTML input, and proper save/cancel handling. You can enhance this basic example with syntax highlighting, live preview, validation, or pre-built HTML templates to create a more sophisticated user experience.
 

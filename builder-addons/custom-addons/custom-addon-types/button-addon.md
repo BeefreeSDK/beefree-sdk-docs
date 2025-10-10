@@ -1,33 +1,28 @@
 # Button AddOn
 
-### Overview
+## Overview
 
 The Button AddOn type allows you to insert pre-styled call-to-action buttons into the Beefree editor. This is perfect for providing users with brand-compliant button styles, reducing design work and ensuring consistency across emails.
 
-#### Prerequisites
+## Prerequisites
 
-Before implementing a Button AddOn in your code, you must first create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/):
+Before implementing a Button AddOn in your code, you first need to create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/). Take the following steps to complete this:
 
-1. Log into the Developer Console and navigate to your application
-2. Create a new Custom AddOn and select "Button" as the type
-3. Configure the addon with a unique **handle** (e.g., `my-button-addon`)
-4. Choose your implementation method (Content Dialog or External iframe)
-5. Save the addon configuration
+1. Log in to the [Developer Console](https://developers.beefree.io/login) and navigate to your application.
+2. Create a new Custom AddOn and select **Button** as the type.
+3. Configure the addon with a unique **handle** (for example, `my-button-addon`).
+4. Choose your implementation method ([Content Dialog](../build-addons-with-content-dialog.md) or [External iframe](../build-addons-with-external-iframe/)).
+5. Save the addon configuration.
 
 {% hint style="info" %}
-**Important:** The handle you create in the Developer Console must match exactly with the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
+**Important:** The handle you create in the Developer Console must match the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
 {% endhint %}
 
-#### Setup in Beefree SDK Console
+## Content Object Schema
 
-| Field      | Value Example                         |
-| ---------- | ------------------------------------- |
-| **Name**   | `Simple Button AddOn`                 |
-| **Type**   | `Button` ← Select from dropdown       |
-| **Handle** | `simple-button-addon`                 |
-| **Method** | `Content Dialog` or `External iframe` |
+This section discusses the Button AddOn's object schema. Understanding this schema is a core part of successfully implementing a Custom Button AddOn type.
 
-#### Content Object Schema
+Visit the complete [Unified Schema in GitHub](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/blob/main/simple_unified.schema.json) to see a comprehensive reference on how to structure data for all Custom Addons. &#x20;
 
 **Required Structure**
 
@@ -60,7 +55,7 @@ The Button AddOn requires a specific data structure to properly insert button co
 
 **Basic Example**
 
-This minimal example demonstrates the simplest button you can create, containing only the required `type` and `label` properties. This button will use the editor's default styling and can be customized by the user after insertion.
+The following example show a basic button implementation, containing only the required `type` and `label` properties. This button will use the editor's default styling and can be customized by the user after insertion.
 
 ```javascript
 resolve({
@@ -94,9 +89,14 @@ resolve({
 });
 ```
 
-#### Content Dialog Implementation
+## Content Dialog Implementation
 
-**Basic Handler**
+This section covers how to implement a Custom Button AddOn using the [Content Dialog method](../build-addons-with-content-dialog.md). It includes code snippets for three different scenarios:
+
+* **Scenario 1:** [End user input not required](button-addon.md#end-user-input-not-required)
+* **Scenario 2:** [End user input required](button-addon.md#end-user-input-required)
+
+### **End user input not required**
 
 The Content Dialog method allows you to programmatically insert button content using a JavaScript handler function. When users drag and drop your button addon onto the stage, the handler is immediately invoked with `resolve` and `reject` functions that control the insertion flow. This basic pattern immediately resolves with a pre-defined button, making it perfect for simple use cases where no user interaction is needed.
 
@@ -140,7 +140,7 @@ const beeConfig = {
 };
 ```
 
-**Pattern: Button Style Library**
+### **End user input required**
 
 This advanced pattern demonstrates how to create a library of pre-defined button styles for users to choose from. By opening a custom UI selector, users can pick between different button variants (primary, secondary, etc.) while maintaining brand consistency. The handler waits for user selection before resolving, giving you full control over the insertion flow.
 
@@ -195,7 +195,9 @@ contentDialog: {
 }
 ```
 
-#### Iframe Implementation
+## Iframe Implementation
+
+This section discusses how to implement the Custom Button AddOn using the Iframe implementation method. It includes the core concepts you need to understand to successfully implement Button AddOns using an Iframe workflow.
 
 **Conceptual Flow**
 
@@ -273,7 +275,7 @@ window.parent.postMessage({
 }, '*');
 ```
 
-**Simple Iframe Example**
+### **Simple Iframe Example**
 
 This complete HTML example shows a simple but functional button configuration interface. It demonstrates the full communication protocol with Beefree, including the loaded notification, button configuration inputs, and save/cancel actions. You can use this as a starting point and enhance it with your own styling, validation, and additional configuration options.
 

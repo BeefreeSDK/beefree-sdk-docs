@@ -1,28 +1,32 @@
 # Mixed Content AddOn
 
-### Overview
+## Overview
 
 The Mixed Content AddOn type allows you to insert multiple content modules at once in a single drop action. Instead of inserting just one type of content (like an image or a paragraph), Mixed Content AddOns can insert a combination of different modules together—such as an image followed by a title, description, and button.
 
-#### What Makes Mixed Content AddOns Powerful
+**What Makes Mixed Content AddOns Powerful**
 
 Mixed Content AddOns solve a common problem: **repetitive multi-step content creation**. Instead of users manually dragging individual modules and configuring each separately, they can drop a single Mixed Content AddOn that inserts all elements at once, pre-configured and ready to use. This dramatically speeds up content creation while maintaining consistency.
 
-#### Prerequisites
+## Prerequisites
 
-Before implementing a Mixed Content AddOn in your code, you must first create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/):
+Before implementing a Mixed Content AddOn in your code, you must first create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/). Take the following steps to complete this:
 
-1. Log into the Developer Console and navigate to your application
-2. Create a new Custom AddOn and select "Mixed" as the type
-3. Configure the addon with a unique **handle** (e.g., `my-mixed-addon`)
-4. Choose your implementation method (Content Dialog or External iframe)
-5. Save the addon configuration
+1. Log into the [Developer Console](https://developers.beefree.io/login) and navigate to your application.
+2. Create a new Custom AddOn and select **Mixed** as the type.
+3. Configure the addon with a unique **handle** (for example, `my-mixed-addon`).
+4. Choose your implementation method ([Content Dialog](../build-addons-with-content-dialog.md) or [External iframe](../build-addons-with-external-iframe/)).
+5. Save the addon configuration.
 
 {% hint style="info" %}
-**Important:** The handle you create in the Developer Console must match exactly with the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
+**Important:** The handle you create in the Developer Console must match the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
 {% endhint %}
 
-#### Content Object Schema
+## Content Object Schema
+
+This section discusses the Mixed AddOn's object schema. Understanding this schema is a core part of successfully implementing a Custom Mixed AddOn type.
+
+Visit the complete [Unified Schema in GitHub](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/blob/main/simple_unified.schema.json) to see a comprehensive reference on how to structure data for all Custom Addons.
 
 **Required Structure**
 
@@ -126,9 +130,15 @@ resolve({
 });
 ```
 
-#### Content Dialog Implementation
+## Content Dialog Implementation
 
-**Basic Handler**
+This section covers how to implement a Custom Mixed AddOn using the [Content Dialog method](../build-addons-with-content-dialog.md). It includes code snippets for three different scenarios:
+
+* **Scenario 1:** [Pre-defined mixed content](mixed-content-addon.md#pre-defined-mixed-content)
+* **Scenario 2:** [Building from data](mixed-content-addon.md#building-from-data)
+* **Scenario 3:** [With user selection](mixed-content-addon.md#with-user-selection)
+
+### **Pre-defined mixed content**
 
 The Content Dialog method allows programmatic insertion of multiple modules through a JavaScript handler. When users drag your mixed content addon onto the stage, this handler is invoked and immediately resolves with an array of module objects. This pattern works perfectly for predefined content blocks that don't require user input, providing instant insertion of complete, multi-module content structures.
 
@@ -203,7 +213,7 @@ const beeConfig = {
 };
 ```
 
-**Pattern: Building from Data**
+### **Building from Data**
 
 This pattern demonstrates constructing mixed content from structured data, making it easy to create content blocks from dynamic sources like APIs, databases, or user selections. By transforming your data into the proper module array format, you can generate consistent content blocks while maintaining flexibility in the source data structure. This approach is particularly valuable when integrating with external content management systems or product catalogs.
 
@@ -267,7 +277,7 @@ contentDialog: {
 }
 ```
 
-**Pattern: With User Selection**
+### **With User Selection**
 
 This advanced pattern shows how to let users select or configure content before insertion. By opening a custom interface, users can choose which content to include or provide specific details like text, images, and links. The handler waits for user confirmation, then builds the mixed content array based on their selections. This provides maximum flexibility while maintaining the efficiency of multi-module insertion.
 
@@ -349,7 +359,9 @@ contentDialog: {
 }
 ```
 
-#### Iframe Implementation
+## Iframe Implementation
+
+This section discusses how to implement the Custom Mixed AddOn using the Iframe implementation method. It includes the core concepts you need to understand to successfully implement Mixed AddOns using an Iframe workflow.
 
 **Conceptual Flow**
 
@@ -465,7 +477,7 @@ window.parent.postMessage({
 }, '*');
 ```
 
-**Simple Iframe Example**
+### **Simple Iframe Example**
 
 This complete HTML example demonstrates a functional content block builder interface. It includes the full postMessage protocol implementation and provides simple inputs for creating a mixed content block with an image, title, description, and button. Users can configure each component, and the interface builds the proper mixed content structure for Beefree. You can expand this basic example with preview capabilities, template selection, advanced styling options, or integration with external content sources.
 

@@ -80,4 +80,4 @@ To integrate the Email builder, take the following steps:
 3. Use the [npm package](https://www.npmjs.com/package/@beefree.io/sdk) to [install](https://docs.beefree.io/beefree-sdk/getting-started/readme/installation) and embed Beefree SDK.
 
 \
-Visit the [React](../quickstart-guides/react-no-code-email-builder.md), [Vue.js](../quickstart-guides/vue.js-no-code-email-builder.md), or [Angular](../quickstart-guides/angular-no-code-email-builder.md) Qucikstart Guides to learn more about installing Beefree SDK.
+Visit the [React](../quickstart-guides/react-no-code-email-builder.md), [Vue.js](../quickstart-guides/vue.js-no-code-email-builder.md), or [Angular](../quickstart-guides/angular-no-code-email-builder.md) Quickstart Guides to learn more about installing Beefree SDK.

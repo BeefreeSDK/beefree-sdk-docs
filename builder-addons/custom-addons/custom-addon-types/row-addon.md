@@ -1,10 +1,10 @@
 # Row AddOn
 
-### Overview
+## Overview
 
 The Row AddOn type allows you to insert pre-built row structures with columns and multiple content modules. Unlike Mixed Content AddOns that insert modules sequentially, Row AddOns create structured layouts with side-by-side columns—perfect for multi-column designs like product grids, feature comparisons, or content layouts that require horizontal organization.
 
-#### What Makes Row AddOns Unique
+**What Makes Row AddOns Unique**
 
 Row AddOns provide layout structure in addition to content:
 
@@ -15,21 +15,25 @@ Row AddOns provide layout structure in addition to content:
 
 This is ideal when you need consistent, reusable layout patterns that go beyond simple vertical stacking.
 
-#### Prerequisites
+## Prerequisites
 
-Before implementing a Row AddOn in your code, you must first create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/):
+Before implementing a Row AddOn in your code, you must first create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/). Take the following steps to complete this:
 
-1. Log into the Developer Console and navigate to your application
-2. Create a new Custom AddOn and select "Row" as the type
-3. Configure the addon with a unique **handle** (e.g., `my-row-addon`)
-4. Choose your implementation method (Content Dialog or External iframe)
-5. Save the addon configuration
+1. Log into the [Developer Console](https://developers.beefree.io/login) and navigate to your application.
+2. Create a new Custom AddOn and select **Row** as the type.
+3. Configure the addon with a unique **handle** (for example, `my-row-addon`).
+4. Choose your implementation method (Content Dialog or External iframe).
+5. Save the addon configuration.
 
 {% hint style="info" %}
-**Important:** The handle you create in the Developer Console must match exactly with the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
+**Important:** The handle you create in the Developer Console must match the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
 {% endhint %}
 
-#### Content Object Schema
+## Content Object Schema
+
+This section discusses the Row AddOn's object schema. Understanding this schema is a core part of successfully implementing a Custom Row AddOn type.
+
+Visit the complete [Unified Schema in GitHub](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/blob/main/simple_unified.schema.json) to see a comprehensive reference on how to structure data for all Custom Addons.
 
 **Required Structure**
 
@@ -192,9 +196,15 @@ resolve({
 });
 ```
 
-#### Content Dialog Implementation
+## Content Dialog Implementation
 
-**Basic Handler**
+This section covers how to implement a Custom Row AddOn using the [Content Dialog method](../build-addons-with-content-dialog.md). It includes code snippets for three different scenarios:
+
+* **Scenario 1:** [Pre-defined layouts](row-addon.md#pre-defined-layouts)
+* **Scenario 2:** [Dynamic colum generation](row-addon.md#dynamic-column-generation)
+* **Scenario 3:** [User-configured rows](row-addon.md#user-configured-rows)
+
+### **Pre-defined layouts**
 
 The Content Dialog method enables programmatic row insertion through a JavaScript handler. When users drag your row addon onto the stage, this handler is immediately invoked and resolves with a complete row structure including columns and their content. This pattern works perfectly for predefined layouts that don't require user configuration, providing instant insertion of complex, multi-column structures with consistent formatting.
 
@@ -261,7 +271,7 @@ const beeConfig = {
 };
 ```
 
-**Pattern: Dynamic Column Generation**
+### **Dynamic Column Generation**
 
 This pattern demonstrates programmatically building row structures from data arrays, making it easy to create layouts from dynamic sources like product catalogs, API responses, or database queries. By calculating column weights and mapping through your data, you can generate properly structured rows with any number of columns while maintaining consistent module structure. This is particularly powerful for content that changes frequently or needs to scale based on available items.
 
@@ -317,7 +327,7 @@ contentDialog: {
 }
 ```
 
-**Pattern: User-Configured Rows**
+### **User-Configured Rows**
 
 This advanced pattern shows how to let users configure row layout and content before insertion. By opening a custom interface, users can select the number of columns, choose content for each column, and configure the layout structure. The handler waits for user confirmation, then builds the row based on their selections. This provides maximum flexibility while automating the complex task of creating properly structured multi-column layouts.
 
@@ -376,7 +386,9 @@ contentDialog: {
 }
 ```
 
-#### Iframe Implementation
+## Iframe Implementation
+
+This section discusses how to implement the Custom Row AddOn using the Iframe implementation method. It includes the core concepts you need to understand to successfully implement Row AddOns using an Iframe workflow.
 
 **Conceptual Flow**
 
@@ -463,7 +475,7 @@ window.parent.postMessage({
 }, '*');
 ```
 
-**Simple Iframe Example**
+### **Simple Iframe Example**
 
 This complete HTML example demonstrates a functional row layout builder interface. It includes the full postMessage protocol implementation and provides options for column count selection with simple content inputs for each column. Users can choose between 1-4 columns and provide image URLs for each. The interface automatically calculates column weights and builds the proper row structure. You can expand this basic example with drag-and-drop layout builders, visual column previews, advanced module configuration, or layout template galleries.
 
@@ -615,7 +627,7 @@ This complete HTML example demonstrates a functional row layout builder interfac
 </html>
 ```
 
-#### Available Module Types
+### Available Module Types
 
 You can use any of these module types within row columns:
 
@@ -630,7 +642,7 @@ You can use any of these module types within row columns:
 
 **Note:** You cannot nest Row AddOns or Mixed Content AddOns inside a Row AddOn.
 
-#### Column Weight Examples
+### Column Weight Examples
 
 **Common Layouts**
 
@@ -658,7 +670,7 @@ columns: [
 ]
 ```
 
-#### Using Metadata
+### Using Metadata
 
 Store custom information with your row for tracking or later reference:
 

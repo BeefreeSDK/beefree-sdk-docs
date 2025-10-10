@@ -1,10 +1,10 @@
 # Image AddOn
 
-### Overview
+## Overview
 
 The Image AddOn type allows you to insert image content blocks into the Beefree editor. When users interact with your Image AddOn, it inserts an image module with properties like source URL, alt text, link destination, and link target behavior.
 
-#### What Makes Image AddOns Special
+**What Makes Image AddOns Special**
 
 Image AddOns are ideal when you want to provide users with:
 
@@ -14,21 +14,25 @@ Image AddOns are ideal when you want to provide users with:
 
 Unlike manually adding images, Image AddOns let you control the source, apply business logic, and integrate with external services.
 
-#### Prerequisites
+## Prerequisites
 
-Before implementing an Image AddOn in your code, you must first create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/):
+Before implementing an Image AddOn in your code, you first need to create the addon in the [Beefree SDK Developer Console](https://developers.beefree.io/). Take the following steps to complete this:
 
-1. Log into the Developer Console and navigate to your application
-2. Create a new Custom AddOn and select "Image" as the type
-3. Configure the addon with a unique **handle** (e.g., `my-image-addon`)
-4. Choose your implementation method (Content Dialog or External iframe)
-5. Save the addon configuration
+1. Log into the [Developer Console](https://developers.beefree.io/login) and navigate to your application.
+2. Create a new Custom AddOn and select **Image** as the type.
+3. Configure the addon with a unique **handle** (e.g., `my-image-addon`).
+4. Choose your implementation method ([Content Dialog](../build-addons-with-content-dialog.md) or [External iframe](../build-addons-with-external-iframe/)).
+5. Save the addon configuration.
 
 {% hint style="info" %}
-**Important:** The handle you create in the Developer Console must match exactly with the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
+**Important:** The handle you create in the Developer Console must match the addon ID you reference in your code's `beeConfig`. This handle serves as the unique identifier that connects your code implementation to the addon configuration in the console.
 {% endhint %}
 
-#### Content Object Schema
+## Content Object Schema
+
+This section discusses the Image AddOn's object schema. Understanding this schema is a core part of successfully implementing a Custom Image AddOn type.
+
+Visit the complete [Unified Schema in GitHub](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/blob/main/simple_unified.schema.json) to see a comprehensive reference on how to structure data for all Custom Addons.
 
 **Required Structure**
 
@@ -49,7 +53,7 @@ The Image AddOn schema defines the structure for inserting images into the edito
 
 **Basic Example**
 
-This minimal example shows the simplest image insertion with only the required properties. The `src` provides the image URL, and `alt` ensures accessibility by describing the image content for users with screen readers or when the image fails to load.
+This example shows a simple image insertion with only the required properties. The `src` provides the image URL, and `alt` ensures accessibility by describing the image content for users with screen readers or when the image fails to load.
 
 ```javascript
 resolve({
@@ -94,9 +98,15 @@ resolve({
 });
 ```
 
-#### Content Dialog Implementation
+## Content Dialog Implementation
 
-**Basic Handler**
+This section covers how to implement a Custom Image AddOn using the [Content Dialog method](../build-addons-with-content-dialog.md). It includes code snippets for three different scenarios:
+
+* **Scenario 1:**[ Instantly insert a pre-defined image](image-addon.md#instantly-insert-a-pre-defined-image)
+* **Scenario 2:** [End user selection](image-addon.md#end-user-selection)
+* **Scenario 3:** [Multiple addons](image-addon.md#multiple-addons)&#x20;
+
+### **Instantly insert a pre-defined image**
 
 The Content Dialog method enables programmatic image insertion through a JavaScript handler function. When users drag your image addon onto the stage, this handler is called with `resolve` and `reject` callbacks. Call `resolve` with your image object to insert it immediately, or open a dialog first to let users select or configure the image. This basic pattern provides instant insertion with a predefined image.
 
@@ -135,7 +145,7 @@ const beeConfig = {
 };
 ```
 
-**Pattern: With User Selection**
+### **End User Selection**
 
 This pattern demonstrates opening a custom interface for image selection before insertion. The handler waits for user interaction, displaying available images or allowing uploads. Once the user selects an image, the `onSelect` callback resolves with the chosen image data. The `onCancel` callback rejects the insertion if the user abandons the selection, providing a complete user-driven workflow for image insertion.
 
@@ -168,7 +178,7 @@ contentDialog: {
 }
 ```
 
-**Pattern: Multiple AddOns**
+### **Multiple AddOns**
 
 When managing multiple image addons, this pattern shows how to handle them in a single handler using `args.contentDialogId`. This allows you to organize different image sources (stock photos, product images, brand assets) under one handler function. The switch statement routes each addon to its appropriate logic, maintaining clean code organization while supporting diverse image insertion workflows.
 
@@ -212,7 +222,9 @@ contentDialog: {
 }
 ```
 
-#### Iframe Implementation
+## Iframe Implementation
+
+This section discusses how to implement the Custom Image AddOn using the Iframe implementation method. It includes the core concepts you need to understand to successfully implement Image AddOns using an Iframe workflow.
 
 **Conceptual Flow**
 
@@ -286,7 +298,7 @@ window.parent.postMessage({
 }, '*');
 ```
 
-**Simple Iframe Example**
+### **Simple Iframe Example**
 
 This complete HTML example demonstrates a functional image selection interface that integrates with Beefree. It includes the full postMessage protocol implementation, simple URL input for image selection, and proper save/cancel handling. You can enhance this basic example with image galleries, file upload capabilities, search functionality, or visual preview to create a more sophisticated image selection experience.
 
