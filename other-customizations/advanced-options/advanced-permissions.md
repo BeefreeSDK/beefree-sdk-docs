@@ -29,10 +29,6 @@ You can create roles that can act only on a content type. For example, you may w
   * locking/hiding the side tab;
   * hiding specific settings in the text toolbar.
 
-{% hint style="info" %}
-**Note**: `UID` is a [mandatory field](advanced-permissions.md#available-permissions-and-behaviors) when you use Advanced Permissions in Beefree SDK. This field connects end users to the permissions you set in the configuration.&#x20;
-{% endhint %}
-
 ## **Customize image and file management workflows**
 
 You can limit how users upload and manage images and files inside Beefree SDK. For example, if you want certain end users to only use pre-approved images and files uploaded by Admin users, you can create this workflow by:
@@ -91,10 +87,6 @@ By combining multiple permissions, you can load Beefree SDK with radically diffe
 ### How it works <a href="#how-it-works" id="how-it-works"></a>
 
 To set up the advanced permissions, you will need to add the `advancedPermissions` object to `beeConfig.`&#x20;
-
-{% hint style="info" %}
-**Note**: `UID` is a [mandatory field](advanced-permissions.md#available-permissions-and-behaviors) when you use Advanced Permissions in Beefree SDK. This field connects end users to the permissions you set in the configuration.&#x20;
-{% endhint %}
 
 #### Steps to set up Advanced Permissions in your beeConfig file
 
