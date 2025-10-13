@@ -220,7 +220,6 @@ The following code sample displays an example of the `templateLanguageAutoTransl
 ```javascript
 // Beefree SDK Configuration
 var beeConfig = {
-  uid: 'fakeUid123',
   container: 'beefree-sdk-container',
   templateLanguageAutoTranslation: true,
   templateLanguage: {

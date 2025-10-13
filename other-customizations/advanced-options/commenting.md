@@ -45,7 +45,6 @@ To activate Commenting when launching your Beefree application, you will need to
 
 ```javascript
 const beeConfig = {
-    uid: 'dev-user',
     language: 'en-US',
     ...
     username: 'Test User',
@@ -159,7 +158,6 @@ Here is a simple example:
 ```javascript
 
 const beeConfig = {
-    uid: 'dev-user',
     language: 'en-US',
     ...
     commenting: false // boolean

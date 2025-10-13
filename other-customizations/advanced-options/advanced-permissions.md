@@ -30,7 +30,7 @@ You can create roles that can act only on a content type. For example, you may w
   * hiding specific settings in the text toolbar.
 
 {% hint style="info" %}
-**Note**: `UID` is a [mandatory field](advanced-permissions.md#available-permissions-and-behaviors) when you configure Beefree SDK. This field connects end users to the permissions you set in the configuration.&#x20;
+**Note**: `UID` is a [mandatory field](advanced-permissions.md#available-permissions-and-behaviors) when you use Advanced Permissions in Beefree SDK. This field connects end users to the permissions you set in the configuration.&#x20;
 {% endhint %}
 
 ## **Customize image and file management workflows**
@@ -93,7 +93,7 @@ By combining multiple permissions, you can load Beefree SDK with radically diffe
 To set up the advanced permissions, you will need to add the `advancedPermissions` object to `beeConfig.`&#x20;
 
 {% hint style="info" %}
-**Note**: `UID` is a [mandatory field](advanced-permissions.md#available-permissions-and-behaviors) when you configure Beefree SDK. This field connects end users to the permissions you set in the configuration.&#x20;
+**Note**: `UID` is a [mandatory field](advanced-permissions.md#available-permissions-and-behaviors) when you use Advanced Permissions in Beefree SDK. This field connects end users to the permissions you set in the configuration.&#x20;
 {% endhint %}
 
 #### Steps to set up Advanced Permissions in your beeConfig file
@@ -121,7 +121,6 @@ Reference the following sample code to understand the structure of `advancedPerm
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'bee-plugin-container', // [mandatory]
   advancedPermissions: {
     content: {
@@ -275,7 +274,7 @@ The following table provides the name, data type, description, and an example va
 
 | Name                   | Data Type | Description                                                                      | Example Value                                  |
 | ---------------------- | --------- | -------------------------------------------------------------------------------- | ---------------------------------------------- |
-| `uid`                  | `string`  | Unique identifier for the CMS user (mandatory).                                  | `'CmsUserName'`                                |
+| `uid`                  | `string`  | Unique identifier for the CMS user (mandatory for Advanced Permissions).         | `'CmsUserName'`                                |
 | `container`            | `string`  | HTML container element ID for embedding Beefree SDK (mandatory).                 | `'bee-plugin-container'`                       |
 | `advanced permissions` | `object`  | Contains settings for content elements, rows, settings, and tabs configurations. | See configuration object for details.          |
 | `components`           | `object`  | Specifies available components like file picker and link types.                  | `{ filePicker: {...}, linkTypes: {...} }`      |
@@ -306,7 +305,6 @@ Let’s look at an example of these permissions applied to an image module. The 
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
@@ -405,7 +403,6 @@ The following code provides an example of the `filePicker` object.
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     components: {
@@ -435,7 +432,6 @@ The following code provides an example of the `linkTypes` object.
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     components: {
@@ -626,7 +622,6 @@ The following snippet displays an example of the `rows` object inside `advancedP
 
 ```javascript
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     rows: {
@@ -726,7 +721,6 @@ The following sample code displays a Rows AddOn example.
 
 ```javascript
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     rows: {
@@ -783,7 +777,6 @@ The **`columns`** object in the **Beefree SDK** lets you control the behavior an
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     columns: {
@@ -837,7 +830,6 @@ The **`tabs`** object in the **Beefree SDK** allows you to manage the visibility
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     tabs: {
@@ -867,7 +859,6 @@ The **`settings`** object in the **Beefree SDK** allows you to control various d
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     settings: {
@@ -933,7 +924,6 @@ The **`content`** object in the **Beefree SDK** controls the behavior and permis
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
@@ -1031,7 +1021,6 @@ beeConfig: {
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
@@ -1097,7 +1086,6 @@ beeConfig: {
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
@@ -1176,7 +1164,6 @@ beeConfig: {
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
@@ -1258,7 +1245,6 @@ beeConfig: {
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
@@ -1308,7 +1294,6 @@ beeConfig: {
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
@@ -1369,7 +1354,6 @@ beeConfig: {
 
 <pre class="language-javascript"><code class="lang-javascript">
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
@@ -1416,7 +1400,6 @@ beeConfig: {
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
@@ -1462,7 +1445,6 @@ beeConfig: {
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
@@ -1521,7 +1503,6 @@ beeConfig: {
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
@@ -1644,7 +1625,6 @@ You should use the Icon object to set advanced permissions when you need granula
 
 ```javascript
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
     content: {
@@ -2247,7 +2227,6 @@ The following code snippet provides an example configuration for integrating the
 
 ```javascript
 const beeConfig = {
-  uid: 'unique_user_id', // Unique identifier for the user
   addOns: [
     {
       id: "ai-integration", // Identifier for the AI integration add-on

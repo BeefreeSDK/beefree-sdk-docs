@@ -11,7 +11,6 @@ Out-of-the-box, the setup and configuration are the same as Email and Page Build
 ```json
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'bee-plugin-container', // [mandatory]
   ...
 }
