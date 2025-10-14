@@ -124,4 +124,4 @@ redirects:
   builder-addons/addons/custom-addons/contribute-to-the-partner-addon-marketplace: builder-addons/partner-addons/contribute-to-the-partner-addon-marketplace.md
   builder-addons/addons/addons-configuration: beefree-sdk/builder-addons/addons-configuration.md
   builder-addons/addons/addon-faqs: builder-addons/addon-faqs.md
-  builder-addons/addons/custom-addons/addon-development: builder-addons/custom-addons.md
+  builder-addons/addons/custom-addons/addon-development: builder-addons/custom-addons/custom-addon-types.md
