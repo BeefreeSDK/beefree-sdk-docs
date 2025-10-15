@@ -9,13 +9,11 @@ description: >-
 
 <figure><img src=".gitbook/assets/hero-sdk.png" alt=""><figcaption></figcaption></figure>
 
-
-
 ## What is Beefree SDK?
 
-Beefree SDK is an embeddable no-code builder that gives your end users the freedom to design stunning emails, landing pages, and popups—without writing a single line of code. It’s easy to configure, intuitive to personalize, and built to scale with your needs—whether you're a startup or an enterprise. Built with both developers and end users in mind, it’s designed to integrate easily into your application, scale as your product grows, and provide a flexible, white-label design experience.&#x20;
+Beefree SDK is an embeddable no-code builder that gives your end users the freedom to design stunning emails, landing pages, and popups—without writing a single line of code. It’s easy to configure, intuitive to personalize, and built to scale with your needs—whether you're a startup or an enterprise. Built with both developers and end users in mind, it’s designed to integrate easily into your application, scale as your product grows, and provide a flexible, white-label design experience.
 
-**For developers**, Beefree SDK is easy to work with. You can personalize the design experience by adding simple configuration parameters. Want to enable or disable a feature? Just check a box in the Developer Console, hit save, and the changes are immediately reflected on the frontend. No complicated setup required.&#x20;
+**For developers**, Beefree SDK is easy to work with. You can personalize the design experience by adding simple configuration parameters. Want to enable or disable a feature? Just check a box in the Developer Console, hit save, and the changes are immediately reflected on the frontend. No complicated setup required.
 
 **For your end users,** Beefree SDK is an intuitive drag-and-drop editor with everything end users need to bring their creative ideas to life—whether they’re creating an email campaign, a landing page, or an attention-grabbing popup. Content blocks like titles, images, lists, tables, buttons, and more are all available right out of the box.
 
@@ -26,20 +24,30 @@ Beefree SDK includes the following features and more:
 * **Popup builder:** The [popup builder is a no-code environment](visual-builders/popup-builder/) that provides end users with the tools they need to build compelling popups that capture attention.
 * **AI-generated templates:** With both[ Simple Schema](data-structures/simple-schema/) and the [Convert endpoints](apis/content-services-api/convert.md#simple-to-full-json), you can build a custom AI-generated content creation experience (for assets such as emails, landing pages, or popups) for your end users.
 * **AI Writing Assistant:** A helpful AI assistant to help end users write their design content.
-* **File manager:** A tool to [manage media assets](broken-reference) (images, PDFs, and so on).
+* **File manager:** A tool to [manage media assets](broken-reference/) (images, PDFs, and so on).
 * **Template catalog:** A design template catalog that integrates industry best practices to support end users in quickly getting across the finish line with their creations and achieving quick design wins.
-* **API offering:** Extend the functionality of any of the builders with our comprehensive [suite of APIs](broken-reference).
+* **API offering:** Extend the functionality of any of the builders with our comprehensive [suite of APIs](broken-reference/).
 
 This site discusses the technical capabilities of Beefree SDK, and how to embed it into your web application. To learn more about the end user experience, and how your end users will interact with Beefree SDK on the frontend of your application, reference the [White Label End User Guide](https://docs.beefree.io/end-user-guide). Markdown files for this guide are available in this [GitHub repository](https://github.com/mailupinc/beefreeSDKwhiteLabelDocs), which you can clone and use as a starting point for building a knowledge base for your end users.
 
-## Explore Beefree SDK in Codepen
+## Explore Beefree SDK
+
+This section includes two ways to explore Beefree SDK quickly. The first way is by experimenting with our public demo applications built with [Lovable](https://lovable.dev/), [v0](https://v0.app/), and [Replit](https://replit.com/). The second is by experimenting with the Codepen environment, which includes the code and the frontend side-by-side.
+
+### Demo Apps
+
+* [Email Builder by Beefree SDK](https://v0-email-builder-beefree-sdk.vercel.app/) is a demo application built with [v0](https://v0.app/) that simulates how Beefree SDK's no-code drag-and-drop email builder and editor can be integrated into your web application. The demo application includes static dashboards for campaign performance (open rate, click rate, conversion rate, and revenue), campaign breakdown, and subscriber information. Click the following link to access Email Builder by Beefree SDK: [https://v0-email-builder-beefree-sdk.vercel.app/](https://v0-email-builder-beefree-sdk.vercel.app/)  &#x20;
+* [Marketing Buddy](https://beefree-sdk-demo-app-marketing-buddy.lovable.app/) is a demo application built with [Lovable](https://lovable.dev/) to simulate how Beefree SDK integrates within a Martech application's ecosystem. Click the following link to access Marketing Buddy: [https://beefree-sdk-demo-app-marketing-buddy.lovable.app/](https://beefree-sdk-demo-app-marketing-buddy.lovable.app/)&#x20;
+* [Email Design Buddy](https://email-design-buddy-beefree-sdk.replit.app/) is a demo application built with [Replit](https://replit.com/) to simulate how Beefree SDK can be integrated into an email building and editing application. Click the following link to access Email Design Buddy: [https://email-design-buddy-beefree-sdk.replit.app/](https://email-design-buddy-beefree-sdk.replit.app/)&#x20;
+
+### Codepen
 
 You can explore a simple implementation of Beefree SDK in [Codepen](https://codepen.io/zairro/pen/EaVQdyj) to see how the builder works. To visualize the integration below, you can:
 
 * Click **Run Pen** to see the builder.
 * Navigate between the HTML and JS tabs to see the code.
 * Use the JS tab to edit the `beeConfig`, which you can add [Configuration Parameters](getting-started/readme/installation/configuration-parameters/) to. This helps you customize the builder's functionality based on features you are exploring.
-* If you'd like to stay on this page, and not redirect to [Codepen](https://codepen.io/zairro/pen/EaVQdyj), you can zoom in and out of the embedded Codepen using **1x**, **0.5x**, and **0.25x** options.  &#x20;
+* If you'd like to stay on this page, and not redirect to [Codepen](https://codepen.io/zairro/pen/EaVQdyj), you can zoom in and out of the embedded Codepen using **1x**, **0.5x**, and **0.25x** options.
 
 {% embed url="https://codepen.io/zairro/pen/EaVQdyj" fullWidth="false" %}
 
@@ -99,7 +107,7 @@ Learn more about Beefree SDK through available sample code and example projects 
 
 ### Videos <a href="#about-this-documentation" id="about-this-documentation"></a>
 
-Learn more about Beefree SDK through [videos](resources/videos/). Explore [Tutorials](resources/videos/#tutorials), [Spotlight Sessions](resources/videos/#spotlight-sessions), and [Case Studies](resources/videos/#case-studies).&#x20;
+Learn more about Beefree SDK through [videos](resources/videos/). Explore [Tutorials](resources/videos/#tutorials), [Spotlight Sessions](resources/videos/#spotlight-sessions), and [Case Studies](resources/videos/#case-studies).
 
 ## Contribute to the Docs
 
@@ -108,4 +116,4 @@ The Beefree SDK technical documentation is available at docs.beefree.io/beefree-
 You can contribute feedback to the documentation in one of the following ways:
 
 * On docs.beefree.io/beefree-sdk use the **Was this helpful?** emoji option on the right hand side of each page. After selecting an emoji, you'll have the option to submit written feedback on what you'd like to see in the documentation. This feedback goes directly to the documentation team and is integrated frequently.
-* Creating a pull request using the [beefree-sdk-docs GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-docs). Use this option in the event you find a typo, broken link, or small fix.  &#x20;
+* Creating a pull request using the [beefree-sdk-docs GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-docs). Use this option in the event you find a typo, broken link, or small fix.
