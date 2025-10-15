@@ -6,7 +6,7 @@ The following is the recommended method to integrate with the co-editing feature
 
 ### Start or Join Session
 
-The following must be performed as a single backend operation.
+Take the following steps to start or join a session. Steps 1 to 3 must be performed as a single backend operation. Steps 4 and 5 are handled in the frontend, which receives the session ID, whether new or existing, from the backend.
 
 1. Check the database to find if there is already a saved session ID
 2. If so, call the API using the session ID. View the API documentation for Authentication details
