@@ -261,69 +261,90 @@ This endpoint allows you to establish a connection to the Beefree SDK MCP Server
 
 The request body must be a valid JSON-RPC 2.0 request with the following structure:
 
-| Parameter | Type    | Required     | Description                                     |
-| --------- | ------- | ------------ | ----------------------------------------------- |
-| `method`  | string  | **Required** | Must be `"initialize"`                          |
-| `jsonrpc` | string  | **Required** | Must be `"2.0"`                                 |
-| `id`      | integer | **Required** | Request identifier (use `0` for initialization) |
-| `params`  | object  | **Required** | Initialization parameters (see below)           |
+**Top-level Parameters:**
+
+| Parameter | Type    | Required     | Example Value  | Description               |
+| --------- | ------- | ------------ | -------------- | ------------------------- |
+| `method`  | string  | **Required** | `"initialize"` | The MCP method to call    |
+| `jsonrpc` | string  | **Required** | `"2.0"`        | JSON-RPC protocol version |
+| `id`      | integer | **Required** | `0`            | Request identifier        |
+| `params`  | object  | **Required** | (see below)    | Initialization parameters |
 
 **`params` Object:**
 
-| Parameter                        | Type    | Required     | Description                                   |
-| -------------------------------- | ------- | ------------ | --------------------------------------------- |
-| `protocolVersion`                | string  | **Required** | MCP protocol version. Use `"2025-06-18"`      |
-| `capabilities`                   | object  | **Required** | Client capabilities object                    |
-| `capabilities.sampling`          | object  | **Required** | Empty object `{}`                             |
-| `capabilities.elicitation`       | object  | **Required** | Empty object `{}`                             |
-| `capabilities.roots`             | object  | **Required** | Roots configuration                           |
-| `capabilities.roots.listChanged` | boolean | **Required** | Set to `true`                                 |
-| `clientInfo`                     | object  | **Required** | Information about your client                 |
-| `clientInfo.name`                | string  | **Required** | Your client name (e.g., `"inspector-client"`) |
-| `clientInfo.version`             | string  | **Required** | Your client version (e.g., `"0.17.1"`)        |
+| Parameter         | Type   | Required     | Example Value  | Description          |
+| ----------------- | ------ | ------------ | -------------- | -------------------- |
+| `protocolVersion` | string | **Required** | `"2025-06-18"` | MCP protocol version |
+| `capabilities`    | object | **Required** | (see below)    | Client capabilities  |
+| `clientInfo`      | object | **Required** | (see below)    | Client information   |
+
+**`params.capabilities` Object:**
+
+| Parameter     | Type   | Required     | Example Value | Description                             |
+| ------------- | ------ | ------------ | ------------- | --------------------------------------- |
+| `sampling`    | object | **Required** | `{}`          | Sampling capabilities (empty object)    |
+| `elicitation` | object | **Required** | `{}`          | Elicitation capabilities (empty object) |
+| `roots`       | object | **Required** | (see below)   | Roots configuration                     |
+
+**`params.capabilities.roots` Object:**
+
+| Parameter     | Type    | Required     | Example Value | Description                           |
+| ------------- | ------- | ------------ | ------------- | ------------------------------------- |
+| `listChanged` | boolean | **Required** | `true`        | Indicates if the root list can change |
+
+**`params.clientInfo` Object:**
+
+| Parameter | Type   | Required     | Example Value        | Description                     |
+| --------- | ------ | ------------ | -------------------- | ------------------------------- |
+| `name`    | string | **Required** | `"inspector-client"` | Your client application name    |
+| `version` | string | **Required** | `"0.17.1"`           | Your client application version |
 
 **Sample Request**
 
 ```json
-{
-  "method": "initialize",
-  "params": {
-    "protocolVersion": "2025-06-18",
-    "capabilities": {
-      "sampling": {},
-      "elicitation": {},
-      "roots": {
-        "listChanged": true
-      }
-    },
-    "clientInfo": {
-      "name": "inspector-client",
-      "version": "0.17.1"
-    }
-  },
-  "jsonrpc": "2.0",
-  "id": 0
-}
+{"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{"sampling":{},"elicitation":{},"roots":{"listChanged":true}},"clientInfo":{"name":"inspector-client","version":"0.17.1"}},"jsonrpc":"2.0","id":0}
 ```
 
 **Response**
 
 **Success Response (200 OK)**
 
-A successful initialization returns a JSON-RPC 2.0 response with server information and capabilities:
+A successful initialization returns a JSON-RPC 2.0 response with server information and capabilities.
 
-| Field                                   | Type    | Description                  |
-| --------------------------------------- | ------- | ---------------------------- |
-| `jsonrpc`                               | string  | JSON-RPC version (`"2.0"`)   |
-| `id`                                    | integer | Matches the request ID       |
-| `result`                                | object  | Initialization result        |
-| `result.protocolVersion`                | string  | Confirmed protocol version   |
-| `result.capabilities`                   | object  | Server capabilities          |
-| `result.capabilities.tools`             | object  | Tools capability object      |
-| `result.capabilities.tools.listChanged` | boolean | Whether tool list can change |
-| `result.serverInfo`                     | object  | Server information           |
-| `result.serverInfo.name`                | string  | Server name                  |
-| `result.serverInfo.version`             | string  | Server version               |
+**Response Body Parameters:**
+
+| Parameter | Type    | Description                                                   |
+| --------- | ------- | ------------------------------------------------------------- |
+| `jsonrpc` | string  | JSON-RPC protocol version (always `"2.0"`)                    |
+| `id`      | integer | Matches the request ID                                        |
+| `result`  | object  | Initialization result containing server info and capabilities |
+
+**`result` Object:**
+
+| Parameter         | Type   | Description                      |
+| ----------------- | ------ | -------------------------------- |
+| `protocolVersion` | string | Confirmed MCP protocol version   |
+| `capabilities`    | object | Server capabilities              |
+| `serverInfo`      | object | Information about the MCP server |
+
+**`result.capabilities` Object:**
+
+| Parameter | Type   | Description                    |
+| --------- | ------ | ------------------------------ |
+| `tools`   | object | Tools capability configuration |
+
+**`result.capabilities.tools` Object:**
+
+| Parameter     | Type    | Description                                  |
+| ------------- | ------- | -------------------------------------------- |
+| `listChanged` | boolean | Whether the tool list can change dynamically |
+
+**`result.serverInfo` Object:**
+
+| Parameter | Type   | Description               |
+| --------- | ------ | ------------------------- |
+| `name`    | string | Name of the MCP server    |
+| `version` | string | Version of the MCP server |
 
 **Sample Success Response:**
 
@@ -346,7 +367,7 @@ A successful initialization returns a JSON-RPC 2.0 response with server informat
 }
 ```
 
-**Error Responses**
+**Error Responses**&#x20;
 
 * **400 Bad Request - Invalid JSON-RPC Request:** Returned when the request body is malformed or doesn't follow JSON-RPC 2.0 specification.
 * **401 Unauthorized - Invalid or Missing Authentication:** Returned when the Bearer token is missing, invalid, or not MCP-compatible.
