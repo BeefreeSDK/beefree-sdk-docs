@@ -27,9 +27,6 @@ var beeConfig = {
     // REQUIRED PARAMETERS
     container: 'beefree-sdk-container',
     
-    // USER IDENTIFICATION (Optional - required for advanced features)
-    uid: 'unique-user-identifier', // Required for permissions, saved rows, collaborative editing
-    
     // CORE EDITOR SETTINGS
     language: 'en-US',
     autosave: 30,
@@ -111,28 +108,6 @@ This parameter is mandatory for Beefree SDK initialization:
 | Parameter | Description | Type |
 |-----------|-------------|------|
 | **container** | The ID of the HTML div element that will contain the Beefree SDK editor | `string` |
-
-## User Identification
-
-### uid
-- **Type:** `string`
-- **Default:** `undefined`
-- **Description:** Unique identifier for the user. Required for advanced features like permissions, saved rows, collaborative editing, and hooks. Not required for basic editor functionality.
-
-```javascript
-// Basic usage (uid not required)
-var beeConfig = {
-    container: 'beefree-sdk-container'
-};
-
-// Advanced usage (uid required for these features)
-var beeConfig = {
-    container: 'beefree-sdk-container',
-    uid: 'user123', // Required for advancedPermissions, commenting, hooks, etc.
-    advancedPermissions: { /* ... */ },
-    commenting: true
-};
-```
 
 ## Core Editor Settings
 
@@ -531,10 +506,6 @@ debug: {
 translations: {
     'bee-common-widget-bar': {
         content: 'MODULES'
-    },
-    'bee-button-widget': {
-        text: 'Button Text',
-        link: 'Button Link'
     }
 }
 ```
@@ -558,7 +529,6 @@ var beeConfig = {
 ```javascript
 var beeConfig = {
     container: 'beefree-sdk-container',
-    uid: 'user123',
     language: 'en-US',
     autosave: 60,
     trackChanges: true,
@@ -597,7 +567,6 @@ var beeConfig = {
 ```javascript
 var beeConfig = {
     container: 'beefree-sdk-container',
-    uid: 'user123',
     language: 'en-US',
     
     advancedPermissions: {
@@ -636,7 +605,6 @@ var beeConfig = {
 ```javascript
 var beeConfig = {
     container: 'beefree-sdk-container',
-    uid: 'user123',
     language: 'en-US',
     
     // Enable collaborative features
@@ -660,11 +628,6 @@ var beeConfig = {
 
 ## Best Practices
 
-### Performance Optimization
-- Use `autosave` sparingly to avoid performance issues with large templates
-- Set `loadingSpinnerDisableOnSave: true` for faster perceived performance
-- Limit the number of `mergeTags` and `mergeContents` for better UI performance
-
 ### Security Considerations
 - Always validate `uid` and `roleHash` on your server
 - Use `advancedPermissions` to restrict user capabilities based on roles
@@ -682,4 +645,4 @@ var beeConfig = {
 - Implement all relevant callbacks for complete functionality
 - Test with different `workspace.type` values for AMP compatibility
 
-This comprehensive configuration guide serves as your single source of truth for all Beefree SDK parameters. Each parameter is documented with its type, default value, description, and practical examples to help you customize the editor to meet your specific requirements.
+This comprehensive configuration guide serves as your single source of truth for all Beefree SDK parameters. Most parameters are documented with their type, default value, description, and practical examples to help you customize the editor to meet your specific requirements.
