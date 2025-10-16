@@ -266,7 +266,6 @@ The following table provides the name, data type, description, and an example va
 
 | Name                   | Data Type | Description                                                                      | Example Value                                  |
 | ---------------------- | --------- | -------------------------------------------------------------------------------- | ---------------------------------------------- |
-| `uid`                  | `string`  | Unique identifier for the CMS user (mandatory for Advanced Permissions).         | `'CmsUserName'`                                |
 | `container`            | `string`  | HTML container element ID for embedding Beefree SDK (mandatory).                 | `'bee-plugin-container'`                       |
 | `advanced permissions` | `object`  | Contains settings for content elements, rows, settings, and tabs configurations. | See configuration object for details.          |
 | `components`           | `object`  | Specifies available components like file picker and link types.                  | `{ filePicker: {...}, linkTypes: {...} }`      |
