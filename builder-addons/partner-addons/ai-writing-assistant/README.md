@@ -99,7 +99,6 @@ The following code snippet displays an example of the AI Writing Assistant with 
 
 ```javascript
 const beeConfig = {
-    uid: 'string',  // Unique identifier for the user
     ... 
     addOns: [
       {

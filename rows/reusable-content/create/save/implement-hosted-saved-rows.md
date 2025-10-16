@@ -131,7 +131,6 @@ This was achieved by adding the `translations` object to the `beeConfig`, and th
 
 ```javascript
 var beeConfig = {
-  uid: uid, // [mandatory]
   container: "bee-plugin-container", // [mandatory]
   language: "en-US",
   trackChanges: true,
@@ -203,7 +202,6 @@ The following code provides a simple example of how to add the `saveRows` config
 ```javascript
 
 const beeConfig = {
-    uid: 'dev-user',
     language: 'en-US',
     ...
     saveRows: false // boolean

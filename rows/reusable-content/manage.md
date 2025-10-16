@@ -114,7 +114,6 @@ To get started, you will need to create a content dialog in your application con
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'bee-plugin-container', // [mandatory]
   contentDialog: {
     onDeleteRow: {
@@ -183,7 +182,6 @@ Finally, we can call the `resolve` method, passing the value `true` if you want 
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'bee-plugin-container', // [mandatory]
   contentDialog: {
     onDeleteRow: {
@@ -208,7 +206,6 @@ To get started, much like with deleting rows, you will need to create a content 
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'bee-plugin-container', // [mandatory]
   contentDialog: {
     onEditRow: {
@@ -276,7 +273,6 @@ Finally, we can call the `resolve` method, passing the value `true` if you want 
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'bee-plugin-container', // [mandatory]
   contentDialog: {
     onEditRow: {
@@ -331,7 +327,6 @@ You can call the `reject` method, passing the message you want to display.
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'bee-plugin-container', // [mandatory]
   contentDialog: {
     onEditRow: {

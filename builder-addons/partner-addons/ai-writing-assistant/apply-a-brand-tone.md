@@ -57,7 +57,6 @@ The following code snippet provides an example configuration for integrating the
 
 ```javascript
 const beeConfig = {
-  uid: 'unique_user_id', // Unique identifier for the user
   addOns: [
     {
       id: "ai-integration", // Identifier for the AI integration add-on
@@ -111,7 +110,6 @@ Sample Code:
 
 ```javascript
 const beeConfig = {
-    uid: 'unique_user_id',  // Unique identifier for the user
     addOns: [
         // ...
     ],

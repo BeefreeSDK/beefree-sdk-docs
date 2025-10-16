@@ -172,7 +172,6 @@ let imagesAvailable = 1000
 let isUpsellEnabled = true
 
 const beeConfig = {
-  uid: 'string',
   ...
   addOns: [
     {
@@ -255,7 +254,6 @@ To disable the AddOn completely for an end user, perform the following:
 ```javascript
 
 const beeConfig = {
-    uid: 'inactive-user',
     ... 
     addOns: [
       {

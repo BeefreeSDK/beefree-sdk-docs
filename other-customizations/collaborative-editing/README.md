@@ -55,7 +55,6 @@ The following parameters are all required.
 ```javascript
 
 var config = {
-  uid: '1234', 
   ...
   username: 'Jane Doe', 
   userColor: 'black',

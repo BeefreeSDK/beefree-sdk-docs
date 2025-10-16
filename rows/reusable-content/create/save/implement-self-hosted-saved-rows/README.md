@@ -87,7 +87,6 @@ Here is a simple example:
 ```javascript
 
 const beeConfig = {
-    uid: 'dev-user',
     language: 'en-US',
     ...
     saveRows: false // boolean
@@ -233,7 +232,6 @@ To start, define a hook in your application configuration. The hook method shoul
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'bee-plugin-container', // [mandatory]
   hooks: {
     getRows: {
@@ -288,7 +286,6 @@ Finally, we can call the resolve method, passing in an array of savedRows.
 ```javascript
 
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'bee-plugin-container', // [mandatory]
   hooks: {
     getRows: {
@@ -351,7 +348,6 @@ The following code snippet shows an example beeConfig with `getRows` hook:
 
 ```js
 beeConfig: {
-  uid: 'CmsUserName', // [mandatory]
   container: 'bee-plugin-container', // [mandatory]
   hooks: {
     getRows: {

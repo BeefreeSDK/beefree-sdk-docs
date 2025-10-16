@@ -1,88 +1,648 @@
 ---
-description: Discover the configuration parameters within Beefree SDK.
+description: Complete reference guide for all Beefree SDK configuration parameters.
 ---
 
-# Configuration parameters
+# Configuration Parameters
 
-## Passing Configurations to Beefree SDK
+## Overview
 
-Once you have initialized your Beefree SDK application, you can pass a series of configuration parameters to it.
+Configuration parameters allow you to customize the Beefree SDK editor to match your application's requirements. This comprehensive guide covers all available parameters, from required settings to advanced customization options.
 
-{% hint style="info" %}
-**Note:** While there are several parameters in the configuration example below, this example does not comprehensively display all available parameters within Beefree SDK. Reference Beefree SDK's comprehensive technical documentation for more information on available parameters and customization options. &#x20;
-{% endhint %}
+## How Configuration Works
 
-The following code displays an example of a default configuration.
+When initializing Beefree SDK, you pass a configuration object (`beeConfig`) that defines the editor's behavior, appearance, and functionality. The configuration is structured with high-level parameters that may contain nested sub-parameters for granular control.
+
+```javascript
+const bee = new BeefreeSDK(token);
+bee.start(beeConfig, template);
+```
+
+## Complete Configuration Structure
+
+Here's a comprehensive configuration object showing all available high-level parameters:
 
 {% code fullWidth="false" %}
 ```javascript
 var beeConfig = {
-    container: 'beefree-sdk-container', // [mandatory]
-    autosave: 30, // [optional, default:false]
-    language: 'en-US', // [optional, default:'en-US']
-    trackChanges: true, // [optional, default: false] 
-    specialLinks: specialLinks, // [optional, default:[]] 
-    mergeTags: mergeTags, // [optional, default:[]]
-    mergeContents: mergeContents, // [optional, default:[]]
-    preventClose: false, // [optional, default:false]
-    titleDefaultStyles: {...}
-    titleDefaultConfig: {...}
-    titleMaxLevel: 'h6' // 'h3' default (min 'h1', max 'h6')
-    editorFonts : {}, // [optional, default: see description]
-    contentDialog : {}, // [optional, default: see description]
-    defaultForm : {}, // [optional, default: {}]
-    roleHash : "", // [optional, default: ""]
-    rowDisplayConditions : {}, // [optional, default: {}]
+    // REQUIRED PARAMETERS
+    container: 'beefree-sdk-container',
+    
+    // CORE EDITOR SETTINGS
+    language: 'en-US',
+    autosave: 30,
+    trackChanges: true,
+    preventClose: false,
+    
+    // CONTENT CUSTOMIZATION
+    specialLinks: [],
+    mergeTags: [],
+    mergeContents: [],
+    
+    // APPEARANCE & UI
+    sidebarPosition: 'left',
+    editorFonts: {},
+    defaultColors: [],
+    disableColorHistory: false,
+    disableBaseColors: false,
+    
+    // TITLE BLOCK CUSTOMIZATION
+    titleDefaultStyles: {},
+    titleDefaultConfig: {},
+    titleMaxLevel: 'h3',
+    
+    // WORKSPACE & LAYOUT
+    workspace: {
+        type: 'default',
+        editSingleRow: false
+    },
+    
+    // ADVANCED FEATURES
+    commenting: false,
+    commentingThreadPreview: true,
+    commentingNotifications: true,
+    contentDialog: {},
+    defaultForm: {},
+    rowDisplayConditions: {},
     rowsConfiguration: {},
-    workspace: { // [optional, default: {type : 'default'}]
-        editSingleRow: false // [optional, default: false]},
-    },
-    commenting: false, // [optional, default: false]}
-    commentingThreadPreview: true, // [optional, default: true]}
-    commentingNotifications: true, // [optional, default: true]}
-    disableLinkSanitize: true, // [optional, default: false]}
-    loadingSpinnerDisableOnSave: false, // [optional, default: false]}
-    loadingSpinnerDisableOnDialog: true, // [optional, default: false]}
-    onSave: function(jsonFile, htmlFile) { /* Implements function for save */ }, // [optional]
-    onChange: function(jsonFile, response) { /* Implements function for change */ }, // [optional]
-    onSaveAsTemplate: function(jsonFile) { /* Implements function for save as template (only JSON file) */ }, // [optional]
-    onAutoSave: function(jsonFile) { /* Implements function for auto save */ }, // [optional]
-    onSend: function(htmlFile) { /* Implements function to send the message */ }, // [optional]
-    onLoad: function(jsonFile) { /* Implements function to perform an action once the template is loaded */}, // [optional]
-    onError: function(errorMessage) { /* Implements function to handle error messages */ }, // [optional]
-    onWarning: function(alertMessage) { /* Implements function to handle error messages */ }, // [optional]
+    advancedPermissions: {},
+    hooks: {},
+    metadata: {},
+    
+    // PERMISSIONS & SECURITY
+    roleHash: '',
+    disableLinkSanitize: false,
+    
+    // LOADING & PERFORMANCE
+    loadingSpinnerDisableOnSave: false,
+    loadingSpinnerDisableOnDialog: false,
+    
+    // CALLBACK FUNCTIONS
+    onSave: function(jsonFile, htmlFile, ampHtml, templateVersion, language) {},
+    onChange: function(jsonFile, response) {},
+    onSaveAsTemplate: function(jsonFile) {},
+    onAutoSave: function(jsonFile) {},
+    onSend: function(htmlFile) {},
+    onLoad: function(jsonFile) {},
+    onError: function(errorMessage) {},
+    onWarning: function(alertMessage) {},
+    onLoadWorkspace: function(workspace) {},
+    onFilePickerInsert: function(data) {},
+    
+    // DEBUGGING & DEVELOPMENT
     debug: {
-        all: true,                 // Enables all debug features listed below
-        inspectJson: true,        // Enables an eye icon on the module/row toolbar to inspect specific JSON portions
-        showTranslationKeys: true // Shows translation keys instead of localized strings
+        all: false,
+        inspectJson: false,
+        showTranslationKeys: false
     },
-    translations: {
-        'bee-common-widget-bar': {
-            content: 'MODULES',
-        },
-        // additional translations...
-    },
-    // other properties...
+    
+    // LOCALIZATION
+    translations: {}
 };
 ```
 {% endcode %}
 
-## Parameters
+## Required Parameters
 
-The following table provides a list of the **required** parameter for [initializing](../) Beefree SDK.
+This parameter is mandatory for Beefree SDK initialization:
 
-<table><thead><tr><th>Parameter</th><th width="331">Description</th><th>Default</th></tr></thead><tbody><tr><td><strong>container</strong></td><td>Identifies the id of div element that contains Beefree SDK.</td><td></td></tr></tbody></table>
+| Parameter | Description | Type |
+|-----------|-------------|------|
+| **container** | The ID of the HTML div element that will contain the Beefree SDK editor | `string` |
 
-## Language Parameter
+## Core Editor Settings
 
-The following table provides a list of the language options for the language parameter. The language parameter is not required and has a default value of `en-US`.
+### language
+- **Type:** `string`
+- **Default:** `'en-US'`
+- **Description:** Sets the editor interface language
 
-**Available Languages**
+**Available Languages:**
 
-<table><thead><tr><th width="303">Language</th><th>4-letter language identifier (e.g. “en-US”, ISO 639-1 format)</th></tr></thead><tbody><tr><td>English:</td><td>en-US</td></tr><tr><td>Spanish:</td><td>es-ES</td></tr><tr><td>French:</td><td>fr-FR</td></tr><tr><td>Italian:</td><td>it-IT</td></tr><tr><td>Portuguese:</td><td>pt-BR</td></tr><tr><td>Indonesian:</td><td>id-ID</td></tr><tr><td>Japanese:</td><td>ja-JP</td></tr><tr><td>Chinese:</td><td>zh-CN</td></tr><tr><td>Traditional Chinese:</td><td>zh-HK</td></tr><tr><td>German:</td><td>de-DE</td></tr><tr><td>Danish:</td><td>da-DK</td></tr><tr><td>Swedish:</td><td>sv-SE</td></tr><tr><td>Polish:</td><td>pl-PL</td></tr><tr><td>Hungarian:</td><td>hu-HU</td></tr><tr><td>Russian:</td><td>ru-RU</td></tr><tr><td>Korean:</td><td>ko-KR</td></tr><tr><td>Dutch:</td><td>nl-NL</td></tr><tr><td>Finnish:</td><td>fi-FI</td></tr><tr><td>Czech:</td><td>cs-CZ</td></tr><tr><td>Romanian:</td><td>ro-RO</td></tr><tr><td>Norwegian (Bokmål):</td><td>nb-NO</td></tr><tr><td>Slovenian:</td><td>sl-SI</td></tr></tbody></table>
+| Language | Code | Language | Code |
+|----------|------|----------|------|
+| English | `en-US` | German | `de-DE` |
+| Spanish | `es-ES` | Danish | `da-DK` |
+| French | `fr-FR` | Swedish | `sv-SE` |
+| Italian | `it-IT` | Polish | `pl-PL` |
+| Portuguese | `pt-BR` | Hungarian | `hu-HU` |
+| Indonesian | `id-ID` | Russian | `ru-RU` |
+| Japanese | `ja-JP` | Korean | `ko-KR` |
+| Chinese | `zh-CN` | Dutch | `nl-NL` |
+| Traditional Chinese | `zh-HK` | Finnish | `fi-FI` |
+| Czech | `cs-CZ` | Romanian | `ro-RO` |
+| Norwegian (Bokmål) | `nb-NO` | Slovenian | `sl-SI` |
 
-## Parameters
+### autosave
+- **Type:** `number | false`
+- **Default:** `false`
+- **Description:** Enables automatic saving at specified intervals (in seconds). Set to `false` to disable.
 
-The following table provides a list of the **optional** parameters and their corresponding descriptions.
+### trackChanges
+- **Type:** `boolean`
+- **Default:** `false`
+- **Description:** Enables change tracking to monitor template modifications via the `onChange` callback.
 
-<table><thead><tr><th width="242">Parameter</th><th width="315">Description</th><th>Default</th></tr></thead><tbody><tr><td><strong>trackChanges</strong></td><td>Track message changes in the editor via the “onChange” callback. See “Tracking message changes” for further details.</td><td><code>false</code></td></tr><tr><td><strong>specialLinks</strong></td><td>An array of custom links that may be used in the message (e.g. unsubscribe). See “extending the editor” for further details.</td><td><code>[]</code></td></tr><tr><td><strong>mergeTags</strong></td><td>An array of merge tags that may be used in the message (e.g. first name of the recipient). See “extending the editor” for further details.</td><td><code>[]</code></td></tr><tr><td><strong>mergeContents</strong></td><td>An array of content elements that may be used in the message (e.g. small blocks of HTML). See “extending the editor” for further details.</td><td><code>[]</code></td></tr><tr><td><strong>preventClose</strong></td><td>Whether an alert should be shown when the user attempts to leave the page before saving.</td><td><code>false</code></td></tr><tr><td><strong>editorFonts</strong></td><td>Customize the list of available fonts in the editor’s text toolbar and the BODY settings panel.<br>See “Font management” for further details.</td><td>See “Font management” for the default object.</td></tr><tr><td><strong>roleHash</strong></td><td><p>Identifies the user role:</p><ul><li>Minimum length is 8, maximum is 30</li><li>Alphanumerical string only: No whitespaces, no special characters such as “_” and “-“</li></ul><p>See “Roles and permissions” for further details.</p></td><td><code>""</code></td></tr><tr><td><strong>rowDisplayConditions</strong></td><td>Allows for conditional statements in email messages.<br>See “Display Conditions” for further details.</td><td><code>{}</code></td></tr><tr><td><strong>workspace</strong></td><td>Configure the initial workspace for loading the editor. Currently used for AMP content visibility.<br>See “Workspaces” for further details.</td><td><code>{type : 'default'}</code></td></tr><tr><td><strong>contentDialog</strong></td><td>Allows to exchange data with Beefree SDK using a UI layer you control.<br>See the “<a href="../../../../other-customizations/advanced-options/content-dialog.md">Content Dialog</a>” page for the complete reference.</td><td><code>{}</code></td></tr><tr><td><strong>defaultForm</strong></td><td>This should contain a <code>structure</code> object with the form data.<br>See “<a href="../../../../forms/integrating-and-using-the-form-block/form-structure-and-parameters.md">Passing forms to the builder</a>” for further details.</td><td><code>{}</code></td></tr><tr><td><strong>commenting</strong></td><td>Enables commenting on content blocks and rows. See <a href="../../../../other-customizations/advanced-options/commenting.md">Commenting</a> for further details.</td><td><code>false</code></td></tr><tr><td><strong>commentingThreadPreview</strong></td><td>Enables a pop-over preview on the stage for comments.</td><td><code>true</code></td></tr><tr><td><strong>commentingNotifications</strong></td><td>Enables notifications of new comments in co-editing.</td><td><code>true</code></td></tr><tr><td><strong>disableLinkSanitize</strong></td><td>Disables link validation for URLs, including telephone number or SMS to enable merge content use.</td><td><code>false</code></td></tr><tr><td><strong>loadingSpinnerDisableOnSave</strong></td><td>Controls the visibility of the builder in a loading state.</td><td><code>false</code></td></tr><tr><td><strong>loadingSpinnerDisableOnDialog</strong></td><td>Controls the visibility of the builder in a loading state.</td><td><code>false</code></td></tr></tbody></table>
+### preventClose
+- **Type:** `boolean`
+- **Default:** `false`
+- **Description:** Shows an alert when users attempt to leave the page before saving changes.
+
+## Content Customization
+
+### specialLinks
+- **Type:** `array`
+- **Default:** `[]`
+- **Description:** Array of custom link objects for special actions (e.g., unsubscribe links).
+
+```javascript
+specialLinks: [
+    {
+        name: 'Unsubscribe',
+        value: '{{unsubscribe_url}}',
+        target: '_blank'
+    }
+]
+```
+
+### mergeTags
+- **Type:** `array`
+- **Default:** `[]`
+- **Description:** Array of merge tag objects for dynamic content personalization.
+
+```javascript
+mergeTags: [
+    {
+        name: 'First Name',
+        value: '{{first_name}}'
+    },
+    {
+        name: 'Company',
+        value: '{{company_name}}'
+    }
+]
+```
+
+### mergeContents
+- **Type:** `array`
+- **Default:** `[]`
+- **Description:** Array of reusable content blocks that can be inserted into templates.
+
+```javascript
+mergeContents: [
+    {
+        name: 'Footer Content',
+        value: '<div>Company footer HTML</div>'
+    }
+]
+```
+
+## Appearance & UI Customization
+
+### sidebarPosition
+- **Type:** `string`
+- **Default:** `'left'`
+- **Options:** `'left'`, `'right'`
+- **Description:** Controls the position of the content sidebar.
+
+### editorFonts
+- **Type:** `object`
+- **Default:** See Font Management documentation
+- **Description:** Customizes available fonts in the text toolbar and body settings.
+
+```javascript
+editorFonts: {
+    fontList: [
+        {
+            name: 'Arial',
+            fontFamily: 'Arial, sans-serif'
+        },
+        {
+            name: 'Custom Font',
+            fontFamily: 'CustomFont, Arial, sans-serif',
+            url: 'https://fonts.googleapis.com/css?family=CustomFont'
+        }
+    ]
+}
+```
+
+### defaultColors
+- **Type:** `array`
+- **Default:** `[]`
+- **Description:** Array of hex color codes for the default color palette.
+
+```javascript
+defaultColors: ['#ffffff', '#000000', '#95d24f', '#ff00dd']
+```
+
+### disableColorHistory
+- **Type:** `boolean`
+- **Default:** `false`
+- **Description:** Disables the color history feature in color pickers.
+
+### disableBaseColors
+- **Type:** `boolean`
+- **Default:** `false`
+- **Description:** Disables the base color palette in color pickers.
+
+## Title Block Customization
+
+### titleDefaultStyles
+- **Type:** `object`
+- **Default:** `{}`
+- **Description:** Default styling for title blocks at different heading levels.
+
+```javascript
+titleDefaultStyles: {
+    h1: {
+        fontSize: '32px',
+        fontWeight: 'bold',
+        color: '#000000'
+    },
+    h2: {
+        fontSize: '28px',
+        fontWeight: 'bold',
+        color: '#333333'
+    }
+}
+```
+
+### titleDefaultConfig
+- **Type:** `object`
+- **Default:** `{}`
+- **Description:** Default configuration settings for title blocks.
+
+### titleMaxLevel
+- **Type:** `string`
+- **Default:** `'h3'`
+- **Options:** `'h1'`, `'h2'`, `'h3'`, `'h4'`, `'h5'`, `'h6'`
+- **Description:** Maximum heading level available in title blocks.
+
+## Workspace Configuration
+
+### workspace
+- **Type:** `object`
+- **Default:** `{type: 'default'}`
+- **Description:** Configures the editor workspace type and behavior.
+
+#### workspace.type
+- **Type:** `string`
+- **Default:** `'default'`
+- **Options:** `'default'`, `'mixed'`, `'amp_only'`, `'html_only'`
+- **Description:** Determines workspace type for AMP content visibility.
+
+#### workspace.editSingleRow
+- **Type:** `boolean`
+- **Default:** `false`
+- **Description:** Enables single-row editing mode.
+
+#### workspace.stage (Mobile Design Mode)
+- **Type:** `object`
+- **Description:** Mobile design mode configuration.
+
+```javascript
+workspace: {
+    type: 'default',
+    stage: {
+        width: '375px',
+        height: '667px'
+    }
+}
+```
+
+## Advanced Features
+
+### commenting
+- **Type:** `boolean`
+- **Default:** `false`
+- **Description:** Enables collaborative commenting on content blocks and rows.
+
+### commentingThreadPreview
+- **Type:** `boolean`
+- **Default:** `true`
+- **Description:** Shows comment preview popover on the stage.
+
+### commentingNotifications
+- **Type:** `boolean`
+- **Default:** `true`
+- **Description:** Enables notifications for new comments in collaborative editing.
+
+### contentDialog
+- **Type:** `object`
+- **Default:** `{}`
+- **Description:** Configuration for custom content dialogs to exchange data with external systems.
+
+```javascript
+contentDialog: {
+    contentDialogUrl: 'https://your-app.com/content-dialog',
+    triggers: ['image', 'link']
+}
+```
+
+### defaultForm
+- **Type:** `object`
+- **Default:** `{}`
+- **Description:** Default form structure for form blocks.
+
+```javascript
+defaultForm: {
+    structure: {
+        // Form field definitions
+    }
+}
+```
+
+### rowDisplayConditions
+- **Type:** `object`
+- **Default:** `{}`
+- **Description:** Enables conditional display logic for email rows.
+
+### rowsConfiguration
+- **Type:** `object`
+- **Default:** `{}`
+- **Description:** Configuration for row behavior and appearance.
+
+### advancedPermissions
+- **Type:** `object`
+- **Default:** `{}`
+- **Description:** Granular permission controls for different user roles.
+
+```javascript
+advancedPermissions: {
+    components: {
+        'bee-button': {
+            enabled: true,
+            style: false
+        }
+    },
+    rows: {
+        enabled: true,
+        canAdd: true,
+        canDelete: false
+    }
+}
+```
+
+### hooks
+- **Type:** `object`
+- **Default:** `{}`
+- **Description:** Custom hooks for extending editor functionality.
+
+### metadata
+- **Type:** `object`
+- **Default:** `{}`
+- **Description:** Custom metadata configuration for templates.
+
+## Security & Permissions
+
+### roleHash
+- **Type:** `string`
+- **Default:** `''`
+- **Description:** Alphanumeric identifier for user roles (8-30 characters, no special characters).
+
+### disableLinkSanitize
+- **Type:** `boolean`
+- **Default:** `false`
+- **Description:** Disables URL validation to allow merge tags in links.
+
+## Performance & Loading
+
+### loadingSpinnerDisableOnSave
+- **Type:** `boolean`
+- **Default:** `false`
+- **Description:** Controls loading spinner visibility during save operations.
+
+### loadingSpinnerDisableOnDialog
+- **Type:** `boolean`
+- **Default:** `false`
+- **Description:** Controls loading spinner visibility during dialog operations.
+
+## Callback Functions
+
+### onSave
+- **Type:** `function`
+- **Parameters:** `(jsonFile, htmlFile, ampHtml, templateVersion, language)`
+- **Description:** Called when user saves the template.
+
+```javascript
+onSave: function(jsonFile, htmlFile, ampHtml, templateVersion, language) {
+    console.log('Template saved:', {
+        json: jsonFile,
+        html: htmlFile,
+        amp: ampHtml,
+        version: templateVersion,
+        lang: language
+    });
+}
+```
+
+### onChange
+- **Type:** `function`
+- **Parameters:** `(jsonFile, response)`
+- **Description:** Called when template content changes (requires `trackChanges: true`).
+
+### onSaveAsTemplate
+- **Type:** `function`
+- **Parameters:** `(jsonFile)`
+- **Description:** Called when user saves template as a new template.
+
+### onAutoSave
+- **Type:** `function`
+- **Parameters:** `(jsonFile)`
+- **Description:** Called during automatic save operations.
+
+### onSend
+- **Type:** `function`
+- **Parameters:** `(htmlFile)`
+- **Description:** Called when user triggers send action.
+
+### onLoad
+- **Type:** `function`
+- **Parameters:** `(jsonFile)`
+- **Description:** Called when template is loaded into the editor.
+
+### onError
+- **Type:** `function`
+- **Parameters:** `(errorMessage)`
+- **Description:** Called when errors occur in the editor.
+
+### onWarning
+- **Type:** `function`
+- **Parameters:** `(alertMessage)`
+- **Description:** Called when warnings are triggered.
+
+### onLoadWorkspace
+- **Type:** `function`
+- **Parameters:** `(workspace)`
+- **Description:** Called when workspace is successfully loaded.
+
+### onFilePickerInsert
+- **Type:** `function`
+- **Parameters:** `(data)`
+- **Description:** Called when files are inserted via file picker integration.
+
+## Development & Debugging
+
+### debug
+- **Type:** `object`
+- **Default:** `{all: false, inspectJson: false, showTranslationKeys: false}`
+- **Description:** Debug mode configuration for development.
+
+```javascript
+debug: {
+    all: true,                    // Enables all debug features
+    inspectJson: true,           // Shows JSON inspector icon
+    showTranslationKeys: true    // Shows translation keys instead of text
+}
+```
+
+## Localization
+
+### translations
+- **Type:** `object`
+- **Default:** `{}`
+- **Description:** Custom translations to override default interface text.
+
+```javascript
+translations: {
+    'bee-common-widget-bar': {
+        content: 'MODULES'
+    }
+}
+```
+## Quick Reference Examples
+
+### Basic Configuration
+```javascript
+var beeConfig = {
+    container: 'beefree-sdk-container',
+    language: 'en-US',
+    onSave: function(jsonFile, htmlFile) {
+        console.log('Template saved!');
+    },
+    onError: function(errorMessage) {
+        console.error('Error:', errorMessage);
+    }
+};
+```
+
+### Advanced Configuration
+```javascript
+var beeConfig = {
+    container: 'beefree-sdk-container',
+    language: 'en-US',
+    autosave: 60,
+    trackChanges: true,
+    
+    // Custom content
+    mergeTags: [
+        { name: 'First Name', value: '{{first_name}}' },
+        { name: 'Company', value: '{{company}}' }
+    ],
+    
+    // UI customization
+    sidebarPosition: 'right',
+    defaultColors: ['#ffffff', '#000000', '#ff6b6b', '#4ecdc4'],
+    
+    // Advanced features
+    commenting: true,
+    workspace: {
+        type: 'mixed',
+        editSingleRow: false
+    },
+    
+    // Callbacks
+    onSave: function(jsonFile, htmlFile, ampHtml, version, lang) {
+        // Handle save
+    },
+    onChange: function(jsonFile, response) {
+        // Handle changes
+    },
+    onError: function(errorMessage) {
+        // Handle errors
+    }
+};
+```
+
+### Configuration with Advanced Permissions
+```javascript
+var beeConfig = {
+    container: 'beefree-sdk-container',
+    language: 'en-US',
+    
+    advancedPermissions: {
+        components: {
+            'bee-button': {
+                enabled: true,
+                style: true,
+                link: false
+            },
+            'bee-image': {
+                enabled: true,
+                style: true,
+                alt: false
+            }
+        },
+        rows: {
+            enabled: true,
+            canAdd: true,
+            canDelete: false,
+            canMove: true
+        },
+        settings: {
+            bodySettings: true,
+            preheader: false,
+            subject: true
+        }
+    },
+    
+    onSave: function(jsonFile, htmlFile) {
+        // Handle save with permissions applied
+    }
+};
+```
+
+### Configuration for Collaborative Editing
+```javascript
+var beeConfig = {
+    container: 'beefree-sdk-container',
+    language: 'en-US',
+    
+    // Enable collaborative features
+    commenting: true,
+    commentingThreadPreview: true,
+    commentingNotifications: true,
+    trackChanges: true,
+    
+    // User identification for collaboration
+    roleHash: 'editor123abc',
+    
+    // Callbacks for collaboration
+    onChange: function(jsonFile, response) {
+        // Sync changes with other users
+    },
+    onSave: function(jsonFile, htmlFile) {
+        // Save collaborative changes
+    }
+};
+```
+
+## Best Practices
+
+### Security Considerations
+- Always validate `uid` and `roleHash` on your server
+- Use `advancedPermissions` to restrict user capabilities based on roles
+- Implement proper authentication before initializing the SDK
+
+### User Experience
+- Set appropriate `language` based on user preferences
+- Use `preventClose: true` for important editing sessions
+- Provide meaningful error handling in `onError` callback
+- Use `commenting` features for team collaboration workflows
+
+### Development Tips
+- Enable `debug.all: true` during development
+- Use `trackChanges: true` to monitor template modifications
+- Implement all relevant callbacks for complete functionality
+- Test with different `workspace.type` values for AMP compatibility
+
+This comprehensive configuration guide serves as your single source of truth for all Beefree SDK parameters. Most parameters are documented with their type, default value, description, and practical examples to help you customize the editor to meet your specific requirements.

@@ -93,7 +93,6 @@ type ClientConfig = {
 
 // Set up the configuration object for the Beefree SDK
 const beeConfig: ClientConfig = {
-  uid: 'your-client-uid', // Your unique client ID
   container: 'bee-plugin-container', // ID of the container element
   language: 'en-US',
   saveRows: true,
