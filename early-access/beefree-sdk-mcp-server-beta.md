@@ -177,6 +177,8 @@ Authorization: Bearer <MCP-compatible CSAPI key>
 **Note**: A normal CSAPI key will not work. There won't be any self-service for the duration of the closed beta, so the only way to get access is to ask us to enable MCP access on an existing key or to give you a new MCP-enabled one.
 {% endhint %}
 
+Reference the [Content Services API MCP Endpoint section](beefree-sdk-mcp-server-beta.md#content-services-api-mcp-endpoint) to learn more about initializing the MCP server through the API call.
+
 #### Step 3: Route requests to the right editor instance (UID/session)
 
 **What this is**: Targeting information so the server knows which user's editor session to control.
@@ -227,15 +229,161 @@ This section discusses what the MCP actually does, and provides a deeper look in
 
 ## Content Services API MCP Endpoint
 
-{% openapi-operation spec="sdk-mcp" path="/v1/sdk/mcp" method="post" %}
-[OpenAPI sdk-mcp](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/765dc03ab38326f8f1d01b905aaf0d43b51a9e19b5303ea3b0fbaab57437279f.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251010%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251010T135042Z&X-Amz-Expires=172800&X-Amz-Signature=ecc6d2c4efdad764ae5efbb9677da7b14fa5bfafa72b5ed77e3684ac00d6e37b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
-{% endopenapi-operation %}
+This section discusses how to use the Content services API MCP endpoint to initalize your MCP connection. It provides additional information on how to perform [Step 2](beefree-sdk-mcp-server-beta.md#step-2-plug-the-mcp-server-into-your-agent), which is plugging your agent into your MCP server, of the [Setup section](beefree-sdk-mcp-server-beta.md#setup).&#x20;
 
-### Troubleshooting
+#### Initialize MCP Connection
 
-* **401 Unauthorized**: Ensure you're using an MCP-compatible CSAPI key (not a normal key) and the Authorization header is attached.
-* **Wrong editor session**: Make sure x-bee-uid is present; add x-bee-mcp-session-id if multiple editor instances are open for the same user.
-* **Client can't discover tools**: Confirm the client completed initialization; tools/list should work afterward.
+**Method:** `POST`
+
+**Endpoint:** `https://api.getbee.io/v1/sdk/mcp`
+
+This endpoint allows you to establish a connection to the Beefree SDK MCP Server. This is the first call you need to make to validate your credentials and begin interacting with the MCP. A successful initialization confirms your authentication is valid and returns the server's capabilities.
+
+**Authentication**
+
+**Type:** Bearer Token\
+**Header:** `Authorization: Bearer YOUR_MCP_COMPATIBLE_KEY`
+
+{% hint style="info" %}
+**Note:** You must use an MCP-compatible CSAPI key. Standard CSAPI keys will not work. Complete the [beta survey](https://growens.typeform.com/to/gyH0gVgp#source=docs) to request access.
+{% endhint %}
+
+**Headers**
+
+| Header                 | Type   | Required     | Description                                                                       |
+| ---------------------- | ------ | ------------ | --------------------------------------------------------------------------------- |
+| `Authorization`        | string | **Required** | Bearer token with your MCP-compatible CSAPI key                                   |
+| `x-bee-uid`            | string | **Required** | User identifier for routing requests to the correct editor instance               |
+| `x-bee-mcp-session-id` | string | Optional     | Session identifier for distinguishing multiple editor instances for the same user |
+| `Content-Type`         | string | **Required** | Must be `application/json`                                                        |
+
+**Request Body Parameters**
+
+The request body must be a valid JSON-RPC 2.0 request with the following structure:
+
+**Top-level Parameters:**
+
+| Parameter | Type    | Required     | Example Value  | Description               |
+| --------- | ------- | ------------ | -------------- | ------------------------- |
+| `method`  | string  | **Required** | `"initialize"` | The MCP method to call    |
+| `jsonrpc` | string  | **Required** | `"2.0"`        | JSON-RPC protocol version |
+| `id`      | integer | **Required** | `0`            | Request identifier        |
+| `params`  | object  | **Required** | (see below)    | Initialization parameters |
+
+**`params` Object:**
+
+| Parameter         | Type   | Required     | Example Value  | Description          |
+| ----------------- | ------ | ------------ | -------------- | -------------------- |
+| `protocolVersion` | string | **Required** | `"2025-06-18"` | MCP protocol version |
+| `capabilities`    | object | **Required** | (see below)    | Client capabilities  |
+| `clientInfo`      | object | **Required** | (see below)    | Client information   |
+
+**`params.capabilities` Object:**
+
+| Parameter     | Type   | Required     | Example Value | Description                             |
+| ------------- | ------ | ------------ | ------------- | --------------------------------------- |
+| `sampling`    | object | **Required** | `{}`          | Sampling capabilities (empty object)    |
+| `elicitation` | object | **Required** | `{}`          | Elicitation capabilities (empty object) |
+| `roots`       | object | **Required** | (see below)   | Roots configuration                     |
+
+**`params.capabilities.roots` Object:**
+
+| Parameter     | Type    | Required     | Example Value | Description                           |
+| ------------- | ------- | ------------ | ------------- | ------------------------------------- |
+| `listChanged` | boolean | **Required** | `true`        | Indicates if the root list can change |
+
+**`params.clientInfo` Object:**
+
+| Parameter | Type   | Required     | Example Value        | Description                     |
+| --------- | ------ | ------------ | -------------------- | ------------------------------- |
+| `name`    | string | **Required** | `"inspector-client"` | Your client application name    |
+| `version` | string | **Required** | `"0.17.1"`           | Your client application version |
+
+**Sample Request**
+
+```json
+{"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{"sampling":{},"elicitation":{},"roots":{"listChanged":true}},"clientInfo":{"name":"inspector-client","version":"0.17.1"}},"jsonrpc":"2.0","id":0}
+```
+
+**Response**
+
+**Success Response (200 OK)**
+
+A successful initialization returns a JSON-RPC 2.0 response with server information and capabilities.
+
+**Response Body Parameters:**
+
+| Parameter | Type    | Description                                                   |
+| --------- | ------- | ------------------------------------------------------------- |
+| `jsonrpc` | string  | JSON-RPC protocol version (always `"2.0"`)                    |
+| `id`      | integer | Matches the request ID                                        |
+| `result`  | object  | Initialization result containing server info and capabilities |
+
+**`result` Object:**
+
+| Parameter         | Type   | Description                      |
+| ----------------- | ------ | -------------------------------- |
+| `protocolVersion` | string | Confirmed MCP protocol version   |
+| `capabilities`    | object | Server capabilities              |
+| `serverInfo`      | object | Information about the MCP server |
+
+**`result.capabilities` Object:**
+
+| Parameter | Type   | Description                    |
+| --------- | ------ | ------------------------------ |
+| `tools`   | object | Tools capability configuration |
+
+**`result.capabilities.tools` Object:**
+
+| Parameter     | Type    | Description                                  |
+| ------------- | ------- | -------------------------------------------- |
+| `listChanged` | boolean | Whether the tool list can change dynamically |
+
+**`result.serverInfo` Object:**
+
+| Parameter | Type   | Description               |
+| --------- | ------ | ------------------------- |
+| `name`    | string | Name of the MCP server    |
+| `version` | string | Version of the MCP server |
+
+**Sample Success Response:**
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "protocolVersion": "2025-06-18",
+    "capabilities": {
+      "tools": {
+        "listChanged": true
+      }
+    },
+    "serverInfo": {
+      "name": "Beefree SDK MCP Server",
+      "version": "1.0.0"
+    }
+  }
+}
+```
+
+**Error Responses**&#x20;
+
+* **400 Bad Request - Invalid JSON-RPC Request:** Returned when the request body is malformed or doesn't follow JSON-RPC 2.0 specification.
+* **401 Unauthorized - Invalid or Missing Authentication:** Returned when the Bearer token is missing, invalid, or not MCP-compatible.
+* **403 Forbidden - Insufficient Permissions:** Returned when the authenticated user lacks permissions to access the MCP.
+* **404 Not Found - Editor Instance Not Found:** Returned when the specified `x-bee-uid` doesn't correspond to an active editor instance.
+* **500 Internal Server Error:** Returned when an unexpected server error occurs.
+
+**Next Steps**
+
+After successfully initializing the connection, you can:
+
+1. List Available Tools
+2. Execute Tool Calls
+3. Build Your Agent
+
+For a complete working example, see our [Reference Sample Project section](beefree-sdk-mcp-server-beta.md#reference-sample-project) above.
 
 ## Beefree SDK MCP - Frequently Asked Questions
 
