@@ -12,6 +12,8 @@ Beefree SDK provides a comprehensive set of methods, callback functions, and eve
 
 ## How Methods and Events Work
 
+Beefree SDK is built on an event-driven architecture, a software design pattern where components communicate through events rather than direct method calls. In this architecture, **methods** are functions you call to trigger actions in the SDK (like saving or loading templates), while **events** are notifications the SDK sends back to your application when something happens (like content changes or errors). This decoupled approach allows your application to respond to SDK activities asynchronously, making integrations more flexible and scalable. Learn more about [event-driven architecture on MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events).
+
 When you initialize Beefree SDK, you get an instance that exposes various methods for programmatic control. Additionally, you can configure callback functions in your `beeConfig` to respond to user actions and editor events.
 
 ```javascript
