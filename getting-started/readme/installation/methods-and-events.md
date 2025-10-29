@@ -2,7 +2,7 @@
 description: Complete reference guide for all Beefree SDK methods, callbacks, and events.
 ---
 
-# Methods, Callbacks, and Events
+# Methods and Events
 
 ## Overview
 
@@ -43,14 +43,16 @@ These methods are available on the Beefree SDK instance and allow you to control
 ### Core Methods
 
 #### beeInstance.start(templateToLoad, userInfo, templateInfo, options)
-- **Description:** Initializes and starts the builder with optional template data
-- **Parameters:**
-  - `templateToLoad` (optional): JSON string with template structure
-  - `userInfo` (optional): User information object for collaborative features
-  - `templateInfo` (optional): Template metadata
-  - `options` (optional): Additional configuration options
-- **Returns:** Promise that resolves when editor is ready
-- **Usage:**
+
+* **Description:** Initializes and starts the builder with optional template data
+* **Parameters:**
+  * `templateToLoad` (optional): JSON string with template structure
+  * `userInfo` (optional): User information object for collaborative features
+  * `templateInfo` (optional): Template metadata
+  * `options` (optional): Additional configuration options
+* **Returns:** Promise that resolves when editor is ready
+* **Usage:**
+
 ```javascript
 // Basic start
 await beeInstance.start();
@@ -63,21 +65,25 @@ await beeInstance.start(templateJson, userInfo, templateInfo, options);
 ```
 
 #### beeInstance.load(template)
-- **Description:** Loads a JSON template into the editor
-- **Parameters:**
-  - `template`: JSON string with template structure
-- **Returns:** Promise that resolves when template is loaded
-- **Usage:**
+
+* **Description:** Loads a JSON template into the editor
+* **Parameters:**
+  * `template`: JSON string with template structure
+* **Returns:** Promise that resolves when template is loaded
+* **Usage:**
+
 ```javascript
 await beeInstance.load(templateJson);
 ```
 
 #### beeInstance.reload(template)
-- **Description:** Reloads a template without showing loading dialog (seamless reload)
-- **Parameters:**
-  - `template`: JSON string with template structure
-- **Use Cases:** Custom undo/redo, real-time content injection
-- **Usage:**
+
+* **Description:** Reloads a template without showing loading dialog (seamless reload)
+* **Parameters:**
+  * `template`: JSON string with template structure
+* **Use Cases:** Custom undo/redo, real-time content injection
+* **Usage:**
+
 ```javascript
 await beeInstance.reload(templateJson);
 ```
@@ -85,57 +91,61 @@ await beeInstance.reload(templateJson);
 ### Control Methods
 
 #### beeInstance.save()
-- **Description:** Programmatically triggers the save action
-- **Triggers:** `onSave` callback with JSON and HTML files
-- **Usage:**
+
+* **Description:** Programmatically triggers the save action
+* **Triggers:** `onSave` callback with JSON and HTML files
+* **Usage:**
+
 ```javascript
 beeInstance.save();
 ```
 
 #### beeInstance.saveAsTemplate()
-- **Description:** Programmatically triggers save as template action
-- **Triggers:** `onSaveAsTemplate` callback with JSON file
-- **Usage:**
+
+* **Description:** Programmatically triggers save as template action
+* **Triggers:** `onSaveAsTemplate` callback with JSON file
+* **Usage:**
+
 ```javascript
 beeInstance.saveAsTemplate();
 ```
 
 #### beeInstance.send()
-- **Description:** Programmatically triggers send action (Email Builder only)
-- **Triggers:** `onSend` callback with HTML file
-- **Usage:**
+
+* **Description:** Programmatically triggers send action (Email Builder only)
+* **Triggers:** `onSend` callback with HTML file
+* **Usage:**
+
 ```javascript
 beeInstance.send();
 ```
 
 ### Preview and View Methods
 
-#### beeInstance.preview()
-- **Description:** Opens the preview mode
-- **Triggers:** `onPreview` callback
-- **Usage:**
-```javascript
-beeInstance.preview();
-```
-
 #### beeInstance.togglePreview()
-- **Description:** Toggles preview mode on/off
-- **Triggers:** `onTogglePreview` callback
-- **Usage:**
+
+* **Description:** Toggles preview mode on/off
+* **Triggers:** `onTogglePreview` callback
+* **Usage:**
+
 ```javascript
 beeInstance.togglePreview();
 ```
 
 #### beeInstance.toggleStructure()
-- **Description:** Toggles visibility of structure outlines in the editor
-- **Usage:**
+
+* **Description:** Toggles visibility of structure outlines in the editor
+* **Usage:**
+
 ```javascript
 beeInstance.toggleStructure();
 ```
 
 #### beeInstance.toggleMergeTagsPreview()
-- **Description:** Toggles visibility of merge tag sample content
-- **Usage:**
+
+* **Description:** Toggles visibility of merge tag sample content
+* **Usage:**
+
 ```javascript
 beeInstance.toggleMergeTagsPreview();
 ```
@@ -143,11 +153,13 @@ beeInstance.toggleMergeTagsPreview();
 ### Advanced Methods
 
 #### beeInstance.execCommand(command)
-- **Description:** Executes specific editor commands for highlighting, scrolling, focusing, or selecting elements
-- **Parameters:**
-  - `command`: Object defining the action and target
-- **Actions:** `highlight`, `scroll`, `focus`, `select`
-- **Usage:**
+
+* **Description:** Executes specific editor commands for highlighting, scrolling, focusing, or selecting elements
+* **Parameters:**
+  * `command`: Object defining the action and target
+* **Actions:** `highlight`, `scroll`, `focus`, `select`
+* **Usage:**
+
 ```javascript
 beeInstance.execCommand({
     action: 'highlight',
@@ -161,20 +173,24 @@ beeInstance.execCommand({
 ```
 
 #### beeInstance.loadWorkspace(type)
-- **Description:** Loads a specific workspace type
-- **Parameters:**
-  - `type`: Workspace type ('default', 'mixed', 'amp_only', 'html_only')
-- **Triggers:** `onLoadWorkspace` callback
-- **Usage:**
+
+* **Description:** Loads a specific workspace type
+* **Parameters:**
+  * `type`: Workspace type ('default', 'mixed', 'amp\_only', 'html\_only')
+* **Triggers:** `onLoadWorkspace` callback
+* **Usage:**
+
 ```javascript
 beeInstance.loadWorkspace('mixed');
 ```
 
 #### beeInstance.loadConfig(config)
-- **Description:** Updates editor configuration dynamically
-- **Parameters:**
-  - `config`: Configuration object with updated settings
-- **Usage:**
+
+* **Description:** Updates editor configuration dynamically
+* **Parameters:**
+  * `config`: Configuration object with updated settings
+* **Usage:**
+
 ```javascript
 beeInstance.loadConfig({
     debug: { all: true },
@@ -197,14 +213,16 @@ Callback functions are configured in your `beeConfig` and are triggered by user 
 ### Save and Template Callbacks
 
 #### onSave
-- **Trigger:** User clicks save button or `beeInstance.save()` is called
-- **Parameters:** `(jsonFile, htmlFile, ampHtml, templateVersion, language)`
-  - `jsonFile`: Template structure as JSON string
-  - `htmlFile`: Rendered HTML output
-  - `ampHtml`: AMP HTML version (if applicable)
-  - `templateVersion`: Template version number
-  - `language`: Template language code
-- **Usage:**
+
+* **Trigger:** User clicks save button or `beeInstance.save()` is called
+* **Parameters:** `(jsonFile, htmlFile, ampHtml, templateVersion, language)`
+  * `jsonFile`: Template structure as JSON string
+  * `htmlFile`: Rendered HTML output
+  * `ampHtml`: AMP HTML version (if applicable)
+  * `templateVersion`: Template version number
+  * `language`: Template language code
+* **Usage:**
+
 ```javascript
 onSave: function(jsonFile, htmlFile, ampHtml, templateVersion, language) {
     console.log('Template saved:', {
@@ -225,10 +243,12 @@ onSave: function(jsonFile, htmlFile, ampHtml, templateVersion, language) {
 ```
 
 #### onSaveAsTemplate
-- **Trigger:** User clicks "Save as Template" or `beeInstance.saveAsTemplate()` is called
-- **Parameters:** `(jsonFile)`
-  - `jsonFile`: Template structure as JSON string
-- **Usage:**
+
+* **Trigger:** User clicks "Save as Template" or `beeInstance.saveAsTemplate()` is called
+* **Parameters:** `(jsonFile)`
+  * `jsonFile`: Template structure as JSON string
+* **Usage:**
+
 ```javascript
 onSaveAsTemplate: function(jsonFile) {
     console.log('Saving as template:', jsonFile);
@@ -239,10 +259,12 @@ onSaveAsTemplate: function(jsonFile) {
 ```
 
 #### onAutoSave
-- **Trigger:** Automatic save based on `autosave` configuration
-- **Parameters:** `(jsonFile)`
-  - `jsonFile`: Template structure as JSON string
-- **Usage:**
+
+* **Trigger:** Automatic save based on `autosave` configuration
+* **Parameters:** `(jsonFile)`
+  * `jsonFile`: Template structure as JSON string
+* **Usage:**
+
 ```javascript
 onAutoSave: function(jsonFile) {
     console.log('Auto-saving template');
@@ -253,10 +275,12 @@ onAutoSave: function(jsonFile) {
 ```
 
 #### onSend
-- **Trigger:** User clicks send button or `beeInstance.send()` is called (Email Builder only)
-- **Parameters:** `(htmlFile)`
-  - `htmlFile`: Rendered HTML ready for sending
-- **Usage:**
+
+* **Trigger:** User clicks send button or `beeInstance.send()` is called (Email Builder only)
+* **Parameters:** `(htmlFile)`
+  * `htmlFile`: Rendered HTML ready for sending
+* **Usage:**
+
 ```javascript
 onSend: function(htmlFile) {
     console.log('Sending email');
@@ -273,11 +297,13 @@ onSend: function(htmlFile) {
 ### Content Change Callbacks
 
 #### onChange
-- **Trigger:** Template content is modified (requires `trackChanges: true`)
-- **Parameters:** `(jsonFile, response)`
-  - `jsonFile`: Updated template JSON
-  - `response`: Change details object with patches and metadata
-- **Usage:**
+
+* **Trigger:** Template content is modified (requires `trackChanges: true`)
+* **Parameters:** `(jsonFile, response)`
+  * `jsonFile`: Updated template JSON
+  * `response`: Change details object with patches and metadata
+* **Usage:**
+
 ```javascript
 onChange: function(jsonFile, response) {
     console.log('Content changed:', response);
@@ -295,11 +321,13 @@ onChange: function(jsonFile, response) {
 ```
 
 #### onRemoteChange
-- **Trigger:** Changes made by other users in collaborative editing sessions
-- **Parameters:** `(jsonFile, response)`
-  - `jsonFile`: Updated template JSON from remote user
-  - `response`: Change details from remote user
-- **Usage:**
+
+* **Trigger:** Changes made by other users in collaborative editing sessions
+* **Parameters:** `(jsonFile, response)`
+  * `jsonFile`: Updated template JSON from remote user
+  * `response`: Change details from remote user
+* **Usage:**
+
 ```javascript
 onRemoteChange: function(jsonFile, response) {
     console.log('Remote user made changes:', response);
@@ -315,10 +343,12 @@ onRemoteChange: function(jsonFile, response) {
 ### Loading and Workspace Callbacks
 
 #### onLoad
-- **Trigger:** Template is loaded into the editor
-- **Parameters:** `(jsonFile)`
-  - `jsonFile`: Loaded template JSON
-- **Usage:**
+
+* **Trigger:** Template is loaded into the editor
+* **Parameters:** `(jsonFile)`
+  * `jsonFile`: Loaded template JSON
+* **Usage:**
+
 ```javascript
 onLoad: function(jsonFile) {
     console.log('Template loaded successfully');
@@ -332,10 +362,12 @@ onLoad: function(jsonFile) {
 ```
 
 #### onLoadWorkspace
-- **Trigger:** Workspace is successfully loaded
-- **Parameters:** `(workspace)`
-  - `workspace`: Workspace configuration object
-- **Usage:**
+
+* **Trigger:** Workspace is successfully loaded
+* **Parameters:** `(workspace)`
+  * `workspace`: Workspace configuration object
+* **Usage:**
+
 ```javascript
 onLoadWorkspace: function(workspace) {
     console.log('Workspace loaded:', workspace.type);
@@ -348,10 +380,12 @@ onLoadWorkspace: function(workspace) {
 ### Error and Warning Callbacks
 
 #### onError
-- **Trigger:** Errors occur in the editor
-- **Parameters:** `(errorMessage)`
-  - `errorMessage`: Error description string
-- **Usage:**
+
+* **Trigger:** Errors occur in the editor
+* **Parameters:** `(errorMessage)`
+  * `errorMessage`: Error description string
+* **Usage:**
+
 ```javascript
 onError: function(errorMessage) {
     console.error('Beefree SDK Error:', errorMessage);
@@ -369,10 +403,12 @@ onError: function(errorMessage) {
 ```
 
 #### onWarning
-- **Trigger:** Warnings are generated by the editor
-- **Parameters:** `(alertMessage)`
-  - `alertMessage`: Warning description string
-- **Usage:**
+
+* **Trigger:** Warnings are generated by the editor
+* **Parameters:** `(alertMessage)`
+  * `alertMessage`: Warning description string
+* **Usage:**
+
 ```javascript
 onWarning: function(alertMessage) {
     console.warn('Beefree SDK Warning:', alertMessage);
@@ -387,10 +423,12 @@ onWarning: function(alertMessage) {
 ### Preview and View Callbacks
 
 #### onPreview
-- **Trigger:** Preview button is clicked
-- **Parameters:** `(status)`
-  - `status`: Boolean indicating preview state
-- **Usage:**
+
+* **Trigger:** Preview button is clicked
+* **Parameters:** `(status)`
+  * `status`: Boolean indicating preview state
+* **Usage:**
+
 ```javascript
 onPreview: function(status) {
     console.log('Preview mode:', status ? 'opened' : 'closed');
@@ -401,10 +439,12 @@ onPreview: function(status) {
 ```
 
 #### onTogglePreview
-- **Trigger:** Preview is toggled on/off
-- **Parameters:** `(status)`
-  - `status`: Boolean indicating preview state
-- **Usage:**
+
+* **Trigger:** Preview is toggled on/off
+* **Parameters:** `(status)`
+  * `status`: Boolean indicating preview state
+* **Usage:**
+
 ```javascript
 onTogglePreview: function(status) {
     console.log('Preview toggled:', status);
@@ -415,15 +455,17 @@ onTogglePreview: function(status) {
 ```
 
 #### onViewChange
-- **Trigger:** User navigates between different SDK views
-- **Parameters:** `(view)`
-  - `view`: String indicating current view
-- **Possible Values:**
-  - `'editor'`: Main editor view
-  - `'preview'`: Preview mode
-  - `'fileManager'`: File Manager opened
-  - `'imageEditor'`: Image Editor opened
-- **Usage:**
+
+* **Trigger:** User navigates between different SDK views
+* **Parameters:** `(view)`
+  * `view`: String indicating current view
+* **Possible Values:**
+  * `'editor'`: Main editor view
+  * `'preview'`: Preview mode
+  * `'fileManager'`: File Manager opened
+  * `'imageEditor'`: Image Editor opened
+* **Usage:**
+
 ```javascript
 onViewChange: function(view) {
     console.log('View changed to:', view);
@@ -449,10 +491,12 @@ onViewChange: function(view) {
 ### File Management Callbacks
 
 #### onFilePickerInsert
-- **Trigger:** Insert button clicked in File Manager applications
-- **Parameters:** `(data)`
-  - `data`: Object containing file information
-- **Usage:**
+
+* **Trigger:** Insert button clicked in File Manager applications
+* **Parameters:** `(data)`
+  * `data`: Object containing file information
+* **Usage:**
+
 ```javascript
 onFilePickerInsert: function(data) {
     console.log('File selected:', data);
@@ -466,9 +510,11 @@ onFilePickerInsert: function(data) {
 ```
 
 #### onFilePickerCancel
-- **Trigger:** Cancel/X button clicked in File Manager applications
-- **Parameters:** None
-- **Usage:**
+
+* **Trigger:** Cancel/X button clicked in File Manager applications
+* **Parameters:** None
+* **Usage:**
+
 ```javascript
 onFilePickerCancel: function() {
     console.log('File picker cancelled');
@@ -481,10 +527,12 @@ onFilePickerCancel: function() {
 ### Collaboration Callbacks
 
 #### onComment
-- **Trigger:** Comments or comment threads change
-- **Parameters:** `(commentData)`
-  - `commentData`: Comment information object
-- **Usage:**
+
+* **Trigger:** Comments or comment threads change
+* **Parameters:** `(commentData)`
+  * `commentData`: Comment information object
+* **Usage:**
+
 ```javascript
 onComment: function(commentData) {
     console.log('Comment activity:', commentData);
@@ -500,6 +548,7 @@ onComment: function(commentData) {
 ## Event Configuration Examples
 
 ### Basic Event Handling
+
 ```javascript
 var beeConfig = {
     container: 'beefree-sdk-container',
@@ -520,6 +569,7 @@ var beeConfig = {
 ```
 
 ### Advanced Event Handling
+
 ```javascript
 var beeConfig = {
     container: 'beefree-sdk-container',
@@ -564,6 +614,7 @@ var beeConfig = {
 ```
 
 ### File Manager Configuration
+
 ```javascript
 var beeConfig = {
     container: 'file-manager-container',
@@ -615,29 +666,34 @@ async function saveAndSend(shouldSend = false) {
 ## Best Practices
 
 ### Error Handling
-- Always implement `onError` callback for production applications
-- Provide user-friendly error messages
-- Log errors for debugging and monitoring
+
+* Always implement `onError` callback for production applications
+* Provide user-friendly error messages
+* Log errors for debugging and monitoring
 
 ### Performance
-- Use `onChange` judiciously with `trackChanges: true`
-- Implement debouncing for frequent operations
-- Consider using `onAutoSave` for background saves
+
+* Use `onChange` judiciously with `trackChanges: true`
+* Implement debouncing for frequent operations
+* Consider using `onAutoSave` for background saves
 
 ### User Experience
-- Provide feedback for all user actions
-- Use `onViewChange` to guide users through different modes
-- Implement proper loading states
+
+* Provide feedback for all user actions
+* Use `onViewChange` to guide users through different modes
+* Implement proper loading states
 
 ### Collaboration
-- Use `onRemoteChange` to show real-time collaboration
-- Implement conflict resolution for simultaneous edits
-- Provide clear indicators of other users' activities
+
+* Use `onRemoteChange` to show real-time collaboration
+* Implement conflict resolution for simultaneous edits
+* Provide clear indicators of other users' activities
 
 ### Development
-- Reference TypeScript definitions for complete type safety
-- Test all callback implementations thoroughly
-- Use method chaining for complex workflows
+
+* Reference TypeScript definitions for complete type safety
+* Test all callback implementations thoroughly
+* Use method chaining for complex workflows
 
 ## TypeScript Support
 
@@ -658,6 +714,6 @@ const beeConfig: BeeConfig = {
 
 This comprehensive guide covers all available methods, callbacks, and events in Beefree SDK. Use it as your reference for implementing complete editor control and event handling in your applications.
 
----
+***
 
 **TypeScript Definitions**: [Beefree SDK Types](https://github.com/BeefreeSDK/beefree-sdk-npm-official/tree/master/src/types)
