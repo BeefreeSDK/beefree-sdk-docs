@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-* [Introduction to Beefree SDK](README.md)
+* [Introduction to Beefree SD](README.md)
   * [Create an Application](getting-started/readme/create-an-application.md)
   * [Installation and Fundamentals](getting-started/readme/installation/README.md)
     * [Configuration parameters](getting-started/readme/installation/configuration-parameters/README.md)
@@ -107,6 +107,7 @@
   * [Services Options](server-side-configurations/server-side-options/services-options/README.md)
     * [Image Title Attribute](server-side-configurations/server-side-options/services-options/image-title-attribute.md)
     * [Add a Favicon to Emails](server-side-configurations/server-side-options/services-options/add-a-favicon-to-emails.md)
+  * [Privacy and Security](server-side-configurations/server-side-options/privacy-and-security.md)
   * [Undo & Changes history](server-side-configurations/server-side-options/undo-and-changes-history.md)
   * [Custom JavaScript Libraries Injection](server-side-configurations/server-side-options/custom-javascript-libraries-injection.md)
 * [Custom Head HTML](server-side-configurations/custom-head-html.md)

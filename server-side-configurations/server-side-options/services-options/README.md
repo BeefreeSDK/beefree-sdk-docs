@@ -16,7 +16,7 @@ Service Options are available for applications within the [Beefree SDK Developer
 4. Click **Configure Application** under **Application Configurations**
 5. Scroll down to the **Services** section
 6. Check the checkboxes corresponding with the features you'd like to enable
-7. Click **Save** **changes** in the upper right-hand corner&#x20;
+7. Click **Save** **changes** in the upper right-hand corner
 
 Your Service Options settings have been enabled and will be reflected in the UI of your application.
 
@@ -26,7 +26,7 @@ The following image shows what the Services section looks like within the [Devel
 
 ## Service Options
 
-This section lists and describes each of the options available in the **Services** section of the **Application Configurations**.&#x20;
+This section lists and describes each of the options available in the **Services** section of the **Application Configurations**.
 
 ### Media & File
 
@@ -63,6 +63,12 @@ Lets you set default inner [padding for the main content area](../../../other-cu
 
 **Image rounded corners**\
 Adds a property to round image corners directly in the image block.
+
+**Image Title Attribute**
+
+The Image Title Attribute allows end users to add a [custom title attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#the_title_attribute) to images in their [email](../../../visual-builders/email-builder.md), [page](../../../visual-builders/page-builder/), or [popup](../../../visual-builders/popup-builder/) designs.
+
+Adding a title attribute is an important step toward improving accessibility and user experience. When present, the title attribute provides additional context when a user hovers over an image. Also, screen readers can use it to deliver a verbal description, helping visually impaired users better understand the image in context. Visit the [Image Title Attribute page](image-title-attribute.md) to learn more.
 
 **Button hover**\
 Enables [hover state](../../../other-customizations/hover-effect-for-buttons.md) controls on buttons (e.g., background, border, and text changes on hover) for clearer interactivity.
@@ -127,42 +133,3 @@ When enabled, adds a new property in the “Content properties” section of any
 Enables a focused mobile editing canvas and tools tailored for small screens, making it easier to fine-tune spacing, text size, and layout for mobile.
 
 [Learn more about Mobile design mode](../../../other-customizations/mobile-design-mode.md)
-
-### Additional Configuration & Restrictions
-
-**Reverse stacking on mobile**\
-When enabled, adds a new row option to revert the stacking order of columns on mobile. Useful for layouts with alternating visual and text: applying it will ensure that, on mobile, images are consistently on top of their accompanying copy.
-
-[Learn more about Reverse stacking on mobile](../../../other-customizations/mobile-design-mode.md)
-
-**Disable anonymous usage tracking**\
-We use third-party tools to aggregate anonymous usage data. It helps us develop a better product by assessing locations, devices, browsers, etc. This can be turned off if necessary.
-
-**Disable the HTML sanitize service in the HTML content block**
-
-* When you disable the HTML sanitization service, you’re removing all restrictions on what users of the builder can add inside the Custom HTML content block.
-* The sanitize service checks and cleans up custom HTML, which can prevent the introduction of unsafe content or tags that might impact deliverability. However, disabling it can be useful if the host application needs custom HTML tags or attributes.
-* If disabled, you should implement an alternative code review process, such as using the `onChange` or `onSave` [events](../../../getting-started/readme/installation/methods-and-events.md) to review content.
-* The [client-side configuration](../../../getting-started/readme/installation/configuration-parameters/) allows enabling (`forceSanitizeHTML: true`) per user, but cannot disable sanitization for security reasons.
-
-Learn more about [Custom HTML](https://docs.beefree.io/end-user-guide/content-blocks/custom-html#html-tag-restrictions-in-emails) and [Custom Head HTML](https://docs.beefree.io/end-user-guide/design-tools/add-custom-head-html).
-
-**Activate custom limitations on File Manager**\
-In this section, you can activate restrictions for the [file manager](broken-reference):
-
-* Specify which file formats your users can upload.
-* Set a maximum allowed size (default: 20MB).
-
-Instead of file extensions, categories such as image, video, or text are shown, mapped to [MIME types.](../../../file-manager/file-manager-application-overview/file-extensions-and-groups.md)
-
-**Image Title Attribute**
-
-The Image Title Attribute allows end users to add a [custom title attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#the_title_attribute) to images in their [email](../../../visual-builders/email-builder.md), [page](../../../visual-builders/page-builder/), or [popup](../../../visual-builders/popup-builder/) designs.
-
-Adding a title attribute is an important step toward improving accessibility and user experience. When present, the title attribute provides additional context when a user hovers over an image. Also, screen readers can use it to deliver a verbal description, helping visually impaired users better understand the image in context. Visit the [Image Title Attribute page](image-title-attribute.md) to learn more.
-
-**Add a Favicon to Emails**
-
-You can add favicons to email designs in the email builder. Adding a favicon directly to an email's HTML is beneficial when the email is viewed in a browser, and the end user would like a favicon to display in the browser tab.
-
-When activated in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu), a new **Configure favicon** option becomes available in the **Settings tab** of the builder, where end users can select or edit their favicon. Visit the [Add a Favicon to Emails page](add-a-favicon-to-emails.md) to learn more.

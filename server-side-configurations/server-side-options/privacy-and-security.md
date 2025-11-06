@@ -1,0 +1,80 @@
+---
+description: >-
+  Learn more about configuring the privacy and security settings of your Beefree
+  SDK implementation.
+---
+
+# Privacy and Security
+
+{% hint style="info" %}
+Every Beefree SDK plan includes privacy and security customization options, with additional advanced features available on paid plans.
+{% endhint %}
+
+## Overview
+
+In the [Beefree SDK Developer Console](https://developers.beefree.io/), you'll find categories of **Application Configurations** you can customize to personalize your application. This page discusses the customization options available under the **Privacy and Security** section.&#x20;
+
+This category of Application Configurations enable you to customize the following:
+
+* Anonymous error logging
+* Custom limitation for the [File Manager](broken-reference)
+* [HTML sanitizer](../custom-head-html.md#the-sanitizer-and-adding-custom-html) for the HTML content block and [Custom Head HTML](../custom-head-html.md)
+
+The following image shows how these options appear within the Developer Console.&#x20;
+
+<figure><img src="../../.gitbook/assets/CleanShot 2025-11-04 at 10.23.08.png" alt=""><figcaption></figcaption></figure>
+
+### Customizing Privacy and Security
+
+This section defines what each customization option under **Privacy and Security** is. It also explains how to edit an existing configuration.
+
+#### Edit an Existing Configuration
+
+Take the following steps to edit an existing configuration:
+
+1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/).
+2. Navigate to the application you'd like to edit a configuration for.
+3. Click on **Details**.
+4. Navigate to **Application Configuration** and click **Configure Application**.
+5. Scroll down to the **Privacy and Security** section.
+6. Select or deselect the configuration using the checkbox.
+7. Click the purple **Save changes** button to apply the updated configuration to your application.
+
+The following image shows an example of selecting the **Disable anonymous error logging** option with the Developer Console.
+
+<figure><img src="../../.gitbook/assets/CleanShot 2025-11-04 at 11.39.17.png" alt=""><figcaption></figcaption></figure>
+
+#### Anonymous Error Logging
+
+We use third-party tools to aggregate anonymous usage data. It helps us develop a better product by assessing locations, devices, browsers, etc. This can be turned off if necessary.
+
+#### HTML Sanitizer Service
+
+* When you disable the HTML sanitization service, you’re removing all restrictions on what users of the builder can add inside the Custom HTML content block.
+* The sanitize service checks and cleans up custom HTML, which can prevent the introduction of unsafe content or tags that might impact deliverability. However, disabling it can be useful if the host application needs custom HTML tags or attributes.
+* If disabled, you should implement an alternative code review process, such as using the `onChange` or `onSave` [events](../../getting-started/readme/installation/methods-and-events.md) to review content.
+* The [client-side configuration](../../getting-started/readme/installation/configuration-parameters/) allows enabling (`forceSanitizeHTML: true`) per user, but cannot disable sanitization for security reasons.
+
+Learn more about [Custom HTML](https://docs.beefree.io/end-user-guide/content-blocks/custom-html#html-tag-restrictions-in-emails) and [Custom Head HTML](https://docs.beefree.io/end-user-guide/design-tools/add-custom-head-html).
+
+#### Custom Limitations on the File Manager
+
+In this section, you can activate restrictions for the [file manager](services-options/broken-reference/):
+
+* Specify which file formats your users can upload.
+* Set a maximum allowed size (default: 20MB).
+
+Instead of file extensions, categories such as image, video, or text are shown, mapped to [MIME types](../../file-manager/file-manager-application-overview/file-extensions-and-groups.md).
+
+The following image shows how you can set custom limitations to the File Manager.
+
+<figure><img src="../../.gitbook/assets/CleanShot 2025-11-04 at 11.47.31.png" alt=""><figcaption></figcaption></figure>
+
+#### File Type Limitations
+
+The following table lists which files are available for each Beefree SDK plan type.
+
+| Plan type | Default files     | All available file options                                               |
+| --------- | ----------------- | ------------------------------------------------------------------------ |
+| Free plan | image, video, PDF | Not applicable                                                           |
+| Paid plan | image, video, PDF | image, text, video, audio, office, xml, zip, epub, pdf, postscript, font |
