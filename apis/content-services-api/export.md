@@ -39,8 +39,8 @@ The following table provides a comprehensive reference of all available options 
 | ------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | `/html`       | <ul><li><code>/message</code></li><li><code>/page</code></li><li><code>/popup</code></li><li><code>/amp</code></li></ul> |
 | `/plain-text` | <ul><li><code>/message</code></li></ul>                                                                                  |
-| `/pdf`        | <ul><li><code>/message</code></li></ul><ul><li><code>/page</code></li></ul>                                              |
-| `/image`      | <ul><li><code>/message</code></li></ul><ul><li><code>/page</code></li></ul>                                              |
+| `/pdf`        | <ul><li><code>/message</code></li><li><code>/page</code></li></ul>                                                       |
+| `/image`      | <ul><li><code>/message</code></li><li><code>/page</code></li></ul>                                                       |
 
 ## HTML <a href="#html" id="html"></a>
 
@@ -49,7 +49,7 @@ The following table provides a comprehensive reference of all available options 
 This endpoint allows you to retrieve the full or partial HTML output of a template (email, page, or popup).
 
 {% hint style="info" %}
-**Important:** `collection` is a placeholder within the URL. This placeholder can be replaces with any of the `collection` options available for the HTML resource. Reference the [Export Resource and Collection Options table](./#export) for a list of available option.
+**Important:** `collection` is a placeholder within the URL. This placeholder can be replaced with any of the `collection` options available for the HTML resource. Reference the [Export Resource and Collection Options table](./#export) for a list of available option.
 {% endhint %}
 
 #### How It Works
@@ -214,5 +214,5 @@ You may override the clipping size if your layout requires a custom viewport. If
 | file\_type\* | String  | Accepts jpg or png.                                                                                                                                                                                                                                                                                                                |
 
 {% openapi-operation spec="image-endpoint" path="/v1/{collection}/image" method="post" %}
-[OpenAPI image-endpoint](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/9ef1477fd159d69dd4d46a9bcb0a071ad5b3a925ff92efcaebcdfc0c8a935c47.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251006%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251006T151119Z&X-Amz-Expires=172800&X-Amz-Signature=6273aee7d567b63ae41d25b781220416528ba4d9895ce257feefca32a86974d2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI image-endpoint](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/9ef1477fd159d69dd4d46a9bcb0a071ad5b3a925ff92efcaebcdfc0c8a935c47.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251107T182847Z&X-Amz-Expires=172800&X-Amz-Signature=e7c0513f07e89a938f759233e3d2932a83fda8b242a431d7dcd48fef4997ec03&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}

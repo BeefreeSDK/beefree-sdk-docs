@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-* [Introduction to Beefree SD](README.md)
+* [Introduction to Beefree](README.md)
   * [Create an Application](getting-started/readme/create-an-application.md)
   * [Installation and Fundamentals](getting-started/readme/installation/README.md)
     * [Configuration parameters](getting-started/readme/installation/configuration-parameters/README.md)
