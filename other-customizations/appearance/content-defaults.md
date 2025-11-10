@@ -91,7 +91,7 @@ beeConfig: {
 ```
 
 {% hint style="info" %}
-**Note:** The **Title block** is the only block that is configured on the root level of the `beeConfig` object. Ensure it is on the correct level prior to configuring.&#x20;
+**Note:** The **Title block** is the only block that is configured on the root level of the `beeConfig` object. Ensure it is on the correct level prior to configuring.
 {% endhint %}
 
 ## Available content settings <a href="#available-content-settings" id="available-content-settings"></a>
@@ -104,7 +104,7 @@ All the contents use the same pattern, but the object must match the content sch
 
 The `title` content default inside the `beeConfig` sets default properties and styling for title elements in the editor. It includes heading levels, alignment, padding, and mobile-specific styles to ensure consistency and responsiveness across different devices.
 
-You can use the `titleMaxLevel` parameter to extend the available header options within the builder. The default value includes H1, H2, and H3 options. You can configure `titleMaxLevel` to go up to H6. If you configure additional header options, you can use Content Defaults to set default styling for the additional headers. The [Content Defaults for Additional Title Levels](content-defaults.md#content-defaults-for-additional-title-levels) provides more details on how to achieve this.   &#x20;
+You can use the `titleMaxLevel` parameter to extend the available header options within the builder. The default value includes H1, H2, and H3 options. You can configure `titleMaxLevel` to go up to H6. If you configure additional header options, you can use Content Defaults to set default styling for the additional headers. The [Content Defaults for Additional Title Levels](content-defaults.md#content-defaults-for-additional-title-levels) provides more details on how to achieve this.
 
 ```javascript
 titleDefaultConfig: {
@@ -309,11 +309,31 @@ row: {
 }
 ```
 
+#### **Mobile Styles**
+
+Content Defaults for Rows also include mobile styles. The following code snippet displays an example of how to apply Content Defaults&#x20;
+
+```
+contentDefaults: {
+  ...
+  row: {
+    ...
+    mobileStyles: {
+      padding: "10px", // all sides
+      paddingTop: "5px",
+      paddingRight: "5px",
+      paddingBottom: "5px",
+      paddingLeft: "5px"
+    }
+  }
+}
+```
+
 **Row Parameters**
 
 The following table lists the row content default parameters and their corresponding descriptions and data types.
 
-<table><thead><tr><th width="218">Parameter</th><th>Data Type</th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>backgroundColor</code></td><td>String</td><td>Red</td><td>Sets the background color of the row.</td></tr><tr><td><code>contentAreaBackgroundColor</code></td><td>String</td><td>Green</td><td>Sets the background color of the content area within the row.</td></tr><tr><td><code>verticalAlign</code></td><td>String</td><td>bottom</td><td>Specifies the vertical alignment of the row content.</td></tr><tr><td><code>columnsBorderRadius</code></td><td>String</td><td>10px</td><td>Defines the roundness of the column corners.</td></tr><tr><td><code>columnsSpacing</code></td><td>String</td><td>20px</td><td>Sets the spacing between columns.</td></tr><tr><td><p></p><p><code>columnsStackOnMobile</code></p><p></p></td><td>Boolean</td><td>false</td><td>Determines if columns should stack on mobile devices.</td></tr><tr><td><code>columnsReverseStackOnMobile</code></td><td>Boolean</td><td>true</td><td>Specifies if the order of stacked columns should be reversed on mobile devices.</td></tr><tr><td><code>columnsPadding</code></td><td>String</td><td>42px</td><td>Defines the padding inside each column (the value applies to all padding sides).</td></tr><tr><td><code>columnsBackgroundColor</code></td><td>String</td><td>Yellow</td><td>Sets the background color for each column.</td></tr><tr><td><code>columnsPaddingLeft</code></td><td>String</td><td>25px</td><td>Defines the left padding for each column.</td></tr><tr><td><code>columnsPaddingRight</code></td><td>String</td><td>20px</td><td>Defines the right padding for each column.</td></tr><tr><td><code>columnsPaddingTop</code></td><td>String</td><td>15px</td><td>Defines the top padding for each column.</td></tr><tr><td><code>columnsPaddingBottom</code></td><td>String</td><td>10px</td><td>Defines the bottom padding for each column.</td></tr><tr><td><code>padding</code></td><td>String</td><td>20px</td><td>Defines the padding for the entire row (the value applies to all padding sides).</td></tr><tr><td><code>paddingLeft</code></td><td>String</td><td>25px</td><td>Defines the left padding for the entire row.</td></tr><tr><td><code>paddingRight</code></td><td>String</td><td>20px</td><td>Defines the right padding for the entire row.</td></tr><tr><td><code>paddingTop</code></td><td>String</td><td>15px</td><td>Defines the top padding for the entire row.</td></tr><tr><td><code>paddingBottom</code></td><td>String</td><td>10px</td><td>Defines the bottom padding for the entire row.</td></tr></tbody></table>
+<table><thead><tr><th width="218">Parameter</th><th>Data Type</th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>backgroundColor</code></td><td>String</td><td>Red</td><td>Sets the background color of the row.</td></tr><tr><td><code>contentAreaBackgroundColor</code></td><td>String</td><td>Green</td><td>Sets the background color of the content area within the row.</td></tr><tr><td><code>verticalAlign</code></td><td>String</td><td>bottom</td><td>Specifies the vertical alignment of the row content.</td></tr><tr><td><code>columnsBorderRadius</code></td><td>String</td><td>10px</td><td>Defines the roundness of the column corners.</td></tr><tr><td><code>columnsSpacing</code></td><td>String</td><td>20px</td><td>Sets the spacing between columns.</td></tr><tr><td><code>columnsStackOnMobile</code></td><td>Boolean</td><td>false</td><td>Determines if columns should stack on mobile devices.</td></tr><tr><td><code>columnsReverseStackOnMobile</code></td><td>Boolean</td><td>true</td><td>Specifies if the order of stacked columns should be reversed on mobile devices.</td></tr><tr><td><code>columnsPadding</code></td><td>String</td><td>42px</td><td>Defines the padding inside each column (the value applies to all padding sides).</td></tr><tr><td><code>columnsBackgroundColor</code></td><td>String</td><td>Yellow</td><td>Sets the background color for each column.</td></tr><tr><td><code>columnsPaddingLeft</code></td><td>String</td><td>25px</td><td>Defines the left padding for each column.</td></tr><tr><td><code>columnsPaddingRight</code></td><td>String</td><td>20px</td><td>Defines the right padding for each column.</td></tr><tr><td><code>columnsPaddingTop</code></td><td>String</td><td>15px</td><td>Defines the top padding for each column.</td></tr><tr><td><code>columnsPaddingBottom</code></td><td>String</td><td>10px</td><td>Defines the bottom padding for each column.</td></tr><tr><td><code>padding</code></td><td>String</td><td>20px</td><td>Defines the padding for the entire row (the value applies to all padding sides).</td></tr><tr><td><code>paddingLeft</code></td><td>String</td><td>25px</td><td>Defines the left padding for the entire row.</td></tr><tr><td><code>paddingRight</code></td><td>String</td><td>20px</td><td>Defines the right padding for the entire row.</td></tr><tr><td><code>paddingTop</code></td><td>String</td><td>15px</td><td>Defines the top padding for the entire row.</td></tr><tr><td><code>paddingBottom</code></td><td>String</td><td>10px</td><td>Defines the bottom padding for the entire row.</td></tr></tbody></table>
 
 ### **Button**
 
