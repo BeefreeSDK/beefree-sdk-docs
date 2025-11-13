@@ -6,6 +6,88 @@ description: >-
 
 # Change Log
 
+## Release December 2025
+
+Reference the upcoming CSS changes to the Preview Widgets in the following expandable section.
+
+<details>
+
+<summary>Font Size Accessibility Improvements</summary>
+
+#### 1. Sidebar Tabs – Tab button
+
+**UI Area:** Sidebar Tabs\
+**Classnames Removed:**\
+`Tabs_*`\
+**New Classnames:**\
+`TabLabel_*`\
+**Description:**\
+The tab button now uses a more descriptive naming convention to improve clarity and consistency across the sidebar components. This change helps developers identify tab-related labels more easily and aligns naming conventions with the updated tab structure.
+
+#### 2. Sidebar Tabs – Tab panel
+
+**UI Area:** Sidebar Tabs\
+**Markup Variations:**\
+Removed a wrapper `div`\
+**Classnames Removed:**\
+`Tabs_*`\
+**Description:**\
+The wrapper `div` inside the tab panel has been removed to simplify the DOM structure. This change improves rendering performance and makes it easier to style and manage tab content areas through cleaner markup.
+
+#### 3. Sidebar Rows Tab – Columns Structure / Tabs
+
+**UI Area:** Sidebar Rows Tab\
+**Widget:** Columns Structure\
+**Sub-element:** Tabs\
+**Markup Variations:**\
+Removed a wrapper `div`\
+**Classnames Removed:**\
+`tab-content`, `Tabs_*`\
+**Description:**\
+The markup for tabbed column structures has been simplified by removing an unnecessary wrapper. Developers should adjust any custom styles that previously relied on `tab-content` or `Tabs_*` to target the updated tab elements directly.
+
+#### 4. Sidebar – Toggle
+
+**UI Area:** Sidebar\
+**Markup Variations:**\
+Added a `div` to wrap the label\
+**Description:**\
+A new `div` wrapper has been introduced around toggle labels to ensure consistent spacing and alignment across different sidebar widgets. This change provides a more predictable layout and improves accessibility for label associations.
+
+#### 5. Sidebar – Slider
+
+**UI Area:** Sidebar\
+**Markup Variations:**\
+Added a `div` to wrap the input\
+**Description:**\
+Slider inputs are now enclosed in an additional `div` wrapper. This allows more flexible styling and positioning of sliders within the sidebar, supporting better alignment with other interactive controls.
+
+#### 6. Sidebar – Select
+
+**UI Area:** Sidebar\
+**Markup Variations:**\
+Added a `span` to wrap the label\
+**Description:**\
+A `span` element now wraps the select label to enable more precise styling control. This update enhances text alignment and improves compatibility with multi-theme layouts.
+
+#### 7. Sidebar – Image width
+
+**UI Area:** Sidebar\
+**Markup Variations:**\
+Changed wrapper `div`s\
+**Description:**\
+The wrapper structure around image width controls has been updated for consistency and better responsiveness. This change helps maintain uniform spacing and layout behavior across different sidebar widgets.
+
+#### 8. Sidebar – Button width
+
+**UI Area:** Sidebar\
+**Markup Variations:**\
+Changed wrapper `div`s\
+**Description:**\
+The button width control now uses updated wrapper `div`s for improved DOM consistency. This ensures buttons align properly with other sidebar elements and reduces the need for custom spacing adjustments.
+
+</details>
+
 ## Release July 2025
 
 Reference the upcoming CSS changes to the Preview Widgets in the following expandable section.
@@ -240,9 +322,7 @@ Reference the upcoming CSS changes to the Stage Placeholders in the following ex
 #### 3. Stage Module - Dynamic Content Placeholder
 
 * **UI Area**: Stage Module
-
-- **Widget:** Dynamic Content
-
+* **Widget:** Dynamic Content
 * **Sub-widget:** Placeholder
 * **Markup Variations**: Removed a wrapper div
 
