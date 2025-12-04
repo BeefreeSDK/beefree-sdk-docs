@@ -10,13 +10,13 @@ Check endpoints are part of the [Content Services API](./). The Content Services
 
 ## Overview
 
-The Check group consists of three endpoints that scan a template's JSON or a row's JSON, to identify and report critical design elements that are missing. With these endpoints, you can bring design QA functionality into your application. They automatically check a design for common mistakes (including missing links, missing alt text, overly large images, or HTML file sizes that might cause your users' emails to get clipped in Gmail). This is possible through a `POST` request where you define the `language`, types of `checks` to perform, and the `template` or `row` JSON to check. The response will report any instances within the JSON where an item is missing, a limit is exceeded, and so on. It’ll also include the location (called `target` in the response body) of the item that needs attention within the JSON. For example, the `uuid` of an image module that is missing alt text. &#x20;
+The Check group consists of three endpoints that scan a template's JSON or a row's JSON, to identify and report critical design elements that are missing. With these endpoints, you can bring design QA functionality into your application. They automatically check a design for common mistakes (including missing links, missing alt text, overly large images, or HTML file sizes that might cause your users' emails to get clipped in Gmail). This is possible through a `POST` request where you define the `language`, types of `checks` to perform, and the `template` or `row` JSON to check. The response will report any instances within the JSON where an item is missing, a limit is exceeded, and so on. It’ll also include the location (called `target` in the response body) of the item that needs attention within the JSON. For example, the `uuid` of an image module that is missing alt text.
 
-When coupled with [Frontend Commands](../../other-customizations/frontend-commands.md), these endpoints act as a core pillar of an interactive feedback experience for your end users. Frontend Commands work by displaying visual cues within the user interface. These cues navigate end users to the part of the design and builder that requires their attention. From there, they can easily apply the changes, perform an additional check if they’d like, and export their designs.&#x20;
+When coupled with [Frontend Commands](../../other-customizations/frontend-commands.md), these endpoints act as a core pillar of an interactive feedback experience for your end users. Frontend Commands work by displaying visual cues within the user interface. These cues navigate end users to the part of the design and builder that requires their attention. From there, they can easily apply the changes, perform an additional check if they’d like, and export their designs.
 
 Overall, the Check endpoints identify critical design elements, while [Frontend Commands](../../other-customizations/frontend-commands.md) help your end users navigate to the elements that need fixing. Together, they create a tool kit that helps your end users create error-free designs, and support them in ensuring their content is complete and ready for their audiences to consume and enjoy.
 
-For a comprehensive list of all the available checks, reference the [Available Checks section](check.md#available-checks) of this page.&#x20;
+For a comprehensive list of all the available checks, reference the [Available Checks section](check.md#available-checks) of this page.
 
 ### Available Collection Values for Check Endpoints
 
@@ -40,7 +40,7 @@ The following table provides a comprehensive reference of all available options 
 
 <table data-full-width="true"><thead><tr><th>Resource</th><th>Collection Options</th></tr></thead><tbody><tr><td><code>/check</code></td><td><ul><li><code>/message</code></li><li><code>/page</code></li><li><code>/row</code></li></ul></td></tr></tbody></table>
 
-## How the Endpoints Work&#x20;
+## How the Endpoints Work
 
 The Check endpoints accept three parameters in the request body: `languages`, `checks`, and `template` or `row`. Reference the descriptions for each parameter below:
 
@@ -53,7 +53,7 @@ The Check endpoints accept three parameters in the request body: `languages`, `c
 
 * [Email designs](check.md#email)
 * [Page designs](check.md#page)
-* [Rows within designs](broken-reference)
+* [Rows within designs](broken-reference/)
 
 The [Check Endpoints section](check.md#check-endpoints) provides both an interactive testing environment for testing the checks and endpoints, and example request bodies you can use to get started with each of the three Check endpoints.
 {% endhint %}
@@ -70,7 +70,7 @@ Reference the available checks you can perform using the Check endpoints in this
 * **Page template JSON:** Use the `v1/page/check` endpoint to perform a check on page template JSON.
 * **Row JSON within a template:** Use the `v1/row/check` endpoint to perform a check on row JSON within a template.
 
-This section covers the available checks you can perform using these endpoints. Each check listed in this section will include which endpoints it applies to, how it looks in an example API request, and how it looks in an example response. It also explains each field and includes its corresponding data type and description.&#x20;
+This section covers the available checks you can perform using these endpoints. Each check listed in this section will include which endpoints it applies to, how it looks in an example API request, and how it looks in an example response. It also explains each field and includes its corresponding data type and description.
 
 Comprehensively, across all endpoints, the available checks are listed in the [Available Checks by Endpoint section](check.md#available-checks-by-endpoint).
 
@@ -86,7 +86,7 @@ The following checks apply to **email (`/message/check`)**, **page (`/page/check
 
 #### `/message/check` (Email)
 
-The following code snippet displays an example of how checks can be added to the body of the `POST` request. Test the endpoint in the [Email section](check.md#email). &#x20;
+The following code snippet displays an example of how checks can be added to the body of the `POST` request. Test the endpoint in the [Email section](check.md#email).
 
 {% code fullWidth="true" %}
 ```json
@@ -558,7 +558,7 @@ In the example detailed in this section, the weight limit is set to 80KB for ema
 
 Perform this check by adding `{"category":"overageHtmlWeight", "limit": 20, "beautified": true}` to your API call's request body.
 
-<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>limit</code></td><td>int</td><td>Other such limit the image weight is considered overage in KB.</td></tr><tr><td><code>beautified</code> </td><td><p>string</p><p>Optional, default true</p></td><td>The weight is considered on beautified html or minified HTML</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>limit</code></td><td>int</td><td>Other such limit the image weight is considered overage in KB.</td></tr><tr><td><code>beautified</code></td><td><p>string</p><p>Optional, default true</p></td><td>The weight is considered on beautified html or minified HTML</td></tr></tbody></table>
 
 #### Example response for a check that passed
 
@@ -606,7 +606,7 @@ The following table lists and defines all the fields related to the `overageHtml
 
 ### Missing Headings
 
-This check verifies the presence of headings within the template. Headings matter because they give every reader—especially people using screen readers—a clear, navigable map of a template's content and hierarchy. If no heading are found, a warning will be issued. &#x20;
+This check verifies the presence of headings within the template. Headings matter because they give every reader—especially people using screen readers—a clear, navigable map of a template's content and hierarchy. If no heading are found, a warning will be issued.
 
 <table data-full-width="true"><thead><tr><th>Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td>Type</td><td>Warning</td></tr><tr><td>Available for</td><td>email and page messages, email and page templates</td></tr><tr><td>Use data on widgets</td><td>heading</td></tr><tr><td>Use general features in JSON</td><td>--</td></tr></tbody></table>
 
@@ -840,7 +840,7 @@ The following table lists and defines all the fields related to the `missingMain
 
 <table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>check type, equal to <code>missingMainLanguage</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>the number of missing main language warnings</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>the status of this check: <code>passed</code> or <code>warning</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>the list of missing main language warnings</td></tr></tbody></table>
 
-### Insufficient color contrast  <a href="#insufficient-color-contrast-wip-not-released-yet" id="insufficient-color-contrast-wip-not-released-yet"></a>
+### Insufficient color contrast <a href="#insufficient-color-contrast-wip-not-released-yet" id="insufficient-color-contrast-wip-not-released-yet"></a>
 
 This check identifies color contrast issues in selected widgets within the template. If one or more issues are detected, a warning is issued.
 
@@ -849,7 +849,7 @@ According to **WCAG 2.0 Level AA**:
 * **Normal text** must have a contrast ratio of at least **4.5:1**.
 * **Large-scale text** (≥ 24px, or ≥ 19px bold) must have a contrast ratio of at least **3:1**.
 
-<table data-full-width="true"><thead><tr><th>Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td>Type</td><td>Warning</td></tr><tr><td>Available for</td><td>email and page messages, email and page templates, rows</td></tr><tr><td>Use data on widgets</td><td>button, heading</td></tr><tr><td>Use general features in JSON</td><td>--</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td>Type</td><td>Warning</td></tr><tr><td>Available for</td><td>email and page messages, email and page templates, rows</td></tr><tr><td>Use data on widgets</td><td>button, heading, paragraph, list, menu, table, icon</td></tr><tr><td>Use general features in JSON</td><td>--</td></tr></tbody></table>
 
 On requests in checks list: `{"category":"insufficientColorContrast"}`
 
@@ -882,74 +882,157 @@ On requests in checks list: `{"category":"insufficientColorContrast"}`
 {% code fullWidth="true" %}
 ```json
 [
-    {
-        "checks": [
-            {
-                "checkStatus": "warning",
-                "targets": [
-                    {
-                        "colors": [
-                            {
-                                "backgroundColor": "#5aff47",
-                                "color": "#ff0000",
-                                "contrastRatio": 3.01,
-                                "label": "hover",
-                            },
-                        ],
-                        "locked": False,
-                        "synced": False,
-                        "uuid": "7e1fd777-f64f-45a9-8a96-685694c77d60",
-                        "widgetLabel": "Button 1",
-                        "widgetType": "button",
-                    },
-                    {
-                        "colors": [
-                            {
-                                "backgroundColor": "#5aff47",
-                                "color": "#ff0000",
-                                "contrastRatio": 3.01,
-                                "label": "default",
-                            },
-                        ],
-                        "locked": False,
-                        "synced": False,
-                        "uuid": "fd4b8232-43b2-4f78-b322-4d3c21b68d21",
-                        "widgetLabel": "Button 2",
-                        "widgetType": "button",
-                    },
-                    {
-                        "colors": [
-                            {
-                                "backgroundColor": "#5aff47",
-                                "color": "#ff0000",
-                                "contrastRatio": 3.01,
-                                "label": "default",
-                            },
-                        ],
-                        "locked": False,
-                        "synced": False,
-                        "uuid": "4a3a0049-f236-44dd-b4b8-4896ffbc15d6",
-                        "widgetLabel": "Heading 1",
-                        "widgetType": "heading",
-                    },
-                ],
-                "targetsCount": 3,
-                "type": "insufficientColorContrast",
-            },
+  {
+    "type": "insufficientColorContrast",
+    "targetsCount": 7,
+    "checkStatus": "warning",
+    "targets": [
+      {
+        "uuid": "82ce63d9-59ee-4eff-b20a-0b5e91c24f1e",
+        "widgetType": "button",
+        "widgetLabel": "Button",
+        "locked": false,
+        "synced": false,
+        "colors": [
+          {
+            "color": "#dddddd",
+            "backgroundColor": "#ffffff",
+            "contrastRatio": 1.36,
+            "label": "default"
+          }
         ],
-        "checksFailedCount": 3,
-        "checksSuggestionCount": 0,
-        "checksWarningCount": 3,
-        "language": "default",
-        "status": "warning",
-    },
+        "hasLinks": false,
+        "tinyColorsList": []
+      },
+      {
+        "uuid": "4e13d534-cf01-4156-92f4-90e7e6b77501",
+        "widgetType": "heading",
+        "widgetLabel": "I'm a new title block",
+        "locked": false,
+        "synced": false,
+        "colors": [
+          {
+            "color": "#dddddd",
+            "backgroundColor": "#ffffff",
+            "contrastRatio": 1.36,
+            "label": "default"
+          }
+        ],
+        "hasLinks": false,
+        "tinyColorsList": [
+          {
+            "text": "new",
+            "backgroundColor": "#ffffff",
+            "color": "#ffffaa"
+          }
+        ]
+      },
+      {
+        "uuid": "aa51233c-ac08-453e-b5bc-44e6f06120a4",
+        "widgetType": "paragraph",
+        "widgetLabel": "I'm a new paragraph block.",
+        "locked": false,
+        "synced": false,
+        "colors": [
+          {
+            "color": "#dddddd",
+            "backgroundColor": "#ffffff",
+            "contrastRatio": 1.36,
+            "label": "default"
+          }
+        ],
+        "hasLinks": false,
+        "tinyColorsList": [
+          {
+            "text": "block",
+            "backgroundColor": "#ffffff",
+            "color": "#ffffaa"
+          }
+        ]
+      },
+      {
+        "uuid": "236e9e85-bce5-4a11-809b-ce47def14c7b",
+        "widgetType": "list",
+        "widgetLabel": "This is an unordered list",
+        "locked": false,
+        "synced": false,
+        "colors": [
+          {
+            "color": "#dddddd",
+            "backgroundColor": "#ffffff",
+            "contrastRatio": 1.36,
+            "label": "default"
+          }
+        ],
+        "hasLinks": false,
+        "tinyColorsList": [
+          {
+            "text": "unordered",
+            "backgroundColor": "#ffffff",
+            "color": "#ffffaa"
+          }
+        ]
+      },
+      {
+        "uuid": "d39e3e0f-d226-4c8e-a129-d72bc002c588",
+        "widgetType": "menu",
+        "widgetLabel": "menu entry 1",
+        "locked": false,
+        "synced": false,
+        "colors": [
+          {
+            "color": "#dddddd",
+            "backgroundColor": "#ffffff",
+            "contrastRatio": 1.36,
+            "label": "default"
+          }
+        ],
+        "hasLinks": false,
+        "tinyColorsList": []
+      },
+      {
+        "uuid": "0c49cc0d-66f1-4ce1-a426-dde366b27308",
+        "widgetType": "table-content",
+        "widgetLabel": "Add text",
+        "locked": false,
+        "synced": false,
+        "colors": [
+          {
+            "color": "#cccccc",
+            "backgroundColor": "#ffffff",
+            "contrastRatio": 1.61,
+            "label": "default"
+          }
+        ],
+        "hasLinks": false,
+        "tinyColorsList": []
+      },
+      {
+        "uuid": "0c49cc0d-66f1-4ce1-a426-dde366b27308",
+        "widgetType": "table-header",
+        "widgetLabel": "Add header text",
+        "locked": false,
+        "synced": false,
+        "colors": [
+          {
+            "color": "#eeeeee",
+            "backgroundColor": "#dddddd",
+            "contrastRatio": 1.17,
+            "label": "default"
+          }
+        ],
+        "hasLinks": false,
+        "tinyColorsList": []
+      }
+    ]
+  }
 ]
 ```
 {% endcode %}
 
 The following table lists and defines all the fields related to the `insufficientColorContrast` check.
 
-<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>check type, equal to <code>insufficientColorContrast</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>the number of widgets with warnings</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>the status of this check: <code>passed</code> or <code>warning</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>the list of widgets with warnings</td></tr><tr><td><code>locked</code></td><td>boolean</td><td>if the widget is in a locked row</td></tr><tr><td><code>synced</code></td><td>boolean</td><td>if the widget is in a synced row</td></tr><tr><td><code>uuid</code></td><td>string</td><td>uuid of the row containing this widget</td></tr><tr><td><code>widgetLabel</code></td><td>string</td><td>label of the widget</td></tr><tr><td><code>widgetType</code></td><td>string</td><td><code>button</code>, <code>heading</code></td></tr><tr><td><code>colors</code></td><td>array</td><td>list of color pairs with warnings. Each element contains the following fields: <code>backgroundColor, color, contrastRatio, label</code></td></tr><tr><td><code>backgroundColor</code></td><td>string</td><td>color in hexadecimal format</td></tr><tr><td><code>color</code></td><td>string</td><td>color in hexadecimal format</td></tr><tr><td><code>contrastRatio</code></td><td>float</td><td>contrast ratio between <code>color</code> and <code>backgroundColor</code></td></tr><tr><td><code>label</code></td><td>string</td><td>description of the color pairs</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>check type, equal to <code>insufficientColorContrast</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>the number of widgets with warnings</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>the status of this check: <code>passed</code> or <code>warning</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>the list of widgets with warnings</td></tr><tr><td><code>locked</code></td><td>boolean</td><td>if the widget is in a locked row</td></tr><tr><td><code>synced</code></td><td>boolean</td><td>if the widget is in a synced row</td></tr><tr><td><code>uuid</code></td><td>string</td><td>uuid of the row containing this widget</td></tr><tr><td><code>widgetLabel</code></td><td>string</td><td>label of the widget</td></tr><tr><td><code>widgetType</code></td><td>string</td><td><code>button</code>, <code>heading</code></td></tr><tr><td><code>hasLinks</code></td><td>boolean</td><td>If the widget contains any link</td></tr><tr><td><code>tinyColorList</code></td><td>array</td><td>list of colors applied with tiny mce with warnings. Each element contains the following fields: <code>color</code>, <code>backgroundColor</code>, <code>text</code></td></tr><tr><td><code>text</code></td><td>string</td><td>the text on which color with tiny mce is applied</td></tr><tr><td><code>colors</code></td><td>array</td><td>list of color pairs with warnings. Each element contains the following fields: <code>backgroundColor, color, contrastRatio, label</code></td></tr><tr><td><code>backgroundColor</code></td><td>string</td><td>color in hexadecimal format</td></tr><tr><td><code>color</code></td><td>string</td><td>color in hexadecimal format</td></tr><tr><td><code>contrastRatio</code></td><td>float</td><td>contrast ratio between <code>color</code> and <code>backgroundColor</code></td></tr><tr><td><code>label</code></td><td>string</td><td>description of the color pairs</td></tr></tbody></table>
 
 ### Highlight unreachable web link
 
@@ -1048,6 +1131,135 @@ On requests in checks list: `{"category":"unreachableWebLink"}`
 The following table lists and defines all the fields related to the `unreachableWebLink` check.
 
 <table data-full-width="true"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>check type, equal to <code>unreachableWebLink</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>the number of unreachable web links</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>the status of this check: <code>passed</code> or <code>warning</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>the list of unreachable web links</td></tr><tr><td><code>passed</code></td><td>array</td><td>the list of reachable web links</td></tr><tr><td><code>ignored</code></td><td>array</td><td>the list of ignored links</td></tr><tr><td><code>locked</code></td><td>boolean</td><td>if the link is in a locked row</td></tr><tr><td><code>synced</code></td><td>boolean</td><td>if the link is in a synced row</td></tr><tr><td><code>uuid</code></td><td>string</td><td>uuid of the widget containing the link</td></tr><tr><td><code>widgetLabel</code></td><td>string</td><td>label of the element in the widget containing the link</td></tr><tr><td><code>widgetType</code></td><td>string</td><td>type of the widget: <code>button</code>, <code>menu</code>, <code>social</code>, <code>image</code>, <code>gif</code>, <code>sticker</code>, <code>icon</code></td></tr><tr><td><code>reasons</code></td><td>array</td><td>For ignored elements, one or more of the following values: <code>missingChecked</code>, <code>missingRelated</code>, <code>notApplicable</code>, <code>urlValidation</code></td></tr></tbody></table>
+
+### Insufficient Font Size
+
+This check verifies if any widget in the template has a font size under 14px. If found, the user receives a suggestion.
+
+| Check details                | Corresponding options                                   |
+| ---------------------------- | ------------------------------------------------------- |
+| Type                         | Suggestion                                              |
+| Available for                | email and page messages, email and page templates, rows |
+| Use data on widgets          | button, heading, paragraph, menu, list, table           |
+| Use general features in JSON | --                                                      |
+
+On requests in checks list: `{"category":"insufficientFontSize"}`
+
+#### Passed check response
+
+```json
+[
+  {
+    "language": "default",
+    "checks": [
+      {
+        "type": "insufficientFontSize",
+        "targetsCount": 0,
+        "checkStatus": "passed",
+        "targets": []
+      }
+    ],
+    "checksFailedCount": 0,
+    "checksWarningCount": 0,
+    "checksSuggestionCount": 0,
+    "status": "passed"
+  }
+]
+```
+
+#### Warning check response - Font Size Suggestion for multiple modules
+
+```json
+[
+  {
+    "language": "default",
+    "checks": [
+      {
+        "type": "insufficientFontSize",
+        "targetsCount": 7,
+        "checkStatus": "suggestion",
+        "targets": [
+          {
+            "uuid": "c159b2b6-df0d-4747-a2e8-e32bafe5e710",
+            "widgetType": "paragraph",
+            "widgetLabel": "I'm a new paragraph block.",
+            "locked": false,
+            "synced": false,
+            "mode": "both"
+          },
+          {
+            "uuid": "2fd4750b-9abb-47c1-a8c3-fae33a5f7350",
+            "widgetType": "heading",
+            "widgetLabel": "I'm a new title block",
+            "locked": false,
+            "synced": false,
+            "mode": "both"
+          },
+          {
+            "uuid": "ec5d77f0-657f-45ff-bf6b-2b345a8218ec",
+            "widgetType": "button",
+            "widgetLabel": "Button",
+            "locked": false,
+            "synced": false,
+            "mode": "both"
+          },
+          {
+            "uuid": "d8f5f12c-40c5-4789-b75a-a8732904b9c7",
+            "widgetType": "menu",
+            "widgetLabel": "menu 1, Menu 2",
+            "locked": false,
+            "synced": false,
+            "mode": "both"
+          },
+          {
+            "uuid": "3fa39414-9224-44ff-8ff9-340332e9ecb1",
+            "widgetType": "list",
+            "widgetLabel": "First element, Second element, Third element",
+            "locked": false,
+            "synced": false,
+            "mode": "both"
+          },
+          {
+            "uuid": "01f48a66-2414-4b9f-8f8f-e7d8f8ce1bb2",
+            "widgetType": "table-header",
+            "widgetLabel": "Add header text",
+            "locked": false,
+            "synced": false,
+            "mode": "both"
+          },
+          {
+            "uuid": "01f48a66-2414-4b9f-8f8f-e7d8f8ce1bb2",
+            "widgetType": "table-content",
+            "widgetLabel": "Add text",
+            "locked": false,
+            "synced": false,
+            "mode": "both"
+          }
+        ]
+      }
+    ],
+    "checksFailedCount": 7,
+    "checksWarningCount": 0,
+    "checksSuggestionCount": 7,
+    "status": "suggestion"
+  }
+]
+```
+
+The following table lists the possible fields and their corresponding data types and descriptions.
+
+| Field          | Data type | Description                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| -------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`         | string    | check type, equal to `insufficientFontSize`                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `targetsCount` | integer   | the number of widgets with warnings                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `checkStatus`  | string    | the status of this check: `suggestion`                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `targets`      | array     | the list of widgets with warnings                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `locked`       | boolean   | if the widget is in a locked row                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `synced`       | boolean   | if the widget is in a synced row                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `uuid`         | string    | uuid of the row containing this widget                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `widgetLabel`  | string    | label of the widget                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `widgetType`   | string    | `button`, `heading`, `paragraph`,`menu`,`list`,`table-header`, `table-content`                                                                                                                                                                                                                                                                                                                                                                        |
+| `mode`         | string    | <p>Stage mode suggestions refer to:</p><ul><li><code>both</code> : small font size set on desktop, mobile not set</li><li><code>desktop</code>: small font size set on desktop</li><li><code>mobile</code>: small font size set on mobile</li></ul><p><strong>Note:</strong> If small font size is set both on desktop and on mobile two suggestion will be returned, one with <code>mode: desktop</code> and one with <code>mode : mobile</code></p> |
 
 ## Frontend Visual Feedback and Cues
 
@@ -1251,14 +1463,14 @@ Example response
 
 ## Check Endpoints
 
-This section lists and describes each of the Check endpoints. You can use this section to learn about endpoint and how they work. You can also test each endpoint in the interactive testing environment available by clicking **Test it**.&#x20;
+This section lists and describes each of the Check endpoints. You can use this section to learn about endpoint and how they work. You can also test each endpoint in the interactive testing environment available by clicking **Test it**.
 
 ### Email
 
 This section includes details on how to make an API call using the email check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="message-check" path="/v1/message/check" method="post" %}
-[OpenAPI message-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/a0a803fcab82fc94a75d76e02422bbaee4b3d159b979391ed8095e475d723f49.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250910%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250910T193701Z&X-Amz-Expires=172800&X-Amz-Signature=aad443b328099b9f70e4d215b7486415e179623745940e188967bc051e32a74f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI message-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/a0a803fcab82fc94a75d76e02422bbaee4b3d159b979391ed8095e475d723f49.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251204%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251204T051343Z&X-Amz-Expires=172800&X-Amz-Signature=6309f5f721d54786e40363c87addfc1bc15124438dd5bbc0ee4e1a9bd0c9d222&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
@@ -1460,7 +1672,7 @@ Reference the following example email response:
 This section includes details on how to make an API call using the page check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="page-check" path="/v1/page/check" method="post" %}
-[OpenAPI page-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/4308febd44d915cc101689a737e2381eb1c6723b5e3d523e010547c938a72ba9.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250910%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250910T193701Z&X-Amz-Expires=172800&X-Amz-Signature=f561b3f3def19f20014814a91044886cfa0b7eda4dafe424ecd6d52c8c7e96ee&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI page-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/4308febd44d915cc101689a737e2381eb1c6723b5e3d523e010547c938a72ba9.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251204%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251204T051343Z&X-Amz-Expires=172800&X-Amz-Signature=2046ce60de467cc67f538b181ed3840baa4f962ed4f396aa76cecbeaf7b14a8a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
@@ -1645,7 +1857,7 @@ Reference an example page response:
 This section includes details on how to make an API call using the row check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="row-check" path="/v1/row/check" method="post" %}
-[OpenAPI row-check](https://gitbook-x-prod-openapi.4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/raw/fd96add5eb3171c8641c68e85b13ca24fd76b94debf20b7a3b25a7b5e4c01264.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20250910%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250910T193701Z&X-Amz-Expires=172800&X-Amz-Signature=1c99d099f986ec24caa065ae011393b3d5ee890898e04c29f29f01782ca8099c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI row-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/fd96add5eb3171c8641c68e85b13ca24fd76b94debf20b7a3b25a7b5e4c01264.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251204%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251204T051343Z&X-Amz-Expires=172800&X-Amz-Signature=caaef31cd73b7712e3fb1f1e7f48501e1a21b8ae5588d6afee25327321944499&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
