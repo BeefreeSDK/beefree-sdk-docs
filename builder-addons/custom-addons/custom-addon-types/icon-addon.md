@@ -42,9 +42,9 @@ The Icon AddOn uses a unique plural naming convention—note that the type is `'
         alt: string,          // Optional: Alt text
         title: string,        // Optional: Title attribute
         href: string,         // Optional: Link URL
-        width: string,        // Optional: e.g., '32px'
-        height: string,       // Optional: e.g., '32px'
-        textPosition: string  // Optional: 'top', 'bottom', 'left', 'right'
+        width: string,        // Required: e.g., '32px'
+        height: string,       // Required: e.g., '32px'
+        textPosition: string  // Required: 'top', 'bottom', 'left', 'right'
       }
     ]
   }
