@@ -63,7 +63,7 @@ Yes, that’s exactly the process of developing an addon that is available to th
 * First you develop a [Custom AddOn](custom-addons/)
 * Then you submit it for listing in the [Partner AddOn](partner-addons/) Directory
 
-Just remember that – technically speaking – you can only use the [iFrame Method](broken-reference) when developing a Partner AddOn. So, a Custom AddOn that you want to later list in the Partner AddOn Directory, must be developed that way.
+Just remember that – technically speaking – you can only use the [iFrame Method](/broken/pages/Bq7XDpt9x3HZnkEXrkRr) when developing a Partner AddOn. So, a Custom AddOn that you want to later list in the Partner AddOn Directory, must be developed that way.
 
 ## Where are AddOns in the Beefree SDK UI?
 
@@ -88,7 +88,7 @@ As of October, 2022, you can generate two kinds of content with an addon:
 
 A countdown timer or a live map, for example, they will mostly likely be _image content blocks_ in Beefree SDK.
 
-For details, see: [AddOn Development](broken-reference)
+For details, see: [AddOn Development](/broken/pages/Bq7XDpt9x3HZnkEXrkRr)
 
 #### How do I know when new addons become available? <a href="#how-do-i-know-when-new-addons-become-available" id="how-do-i-know-when-new-addons-become-available"></a>
 

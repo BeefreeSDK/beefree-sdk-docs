@@ -17,7 +17,7 @@ In the [Beefree SDK Developer Console](https://developers.beefree.io/), you'll f
 This category of Application Configurations enable you to customize the following:
 
 * Anonymous error logging
-* Custom limitation for the [File Manager](broken-reference)
+* Custom limitation for the [File Manager](/broken/pages/83RZ3kjKoee6zmYCTvF1)
 * [HTML sanitizer](../custom-head-html.md#the-sanitizer-and-adding-custom-html) for the HTML content block and [Custom Head HTML](../custom-head-html.md)
 
 The following image shows how these options appear within the Developer Console.&#x20;

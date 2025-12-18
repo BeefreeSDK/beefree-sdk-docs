@@ -225,6 +225,7 @@
   * [Template Validation and Update Errors](resources/error-management/template-validation-and-update-errors.md)
 * [Scheduled maintenances](resources/scheduled-maintenances.md)
 * [Videos](resources/videos/README.md)
+  * [Accessibility Keyboard Shortcuts](resources/videos/accessibility-keyboard-shortcuts.md)
   * [Page Builder Video Series](resources/videos/page-builder-video-series.md)
   * [React Video Series](resources/videos/react-video-series.md)
   * [Angular Video Series](resources/videos/angular-video-series.md)

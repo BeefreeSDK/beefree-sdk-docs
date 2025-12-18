@@ -110,4 +110,4 @@ If AI-driven generation fails, check the OpenAI AddOn configuration. Ensure your
 
 ### Additional Considerations
 
-* Customers will be billed through their OpenAI accounts for AI generation-related features. This is done through connecting their OpenAI API key in the Beefree SDK Developer Console.\
+* Customers will be billed through their OpenAI accounts for AI generation-related features. This is done through connecting their OpenAI API key in the Beefree SDK Developer Console.<br>

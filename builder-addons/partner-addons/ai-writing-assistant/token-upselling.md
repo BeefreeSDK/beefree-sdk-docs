@@ -8,8 +8,7 @@ The following notification banner will appear to an end user when their tokens a
 
 **Note:** You can edit the notification banner trigger to a remaining percentage other than the default 20 percent. Reference the Customize Notification Trigger to learn more about how to change this percentage.
 
-The following notification will appear to an end user when they no longer have any remaining tokens. This is triggered when `tokenCounter` is greater than or equal to `tokensAvailable`. For reference, `tokenCounter` refers to the amount of tokens an end user has used since their initial token balance.\
-
+The following notification will appear to an end user when they no longer have any remaining tokens. This is triggered when `tokenCounter` is greater than or equal to `tokensAvailable`. For reference, `tokenCounter` refers to the amount of tokens an end user has used since their initial token balance.<br>
 
 <figure><img src="https://lh7-eu.googleusercontent.com/PGcgDNS5Wbuls8HY45OY6VUPQQ50unTxqJN5rDcUPx65o3wBOBvZ8Z5nbL0fKcjH6SPp2SfF7PES1l9w5RtAasUKKbEVjc7zeguXzSKy64zh41XqvfXD4-uwM8qV5N5CA5U9PLouu5o7DQYpAAejjMM" alt=""><figcaption></figcaption></figure>
 
@@ -319,7 +318,7 @@ const notificationTextWithCustomCTA = customLanguageEntries[customLanguageId];
 
 You can also configure the Token Upselling feature to guide your application's end user to purchase images. Purchasing additional image tokens allows your end users to continue using features such as [Alt Text Generation with AI](../generate-alt-text-with-ai.md) and [Bulk Alt Text Generation](../generate-alt-text-globally-with-ai.md).
 
-The following code shows an example of a Token Upselling configuration for both text and image tokens. Purchasing text tokens supports end users as they use features connected to the [OpenAI AddOn](./), and purchasing image tokens supports ends users as they use features connected to the [Azure AI Vision AddOn](broken-reference).
+The following code shows an example of a Token Upselling configuration for both text and image tokens. Purchasing text tokens supports end users as they use features connected to the [OpenAI AddOn](./), and purchasing image tokens supports ends users as they use features connected to the [Azure AI Vision AddOn](/broken/pages/btUXAXl5Rqp4whfYNN85).
 
 ```javascript
 // AddOns configuration

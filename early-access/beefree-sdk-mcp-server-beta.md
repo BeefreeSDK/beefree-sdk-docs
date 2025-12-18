@@ -12,8 +12,7 @@ Our MCP Server is currently in Beta and only accessible to a selected number of 
 
 ## Introduction
 
-The Beefree SDK MCP Server allows you to connect your AI Agents with the Beefree SDK. It makes key functionality of the Beefree SDK — the [Editor](broken-reference), our [Templates,](../apis/template-catalog-api/) or the [Check API](../apis/content-services-api/check.md) — accessible for AI agents, opening up new ways to bring agentic design directly into your application. For example, you can build agents to…\
-
+The Beefree SDK MCP Server allows you to connect your AI Agents with the Beefree SDK. It makes key functionality of the Beefree SDK — the [Editor](/broken/pages/OHBhoQNH2Zk7nqbwr3I3), our [Templates,](../apis/template-catalog-api/) or the [Check API](../apis/content-services-api/check.md) — accessible for AI agents, opening up new ways to bring agentic design directly into your application. For example, you can build agents to…<br>
 
 * Create designs from scratch (so your users don’t have to)
 * Edit and improve existing designs with the power of AI

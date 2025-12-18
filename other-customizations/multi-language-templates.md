@@ -247,7 +247,7 @@ function exportAllTranslations() {
 
 ```
 
-To get HTML in a specific language by our [CSAPI](broken-reference), ensure you include a “language” key/value pair to the body of your request. Ensure you reference the instructions for using the [`/html` endpoint section](broken-reference) of the [Content Services API Reference](broken-reference) to learn more about exporting template HTML. &#x20;
+To get HTML in a specific language by our [CSAPI](/broken/pages/K42m2r5yIPcdNvaOaGjA#html), ensure you include a “language” key/value pair to the body of your request. Ensure you reference the instructions for using the [`/html` endpoint section](/broken/pages/K42m2r5yIPcdNvaOaGjA#html) of the [Content Services API Reference](/broken/pages/K42m2r5yIPcdNvaOaGjA) to learn more about exporting template HTML. &#x20;
 
 The following sample code displays this:
 

@@ -14,7 +14,7 @@ Throughout this page, we will discuss at a high-level how you can list the Custo
 
 ## Getting started <a href="#getting-started" id="getting-started"></a>
 
-To get started, you will need to follow the [AddOn Development](broken-reference) documentation and create a Custom AddOn for a web application that has embedded Beefree SDK.
+To get started, you will need to follow the [AddOn Development](/broken/pages/Bq7XDpt9x3HZnkEXrkRr) documentation and create a Custom AddOn for a web application that has embedded Beefree SDK.
 
 Please note that because Partner AddOns by definition live outside of the Beefree SDK application that will use them, you must select the **external iframe** method for development.
 
@@ -28,7 +28,7 @@ The following is a list of requirements for getting an AddOn listed in the Partn
 
 1. You have signed the Beefree SDK AddOn License and Distribution Agreement. Contact your Account Manager or log in to the [Beefree SDK Console](https://developers.beefree.io/) and submit a ticket for details.
 2. You have built an AddOn that:
-   1. Uses the External iFrame Method (see [AddOn Development](broken-reference))
+   1. Uses the External iFrame Method (see [AddOn Development](/broken/pages/Bq7XDpt9x3HZnkEXrkRr))
    2. Uses the optional health check endpoint
 3. You have thoroughly tested the AddOn before submitting it to our test for a final review.
 4. You have a demo of the AddOn that we can access.
