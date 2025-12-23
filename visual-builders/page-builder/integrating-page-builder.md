@@ -23,7 +23,7 @@ Once launched as Page Builder, an application will have a few but noticeable dif
 * the preview includes viewport resize, to test responsiveness on various screen sizes;
 * the HTML block allows using scripts, for improved compatibility with embedded content like surveys. This also includes Javascript, although it cannot be executed within the builder.
 
-{% embed url="https://youtu.be/DD0gUoSxVH0" %}
+{% embed url="https://www.youtube.com/watch?list=PL8VRmyQa6INaxUH5lLvLtA62j35DPV-Q-&v=yG0LALl_PGg" %}
 
 If you’re on a paid plan, you will also get support for forms and embedded videos.
 
@@ -35,7 +35,7 @@ If you’re on a paid plan, you will also get support for forms and embedded vid
 This section includes additional resources for integrating and implementing the Page Builder. It also includes resources for integrating the [Form Block ](../../forms/form-block.md)within the Page Builder.
 
 * [**Managing forms with the Page Builder**](../../forms/integrating-and-using-the-form-block/form-structure-and-parameters.md)**:** An introduction to creating valid Form structures within Beefree SDK.
-* [**Developer resources on GitHub**](https://github.com/BeefreeSDK/beefree-sdk-sample-forms)**:** A repository of example Forms you can reference and use to get started.&#x20;
+* [**Developer resources on GitHub**](https://github.com/BeefreeSDK/beefree-sdk-sample-forms)**:** A repository of example Forms you can reference and use to get started.
 * [**Example Implementations**](https://github.com/BeefreeSDK/beefree-sdk-form-block-demo)**:** A repository of example implementations of Forms within Beefree SDK. These three example implementations include: creating a default form, creating a form library, and creating a Form builder all within Beefree SDK.
 
 Our Github account hosts useful resources, including sample code to quick start your integrations.
