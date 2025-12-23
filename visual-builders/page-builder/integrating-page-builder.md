@@ -24,6 +24,8 @@ Once launched as Page Builder, an application will have a few but noticeable dif
 * the HTML block allows using scripts, for improved compatibility with embedded content like surveys. This also includes Javascript, although it cannot be executed within the builder.
 
 {% embed url="https://www.youtube.com/watch?list=PL8VRmyQa6INaxUH5lLvLtA62j35DPV-Q-&v=yG0LALl_PGg" %}
+[Keep watching the playlist here](https://www.youtube.com/watch?v=MD_hTiNNhsY\&list=PL8VRmyQa6INaxUH5lLvLtA62j35DPV-Q-\&index=2)
+{% endembed %}
 
 If you’re on a paid plan, you will also get support for forms and embedded videos.
 
