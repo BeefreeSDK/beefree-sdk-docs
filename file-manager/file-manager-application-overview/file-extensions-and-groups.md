@@ -39,6 +39,10 @@ font:
 **Note:** Beefree SDK does not manage heic files at this time.
 {% endhint %}
 
+By default, newly created applications of both free and paid plans only allow the upload of image, video and PDF file types. If you are on a paid plan and want to allow more file types, you have to enable them in the SDK Console. [More info here](https://docs.beefree.io/beefree-sdk/server-side-configurations/server-side-options/privacy-and-security#file-type-limitations).
+
+Please also note that the system altogether prevents the upload of potentially harmful file extensions such as exe, msi, bat, iso, jar, apk, SVGs containing JavaScript, HTML with redirects and more.
+
 ## Additional Considerations
 
 When working with files, mime types and groups, ensure you consider the following:
