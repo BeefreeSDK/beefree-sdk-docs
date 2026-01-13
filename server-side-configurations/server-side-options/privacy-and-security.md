@@ -59,22 +59,29 @@ Learn more about [Custom HTML](https://docs.beefree.io/end-user-guide/content-bl
 
 #### Custom Limitations on the File Manager
 
-In this section, you can activate restrictions for the [file manager](services-options/broken-reference/):
+In this section, you can manage the restrictions for the [file manager](services-options/broken-reference/):
 
 * Specify which file formats your users can upload.
-* Set a maximum allowed size (default: 20MB).
+* Set a maximum file size (limit: 20MB).
 
 Instead of file extensions, categories such as image, video, or text are shown, mapped to [MIME types](../../file-manager/file-manager-application-overview/file-extensions-and-groups.md).
 
-The following image shows how you can set custom limitations to the File Manager.
+The following image shows how you can manage the limitations to the File Manager.
 
 <figure><img src="../../.gitbook/assets/CleanShot 2025-11-04 at 11.47.31.png" alt=""><figcaption></figcaption></figure>
 
 #### File Type Limitations
 
-The following table lists which files are available for each Beefree SDK plan type.
+The following table details which files are available for each Beefree SDK plan type.&#x20;
 
-| Plan type | Default files     | All available file options                                               |
-| --------- | ----------------- | ------------------------------------------------------------------------ |
-| Free plan | image, video, PDF | Not applicable                                                           |
-| Paid plan | image, video, PDF | image, text, video, audio, office, xml, zip, epub, pdf, postscript, font |
+<table><thead><tr><th width="139">Plan type</th><th width="300">Default-allowed file types</th><th width="300">Configurable file types</th></tr></thead><tbody><tr><td>Free plans</td><td>Image, video, and PDF </td><td>No other file types can be added</td></tr><tr><td>Paid plans</td><td>Image, video, and PDF </td><td>Text, audio, office, xml, zip, epub, postscript, and font MIME types</td></tr></tbody></table>
+
+If you’d like to allow your users to upload additional file types, you’ll need to explicitly enable those specific MIME types in the Custom Limitations section of your SDK Console.
+
+#### Potentially Harmful Content Blocking
+
+The system prevents harmful uploads by enforcing:
+
+* Automatic blocking for all users of potentially dangerous file extensions such as exe, msi, bat, iso, jar, apk, SVGs containing JavaScript, HTML with redirects and more. These files can never be uploaded even if the custom limitations on the File Manager are removed.
+* Antivirus scanning that targets malicious files.
+
