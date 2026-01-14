@@ -101,7 +101,7 @@ Reference the upcoming custom CSS changes in the following expandable section.
 
 #### 9. Topbar
 
-**UI Area**: Sidebar\
+**UI Area**: Topbar\
 **Markup Variations**: The topbar has been refactored with markup being entirely different\
 **Classnames Removed**:&#x20;
 
@@ -121,6 +121,8 @@ Reference the upcoming custom CSS changes in the following expandable section.
 * `topbar-mergetags-button--cs`
 * `topbar-dropdown--cs`<br>
 * `topbar-save-button--cs`
+
+_Reminder: If you're using Custom CSS, please use "change safe" class names (marked with '--cs' suffix) to customize the look and feel of your editor. Class names without the '--cs' suffix may change without prior notice in the future._
 
 </details>
 
