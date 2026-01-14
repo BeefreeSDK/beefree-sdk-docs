@@ -95,6 +95,7 @@
 
 * [File manager application overview](file-manager/file-manager-application-overview/README.md)
   * [Mime Types and Groups](file-manager/file-manager-application-overview/file-extensions-and-groups.md)
+* [CDN Domains](file-manager/cdn-domains.md)
 
 ## Server-side configurations
 
