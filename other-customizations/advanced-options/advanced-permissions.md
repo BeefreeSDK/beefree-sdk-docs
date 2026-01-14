@@ -24,8 +24,8 @@ The absolute flexibility of these permissions makes it easy to address specific 
 
 You can create roles that can act only on a content type. For example, you may want a “copywriter” role for people in an organization that only need to touch copy for editing or translation purposes. To do so, you can:
 
-* hide any action that doesn’t involve working on the copy of an email or page.&#x20;
-* limit style options for the text itself, by&#x20;
+* hide any action that doesn’t involve working on the copy of an email or page.
+* limit style options for the text itself, by
   * locking/hiding the side tab;
   * hiding specific settings in the text toolbar.
 
@@ -33,7 +33,7 @@ You can create roles that can act only on a content type. For example, you may w
 
 You can limit how users upload and manage images and files inside Beefree SDK. For example, if you want certain end users to only use pre-approved images and files uploaded by Admin users, you can create this workflow by:
 
-* **Disabling drag-and-drop of images onto the stage:** You can restrict this by setting the `canAdd` parameter to `false`. The following snippet shows an example of this:&#x20;
+* **Disabling drag-and-drop of images onto the stage:** You can restrict this by setting the `canAdd` parameter to `false`. The following snippet shows an example of this:
 
 ```json
 advancedPermissions: {
@@ -86,7 +86,7 @@ By combining multiple permissions, you can load Beefree SDK with radically diffe
 
 ### How it works <a href="#how-it-works" id="how-it-works"></a>
 
-To set up the advanced permissions, you will need to add the `advancedPermissions` object to `beeConfig.`&#x20;
+To set up the advanced permissions, you will need to add the `advancedPermissions` object to `beeConfig.`
 
 #### Steps to set up Advanced Permissions in your beeConfig file
 
@@ -96,7 +96,7 @@ Take the following steps to set up **advanced permissions** in your `beeConfig` 
 2. **Add the `advancedPermissions` object:** You will need to insert the `advancedPermissions` object within your `beeConfig` to specify which content types and settings can be customized with specific permissions.
 3. **Define `content` permissions:** Inside `advancedPermissions`, you can specify what content blocks (e.g., `image`, `button`, `text`) are visible and what actions are allowed.
 4. **Configure `settings` permissions:** This controls settings like content area width, background color, or fonts for different blocks.
-5. **Control `tabs` visibility:** You can manage which tabs (such as rows or settings) are visible and editable in the editor interface.&#x20;
+5. **Control `tabs` visibility:** You can manage which tabs (such as rows or settings) are visible and editable in the editor interface.
 6. **Set `rows` behaviors:** You can control row-specific permissions, such as adding or hiding rows, background colors, and mobile visibility.
 7. **Test the configuration:** After adding the `advancedPermissions` object to your `beeConfig`, test your configuration by launching the editor and checking if the permissions are applied correctly (e.g., specific settings are visible or locked as intended).
 
@@ -108,7 +108,7 @@ Take the following steps to set up **advanced permissions** in your `beeConfig` 
 
 <summary>Sample code</summary>
 
-Reference the following sample code to understand the structure of `advancedPermissions`.&#x20;
+Reference the following sample code to understand the structure of `advancedPermissions`.
 
 ```javascript
 
@@ -291,7 +291,7 @@ All sidebar property widgets (e.g. width slider, alignment, color, etc.) accept 
 | locked | boolean | true or false |
 | show   | boolean | true or false |
 
-Let’s look at an example of these permissions applied to an image module. The following example will hide the image width property widget and lock the text alignment widget.  We’ll cover more of the available settings below.
+Let’s look at an example of these permissions applied to an image module. The following example will hide the image width property widget and lock the text alignment widget. We’ll cover more of the available settings below.
 
 ```javascript
 
@@ -599,7 +599,7 @@ advancedPermissions: {
 }
 ```
 
-Reference the [Implement Synced Rows documentation](../../rows/reusable-content/sync/implement-synced-rows.md#advanced-permissions-for-the-edit-synced-row-button) to learn more about Advanced Permissions for the **Edit Synced Row** button.&#x20;
+Reference the [Implement Synced Rows documentation](../../rows/reusable-content/sync/implement-synced-rows.md#advanced-permissions-for-the-edit-synced-row-button) to learn more about Advanced Permissions for the **Edit Synced Row** button.
 
 #### **Example Configuration**
 
@@ -1343,7 +1343,8 @@ beeConfig: {
 
 ### **Dynamic**
 
-<pre class="language-javascript"><code class="lang-javascript">
+```javascript
+
 beeConfig: {
   container: 'beefree-sdk-container', // [mandatory]
   advancedPermissions: {
@@ -1383,8 +1384,8 @@ beeConfig: {
   }
 }
 
-<strong>
-</strong></code></pre>
+
+```
 
 ### **Html**
 
@@ -2111,6 +2112,25 @@ beeConfig: {
 
 ```
 
+### Custom Attributes
+
+Control the visibility and locking of the Attributes section of the builder per block.
+
+```js
+advancedPermissions: {
+  content: {
+    social:  { properties: { customAttributes: { show: true,  locked: false } } },
+    icons:   { properties: { customAttributes: { show: true,  locked: false } } },
+    menu:    { properties: { customAttributes: { show: true,  locked: false } } },
+    image:   { properties: { customAttributes: { show: true,  locked: false } } },
+    button:  { properties: { customAttributes: { show: true,  locked: false } } },
+    video:   { properties: { customAttributes: { show: true,  locked: false } } }
+  }
+}
+```
+
+Use `locked: true` to prevent users from editing attributes directly in the editor.
+
 ## **Addon**
 
 In this section, we will explore how to assign advanced permissions and behaviors for various AddOn types, specifically focusing on how to customize permissions for [Custom AddOns](../../builder-addons/custom-addons/) and [Row AddOns](advanced-permissions.md#rows-addon). These permissions can override default settings to provide granular control. For instance, an image addon can have specific permissions different from the default image block permissions.
@@ -2159,7 +2179,7 @@ content: {
 
 ### Module inside row addon
 
-The following code defines specific permissions and behaviors for different modules within a Row AddOn.&#x20;
+The following code defines specific permissions and behaviors for different modules within a Row AddOn.
 
 ```javascript
 {
