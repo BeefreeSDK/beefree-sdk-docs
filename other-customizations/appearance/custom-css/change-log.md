@@ -6,6 +6,124 @@ description: >-
 
 # Change Log
 
+## Release February 2025
+
+Reference the upcoming custom CSS changes in the following expandable section.
+
+<details>
+
+<summary>Zoom Accessibility Improvements</summary>
+
+#### 1. Sidebar – Collapse Handle
+
+**UI Area**: Sidebar\
+**Sub-element**: Collapse Handle\
+**Classnames Removed**: `sidebar__collapse-handle`\
+**New Classnames**: `sidebar-collapse-handle--cs`
+
+#### 2. Sidebar – Title
+
+**UI Area**: Sidebar\
+**Sub-element**: Title\
+**Classnames Removed**: `properties-panel__title`
+
+#### 3. Sidebar – Content Wrapper
+
+**UI Area**: Sidebar\
+**Sub-element**: Content Wrapper\
+**Markup Variations**: Removed a wrapper `div`\
+**Classnames Removed**: `widgets-section`
+
+#### 4. Sidebar – Widgets Wrapper
+
+**UI Area**: Sidebar\
+**Sub-element**: Widgets Wrapper\
+**Markup Variations**: Removed two wrapper `div`s\
+**Classnames Removed**: `widgets-section`
+
+#### 5. Sidebar – Field Type Select
+
+**UI Area**: Sidebar\
+**Content**: Form\
+**Widget**: Manage Form Fields\
+**Sub-element**: Field Type Select in Edit Modal\
+**Classnames Removed**:&#x20;
+
+* `dropdown__option`
+* `dropdown__option--is-selected`
+* `react_select--[option label name]`
+* `react_select__field_type_label`
+* `react_select__selected_field_type_label`
+
+#### 6. Sidebar – Special Links
+
+**UI Area**: Sidebar\
+**Content**: Button, Image\
+**Widget**: Url\
+**Sub-element**: Special Links Modal\
+**Classnames Removed**:&#x20;
+
+* `category-selected`
+* `back-action`
+
+**New Classnames**:
+
+* `selectable-modal-search--cs`
+* `selectable-modal-breadcrumb--cs`
+* `selectable-modal-items-list--cs`
+
+#### 7. Sidebar – Rounded Corners Preview
+
+**UI Area**: Sidebar\
+**Content**: Image, Row\
+**Widget**: Rounded Corners\
+**Sub-element**: Preview\
+**Classnames Removed**:&#x20;
+
+* `padding-container`
+* `square`
+* `widget-section__paddingpreview`
+
+**New Classnames**: `previewbox--cs`
+
+#### 8. Sidebar – Padding Preview
+
+**UI Area**: Sidebar\
+**Content**: Button, Carousel, Divider, Form, Image\
+**Widget**: Padding\
+**Sub-element**: Preview\
+**Classnames Removed**:&#x20;
+
+* `padding-container`
+* `preview`
+* `square`
+* `widget-section__paddingpreview`
+
+#### 9. Topbar
+
+**UI Area**: Sidebar\
+**Markup Variations**: The topbar has been refactored with markup being entirely different\
+**Classnames Removed**:&#x20;
+
+* `header--cs`
+* `header-left--cs`
+* `header-dropdown--cs`
+* `header-right--cs`
+* `top-bar*`
+* `Header_*`
+
+**New Classnames:**
+
+* `topbar--cs`
+* `topbar-logo--cs`
+* `topbar-actions--cs`
+* `topbar-structure-button--cs`
+* `topbar-mergetags-button--cs`
+* `topbar-dropdown--cs`<br>
+* `topbar-save-button--cs`
+
+</details>
+
 ## Release December 2025
 
 Reference the upcoming CSS changes to the Preview Widgets in the following expandable section.
