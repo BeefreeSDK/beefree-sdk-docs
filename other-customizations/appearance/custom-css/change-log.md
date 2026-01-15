@@ -122,6 +122,14 @@ Reference the upcoming custom CSS changes in the following expandable section.
 * `topbar-dropdown--cs`<br>
 * `topbar-save-button--cs`
 
+#### 10. Preview - Topbar Language Select
+
+**UI Area**: Preview\
+**Content**: Topbar\
+**Widget**: Language Select\
+**Markup Variations**: Removed a redundant `div`\
+**Classnames Removed**: `header-select--cs`
+
 _Reminder: If you're using Custom CSS, please use "change safe" class names (marked with '--cs' suffix) to customize the look and feel of your editor. Class names without the '--cs' suffix may change without prior notice in the future._
 
 </details>
