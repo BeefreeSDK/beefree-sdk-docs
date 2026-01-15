@@ -71,14 +71,22 @@ These tools control the foundational architecture of your email, allowing you to
 * `beefree_set_email_metadata` - Set email subject and preheader
 * `beefree_set_email_default_styles` - Set default email styles
 
+#### Design System & Personalization
+
+These features work across multiple tools and categories to ensure designs are personalized and responsive.
+
+* Mobile styles: Specialized styling tools to control how layouts and content appear on smaller screens (e.g., stacking, padding, and visibility).
+* Merge tags: Dynamic placeholders used across text-based components to enable 1-to-1 personalization.
+
 #### Content Block Tools
 
 These tools add and modify individual content elements within your email, including text, images, buttons, and other interactive components.
 
 * Text blocks: `beefree_add_title`, `beefree_add_paragraph`, `beefree_add_list`
 * Media blocks: `beefree_add_image`, `beefree_add_icon`
-* Interactive blocks: `beefree_add_button`, `beefree_add_social`
+* Interactive blocks: `beefree_add_button`, `beefree_add_social`, `beefree_add_menu`
 * Structural blocks: `beefree_add_spacer`, `beefree_add_divider`
+* Tabular blocks: `beefree_add_table`
 * Each with corresponding update tools
 
 #### Template Catalog
@@ -105,6 +113,12 @@ The Beefree SDK MCP server uses the [Pexels API](https://www.pexels.com/api/).
 * `beefree_search_stock_images` - Retrieve stock images via Pexels API integration. Search for high-quality, royalty-free images to use in your email designs. Returns image URLs, descriptions, and attribution information.
 
 With each of the tools in the categories above, agents can build complete workflows: from inserting content, to structuring layouts, to validating designs against accessibility and best practices.
+
+#### Actions Available on Blocks
+
+The table below outlines the specific operations (Add, Read, Update, and Delete) that AI agents can perform on various content blocks within the editor via the Beefree SDK MCP server. Use this reference to understand the current capabilities and functional coverage available for each block type.
+
+<table><thead><tr><th>Block</th><th data-type="checkbox">ADD</th><th data-type="checkbox">READ</th><th data-type="checkbox">UPDATE</th><th data-type="checkbox">DELETE</th></tr></thead><tbody><tr><td>Button</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Paragraph</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Heading</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Image</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Divider</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Spacer</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>List</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Icon</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Social</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Text</td><td>false</td><td>true</td><td>false</td><td>true</td></tr><tr><td>Menu</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Dynamic Content</td><td>false</td><td>false</td><td>false</td><td>true</td></tr><tr><td>HTML</td><td>false</td><td>false</td><td>false</td><td>true</td></tr><tr><td>Table</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Form</td><td>false</td><td>false</td><td>false</td><td>true</td></tr><tr><td>Video</td><td>false</td><td>true</td><td>false</td><td>true</td></tr></tbody></table>
 
 ### Reference Sample Project
 
@@ -256,47 +270,7 @@ This endpoint allows you to establish a connection to the Beefree SDK MCP Server
 | `x-bee-mcp-session-id` | string | Optional     | Session identifier for distinguishing multiple editor instances for the same user |
 | `Content-Type`         | string | **Required** | Must be `application/json`                                                        |
 
-**Request Body Parameters**
 
-The request body must be a valid JSON-RPC 2.0 request with the following structure:
-
-**Top-level Parameters:**
-
-| Parameter | Type    | Required     | Example Value  | Description               |
-| --------- | ------- | ------------ | -------------- | ------------------------- |
-| `method`  | string  | **Required** | `"initialize"` | The MCP method to call    |
-| `jsonrpc` | string  | **Required** | `"2.0"`        | JSON-RPC protocol version |
-| `id`      | integer | **Required** | `0`            | Request identifier        |
-| `params`  | object  | **Required** | (see below)    | Initialization parameters |
-
-**`params` Object:**
-
-| Parameter         | Type   | Required     | Example Value  | Description          |
-| ----------------- | ------ | ------------ | -------------- | -------------------- |
-| `protocolVersion` | string | **Required** | `"2025-06-18"` | MCP protocol version |
-| `capabilities`    | object | **Required** | (see below)    | Client capabilities  |
-| `clientInfo`      | object | **Required** | (see below)    | Client information   |
-
-**`params.capabilities` Object:**
-
-| Parameter     | Type   | Required     | Example Value | Description                             |
-| ------------- | ------ | ------------ | ------------- | --------------------------------------- |
-| `sampling`    | object | **Required** | `{}`          | Sampling capabilities (empty object)    |
-| `elicitation` | object | **Required** | `{}`          | Elicitation capabilities (empty object) |
-| `roots`       | object | **Required** | (see below)   | Roots configuration                     |
-
-**`params.capabilities.roots` Object:**
-
-| Parameter     | Type    | Required     | Example Value | Description                           |
-| ------------- | ------- | ------------ | ------------- | ------------------------------------- |
-| `listChanged` | boolean | **Required** | `true`        | Indicates if the root list can change |
-
-**`params.clientInfo` Object:**
-
-| Parameter | Type   | Required     | Example Value        | Description                     |
-| --------- | ------ | ------------ | -------------------- | ------------------------------- |
-| `name`    | string | **Required** | `"inspector-client"` | Your client application name    |
-| `version` | string | **Required** | `"0.17.1"`           | Your client application version |
 
 **Sample Request**
 
@@ -304,75 +278,7 @@ The request body must be a valid JSON-RPC 2.0 request with the following structu
 {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{"sampling":{},"elicitation":{},"roots":{"listChanged":true}},"clientInfo":{"name":"inspector-client","version":"0.17.1"}},"jsonrpc":"2.0","id":0}
 ```
 
-**Response**
 
-**Success Response (200 OK)**
-
-A successful initialization returns a JSON-RPC 2.0 response with server information and capabilities.
-
-**Response Body Parameters:**
-
-| Parameter | Type    | Description                                                   |
-| --------- | ------- | ------------------------------------------------------------- |
-| `jsonrpc` | string  | JSON-RPC protocol version (always `"2.0"`)                    |
-| `id`      | integer | Matches the request ID                                        |
-| `result`  | object  | Initialization result containing server info and capabilities |
-
-**`result` Object:**
-
-| Parameter         | Type   | Description                      |
-| ----------------- | ------ | -------------------------------- |
-| `protocolVersion` | string | Confirmed MCP protocol version   |
-| `capabilities`    | object | Server capabilities              |
-| `serverInfo`      | object | Information about the MCP server |
-
-**`result.capabilities` Object:**
-
-| Parameter | Type   | Description                    |
-| --------- | ------ | ------------------------------ |
-| `tools`   | object | Tools capability configuration |
-
-**`result.capabilities.tools` Object:**
-
-| Parameter     | Type    | Description                                  |
-| ------------- | ------- | -------------------------------------------- |
-| `listChanged` | boolean | Whether the tool list can change dynamically |
-
-**`result.serverInfo` Object:**
-
-| Parameter | Type   | Description               |
-| --------- | ------ | ------------------------- |
-| `name`    | string | Name of the MCP server    |
-| `version` | string | Version of the MCP server |
-
-**Sample Success Response:**
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 0,
-  "result": {
-    "protocolVersion": "2025-06-18",
-    "capabilities": {
-      "tools": {
-        "listChanged": true
-      }
-    },
-    "serverInfo": {
-      "name": "Beefree SDK MCP Server",
-      "version": "1.0.0"
-    }
-  }
-}
-```
-
-**Error Responses**&#x20;
-
-* **400 Bad Request - Invalid JSON-RPC Request:** Returned when the request body is malformed or doesn't follow JSON-RPC 2.0 specification.
-* **401 Unauthorized - Invalid or Missing Authentication:** Returned when the Bearer token is missing, invalid, or not MCP-compatible.
-* **403 Forbidden - Insufficient Permissions:** Returned when the authenticated user lacks permissions to access the MCP.
-* **404 Not Found - Editor Instance Not Found:** Returned when the specified `x-bee-uid` doesn't correspond to an active editor instance.
-* **500 Internal Server Error:** Returned when an unexpected server error occurs.
 
 **Next Steps**
 
