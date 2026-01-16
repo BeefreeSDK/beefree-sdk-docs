@@ -61,6 +61,14 @@ If you are a Paid User, you may request a **one-time customization** of your thi
 
 For **Enterprise plans**, you may also request to connect your own domain. Please contact your CSM for dedicated assistance.
 
+### Allowlisting CDN Domains
+
+To ensure the reliable delivery of your assets and prevent potential loading or connectivity issues, we strongly recommend allowlisting Beefree SDK’s CDN domains within your network security configurations, firewalls, or content filtering systems:
+
+* `beefreesdkhosting.net`&#x20;
+* `sdkmedia.net`
+* `sdkhosting.net`&#x20;
+
 ***
 
 ### CDN Migration
