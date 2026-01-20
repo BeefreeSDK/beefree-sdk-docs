@@ -94,6 +94,6 @@ More in detail, you can now expect different behavior depending on when assets e
 If your team performs post-processing on image URLs (for example, rewriting or hashing), you may need to adjust your setup to account for the new CDN domain pattern.&#x20;
 {% endhint %}
 
-#### **Opting Out**
+#### Contact us for support
 
-While we strongly recommend the segmented infrastructure for security and reputation management, we understand that certain technical workflows may require more time to adapt. If you need to remain on the legacy CDN domain configuration, you have the option to opt out of this migration. Please [reach out to our support team](https://devportal.beefree.io/hc/en-us/requests/new) to discuss your requirements.
+Although we strongly recommend the segmented infrastructure for security and reputation management, we understand that certain technical workflows may be more complex to adapt. If you have any questions or encounter any issues with the migration, [reach out to our support team](https://devportal.beefree.io/hc/en-us/requests/new) or contact your assigned CSM for assistance.
