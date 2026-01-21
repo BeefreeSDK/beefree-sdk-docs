@@ -67,7 +67,9 @@ To ensure the reliable delivery of your assets and prevent potential loading or 
 
 * `beefreesdkhosting.net`&#x20;
 * `sdkmedia.net`
-* `sdkhosting.net`&#x20;
+* `sdkhosting.net`
+* `d15k2d11r6t6rl.cloudfront.net`
+* `d1oco4z2z1fhwp.cloudfront.net`
 
 ***
 
@@ -77,8 +79,8 @@ Previously, all media for both free and paid plans were served via a single shar
 
 This transition followed the timeline below:
 
-* 15 January 2026 for SDK Free Plans
-* Progressive rollout from 19 February 2026 for SDK Paid Plans. You'll be notified about when your application is scheduled to be migrated.
+* January 15, 2026 for SDK Free Plans
+* Progressive rollout from March, 5 2026 for SDK Paid Plans. You'll be notified about when your application is scheduled to be migrated.
 
 #### Impact on Media Assets and Automation
 
