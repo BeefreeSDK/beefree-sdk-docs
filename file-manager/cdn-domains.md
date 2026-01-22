@@ -6,7 +6,7 @@ A CDN (Content Delivery Network) is a system of distributed servers that deliver
 
 **Beefree's Segmented CDN Infrastructure**
 
-If you rely on Beefree SDK storage, Beefree uses a segmented CDN infrastructure to serve your assets. We allocate distinct second-level domains per subscription tier and media type, and also assign you a dedicated third-level domain based on subscription ID.&#x20;
+If you rely on Beefree SDK storage, and use the latest FSP backend component, Beefree uses a segmented CDN infrastructure to serve your assets. We allocate distinct second-level domains per subscription tier and media type, and also assign you a dedicated third-level domain based on subscription ID.&#x20;
 
 This unique setup isolates your content from other SDK customers, mitigating risks from potential malicious or spammy uploads. By preventing one customer's actions from impacting others, Beefree ensures robust security and maintains the integrity and reputation of all digital assets.
 
@@ -30,7 +30,7 @@ https://id32514.beefreesdkhosting.net/path/to/file.png
 
 ### Paid Plans
 
-For **paid plans**, we use two domains to serve different types of assets:
+For **paid plans** relying on Beefree's storage, we use two domains to serve different types of assets:
 
 * The **Media Files** CDN Domain `sdkmedia.net` handles image, video, and audio MIME types
 * The **Other Files** CDN domain `sdkhosting.net` is used for text (including HTML), office documents, XML, ZIP files, EPUB, PDF, PostScript, and fonts.
