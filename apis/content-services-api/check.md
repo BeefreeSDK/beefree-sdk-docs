@@ -101,7 +101,7 @@ The following code snippet displays an example of how checks can be added to the
     { "category": "missingHeadings" },
     { "category": "overageHeadings" },
     { "category": "missingMainLanguage" },
-    { "category": "unreachableWebLink" },
+    { "category": "unreachableWebLink", "allowed_hosts": ["example.com", "other-example.com"] },
     { "category": "insufficientColorContrast" }
   ]
 }
@@ -128,7 +128,7 @@ The following code snippet displays an example of how checks can be added to the
     { "category": "missingHeadings" },
     { "category": "overageHeadings" },
     { "category": "missingMainLanguage" },
-    { "category": "unreachableWebLink" },
+    { "category": "unreachableWebLink", "allowed_hosts": ["example.com", "other-example.com"] },
     { "category": "insufficientColorContrast" }
   ]
 }
@@ -151,7 +151,7 @@ The following code snippet displays an example of how checks can be added to the
     { "category": "missingImageLink" },
     { "category": "missingCopyLink" },
     { "category": "overageImageWeight", "limit": 500 },
-    { "category": "unreachableWebLink" },
+    { "category": "unreachableWebLink", "allowed_hosts": ["example.com", "other-example.com"] },
     { "category": "insufficientColorContrast" }
   ]
 }
@@ -1043,10 +1043,13 @@ If a link cannot be assessed, it is added to the **ignored** array. Each ignored
 * **missingRelated** – related data needed for validation was missing
 * **notApplicable** – the check did not apply to this case
 * **urlValidation** – the URL itself was invalid
+* **allowList** - link's web domain is included in `allowed_hosts` optional parameter
 
-<table data-full-width="false"><thead><tr><th>Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td>Type</td><td>Warning</td></tr><tr><td>Available for</td><td>email and page messages, email and page templates, rows</td></tr><tr><td>Use data on widgets</td><td>button, social, menu, image, gif, sticker, icon</td></tr><tr><td>Use general features in JSON</td><td>--</td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th>Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td>Type</td><td>Warning</td></tr><tr><td>Available for</td><td>email and page messages, email and page templates, rows</td></tr><tr><td>Use data on widgets</td><td>button, social, menu, image, gif, sticker, icon, heading, paragraph, list, table</td></tr><tr><td>Use general features in JSON</td><td>--</td></tr></tbody></table>
 
-On requests in checks list: `{"category":"unreachableWebLink"}`
+On requests in checks list: `{"category":"unreachableWebLink", "``allowed_hosts"``: ["example.com", "otherexample.com"]}`
+
+<table data-header-hidden><thead><tr><th width="148.8125">Field</th><th width="159.875">Data Type</th><th>Description</th></tr></thead><tbody><tr><td><code>allowed_hosts</code></td><td>list[str], Optional</td><td>A allowlist of domain hosts that should be excluded from reachability checks</td></tr></tbody></table>
 
 #### Passed check response
 
@@ -1064,7 +1067,9 @@ On requests in checks list: `{"category":"unreachableWebLink"}`
                "synced": false,
                "uuid": "ab6589c0-414f-4075-ac31-28369511be4d",
                "widgetLabel": "icon-placeholder.png",
-               "widgetType": "icon"
+               "widgetType": "icon",
+               "moduleIndex": 2,
+               "subModuleIndex": 1
            }
        ],
        "ignored": [
@@ -1075,9 +1080,22 @@ On requests in checks list: `{"category":"unreachableWebLink"}`
                "synced": false,
                "uuid": "27386d37-df5b-4f5a-b3df-f3e8a2c9d640",
                "widgetLabel": "Menu item name",
-               "widgetType": "menu"
+               "widgetType": "menu",
+               "moduleIndex": 1,
+               "subModuleIndex": 1
            }
-       ]
+       ],
+       "redirected": [
+        {
+            "checkedElement": "https://beefree.io/redirect-link",
+            "locked": false,
+            "synced": false,
+            "uuid": "icons-uuid",
+            "widgetLabel": "icon3-url.jpg",
+            "widgetType": "icon",
+            "moduleIndex": 3,
+            "subModuleIndex": 1
+        },
 }
 ```
 {% endcode %}
@@ -1097,7 +1115,9 @@ On requests in checks list: `{"category":"unreachableWebLink"}`
             "synced": false,
             "uuid": "9c38bcc0-71a0-4baa-9b61-43b3c30a620d",
             "widgetLabel": "Button name 1",
-            "widgetType": "button"
+            "widgetType": "button",
+            "moduleIndex": 2,
+            "subModuleIndex": 1
         }
     ],
     "passed": [
@@ -1107,7 +1127,9 @@ On requests in checks list: `{"category":"unreachableWebLink"}`
             "synced": false,
             "uuid": "ab6589c0-414f-4075-ac31-28369511be4d",
             "widgetLabel": "icon-placeholder.png",
-            "widgetType": "icon"
+            "widgetType": "icon",
+            "moduleIndex": 1,
+            "subModuleIndex": 1
         }
     ],
     "ignored": [
@@ -1118,16 +1140,19 @@ On requests in checks list: `{"category":"unreachableWebLink"}`
             "synced": false,
             "uuid": "27386d37-df5b-4f5a-b3df-f3e8a2c9d640",
             "widgetLabel": "Menu item name",
-            "widgetType": "menu"
+            "widgetType": "menu",
+            "moduleIndex": 3,
+            "subModuleIndex": 1
         }
-    ]
+    ],
+    "redirected": [],
 }
 ```
 {% endcode %}
 
 The following table lists and defines all the fields related to the `unreachableWebLink` check.
 
-<table data-full-width="false"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>check type, equal to <code>unreachableWebLink</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>the number of unreachable web links</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>the status of this check: <code>passed</code> or <code>warning</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>the list of unreachable web links</td></tr><tr><td><code>passed</code></td><td>array</td><td>the list of reachable web links</td></tr><tr><td><code>ignored</code></td><td>array</td><td>the list of ignored links</td></tr><tr><td><code>locked</code></td><td>boolean</td><td>if the link is in a locked row</td></tr><tr><td><code>synced</code></td><td>boolean</td><td>if the link is in a synced row</td></tr><tr><td><code>uuid</code></td><td>string</td><td>uuid of the widget containing the link</td></tr><tr><td><code>widgetLabel</code></td><td>string</td><td>label of the element in the widget containing the link</td></tr><tr><td><code>widgetType</code></td><td>string</td><td>type of the widget: <code>button</code>, <code>menu</code>, <code>social</code>, <code>image</code>, <code>gif</code>, <code>sticker</code>, <code>icon</code></td></tr><tr><td><code>reasons</code></td><td>array</td><td>For ignored elements, one or more of the following values: <code>missingChecked</code>, <code>missingRelated</code>, <code>notApplicable</code>, <code>urlValidation</code></td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>check type, equal to <code>unreachableWebLink</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>the number of unreachable web links</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>the status of this check: <code>passed</code> or <code>warning</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>the list of unreachable web links</td></tr><tr><td><code>passed</code></td><td>array</td><td>the list of reachable web links</td></tr><tr><td><code>ignored</code></td><td>array</td><td>the list of ignored links</td></tr><tr><td><code>redirected</code></td><td>array</td><td>the list of web links for which their response was a redirect response</td></tr><tr><td><code>locked</code></td><td>boolean</td><td>if the link is in a locked row</td></tr><tr><td><code>synced</code></td><td>boolean</td><td>if the link is in a synced row</td></tr><tr><td><code>uuid</code></td><td>string</td><td>uuid of the widget containing the link</td></tr><tr><td><code>widgetLabel</code></td><td>string</td><td>label of the element in the widget containing the link</td></tr><tr><td><code>widgetType</code></td><td>string</td><td>type of the widget: <code>button</code>, <code>menu</code>, <code>social</code>, <code>image</code>, <code>gif</code>, <code>sticker</code>, <code>icon</code>, <code>heading</code>, <code>paragraph</code>, <code>list</code>, <code>table</code>  </td></tr><tr><td><code>reasons</code></td><td>array</td><td>For ignored elements, one or more of the following values: <code>missingChecked</code>, <code>missingRelated</code>, <code>notApplicable</code>, <code>urlValidation</code>, <code>allowList</code></td></tr><tr><td><code>moduleIndex</code></td><td>int</td><td>a numeric value that defines an element’s position in the design and determines the order of elements</td></tr><tr><td><code>subModuleIndex</code></td><td>int</td><td>a numeric value used to define the order of elements relative to the moduleIndex</td></tr></tbody></table>
 
 ### Insufficient Font Size <a href="#insufficient-font-size" id="insufficient-font-size"></a>
 
@@ -1467,7 +1492,7 @@ This section lists and describes each of the Check endpoints. You can use this s
 This section includes details on how to make an API call using the email check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="message-check" path="/v1/message/check" method="post" %}
-[OpenAPI message-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/a0a803fcab82fc94a75d76e02422bbaee4b3d159b979391ed8095e475d723f49.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251204%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251204T053355Z&X-Amz-Expires=172800&X-Amz-Signature=de8a47b91175714c860453ac485a6a2fadbfc345c38d781c6ceabf0a19ea23e3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI message-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/a0a803fcab82fc94a75d76e02422bbaee4b3d159b979391ed8095e475d723f49.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260129%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260129T091850Z&X-Amz-Expires=172800&X-Amz-Signature=2821dbf26810c266ced010254e9c7af2f1e4fb7861c144ab1cd05812f31e8132&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
@@ -1669,7 +1694,7 @@ Reference the following example email response:
 This section includes details on how to make an API call using the page check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="page-check" path="/v1/page/check" method="post" %}
-[OpenAPI page-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/4308febd44d915cc101689a737e2381eb1c6723b5e3d523e010547c938a72ba9.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251204%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251204T053355Z&X-Amz-Expires=172800&X-Amz-Signature=da4573cd319aae0c0b04bcfb75d3fd7b45ffabf68162485049383a5078c64669&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI page-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/4308febd44d915cc101689a737e2381eb1c6723b5e3d523e010547c938a72ba9.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260129%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260129T091850Z&X-Amz-Expires=172800&X-Amz-Signature=e4ef53b4e4785c42dc622f71a97557bb851beb858813ef535f3c652e73203625&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
@@ -1854,7 +1879,7 @@ Reference an example page response:
 This section includes details on how to make an API call using the row check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="row-check" path="/v1/row/check" method="post" %}
-[OpenAPI row-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/fd96add5eb3171c8641c68e85b13ca24fd76b94debf20b7a3b25a7b5e4c01264.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251204%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251204T053355Z&X-Amz-Expires=172800&X-Amz-Signature=96a51bcb4400609b0a0e53ac072211fc450e5a28820ab7401abf7bfc51c1bc21&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI row-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/fd96add5eb3171c8641c68e85b13ca24fd76b94debf20b7a3b25a7b5e4c01264.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260129%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260129T091850Z&X-Amz-Expires=172800&X-Amz-Signature=31093a9e0859237096102a539dd02045dc5e87497a110ca6f913a26c65cccfa9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
