@@ -279,8 +279,8 @@ Watch the [React Video Series](../resources/videos/react-video-series.md) to lea
 Prior to getting started, ensure you:
 
 * Understand the [React framework](https://react.dev/learn) and what it is.
-* Have a [Beefree SDK account](https://developers.beefree.io/login?from=website_menu).&#x20;
-* [Create an application](../getting-started/readme/create-an-application.md) within the Developer Console. &#x20;
+* Have a [Beefree SDK account](https://developers.beefree.io/login?from=website_menu).
+* [Create an application](../getting-started/readme/create-an-application.md) within the Developer Console.
   * Obtain your [Client ID and Client Secret](../getting-started/readme/create-an-application.md#obtain-your-client-id-and-client-secret).
 
 ## **What You'll Learn**
@@ -303,13 +303,13 @@ First, set up a React app with TypeScript. Navigate to your terminal and run the
 
 ### **2. Install Beefree SDK**
 
-Run the following command in your terminal to install the official[ Beefree SDK npm package](https://www.npmjs.com/package/@beefree.io/sdk).&#x20;
+Run the following command in your terminal to install the official[ Beefree SDK npm package](https://www.npmjs.com/package/@beefree.io/sdk).
 
 ```bash
 npm install @beefree.io/sdk
 ```
 
-Now that the package is installed, the next step is to create a simple user interface (UI) to embed the builder within.&#x20;
+Now that the package is installed, the next step is to create a simple user interface (UI) to embed the builder within.
 
 {% hint style="info" %}
 **Note (React and Beefree SDK Interaction):** The `@beefree.io/sdk` package provides a React-compatible wrapper for the Beefree builder. React manages the UI lifecycle, while the SDK handles the email builder logic.
@@ -317,9 +317,9 @@ Now that the package is installed, the next step is to create a simple user inte
 
 ### **3. Create a Simple UI**
 
-The simple UI for this step is creating a "Read the Docs" Button with a link to the docs site. This serves as a simple visual to see the contrast between the application and builder UI once the app is running locally.&#x20;
+The simple UI for this step is creating a "Read the Docs" Button with a link to the docs site. This serves as a simple visual to see the contrast between the application and builder UI once the app is running locally.
 
-Copy and paste the code below in your **`App.tsx`** file to modify it to include a button linking to Beefree SDK's docs. You can use any url you'd like to experiment with this locally, simply replace `href="https://docs.beefree.io/beefree-sdk"` in the code below with your preferred url.&#x20;
+Copy and paste the code below in your **`App.tsx`** file to modify it to include a button linking to Beefree SDK's docs. You can use any url you'd like to experiment with this locally, simply replace `href="https://docs.beefree.io/beefree-sdk"` in the code below with your preferred url.
 
 #### **Update `App.tsx`**
 
@@ -466,7 +466,7 @@ useEffect(() => {
 
 ### **5. Set Up the Proxy Server (V2 Auth)**
 
-Create `proxy-server.js` in the **root directory**. Copy and paste the code in the following section into the `proxy-server.js` file in the root directory. The following code is responsible for a very important part of running Beefree SDK within your React app, which is authentication and successfully completing the [authorization process](../getting-started/readme/installation/authorization-process-in-detail.md). Beefree SDK requires that you pass a `Client ID`, `Client Secret`, and `UID` on the server-side to successfully complete the authorization process. The following code shows an example of how you can use the `/loginV2` to complete this.   &#x20;
+Create `proxy-server.js` in the **root directory**. Copy and paste the code in the following section into the `proxy-server.js` file in the root directory. The following code is responsible for a very important part of running Beefree SDK within your React app, which is authentication and successfully completing the [authorization process](../getting-started/readme/installation/authorization-process-in-detail.md). Beefree SDK requires that you pass a `Client ID`, `Client Secret`, and `UID` on the server-side to successfully complete the authorization process. The following code shows an example of how you can use the `/loginV2` to complete this.
 
 #### **`proxy-server.js`**
 
@@ -514,7 +514,7 @@ app.listen(PORT, () => {
 });
 ```
 
-The `.env.example` file in the root of the GitHub repository includes an example of a `.env` file. To create a .env file, rename this file to `.env`. Copy and paste your credentials from the Beefree SDK Developer Console securely into the file's placeholders. The following code shows an example of what these placeholders look like inside the file.
+Rename the `.env.example`  file that you find in the root of the GitHub repository to `.env`. Replace the placeholders with your credentials from the Beefree SDK Developer Console. Keeps these credentials secure.&#x20;
 
 ```javascript
 BEE_CLIENT_ID='YOUR-CLIENT-ID'
@@ -590,7 +590,7 @@ Now you can visit **https://localhost:5173** and start experimenting with your n
 
 ### **Summary**
 
-Now you have a functional React app running locally, with Beefree SDK's no-code email builder integrated and properly authenticated—following best practices for React development.&#x20;
+Now you have a functional React app running locally, with Beefree SDK's no-code email builder integrated and properly authenticated—following best practices for React development.
 
 Remember the following core concepts covered throughout this guide to easily integrate Beefree SDK into your React application:
 
