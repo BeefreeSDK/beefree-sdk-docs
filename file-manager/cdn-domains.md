@@ -93,7 +93,7 @@ More in detail, you can now expect different behavior depending on when assets e
 * **New uploads:** Newly uploaded files always use your segmented CDN domain.&#x20;
 
 {% hint style="info" %}
-If your team performs post-processing on image URLs (for example, rewriting or hashing), you may need to adjust your setup to account for the new CDN domain pattern.&#x20;
+If your integration performs post-processing on image URLs (for example, rewriting or hashing), you may need to adjust your setup to account for the new CDN domain pattern.&#x20;
 {% endhint %}
 
 #### Contact us for support
