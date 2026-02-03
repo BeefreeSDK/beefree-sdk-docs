@@ -75,12 +75,14 @@ To ensure the reliable delivery of your assets and prevent potential loading or 
 
 ### CDN Migration
 
-Previously, all media for both free and paid plans were served via a single CDN domain: `d15k2d11r6t6rl.cloudfront.net`. To provide the enhanced security and segmentation described above, Beefree migrated to the current configuration in early 2026.&#x20;
+Previously, all media for both free and paid plans were served via a single CDN domain: `d15k2d11r6t6rl.cloudfront.net`. To provide the enhanced security and segmentation described above, Beefree started migrating to the current configuration in early 2026.&#x20;
 
-This transition followed the timeline below:
+This transition has followed the timeline below:
 
 * January 15, 2026 for SDK Free Plans
-* Progressive rollout from March, 5 2026 for SDK Paid Plans. You'll be notified about when your application is scheduled to be migrated.
+* March 5 for Essential and Core plans
+* March 19 for Superpowers plans
+* Starting April 2 for Enterprise plans. Please reach out to your CSM to arrange the transition.
 
 #### Impact on Media Assets and Automation
 
