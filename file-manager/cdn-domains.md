@@ -75,7 +75,7 @@ To ensure the reliable delivery of your assets and prevent potential loading or 
 
 ### CDN Migration
 
-Previously, all media for both free and paid plans were served via a single shared domain: `d15k2d11r6t6rl.cloudfront.net`. To provide the enhanced security and segmentation described above, Beefree migrated to the current configuration in early 2026.&#x20;
+Previously, all media for both free and paid plans were served via a single CDN domain: `d15k2d11r6t6rl.cloudfront.net`. To provide the enhanced security and segmentation described above, Beefree migrated to the current configuration in early 2026.&#x20;
 
 This transition followed the timeline below:
 
