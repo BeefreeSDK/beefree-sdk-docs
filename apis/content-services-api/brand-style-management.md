@@ -172,10 +172,6 @@ The styles parameter in the request should follow this JSON format:
 
 Each block style can include attributes such as colors, fonts, borders, and more, depending on your brand's requirements. For additional code samples of each content block type and its respective style customization options, reference the [Content Defaults schema page](https://docs.beefree.io/content-defaults/).
 
-{% hint style="danger" %}
-**Note:** The `mobileStyles` and `hoverStyles` properties are not supported by the Brand Style Management API.
-{% endhint %}
-
 #### Template <a href="#id-6ac40siq79ge" id="id-6ac40siq79ge"></a>
 
 The template parameter should contain your template's JSON structure. Ensure that the JSON structure aligns with the template you intend to update.
@@ -567,6 +563,29 @@ The Brand Style API includes a `422` status code (unprocessable entity). This st
         }
       }
     },
+    "hoverStyles": {
+      "type": "object",
+      "properties": {
+        "backgroundColor": {
+          "$ref": "#/definitions/backgroundColor"
+        },
+        "color": {
+          "$ref": "#/definitions/color"
+        },
+        "borderBottom": {
+          "$ref": "#/definitions/borderValue"
+        },
+        "borderTop": {
+          "$ref": "#/definitions/borderValue"
+        },
+        "borderLeft": {
+          "$ref": "#/definitions/borderValue"
+        },
+        "borderRight": {
+          "$ref": "#/definitions/borderValue"
+        }
+      }
+    },
     "className": {
       "type": "string",
       "description": "Used to target styles at a specific class."
@@ -641,6 +660,9 @@ The Brand Style API includes a `422` status code (unprocessable entity). This st
         },
         "mobileStyles": {
           "$ref": "#/definitions/mobileStyles"
+        },
+        "hoverStyles":{
+          "$ref": "#/definitions/hoverStyles"
         }
       }
     },
@@ -1403,6 +1425,50 @@ The Brand Style API includes a `422` status code (unprocessable entity). This st
             }
           }
         },
+        "text": {
+          "type": "object",
+          "description": "module",
+          "properties": {
+            "styles": {
+              "type": "object",
+              "properties": {
+                "color": {
+                  "$ref": "#/definitions/color"
+                },
+                "fontSize": {
+                  "$ref": "#/definitions/fontSize"
+                },
+                "fontFamily": {
+                  "$ref": "#/definitions/fontFamily"
+                },
+                "fontWeight": {
+                  "$ref": "#/definitions/fontWeight"
+                },
+                "lineHeight": {
+                  "$ref": "#/definitions/lineHeight"
+                },
+                "textAlign": {
+                  "$ref": "#/definitions/textAlign"
+                },
+                "direction": {
+                  "$ref": "#/definitions/direction"
+                },
+                "letterSpacing": {
+                  "$ref": "#/definitions/letterSpacing"
+                },
+                "linkColor": {
+                  "$ref": "#/definitions/linkColor"
+                }
+              }
+            },
+            "blockOptions": {
+              "$ref": "#/definitions/blockOptions"
+            },
+            "mobileStyles": {
+              "$ref": "#/definitions/mobileStyles"
+            }
+          }
+        },
         "list": {
           "type": "object",
           "description": "module",
@@ -1473,6 +1539,109 @@ The Brand Style API includes a `422` status code (unprocessable entity). This st
               "$ref": "#/definitions/mobileStyles"
             }
           }
+        },
+        "table": {
+          "type": "object",
+          "description": "module",
+          "properties": {
+            "rows": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "cells": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "html": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "cells": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "html": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "styles": {
+              "type": "object",
+              "properties": {
+                "color": {
+                  "$ref": "#/definitions/color"
+                },
+                "fontFamily": {
+                  "$ref": "#/definitions/fontFamily"
+                },
+                "fontWeight": {
+                  "$ref": "#/definitions/fontWeight"
+                },
+                "fontSize": {
+                  "$ref": "#/definitions/fontSize"
+                },
+                "textAlign": {
+                  "$ref": "#/definitions/textAlign"
+                },
+                "lineHeight": {
+                  "$ref": "#/definitions/lineHeight"
+                },
+                "letterSpacing": {
+                  "$ref": "#/definitions/letterSpacing"
+                },
+                "direction": {
+                  "$ref": "#/definitions/direction"
+                },
+                "linkColor": {
+                  "$ref": "#/definitions/linkColor"
+                },
+                "backgroundColor": {
+                  "$ref": "#/definitions/backgroundColor"
+                },
+                "border": {
+                  "$ref": "#/definitions/borderValue"
+                },
+                "alternateRowBackgroundColor": {
+                  "$ref": "#/definitions/backgroundColor"
+                },
+                "headersFontSize": {
+                  "$ref": "#/definitions/fontSize"
+                },
+                "headersFontWeight": {
+                  "$ref": "#/definitions/fontWeight"
+                },
+                "headersTextAlign": {
+                  "$ref": "#/definitions/textAlign"
+                },
+                "headersBackgroundColor": {
+                  "$ref": "#/definitions/backgroundColor"
+                },
+                "headersColor": {
+                  "$ref": "#/definitions/color"
+                }
+              }
+            },
+            "blockOptions": {
+              "$ref": "#/definitions/blockOptions"
+            }
+          }
         }
       }
     },
@@ -1498,6 +1667,7 @@ The Brand Style API includes a `422` status code (unprocessable entity). This st
     { "required": ["styles", "row"] }
   ]
 }
+
 ```
 
 </details>
