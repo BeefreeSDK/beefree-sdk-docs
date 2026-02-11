@@ -1,16 +1,16 @@
 # CDN Domains
 
-### Understanding Beefree's CDN Infrastructure
+## Understanding Beefree's CDN Infrastructure
 
 A CDN (Content Delivery Network) is a system of distributed servers that deliver web content, ensuring high availability and performance by distributing the service spatially relative to end-users. CDNs reduce load times, minimize latency, and enhance security for digital assets.
 
 **Beefree's Segmented CDN Infrastructure**
 
-If you rely on Beefree SDK storage, and use the latest FSP backend component, Beefree uses a segmented CDN infrastructure to serve your assets. We allocate distinct second-level domains per subscription tier and media type, and also assign you a dedicated third-level domain based on subscription ID.&#x20;
+If you rely on Beefree SDK storage, Beefree uses a segmented CDN infrastructure to serve your assets. We allocate distinct second-level domains per subscription tier and media type, and also assign you a dedicated third-level domain based on subscription ID.&#x20;
 
 This unique setup isolates your content from other SDK customers, mitigating risks from potential malicious or spammy uploads. By preventing one customer's actions from impacting others, Beefree ensures robust security and maintains the integrity and reputation of all digital assets.
 
-### How Beefree CDN Infrastructure Works
+## How Beefree CDN Infrastructure Works
 
 When you create or manage an SDK application, your subscription plan determines which CDN domains your files use.
 
@@ -30,7 +30,7 @@ https://id32514.beefreesdkhosting.net/path/to/file.png
 
 ### Paid Plans
 
-For **paid plans** relying on Beefree's storage, we use two domains to serve different types of assets:
+For **paid plans** relying on Beefree's storage, and using the latest FSP backend component, we use two domains to serve different types of assets:
 
 * The **Media Files** CDN Domain `sdkmedia.net` handles image, video, and audio MIME types
 * The **Other Files** CDN domain `sdkhosting.net` is used for text (including HTML), office documents, XML, ZIP files, EPUB, PDF, PostScript, and fonts.
@@ -53,11 +53,20 @@ https://id76302.sdkmedia.net/path/to/image.png
 https://id76302.sdkhosting.net/path/to/archive.zip
 ```
 
+Please note that your CDN domains are set at subscription level. If your subscription has multiple applications that rely on Beefree's default storage, those applications will be sharing the same CDN domains. At the same time, if you have multiple applications with different storage options, only those relying on both Beefree SKD's storage will serve content using the abovementioned segmented CDN domains.
+
+You can check your CDN domains in the Storage options section of the SDK console, as seen in the screenshot below.
+
+<figure><img src="../.gitbook/assets/CDN Console.jpg" alt=""><figcaption></figcaption></figure>
+
 ### Customize your CDN Domain
 
-If you are a Paid User, you may request a **one-time customization** of your third-level domain, which allows aligning the CDN URL more closely with your brand identity. This can be requested in the SDK console, as seen in the screenshot below.
+If you are a Paid User, you may request a **one-time customization** of your third-level domain, which allows aligning the CDN URL more closely with your brand identity. For example, you could replace a default `id32514.sdkmedia.net` domain with `yourbrand.sdkmedia.net`.
 
-<figure><img src="../.gitbook/assets/CDN SDK Console.png" alt=""><figcaption></figcaption></figure>
+You can request a custom third-level domain via [this form](https://devportal.beefree.io/hc/en-us/requests/new?ticket_form_id=33225900327186), providing:&#x20;
+
+* your subscription ID
+* the new third-level domain you want to adopt
 
 For **Enterprise plans**, you may also request to connect your own domain. Please contact your CSM for dedicated assistance.
 
@@ -77,7 +86,7 @@ To ensure the reliable delivery of your assets and prevent potential loading or 
 
 Previously, all media for both free and paid plans were served via a single CDN domain: `d15k2d11r6t6rl.cloudfront.net`. To provide the enhanced security and segmentation described above, Beefree started migrating to the current configuration in early 2026.&#x20;
 
-This transition has followed the timeline below:
+This transition has been following the timeline below:
 
 * January 15, 2026 for SDK Free Plans
 * March 5 for Essential and Core plans
@@ -97,6 +106,10 @@ More in detail, you can now expect different behavior depending on when assets e
 {% hint style="info" %}
 If your integration performs post-processing on image URLs (for example, rewriting or hashing), you may need to adjust your setup to account for the new CDN domain pattern.&#x20;
 {% endhint %}
+
+#### Migrating to new CDN domains when using our legacy file system provider
+
+In 2024, we introduced a new file system provider (FSP), and this CDN update requires you to be on the latest FSP, other than relying on the Beefree SDK storage. If you're among the customers who are still relying on our legacy file system provider, please note that we currently cannot migrate you to the improved CDN domain infrastructure. Please connect with your Customer Success Manager to discuss your migration options.&#x20;
 
 #### Contact us for support
 
