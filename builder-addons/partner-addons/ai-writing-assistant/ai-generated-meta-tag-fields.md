@@ -95,7 +95,7 @@ addOns: [{
 
 ### Multi-Language Templates Compatibility
 
-AI Generated Titles, Descriptions, Preheaders, and Subject Lines is compatible with Multi-language templates.
+AI-Generated Titles, Descriptions, Preheaders, and Subject Lines are compatible with Multi-language templates.
 
 To use both Multi-language templates and AI-Generated Titles, Descriptions, Preheaders, and Subject Lines, take the following steps:
 
@@ -103,6 +103,12 @@ To use both Multi-language templates and AI-Generated Titles, Descriptions, Preh
 2. Perform the AI-Generated Titles, Descriptions, Preheaders, and Subject Lines Configuration steps
 3. Test the AI-generated content in a few different languages
 4. Confirm everything works as intended
+
+#### Language Recognition Methods
+
+The system identifies which language to use for AI-generated Titles, Descriptions, Preheaders, and Subject Lines based on the following conditions and methods, ordered by priority:
+
+<table><thead><tr><th width="108">Priority</th><th>Condition</th><th>Language Recognition Methods</th></tr></thead><tbody><tr><td>1</td><td><a href="https://docs.beefree.io/beefree-sdk/other-customizations/multi-language-templates">Multi-language Template</a> is enabled</td><td>AI creates content in the selected translation language</td></tr><tr><td>2</td><td>Language selector has a value</td><td>If Multi-Language Templates is not active, AI detects language using the HTML language dropdown in the side panel</td></tr><tr><td>3</td><td>No explicit language is set</td><td>If the language dropdown is empty or missing, AI detects which language to use for details based on the main content (eg email body)</td></tr></tbody></table>
 
 ### Troubleshooting
 
