@@ -63,9 +63,9 @@ You can check your CDN domains in the Storage options section of the SDK console
 
 If you are a Paid User, you may request a **one-time customization** of your third-level domain, which allows aligning the CDN URL more closely with your brand identity. For example, you could replace a default `id32514.sdkmedia.net` domain with `yourbrand.sdkmedia.net`.
 
-You can request a custom third-level domain via [this form](https://devportal.beefree.io/hc/en-us/requests/new?ticket_form_id=33225900327186), providing:&#x20;
+You can request a custom third-level domain via [this form](https://devportal.beefree.io/hc/en-us/requests/new?ticket_form_id=29348176015634\&tf_29381025990290=third-level_domain_request\&tf_subject=Custom+CDN+-+Third-level+domain+change+request\&tf_description=Please+change+the+CDN+third-level+domain+in+my+Beefree+SDK+subscription+%5Badd+details+if+needed%5D), providing:&#x20;
 
-* your subscription ID
+* your Client ID
 * the new third-level domain you want to adopt
 
 For **Enterprise plans**, you may also request to connect your own domain. Please contact your CSM for dedicated assistance.
@@ -89,9 +89,10 @@ Previously, all media for both free and paid plans were served via a single CDN 
 This transition has been following the timeline below:
 
 * January 15, 2026 for SDK Free Plans
-* March 5 for Essential and Core plans
+* March 5 for Essential plans
+* March 12 for Core plans
 * March 19 for Superpowers plans
-* Starting April 2 for Enterprise plans. Please reach out to your CSM to arrange the transition.
+* Starting April 9 for Enterprise plans. Please reach out to your CSM to arrange the transition.
 
 #### Impact on Media Assets and Automation
 
