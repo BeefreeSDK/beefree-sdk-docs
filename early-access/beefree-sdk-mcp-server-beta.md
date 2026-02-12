@@ -18,8 +18,8 @@ The Beefree SDK MCP Server allows you to connect your AI Agents and clients with
 **Important**:&#x20;
 
 * The MCP currently requires a live and correctly configured editor session to function properly. Ensure your Beefree SDK editor is running with MCP enabled before attempting to use any tools.
-* We are also exploring a headless MCP version. Does it sound interesting for your use cases? L[et us know](https://devportal.beefree.io/hc/en-us/requests/new).
-* We’re providing access to the MCP server that makes key Beefree SDK functionality accessible to AI agents and clients. However, providing the _agent_ is the responsibility of the Host Application. If you don’t have your own agent yet, consider this [sample application](getting-started.md#reference-sample-project) using a [PydanticAI](https://ai.pydantic.dev/) agent that you can get up and running in under 5 minutes.&#x20;
+* We are also exploring a headless MCP version. Does it sound interesting for your use cases? [Let us know](https://devportal.beefree.io/hc/en-us/requests/new).
+* We’re providing access to the MCP server that makes key Beefree SDK functionality accessible to AI agents and clients. However, providing the _agent_ is the responsibility of the Host Application. If you don’t have your own agent yet, consider this [sample application](beefree-sdk-mcp-server-beta.md#reference-sample-project) using a [PydanticAI](https://ai.pydantic.dev/) agent that you can get up and running in under 5 minutes.&#x20;
 {% endhint %}
 
 ### What can you do with the Beefree MCP Server?
