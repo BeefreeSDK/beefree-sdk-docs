@@ -123,13 +123,13 @@ You can use a combination of both approaches, loading frequently used merge tags
 The syntax used for Merge Tags is entirely up to you. Curly brackets, square brackets, ... you name it. The builder is agnostic to the syntax that your system employs for these dynamic fields. The same is true for Merge Contents.
 {% endhint %}
 
-## Merge Content details <a href="#merge-content-details" id="merge-content-details"></a>
+## Dynamic Content details <a href="#merge-content-details" id="merge-content-details"></a>
 
-Merge content differs from merge tags in that it allows the user to drag and drop instances of it as a content element available in the _**Content**_**&#x20;panel**.
+Dynamic content differs from merge tags in that it allows the user to drag and drop instances of it as a content element available in the _**Content**_**&#x20;panel**.
 
 For example, let’s say you have a section of an email where you want to display some recommended products: Merge Content allows you to insert some syntax into the message that your application will replace with the recommended products at the time the email is sent.
 
-When Merge Content elements are submitted to the builder in the configuration file, a new tile is displayed in the _Content_ panel.
+When Dynamic content elements are submitted to the builder in the configuration file, a new tile is displayed in the _Content_ panel.
 
 <figure><img src="../../.gitbook/assets/5Screen-Shot-2022-01-25-at-1.12.02-PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
@@ -139,21 +139,21 @@ The user can drag and drop it into the message just like any other content eleme
 
 Once dropped in position, the settings panel will display the instances of merge content available for selection.
 
-In the example below, the user wants to insert some banner ads into the email, using a service such as [LiveIntent](https://liveintent.com/). An array of Merge Content elements were submitted to the builder in the configuration file, so the user has several banner ads to choose from (i.e. some syntax that will be replaced with HTML when the email is sent).
+In the example below, the user wants to insert some banner ads into the email, using a service such as [LiveIntent](https://liveintent.com/). An array of Dynamic content elements were submitted to the builder in the configuration file, so the user has several banner ads to choose from (i.e. some syntax that will be replaced with HTML when the email is sent).
 
-To create another instance of merge content, the user can either drag and drop it again from the _Content_ tab, or duplicate the existing content element…
+To create another instance of dynamic content, the user can either drag and drop it again from the _Content_ tab, or duplicate the existing content element…
 
 <figure><img src="../../.gitbook/assets/7Screen-Shot-2022-01-25-at-5.41.19-PM (1).png" alt=""><figcaption></figcaption></figure>
 
-… choose another instance of merge content from the available selections…
+… choose another instance of dynamic content from the available selections…
 
 <figure><img src="../../.gitbook/assets/8Screen-Shot-2022-01-25-at-5.43.41-PM.png" alt=""><figcaption></figcaption></figure>
 
 … and then drag it elsewhere in the message.
 
-## Ways to load Merge Content
+## Ways to load Dynamic Content
 
-Just like with Merge Tags, you can load Merge Content in the builder at the time it is initialized by adding a `mergeContents` node to the JSON configuration file. For example:
+Just like with Merge Tags, you can load Dynamic Content in the builder at the time it is initialized by adding a `mergeContents` node to the JSON configuration file. For example:
 
 ```javascript
 
@@ -174,12 +174,12 @@ var mergeContents = [
 
 ```
 
-… or you can allow users to search for additional instances of Merge Content by using the [Content Dialog feature](content-dialog.md).
+… or you can allow users to search for additional instances of Dynamic Content by using the [Content Dialog feature](content-dialog.md).
 
-Here too, you can certainly use a combination of both approaches, loading frequently used Merge Content at the time the builder is initialized, and then allowing users to look for additional Merge Content using [Content Dialog](content-dialog.md).
+Here too, you can certainly use a combination of both approaches, loading frequently used Dynamic Content at the time the builder is initialized, and then allowing users to look for additional Dynamic Content using [Content Dialog](content-dialog.md).
 
 {% hint style="info" %}
-NOTE: if what you need for your users is a way to load a **dynamic image** into the message or page (e.g. a countdown clock), you don't need to use Merge Content. Beefree SDK can handle dynamic images with a feature that was created specifically for that task. See: [letting your users add dynamic images](https://dam.beefree.io/dynamicimagescontent).
+NOTE: if what you need for your users is a way to load a **dynamic image** into the message or page (e.g. a countdown clock), you don't need to use Dynamic Content. Beefree SDK can handle dynamic images with a feature that was created specifically for that task. See: [letting your users add dynamic images](https://dam.beefree.io/dynamicimagescontent).
 {% endhint %}
 
 ## Limitations to Merge Tags & Merge Content <a href="#limitations-to-merge-tags-merge-content" id="limitations-to-merge-tags-merge-content"></a>
