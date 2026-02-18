@@ -6,7 +6,7 @@ description: >-
 
 # Change Log
 
-## Release February 2025
+## Release February 2026
 
 Reference the upcoming custom CSS changes in the following expandable section.
 
