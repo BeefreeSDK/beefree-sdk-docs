@@ -169,8 +169,17 @@ Beefree SDK requires a configuration object with the required `container` proper
 The following code snippet shows an example of this:
 
 ```javascript
-var config = {
-    container: 'string'
+const config = {
+  container: 'beefree-sdk-container' // string
+}
+```
+
+Alternative approach:
+
+```javascript
+const containerElement = document.getElementById('beefree-sdk-container')
+const config = {
+  container: containerElement // HTML Element
 }
 ```
 
@@ -178,9 +187,7 @@ var config = {
 
 The following table explains the container property.
 
-| Property  | Type   | Required | Description                   |
-| --------- | ------ | -------- | ----------------------------- |
-| container | string | Yes      | DOM element ID for the editor |
+<table><thead><tr><th width="200">Property</th><th width="200">Type</th><th width="155">Required</th><th width="193">Description</th></tr></thead><tbody><tr><td>container</td><td>string | HTMLElement</td><td>Yes</td><td>DOM element ID for the editor or the HTML element itself</td></tr></tbody></table>
 
 ### **Working with Templates**
 
