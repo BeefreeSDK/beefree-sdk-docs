@@ -189,7 +189,19 @@ beeInstance.loadWorkspace('mixed');
 * **Description:** Updates editor configuration dynamically
 * **Parameters:**
   * `config`: Configuration object with updated settings
-* **Usage:**
+  * `options`: An optional object to choose the behaviour
+    * `rejectDebounced`: `boolean` (default `false`)
+      * If `true` promises of debounced requests to `loadConfig` will be rejected and will need to be handled
+      * If `false` promises of debounced requests to `loadConfig` will be resolved with the current config value
+* **Debounce**
+
+Consecutive requests, made in a short time, to the `beeInstance.loadConfig` get debounced so the editor can process each change without loss or side effects.&#x20;
+
+Debouncing starts with the second request, allowing instant/reactive behavior when requests arrive separated in time.
+
+* **Usage**
+
+**Example without options**
 
 ```javascript
 beeInstance.loadConfig({
@@ -197,6 +209,28 @@ beeInstance.loadConfig({
     language: 'es-ES'
 });
 ```
+
+**Example with rejectDebounced** `true`
+
+```javascript
+const first = await beeInstance.loadConfig({ debug: { all: false } }, { rejectDebounced: true })
+const second = await beeInstance.loadConfig({ debug: { all: true } }, { rejectDebounced: true })
+const third = await beeInstance.loadConfig({ debug: { all: false } }, { rejectDebounced: true })
+```
+
+With `rejectDebounced` set to `true,` the `second` request gets rejected, and the rejection must be handled! This is useful when you want to react only when the config actually changed in the editor.
+
+The `first` doesn't get rejected because we start debouncing from the second consecutive request.
+
+**Example with rejectDebounced** `false`
+
+```java
+const first = await beeInstance.loadConfig({ debug: { all: false } })
+```
+
+With `rejectDebounced` set to `false,` the `second` request gets resolved, and there's no need to handle it! Instead of rejecting it, an `onWarning` event will be fired. This is useful when you don't need to react when the config changes in the editor.
+
+Keep in mind that the `second` request will return the same configuration as the `first` one, since the config update is still in progress.
 
 ### File Manager Methods
 
