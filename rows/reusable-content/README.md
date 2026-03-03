@@ -6,11 +6,11 @@ This feature is available on Beefree SDK [Core plan](https://developers.beefree.
 
 Beefree SDK offers a comprehensive suite of features that enable your application's end users to save and manage reusable content. Rows are a core feature of the visual builders within Beefree SDK that provide end users with an intuitive avenue for saving and reusing content throughout their design creation workflows. They provide a structured method to house various types of content such as headers, paragraphs, images, and buttons.
 
-Rows are also a fundamental part of how designs are built and structured within the visual builders. In the following GIF, you can see how each row functions as a component of a continuous design.&#x20;
+Rows are also a fundamental part of how designs are built and structured within the visual builders. In the following GIF, you can see how each row functions as a component of a continuous design.
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-12-03 at 17.29.14.gif" alt=""><figcaption></figcaption></figure>
 
-Rows allow end users to add multiples types of content to a section of a design. End users can either create their own rows from scratch (and save them for reuse on a later day), or they can use pre-designed rows that are  pre-loaded into the host application and ready for use. Pre-loaded rows are helpful when providing a template structure that end users can customize as they build their designs.&#x20;
+Rows allow end users to add multiples types of content to a section of a design. End users can either create their own rows from scratch (and save them for reuse on a later day), or they can use pre-designed rows that are pre-loaded into the host application and ready for use. Pre-loaded rows are helpful when providing a template structure that end users can customize as they build their designs.
 
 Providing end users with the option to easily reuse content comes with a host of benefits, including:
 
@@ -20,7 +20,7 @@ Providing end users with the option to easily reuse content comes with a host of
 * **Continuity with current user experience**: End users can add empty structures, which preserves creativity and allows them to build and design from scratch.
 * **Option to disable empty rows**: If preferred, end users can opt to work solely with pre-made rows, focusing on content customization without the need to build layouts from the ground up.
 
-In addition to rows offering a variety of benefits for end users, there are also clear benefits for the host application, including:&#x20;
+In addition to rows offering a variety of benefits for end users, there are also clear benefits for the host application, including:
 
 * **Ready-to-go content delivery**: The host application can pass pre-built, ready-to-go rows directly into the builder, reducing the need for end users to create content from scratch.
 * **Customization control**: Host applications can offer a variety of customizable rows, ensuring users follow design guidelines while still providing creative freedom.
@@ -30,7 +30,7 @@ In addition to rows offering a variety of benefits for end users, there are also
 
 ### Understanding the Different Types of Rows in Beefree SDK
 
-This section outlines the different row-related features available within Beefree SDK. Throughout the following pages of the Rows section, we will discuss each of these different row-related features in depth, including what they are, how they look, and how to implement them if they are a good fit for your application and end users.&#x20;
+This section outlines the different row-related features available within Beefree SDK. Throughout the following pages of the Rows section, we will discuss each of these different row-related features in depth, including what they are, how they look, and how to implement them if they are a good fit for your application and end users.
 
 #### Custom Rows
 
@@ -61,11 +61,11 @@ Hosted Saved Rows allow your end users to save and manage their own rows. This s
 
 Hosted Saved Rows provides both a storage solution and user interface your end users can engage with to save and manage their rows.
 
-The following GIF shows an example user interface displaying how Hosted Saved Rows will appear to your end users on the frontend of your application.  &#x20;
+The following GIF shows an example user interface displaying how Hosted Saved Rows will appear to your end users on the frontend of your application.
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-12-03 at 18.22.16.gif" alt=""><figcaption></figcaption></figure>
 
-Hosted Saved Rows are enabled by default. The following image shows how the toggle looks like in the [Developer Console](https://developers.beefree.io/login?from=website_menu). &#x20;
+Hosted Saved Rows are enabled by default. The following image shows how the toggle looks like in the [Developer Console](https://developers.beefree.io/login?from=website_menu).
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-12-03 at 18.26.16.png" alt=""><figcaption></figcaption></figure>
 
@@ -75,7 +75,7 @@ Visit the [Implement Hosted Saved Rows](create/save/implement-hosted-saved-rows.
 
 [Self-hosted Saved Rows](create/save/implement-self-hosted-saved-rows/) are similar to Hosted Saved Rows on the frontend, but require you to connect your own database on the backend. This feature also provides you with more customization options on the frontend if you'd more granular control over customizing your end user's experience saving and managing rows.
 
-&#x20;The following GIF shows an example of a customized modal for saving a row within an application. This modal uses both [saved rows](./#hosted-saved-rows) and [content dialog](../../other-customizations/advanced-options/content-dialog.md) for the customized experience.
+The following GIF shows an example of a customized modal for saving a row within an application. This modal uses both [saved rows](./#hosted-saved-rows) and [content dialog](../../other-customizations/advanced-options/content-dialog.md) for the customized experience.
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-12-03 at 18.45.20.gif" alt=""><figcaption></figcaption></figure>
 
@@ -85,7 +85,7 @@ Visit the [Implement Hosted Saved Rows](create/save/implement-hosted-saved-rows.
 
 #### Synced Rows
 
-The purpose of [Synced Rows](sync/implement-synced-rows.md) is to maintain consistency by synchronizing row updates across multiple designs. A synced row can be reused across multiple designs and each design is updated whenever a synced row is updated. When you edit a synced row, you a redirected to [Edit Single Row Mode](sync/initialize-edit-single-row-mode.md).
+The purpose of [Synced Rows](sync/implement-synced-rows.md) is to maintain consistency by synchronizing row updates across multiple designs. A synced row can be reused across multiple designs and each design is updated whenever a synced row is updated. When you edit a synced row, you are redirected to [Edit Single Row Mode](sync/initialize-edit-single-row-mode.md).
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-12-03 at 18.57.13.gif" alt=""><figcaption></figcaption></figure>
 
