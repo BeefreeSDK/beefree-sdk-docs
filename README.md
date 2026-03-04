@@ -5,7 +5,7 @@ description: >-
   integrating our no-code embeddable builders.
 ---
 
-# Introduction to Beefree SDK
+# Introduction to Beefree
 
 <figure><img src=".gitbook/assets/hero-sdk.png" alt=""><figcaption></figcaption></figure>
 
@@ -32,24 +32,27 @@ This site discusses the technical capabilities of Beefree SDK, and how to embed 
 
 ## Explore Beefree SDK
 
-This section includes two ways to explore Beefree SDK quickly. The first way is by experimenting with our public demo applications built with [Lovable](https://lovable.dev/), [v0](https://v0.app/), and [Replit](https://replit.com/). The second is by experimenting with the Codepen environment, which includes the code and the frontend side-by-side.
+### Beefree SDK Playground
+
+If you'd like to test the drag-and-drop user experience and explore how easy it is to customize the editor but aren't quite ready to spin up your own test application, our [Playground](https://playground.beefree.io/) is the best place for you to get started. \
+\
+This simple, public implementation of the Beefree SDK helps you to:
+
+* Experience how easy it is for your end users to create designs using the intuitive, drag-and-drop editor UI
+* Easily test UI customizations (like moving the sidebar, rearranging content tiles, or applying [Custom CSS](other-customizations/appearance/custom-css/))
+* Explore how you can [import existing HTML](apis/html-importer-api/) to make it editable, and [export designs into HTML, image, or PDF formats](apis/content-services-api/export.md)
+
+<a href="https://playground.beefree.io/" class="button primary">Visit the Playground → </a>
+
+<figure><img src=".gitbook/assets/image (11).png" alt=""><figcaption><p>Check out the Playground to experience the Beefree SDK Editor in action</p></figcaption></figure>
 
 ### Demo Apps
+
+Check out the following public demo apps built with v0, Lovable, and Replit:&#x20;
 
 * [Email Builder by Beefree SDK](https://v0-email-builder-beefree-sdk.vercel.app/) is a demo application built with [v0](https://v0.app/) that simulates how Beefree SDK's no-code drag-and-drop email builder and editor can be integrated into your web application. The demo application includes static dashboards for campaign performance (open rate, click rate, conversion rate, and revenue), campaign breakdown, and subscriber information. Click the following link to access Email Builder by Beefree SDK: [https://v0-email-builder-beefree-sdk.vercel.app/](https://v0-email-builder-beefree-sdk.vercel.app/)  &#x20;
 * [Marketing Buddy](https://beefree-sdk-demo-app-marketing-buddy.lovable.app/) is a demo application built with [Lovable](https://lovable.dev/) to simulate how Beefree SDK integrates within a Martech application's ecosystem. Click the following link to access Marketing Buddy: [https://beefree-sdk-demo-app-marketing-buddy.lovable.app/](https://beefree-sdk-demo-app-marketing-buddy.lovable.app/)&#x20;
 * [Email Design Buddy](https://email-design-buddy-beefree-sdk.replit.app/) is a demo application built with [Replit](https://replit.com/) to simulate how Beefree SDK can be integrated into an email building and editing application. Click the following link to access Email Design Buddy: [https://email-design-buddy-beefree-sdk.replit.app/](https://email-design-buddy-beefree-sdk.replit.app/)&#x20;
-
-### Codepen
-
-You can explore a simple implementation of Beefree SDK in [Codepen](https://codepen.io/zairro/pen/EaVQdyj) to see how the builder works. To visualize the integration below, you can:
-
-* Click **Run Pen** to see the builder.
-* Navigate between the HTML and JS tabs to see the code.
-* Use the JS tab to edit the `beeConfig`, which you can add [Configuration Parameters](getting-started/readme/installation/configuration-parameters/) to. This helps you customize the builder's functionality based on features you are exploring.
-* If you'd like to stay on this page, and not redirect to [Codepen](https://codepen.io/zairro/pen/EaVQdyj), you can zoom in and out of the embedded Codepen using **1x**, **0.5x**, and **0.25x** options.
-
-{% embed url="https://codepen.io/zairro/pen/EaVQdyj" fullWidth="false" %}
 
 ## Start a Simple Implementation <a href="#welcome" id="welcome"></a>
 
