@@ -36,7 +36,6 @@ Here's our ever-growing library of sample code that shows key Beefree SDK functi
 | [SDK Sample: Simple Client HTML App](https://github.com/BeefreeSDK/beefree-sdk-sample-client)                        | A simple HTML app demonstrating the basic implementation of the Beefree SDK for client-side applications.                                                                                                         | HTML, JavaScript       |
 | [Beefree SDK: Email and Landing Page Templates](https://github.com/BeefreeSDK/beefree-sdk-assets-templates)          | A collection of free email, landing page, and popup templates designed for easy integration with the Beefree SDK.                                                                                                 | JSON                   |
 | [Beefree SDK: Secure Auth Example](https://github.com/BeefreeSDK/beefree-sdk-examples/tree/main/secure-auth-example) | This example demonstrates secure, production-ready authentication for the Beefree SDK. It showcases best practices for handling authentication tokens, automatic token refresh, and secure credential management. | React, TypeScript      |
-|                                                                                                                      |                                                                                                                                                                                                                   |                        |
 
 ### Sample code for advanced Beefree SDK functionality
 
