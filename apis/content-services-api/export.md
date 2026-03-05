@@ -161,6 +161,14 @@ To generate a PDF from a template:
 **Note:** The response is a JSON string that will contain the URL of the temporary location of the PDF document. The file is available for 24 hours.
 {% endhint %}
 
+#### Sample code: Exporting PDFs prototype <a href="#image" id="image"></a>
+
+Curious to see what an implementation of the PDF export API could look like? \
+\
+[This example](https://github.com/BeefreeSDK/beefree-sdk-examples/tree/main/template-export-pdf-example) demonstrates advanced PDF export functionality for the Beefree SDK using a modern React + TypeScript architecture. It showcases how to export templates as high-quality PDFs with comprehensive export options, progress tracking, and export history management.
+
+{% embed url="https://github.com/BeefreeSDK/beefree-sdk-examples/tree/main/template-export-pdf-example" %}
+
 ## Image <a href="#image" id="image"></a>
 
 **URL:** `https://api.getbee.io/v1/{collection}/image`
@@ -214,5 +222,5 @@ You may override the clipping size if your layout requires a custom viewport. If
 | file\_type\* | String  | Accepts jpg or png.                                                                                                                                                                                                                                                                                                                |
 
 {% openapi-operation spec="image-endpoint" path="/v1/{collection}/image" method="post" %}
-[OpenAPI image-endpoint](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/9ef1477fd159d69dd4d46a9bcb0a071ad5b3a925ff92efcaebcdfc0c8a935c47.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20251107%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251107T182847Z&X-Amz-Expires=172800&X-Amz-Signature=e7c0513f07e89a938f759233e3d2932a83fda8b242a431d7dcd48fef4997ec03&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI image-endpoint](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/9ef1477fd159d69dd4d46a9bcb0a071ad5b3a925ff92efcaebcdfc0c8a935c47.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260305%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260305T114855Z&X-Amz-Expires=172800&X-Amz-Signature=6b82f343fedbcb732dea6327ac66a789b9b8aa796828f033b70585e8bda6ca1d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}

@@ -77,22 +77,9 @@ Learn more about our [File Manager](file-manager/file-manager-application-overvi
 
 ## Developer Essentials <a href="#about-this-documentation" id="about-this-documentation"></a>
 
-Create a free account and obtain your Client ID and Client Secret in the [Developer Console](https://developers.beefree.io/login?from=website_menu) to get started. Set up a local environment to experiment with customizing a configuration. Watch the configuration changes and customizations come to life on the frontend.
-
-* [Create an Application](getting-started/readme/create-an-application.md)
-* [React No-code Email Builder](quickstart-guides/react-no-code-email-builder.md)
-* [Vue.js No-code Email Builder](quickstart-guides/vue.js-no-code-email-builder.md)
-* [GitHub Resources](https://github.com/BeefreeSDK)
-
 ### Sample Code
 
-Learn more about Beefree SDK through available sample code and example projects in [GitHub](https://github.com/BeefreeSDK).
-
-* [Sample templates](https://github.com/BeefreeSDK/beefree-sdk-assets-templates)
-* [Sample forms](https://github.com/BeefreeSDK/beefree-sdk-sample-forms)
-* [NPM official package](https://github.com/BeefreeSDK/beefree-sdk-npm-official)
-* [Simple Schema and AI-generated templates](https://github.com/BeefreeSDK/beefree-sdk-simple-schema)
-* [Sample project with Next.js](https://github.com/BeefreeSDK/beefree-sdk-sample-nextjs)
+We have a whole library of handy sample code to help you get started with basic Beefree SDK implementations and also learn how to put more advanced features to work. You can check out the available sample code [here](getting-started/sample-code.md) or head straight to [GitHub](https://github.com/BeefreeSDK).
 
 ### Videos <a href="#about-this-documentation" id="about-this-documentation"></a>
 

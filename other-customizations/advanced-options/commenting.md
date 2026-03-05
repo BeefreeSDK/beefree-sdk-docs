@@ -22,7 +22,7 @@ When Commenting is enabled, your end-users (or contributors, as we’ll call the
 
 ## Use cases <a href="#use-cases" id="use-cases"></a>
 
-With Commenting,  you enable **asynchronous, visual collaboration** when multiple collaborators are creating, editing, and reviewing content in the Beefree builders. This collaborative feature can prove extremely beneficial in different contexts, regardless if contributors are in the same team, in separate teams, or even in different companies (e.g. digital marketing agencies collaborating with their clients):
+With Commenting, you enable **asynchronous, visual collaboration** when multiple collaborators are creating, editing, and reviewing content in the Beefree builders. This collaborative feature can prove extremely beneficial in different contexts, regardless if contributors are in the same team, in separate teams, or even in different companies (e.g. digital marketing agencies collaborating with their clients):
 
 * have a **single source of truth** for feedback and requests on the content created with the builders;
 * cut **time-to-publish**, reducing back and forth conversations, both online and offline;
@@ -71,7 +71,7 @@ Clicking one of these two icons will activate the **commenting panel**, which ta
 
 ## **Mentioning someone in a comment**
 
-If you have implemented mentions, users can type @ to bring up a list of contributors and tag them in the comment. If the user starts typing, the list will be filtered  If you’ve built a notification system around Commenting, you can use this piece of information to trigger a notification towards the mentioned person.
+If you have implemented mentions, users can type @ to bring up a list of contributors and tag them in the comment. If the user starts typing, the list will be filtered If you’ve built a notification system around Commenting, you can use this piece of information to trigger a notification towards the mentioned person.
 
 <figure><img src="../../.gitbook/assets/4Mentioning-someone (1).gif" alt=""><figcaption></figcaption></figure>
 
@@ -197,7 +197,13 @@ You are free to define:
 
 Again, remember that the Beefree platform **only triggers the callback**, and it’s up to you to react, if you want. Below you can find the technical details on the comments schema and the `onComment` callback.
 
-## Sample code for email notifications <a href="#sample-code-for-email-notifications" id="sample-code-for-email-notifications"></a>
+## Sample code for your Commenting implementation <a href="#sample-code-for-email-notifications" id="sample-code-for-email-notifications"></a>
+
+This [ready-to-run sample code](https://github.com/BeefreeSDK/beefree-sdk-examples/tree/main/commenting-example) demonstrates how to integrate the Beefree SDK Commenting feature into your application. Built with React 19 + TypeScript + Vite, this example shows you exactly how to enable real-time collaboration, allowing your users to add comments, start threaded discussions, and manage feedback directly within the email builder.
+
+{% embed url="https://github.com/BeefreeSDK/beefree-sdk-examples/tree/main/commenting-example" %}
+
+#### Sample code for sending commenting email notifications
 
 We’ve put together a [sample code](https://github.com/BeefreeSDK/beefree-sdk-sample-client) that illustrates how to send email notifications, triggered by a mention in a comment. This code shows how to:
 
@@ -252,7 +258,7 @@ Comments can also be added dynamically, but it’s an advanced task, which requi
 
 ## Commenting Callback
 
-When a thread or comment changes, the Beefree system triggers the `onComment` callback.  The callback returns the following details:
+When a thread or comment changes, the Beefree system triggers the `onComment` callback. The callback returns the following details:
 
 ### **change**
 

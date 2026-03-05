@@ -199,3 +199,9 @@ Example error response for disabled apps. Contact support if you encounter this 
 }
 
 ```
+
+### Sample code: Secure authentication example
+
+This [example](https://github.com/BeefreeSDK/beefree-sdk-examples/tree/main/secure-auth-example) demonstrates secure, production-ready authentication for the Beefree SDK. It showcases best practices for handling authentication tokens, automatic token refresh, and secure credential management.
+
+{% embed url="https://github.com/BeefreeSDK/beefree-sdk-examples/tree/main/secure-auth-example" %}

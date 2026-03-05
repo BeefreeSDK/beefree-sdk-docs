@@ -57,3 +57,11 @@ Only class names with the `--cs` suffix are reliable for **custom CSS**. Avoid t
 
 Class names **without** the `--cs` suffix may change **without prior notice**. However, any updates to the **HTML structure** and `--cs` classes will be communicated in advance.
 {% endhint %}
+
+### Custom CSS Example Code
+
+Are you looking for an example of how you can use Custom CSS to adjust the look and feel of the Beefree Editor?
+
+This example demonstrates advanced interface theming for the Beefree SDK using a modern React + TypeScript architecture. It showcases how to dynamically apply custom CSS themes to transform the entire editor interface.
+
+{% embed url="https://github.com/BeefreeSDK/beefree-sdk-examples/tree/main/custom-css-example" %}
