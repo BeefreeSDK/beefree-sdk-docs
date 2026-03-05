@@ -121,7 +121,7 @@ When a default Display condition is edited – by a user that has permissions to
 
 Why these different behaviors for custom conditions? Because Beefree SDK does not save them to the configuration (you passed that configuration to the application: we don’t have access to the repository where you save that information). So, custom conditions do not exist in the array of conditions that the user can search and/or browse.
 
-Reference our [Advanced Permissions documentation](advanced-permissions.md#add-condition-and-edit-condition-buttons) to learn more about managing the visibility of the Add Condition and Edit Condition buttons.&#x20;
+Reference our [Advanced Permissions documentation](advanced-permissions.md#add-condition-and-edit-condition-buttons) to learn more about managing the visibility of the Add Condition and Edit Condition buttons.
 
 ## HTML output
 
@@ -136,3 +136,9 @@ You can extend this feature and allow users of the editor to build their own _Di
 Here is an example of a custom builder of _Display Conditions_.
 
 <figure><img src="../../.gitbook/assets/10display.condition.dialog.jpg" alt=""><figcaption></figcaption></figure>
+
+## Sample Code: Display Conditions
+
+Here is a ready-to-run example demonstrating how to integrate the Beefree SDK Display Conditions feature into your application to enable personalized email content that adapts based on recipient attributes.
+
+{% embed url="https://github.com/BeefreeSDK/beefree-sdk-examples/tree/main/conditional-rows-example" %}
