@@ -42,7 +42,17 @@ Your iframe must implement postMessage communication:
 * Send `onSave` with content
 * Send `onCancel` on exit
 
-**3. Implement Health Check**
+### Optional Fields
+
+#### API Key
+
+This bearer token is used to make requests to the Authentication URL.
+
+#### Authentication URL
+
+This endpoint returns the iFrame URL information as plain text. Note that using the Authentication URL voids the iFrame URL in the Setup modal, but it is still required.
+
+#### Health Check
 
 The health check endpoint is a simple HTTP GET endpoint that returns a 200 status code if your addon service is operational. Beefree periodically calls this endpoint to verify your addon is available before offering it to users. This prevents frustrating experiences where users try to use an addon that's down. The health check should be lightweight—it doesn't need to validate complex logic, just confirm your service is responding. A simple "OK" response is sufficient.
 
