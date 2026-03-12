@@ -80,6 +80,12 @@ contentDialog: {
 
 The following is a list of all modules that are sent as part of the **args** parameter:
 
+* `bodyBackground.aiImage`
+* `body.backgroundImage`
+* `descriptor.carousel.slides`
+* `editor_images`
+* `imageModule.aiImage`
+* `rowBackground.aiImage`
 * `sidebar.link`
 * `buttonModule.link`
 * `imageModule.link`
@@ -87,10 +93,7 @@ The following is a list of all modules that are sent as part of the **args** par
 * `menuModule.link`
 * `iconsModule.src`
 * `socialModule.src`
-* `textModule.link`
 * `imageModule.src`
 * `titleModule.link`
 * `row.backgroundImage`
 * `backgroundVideo.src`
-* `toolbar.specialLink`
-* `sidebar.specialLink`
