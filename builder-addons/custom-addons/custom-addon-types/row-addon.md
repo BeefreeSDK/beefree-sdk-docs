@@ -88,12 +88,12 @@ resolve({
         modules: [
           {
             type: 'image',            
-              src: 'https://example.com/image-left.jpg',
-              alt: 'Left image'
+            src: 'https://example.com/image-left.jpg',
+            alt: 'Left image'
           },
           {
             type: 'paragraph',
-              html: '<p>Content for left column</p>'
+            html: '<p>Content for left column</p>'
           }
         ]
       },
@@ -102,12 +102,12 @@ resolve({
         modules: [
           {
             type: 'image',
-              src: 'https://example.com/image-right.jpg',
-              alt: 'Right image'
+            src: 'https://example.com/image-right.jpg',
+            alt: 'Right image'
           },
           {
             type: 'paragraph',
-              html: '<p>Content for right column</p>'
+            html: '<p>Content for right column</p>'
           }
         ]
       }
@@ -131,13 +131,13 @@ resolve({
         modules: [
           {
             type: 'image',
-              src: 'https://example.com/feature-1.jpg',
-              alt: 'Feature 1'
+            src: 'https://example.com/feature-1.jpg',
+            alt: 'Feature 1'
           },
           {
             type: 'title',  // Note: 'title' not 'heading' in rows
-              text: 'Feature One',
-              size: 20
+            text: 'Feature One',
+            size: 20
           }
         ]
       },
@@ -146,13 +146,13 @@ resolve({
         modules: [
           {
             type: 'image',
-              src: 'https://example.com/feature-2.jpg',
-              alt: 'Feature 2'
+            src: 'https://example.com/feature-2.jpg',
+            alt: 'Feature 2'
           },
           {
             type: 'title',  // Note: 'title' not 'heading' in rows
-              text: 'Feature Two',
-              size: 20
+            text: 'Feature Two',
+            size: 20
           }
         ]
       },
@@ -161,13 +161,13 @@ resolve({
         modules: [
           {
             type: 'image',
-              src: 'https://example.com/feature-3.jpg',
-              alt: 'Feature 3'
+            src: 'https://example.com/feature-3.jpg',
+            alt: 'Feature 3'
           },
           {
             type: 'title',  // Note: 'title' not 'heading' in rows
-              text: 'Feature Three',
-              size: 20
+            text: 'Feature Three',
+            size: 20
           }
         ]
       }
@@ -219,8 +219,8 @@ const beeConfig = {
                     modules: [
                       {
                         type: 'image',
-                          src: 'https://example.com/left.jpg',
-                          alt: 'Left content'
+                        src: 'https://example.com/left.jpg',
+                        alt: 'Left content'
                       }
                     ]
                   },
@@ -229,8 +229,8 @@ const beeConfig = {
                     modules: [
                       {
                         type: 'image',
-                          src: 'https://example.com/right.jpg',
-                          alt: 'Right content'
+                        src: 'https://example.com/right.jpg',
+                        alt: 'Right content'
                       }
                     ]
                   }
@@ -271,13 +271,13 @@ contentDialog: {
         modules: [
           {
             type: 'image',
-              src: item.image,
-              alt: item.name
+            src: item.image,
+            alt: item.name
           },
           {
             type: 'title',  // Note: 'title' not 'heading' in rows
-              text: item.name,
-              size: 20
+            text: item.name,
+            size: 20
           }
         ]
       }));
@@ -321,12 +321,12 @@ contentDialog: {
             modules: [
               {
                 type: 'image',
-                  src: item.imageUrl,
-                  alt: item.name
+                src: item.imageUrl,
+                alt: item.name
               },
               {
                 type: 'paragraph',
-                  html: `<p>${item.description}</p>`
+                html: `<p>${item.description}</p>`
               }
             ]
           }));
@@ -410,8 +410,8 @@ window.parent.postMessage({
           modules: [
             {
               type: 'image',
-                src: 'https://example.com/image.jpg',
-                alt: 'Image'
+              src: 'https://example.com/image.jpg',
+              alt: 'Image'
             }
           ]
         },
@@ -420,7 +420,7 @@ window.parent.postMessage({
           modules: [
             {
               type: 'paragraph',
-                html: '<p>Text content</p>'
+              html: '<p>Text content</p>'
             }
           ]
         }
