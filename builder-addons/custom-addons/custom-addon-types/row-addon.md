@@ -87,17 +87,13 @@ resolve({
         weight: 6,  // 50% width
         modules: [
           {
-            type: 'image',
-            value: {
+            type: 'image',            
               src: 'https://example.com/image-left.jpg',
               alt: 'Left image'
-            }
           },
           {
             type: 'paragraph',
-            value: {
               html: '<p>Content for left column</p>'
-            }
           }
         ]
       },
@@ -106,16 +102,12 @@ resolve({
         modules: [
           {
             type: 'image',
-            value: {
               src: 'https://example.com/image-right.jpg',
               alt: 'Right image'
-            }
           },
           {
             type: 'paragraph',
-            value: {
               html: '<p>Content for right column</p>'
-            }
           }
         ]
       }
@@ -139,17 +131,13 @@ resolve({
         modules: [
           {
             type: 'image',
-            value: {
               src: 'https://example.com/feature-1.jpg',
               alt: 'Feature 1'
-            }
           },
           {
             type: 'title',  // Note: 'title' not 'heading' in rows
-            value: {
               text: 'Feature One',
               size: 20
-            }
           }
         ]
       },
@@ -158,17 +146,13 @@ resolve({
         modules: [
           {
             type: 'image',
-            value: {
               src: 'https://example.com/feature-2.jpg',
               alt: 'Feature 2'
-            }
           },
           {
             type: 'title',  // Note: 'title' not 'heading' in rows
-            value: {
               text: 'Feature Two',
               size: 20
-            }
           }
         ]
       },
@@ -177,17 +161,13 @@ resolve({
         modules: [
           {
             type: 'image',
-            value: {
               src: 'https://example.com/feature-3.jpg',
               alt: 'Feature 3'
-            }
           },
           {
             type: 'title',  // Note: 'title' not 'heading' in rows
-            value: {
               text: 'Feature Three',
               size: 20
-            }
           }
         ]
       }
@@ -239,10 +219,8 @@ const beeConfig = {
                     modules: [
                       {
                         type: 'image',
-                        value: {
                           src: 'https://example.com/left.jpg',
                           alt: 'Left content'
-                        }
                       }
                     ]
                   },
@@ -251,10 +229,8 @@ const beeConfig = {
                     modules: [
                       {
                         type: 'image',
-                        value: {
                           src: 'https://example.com/right.jpg',
                           alt: 'Right content'
-                        }
                       }
                     ]
                   }
@@ -295,17 +271,13 @@ contentDialog: {
         modules: [
           {
             type: 'image',
-            value: {
               src: item.image,
               alt: item.name
-            }
           },
           {
             type: 'title',  // Note: 'title' not 'heading' in rows
-            value: {
               text: item.name,
               size: 20
-            }
           }
         ]
       }));
@@ -349,16 +321,12 @@ contentDialog: {
             modules: [
               {
                 type: 'image',
-                value: {
                   src: item.imageUrl,
                   alt: item.name
-                }
               },
               {
                 type: 'paragraph',
-                value: {
                   html: `<p>${item.description}</p>`
-                }
               }
             ]
           }));
@@ -442,10 +410,8 @@ window.parent.postMessage({
           modules: [
             {
               type: 'image',
-              value: {
                 src: 'https://example.com/image.jpg',
                 alt: 'Image'
-              }
             }
           ]
         },
@@ -454,9 +420,7 @@ window.parent.postMessage({
           modules: [
             {
               type: 'paragraph',
-              value: {
                 html: '<p>Text content</p>'
-              }
             }
           ]
         }
@@ -585,18 +549,14 @@ This complete HTML example demonstrates a functional row layout builder interfac
           modules: [
             {
               type: 'image',
-              value: {
                 src: imageUrl,
                 alt: `Column ${i} image`
-              }
             },
             {
               type: 'title',  // Note: 'title' not 'heading' in rows
-              value: {
                 text: text,
                 size: 20,
                 align: 'center'
-              }
             }
           ]
         });
