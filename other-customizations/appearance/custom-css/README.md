@@ -58,6 +58,48 @@ Only class names with the `--cs` suffix are reliable for **custom CSS**. Avoid t
 Class names **without** the `--cs` suffix may change **without prior notice**. However, any updates to the **HTML structure** and `--cs` classes will be communicated in advance.
 {% endhint %}
 
+#### Changing tile icons in the sidebar
+
+This is an example for the Title block
+
+```css
+/* Hide default icon for title block */
+.sidebar-draggable-heading--cs .image-drag svg {
+  visibility: hidden;
+}
+
+/* Replace them with yours */
+.sidebar-draggable-heading--cs .image-drag {
+  background: url() no-repeat center;
+  background-size: contain;
+}
+```
+
+#### Smart Merge Tag Styling
+
+```css
+.content-labels--cs code[data-bee-code] {
+  border: none !important;
+  border-radius: 5px;
+  background-color: #effcff;
+  color: #34778f;
+  padding-left: 24px !important;
+}
+
+.content-labels--cs code[data-bee-code]::after {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  content: ''; 
+  background-image: url("./cube.svg") !important;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+}
+```
+
 ### Custom CSS Example Code
 
 Are you looking for an example of how you can use Custom CSS to adjust the look and feel of the Beefree Editor?
