@@ -267,3 +267,4 @@
 * [Tools & Capabilities](mcp-server/tools-and-capabilities.md)
 * [How to Get the Best AI Output](mcp-server/how-to-get-the-best-ai-output.md)
 * [FAQ](mcp-server/faq.md)
+* [MCP Server v2 | Headless](mcp-server/v2-headless.md)

@@ -24,6 +24,10 @@ AI Agent → MCP Client → CSAPI → MCP Server → Beefree SDK Ecosystem
  Language   Protocol   Routing   Processing   Instance
 ```
 
+{% hint style="info" %}
+Since the Beefree SDK MCP Server relies on Beefree's CSAPI, it is subjected to the same rate limits. [Learn more here](https://docs.beefree.io/beefree-sdk/apis/content-services-api#rate-limits).
+{% endhint %}
+
 ### Setup
 
 This section discusses three key steps you need to take to successfully set up the Beefree SDK MCP Server.
