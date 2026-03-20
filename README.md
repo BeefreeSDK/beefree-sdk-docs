@@ -32,6 +32,18 @@ This site discusses the technical capabilities of Beefree SDK, and how to embed 
 
 ## Explore Beefree SDK
 
+#### Beefree SDK Playground <a href="#beefree-sdk-playground" id="beefree-sdk-playground"></a>
+
+If you'd like to test the drag-and-drop user experience and explore how easy it is to customize the editor but aren't quite ready to spin up your own test application, our [Playground](https://playground.beefree.io/) is the best place for you to get started. This simple, public implementation of the Beefree SDK helps you to:
+
+* Experience how easy it is for your end users to create designs using the intuitive, drag-and-drop editor UI
+* Easily test UI customizations (like [moving the sidebar](https://docs.beefree.io/beefree-sdk/getting-started/readme/installation/configuration-parameters#sidebarposition), rearranging or [grouping content tiles](https://docs.beefree.io/beefree-sdk/other-customizations/appearance/content-tile-grouping), or applying [Custom CSS](https://app.gitbook.com/o/2zoWGxtV7bjhbwBdjGPS/s/8c7XIQHfAtM23Dp3ozIC/~/diff/~/changes/534/other-customizations/appearance/custom-css))
+* Explore how you can [import existing HTML](https://app.gitbook.com/o/2zoWGxtV7bjhbwBdjGPS/s/8c7XIQHfAtM23Dp3ozIC/~/diff/~/changes/534/apis/html-importer-api) to make it editable, and [export designs into HTML, image, or PDF formats](https://app.gitbook.com/o/2zoWGxtV7bjhbwBdjGPS/s/8c7XIQHfAtM23Dp3ozIC/~/diff/~/changes/534/apis/content-services-api/export)
+
+<figure><img src=".gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+
+<a href="https://playground.beefree.io/" class="button primary">Visit the Playground → </a>
+
 ### Demo Apps
 
 Check out the following public demo apps built with v0, Lovable, and Replit:&#x20;
