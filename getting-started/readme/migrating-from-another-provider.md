@@ -16,7 +16,7 @@ We're known for providing a high level of support, which includes everything fro
 
 ### Importing existing designs
 
-How will your customers' existing designs become editable in the Beefree drag-n-drop builders? We have a solution for that too, so that they don't need to be recreated in the Beefree builder. You can leverage the [HTML Importer API](../../apis/html-importer-api/) to take standard HTML emails and turn them into our proprietary JSON format.&#x20;
+Your customers' existing designs will not need to be recreated from scratch in the Beefree builder. You can leverage the [HTML Importer API](../../apis/html-importer-api/) to take standard HTML emails and turn them into our proprietary JSON format.&#x20;
 
 For a quick introduction to the benefits of this handy tool, see [HTML Importer API: From HTML to Beefree-ready JSON in seconds](https://developers.beefree.io/blog/html-importer-api-from-html-to-beefree-ready-json-in-seconds).
 
@@ -24,5 +24,5 @@ For a quick introduction to the benefits of this handy tool, see [HTML Importer 
 
 The process of switching content creation platform is particularly easy for those migrating from Unlayer. We have developed a tool that can help bulk-import your customers' designs: simply provide us with the Unlayer JSON files, and we'll convert them on our end to Beefree-compatible JSON documents, which your customers will be able to edit with the Beefree editor.&#x20;
 
-Please [reach out to our team](mailto:sdksupport@beefree.io) to learn more about the process.&#x20;
+Please [reach out to our team](https://devportal.beefree.io/hc/en-us/requests/new) to learn more about the process.
 
