@@ -177,4 +177,4 @@ After successfully initializing the connection, you can:
 2. Execute Tool Calls
 3. Build Your Agent
 
-For a complete working example, see our [Sample Project](https://app.gitbook.com/o/2zoWGxtV7bjhbwBdjGPS/s/8c7XIQHfAtM23Dp3ozIC/~/preview/~/changes/506/mcp-server/beefree-sdk-mcp-server-beta).
+For a complete working example, see our [Sample Project](https://docs.beefree.io/beefree-sdk/mcp-server/getting-started#try-the-mcp-server-with-our-sample-project).
