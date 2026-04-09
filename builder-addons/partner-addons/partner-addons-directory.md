@@ -111,3 +111,15 @@ The Stickers by GIPHY AddOn gives your customers the best source for stickers, r
 Once installed and configured, they will see a new content tile in the builder. Once dragged into the email or page, a click on a button in the stage area will launch a GIPHY search dialog. Clicking on a sticker will import it instantly into the email or page.
 
 [Addon website](./) | [About the AddOn](./) | [Privacy Policy](https://beefree.io/privacy-policy/) | [Support](https://devportal.beefree.io/hc/en-us)
+
+## Buzzworks <a href="#stickers" id="stickers"></a>
+
+<figure><img src="../../.gitbook/assets/BuzzWorks-thumbnail.jpg" alt=""><figcaption></figcaption></figure>
+
+The BuzzWorks add-on gives you instant access to the full suite of\
+BuzzWorks plugins from a single, unified interface inside your Beefree\
+SDK editor.&#x20;
+
+Easily insert QR codes, maps, calendar events, content feeds, and all other tools Buzzworks has to offer from a single AddOn.&#x20;
+
+[Addon website](https://buzzworks.studio/) | [Privacy Policy](https://beefree.io/privacy-policy/) | [Support](https://devportal.beefree.io/hc/en-us)

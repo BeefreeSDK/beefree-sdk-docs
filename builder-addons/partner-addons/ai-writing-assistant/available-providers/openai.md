@@ -24,7 +24,7 @@ Prior to getting started, ensure you have the following:
 
 * An OpenAI account and API Key.
 * The AI Writing Assistant AddOn enabled in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
-* Beefree SDK [Superpowers or Enterprise plan](https://app.gitbook.com/o/2zoWGxtV7bjhbwBdjGPS/s/svPtAq2FGbWqZBP0UXk1/).
+* Beefree SDK [Superpowers or Enterprise plan](/broken/spaces/svPtAq2FGbWqZBP0UXk1).
 
 ## **Configuration Steps**
 

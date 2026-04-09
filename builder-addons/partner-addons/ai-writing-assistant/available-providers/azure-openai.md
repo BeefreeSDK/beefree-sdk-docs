@@ -22,7 +22,7 @@ This page discusses how to configure Azure OpenAI as a provider for the [AI Writ
 
 Prior to getting started, ensure you have the following:
 
-* Beefree SDK [Superpowers or Enterprise plan](https://app.gitbook.com/o/2zoWGxtV7bjhbwBdjGPS/s/svPtAq2FGbWqZBP0UXk1/).
+* Beefree SDK [Superpowers or Enterprise plan](/broken/spaces/svPtAq2FGbWqZBP0UXk1).
 * An Azure OpenAI account, API Key, URL Provider, and Deployment ID.
 * The AI Writing Assistant AddOn enabled in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 
