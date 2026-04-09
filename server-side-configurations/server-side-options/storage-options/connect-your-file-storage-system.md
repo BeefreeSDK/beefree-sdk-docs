@@ -320,7 +320,6 @@ The following code shows an example response for creating a new directory.
 ## **Create operation notes:**
 
 * in order for the create directory operation to succeed, the **containing** directory **must** exist, and the **contained** (new) directory **must not** exist
-* directory names will match the following regular expression: \[ a-zA-Z0-9.\_- \\(\\)]+
 
 ## Deleting a directory
 
