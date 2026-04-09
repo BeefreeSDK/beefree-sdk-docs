@@ -1,14 +1,12 @@
 ---
-description: >-
-  A classnames change log where you can reference current and past changes to
-  CSS classes.
+description: Here you can reference current and past changes to CSS classes.
 ---
 
-# Change Log
+# CSS Changes
 
 ## Release February 2026
 
-Reference the upcoming custom CSS changes in the following expandable section.
+Reference the upcoming custom CSS changes in the following expandable section.&#x20;
 
 <details>
 
