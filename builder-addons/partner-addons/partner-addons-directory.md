@@ -112,7 +112,7 @@ Once installed and configured, they will see a new content tile in the builder. 
 
 [Addon website](./) | [About the AddOn](./) | [Privacy Policy](https://beefree.io/privacy-policy/) | [Support](https://devportal.beefree.io/hc/en-us)
 
-## Buzzworks <a href="#stickers" id="stickers"></a>
+## Buzzworks
 
 <figure><img src="../../.gitbook/assets/BuzzWorks-thumbnail.jpg" alt=""><figcaption></figcaption></figure>
 
