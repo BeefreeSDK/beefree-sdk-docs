@@ -286,7 +286,7 @@ description: >-
 
 This Quickstart Guide walks you through embedding the Beefree SDK's no-code email builder into a Vue 3 application using the official Vue wrapper [`@beefree.io/vue-email-builder`](https://www.npmjs.com/package/@beefree.io/vue-email-builder) and the [/loginV2](https://docs.beefree.io/beefree-sdk/getting-started/readme/authorization) authorization process. By the end of this guide, you'll have a fully functional Vue app running locally with the builder embedded, authenticated, and ready to use — following Vue best practices.
 
-Reference the [vue-email-builder GitHub repository](https://github.com/BeefreeSDK/vue-email-builder) with the complete code for this project to follow along in this Vue.js Quickstart Guide. The `example/` folder in the repository contains a full working demo application.
+Reference the [vue-email-builder GitHub repository](https://github.com/BeefreeSDK/vue-email-builder) with the complete code for this project to follow along in this Vue.js Quickstart Guide. The [`example/`](https://github.com/BeefreeSDK/vue-email-builder/tree/main/example) folder in the repository contains a full working demo application.
 
 Watch the Vue.js Video Series to learn more about how to install Beefree SDK into your Vue.js application visually.
 

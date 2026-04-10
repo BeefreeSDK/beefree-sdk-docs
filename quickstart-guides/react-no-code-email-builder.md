@@ -242,7 +242,7 @@ Import HTML – Beefree SDK Docs
 
 This Quickstart Guide shows you step by step how to embed the Beefree SDK's Email Builder into a React application using the official React wrapper [`@beefree.io/react-email-builder`](https://www.npmjs.com/package/@beefree.io/react-email-builder) and Beefree's authorization process. By the end of the guide, you'll have a functional React app running locally, with Beefree SDK's no-code email builder integrated and properly authenticated — following best practices for React development.
 
-Reference the [react-email-builder GitHub repository](https://github.com/BeefreeSDK/react-email-builder) with the complete code for this project to follow along in this React Quickstart Guide. The `example/` folder in the repository contains a full working demo application.
+Reference the [react-email-builder GitHub repository](https://github.com/BeefreeSDK/react-email-builder) with the complete code for this project to follow along in this React Quickstart Guide. The [`example/`](https://github.com/BeefreeSDK/react-email-builder/tree/main/example) folder in the repository contains a full working demo application.
 
 ### Prerequisites
 

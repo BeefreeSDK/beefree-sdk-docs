@@ -277,7 +277,7 @@ description: >-
 
 This Quickstart Guide walks you through embedding the Beefree SDK's no-code email builder into an Angular application using the official Angular wrapper [`@beefree.io/angular-email-builder`](https://www.npmjs.com/package/@beefree.io/angular-email-builder) and the [/loginV2](https://docs.beefree.io/beefree-sdk/getting-started/readme/authorization) authorization process. By the end of this guide, you'll have a fully functional Angular app running locally with the builder embedded, authenticated, and ready to use — following Angular best practices.
 
-Reference the [angular-email-builder GitHub repository](https://github.com/BeefreeSDK/angular-email-builder) with the complete code for this project to follow along in this Angular Quickstart Guide. The `src/` folder in the repository contains a full working demo application.
+Reference the [angular-email-builder GitHub repository](https://github.com/BeefreeSDK/angular-email-builder) with the complete code for this project to follow along in this Angular Quickstart Guide. The [`src/`](https://github.com/BeefreeSDK/angular-email-builder/tree/main/src) folder in the repository contains a full working demo application.
 
 ### Prerequisites
 
