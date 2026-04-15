@@ -21,27 +21,27 @@ Prior to configuring this feature, ensure that you have the following:
 * Superpowers or Enterprise account
 * Enabled Azure Vision AddOn in your Developer Console
 
-## Default Contents
+## Content Defaults
 
-If you have a default alt text set, the image won't be included among the ones that need an AI-generated alt text. If you have a default value set in your `defaultContents`, this will require the end user to delete the default text before being able to generate the new alt text with AI. To avoid this behavior, and for this feature to work best, we recommend you do not set a default value for alt text in your `beeConfig`.
+If you have a default alt text set, the image won't be included among the ones that need an AI-generated alt text. If you have a default value set in your `contentDefaults`, this will require the end user to delete the default text before being able to generate the new alt text with AI. To avoid this behavior, and for this feature to work best, we recommend you do not set a default value for alt text in your `beeConfig`.
 
 If you do have a default value set, you can delete it one of the following ways:
 
 * Set the alt property as an empty string
-* Delete the line of code from your `defaultContents`
+* Delete the line of code from your `contentDefaults`
 
-The following code shows an example of the `alt` property within the `defaultContents`. In the scenario presented in the following code, we recommend deleting the Default `alt` value set within the `alt` property.
+The following code shows an example of the `alt` property within the `contentDefaults`. In the scenario presented in the following code, we recommend deleting the Default `alt` value set within the `alt` property.
 
 ```javascript
 var beeConfig = {
   ...,
-  defaultContents: {
+  contentDefaults: {
     ...,
     image: {
       alt: "Default alt value",
       // Add any other default properties as needed
     },
-    // Add other default content settings if necessary
+    // Add other content default settings if necessary
   },
   ...,
 };
@@ -52,19 +52,19 @@ The following code shows an example of the `alt` property set as an empty string
 ```javascript
 var beeConfig = {
   ...,
-  defaultContents: {
+  contentDefaults: {
     ...,
     image: {
       alt: "",
       // Add any other default properties as needed
     },
-    // Add other default content settings if necessary
+    // Add other content default settings if necessary
   },
   ...,
 };
 ```
 
-**Note:** You can still use the `defaultContents` `alt` value and the AI-generated Alt text in Bulk at the same time. However, it will require the end user to delete the default alt text prior to using the AI-generation tool for that particular image module.
+**Note:** You can still use the `contentDefaults` `alt` value and the AI-generated Alt text in Bulk at the same time. However, it will require the end user to delete the default alt text prior to using the AI-generation tool for that particular image module.
 
 ## Configuration Steps
 
