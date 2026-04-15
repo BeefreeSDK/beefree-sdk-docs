@@ -14,13 +14,13 @@ By integrating the AI Writing Assistant, you provide your end users with a power
 
 The following image provides an example of how the AI Writing Assistant looks to your end user:
 
-<figure><img src="../../../../.gitbook/assets/CleanShot 2024-06-28 at 16.08.31@2x.png" alt="Write with AI button highlighted inside the panel on the right side of the screen after dragging and dropping a paragraph block on to the builder stage"><figcaption><p>Write with AI button within the builder</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot 2024-06-28 at 16.08.31@2x.png" alt="Write with AI button highlighted inside the panel on the right side of the screen after dragging and dropping a paragraph block on to the builder stage"><figcaption><p>Write with AI button within the builder</p></figcaption></figure>
 
 Visit our [Integrated AI Assistant White label end user guide](https://docs.beefree.io/end-user-guide/integrated-ai-assistant) to learn more about how this feature works on the frontend for your application's end users.
 
 ### How to activate the AI Writing Assistant
 
-This section discusses the prerequisites and steps you need to take to get started with this feature. You can watch the following [How to change your AI provider | Beefree SDK video](https://www.youtube.com/watch?v=_FybVH28DR4) for visual steps on how to activate the AddOn and add or change providers. Or, you can continue reading the documentation in this section for a step-by-step breakdown of how to activate the AddOn and add or change providers. &#x20;
+This section discusses the prerequisites and steps you need to take to get started with this feature. You can watch the following [How to change your AI provider | Beefree SDK video](https://www.youtube.com/watch?v=_FybVH28DR4) for visual steps on how to activate the AddOn and add or change providers. Or, you can continue reading the documentation in this section for a step-by-step breakdown of how to activate the AddOn and add or change providers.
 
 {% embed url="https://www.youtube.com/watch?v=_FybVH28DR4" %}
 
@@ -58,7 +58,7 @@ When managing your providers, you will have the following options:
 
 * Edit
 * Deactivate
-* Delete  &#x20;
+* Delete
 
 #### Additional considerations
 
@@ -83,11 +83,11 @@ We’ll cover all of these scenarios in the following sections as we discuss the
 
 ## General Settings <a href="#general-settings" id="general-settings"></a>
 
-**Note:** All settings are _optional_ and may be refreshed, in real-time, via the [configuration reload](../../../../getting-started/readme/installation/configuration-parameters/configuration-reload.md) instance method (e.g. `bee.loadConfig(settings)`) during the active session.
+**Note:** All settings are _optional_ and may be refreshed, in real-time, via the [configuration reload](../../../getting-started/readme/installation/configuration-parameters/configuration-reload.md) instance method (e.g. `bee.loadConfig(settings)`) during the active session.
 
 Currently, the following settings are supported:
 
-<table><thead><tr><th>Setting</th><th width="137.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tokensAvailable</code></td><td>number</td><td>Display only value for the optional <a href="./">Display Usage Widget</a>: The total tokens available for the user to consume during the session. If provided, <code>tokensUsed</code> and <code>tokenLabel</code> are required.</td></tr><tr><td><code>tokensUsed</code></td><td>number</td><td>Display only value for the optional <a href="./">Display Usage Widget</a>: The number of tokens that the addon user has consumed during the current session. If provided, <code>tokensAvailable</code> and <code>tokenLabel</code> are required.</td></tr><tr><td><code>tokenLabel</code></td><td>string</td><td>Display only value for the optional <a href="./">Display Usage Widget</a>: The API reports token usage, but the host app may refer to tokens as words or any other nomenclature that makes sense to its users. Required when providing usage limits via <code>tokensAvailable</code> and <code>tokensUsed</code> parameters.</td></tr><tr><td><code>isPromptDisabled</code></td><td>boolean</td><td>Set to true to lock the prompt. The chat interface will be disabled but allow previous answers to be applied.</td></tr><tr><td><code>isSuggestionsDisabled</code>  </td><td>boolean</td><td>Set to true to hide the suggestions popup. Set this to <code>false</code> to disable the prompt presets. </td></tr><tr><td><code>isUpsellEnabled</code>  </td><td>boolean</td><td>A boolean that confirms whether or not the <a href="token-upselling.md">Token Upsell</a> feature is enabled.</td></tr><tr><td><code>metadataGeneration</code></td><td>boolean</td><td>A boolean that confirms whether or not the <a href="ai-generated-meta-tag-fields.md">AI-Generated Meta Tag fields feature</a> is enabled</td></tr><tr><td><code>submitOnEnterKey</code></td><td>boolean</td><td>This boolean is set to <code>false</code> by default. If you change it to <code>true</code>, it enables submitting the prompt by hitting the <strong>Enter</strong> button on the keyboard.</td></tr></tbody></table>
+<table><thead><tr><th>Setting</th><th width="137.33333333333331">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>tokensAvailable</code></td><td>number</td><td>Display only value for the optional <a href="./">Display Usage Widget</a>: The total tokens available for the user to consume during the session. If provided, <code>tokensUsed</code> and <code>tokenLabel</code> are required.</td></tr><tr><td><code>tokensUsed</code></td><td>number</td><td>Display only value for the optional <a href="./">Display Usage Widget</a>: The number of tokens that the addon user has consumed during the current session. If provided, <code>tokensAvailable</code> and <code>tokenLabel</code> are required.</td></tr><tr><td><code>tokenLabel</code></td><td>string</td><td>Display only value for the optional <a href="./">Display Usage Widget</a>: The API reports token usage, but the host app may refer to tokens as words or any other nomenclature that makes sense to its users. Required when providing usage limits via <code>tokensAvailable</code> and <code>tokensUsed</code> parameters.</td></tr><tr><td><code>isPromptDisabled</code></td><td>boolean</td><td>Set to true to lock the prompt. The chat interface will be disabled but allow previous answers to be applied.</td></tr><tr><td><code>isSuggestionsDisabled</code></td><td>boolean</td><td>Set to true to hide the suggestions popup. Set this to <code>false</code> to disable the prompt presets.</td></tr><tr><td><code>isUpsellEnabled</code></td><td>boolean</td><td>A boolean that confirms whether or not the <a href="token-upselling.md">Token Upsell</a> feature is enabled.</td></tr><tr><td><code>metadataGeneration</code></td><td>boolean</td><td>A boolean that confirms whether or not the <a href="ai-generated-meta-tag-fields.md">AI-Generated Meta Tag fields feature</a> is enabled</td></tr><tr><td><code>submitOnEnterKey</code></td><td>boolean</td><td>This boolean is set to <code>false</code> by default. If you change it to <code>true</code>, it enables submitting the prompt by hitting the <strong>Enter</strong> button on the keyboard.</td></tr></tbody></table>
 
 ### AI Writing Assistant Configuration Example
 
@@ -123,7 +123,7 @@ const beeConfig = {
 
 ## Monitor Usage <a href="#monitor-usage" id="monitor-usage"></a>
 
-With each prompt response, the addon will report the usage data provided by Azure OpenAI or OpenAI API via the editor’s `onInfo` callback without storing or tracking the data.
+With each prompt response, the addon will report the usage data provided by OpenAI, Anthropic, or Azure OpenAI API via the editor’s `onInfo` callback without storing or tracking the data.
 
 You can also monitor when the user applies a prompt response.
 
@@ -174,7 +174,7 @@ const beeConfig = {
 
 ## Display Usage Widget
 
-You may choose to track the end-user’s total usage through the aforementioned `onInfo` callback if desired. Additionally, you may choose to show the usage data to the user via the built-in display widget. To activate the display usage widget, provide the usage data via the addon settings.  Since the editor doesn’t track usage, you’ll need to refresh the values via the `bee.loadConfig` method to keep the display widget data current.
+You may choose to track the end-user’s total usage through the aforementioned `onInfo` callback if desired. Additionally, you may choose to show the usage data to the user via the built-in display widget. To activate the display usage widget, provide the usage data via the addon settings. Since the editor doesn’t track usage, you’ll need to refresh the values via the `bee.loadConfig` method to keep the display widget data current.
 
 <details>
 
@@ -243,7 +243,7 @@ const beeConfig = {
 
 See below for an example of how the UI will render when provided with the optional display usage widget.
 
-<figure><img src="../../../../.gitbook/assets/06e76ffc-23fc-46da-b433-609cabc86a9f-1024x549.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/06e76ffc-23fc-46da-b433-609cabc86a9f-1024x549.png" alt=""><figcaption></figcaption></figure>
 
 ## Disable Prompts Per User <a href="#disable-prompts-per-user" id="disable-prompts-per-user"></a>
 
@@ -429,7 +429,7 @@ This section will discuss how to manage an odd scrolling behavior related to the
 
 The following image shows an example of this behavior:
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2024-04-16 at 10.49.05 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-04-16 at 10.49.05 AM.png" alt=""><figcaption></figcaption></figure>
 
 If you encounter this behavior, take the following steps to avoid the need for scrolling to access the prompting area:
 
@@ -456,9 +456,9 @@ The `calc()` function allows for mathematical expressions in CSS values, making 
 
 You can now access the prompting section of the AI Writing Assistant on the front end without scrolling down the side panel.
 
-The following image shows an example of this result:&#x20;
+The following image shows an example of this result:
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2024-04-16 at 10.53.17 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-04-16 at 10.53.17 AM.png" alt=""><figcaption></figcaption></figure>
 
 ### AI Providers and Data Security
 
