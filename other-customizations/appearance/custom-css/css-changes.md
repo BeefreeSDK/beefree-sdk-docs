@@ -854,7 +854,7 @@ Markup Variations
 
 ## Release March 2025
 
-This section includes a reference of the new classnames released in March 2025. The new classnames will be related to [Mobile Badge](change-log.md#mobile-badge-or-scheduled-for-march-2025) and [Confirmation Dialogs](change-log.md#confirmation-dialogs-or-scheduled-for-march-2025). For more details, click the **>** symbol to expand the expandable content sections containing additional information.&#x20;
+This section includes a reference of the new classnames released in March 2025. The new classnames will be related to [Mobile Badge](css-changes.md#mobile-badge-or-scheduled-for-march-2025) and [Confirmation Dialogs](css-changes.md#confirmation-dialogs-or-scheduled-for-march-2025). For more details, click the **>** symbol to expand the expandable content sections containing additional information.&#x20;
 
 ### Mobile Badge | Released March 2025
 

@@ -272,7 +272,7 @@ This list details the translations corresponding with the Delete Row Confirmatio
 * **Primary Button:** 🆕 _Delete_
   * `confirmation-dialogs.delete-button`
 
-Reference the corresponding [classnames for Delete Row](../appearance/custom-css/change-log.md#delete-row-confirmation-dialog).
+Reference the corresponding [classnames for Delete Row](../appearance/custom-css/css-changes.md#delete-row-confirmation-dialog).
 
 ### Delete Column <a href="#sample-language-file" id="sample-language-file"></a>
 
@@ -287,7 +287,7 @@ This list details the translations corresponding with the Delete Column Confirma
 * **Primary Button:** 🆕 _Delete_
   * `confirmation-dialogs.delete-button`
 
-Reference the corresponding [classnames for Delete Column](../appearance/custom-css/change-log.md#delete-column-confirmation-dialog).
+Reference the corresponding [classnames for Delete Column](../appearance/custom-css/css-changes.md#delete-column-confirmation-dialog).
 
 ### Delete Module <a href="#sample-language-file" id="sample-language-file"></a>
 
@@ -302,7 +302,7 @@ This list details the translations corresponding with the Delete Module Confirma
 * **Primary Button:** 🆕 _Delete_
   * `confirmation-dialogs.delete-button`
 
-Reference the corresponding [classnames for Delete Module](../appearance/custom-css/change-log.md#delete-module-confirmation-dialog).
+Reference the corresponding [classnames for Delete Module](../appearance/custom-css/css-changes.md#delete-module-confirmation-dialog).
 
 ### Hide Row on Mobile with Module Already Hidden on Desktop
 
@@ -315,7 +315,7 @@ This list details the translations corresponding with the Hide Row on Mobile Con
 * **Heading:** 🆕 _Are you sure you want to hide this?_
   * `confirmation-dialogs.hide-row-confirmation-heading`
 
-Reference the corresponding classnames for [Hide Row on Mobile with Module Already Hidden on Desktop](../appearance/custom-css/change-log.md#hide-row-on-mobile-with-module-already-hidden-on-desktop).
+Reference the corresponding classnames for [Hide Row on Mobile with Module Already Hidden on Desktop](../appearance/custom-css/css-changes.md#hide-row-on-mobile-with-module-already-hidden-on-desktop).
 
 ### Remove Custom Display Condition <a href="#sample-language-file" id="sample-language-file"></a>
 
@@ -326,7 +326,7 @@ This list details the translations corresponding with the Remove Custom Display 
 * **Title:** 🆕 _Delete display condition_
   * `confirmation-dialogs.delete-display-condition-confirmation-title`
 
-Reference the corresponding classnames for [Remove Custom Display Condition](../appearance/custom-css/change-log.md#remove-custom-display-condition).
+Reference the corresponding classnames for [Remove Custom Display Condition](../appearance/custom-css/css-changes.md#remove-custom-display-condition).
 
 ### Confirm Delete Single File <a href="#sample-language-file" id="sample-language-file"></a>
 
@@ -341,7 +341,7 @@ This list details the translations corresponding with the Confirm Delete Single 
 * **Primary Button:** 🆕 _Delete_
   * `confirmation-dialogs.delete-button`
 
-Reference the corresponding classnames for [Confirm Delete Single File](../appearance/custom-css/change-log.md#confirm-delete-single-file).
+Reference the corresponding classnames for [Confirm Delete Single File](../appearance/custom-css/css-changes.md#confirm-delete-single-file).
 
 ### **Confirm Delete Multiple Files**
 
@@ -356,7 +356,7 @@ This list details the translations corresponding with the Confirm Delete Multipl
 * **Primary Button:** 🆕 _Delete_
   * `confirmation-dialogs.delete-button`
 
-Reference the corresponding [classnames for Confirm Delete Multiple Files](../appearance/custom-css/change-log.md#confirm-delete-multiple-files).
+Reference the corresponding [classnames for Confirm Delete Multiple Files](../appearance/custom-css/css-changes.md#confirm-delete-multiple-files).
 
 ### Confirm Update Existing File | Custom FSP <a href="#sample-language-file" id="sample-language-file"></a>
 
@@ -373,7 +373,7 @@ This list details the translations corresponding with the Confirm Update Existin
 * **Secondary Button:** 🆕 _Keep_
   * `confirmation-dialogs.keep-button`
 
-Reference the corresponding [classnames for Confirm Update Existing File](../appearance/custom-css/change-log.md#confirm-upload-existing-file).
+Reference the corresponding [classnames for Confirm Update Existing File](../appearance/custom-css/css-changes.md#confirm-upload-existing-file).
 
 ### Confirm Update Existing File <a href="#sample-language-file" id="sample-language-file"></a>
 

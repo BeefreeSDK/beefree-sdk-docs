@@ -140,7 +140,7 @@
   * [Custom Tab Layout](other-customizations/appearance/custom-tab-layout.md)
   * [Themes](other-customizations/appearance/themes.md)
   * [Custom CSS](other-customizations/appearance/custom-css/README.md)
-    * [CSS Changes](other-customizations/appearance/custom-css/change-log.md)
+    * [CSS Changes](other-customizations/appearance/custom-css/css-changes.md)
 * [AMP for Email](other-customizations/amp-for-email.md)
 * [Collaborative Editing](other-customizations/collaborative-editing/README.md)
   * [Co-editing Integration Guide](other-customizations/collaborative-editing/co-editing-integration-guide.md)
