@@ -40,9 +40,9 @@ function BeePlugin.create(token, beeConfig, (beePluginInstance) => {
 
 ```
 
-When a builder application is initialized with this mode enabled the UI will show to the user only properties that pertain to editing a single row, therefore:&#x20;
+When a builder application is initialized with this mode enabled the UI will show to the user only properties that pertain to editing a single row, therefore:
 
-* the options to insert custom rows, saved rows, or new default rows are disabled,&#x20;
+* the options to insert custom rows, saved rows, or new default rows are disabled,
 * the **Settings tab** is unavailable, as those properties are specific to the entire document,
 * when a row is selected on the editing stage, the action to **Delete**, **Duplicate**, **Comment**, **Save** are not available.
 
@@ -52,14 +52,25 @@ When a builder application is initialized with this mode enabled the UI will sho
 
 The following describes the recommended workflow to implement the Save action in your host SaaS application when the Single Edit Row mode is enabled.
 
-In case your application uses the default [Toolbar](../../../server-side-configurations/server-side-options/toolbar-options.md), you can leverage the save button to trigger the sequence of action to correctly save the row, the workflow is the same as the one documented in [saving-rows-workflow-for-developers](broken-reference), in short :
+In case your application uses the default [Toolbar](../../../server-side-configurations/server-side-options/toolbar-options.md), you can leverage the save button to trigger the sequence of action to correctly save the row.\
+The workflow is the same as the one documented in [saving-rows-workflow-for-developers](broken-reference/), in short :
 
 1. The user clicks on the save button
 2. A contentDialog of type saveRow will be triggered.
 
-In case your application doesn’t use the default Toolbar you will need to handle the row saving in a different way, following a couple of examples:
+In case your application doesn’t use the default Toolbar, you can now use the dedicated [saveRow()](../../../getting-started/readme/installation/methods-and-events.md#beeinstance.saverow) instance method to programmatically trigger the same row-saving flow as the default Save button:
 
-* Calling the [save method](../../../getting-started/readme/installation/methods-and-events.md). It will trigger the on [onSave](../../../getting-started/readme/installation/methods-and-events.md) event with two arguments, one of them is the full message JSON that can be saved as a Saved Row (it’s the same JSON returned by the [onSaveRow](../../../getting-started/readme/installation/methods-and-events.md) event).
+* Call [beeInstance.saveRow()](../../../getting-started/readme/installation/methods-and-events.md#beeinstance.saverow) from your custom UI element.
+* The [onSaveRow](../../../getting-started/readme/installation/methods-and-events.md#onsaverow) callback will be triggered with the row JSON.
+
+```javascript
+myCustomToolbarButton.onClick(() => beePluginInstance.saveRow())
+...
+
+onSaveRow: function (rowJson) {
+    myCustomApi.saveRow(rowJson)
+},
+```
 
 ### Example:
 

@@ -78,7 +78,7 @@ await beeInstance.load(templateJson);
 
 #### beeInstance.reload(template)
 
-* **Description:** Reloads a template without showing loading dialog (seamless reload)
+* **Description:** Reloads a template without showing a loading dialog (seamless reload)
 * **Parameters:**
   * `template`: JSON string with template structure
 * **Use Cases:** Custom undo/redo, real-time content injection
@@ -108,6 +108,19 @@ beeInstance.save();
 
 ```javascript
 beeInstance.saveAsTemplate();
+```
+
+#### **beeInstance.saveRow()**
+
+* **Description:** Programmatically triggers the save row action in `editSingleRow` mode.\
+  Use this when the default Toolbar is disabled, and you need to trigger the row-saving flow from a custom UI.
+* **Triggers:** `onSaveRow` callback with the row JSON
+* **Note:** This method is only available when the editor is initialized in `editSingleRow` mode.\
+  Calling it in any other mode will throw an error: `"This method is only available when in single row edit mode"`.
+* **Usage:**
+
+```js
+beeInstance.saveRow();
 ```
 
 #### beeInstance.send()
@@ -305,6 +318,22 @@ onAutoSave: function(jsonFile) {
     
     // Perform background save
     autoSaveTemplate(jsonFile);
+}
+```
+
+#### **onSaveRow** <a href="#onsaverow" id="onsaverow"></a>
+
+* **Trigger:** User clicks the Save button in the default Toolbar while in `editSingleRow` mode, or `beeInstance.saveRow()` is called
+* **Parameters:** `(rowJson)`
+  * `rowJson`: The saved row structure as a JSON string
+* **Usage:**
+
+```js
+onSaveRow: function(rowJson) {
+    console.log('Row saved:', rowJson);
+
+    // Save row to your backend
+    saveRowToLibrary(rowJson);
 }
 ```
 
