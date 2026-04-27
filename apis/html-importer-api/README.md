@@ -92,8 +92,10 @@ Yes, the HTML Importer API can be integrated with usage-based logic. For instanc
 
 #### Which plan has access to the API, and what's the pricing? <a href="#is-this-converter-free-of-charge" id="is-this-converter-free-of-charge"></a>
 
-The HTML Importer API is available for all Beefree SDK plan types, including the free plan. We charge $2 per template import.
+The HTML Importer API is available for all Beefree SDK plan types, including the Free plan.
 
+* We charge $2 per template import on Free, Essentials, and Core plans, while Superpowers and Enterprise plans have unlimited imports included in their plan.
+* Free, Essentials, and Core plans can purchase unlimited HTML Imports for $2,000 a year.
 * Every time you call our HTML Importer API and receive a JSON in response, that’s counted as an import for billing purposes.
 * If an API call fails for any reason (and we respond with an error rather than a JSON file), you won’t be charged.
 
