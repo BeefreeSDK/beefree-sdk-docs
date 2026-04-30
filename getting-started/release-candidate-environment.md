@@ -7,7 +7,9 @@ description: >-
 # Release Candidate Environment
 
 {% hint style="info" %}
-The Release Candidate Environment is available on [Enterprise plans.](https://developers.beefree.io/pricing-plans)
+The Release Candidate Environment is available on [Enterprise plans.](https://developers.beefree.io/pricing-plans) \
+\
+As of June, 2026, we're replacing our legacy Release Candidate environment with a more flexible approach to Version Control. [Learn more.](version-control.md)&#x20;
 {% endhint %}
 
 ## Overview

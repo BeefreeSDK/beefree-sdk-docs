@@ -21,6 +21,7 @@
 * [Tracking Message Changes](getting-started/tracking-message-changes.md)
 * [Sample Code](getting-started/sample-code.md)
 * [Release Candidate Environment](getting-started/release-candidate-environment.md)
+* [Version Control](getting-started/version-control.md)
 
 ## Quickstart Guides
 
