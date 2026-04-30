@@ -95,11 +95,11 @@ In the version management settings, you can also check an application’s versio
 
 Enterprise Version Control covers the Beefree services that receive the most frequent updates:
 
-| Service                             | Description                                                                                                                       |
-| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Beefree SDK frontend                | The user-facing drag-and-drop Builder and File Manager interface. It’s the part of the Beefree SDK that is loaded in the browser. |
-| HTML generation service             | The microservice responsible for turning users' designs into reliable and performing HTML.                                        |
-| Authentication and token validation | Manages SDK configurations via /authinfo URL and handles the refresh and validation of tokens.                                    |
+| Service                                | Description                                                                                                                       |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Beefree SDK frontend                   | The user-facing drag-and-drop Builder and File Manager interface. It’s the part of the Beefree SDK that is loaded in the browser. |
+| HTML generation service                | The microservice responsible for turning users' designs into reliable and performing HTML.                                        |
+| App configuration and token validation | Manages SDK configurations via /authinfo URL and handles the refresh and validation of tokens.                                    |
 
 We may expand the list of covered services in future releases.
 
