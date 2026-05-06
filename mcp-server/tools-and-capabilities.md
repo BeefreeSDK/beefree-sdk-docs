@@ -12,9 +12,23 @@ These tools control the foundational architecture of your email, allowing you to
 * `beefree_update_column_style` - Modify column styling
 * `beefree_get_content_hierarchy` - Retrieve design structure
 * `beefree_get_element_details` - Get element information
-* `beefree_get_selected` - Get currently selected element
 * `beefree_set_email_metadata` - Set email subject and preheader
 * `beefree_set_email_default_styles` - Set default email styles
+
+#### Get the context of selected element
+
+```
+const beeConfig = {
+  onSelectElement: ({type, uuid}) => {}
+}
+```
+
+The `onSelectElement` callback is triggered when a user selects either a row or a module in the SDK interface. It is called with an object parameter that contains:
+
+* a `type` field, which can be either `module` or `row`
+* a `uuid` field, which contains the ID of the selected element
+
+This information is meant to be forwarded to your AI Agent that can proactively leverage them in MCP-powered content creation.
 
 #### Design System & Personalization
 
@@ -33,14 +47,6 @@ These tools add and modify individual content elements within your email, includ
 * Structural blocks: `beefree_add_spacer`, `beefree_add_divider`
 * Tabular blocks: `beefree_add_table`
 * Each with corresponding update tools
-
-#### Template Catalog
-
-These tools provide access to Beefree's library of 1,500+ pre-built email templates, enabling you to browse, search, and clone professional designs as starting points.
-
-* `beefree_list_templates` - Search and filter templates
-* `beefree_retrieve_template_facets` - Get template categories and tags
-* `beefree_clone_template` - Clone existing templates
 
 #### Validation & QA Tools (Checker)
 
