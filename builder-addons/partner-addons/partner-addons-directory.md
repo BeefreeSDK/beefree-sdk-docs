@@ -124,6 +124,8 @@ Easily insert QR codes, maps, calendar events, content feeds, and all other tool
 
 ## Mailix
 
+<figure><img src="../../.gitbook/assets/Mailix Logo.png" alt="" width="375"><figcaption></figcaption></figure>
+
 Mailix allows you to build interactive email widgets without coding right in the Beefree editor.\
 Mailix offers these features out of the box:
 
