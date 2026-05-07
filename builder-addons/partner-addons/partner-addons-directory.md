@@ -116,10 +116,27 @@ Once installed and configured, they will see a new content tile in the builder. 
 
 <figure><img src="../../.gitbook/assets/BuzzWorks-thumbnail.jpg" alt=""><figcaption></figcaption></figure>
 
-The BuzzWorks add-on gives you instant access to the full suite of\
-BuzzWorks plugins from a single, unified interface inside your Beefree\
-SDK editor.&#x20;
+The BuzzWorks add-on gives you instant access to the full suite of BuzzWorks plugins from a single, unified interface inside your Beefree SDK editor.&#x20;
 
 Easily insert QR codes, maps, calendar events, content feeds, and all other tools Buzzworks has to offer from a single AddOn.&#x20;
 
 [Addon website](https://buzzworks.studio/) | [Privacy Policy](https://beefree.io/privacy-policy/) | [Support](https://devportal.beefree.io/hc/en-us)
+
+## Mailix
+
+Mailix allows you to build interactive email widgets without coding right in the Beefree editor.\
+Mailix offers these features out of the box:
+
+* Video in email
+* Countdown timer that shows the right time even on Apple MPP devices
+* Text over image
+* 5-Star Rating
+* NPS Score
+* Survey
+* Form
+* Quiz
+* One-click email rating&#x20;
+
+And many more on demand like product carousels and panels with navigation/filter, decision trees / multi step selections, wheel of fortune, flip card, scratch off — and even games like mine sweeper or memory.
+
+[Addon website](https://mailix.com/) | [Privacy Policy](https://mailix.com/terms-and-conditions/) | [Support](https://mailix.com/contact-us)
