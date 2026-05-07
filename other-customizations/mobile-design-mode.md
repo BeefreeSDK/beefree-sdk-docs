@@ -1,7 +1,7 @@
 # Mobile Design Mode
 
 {% hint style="info" %}
-Mobile Design Mode is available on all [Beefree SDK plan types](https://developers.beefree.io/pricing-plans). Important: While Mobile Design Mode is available on all plan types, there associated advanced features (such as Stack on Mobile) that are only available on [Beefree SDK paid plans](https://developers.beefree.io/pricing-plans). This page outlines which Mobile Design Mode features correspond with each plan type.&#x20;
+Mobile Design Mode is available on all [Beefree SDK plan types](https://developers.beefree.io/pricing-plans). Important: While Mobile Design Mode is available on all plan types, there associated advanced features (such as Stack on Mobile) that are only available on [Beefree SDK paid plans](https://developers.beefree.io/pricing-plans). This page outlines which Mobile Design Mode features correspond with each plan type.
 {% endhint %}
 
 ## Overview <a href="#overview" id="overview"></a>
@@ -50,7 +50,7 @@ Here is a video explaining **why we built Mobile design mode** and how it **enha
 Take the following steps to enable Mobile Design Mode within your application:
 
 1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
-2. Navigate to the application you want to configure **Mobile Design Mode** for.&#x20;
+2. Navigate to the application you want to configure **Mobile Design Mode** for.
 3.  Click the application's **Details** button.
 
     **Note:** We recommend testing the feature first with a DEV or QA application
@@ -60,11 +60,11 @@ Take the following steps to enable Mobile Design Mode within your application:
 
 ## How it works in the user Interface <a href="#how-it-works" id="how-it-works"></a>
 
-When Mobile Design Mode is enabled for an application at [developers.beefree.io](https://devportal.beefree.io/hc/en-us), the builder will display two new icons in the upper-left corner of the content area, as highlighted below.&#x20;
+When Mobile Design Mode is enabled for an application at [developers.beefree.io](https://devportal.beefree.io/hc/en-us), the builder will display two new icons in the upper-left corner of the content area, as highlighted below.
 
 <figure><img src="../.gitbook/assets/new-mobile-design-mode-icons.png" alt=""><figcaption></figcaption></figure>
 
-The _desktop view (screen icon on the left)_ will leverage your browser’s full width.&#x20;
+The _desktop view (screen icon on the left)_ will leverage your browser’s full width.
 
 The _mobile view_ (mobile icon on the right) will resize the work area width to 320px to simulate a mobile screen.
 
@@ -83,9 +83,9 @@ When a user is working in the Mobile stage, the features available are the same 
 
 ## Designing content for Mobile <a href="#designing-content-for-mobile" id="designing-content-for-mobile"></a>
 
-When designing content for Mobile, users may require more flexibility in the way they arrange or format elements to fit a smaller screen.&#x20;
+When designing content for Mobile, users may require more flexibility in the way they arrange or format elements to fit a smaller screen.
 
-Thanks to the latest Mobile Design Mode updates, users can now control individual elements straight from the mobile stage without the need to duplicate them.&#x20;
+Thanks to the latest Mobile Design Mode updates, users can now control individual elements straight from the mobile stage without the need to duplicate them.
 
 Users can optimize the design of the following content properties by switching to the Mobile Design Stage:
 
@@ -93,19 +93,19 @@ Users can optimize the design of the following content properties by switching t
 * Alignment
 * Font size
 
-It is now possible to style these elements for Mobile or Desktop.&#x20;
+It is now possible to style these elements for Mobile or Desktop.
 
 These three mobile-optimized properties are available for the following content type modules:
 
 * Title
-* Paragraph&#x20;
+* Paragraph
 * List
 * Form
 * Icons
 * Menu
 * Button
 
-To edit a specific parameter for mobile, users must switch to the Mobile stage and select the content element they want to edit.&#x20;
+To edit a specific parameter for mobile, users must switch to the Mobile stage and select the content element they want to edit.
 
 They will find the Mobile-optimized properties in the sidebar menu, under the “Content Properties” tab.
 
@@ -160,19 +160,19 @@ Here is a brief description of the parameters and their options. They are all op
 **Important:** The **Mobile Optimization Settings** listed in this section are available on [Beefree SDK paid plans](https://developers.beefree.io/pricing-plans).
 {% endhint %}
 
-Beefree SDK provides addition mobile optimization settings both for rows and content blocks. These are available on [paid plans](https://developers.beefree.io/pricing-plans).&#x20;
+Beefree SDK provides addition mobile optimization settings both for rows and content blocks. These are available on [paid plans](https://developers.beefree.io/pricing-plans).
 
 To change how content behaves on mobile and create a mobile version of an email, page, or popup, you can add the following enhancements to your application:
 
-* **Hide on mobile/Hide on desktop:** A content property to hide a block when displaying the email/page on a specific device.&#x20;
-  * **Server-side configuration:** ![](<../.gitbook/assets/CleanShot 2025-06-27 at 15.31.57.png>)
+* **Hide on mobile/Hide on desktop:** A content property to hide a block when displaying the email/page on a specific device.
+  * **Server-side configuration:** <img src="../.gitbook/assets/Hide Content.png" alt="" data-size="original">
   * **User interface:** ![](<../.gitbook/assets/CleanShot 2025-06-27 at 15.33.03.png>)
 * **Do not stack on mobile:** When this option is enabled for a row, adjacent columns will not be stacked on mobile devices. The columns will stay side-by-side, as in the desktop view.
-  * **Server-side configuration:**  ![](<../.gitbook/assets/CleanShot 2025-06-27 at 15.34.42.png>)
-  * **User interface:**  ![](<../.gitbook/assets/CleanShot 2025-06-27 at 15.35.10.png>)
+  * **Server-side configuration:** ![](<../.gitbook/assets/Do not stack on mobile.png>)
+  * **User interface:** ![](<../.gitbook/assets/CleanShot 2025-06-27 at 15.35.10.png>)
 * **Reverse stacking on mobile:** When turned on for a row, columns for that row will stack in reverse order, i.e., from the rightmost to the leftmost.
-  * **Server-side configuration:**  ![](<../.gitbook/assets/CleanShot 2025-06-27 at 15.35.39.png>)
-  * **User interface:**  ![](<../.gitbook/assets/CleanShot 2025-06-27 at 15.36.13.png>)&#x20;
+  * **Server-side configuration:** ![](<../.gitbook/assets/Stack order.png>)
+  * **User interface:** ![](<../.gitbook/assets/CleanShot 2025-06-27 at 15.36.13.png>)
 
 These settings enhance Mobile Design Mode by allowing end users to immediately view desktop vs. mobile designs.
 
