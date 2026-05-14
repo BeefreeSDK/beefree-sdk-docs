@@ -1,7 +1,7 @@
 # Custom Head HTML
 
 {% hint style="info" %}
-Requires [Core plan](https://developers.beefree.io/pricing-plans) or above. Available for Email or Page Builders.&#x20;
+Requires [Core plan](https://developers.beefree.io/pricing-plans) or above. Available for Email or Page Builders.
 {% endhint %}
 
 ## Overview <a href="#how-to-activate-the-feature" id="how-to-activate-the-feature"></a>
@@ -14,7 +14,7 @@ The HTML block and the Custom Head HTML setting have different available tags an
 
 This page will discuss how to implement and configure Custom Head HTML within your application.
 
-## How to Activate the Feature <a href="#how-to-activate-the-feature" id="how-to-activate-the-feature"></a>
+## How to activate the feature <a href="#how-to-activate-the-feature" id="how-to-activate-the-feature"></a>
 
 This is a server-side configuration. You can activate the Custom Head HTML option by heading over to the Developer Console and checking the option to **on** and saving your changes.
 
@@ -30,7 +30,7 @@ Take the following steps to enable Custom Head HTML in your server-side configur
 
 **Optional:** Add [Advanced Permissions](../other-customizations/advanced-options/advanced-permissions.md) to your configuration to control access on the UID level.
 
-## JSON Template Example <a href="#how-to-activate-permissions" id="how-to-activate-permissions"></a>
+## JSON template example <a href="#how-to-activate-permissions" id="how-to-activate-permissions"></a>
 
 When your end users add custom HTML to the `<head>` tag, it will be appended at the end of the email or page JSON. The following JSON shows an example template with custom `<head>` HTML added.
 
@@ -166,7 +166,7 @@ The following JSON shows an example template with custom `<head>` HTML. You can 
 
 Reference the Custom Head HTML white label end user guide for more examples of how your end users can apply Custom Head HTML to their email HTML.
 
-## How to Activate Permissions <a href="#how-to-activate-permissions" id="how-to-activate-permissions"></a>
+## How to activate permissions <a href="#how-to-activate-permissions" id="how-to-activate-permissions"></a>
 
 Once you enable the Custom Head Tags check, you'll have the option to set [Advanced Permissions](../other-customizations/advanced-options/advanced-permissions.md#settings) within your Beefree SDK configuration. This controls access at the UID level, allowing you to configure it for individual users or groups of users based on your configuration.
 
@@ -183,7 +183,7 @@ advancedPermissions: {
 }
 ```
 
-## The Sanitizer and Adding Custom HTML
+## The Sanitizer and adding Custom HTML
 
 When using Custom HTML in the email builder, a code sanitizer will validate your code. It will automatically correct some issues, such as HTML tags that are left open. It will also strip out code that often isn't supported by email clients. For example, script and iframe tags are removed since, when used incorrectly, they often cause deliverability problems and security risks.
 
@@ -197,11 +197,11 @@ Take the following steps to enable or disable the HTML sanitizer within your app
 4. On the **Details** page, click **Application configuration**
 5. Scroll down to the **Privacy and Security** section
 6. Toggle **Disable the HTML sanitizer service in the HTML content block** on or off
-7. Save your configuration&#x20;
+7. Save your configuration
 
 <figure><img src="../.gitbook/assets/CleanShot 2025-07-17 at 17.31.02.png" alt="" width="511"><figcaption></figcaption></figure>
 
-## Additional Considerations <a href="#how-to-activate-permissions" id="how-to-activate-permissions"></a>
+### Additional Considerations <a href="#how-to-activate-permissions" id="how-to-activate-permissions"></a>
 
 Prior to adding your own custom `<head>` HTML, consider the following:
 
@@ -213,5 +213,6 @@ Prior to adding your own custom `<head>` HTML, consider the following:
   * `title`
 * If the sanitizer is on, you can only use the attributes listed in the attributes by tag table. You can reference the complete table in the [Add Custom Head HTML end user guide](https://docs.beefree.io/end-user-guide/design-tools/add-custom-head-html).
   * **Note:** If the sanitizer is off, you can use any HTML attribute or tag. This option should be used carefully to ensure designs are still responsive and render correctly.
-* You cannot edit existing HTML within the `<head>` tags, you can only add [custom HTML](https://docs.beefree.io/end-user-guide/content-blocks/custom-html)  that will be appended at the end of the `<head>` section.
+* [**Customizing the Sanitizer for Custom Head HTML**](custom-sanitize-rules.md)**:** The list of tags and attributes shown above is the SDK default. You can replace it with your own whitelist using sanitizeRules.head in your client-side configuration. See [Custom Sanitize Rules](custom-sanitize-rules.md) for details.
+* You cannot edit existing HTML within the `<head>` tags, you can only add [custom HTML](https://docs.beefree.io/end-user-guide/content-blocks/custom-html) that will be appended at the end of the `<head>` section.
 * When the [sanitizer](custom-head-html.md#the-sanitizer-and-adding-custom-html) is on, the HTML block and Custom Head HTML setting have different available tags and attributes that are unique to each feature.

@@ -50,12 +50,13 @@ We use third-party tools to aggregate anonymous usage data. It helps us develop 
 
 #### HTML Sanitizer Service
 
+When you enable the [Custom HTML](https://docs.beefree.io/end-user-guide/content-blocks/custom-html#html-tag-restrictions-in-emails) content block or allow users to add [Custom Head HTML](https://docs.beefree.io/end-user-guide/design-tools/add-custom-head-html), they can add custom HTML to their content. The sanitize service checks and cleans HTML, helping prevent the introduction of unsafe content or tags that might affect deliverability. However, disabling it can be useful if the host application needs custom HTML tags or attributes.
+
 * When you disable the HTML sanitization service, you’re removing all restrictions on what users of the builder can add inside the Custom HTML content block.
-* The sanitize service checks and cleans up custom HTML, which can prevent the introduction of unsafe content or tags that might impact deliverability. However, disabling it can be useful if the host application needs custom HTML tags or attributes.
 * If disabled, you should implement an alternative code review process, such as using the `onChange` or `onSave` [events](../../getting-started/readme/installation/methods-and-events.md) to review content.
 * The [client-side configuration](../../getting-started/readme/installation/configuration-parameters/) allows enabling (`forceSanitizeHTML: true`) per user, but cannot disable sanitization for security reasons.
 
-Learn more about [Custom HTML](https://docs.beefree.io/end-user-guide/content-blocks/custom-html#html-tag-restrictions-in-emails) and [Custom Head HTML](https://docs.beefree.io/end-user-guide/design-tools/add-custom-head-html).
+**You can** [**customize the sanitizer's whitelist**](../custom-sanitize-rules.md)**.** When the HTML Sanitizer is enabled, you can override its default list of allowed tags, attributes, and link protocols — independently for the HTML content block and for Custom Head HTML — by passing the `sanitizeRules` parameter in your client-side configuration. See [Custom Sanitize Rules](../custom-sanitize-rules.md) for the full reference.
 
 #### Custom Limitations on the File Manager
 

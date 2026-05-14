@@ -2,7 +2,7 @@
 description: Complete reference guide for all Beefree SDK configuration parameters.
 ---
 
-# Configuration Parameters
+# Configuration parameters
 
 ## Overview
 
@@ -105,54 +105,59 @@ var beeConfig = {
 
 This parameter is mandatory for Beefree SDK initialization:
 
-| Parameter | Description | Type |
-|-----------|-------------|------|
+| Parameter     | Description                                                             | Type     |
+| ------------- | ----------------------------------------------------------------------- | -------- |
 | **container** | The ID of the HTML div element that will contain the Beefree SDK editor | `string` |
 
 ## Core Editor Settings
 
 ### language
-- **Type:** `string`
-- **Default:** `'en-US'`
-- **Description:** Sets the editor interface language
+
+* **Type:** `string`
+* **Default:** `'en-US'`
+* **Description:** Sets the editor interface language
 
 **Available Languages:**
 
-| Language | Code | Language | Code |
-|----------|------|----------|------|
-| English | `en-US` | German | `de-DE` |
-| Spanish | `es-ES` | Danish | `da-DK` |
-| French | `fr-FR` | Swedish | `sv-SE` |
-| Italian | `it-IT` | Polish | `pl-PL` |
-| Portuguese | `pt-BR` | Hungarian | `hu-HU` |
-| Indonesian | `id-ID` | Russian | `ru-RU` |
-| Japanese | `ja-JP` | Korean | `ko-KR` |
-| Chinese | `zh-CN` | Dutch | `nl-NL` |
-| Traditional Chinese | `zh-HK` | Finnish | `fi-FI` |
-| Czech | `cs-CZ` | Romanian | `ro-RO` |
-| Norwegian (Bokmål) | `nb-NO` | Slovenian | `sl-SI` |
+| Language            | Code    | Language  | Code    |
+| ------------------- | ------- | --------- | ------- |
+| English             | `en-US` | German    | `de-DE` |
+| Spanish             | `es-ES` | Danish    | `da-DK` |
+| French              | `fr-FR` | Swedish   | `sv-SE` |
+| Italian             | `it-IT` | Polish    | `pl-PL` |
+| Portuguese          | `pt-BR` | Hungarian | `hu-HU` |
+| Indonesian          | `id-ID` | Russian   | `ru-RU` |
+| Japanese            | `ja-JP` | Korean    | `ko-KR` |
+| Chinese             | `zh-CN` | Dutch     | `nl-NL` |
+| Traditional Chinese | `zh-HK` | Finnish   | `fi-FI` |
+| Czech               | `cs-CZ` | Romanian  | `ro-RO` |
+| Norwegian (Bokmål)  | `nb-NO` | Slovenian | `sl-SI` |
 
 ### autosave
-- **Type:** `number | false`
-- **Default:** `false`
-- **Description:** Enables automatic saving at specified intervals (in seconds). Set to `false` to disable.
+
+* **Type:** `number | false`
+* **Default:** `false`
+* **Description:** Enables automatic saving at specified intervals (in seconds). Set to `false` to disable.
 
 ### trackChanges
-- **Type:** `boolean`
-- **Default:** `false`
-- **Description:** Enables change tracking to monitor template modifications via the `onChange` callback.
+
+* **Type:** `boolean`
+* **Default:** `false`
+* **Description:** Enables change tracking to monitor template modifications via the `onChange` callback.
 
 ### preventClose
-- **Type:** `boolean`
-- **Default:** `false`
-- **Description:** Shows an alert when users attempt to leave the page before saving changes.
+
+* **Type:** `boolean`
+* **Default:** `false`
+* **Description:** Shows an alert when users attempt to leave the page before saving changes.
 
 ## Content Customization
 
 ### specialLinks
-- **Type:** `array`
-- **Default:** `[]`
-- **Description:** Array of custom link objects for special actions (e.g., unsubscribe links).
+
+* **Type:** `array`
+* **Default:** `[]`
+* **Description:** Array of custom link objects for special actions (e.g., unsubscribe links).
 
 ```javascript
 specialLinks: [
@@ -165,9 +170,10 @@ specialLinks: [
 ```
 
 ### mergeTags
-- **Type:** `array`
-- **Default:** `[]`
-- **Description:** Array of merge tag objects for dynamic content personalization.
+
+* **Type:** `array`
+* **Default:** `[]`
+* **Description:** Array of merge tag objects for dynamic content personalization.
 
 ```javascript
 mergeTags: [
@@ -183,9 +189,10 @@ mergeTags: [
 ```
 
 ### mergeContents
-- **Type:** `array`
-- **Default:** `[]`
-- **Description:** Array of reusable content blocks that can be inserted into templates.
+
+* **Type:** `array`
+* **Default:** `[]`
+* **Description:** Array of reusable content blocks that can be inserted into templates.
 
 ```javascript
 mergeContents: [
@@ -199,15 +206,17 @@ mergeContents: [
 ## Appearance & UI Customization
 
 ### sidebarPosition
-- **Type:** `string`
-- **Default:** `'left'`
-- **Options:** `'left'`, `'right'`
-- **Description:** Controls the position of the content sidebar.
+
+* **Type:** `string`
+* **Default:** `'left'`
+* **Options:** `'left'`, `'right'`
+* **Description:** Controls the position of the content sidebar.
 
 ### editorFonts
-- **Type:** `object`
-- **Default:** See Font Management documentation
-- **Description:** Customizes available fonts in the text toolbar and body settings.
+
+* **Type:** `object`
+* **Default:** See Font Management documentation
+* **Description:** Customizes available fonts in the text toolbar and body settings.
 
 ```javascript
 editorFonts: {
@@ -226,30 +235,34 @@ editorFonts: {
 ```
 
 ### defaultColors
-- **Type:** `array`
-- **Default:** `[]`
-- **Description:** Array of hex color codes for the default color palette.
+
+* **Type:** `array`
+* **Default:** `[]`
+* **Description:** Array of hex color codes for the default color palette.
 
 ```javascript
 defaultColors: ['#ffffff', '#000000', '#95d24f', '#ff00dd']
 ```
 
 ### disableColorHistory
-- **Type:** `boolean`
-- **Default:** `false`
-- **Description:** Disables the color history feature in color pickers.
+
+* **Type:** `boolean`
+* **Default:** `false`
+* **Description:** Disables the color history feature in color pickers.
 
 ### disableBaseColors
-- **Type:** `boolean`
-- **Default:** `false`
-- **Description:** Disables the base color palette in color pickers.
+
+* **Type:** `boolean`
+* **Default:** `false`
+* **Description:** Disables the base color palette in color pickers.
 
 ## Title Block Customization
 
 ### titleDefaultStyles
-- **Type:** `object`
-- **Default:** `{}`
-- **Description:** Default styling for title blocks at different heading levels.
+
+* **Type:** `object`
+* **Default:** `{}`
+* **Description:** Default styling for title blocks at different heading levels.
 
 ```javascript
 titleDefaultStyles: {
@@ -267,37 +280,43 @@ titleDefaultStyles: {
 ```
 
 ### titleDefaultConfig
-- **Type:** `object`
-- **Default:** `{}`
-- **Description:** Default configuration settings for title blocks.
+
+* **Type:** `object`
+* **Default:** `{}`
+* **Description:** Default configuration settings for title blocks.
 
 ### titleMaxLevel
-- **Type:** `string`
-- **Default:** `'h3'`
-- **Options:** `'h1'`, `'h2'`, `'h3'`, `'h4'`, `'h5'`, `'h6'`
-- **Description:** Maximum heading level available in title blocks.
+
+* **Type:** `string`
+* **Default:** `'h3'`
+* **Options:** `'h1'`, `'h2'`, `'h3'`, `'h4'`, `'h5'`, `'h6'`
+* **Description:** Maximum heading level available in title blocks.
 
 ## Workspace Configuration
 
 ### workspace
-- **Type:** `object`
-- **Default:** `{type: 'default'}`
-- **Description:** Configures the editor workspace type and behavior.
+
+* **Type:** `object`
+* **Default:** `{type: 'default'}`
+* **Description:** Configures the editor workspace type and behavior.
 
 #### workspace.type
-- **Type:** `string`
-- **Default:** `'default'`
-- **Options:** `'default'`, `'mixed'`, `'amp_only'`, `'html_only'`
-- **Description:** Determines workspace type for AMP content visibility.
+
+* **Type:** `string`
+* **Default:** `'default'`
+* **Options:** `'default'`, `'mixed'`, `'amp_only'`, `'html_only'`
+* **Description:** Determines workspace type for AMP content visibility.
 
 #### workspace.editSingleRow
-- **Type:** `boolean`
-- **Default:** `false`
-- **Description:** Enables single-row editing mode.
+
+* **Type:** `boolean`
+* **Default:** `false`
+* **Description:** Enables single-row editing mode.
 
 #### workspace.stage (Mobile Design Mode)
-- **Type:** `object`
-- **Description:** Mobile design mode configuration.
+
+* **Type:** `object`
+* **Description:** Mobile design mode configuration.
 
 ```javascript
 workspace: {
@@ -312,24 +331,28 @@ workspace: {
 ## Advanced Features
 
 ### commenting
-- **Type:** `boolean`
-- **Default:** `false`
-- **Description:** Enables collaborative commenting on content blocks and rows.
+
+* **Type:** `boolean`
+* **Default:** `false`
+* **Description:** Enables collaborative commenting on content blocks and rows.
 
 ### commentingThreadPreview
-- **Type:** `boolean`
-- **Default:** `true`
-- **Description:** Shows comment preview popover on the stage.
+
+* **Type:** `boolean`
+* **Default:** `true`
+* **Description:** Shows comment preview popover on the stage.
 
 ### commentingNotifications
-- **Type:** `boolean`
-- **Default:** `true`
-- **Description:** Enables notifications for new comments in collaborative editing.
+
+* **Type:** `boolean`
+* **Default:** `true`
+* **Description:** Enables notifications for new comments in collaborative editing.
 
 ### contentDialog
-- **Type:** `object`
-- **Default:** `{}`
-- **Description:** Configuration for custom content dialogs to exchange data with external systems.
+
+* **Type:** `object`
+* **Default:** `{}`
+* **Description:** Configuration for custom content dialogs to exchange data with external systems.
 
 ```javascript
 contentDialog: {
@@ -339,9 +362,10 @@ contentDialog: {
 ```
 
 ### defaultForm
-- **Type:** `object`
-- **Default:** `{}`
-- **Description:** Default form structure for form blocks.
+
+* **Type:** `object`
+* **Default:** `{}`
+* **Description:** Default form structure for form blocks.
 
 ```javascript
 defaultForm: {
@@ -352,19 +376,22 @@ defaultForm: {
 ```
 
 ### rowDisplayConditions
-- **Type:** `object`
-- **Default:** `{}`
-- **Description:** Enables conditional display logic for email rows.
+
+* **Type:** `object`
+* **Default:** `{}`
+* **Description:** Enables conditional display logic for email rows.
 
 ### rowsConfiguration
-- **Type:** `object`
-- **Default:** `{}`
-- **Description:** Configuration for row behavior and appearance.
+
+* **Type:** `object`
+* **Default:** `{}`
+* **Description:** Configuration for row behavior and appearance.
 
 ### advancedPermissions
-- **Type:** `object`
-- **Default:** `{}`
-- **Description:** Granular permission controls for different user roles.
+
+* **Type:** `object`
+* **Default:** `{}`
+* **Description:** Granular permission controls for different user roles.
 
 ```javascript
 advancedPermissions: {
@@ -383,45 +410,60 @@ advancedPermissions: {
 ```
 
 ### hooks
-- **Type:** `object`
-- **Default:** `{}`
-- **Description:** Custom hooks for extending editor functionality.
+
+* **Type:** `object`
+* **Default:** `{}`
+* **Description:** Custom hooks for extending editor functionality.
 
 ### metadata
-- **Type:** `object`
-- **Default:** `{}`
-- **Description:** Custom metadata configuration for templates.
+
+* **Type:** `object`
+* **Default:** `{}`
+* **Description:** Custom metadata configuration for templates.
 
 ## Security & Permissions
 
 ### roleHash
-- **Type:** `string`
-- **Default:** `''`
-- **Description:** Alphanumeric identifier for user roles (8-30 characters, no special characters).
+
+* **Type:** `string`
+* **Default:** `''`
+* **Description:** Alphanumeric identifier for user roles (8-30 characters, no special characters).
 
 ### disableLinkSanitize
-- **Type:** `boolean`
-- **Default:** `false`
-- **Description:** Disables URL validation to allow merge tags in links.
+
+* **Type:** `boolean`
+* **Default:** `false`
+* **Description:** Disables URL validation to allow merge tags in links.
+
+### sanitizeRules
+
+* **Type:** `object`
+* **Default:** SDK default whitelist for both body and head
+* **Description:** Customizes the HTML Sanitizer's allowed tags, attributes, link protocols, comments, data-\* attributes, and ARIA attributes. Configurable independently for the HTML content block (body) and for Custom Head HTML (head).\
+  \
+  See [Custom Sanitize Rules](http://./server-side-configurations/custom-sanitize-rules) for the full reference and examples.
 
 ## Performance & Loading
 
 ### loadingSpinnerDisableOnSave
-- **Type:** `boolean`
-- **Default:** `false`
-- **Description:** Controls loading spinner visibility during save operations.
+
+* **Type:** `boolean`
+* **Default:** `false`
+* **Description:** Controls loading spinner visibility during save operations.
 
 ### loadingSpinnerDisableOnDialog
-- **Type:** `boolean`
-- **Default:** `false`
-- **Description:** Controls loading spinner visibility during dialog operations.
+
+* **Type:** `boolean`
+* **Default:** `false`
+* **Description:** Controls loading spinner visibility during dialog operations.
 
 ## Callback Functions
 
 ### onSave
-- **Type:** `function`
-- **Parameters:** `(jsonFile, htmlFile, ampHtml, templateVersion, language)`
-- **Description:** Called when user saves the template.
+
+* **Type:** `function`
+* **Parameters:** `(jsonFile, htmlFile, ampHtml, templateVersion, language)`
+* **Description:** Called when user saves the template.
 
 ```javascript
 onSave: function(jsonFile, htmlFile, ampHtml, templateVersion, language) {
@@ -436,56 +478,66 @@ onSave: function(jsonFile, htmlFile, ampHtml, templateVersion, language) {
 ```
 
 ### onChange
-- **Type:** `function`
-- **Parameters:** `(jsonFile, response)`
-- **Description:** Called when template content changes (requires `trackChanges: true`).
+
+* **Type:** `function`
+* **Parameters:** `(jsonFile, response)`
+* **Description:** Called when template content changes (requires `trackChanges: true`).
 
 ### onSaveAsTemplate
-- **Type:** `function`
-- **Parameters:** `(jsonFile)`
-- **Description:** Called when user saves template as a new template.
+
+* **Type:** `function`
+* **Parameters:** `(jsonFile)`
+* **Description:** Called when user saves template as a new template.
 
 ### onAutoSave
-- **Type:** `function`
-- **Parameters:** `(jsonFile)`
-- **Description:** Called during automatic save operations.
+
+* **Type:** `function`
+* **Parameters:** `(jsonFile)`
+* **Description:** Called during automatic save operations.
 
 ### onSend
-- **Type:** `function`
-- **Parameters:** `(htmlFile)`
-- **Description:** Called when user triggers send action.
+
+* **Type:** `function`
+* **Parameters:** `(htmlFile)`
+* **Description:** Called when user triggers send action.
 
 ### onLoad
-- **Type:** `function`
-- **Parameters:** `(jsonFile)`
-- **Description:** Called when template is loaded into the editor.
+
+* **Type:** `function`
+* **Parameters:** `(jsonFile)`
+* **Description:** Called when template is loaded into the editor.
 
 ### onError
-- **Type:** `function`
-- **Parameters:** `(errorMessage)`
-- **Description:** Called when errors occur in the editor.
+
+* **Type:** `function`
+* **Parameters:** `(errorMessage)`
+* **Description:** Called when errors occur in the editor.
 
 ### onWarning
-- **Type:** `function`
-- **Parameters:** `(alertMessage)`
-- **Description:** Called when warnings are triggered.
+
+* **Type:** `function`
+* **Parameters:** `(alertMessage)`
+* **Description:** Called when warnings are triggered.
 
 ### onLoadWorkspace
-- **Type:** `function`
-- **Parameters:** `(workspace)`
-- **Description:** Called when workspace is successfully loaded.
+
+* **Type:** `function`
+* **Parameters:** `(workspace)`
+* **Description:** Called when workspace is successfully loaded.
 
 ### onFilePickerInsert
-- **Type:** `function`
-- **Parameters:** `(data)`
-- **Description:** Called when files are inserted via file picker integration.
+
+* **Type:** `function`
+* **Parameters:** `(data)`
+* **Description:** Called when files are inserted via file picker integration.
 
 ## Development & Debugging
 
 ### debug
-- **Type:** `object`
-- **Default:** `{all: false, inspectJson: false, showTranslationKeys: false}`
-- **Description:** Debug mode configuration for development.
+
+* **Type:** `object`
+* **Default:** `{all: false, inspectJson: false, showTranslationKeys: false}`
+* **Description:** Debug mode configuration for development.
 
 ```javascript
 debug: {
@@ -498,9 +550,10 @@ debug: {
 ## Localization
 
 ### translations
-- **Type:** `object`
-- **Default:** `{}`
-- **Description:** Custom translations to override default interface text.
+
+* **Type:** `object`
+* **Default:** `{}`
+* **Description:** Custom translations to override default interface text.
 
 ```javascript
 translations: {
@@ -509,9 +562,11 @@ translations: {
     }
 }
 ```
+
 ## Quick Reference Examples
 
 ### Basic Configuration
+
 ```javascript
 var beeConfig = {
     container: 'beefree-sdk-container',
@@ -526,6 +581,7 @@ var beeConfig = {
 ```
 
 ### Advanced Configuration
+
 ```javascript
 var beeConfig = {
     container: 'beefree-sdk-container',
@@ -564,6 +620,7 @@ var beeConfig = {
 ```
 
 ### Configuration with Advanced Permissions
+
 ```javascript
 var beeConfig = {
     container: 'beefree-sdk-container',
@@ -602,6 +659,7 @@ var beeConfig = {
 ```
 
 ### Configuration for Collaborative Editing
+
 ```javascript
 var beeConfig = {
     container: 'beefree-sdk-container',
@@ -629,20 +687,23 @@ var beeConfig = {
 ## Best Practices
 
 ### Security Considerations
-- Always validate `uid` and `roleHash` on your server
-- Use `advancedPermissions` to restrict user capabilities based on roles
-- Implement proper authentication before initializing the SDK
+
+* Always validate `uid` and `roleHash` on your server
+* Use `advancedPermissions` to restrict user capabilities based on roles
+* Implement proper authentication before initializing the SDK
 
 ### User Experience
-- Set appropriate `language` based on user preferences
-- Use `preventClose: true` for important editing sessions
-- Provide meaningful error handling in `onError` callback
-- Use `commenting` features for team collaboration workflows
+
+* Set appropriate `language` based on user preferences
+* Use `preventClose: true` for important editing sessions
+* Provide meaningful error handling in `onError` callback
+* Use `commenting` features for team collaboration workflows
 
 ### Development Tips
-- Enable `debug.all: true` during development
-- Use `trackChanges: true` to monitor template modifications
-- Implement all relevant callbacks for complete functionality
-- Test with different `workspace.type` values for AMP compatibility
+
+* Enable `debug.all: true` during development
+* Use `trackChanges: true` to monitor template modifications
+* Implement all relevant callbacks for complete functionality
+* Test with different `workspace.type` values for AMP compatibility
 
 This comprehensive configuration guide serves as your single source of truth for all Beefree SDK parameters. Most parameters are documented with their type, default value, description, and practical examples to help you customize the editor to meet your specific requirements.
