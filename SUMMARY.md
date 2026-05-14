@@ -263,7 +263,7 @@
   * [Create a Form Library in Beefree SDK](resources/cookbook/create-a-form-library-in-beefree-sdk.md)
   * [Create a Custom Form Builder in Beefree SDK](resources/cookbook/create-a-custom-form-builder-in-beefree-sdk.md)
 
-## MCP Server (Open BETA) <a href="#mcp-server" id="mcp-server"></a>
+## MCP Server (BETA) <a href="#mcp-server" id="mcp-server"></a>
 
 * [Getting Started](early-access/beefree-sdk-mcp-server-beta.md)
 * [Installation & Setup](mcp-server/installation-and-setup.md)

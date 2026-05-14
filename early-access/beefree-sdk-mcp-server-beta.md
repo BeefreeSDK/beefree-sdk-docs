@@ -1,16 +1,13 @@
 # Getting Started
 
 {% hint style="warning" %}
-**Open Beta Rollout Plan**&#x20;
+**Join the Beta program and get early access to the Beefree SDK MCP Server**
 
-The Beefree SDK MCP Server is rolling out to all customers with Essentials, Core, Superpowers or Enterprise plans, with no waitlist or approval needed. \
-Here's the timeline:
+Our MCP Server is currently in Beta and only accessible to a selected number of early access customers. If you're interested in joining the Beta, or if you'd like us to notify you when the tool is available to everyone, [please let us know](https://growens.typeform.com/to/gyH0gVgp#source=docs).
 
-* **May 7**, Release Candidate (RC - Enterprise)
-* **May 14**, Open Beta for Essentials, Core, and Superpowers
-* **May 28**, Open Beta for Enterprise customers
+[I'd love to join the Beta →](https://growens.typeform.com/to/gyH0gVgp#source=docs)
 
-&#x20;Follow the [Installation & Setup](../mcp-server/installation-and-setup.md) guide to get started.
+Beefree SDK Team
 {% endhint %}
 
 ## Introduction

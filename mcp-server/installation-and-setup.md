@@ -49,12 +49,10 @@ Since the Beefree SDK MCP Server relies on Beefree's CSAPI, it is subjected to t
 
 ### Get an MCP-Compatible CSAPI Key
 
-All requests to the MCP endpoint require a valid [CSAPI key](../apis/content-services-api/#overview-of-content-services-api). You can enable your CSAPI Key from your SDK Console.
-
-Once you have a key, include it in every request:
+You must use an MCP-compatible CSAPI key. Standard CSAPI keys will not work. Complete the beta survey to request access.
 
 ```
-Authorization: Bearer <YOUR_CONTENT_SERVICES_API_KEY>
+Authorization: Bearer <YOUR_MCP_ENABLED_KEY>
 ```
 
 ### MCP Endpoint

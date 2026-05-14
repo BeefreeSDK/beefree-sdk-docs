@@ -20,11 +20,7 @@ The beta lets you explore how AI agents can integrate directly with the Beefree 
 
 #### **Which plans can access the MCP?**
 
-The MCP Server is available to all paying customers as an open beta. No waitlist or CSM request is required. If you are on a free plan, you will need to upgrade to access it. Broader availability and plan-based entitlements will be communicated before general availability.
-
-#### How do I get access?
-
-Access is available directly to all paying customers — no application or approval needed. Sign in to your developer account and follow the [Installation & Setup](installation-and-setup.md) guide to get started.
+At this stage, access to the MCP is invite-only as part of the early access beta. It's open to all plans, excluding free. Customers interested in joining can ask their Customer Success Manager (CSM) or fill out the waitlist form. We'll review requests and grant access to selected customers. Broader availability and plan-based access will be announced after the beta concludes.
 
 #### What are the two integration paths, and which one should I use?
 
