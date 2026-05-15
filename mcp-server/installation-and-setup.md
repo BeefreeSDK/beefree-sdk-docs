@@ -49,7 +49,7 @@ Since the Beefree SDK MCP Server relies on Beefree's CSAPI, it is subjected to t
 
 ### Get an MCP-Compatible CSAPI Key
 
-You must use an MCP-compatible CSAPI key. Standard CSAPI keys will not work. Complete the beta survey to request access.
+You must use an MCP-compatible CSAPI key. Standard CSAPI keys will not work. [Complete the beta survey to request access.](https://growens.typeform.com/to/gyH0gVgp#source=docs)
 
 ```
 Authorization: Bearer <YOUR_MCP_ENABLED_KEY>
