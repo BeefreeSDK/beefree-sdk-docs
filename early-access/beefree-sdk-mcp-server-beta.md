@@ -1,4 +1,4 @@
-# Getting Started
+# Getting started
 
 {% hint style="warning" %}
 **Join the Beta program and get early access to the Beefree SDK MCP Server**
@@ -21,9 +21,9 @@ The Beefree SDK MCP Server allows you to connect your AI agents to the Beefree S
 * Providing the agent is the responsibility of the host application. If you don't have your own agent yet, see the [sample projects](beefree-sdk-mcp-server-beta.md#sample-projects) below.
 {% endhint %}
 
-### What can you do with the Beefree MCP Server?
+### What can you do with the Beefree SDK's MCP Server?
 
-The Beefree MCP Server empowers your product team to seamlessly integrate AI-driven design into your Beefree SDK-powered application — letting your end users leverage AI to create, edit, and optimize email designs with less friction between idea and execution.
+The Beefree SDK's MCP Server empowers your product team to seamlessly integrate AI-driven design into your Beefree SDK-powered application — letting your end users leverage AI to create, edit, and optimize email designs with less friction between idea and execution.
 
 By replacing custom integrations with a universal standard, the Beefree MCP Server delivers:
 
@@ -31,9 +31,9 @@ By replacing custom integrations with a universal standard, the Beefree MCP Serv
 2. **A Future-proof** **AI strategy**: MCP decouples your application from any specific AI model, so you can swap providers without rebuilding infrastructure.
 3. **A seamless end-user experience**: deep integration lets users achieve professional results in seconds with no learning curve.
 
-### Use Cases
+### Use cases
 
-#### Interactive Design in the Editor
+#### Interactive design in the editor
 
 These use cases involve an AI agent editing a template while the user is working in the editor — changes appear in real time.
 
@@ -55,7 +55,7 @@ Generate content variations while maintaining your core brand elements.
 
 {% embed url="https://www.youtube.com/watch?v=bxQuCAr-Qic" %}
 
-#### Automated & Headless Workflows
+#### Automated & headless workflows
 
 These use cases run entirely server-side — no editor session required. The agent operates on templates through the Headless API, making them suitable for large-scale automation and backend pipeline integration.
 
@@ -73,9 +73,9 @@ Trigger template modifications directly from third-party automation platforms su
 
 …and many more! Feel free to reach out to our team [talk about your use case](mailto:beta-feedback@beefree.io)!
 
-### Sample Projects
+### Sample projects
 
-**Interactive Editor Agent**
+**Interactive editor agent**
 
 A sample implementation using a [PydanticAI](https://ai.pydantic.dev/) agent connected to a MCP editor session. Supports Gemini, OpenAI, and Anthropic as LLM providers.
 
@@ -89,7 +89,7 @@ The sample showcases:
 
 Clone and run from the [Beefree SDK MCP v2 example demo repository](https://github.com/BeefreeSDK/beefree-sdk-mcp-v2-example-demo). See the `/integration` page for setup instructions.
 
-**Headless Agent**
+**Headless agent**
 
 A fully functioning **headless MCP** demo covering five end-to-end automation use cases. Supports Gemini, OpenAI, and Anthropic as LLM providers.
 
@@ -101,11 +101,11 @@ Using an email building agent generates LLM API costs. The sample project includ
 
 Clone and run from the [Beefree SDK MCP v2 example demo repository](https://github.com/BeefreeSDK/beefree-sdk-mcp-v2-example-demo).
 
-### Beefree SDK MCP Server & AI Agent Responsibilities
+### Beefree SDK's MCP Server & AI agent responsibilities
 
 In the MCP architecture, responsibilities are split so that AI models can access data and tools without custom code for every integration.
 
-The **Beefree SDK MCP Server** acts as the "Hands" and "Manual": it exposes tools that allow creating and editing emails in the Beefree SDK. The AI Agent acts as the "Brain": it knows what the user wants and which tools to call to achieve that goal.
+The **Beefree SDK's MCP Server** acts as the "Hands" and "Manual": it exposes tools that allow creating and editing emails in the Beefree SDK. The AI Agent acts as the "Brain": it knows what the user wants and which tools to call to achieve that goal.
 
 |                 | MCP Server                                                                          | AI Agent                                                                                      |
 | --------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
