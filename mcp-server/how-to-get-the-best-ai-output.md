@@ -103,7 +103,7 @@ Validation Workflow
 ```
 {% endcode %}
 
-### Best Practices for saving tokens
+### Best practices for saving tokens
 
 The most common ways to reduce the AI model token consumption include
 
