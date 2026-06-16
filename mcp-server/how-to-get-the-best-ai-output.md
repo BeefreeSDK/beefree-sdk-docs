@@ -102,3 +102,15 @@ Validation Workflow
 • Continue when minor tool errors occur, report limitations
 ```
 {% endcode %}
+
+### Best Practices for saving tokens
+
+The most common ways to reduce the AI model token consumption include
+
+* [Code Mode](https://docs.beefree.io/beefree-sdk/mcp-server/installation-and-setup#code-mode-research-preview)
+* Prompt Caching
+* Template skeletons for email creation
+* Multi-agent architecture
+* Design token injecton
+
+Please refer to our [deep-dive article](https://developers.beefree.io/blog/ai-agents-email-saving-tokens) if you want to learn more about these best practices and how to apply them to your AI-assisted content generation workflows
