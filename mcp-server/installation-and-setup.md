@@ -14,6 +14,10 @@ The Beefree SDK MCP Server exposes the editor, and Check API as callable tools. 
 
 ### Choose your integration path
 
+{% hint style="info" %}
+Beefree SDK's MCP Server support both in-editor and headless use-cases. If you are integrating the MCP in a headless setup, you can follow the [API-managed session](installation-and-setup.md#api-managed-session) path below skipping the third step "Connect the editor"
+{% endhint %}
+
 There are two ways to connect your agent to the editor. The right choice depends on whether [co-editing](../other-customizations/collaborative-editing/) is enabled on your account:
 
 * [Co-editing](../other-customizations/collaborative-editing/) **not enabled** → [Editor-managed session](installation-and-setup.md#editor-managed-session): the editor creates a lightweight temporary session on demand via `bee.startMcpSession()`. No backend session management required.
