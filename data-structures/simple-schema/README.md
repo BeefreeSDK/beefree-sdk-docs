@@ -45,7 +45,7 @@ The following webinar includes an in-depth exploration of [Simple Schema](https:
 
 {% embed url="https://www.youtube.com/watch?v=DEpQERhWV9E" %}
 
-## API Endpoints: Convert Simple Schema to Full JSON (or the other way around)
+## API Endpoints: convert simple schema to full JSON (or the other way around)
 
 You can convert Simple Schema into fully functional Beefree native JSON using the following endpoint:
 
@@ -67,11 +67,11 @@ Visit the [Content Services API Simple to Full JSON](https://docs.beefree.io/bee
 **Tip:** Reference an [example valid request body in the GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/blob/main/example_valid_request.json) to experiment with the API endpoint and see it in action.
 {% endhint %}
 
-## Use Cases
+## Use cases
 
 The following section lists several ways you can leverage Simple Schema to bring additional value to your end users.
 
-#### AI-Powered and Headless Template Creation
+#### Programmatic content generation
 
 Simple Schema works great for deterministic, rule-based content generation. It can assemble templates and content blocks from code, based on data and logic your application controls, without opening the visual editor.
 
@@ -87,15 +87,15 @@ The general workflow on the backend is:
 
 This lets you build and manage templates entirely outside the visual editor, and surface the result inside Beefree SDK whenever end users need to edit it.
 
-#### A/B Testing and Variations
+#### A/B testing and variations
 
 Use schema generation logic to produce slightly varied layouts for testing. Apply custom logic to automatically create multiple template variants and validate each one against your defined schema before conversion.
 
-#### Custom Validation Workflows
+#### Custom validation workflows
 
 Enforce validation rules that check your schema structure or inputs to meet your unique business or design standards.
 
-#### Backend Template Workflows
+#### Backend template workflows
 
 Simple Schema lets you build and manage complete email, page, and popup templates from your own application, without the visual editor involved at any stage. Use it for programmatic campaigns, content pipelines, template marketplaces, or internal automation systems where templates are assembled from data and rules rather than designed manually.
 
@@ -103,14 +103,14 @@ Simple Schema lets you build and manage complete email, page, and popup template
 
 Simple Schema enhances the development experience for Custom AddOns by integrating new properties that foster an additional layer of customization.
 
-**Developer Notes:**
+**Developer notes:**
 
 * All AddOn content types now rely on Simple Schema.
 * The `locked` property is only enforced inside Row AddOns to avoid poor UX in single-content modules.
 * Use the `text` field consistently for content across all textual modules.
 * Default values will be applied if specific properties are omitted in the Simple JSON.
 
-### Content Dialog Handler Behavior
+### Content Dialog handler behavior
 
 To develop your own [Custom AddOn](/broken/pages/Bq7XDpt9x3HZnkEXrkRr), you need to utilize Beefree SDK's [Content Dialog](../../other-customizations/advanced-options/content-dialog.md) method. The following code snippet provides and example of how to utilize the Content Dialog for Custom AddOns with Simple Schema.
 
@@ -133,7 +133,7 @@ To develop your own [Custom AddOn](/broken/pages/Bq7XDpt9x3HZnkEXrkRr), you need
 
 Simple Schema provides a comprehensive set of properties for customizing and creating [Custom Rows](./#custom-rows).
 
-## Which Schema Should You Use?
+## Which schema should you use?
 
 | Scenario                   | Schema(s) to Use                                                                         |
 | -------------------------- | ---------------------------------------------------------------------------------------- |
@@ -142,7 +142,7 @@ Simple Schema provides a comprehensive set of properties for customizing and cre
 | **API endpoint schema**    | Request body can directly use `simple_template`                                          |
 | **Database modeling**      | Use nested object structure defined in `simple_template`, with shared fields via `$ref`s |
 
-## Schema Validation
+## Schema validation
 
 The following code snippet provides an example of custom Simple Schema fields for merge tag support, and custom validations.
 
