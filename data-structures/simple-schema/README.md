@@ -13,13 +13,15 @@ description: Learn more about how to use Beefree SDK's simple schema for AI-driv
 
 ## Overview
 
-Beefree JSON is the JSON schema we use to structure and validate designs within Beefree SDK. It's a very comprehensive and complex schema and for this reason, it does not provide the best structure for training AI models in workflows that include AI-driven design creation. Beefree SDK's Simple Schema is a lightweight alternative that's more accessible for AI engines (and humans).&#x20;
+Beefree JSON is the JSON schema used to structure and validate designs within Beefree SDK. It is comprehensive and precise, which makes it powerful inside the visual builder, but that same complexity makes it difficult to work with programmatically, outside of it.
 
-As a simpler model, Simple Schema is an intuitive language you can use as a baseline for training AI agents and building templates programmatically outside of Beefree SDK's visual builders. These headless templates can then be instantly transformed into Beefree’s native JSON and loaded inside the builder for end users to edit accordingly in a no-code environment.
+Simple Schema is a lightweight alternative designed for exactly that: assembling templates and content blocks from code, without opening the visual editor. It is easier to validate and maps directly to Beefree-native JSON through the Content Services API.
+
+As a deterministic format, Simple Schema is well-suited for content that follows defined rules: branded components, localized footers, reusable rows, and any structure that needs to be generated consistently at scale. Templates assembled via Simple Schema can be instantly converted to native Beefree JSON and loaded into the builder for end users to edit in a no-code environment.
 
 You can convert the simple schema into native Beefree JSON using the [Content Services API endpoint](../../apis/content-services-api/convert.md) `/v1/conversion/simple-to-full-json`.
 
-Simple Schema also enhances [Custom AddOns development](/broken/pages/Bq7XDpt9x3HZnkEXrkRr) by:
+Simple Schema also enhances [Custom AddOns development](../../builder-addons/custom-addons/) by:
 
 * Providing a comprehensive set of properties for full flexibility in your design.
 * Consolidating the Custom Rows, Single Content AddOn, and Row Mixed schemas into a unified, compatible schema type.
@@ -57,7 +59,7 @@ Or you can use the following endpoint to turn an existing Beefree design (Full J
 POST /v1/conversion/full-to-simple-json
 ```
 
-These endpoints are essential for building headless template workflows, where templates are generated, assembled, or adjusted programmatically—by AI models, config files, or external systems—and later converted for use inside the builder.
+These endpoints are essential for building programmatic template workflows, where templates are generated, assembled, or adjusted from code — via configuration files, data pipelines, or external systems — and then converted for use inside the builder.
 
 Visit the [Content Services API Simple to Full JSON](https://docs.beefree.io/beefree-sdk/apis/content-services-api/convert#post-v1-collection-simple-to-full-json) and Full to Simple documentation to learn more about how to use these endpoints.
 
@@ -71,27 +73,31 @@ The following section lists several ways you can leverage Simple Schema to bring
 
 #### AI-Powered and Headless Template Creation
 
-Build a chatbot or frontend tool where users describe what they want. An AI model creates a Simple Schema layout, which you convert to Beefree JSON using the API. Load the result into the builder—or send it directly into a campaign—without ever touching the editor during creation.
+Simple Schema works great for deterministic, rule-based content generation. It can assemble templates and content blocks from code, based on data and logic your application controls, without opening the visual editor.
 
-For example, your dev team can build a frontend that lets users describe their design (email, page, or popup), and submit that description to an AI agent on the frontend. On the backend:
+This is the right approach when the output needs to be consistent and predictable: branded footers, localized headers, reusable row components, or any structure that follows defined rules rather than requiring creative interpretation. Because no AI inference is involved in this workflow, it also scales efficiently, without per-generation token costs.
 
-1. The prompt is processed by an AI model trained to produce a template using Simple Schema.
+A practical example: a fitness platform serving multiple gym locations could use Simple Schema to generate email footers automatically, each one pulling the correct address, phone number, and logo variant based on geography. The logic lives in your application; Simple Schema provides the structure that converts directly to Beefree-native JSON.
+
+The general workflow on the backend is:
+
+1. Your application generates a Simple Schema document based on your data and rules.
 2. You pass the schema to `/v1/conversion/simple-to-full-json`.
-3. You receive Beefree native JSON, which is then loaded directly into the Beefree SDK builder.
+3. You receive Beefree native JSON, ready to load into the Beefree SDK builder.
 
-This approach blends AI-driven design creation and your own custom user interface, which supports your end users in not starting their content creation workflow from scratch, but rather from an AI-generated design.
+This lets you build and manage templates entirely outside the visual editor, and surface the result inside Beefree SDK whenever end users need to edit it.
 
 #### A/B Testing and Variations
 
-Use schema generation logic to produce slightly varied layouts for testing. Combine this with AI or custom logic to automatically create multiple variants of templates.
+Use schema generation logic to produce slightly varied layouts for testing. Apply custom logic to automatically create multiple template variants and validate each one against your defined schema before conversion.
 
 #### Custom Validation Workflows
 
 Enforce validation rules that check your schema structure or inputs to meet your unique business or design standards.
 
-#### Fully Headless Workflows
+#### Backend Template Workflows
 
-Simple Schema lets you build and manage complete email, page, and popup templates without ever opening the visual builder. Use it for content generation, programmatic campaigns, template marketplaces, or internal automation systems.
+Simple Schema lets you build and manage complete email, page, and popup templates from your own application, without the visual editor involved at any stage. Use it for programmatic campaigns, content pipelines, template marketplaces, or internal automation systems where templates are assembled from data and rules rather than designed manually.
 
 ## Custom AddOns
 
