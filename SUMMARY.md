@@ -17,7 +17,7 @@
   * [Development Applications](getting-started/readme/development-applications.md)
   * [Manage Users](getting-started/readme/manage-users.md)
   * [Manage Subscriptions](getting-started/readme/manage-subscriptions.md)
-  * [Migrating from another provider](getting-started/readme/migrating-from-another-provider.md)
+  * [Migrating from another provider to Beefree SDK](getting-started/readme/migrating-from-another-provider.md "Migrating from another provider")
 * [Tracking Message Changes](getting-started/tracking-message-changes.md)
 * [Sample Code](getting-started/sample-code.md)
 * [Release Candidate Environment](getting-started/release-candidate-environment.md)
