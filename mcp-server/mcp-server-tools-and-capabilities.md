@@ -1,8 +1,8 @@
-# Tools & Capabilities
+# MCP Server tools & capabilities
 
 The Beefree SDK MCP Server provides dozens of tools that are divided into different categories. These tools allow agents to build, modify, and validate email designs in Beefree.
 
-#### Structure and Layout Tools
+#### Structure and layout tools
 
 These tools control the foundational architecture of your email, allowing you to create sections, manage layouts, configure columns, and set global styles.
 
@@ -30,14 +30,14 @@ The `onSelectElement` callback is triggered when a user selects either a row or 
 
 This information is meant to be forwarded to your AI Agent that can proactively leverage them in MCP-powered content creation.
 
-#### Design System & Personalization
+#### Design system & personalization
 
 These features work across multiple tools and categories to ensure designs are personalized and responsive.
 
 * **Mobile styles**: Specialized styling tools to control how layouts and content appear on smaller screens (e.g., stacking, padding, and visibility).
 * **Merge tags**: Dynamic placeholders used across text-based components to enable 1-to-1 personalization.
 
-#### Content Block Tools
+#### Content block tools
 
 These tools add and modify individual content elements within your email, including text, images, buttons, and other interactive components.
 
@@ -48,14 +48,14 @@ These tools add and modify individual content elements within your email, includ
 * Tabular blocks: `beefree_add_table`
 * Each with corresponding update tools
 
-#### Validation & QA Tools (Checker)
+#### Validation & QA tools (Checker)
 
 These tools verify email quality by checking for accessibility issues, missing alt text, color contrast problems, broken links, and other best practice violations.
 
 * `beefree_check_template` - Template validation
 * `beefree_check_section` - Section validation
 
-#### External Services
+#### External services
 
 These tools integrate with third-party services to enhance your email designs with external resources and assets.
 

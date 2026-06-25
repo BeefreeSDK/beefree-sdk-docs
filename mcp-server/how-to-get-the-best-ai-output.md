@@ -1,11 +1,11 @@
-# How to Get the Best AI Output
+# How to get the best AI output
 
 In our demo example, we provide a full system prompt that includes all these instructions, standards, and tool usage patterns. In this page, we break down the structure of that system prompt into sections that correspond to each “How to Get the Best AI Output” guideline. This illustrates how each part of the prompt reinforces the Agent's best practices.
 
-### Try Code Mode Today (Research Preview)
+### Try Code Mode today (research preview)
 
 {% hint style="info" icon="gear-complex" %}
-We’ve developed a new mode designed to help you do more with less: reduce token usage, improve output quality, and speed up generation. It’s called **Code Mode**, and it’s currently in research preview! [If you’re curious and want to learn more about the benefits of Code Mode, click here](installation-and-setup.md#code-mode-research-preview).
+We’ve developed a new mode designed to help you do more with less: reduce token usage, improve output quality, and speed up generation. It’s called **Code Mode**, and it’s currently in research preview! [If you’re curious and want to learn more about the benefits of Code Mode, click here](mcp-server-installation-and-setup.md#code-mode-research-preview).
 {% endhint %}
 
 ### Use the right models

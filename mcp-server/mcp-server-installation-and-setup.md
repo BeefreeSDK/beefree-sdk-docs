@@ -1,12 +1,12 @@
-# Installation & Setup
+# MCP Server installation & setup
 
 {% hint style="danger" %}
 **MCP Server v1 is deprecated**
 
-The v1 editor client approach (`mcpEditorClient.enabled = true` + <kbd>/v1/sdk/mcp</kbd> endpoint) is deprecated and will be removed in a future release. New integrations should use the v2 setup described on this page. If you are on v1, see [Migrating from v1](installation-and-setup.md#migrating-from-v1).
+The v1 editor client approach (`mcpEditorClient.enabled = true` + <kbd>/v1/sdk/mcp</kbd> endpoint) is deprecated and will be removed in a future release. New integrations should use the v2 setup described on this page. If you are on v1, see [Migrating from v1](mcp-server-installation-and-setup.md#migrating-from-v1).
 {% endhint %}
 
-## Overview
+### Overview
 
 [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) is an open protocol that standardizes how AI agents connect to services that expose tools, resources, and prompts — a universal interface that lets you plug any agent into any integration without bespoke code.
 
@@ -15,13 +15,13 @@ The Beefree SDK MCP Server exposes the editor, and Check API as callable tools. 
 ### Choose your integration path
 
 {% hint style="info" %}
-Beefree SDK's MCP Server support both in-editor and headless use-cases. If you are integrating the MCP in a headless setup, you can follow the [API-managed session](installation-and-setup.md#api-managed-session) path below skipping the third step "Connect the editor"
+Beefree SDK's MCP Server support both in-editor and headless use-cases. If you are integrating the MCP in a headless setup, you can follow the [API-managed session](mcp-server-installation-and-setup.md#api-managed-session) path below skipping the third step "Connect the editor"
 {% endhint %}
 
 There are two ways to connect your agent to the editor. The right choice depends on whether [co-editing](../other-customizations/collaborative-editing/) is enabled on your account:
 
-* [Co-editing](../other-customizations/collaborative-editing/) **not enabled** → [Editor-managed session](installation-and-setup.md#editor-managed-session): the editor creates a lightweight temporary session on demand via `bee.startMcpSession()`. No backend session management required.
-* [Co-editing](../other-customizations/collaborative-editing/) **enabled** → [API-managed session](installation-and-setup.md#api-managed-session): your host application creates and manages the session lifecycle via the Headless API. Supports multiple concurrent users, presence indicators, per-change history, and persistent sessions.
+* [Co-editing](../other-customizations/collaborative-editing/) **not enabled** → [Editor-managed session](mcp-server-installation-and-setup.md#editor-managed-session): the editor creates a lightweight temporary session on demand via `bee.startMcpSession()`. No backend session management required.
+* [Co-editing](../other-customizations/collaborative-editing/) **enabled** → [API-managed session](mcp-server-installation-and-setup.md#api-managed-session): your host application creates and manages the session lifecycle via the Headless API. Supports multiple concurrent users, presence indicators, per-change history, and persistent sessions.
 
 Both paths use the same MCP endpoint and authentication. They differ only in how the session and templateId are created.
 
@@ -49,17 +49,19 @@ At a protocol level:
 Since the Beefree SDK MCP Server relies on Beefree's CSAPI, it is subjected to the same rate limits. [Learn more here](../apis/content-services-api/).
 {% endhint %}
 
-## Prerequisites
+### Prerequisites
 
-### Get an MCP-compatible CSAPI key
+#### Get an MCP-compatible CSAPI key
 
-You must use an MCP-compatible CSAPI key. Standard CSAPI keys will not work. [Complete the beta survey to request access.](https://growens.typeform.com/to/gyH0gVgp#source=docs)
+All requests to the MCP endpoint require a valid [CSAPI key](../apis/content-services-api/#overview-of-content-services-api). You can enable your CSAPI Key from your SDK Console.
+
+Once you have a key, include it in every request:
 
 ```
-Authorization: Bearer <YOUR_MCP_ENABLED_KEY>
+Authorization: Bearer <YOUR_CONTENT_SERVICES_API_KEY>
 ```
 
-### MCP endpoint
+#### MCP endpoint
 
 All agent connections use the v2 endpoint:
 
@@ -69,7 +71,7 @@ https://api.getbee.io/v2/sdk/mcp
 
 Your agent must complete the MCP `initialize/initialized` handshake before calling any tools. MCP clients (SDKs, runtimes) typically handle this automatically.
 
-## Editor-managed session
+### Editor-managed session
 
 {% hint style="warning" %}
 Use this path when [**co-editing**](../other-customizations/collaborative-editing/) **is not enabled on your account**, or when you want a simpler setup where the editor manages the session lifecycle on your behalf.
@@ -77,11 +79,11 @@ Use this path when [**co-editing**](../other-customizations/collaborative-editin
 
 The session is temporary and scoped to a single user and their agent(s). If you have the co-edit enabled, please refer to the API-managed session for the setup.
 
-### Step 1: Configure the editor
+#### Step 1: Configure the editor
 
-No additional editor configuration is required beyond your standard Beefree SDK setup. The relevant fields for MCP sessions are covered in [Editor Configuration](installation-and-setup.md#editor-configuration) below.
+No additional editor configuration is required beyond your standard Beefree SDK setup. The relevant fields for MCP sessions are covered in [Editor Configuration](mcp-server-installation-and-setup.md#editor-configuration) below.
 
-### Step 2: Start a session
+#### Step 2: Start a session
 
 When the user is ready to involve the agent, your host application calls:
 
@@ -91,7 +93,7 @@ const { templateId } = await bee.startMcpSession();
 
 The editor creates an MCP session server-side and returns a `templateId`. Pass this to your agent(s).
 
-### Step 3: Connect your agent
+#### Step 3: Connect your agent
 
 Connect to the v2 MCP endpoint using the `templateId` from Step 2, exactly as in the API-managed path:
 
@@ -101,13 +103,13 @@ x-bee-template-id: <templateId>
 
 The agent connects and can immediately begin editing the template.
 
-### Step 4: End the session
+#### Step 4: End the session
 
-The session ends automatically when agent work is complete (see [When the Session Ends Automatically](installation-and-setup.md#when-the-session-ends-automatically))
+The session ends automatically when agent work is complete (see [When the Session Ends Automatically](mcp-server-installation-and-setup.md#when-the-session-ends-automatically))
 
 Automatic stop means: history entry creation, connection teardown, and a `SESSION_ENDED` event.
 
-### Session participants
+#### Session participants
 
 An editor-managed MCP session supports exactly one real user — the person using the editor — and any number of AI agents.
 
@@ -117,7 +119,7 @@ An editor-managed MCP session supports exactly one real user — the person usin
 
 The automated disconnect logic relies on this model: once at least one agent has joined and then all agents leave, only the real user remains. The editor treats this as "all agents have finished their work" and automatically ends the session.
 
-### When the session ends automatically
+#### When the session ends automatically
 
 The session ends automatically when any of the following occur:
 
@@ -126,17 +128,17 @@ The session ends automatically when any of the following occur:
 * **A second real user (non-agent) joins** the session.
 * **A new template is loaded** into the editor.
 
-### History behavior
+#### History behavior
 
 During an editor-managed MCP session, individual agent modifications are not tracked as separate history entries. Instead, the editor captures the full template state before the session starts and, upon the session end, creates a single history entry representing the diff between the original and final states.
 
 This means users can undo the entire batch of agent changes as one unit, but cannot step through individual agent edits.
 
-### Session lifecycle
+#### Session lifecycle
 
 An editor-managed session is ephemeral. Once it ends — by timeout, automated-stop, or manual stop — it cannot be resumed. To start another agent pass on the same template, call `bee.startMcpSession()` again. Each call creates a fresh session with its own `templateId`, timeout and history entry.
 
-### Error handling
+#### Error handling
 
 If `bee.startMcpSession()` fails, the error is returned in this shape:
 
@@ -154,7 +156,7 @@ Common failure scenarios:
 * **Builder not ready** — the editor has not finished initializing.
 * **API error** — the server-side session creation request failed.
 
-## API-managed session
+### API-managed session
 
 {% hint style="warning" %}
 Use this path when [**co-editing**](../other-customizations/collaborative-editing/) **is enabled on your account**.
@@ -162,7 +164,7 @@ Use this path when [**co-editing**](../other-customizations/collaborative-editin
 
 Your host application controls the full session lifecycle: you create the template, connect the agent, and optionally connect the editor — all independently.
 
-### Step 1: Create a template
+#### Step 1: Create a template
 
 Call the template creation endpoint to initialize a new editing session server-side. You receive a `templateId` that you will pass to the agent in the next step.
 
@@ -190,7 +192,7 @@ POST https://api.getbee.io/v2/sdk/mcp/template
 
 Returns a templateId. You must pass this as the `x-bee-template-id` header (or `_meta` field) when connecting to the MCP endpoint.
 
-### Step 2: Connect your agent
+#### Step 2: Connect your agent
 
 Point your MCP client at the v2 endpoint and provide the `templateId` you received in Step 1. You can pass it in one of two ways:
 
@@ -214,7 +216,7 @@ Point your MCP client at the v2 endpoint and provide the `templateId` you receiv
 
 Use `_meta` strictly for routing metadata, not for tool arguments.
 
-### Step 3: Connect the editor (optional)
+#### Step 3: Connect the editor (optional)
 
 The editor can join the same session for [real-time collaboration](../other-customizations/collaborative-editing/) alongside the agent. To configure this, use the `join` method in the editor configuration.
 
@@ -222,7 +224,7 @@ The editor can join the same session for [real-time collaboration](../other-cust
 bee.join(templateId);
 ```
 
-### Step 4: Retrieve the final template
+#### Step 4: Retrieve the final template
 
 After the agent has finished its work, fetch the modified template from the server:
 
@@ -232,7 +234,7 @@ GET https://api.getbee.io/v2/sdk/mcp/template/:templateId
 
 This returns the current state of the template with all agent modifications applied.
 
-### Agent locking behavior
+#### Agent locking behavior
 
 When an agent shares a session with human users, module locks — the mechanism that prevents two users from editing the same module simultaneously — interact with the agent differently depending on whether it has an assigned owner.
 
@@ -249,7 +251,7 @@ The agent's owner is determined by the `x-bee-user-handle` header passed when th
 
 Assigning an owner is recommended in sessions with multiple real users. It ensures the agent respects the collaborative editing boundaries of other participants.
 
-## Editor configuration
+#### Editor configuration
 
 For the full `editorConfig` reference and co-editing setup, see the [Co-Editing Integration Guide](../other-customizations/collaborative-editing/).
 
@@ -267,15 +269,15 @@ The following fields are relevant to MCP sessions across both integration paths:
 
 * If `userHandle` is provided, it is used as the user's identity in the co-editing session.
 * If `userHandle` is omitted in an editor-managed session, the editor auto-generates one as `mcp-{randomUUID}`, ensuring a unique identity without requiring the host to manage it.
-* In an API-managed session, `userHandle` is also used to match an agent's owner via the `x-bee-user-handle header` (see [Agent locking behavior](installation-and-setup.md#agent-locking-behavior)).
+* In an API-managed session, `userHandle` is also used to match an agent's owner via the `x-bee-user-handle header` (see [Agent locking behavior](mcp-server-installation-and-setup.md#agent-locking-behavior)).
 
-## Host callbacks: `onMcpSessionChange`
+### Host callbacks: `onMcpSessionChange`
 
 The **editor-managed session** exposes a set of callbacks that serve as the co-editing equivalents of `onSessionChange` and `onSessionStarted`.
 
 <table data-header-hidden><thead><tr><th width="184">Event</th><th>Payload</th><th>When it fires</th></tr></thead><tbody><tr><td><code>SESSION_STARTED</code></td><td><code>{ type, templateId }</code></td><td>Connection successfully established</td></tr><tr><td><code>USER_JOINED</code></td><td><code>{ type, change, sessionData }</code></td><td>A new user enters the session</td></tr><tr><td><code>USER_LEFT</code></td><td><code>{ type, change, sessionData }</code></td><td>A user leaves the session</td></tr><tr><td><code>SESSION_ENDED</code></td><td><code>{ type, templateId }</code></td><td>The session stops</td></tr></tbody></table>
 
-## Server-Side session TTL
+### Server-Side session TTL
 
 These values define how long session data persists on the backend, independently of any client-side timeouts.
 
@@ -305,7 +307,7 @@ The editor-managed session also enforces a hard **10-minute client-side timeout*
 
 We strongly recommend reviewing the official [MCP Client documentation](https://modelcontextprotocol.io/docs/learn/client-concepts) for guidance on transport, lifecycle, and security.
 
-## Code examples
+### Code examples
 
 In the [Beefree SDK MCP v2 demo repository](https://github.com/BeefreeSDK/beefree-sdk-mcp-v2-example-demo), you can find:
 
@@ -313,29 +315,33 @@ In the [Beefree SDK MCP v2 demo repository](https://github.com/BeefreeSDK/beefre
 * An example of an API-managed session
 * A Code Mode example
 
-## Code mode (research preview)
+### Code mode (Research Preview)
 
-{% hint style="info" icon="gear-complex" %}
-_Code Mode is an experimental feature currently in research preview._
+{% hint style="warning" %}
+**Join the Research Preview and get early access to the Code Mode for Beefree SDK's MCP Server**
 
-Code Mode is an alternative way to interact with the Beefree SDK MCP Server that significantly reduces token consumption.
+Code Mode is an experimental feature currently only accessible to a selected number of early access customers. If you're interested in joining the Research Preview, or if you'd like us to notify you when the tool is available to everyone, [please let us know](https://growens.typeform.com/to/gPzTnsgt#source=docs).
+
+[Join the Research Preview](https://growens.typeform.com/to/gPzTnsgt#source=docs)
+{% endhint %}
+
+Code Mode is an alternative way to interact with the Beefree SDK MCP Server that significantly **reduces token consumption**.
 
 Instead of exposing 33 individual tools — each with a full parameter schema sent on every turn — Code Mode exposes a single tool that accepts a TypeScript script. Your agent writes one script that performs all operations in a single round trip: creating sections, adding content, and setting styles.
 
-### Code mode endpoint
+**Code mode endpoint**
 
 ```
 https://api.getbee.io/v2/sdk/mcp/codemode
 ```
 
-In internal benchmarks across five models and three email complexity levels, Code Mode reduced total token consumption by 67–97%, with most results in the 85–95% range.
+In internal benchmarks across five models and three email complexity levels, Code Mode reduced total token consumption by 68–96%, with most results in the 85–95% range ([learn more in our blogpost](https://developers.beefree.io/blog/ai-agents-email-saving-tokens#code-mode))
 
-Use Code Mode when your agent makes many sequential tool calls to reduce API costs and latency. The same CSAPI key and authentication apply — no additional credentials are required.
+Use Code Mode when your agent makes many sequential tool calls to reduce API costs and latency. You can [reach out to us](https://growens.typeform.com/to/gPzTnsgt#source=docs) and ask to join the Research Preview for your applications.
 
-**Please note**: Code Mode requires your agent to generate valid TypeScript. Implement error handling to gracefully handle partial failures.<br>
-{% endhint %}
+**Please note**: Code Mode requires your agent to generate valid TypeScript. Implement error handling to gracefully handle partial failures.
 
-## Migrating from v1
+### Migrating from v1
 
 The v1 approach used `mcpEditorClient.enabled = true` in the `beeConfig` object to expose the editor to the MCP server, combined with the `/v1/sdk/mcp` endpoint and `x-bee-uid / x-bee-mcp-session-id` headers for routing.
 

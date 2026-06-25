@@ -20,7 +20,7 @@
   * [Migrating from another provider to Beefree SDK](getting-started/readme/migrating-from-another-provider.md "Migrating from another provider")
 * [Tracking Message Changes](getting-started/tracking-message-changes.md)
 * [Sample Code](getting-started/sample-code.md)
-* [Release Candidate Environment](getting-started/release-candidate-environment.md)
+* [Release Candidate environment](getting-started/release-candidate-environment.md)
 * [Version Control](getting-started/version-control.md)
 
 ## Quickstart Guides
@@ -265,8 +265,8 @@
 
 ## MCP Server (BETA) <a href="#mcp-server" id="mcp-server"></a>
 
-* [Getting started](early-access/beefree-sdk-mcp-server-beta.md)
-* [Installation & Setup](mcp-server/installation-and-setup.md)
-* [Tools & Capabilities](mcp-server/tools-and-capabilities.md)
-* [How to Get the Best AI Output](mcp-server/how-to-get-the-best-ai-output.md)
-* [FAQs](mcp-server/faqs.md)
+* [Getting started with the MCP Server](early-access/beefree-sdk-mcp-server-beta.md)
+* [MCP Server installation & setup](mcp-server/mcp-server-installation-and-setup.md)
+* [MCP Server tools & capabilities](mcp-server/mcp-server-tools-and-capabilities.md)
+* [How to get the best AI output](mcp-server/how-to-get-the-best-ai-output.md)
+* [MCP Server FAQs](mcp-server/mcp-server-faqs.md)

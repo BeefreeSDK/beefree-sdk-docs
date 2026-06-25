@@ -1,4 +1,4 @@
-# FAQs
+# MCP Server FAQs
 
 #### What is the Beefree SDK MCP Server?
 
@@ -8,19 +8,23 @@ It's an adapter that lets AI agents (via the Model Context Protocol) create, mod
 
 MCP is an open protocol (think "USB-C for AI") that standardizes how clients connect to servers, exposing tools, resources, and prompts over JSON-RPC.
 
-#### **What's the difference between an MCP Server and an Agent? Does Beefree provide both?**
+#### What's the difference between an MCP Server and an Agent? Does Beefree provide both?
 
 An MCP server exposes data or tools to AI models through a standardized interface — it provides capabilities but doesn’t make decisions. An AI agent, on the other hand, is a system that can autonomously perceive its environment, reason about goals, and take actions. Agents can use MCP servers to get information or perform tasks.
 
 We provide the MCP Server that makes key Beefree SDK functionality accessible to AI agents. The host application is responsible for providing the agent. If you don't have your own agent yet, check out [our sample application using a PydanticAI agent](https://github.com/BeefreeSDK/beefree-sdk-mcp-example-demo), which you can get up and running in under five minutes.
 
-#### **What is the purpose of the Beefree SDK MCP Server beta?**
+#### What is the purpose of the Beefree SDK MCP Server beta?
 
 The beta lets you explore how AI agents can integrate directly with the Beefree SDK ecosystem — designing, customizing, and validating emails programmatically — while we gather feedback and continue to refine the experience. Your input directly shapes what we prioritize next.
 
-#### **Which plans can access the MCP?**
+#### Which plans can access the MCP?
 
-At this stage, access to the MCP is invite-only as part of the early access beta. It's open to all plans, excluding free. Customers interested in joining can ask their Customer Success Manager (CSM) or fill out the waitlist form. We'll review requests and grant access to selected customers. Broader availability and plan-based access will be announced after the beta concludes.
+The MCP Server is available to all paying customers as an open beta. No waitlist or CSM request is required. If you are on a free plan, you will need to upgrade to access it. Broader availability and plan-based entitlements will be communicated before general availability.
+
+#### How do I get access?
+
+Access is available directly to all paying customers with no application or approval needed. Sign in to your developer account and follow the [Installation & Setup](https://app.gitbook.com/o/2zoWGxtV7bjhbwBdjGPS/s/8c7XIQHfAtM23Dp3ozIC/~/diff/~/changes/579/mcp-server/installation-and-setup) guide to get started.
 
 #### What are the two integration paths, and which one should I use?
 
@@ -29,7 +33,7 @@ The Beefree SDK MCP Server supports two ways to connect your AI agent to the edi
 * **API-managed session** — your host application creates and manages the session via the Headless API. Choose this if [co-editing](../other-customizations/collaborative-editing/) is enabled on your account and you want support for multiple concurrent users, per-change history, or persistent sessions.
 * **Editor-managed session** — the editor creates a temporary session on demand via `bee.startMcpSession()`. Choose this if co-editing is not enabled, or if you want a simpler setup without backend session management.
 
-Both paths use the same MCP endpoint and tools. See [Installation & Setup](installation-and-setup.md) for full details on each.
+Both paths use the same MCP endpoint and tools. See [Installation & Setup](mcp-server-installation-and-setup.md) for full details on each.
 
 #### Who should use the MCP beta?
 
@@ -37,11 +41,11 @@ Both paths use the same MCP endpoint and tools. See [Installation & Setup](insta
 * Developers building MCP-capable clients (e.g., IDEs, agents, assistants)
 * Teams that want to streamline design inside automated pipelines
 
-#### **Can I use the Beefree SDK MCP in production?**
+#### Can I use Beefree SDK's MCP Server in production?
 
 We recommend testing and prototyping during the beta. While the server is stable, APIs and access policies may change before general availability, and this version may differ from the final release.
 
-#### **Is the MCP feature complete? What are the current limitations?**
+#### Is the MCP feature complete? What are the current limitations?
 
 The MCP integration is still evolving. While you can already perform many email builder operations, there are some limitations to be aware of:
 
@@ -51,7 +55,7 @@ The MCP integration is still evolving. While you can already perform many email 
 
 We encourage you to explore the available tools and share feedback — your input helps us prioritize and close gaps.
 
-#### **What kind of feedback are you looking for?**
+#### What kind of feedback are you looking for?
 
 All kinds, including:
 
@@ -62,39 +66,39 @@ All kinds, including:
 
 Share feedback with your CSM or email [beta-feedback@beefree.io](mailto:beta-feedback@beefree.io).
 
-#### **Does the MCP also support the Landing Page Builder or the Popup Builder?**
+#### Does the MCP also support the Landing Page Builder or the Popup Builder?
 
 The beta currently focuses on the Beefree SDK Email Builder. Support for the Landing Page and Popup builders is limited, but will be considered for future updates.
 
-#### **What is the applicable use policy?**
+#### **What is the** applicable **use policy?**
 
 During the beta, you may use the MCP Server and its tools for development, prototyping, and evaluation. Access is subject to Beefree SDK's standard Terms of Service. Abuse or production-scale misuse will result in suspension of access.
 
-#### **Is my data secure when using MCP?**
+#### Is my data secure when using MCP?
 
 Yes. MCP calls are authenticated with secure keys, tied to your session, and handled in accordance with Beefree SDK's security and data policies.
 
-#### **I have questions, feedback, or a bug to report. Who should I contact?**
+#### I have questions, feedback, or a bug to report. Who should I contact?
 
 Contact your Beefree SDK Customer Success Manager or email [beta-feedback@beefree.io](mailto:beta-feedback@beefree.io). We actively review feedback during the beta, and your input shapes product improvements.
 
-#### **Are the MCP calls free of charge?**
+#### Are the MCP calls free of charge?
 
 Yes, during the open beta, MCP calls are free. However, please note that you will still be charged by your AI model provider for the agent model usage, as those costs are independent of Beefree's billing. Once the MCP Server reaches general availability, calls will be billed under your CSAPI entitlements. Pricing details will be communicated before that transition.
 
-#### **How do I balance speed, token usage, and output quality?**
+#### How do I balance speed, token usage, and output quality?
 
-Model choice is the biggest lever. For token usage specifically, consider [Code Mode](installation-and-setup.md#code-mode-research-preview), now in research preview. Code mode is an experimental alternative that optimizes your interaction with the Beefree SDK MCP Server.
+Model choice is the biggest lever. For token usage specifically, consider [Code Mode](mcp-server-installation-and-setup.md#code-mode-research-preview), now in research preview. Code mode is an experimental alternative that optimizes your interaction with the Beefree SDK MCP Server.
 
-#### **What is Code Mode?**
+#### What is Code Mode?
 
 Code Mode is an experimental alternative for interacting with the Beefree SDK MCP Server, currently in research preview. Instead of exposing 33 individual tools, each with a full parameter schema sent on every turn, Code Mode exposes a single tool that accepts a TypeScript script. Your agent writes one script that performs all operations in a single round trip: creating sections, adding content, and setting styles.
 
-In internal benchmarks across five models and three email complexity levels, Code Mode reduced total token consumption by 67–97%, with most results in the 85–95% range.
+In internal benchmarks across five models and three email complexity levels, Code Mode reduced total token consumption by 68–96%, with most results in the 85–95% range.
 
-The same CSAPI key and authentication apply — no additional credentials are required.
+Code Mode is currently in Research Preview. In order to access it, please [fill in the form](https://growens.typeform.com/to/gPzTnsgt#source=docs).
 
-#### **When should I use Code Mode?**
+#### When should I use Code Mode?
 
 Use Code Mode when your agent makes many sequential tool calls to reduce API costs and latency. It's particularly effective if your use case involves complex email-generation workflows, where the repeated overhead of sending tool schemas on every turn becomes a significant cost driver.
 

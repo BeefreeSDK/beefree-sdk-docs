@@ -1,24 +1,31 @@
-# Getting started
+---
+description: >-
+  Connect your AI agent to the Beefree SDK and let it create, edit, and optimize
+  email designs on your users' behalf. Explore what's possible and get to a
+  working prototype fast.
+---
+
+# Getting started with the MCP Server
 
 {% hint style="warning" %}
-**Join the Beta program and get early access to the Beefree SDK MCP Server**
+**Open Beta Rollout Plan**
 
-Our MCP Server is currently in Beta and only accessible to a selected number of early access customers. If you're interested in joining the Beta, or if you'd like us to notify you when the tool is available to everyone, [please let us know](https://growens.typeform.com/to/gyH0gVgp#source=docs).
+Beefree SDK's MCP Server is rolling out to all customers with Essentials, Core, Superpowers and Enterprise plans, with neither waitlist nor approval needed.
 
-[I'd love to join the Beta →](https://growens.typeform.com/to/gyH0gVgp#source=docs)
-
-Beefree SDK Team
+Follow the [Installation & Setup](../mcp-server/mcp-server-installation-and-setup.md) guide to get started.
 {% endhint %}
 
-## Introduction
+### Introduction
 
-The Beefree SDK MCP Server allows you to connect your AI agents to the Beefree SDK. It makes key functionality of the Beefree SDK — the [Editor](/broken/pages/OHBhoQNH2Zk7nqbwr3I3) and the [Check API](../apis/content-services-api/check.md) — accessible to AI agents, opening new ways to bring agentic design directly into your application.&#x20;
+The Beefree SDK MCP Server allows you to connect your AI agents to the Beefree SDK. It makes key functionality of the Beefree SDK — the [Editor](https://app.gitbook.com/s/8c7XIQHfAtM23Dp3ozIC/visual-builders) and the [Check API](../apis/content-services-api/check.md) — accessible to AI agents, opening new ways to bring agentic design directly into your application.&#x20;
 
-{% hint style="info" %}
-**Important**:&#x20;
+**Please remember that**:&#x20;
 
-* The MCP Server requires either a live and correctly configured editor session or a server-side session created via the Headless API. See [Installation & Setup](../mcp-server/installation-and-setup.md) to choose the right path for your setup.
+* The MCP Server requires either a live and correctly configured editor session or a server-side session created via the Headless API. See [Installation & Setup](../mcp-server/mcp-server-installation-and-setup.md) to choose the right path for your setup.
 * Providing the agent is the responsibility of the host application. If you don't have your own agent yet, see the [sample projects](beefree-sdk-mcp-server-beta.md#sample-projects) below.
+
+{% hint style="success" icon="circle-check" %}
+Looking for a way to reduce token consumption for your AI agent connected via Beefree SDK's MCP Server? Check out [Code Mode](../mcp-server/mcp-server-installation-and-setup.md#code-mode-research-preview)!
 {% endhint %}
 
 ### What can you do with the Beefree SDK's MCP Server?

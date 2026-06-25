@@ -4,7 +4,7 @@ description: >-
   with it, and how to integrate it into your development life cycle.
 ---
 
-# Release Candidate Environment
+# Release Candidate environment
 
 {% hint style="info" %}
 The Release Candidate Environment is available on [Enterprise plans.](https://developers.beefree.io/pricing-plans) \
@@ -16,7 +16,7 @@ As of June, 2026, we're replacing our legacy Release Candidate environment with 
 
 A Release Candidate (RC) Environment is a crucial part of the deployment workflow designed to provide Enterprise customers with additional stability and assurance before a feature reaches full production. Unlike standard releases, which immediately roll out updates to all users, the RC environment acts as an intermediate step. It allows selected customers to access a production-ready version of the latest code before it becomes available to the wider user base. This controlled rollout process mitigates risks associated with unforeseen bugs and ensures a smoother transition. It also mitigates the risk of regressions and rollbacks. By implementing an RC environment, Beefree SDK enables Enterprise customers to conduct their own QA testing on new features, reducing potential disruptions when updates go live.
 
-### Benefits of the Release Candidate Environment
+### Benefits of the Release Candidate environment
 
 The following list includes some of the most commonly referenced benefits of utilizing the Release Candidate Environment.
 

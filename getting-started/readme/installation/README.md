@@ -3,6 +3,27 @@ description: >-
   Learn and understand the core concepts related to how you can install the
   Beefree SDK npm package, authenticate, and get started with Beefree SDK.
 coverY: 0
+layout:
+  width: default
+  cover:
+    visible: false
+    size: full
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
 ---
 
 # Installation and Fundamentals
