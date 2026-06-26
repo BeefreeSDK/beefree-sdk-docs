@@ -49,7 +49,7 @@ This section discusses each of the available providers.
 [Anthropic](https://docs.anthropic.com/en/docs/welcome) offers a unique approach to generative AI through its focus on safety and alignment in AI systems. Its Claude models prioritize creating helpful and ethical responses, making it an excellent option for applications where responsible AI use is a priority. Anthropic’s models are designed to work well with conversational and creative writing tasks, ensuring that your end users receive thoughtful and high-quality suggestions.
 
 {% hint style="info" %}
-**Note:** [Claude Sonnet 3.5](https://docs.anthropic.com/en/docs/about-claude/models/overview) is the model used when you configure Anthropic as your provider.&#x20;
+**Note:** [Claude Sonnet 4.6](https://docs.anthropic.com/en/docs/about-claude/models/overview) is the model used when you configure Anthropic as your provider.
 {% endhint %}
 
 #### **Benefits of using Anthropic:**
@@ -61,11 +61,11 @@ This section discusses each of the available providers.
 
 ## Additional Considerations
 
-If the list of providers detailed on this page do not need the requirements you have for your application, Beefree SDK also offers a [Custom AI Writing Assistant AddOn](../../custom-ai-writing-assistant.md) that allows you to connect your own custom LLM to the **Write with AI** button on your application's frontend. It also provides you with a mechanism to build a customized modal on the frontend of your application that your end users can interact with to submit their AI prompts to your custom LLM.&#x20;
+If the list of providers detailed on this page do not need the requirements you have for your application, Beefree SDK also offers a [Custom AI Writing Assistant AddOn](../../custom-ai-writing-assistant.md) that allows you to connect your own custom LLM to the **Write with AI** button on your application's frontend. It also provides you with a mechanism to build a customized modal on the frontend of your application that your end users can interact with to submit their AI prompts to your custom LLM.
 
 ## Other Resources
 
 * Learn more about available settings to customize the [AI Writing Assistant AddOn](../).
 * Learn more about how to enable the [AI Writing Assistant within the Developer Console](../#how-to-activate-the-ai-writing-assistant).
 * Learn more about [AI Providers and Data Security](../data-security.md).
-* Learn more about [Token Upselling](../token-upselling.md) and implementing a system for your end users to purchase more tokens to keep leveraging AI benefits within your application. &#x20;
+* Learn more about [Token Upselling](../token-upselling.md) and implementing a system for your end users to purchase more tokens to keep leveraging AI benefits within your application.
