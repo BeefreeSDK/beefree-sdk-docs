@@ -67,7 +67,7 @@ If you’ve selected Manual Mode and your application is on a version that reach
 
 Automatic-upgrade mode keeps your applications updated without manual intervention. You choose the update rule that best fits your preference:
 
-<figure><img src="../.gitbook/assets/image (1).png" alt="Beefree SDK Version Control: Automatic upgrades" width="472"><figcaption><p>Auto-upgrade in the Version Control settings of the Beefree SDK Console</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (2).png" alt="Beefree SDK Version Control: Automatic upgrades" width="472"><figcaption><p>Auto-upgrade in the Version Control settings of the Beefree SDK Console</p></figcaption></figure>
 
 <table data-header-hidden><thead><tr><th width="352">Option</th><th>Behavior</th></tr></thead><tbody><tr><td><strong>Option</strong></td><td><strong>Behavior</strong></td></tr><tr><td>Always up-to-date</td><td>Your application updates to the newest SDK version as soon as it is released. Choose this if you’d like to take advantage of new SDK features and updates without delay. </td></tr><tr><td>Stable releases only</td><td>Your application updates as soon as a new version moves into Stable mode. </td></tr><tr><td>Longest stability</td><td>Your application remains on the current version until it reaches End of Life, at which point it upgrades automatically to the newest Stable version. Choose this option if you prefer stability with fewer releases (and if you’re okay with skipping versions along the way) </td></tr></tbody></table>
 

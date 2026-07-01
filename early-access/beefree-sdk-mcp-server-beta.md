@@ -80,33 +80,39 @@ Trigger template modifications directly from third-party automation platforms su
 
 …and many more! Feel free to reach out to our team [talk about your use case](mailto:beta-feedback@beefree.io)!
 
-### Sample projects
+### Sample project
 
-**Interactive editor agent**
+A sample implementation using a [PydanticAI](https://ai.pydantic.dev/) agent connected to the Beefree SDK's MCP Server. Supports Gemini, OpenAI, and Anthropic as LLM providers.
 
-A sample implementation using a [PydanticAI](https://ai.pydantic.dev/) agent connected to a MCP editor session. Supports Gemini, OpenAI, and Anthropic as LLM providers.
+Clone and run from the [Beefree SDK MCP demo repository](https://github.com/BeefreeSDK/beefree-sdk-mcp-v2-example-demo). The project supports Gemini, OpenAI, and Anthropic as LLM providers.
 
-<figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
-
-The sample showcases:
-
-* [PydanticAI](https://ai.pydantic.dev/) agent integration with MCP
-* Real-time chat interface
-* Beefree SDK editor with MCP integration
-
-Clone and run from the [Beefree SDK MCP v2 example demo repository](https://github.com/BeefreeSDK/beefree-sdk-mcp-v2-example-demo). See the `/integration` page for setup instructions.
-
-**Headless agent**
-
-A fully functioning **headless MCP** demo covering five end-to-end automation use cases. Supports Gemini, OpenAI, and Anthropic as LLM providers.
+The sample project allows testing both **in-editor** and **headless use cases**. You can choose the mode of use in the opening screen.&#x20;
 
 {% hint style="info" %}
 Using an email building agent generates LLM API costs. The sample project includes a token counter to help you track usage.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt="MCP Server sample project home screen"><figcaption></figcaption></figure>
 
-Clone and run from the [Beefree SDK MCP v2 example demo repository](https://github.com/BeefreeSDK/beefree-sdk-mcp-v2-example-demo).
+#### In the editor
+
+This mode allows you to test a in-editor use case with a sample content-building agent connected to the Beefree SDK MCP Server. Once you create the session, you can use the **chat panel** to interact with the agent and experiment with prompt-to-design generations.&#x20;
+
+<figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+The "in the editor" mode requires you to insert a Beefree SDK application's `bee_client_id` and `bee_client_secret` in the configuration file.&#x20;
+{% endhint %}
+
+You can also pick between "Editor-managed" and "API-Managed + Coediting" approach to test both integration modes, as explained in the sample project `/integration` page. Learn more about the [editor-managed](https://docs.beefree.io/beefree-sdk/mcp-server/mcp-server-installation-and-setup#editor-managed-session) and [API-managed](https://docs.beefree.io/beefree-sdk/mcp-server/mcp-server-installation-and-setup#api-managed-session) session approaches.&#x20;
+
+#### Headless
+
+This mode features a **headless MCP Server demo** with five readymade automation use cases. Plus, you can also test **Code Mode** (currently available as Research Preview), an alternative way of connecting the MCP Server to your AI Agent that allows token saving up to 96%. [Discover Code Mode](https://docs.beefree.io/beefree-sdk/mcp-server/mcp-server-installation-and-setup#code-mode-research-preview).
+
+<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+
+Ready to launch the sample application? Clone and run it from the [Beefree SDK MCP demo repository](https://github.com/BeefreeSDK/beefree-sdk-mcp-v2-example-demo).
 
 ### Beefree SDK's MCP Server & AI agent responsibilities
 

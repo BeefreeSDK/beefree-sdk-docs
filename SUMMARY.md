@@ -265,8 +265,8 @@
 
 ## MCP Server (BETA) <a href="#mcp-server" id="mcp-server"></a>
 
-* [Getting started with the MCP Server](early-access/beefree-sdk-mcp-server-beta.md)
-* [MCP Server installation & setup](mcp-server/mcp-server-installation-and-setup.md)
-* [MCP Server tools & capabilities](mcp-server/mcp-server-tools-and-capabilities.md)
+* [Getting started with the MCP Server](early-access/beefree-sdk-mcp-server-beta.md "Getting started")
+* [MCP Server installation & setup](mcp-server/mcp-server-installation-and-setup.md "Installation & setup")
+* [MCP Server tools & capabilities](mcp-server/mcp-server-tools-and-capabilities.md "Tools & capabilities")
 * [How to get the best AI output](mcp-server/how-to-get-the-best-ai-output.md)
 * [MCP Server FAQs](mcp-server/mcp-server-faqs.md)
