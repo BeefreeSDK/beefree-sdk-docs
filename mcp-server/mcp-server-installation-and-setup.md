@@ -3,7 +3,7 @@
 {% hint style="danger" %}
 **MCP Server v1 is deprecated**
 
-The v1 editor client approach (`mcpEditorClient.enabled = true` + <kbd>/v1/sdk/mcp</kbd> endpoint) is deprecated and will be removed in a future release. New integrations should use the v2 setup described on this page. If you are on v1, see [Migrating from v1](mcp-server-installation-and-setup.md#migrating-from-v1).
+The v1 editor client approach (`mcpEditorClient.enabled = true` + <kbd>/v1/sdk/mcp</kbd> endpoint) is deprecated and will be removed on September 1, 2026. New integrations must use the v2 setup described on this page. If you are on v1, see [Migrating from v1](mcp-server-installation-and-setup.md#migrating-from-v1).
 {% endhint %}
 
 ### Overview
