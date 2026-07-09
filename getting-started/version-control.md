@@ -7,7 +7,7 @@ description: >-
 # Version Control
 
 {% hint style="info" %}
-Version Control will be available for customers [Enterprise plans](https://developers.beefree.io/pricing-plans) starting June, 2026.&#x20;
+Version Control is available for customers on [Enterprise plans](https://developers.beefree.io/pricing-plans) only.&#x20;
 
 If you’re on another plan type, the latest version of the Beefree SDK will automatically apply to your application(s) as soon as it becomes available.
 {% endhint %}
