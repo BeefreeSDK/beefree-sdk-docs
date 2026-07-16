@@ -6,7 +6,7 @@ This feature is available on Beefree SDK [Core plan](https://developers.beefree.
 
 ## Overview <a href="#overview" id="overview"></a>
 
-Synced Rows expands on the foundational capabilities of [Save Rows](../create/save/) and [Edit Single Row Mode](implement-synced-rows.md#edit-single-row-mode), helping users manage rows more effectively. Using the `merge-rows` and `synced-rows` methods in the [Content Services API (CSAPI)](broken-reference), you can create an efficient row management workflow. This ensures that when users update content in one row marked as “synced,” those updates are reflected across all connected designs using that synced row.
+Synced Rows expands on the foundational capabilities of [Save Rows](../create/save/) and [Edit Single Row Mode](implement-synced-rows.md#edit-single-row-mode), helping users manage rows more effectively. Using the `merge-rows` and `synced-rows` methods in the [Content Services API (CSAPI)](https://github.com/BeefreeSDK/beefree-sdk-docs/blob/main/rows/reusable-content/sync/broken-reference/README.md), you can create an efficient row management workflow. This ensures that when users update content in one row marked as “synced,” those updates are reflected across all connected designs using that synced row.
 
 ### Key features
 
@@ -231,7 +231,7 @@ The following table outlines the configurable parameters for Synced Rows.
 
 ### Examples
 
-The following code snippet shows an example configuration where `show` is set to `true` and `locked` is set to `false`. In the subsequent image, you can see this configuration results in a clickable **Edit Synced Row** button that is visible in the toolbar.&#x20;
+The following code snippet shows an example configuration where `show` is set to `true` and `locked` is set to `false`. In the subsequent image, you can see this configuration results in a clickable **Edit Synced Row** button that is visible in the toolbar.
 
 ```javascript
 advancedPermissions: {

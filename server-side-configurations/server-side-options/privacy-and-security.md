@@ -60,7 +60,7 @@ When you enable the [Custom HTML](https://docs.beefree.io/end-user-guide/content
 
 #### Custom Limitations on the File Manager
 
-In this section, you can manage the restrictions for the [file manager](services-options/broken-reference/):
+In this section, you can manage the restrictions for the [file manager](https://github.com/BeefreeSDK/beefree-sdk-docs/blob/main/server-side-configurations/server-side-options/services-options/broken-reference/README.md):
 
 * Specify which file formats your users can upload.
 * Set a maximum file size (limit: 20MB).

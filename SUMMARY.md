@@ -184,6 +184,8 @@
 * [Partner AddOns](builder-addons/partner-addons/README.md)
   * [Partner AddOns directory](builder-addons/partner-addons/partner-addons-directory.md)
   * [Installing Partner AddOns](builder-addons/partner-addons/installing-partner-addons.md)
+  * [Beefree AI AddOn (closed beta)](builder-addons/partner-addons/beefree-ai-addon-closed-beta/README.md)
+    * [FAQs](builder-addons/partner-addons/beefree-ai-addon-closed-beta/faqs.md)
   * [DeepL](builder-addons/partner-addons/deepl.md)
   * [Stability AI](builder-addons/partner-addons/stability-ai.md)
   * [Generate Alt Text with AI](builder-addons/partner-addons/generate-alt-text-with-ai.md)

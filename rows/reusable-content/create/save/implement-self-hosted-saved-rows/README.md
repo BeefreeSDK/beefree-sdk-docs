@@ -22,7 +22,7 @@ You can also reference the [sample code](https://github.com/BEE-Plugin/bee-plugi
 
 ## How it works <a href="#how-it-works" id="how-it-works"></a>
 
-When the Self-hosted Saved Rows feature is enabled, a  **Save** icon is added to the action icons when a row is selected. The following image displays an example of a row with the **Save** icon enabled in the upper right-hand corner.
+When the Self-hosted Saved Rows feature is enabled, a **Save** icon is added to the action icons when a row is selected. The following image displays an example of a row with the **Save** icon enabled in the upper right-hand corner.
 
 <figure><img src="../../../../../.gitbook/assets/saveicon-1024x134.png" alt=""><figcaption></figcaption></figure>
 
@@ -30,7 +30,7 @@ The **Save** icon is also available in the Row properties panel when a row is se
 
 <figure><img src="../../../../../.gitbook/assets/2saveicon_properties-300x210.png" alt=""><figcaption></figcaption></figure>
 
-By clicking on the **Save** icon, the end user triggers a request to the host application to store the row’s JSON document.&#x20;
+By clicking on the **Save** icon, the end user triggers a request to the host application to store the row’s JSON document.
 
 This JSON document includes the following:
 
@@ -65,7 +65,7 @@ The following image displays where the toggle is located in the [Beefree SDK Dev
 
 ## **Making Saved Rows available only to select users**
 
-Once the feature has been turned on at the global level, in [Beefree SDK Console](https://developers.beefree.io/), you may want to disable _Saved Rows_ on a per-user basis.  This can be accomplished via the client-side configuration document that you feed to an application when initializing the builder for a certain user.
+Once the feature has been turned on at the global level, in [Beefree SDK Console](https://developers.beefree.io/), you may want to disable _Saved Rows_ on a per-user basis. This can be accomplished via the client-side configuration document that you feed to an application when initializing the builder for a certain user.
 
 Why? Because you may decide to make the feature available to different users of your application:
 
@@ -97,7 +97,7 @@ const beeConfig = {
 
 ## **Understanding the end user experience**
 
-Visit the [Saved Rows section of the Reusable Content page](../../../#self-hosted-saved-rows) to learn more about the end user experience with saved rows. You can also reference the [white label end user documentation on Saved Rows](https://docs.beefree.io/end-user-guide/saved-rows) to learn more. &#x20;
+Visit the [Saved Rows section of the Reusable Content page](../../../#self-hosted-saved-rows) to learn more about the end user experience with saved rows. You can also reference the [white label end user documentation on Saved Rows](https://docs.beefree.io/end-user-guide/saved-rows) to learn more.
 
 The following GIF provides a quick visual example of the end user experience:
 
@@ -118,7 +118,7 @@ The following describes the recommended workflow to implement saved rows in a ho
 1. Enable _Saved Rows_ in the [Beefree SDK Console](https://developers.beefree.io/) as described above.
 2. Load a [Beefree SDK template](https://github.com/BeefreeSDK/beefree-sdk-assets-templates).
 3. Select the row you want to save and make note of the new save icon.
-4. Click the save icon to trigger a Metadata Content Dialog.  To successfully handle this step, you must complete these tasks:
+4. Click the save icon to trigger a Metadata Content Dialog. To successfully handle this step, you must complete these tasks:
    * Add a Metadata Content Dialog object to your _beeConfig_. This configures your handler.
    * Implement the handler method to open a dialog (e.g., modal window) to collect any metadata you wish your users to input when saving a row.
 5. The dialog should contain a form and complete the following specs:
@@ -391,7 +391,7 @@ The following is the basic structure of the row’s JSON schema. Simply put, the
 ```
 
 {% hint style="info" %}
-**NOTE**: The row schema is complex and we do not recommend creating rows programmatically. Therefore, there is no schema reference of the row itself. However, you can add your own parameters to the row’s metadata or use our [Simplified Row Schema](broken-reference) to generate them programmatically from existing content.
+**NOTE**: The row schema is complex and we do not recommend creating rows programmatically. Therefore, there is no schema reference of the row itself. However, you can add your own parameters to the row’s metadata or use our [Simplified Row Schema](https://github.com/BeefreeSDK/beefree-sdk-docs/blob/main/rows/reusable-content/create/save/implement-self-hosted-saved-rows/broken-reference/README.md) to generate them programmatically from existing content.
 {% endhint %}
 
 The _metadata_ section of the rows schema allows you to keep track of row-specific information.
@@ -439,7 +439,7 @@ Useful to create filters, management, search, and in general to organize the con
 
 ## Metadata Content Dialog <a href="#metadata-content-dialog" id="metadata-content-dialog"></a>
 
-The metadata content dialog is triggered by the save icon in Beefree SDK. This step is required to provide Beefree SDK with information about the row, such as its name and/or id.  The Metadata Content Dialog is added in the same manner as other Content Dialogs, such as Merge Tags.  Please review the [Content Dialog](../../../../../other-customizations/advanced-options/content-dialog.md) section for more details about how to use Beefree SDK’s Content Dialog feature.
+The metadata content dialog is triggered by the save icon in Beefree SDK. This step is required to provide Beefree SDK with information about the row, such as its name and/or id. The Metadata Content Dialog is added in the same manner as other Content Dialogs, such as Merge Tags. Please review the [Content Dialog](../../../../../other-customizations/advanced-options/content-dialog.md) section for more details about how to use Beefree SDK’s Content Dialog feature.
 
 An example Metadata Content Dialog configuration can be found below.
 
@@ -480,7 +480,7 @@ The metadata resolve function now accepts an `options` object in which you can p
 
 ## Saved Rows callback <a href="#save-rows-callback" id="save-rows-callback"></a>
 
-When the _Metadata Content Dialog_ is completed, the application triggers the _Saved Rows callback_.  The callback returns the following details:
+When the _Metadata Content Dialog_ is completed, the application triggers the _Saved Rows callback_. The callback returns the following details:
 
 **rowJSON**\
 JSON of the selected row.

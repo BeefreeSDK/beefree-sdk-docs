@@ -4,13 +4,17 @@
 These AddOns need to be [installed from your Beefree SDK Console](installing-partner-addons.md). Some of them are offered by third-party providers, and they might require an active subscription with those providers in order to be used.
 {% endhint %}
 
-## Custom AI Writing Assistant <a href="#openai" id="openai"></a>
+## Beefree AI (closed beta)
 
-The Custom AI Writing Assistant AddOn enables host applications to integrate their own LLM models with Beefree SDK. This allows host applications to provide their end users with advanced AI writing capabilities that are specific to their domains. Using the [Content Dialog](../../other-customizations/advanced-options/content-dialog.md), this AddOn employs the same entry points as the [AI writing assistant](ai-writing-assistant/), allowing full control over the AI experience within your application. Once your Custom AI Writing Assistant AddOn is fully configured, the [Content Dialog](../../other-customizations/advanced-options/content-dialog.md) displays the modal you created within the user interface when end users click the **Write with AI** button in the sidebar.
+{% hint style="warning" %}
+Tne Beefree AI AddOn is currently available in **closed beta** for selected customers. Please [fill in the form](https://growens.typeform.com/to/Eji2zu9q) to require access or learn more about it.
+{% endhint %}
 
-<figure><img src="../../.gitbook/assets/CleanShot 2024-09-17 at 22.22.54@2x.png" alt=""><figcaption></figcaption></figure>
+The Beefree AI AddOn is a ready-made AI Agent that lives inside the Beefree SDK editor, allowing your users to generate, edit and check the quality of email designs with a single prompt. The AddOn intruduces a **Create with AI** conversational panel that gives end users a persistent chat interface to work on content in a single guided session. Supported AI providers include Anthropic (Claude), OpenAI (GPT), and Google (Gemini).
 
-[How do I enable the Custom AI Writing Assistant AddOn?](custom-ai-writing-assistant.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)
+<figure><img src="../../.gitbook/assets/Screenshot 2026-05-04 at 18.48.40.png" alt=""><figcaption></figcaption></figure>
+
+[How do I enable the Beefree AI AddOn?](beefree-ai-addon-closed-beta/) | [AI Providers and Data Security](ai-writing-assistant/data-security.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)
 
 ## Stability AI <a href="#openai" id="openai"></a>
 
@@ -35,6 +39,14 @@ Empower users to generate text quickly with AI. With this AddOn, your end users 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-07-31 at 15.25.31.png" alt=""><figcaption></figcaption></figure>
 
 [How do I enable the AI Writing Assistant AddOn?](https://devportal.beefree.io/hc/en-us/articles/10838757053330-How-do-I-enable-the-OpenAI-AddOn-) | [Developer’s FAQ for OpenAI](https://devportal.beefree.io/hc/en-us/articles/10839177777810-Developer-s-FAQ-for-OpenAI) | [Webinar](https://app.livestorm.co/beefreeio/introducing-bee-plugin-openai-add-on-live-demo-and-q-and-a/live?s=7cef0fc7-d888-4627-a5c6-a3c4ed1c396d)
+
+## Custom AI Writing Assistant <a href="#openai" id="openai"></a>
+
+The Custom AI Writing Assistant AddOn enables host applications to integrate their own LLM models with Beefree SDK. This allows host applications to provide their end users with advanced AI writing capabilities that are specific to their domains. Using the [Content Dialog](../../other-customizations/advanced-options/content-dialog.md), this AddOn employs the same entry points as the [AI writing assistant](ai-writing-assistant/), allowing full control over the AI experience within your application. Once your Custom AI Writing Assistant AddOn is fully configured, the [Content Dialog](../../other-customizations/advanced-options/content-dialog.md) displays the modal you created within the user interface when end users click the **Write with AI** button in the sidebar.
+
+<figure><img src="../../.gitbook/assets/CleanShot 2024-09-17 at 22.22.54@2x.png" alt=""><figcaption></figcaption></figure>
+
+[How do I enable the Custom AI Writing Assistant AddOn?](custom-ai-writing-assistant.md) | [Terms of Services](https://developers.beefree.io/terms-of-service)
 
 ## Azure AI Vision - Image Analysis <a href="#openai" id="openai"></a>
 

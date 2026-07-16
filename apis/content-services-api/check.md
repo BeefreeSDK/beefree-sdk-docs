@@ -53,7 +53,7 @@ The Check endpoints accept three parameters in the request body: `languages`, `c
 
 * [Email designs](check.md#email)
 * [Page designs](check.md#page)
-* [Rows within designs](broken-reference/)
+* [Rows within designs](https://github.com/BeefreeSDK/beefree-sdk-docs/blob/main/apis/content-services-api/broken-reference/README.md)
 
 The [Check Endpoints section](check.md#check-endpoints) provides both an interactive testing environment for testing the checks and endpoints, and example request bodies you can use to get started with each of the three Check endpoints.
 {% endhint %}
@@ -1492,7 +1492,7 @@ This section lists and describes each of the Check endpoints. You can use this s
 This section includes details on how to make an API call using the email check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="message-check" path="/v1/message/check" method="post" %}
-[OpenAPI message-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/a0a803fcab82fc94a75d76e02422bbaee4b3d159b979391ed8095e475d723f49.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260129%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260129T091850Z&X-Amz-Expires=172800&X-Amz-Signature=2821dbf26810c266ced010254e9c7af2f1e4fb7861c144ab1cd05812f31e8132&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI message-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/a0a803fcab82fc94a75d76e02422bbaee4b3d159b979391ed8095e475d723f49.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260716%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260716T094914Z&X-Amz-Expires=172800&X-Amz-Signature=b6984cbc30199ab5f0929927672501d62378aeeb8d8edb48a8a13b1fca1d74d6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
@@ -1694,7 +1694,7 @@ Reference the following example email response:
 This section includes details on how to make an API call using the page check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="page-check" path="/v1/page/check" method="post" %}
-[OpenAPI page-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/4308febd44d915cc101689a737e2381eb1c6723b5e3d523e010547c938a72ba9.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260129%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260129T091850Z&X-Amz-Expires=172800&X-Amz-Signature=e4ef53b4e4785c42dc622f71a97557bb851beb858813ef535f3c652e73203625&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI page-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/4308febd44d915cc101689a737e2381eb1c6723b5e3d523e010547c938a72ba9.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260716%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260716T094914Z&X-Amz-Expires=172800&X-Amz-Signature=152ba74fa089104fb9d78cd2ca0d2d7f9411527ffc463d7afcc376a22efcc17b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
@@ -1879,7 +1879,7 @@ Reference an example page response:
 This section includes details on how to make an API call using the row check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="row-check" path="/v1/row/check" method="post" %}
-[OpenAPI row-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/fd96add5eb3171c8641c68e85b13ca24fd76b94debf20b7a3b25a7b5e4c01264.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260129%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260129T091850Z&X-Amz-Expires=172800&X-Amz-Signature=31093a9e0859237096102a539dd02045dc5e87497a110ca6f913a26c65cccfa9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI row-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/fd96add5eb3171c8641c68e85b13ca24fd76b94debf20b7a3b25a7b5e4c01264.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260716%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260716T094914Z&X-Amz-Expires=172800&X-Amz-Signature=52959452ddd3b18ca61a3d906dd527a1bc18bd5e685113e7a4e05f55a446210d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>

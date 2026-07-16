@@ -127,7 +127,7 @@ contentDialog: {
 
 ```
 
-For `rowDisplayConditions`, there is a third parameter called `currentCondition`. Use this parameter to return a row's current display condition. This parameter returns an object with the following format:&#x20;
+For `rowDisplayConditions`, there is a third parameter called `currentCondition`. Use this parameter to return a row's current display condition. This parameter returns an object with the following format:
 
 ```javascript
 {
@@ -290,7 +290,8 @@ Take the following steps to configure [merge tags](content-dialog.md#merge-tags)
 
     Validate that the merge tags are working correctly within the UI, ensuring that the dynamic values are properly inserted.
 
-<pre class="language-javascript"><code class="lang-javascript">
+```javascript
+
 contentDialog: {
 	mergeTags: {
 		label: 'Apply dynamic syntax',
@@ -299,8 +300,8 @@ contentDialog: {
 		}
 	},
 },
-<strong>
-</strong></code></pre>
+
+```
 
 You can add a new action, available in the text toolbar, and associated with the merge tag element:
 
@@ -344,7 +345,7 @@ A few end user benefits of using special links are the following:
 * **Consistent Implementation:** Ensures URLs and actions are consistent and accessible across various platforms.
 
 {% hint style="info" %}
-**Important:** Special links are inserted as code and treated as such during export, ensuring they populate in the HTML as-is. This prevents encoding issues and guarantees that the syntax is validated by the sending platform.&#x20;
+**Important:** Special links are inserted as code and treated as such during export, ensuring they populate in the HTML as-is. This prevents encoding issues and guarantees that the syntax is validated by the sending platform.
 {% endhint %}
 
 By incorporating special links, end users benefit from the ease of managing various links efficiently across diverse platforms.
@@ -426,8 +427,8 @@ Merge contents is a feature that allows you to consolidate multiple content sour
 
 Your configuration should look like the following:
 
-<pre class="language-javascript"><code class="lang-javascript"><strong>
-</strong><strong>contentDialog: {
+<pre class="language-javascript"><code class="lang-javascript">
+<strong>contentDialog: {
 </strong>	mergeContents: {
 		label: 'Set up a new product recommendation',
 		handler: function(resolve, reject) {
@@ -599,7 +600,7 @@ Of course, it can be edited in the editor like any other _Display condition_, if
 
 <figure><img src="../../.gitbook/assets/10edit.view_.jpg" alt=""><figcaption></figcaption></figure>
 
-Reference our [Advanced Permissions documentation](advanced-permissions.md#add-condition-and-edit-condition-buttons) to learn more about managing the visibility of the Add Condition and Edit Condition buttons.&#x20;
+Reference our [Advanced Permissions documentation](advanced-permissions.md#add-condition-and-edit-condition-buttons) to learn more about managing the visibility of the Add Condition and Edit Condition buttons.
 
 ## Custom Rows <a href="#custom-rows" id="custom-rows"></a>
 
@@ -634,7 +635,7 @@ A few of the most common use case for custom rows are the following:
 
 ### **Value**
 
-The following code snippet configures a custom row with a specific name and value. This will be shown in the editor UI in reference to a specific custom row based on the specified conditions.&#x20;
+The following code snippet configures a custom row with a specific name and value. This will be shown in the editor UI in reference to a specific custom row based on the specified conditions.
 
 ```javascript
 {
@@ -694,7 +695,7 @@ The `label`, `description` and `notPermittedDescription` fields handle the wordi
 
 * `label`: Label related to the sidebar button that triggers the content dialog
 * `description`: Description of the action on top of the button
-* `notPermittedDescription`: Description of the action when the button is hidden from the dedicated [advanced permission](advanced-permissions.md)&#x20;
+* `notPermittedDescription`: Description of the action when the button is hidden from the dedicated [advanced permission](advanced-permissions.md)
 
 Here’s an example of what `label` and `description` would look like:
 
@@ -710,7 +711,7 @@ And here’s an example of what `notPermittedDescription` would look like:
 
 ### **Saved Rows Configuration**
 
-The following code snippet displays an example of how to configure [save rows](broken-reference).
+The following code snippet displays an example of how to configure [save rows](https://github.com/BeefreeSDK/beefree-sdk-docs/blob/main/other-customizations/advanced-options/broken-reference/README.md).
 
 ```javascript
 contentDialog: {
@@ -726,7 +727,7 @@ Unlike the rest of content dialog configurations, _Save rows_ doesn’t use the 
 
 <figure><img src="../../.gitbook/assets/16saveicon-1024x134.png" alt=""><figcaption></figcaption></figure>
 
-The _Save rows_ content dialog is a mandatory step in the [Save rows](broken-reference) workflow.
+The _Save rows_ content dialog is a mandatory step in the [Save rows](https://github.com/BeefreeSDK/beefree-sdk-docs/blob/main/other-customizations/advanced-options/broken-reference/README.md) workflow.
 
 The `resolve` function must return metadata for the selected row. The [_metadata_ section](../../rows/reusable-content/create/#saved-rows-schema) of the rows schema allows you to keep track of row-specific information.
 
@@ -754,7 +755,7 @@ The row name is the only required metadata and it’s displayed as the row title
 * Displayed in the row card when the row is shown in the _Rows_ panel.
 * Used for text searches within the _Rows_ panel
 
-&#x20;Check the [Saved rows metadata section](../../rows/reusable-content/create/#saved-rows-schema) for further details on recommended metadata.
+Check the [Saved rows metadata section](../../rows/reusable-content/create/#saved-rows-schema) for further details on recommended metadata.
 
 ## Forms <a href="#forms" id="forms"></a>
 

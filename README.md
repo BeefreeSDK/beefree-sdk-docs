@@ -24,9 +24,9 @@ Beefree SDK includes the following features and more:
 * **Popup builder:** The [popup builder is a no-code environment](visual-builders/popup-builder/) that provides end users with the tools they need to build compelling popups that capture attention.
 * **AI-generated templates:** With both[ Simple Schema](data-structures/simple-schema/) and the [Convert endpoints](apis/content-services-api/convert.md#simple-to-full-json), you can build a custom AI-generated content creation experience (for assets such as emails, landing pages, or popups) for your end users.
 * **AI Writing Assistant:** A helpful AI assistant to help end users write their design content.
-* **File manager:** A tool to [manage media assets](broken-reference/) (images, PDFs, and so on).
+* **File manager:** A tool to [manage media assets](https://github.com/BeefreeSDK/beefree-sdk-docs/blob/main/broken-reference/README.md) (images, PDFs, and so on).
 * **Template catalog:** A design template catalog that integrates industry best practices to support end users in quickly getting across the finish line with their creations and achieving quick design wins.
-* **API offering:** Extend the functionality of any of the builders with our comprehensive [suite of APIs](broken-reference/).
+* **API offering:** Extend the functionality of any of the builders with our comprehensive [suite of APIs](https://github.com/BeefreeSDK/beefree-sdk-docs/blob/main/broken-reference/README.md).
 
 This site discusses the technical capabilities of Beefree SDK, and how to embed it into your web application. To learn more about the end user experience, and how your end users will interact with Beefree SDK on the frontend of your application, reference the [White Label End User Guide](https://docs.beefree.io/end-user-guide). Markdown files for this guide are available in this [GitHub repository](https://github.com/mailupinc/beefreeSDKwhiteLabelDocs), which you can clone and use as a starting point for building a knowledge base for your end users.
 
