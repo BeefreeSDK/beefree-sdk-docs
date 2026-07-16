@@ -117,7 +117,7 @@ You can also pick between "Editor-managed" and "API-Managed + Coediting" approac
 
 #### Headless
 
-This mode features a **headless MCP Server demo** with five readymade automation use cases. Plus, you can also test **Code Mode** (currently available as Research Preview), an alternative way of connecting the MCP Server to your AI Agent that allows token saving up to 96%. [Discover Code Mode](https://docs.beefree.io/beefree-sdk/mcp-server/mcp-server-installation-and-setup#code-mode-research-preview).
+This mode features a **headless MCP Server demo** with five readymade automation use cases. Plus, you can also test **Code Mode** (currently available in open beta), an alternative way of connecting the MCP Server to your AI Agent that allows token saving up to 96%. [Discover Code Mode](https://docs.beefree.io/beefree-sdk/mcp-server/mcp-server-installation-and-setup#code-mode-research-preview).
 
 <figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 

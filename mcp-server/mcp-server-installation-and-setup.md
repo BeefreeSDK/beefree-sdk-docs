@@ -315,14 +315,12 @@ In the [Beefree SDK MCP v2 demo repository](https://github.com/BeefreeSDK/beefre
 * An example of an API-managed session
 * A Code Mode example
 
-### Code mode (Research Preview)
+### Code mode
 
-{% hint style="warning" %}
-**Join the Research Preview and get early access to the Code Mode for Beefree SDK's MCP Server**
+{% hint style="success" %}
+**Try Code Mode for Beefree SDK's MCP Server**
 
-Code Mode is an experimental feature currently only accessible to a selected number of early access customers. If you're interested in joining the Research Preview, or if you'd like us to notify you when the tool is available to everyone, [please let us know](https://growens.typeform.com/to/gPzTnsgt#source=docs).
-
-[Join the Research Preview](https://growens.typeform.com/to/gPzTnsgt#source=docs)
+Code Mode is currently in open beta and rolling out to all customers with Essentials, Core, Superpowers and Enterprise plans.&#x20;
 {% endhint %}
 
 Code Mode is an alternative way to interact with the Beefree SDK MCP Server that significantly **reduces token consumption**.
@@ -337,7 +335,7 @@ https://api.getbee.io/v2/sdk/mcp/codemode
 
 In internal benchmarks across five models and three email complexity levels, Code Mode reduced total token consumption by 68–96%, with most results in the 85–95% range ([learn more in our blogpost](https://developers.beefree.io/blog/ai-agents-email-saving-tokens#code-mode))
 
-Use Code Mode when your agent makes many sequential tool calls to reduce API costs and latency. You can [reach out to us](https://growens.typeform.com/to/gPzTnsgt#source=docs) and ask to join the Research Preview for your applications.
+Use Code Mode when your agent makes many sequential tool calls to reduce API costs and latency.&#x20;
 
 **Please note**: Code Mode requires your agent to generate valid TypeScript. Implement error handling to gracefully handle partial failures.
 

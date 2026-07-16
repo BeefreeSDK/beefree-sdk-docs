@@ -88,18 +88,16 @@ Yes, during the open beta, MCP calls are free. However, please note that you wil
 
 #### How do I balance speed, token usage, and output quality?
 
-Model choice is the biggest lever. For token usage specifically, consider [Code Mode](mcp-server-installation-and-setup.md#code-mode-research-preview), now in research preview. Code mode is an experimental alternative that optimizes your interaction with the Beefree SDK MCP Server.
+Model choice is the biggest lever. For token usage specifically, consider [Code Mode](mcp-server-installation-and-setup.md#code-mode-research-preview), now in open beta. Code mode is an experimental alternative that optimizes your interaction with the Beefree SDK MCP Server.
 
 #### What is Code Mode?
 
-Code Mode is an experimental alternative for interacting with the Beefree SDK MCP Server, currently in research preview. Instead of exposing 33 individual tools, each with a full parameter schema sent on every turn, Code Mode exposes a single tool that accepts a TypeScript script. Your agent writes one script that performs all operations in a single round trip: creating sections, adding content, and setting styles.
+Code Mode is an alternative way for interacting with the Beefree SDK MCP Server, currently in open beta. Instead of exposing 33 individual tools, each with a full parameter schema sent on every turn, Code Mode exposes a single tool that accepts a TypeScript script. Your agent writes one script that performs all operations in a single round trip: creating sections, adding content, and setting styles.
 
 In internal benchmarks across five models and three email complexity levels, Code Mode reduced total token consumption by 68–96%, with most results in the 85–95% range.
-
-Code Mode is currently in Research Preview. In order to access it, please [fill in the form](https://growens.typeform.com/to/gPzTnsgt#source=docs).
 
 #### When should I use Code Mode?
 
 Use Code Mode when your agent makes many sequential tool calls to reduce API costs and latency. It's particularly effective if your use case involves complex email-generation workflows, where the repeated overhead of sending tool schemas on every turn becomes a significant cost driver.
 
-Note that Code Mode requires your agent to generate valid TypeScript, so you should implement error handling to manage partial failures. Because this feature is in research preview, behavior may change before general availability.
+Note that Code Mode requires your agent to generate valid TypeScript, so you should implement error handling to manage partial failures. Because this feature is in beta, behavior may change before general availability.
