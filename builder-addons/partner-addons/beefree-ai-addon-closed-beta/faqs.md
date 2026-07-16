@@ -12,10 +12,6 @@ The AI Writing Assistant targets individual content blocks. The AI AddOn goes fu
 
 Log in to the Beefree SDK Developer Console, navigate to your application, and open the AddOns section. From there, click Browse AddOns, select the Beefree AI AddOn, and click Install. Once installed, select your provider and model, enter your API key, toggle Enable, and save. Make sure you have an active Superpowers or Enterprise plan and an API key from your chosen AI provider before starting.
 
-#### **What plans support the AI AddOn?**&#x20;
-
-The AI AddOn requires an active Beefree SDK Superpowers or Enterprise plan.
-
 #### **Do I need my own AI provider API key?**&#x20;
 
 Yes. You supply an API key from a supported provider during setup in the Developer Console. Beefree does not provide API keys.
@@ -42,7 +38,7 @@ Yes. Set `enabled: false` on the AddOn entry in `beeConfig` for any user you wan
 
 #### **Is this available in production?**&#x20;
 
-Not yet. The AI AddOn is currently a research preview, available to selected partners. The interface, configuration options, supported models, and underlying behavior are all subject to change. Do not use it in production. Share feedback directly with your Beefree customer success manager.
+Not yet. The AI AddOn is currently in closed beta for selected partners. The interface, configuration options, supported models, and underlying behavior are all subject to change. Do not use it in production. Share feedback directly with your Beefree customer success manager.
 
 #### **What is the applicable use policy?**
 
