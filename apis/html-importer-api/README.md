@@ -5,7 +5,12 @@ description: Learn more about the HTML Importer API offering in Beefree SDK.
 # HTML Importer API
 
 {% hint style="info" %}
-Available on all [Beefree SDK plan types](https://developers.beefree.io/pricing-plans). Learn more about Usage-based fees for the [HTML Importer API](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees).
+Available on all [Beefree SDK plan types](https://developers.beefree.io/pricing-plans).&#x20;
+
+* Superpowers and Enterprise plans include unlimited HTML imports. For all other plans, you'll get charged $2 per HTML import.&#x20;
+* If you're on a Core or Essentials plan, you can also purchase unlimited HTML imports for $2,000/year. To enable unlimited HTML imports, please contact our [customer support team](mailto:sdksupport@beefree.io). &#x20;
+
+Learn more about Usage-based fees for the [HTML Importer API](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees).
 {% endhint %}
 
 ## Beefree SDK API Offering <a href="#in-a-nutshell" id="in-a-nutshell"></a>
