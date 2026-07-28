@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # AI-assisted Content Creation
 
 {% hint style="info" %}
