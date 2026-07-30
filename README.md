@@ -44,14 +44,6 @@ If you'd like to test the drag-and-drop user experience and explore how easy it 
 
 <a href="https://playground.beefree.io/" class="button primary">Visit the Playground → </a>
 
-### Demo Apps
-
-Check out the following public demo apps built with v0, Lovable, and Replit:&#x20;
-
-* [Email Builder by Beefree SDK](https://v0-email-builder-beefree-sdk.vercel.app/) is a demo application built with [v0](https://v0.app/) that simulates how Beefree SDK's no-code drag-and-drop email builder and editor can be integrated into your web application. The demo application includes static dashboards for campaign performance (open rate, click rate, conversion rate, and revenue), campaign breakdown, and subscriber information. Click the following link to access Email Builder by Beefree SDK: [https://v0-email-builder-beefree-sdk.vercel.app/](https://v0-email-builder-beefree-sdk.vercel.app/)  &#x20;
-* [Marketing Buddy](https://beefree-sdk-demo-app-marketing-buddy.lovable.app/) is a demo application built with [Lovable](https://lovable.dev/) to simulate how Beefree SDK integrates within a Martech application's ecosystem. Click the following link to access Marketing Buddy: [https://beefree-sdk-demo-app-marketing-buddy.lovable.app/](https://beefree-sdk-demo-app-marketing-buddy.lovable.app/)&#x20;
-* [Email Design Buddy](https://email-design-buddy-beefree-sdk.replit.app/) is a demo application built with [Replit](https://replit.com/) to simulate how Beefree SDK can be integrated into an email building and editing application. Click the following link to access Email Design Buddy: [https://email-design-buddy-beefree-sdk.replit.app/](https://email-design-buddy-beefree-sdk.replit.app/)&#x20;
-
 ## Start a Simple Implementation <a href="#welcome" id="welcome"></a>
 
 Take the following steps to get started with Beefree SDK in a few minutes:
