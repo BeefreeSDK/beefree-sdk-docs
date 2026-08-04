@@ -69,7 +69,6 @@ await beeInstance.start(templateJson, userInfo, templateInfo, options);
 * **Description:** Loads a JSON template into the editor
 * **Parameters:**
   * `template`: JSON string with template structure
-* **Returns:** Promise that resolves when template is loaded
 * **Usage:**
 
 ```javascript
@@ -94,6 +93,7 @@ await beeInstance.reload(templateJson);
 
 * **Description:** Programmatically triggers the save action
 * **Triggers:** `onSave` callback with JSON and HTML files
+* **Returns:** Promise that resolves when files are provided
 * **Usage:**
 
 ```javascript
@@ -104,6 +104,7 @@ beeInstance.save();
 
 * **Description:** Programmatically triggers save as template action
 * **Triggers:** `onSaveAsTemplate` callback with JSON file
+* **Returns:** Promise that resolves when files are provided
 * **Usage:**
 
 ```javascript
