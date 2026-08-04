@@ -272,3 +272,7 @@
 * [MCP Server tools & capabilities](mcp-server/mcp-server-tools-and-capabilities.md "Tools & capabilities")
 * [How to get the best AI output](mcp-server/how-to-get-the-best-ai-output.md)
 * [MCP Server FAQs](mcp-server/mcp-server-faqs.md)
+
+## Upcoming updates <a href="#updates" id="updates"></a>
+
+* [Rich-text editor (TinyMCE) update](updates/rich-text-editor.md)
