@@ -143,6 +143,7 @@
   * [Themes](other-customizations/appearance/themes.md)
   * [Custom CSS](other-customizations/appearance/custom-css/README.md)
     * [CSS Changes](other-customizations/appearance/custom-css/css-changes.md)
+  * [Right-to-left support](other-customizations/appearance/right-to-left-support.md)
 * [AMP for Email](other-customizations/amp-for-email.md)
 * [Collaborative Editing](other-customizations/collaborative-editing/README.md)
   * [Co-editing Integration Guide](other-customizations/collaborative-editing/co-editing-integration-guide.md)
