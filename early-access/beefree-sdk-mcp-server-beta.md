@@ -34,7 +34,7 @@ The Beefree SDK MCP Server allows you to connect your AI agents to the Beefree S
 * Providing the agent is the responsibility of the host application. If you don't have your own agent yet, see the [sample projects](beefree-sdk-mcp-server-beta.md#sample-projects) below.
 
 {% hint style="success" icon="circle-check" %}
-Looking for a way to reduce token consumption for your AI agent connected via Beefree SDK's MCP Server? Check out [Code Mode](../mcp-server/mcp-server-installation-and-setup.md#code-mode-research-preview)!
+Looking for a way to reduce token consumption for your AI agent connected via Beefree SDK's MCP Server? Check out [Code Mode](../mcp-server/mcp-server-installation-and-setup.md#code-mode)!
 {% endhint %}
 
 ### What can you do with the Beefree SDK's MCP Server?
@@ -117,7 +117,7 @@ You can also pick between "Editor-managed" and "API-Managed + Coediting" approac
 
 #### Headless
 
-This mode features a **headless MCP Server demo** with five readymade automation use cases. Plus, you can also test **Code Mode** (currently available in open beta), an alternative way of connecting the MCP Server to your AI Agent that allows token saving up to 96%. [Discover Code Mode](https://docs.beefree.io/beefree-sdk/mcp-server/mcp-server-installation-and-setup#code-mode-research-preview).
+This mode features a **headless MCP Server demo** with five readymade automation use cases. Plus, you can also test **Code Mode** (currently available in open beta), an alternative way of connecting the MCP Server to your AI Agent that allows token saving up to 96%. [Discover Code Mode](../mcp-server/mcp-server-installation-and-setup.md#code-mode).
 
 <figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
