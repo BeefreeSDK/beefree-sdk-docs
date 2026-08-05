@@ -116,6 +116,10 @@
 * [Custom Head HTML](server-side-configurations/custom-head-html.md)
 * [Custom Sanitize Rules](server-side-configurations/custom-sanitize-rules.md)
 
+## QA tools
+
+* [Quality Check](qa-tools/quality-check.md)
+
 ## Other Customizations
 
 * [Advanced options](other-customizations/advanced-options/README.md)
