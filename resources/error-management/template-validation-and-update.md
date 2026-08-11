@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Template Validation and Update
 
 As Beefree SDK is improved and updated over time, the JSON structure we use to describe a document may change.
