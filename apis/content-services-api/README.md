@@ -70,7 +70,7 @@ These endpoints allow you to:
 
 * **Page to Email**: Convert existing page templates into email templates. This saves your end users time by allowing them to use their favorite designs across multiple content channels.
 * **Email to Page:** Convert existing email templates into page templates. This saves your end users time by allowing them to use their favorite designs across multiple content channels.
-* **Simple to Full JSON**: Convert an [AI-generated Simple Schema](../../visual-builders/ai-driven-design-creation.md) into full Beefree JSON that can be loaded within the builder for your end users to edit.
+* **Simple to Full JSON**: Convert an [AI-generated Simple Schema](/broken/pages/4uXrZ72RpCqMeMVy87XP) into full Beefree JSON that can be loaded within the builder for your end users to edit.
 * **Full JSON to Simple JSON:** Convert the full JSON of a Beefree SDK template into Simple Schema JSON.
 
 Visit the [Convert API documentation](convert.md) to learn more.

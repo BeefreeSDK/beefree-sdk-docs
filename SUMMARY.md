@@ -42,7 +42,6 @@
   * [Testing and Integrating](visual-builders/popup-builder/testing-and-integrating.md)
   * [Setting layout and size](visual-builders/popup-builder/setting-layout-and-size/README.md)
     * [Advanced settings](visual-builders/popup-builder/setting-layout-and-size/advanced-settings.md)
-* [AI-assisted Content Creation](visual-builders/ai-driven-design-creation.md)
 
 ## APIs
 
@@ -232,7 +231,6 @@
   * [Beefree SDK Editor Errors](resources/error-management/beefree-sdk-editor-errors.md)
   * [File System Provider Errors](resources/error-management/file-system-provider-errors.md)
   * [JSON Parser Errors](resources/error-management/json-parser-errors.md)
-  * [Template Validation and Update](resources/error-management/template-validation-and-update.md)
   * [Template Validation and Update Errors](resources/error-management/template-validation-and-update-errors.md)
 * [Scheduled maintenances](resources/scheduled-maintenances.md)
 * [Videos](resources/videos/README.md)

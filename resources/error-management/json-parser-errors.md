@@ -1,4 +1,4 @@
-# JSON Parser errors
+# JSON Parser Errors
 
 ## Example Response
 
@@ -23,7 +23,7 @@
 ## Preliminary JSON parsing errors
 
 {% hint style="info" %}
-The **Bump service** is the internal codename for our JSON validation/update service. You can read more in our [Template Validation and Update article](template-validation-and-update.md).
+The **Bump service** is the internal codename for our JSON validation/update service. You can read more in our [Template Validation and Update article](/broken/pages/sONcrNyThpMt4HDaclrJ).
 {% endhint %}
 
 | Code   | Message            | HTTP Status     | Details                          |

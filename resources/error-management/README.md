@@ -73,5 +73,5 @@ Reference the following pages for more information on additional errors:
 * [Beefree SDK Editor Errors](beefree-sdk-editor-errors.md)
 * [File System Provider Errors](file-system-provider-errors.md)
 * [JSON Parser Errors](json-parser-errors.md)
-* [Template Validation and Update](template-validation-and-update.md)
+* [Template Validation and Update](/broken/pages/sONcrNyThpMt4HDaclrJ)
 * [Template Validation and Update Errors](template-validation-and-update-errors.md)
