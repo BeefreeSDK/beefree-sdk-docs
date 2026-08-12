@@ -24,6 +24,8 @@ For integrators, the setup is minimal: once you enable the feature in the SDK Co
 If you want to develop your fully custom check solution, you can rely on our [Check CSAPI endpoint](https://docs.beefree.io/beefree-sdk/apis/content-services-api/check).
 {% endhint %}
 
+API calls made through Quality Check don't count towards your CSAPI allotment. This means they have no separate billing or usage limits.
+
 ### Availability
 
 Quality Check is available for **email** and **page** designs.&#x20;
