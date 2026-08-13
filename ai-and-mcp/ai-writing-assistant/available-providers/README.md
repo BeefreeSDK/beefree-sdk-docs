@@ -61,7 +61,7 @@ This section discusses each of the available providers.
 
 ## Additional Considerations
 
-If the list of providers detailed on this page do not need the requirements you have for your application, Beefree SDK also offers a [Custom AI Writing Assistant AddOn](../../custom-ai-writing-assistant.md) that allows you to connect your own custom LLM to the **Write with AI** button on your application's frontend. It also provides you with a mechanism to build a customized modal on the frontend of your application that your end users can interact with to submit their AI prompts to your custom LLM.
+If the list of providers detailed on this page do not need the requirements you have for your application, Beefree SDK also offers a [Custom AI Writing Assistant AddOn](../custom-ai-writing-assistant.md) that allows you to connect your own custom LLM to the **Write with AI** button on your application's frontend. It also provides you with a mechanism to build a customized modal on the frontend of your application that your end users can interact with to submit their AI prompts to your custom LLM.
 
 ## Other Resources
 

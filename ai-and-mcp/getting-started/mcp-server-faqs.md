@@ -30,7 +30,7 @@ Access is available directly to all paying customers with no application or appr
 
 The Beefree SDK MCP Server supports two ways to connect your AI agent to the editor:
 
-* **API-managed session** — your host application creates and manages the session via the Headless API. Choose this if [co-editing](../other-customizations/collaborative-editing/) is enabled on your account and you want support for multiple concurrent users, per-change history, or persistent sessions.
+* **API-managed session** — your host application creates and manages the session via the Headless API. Choose this if [co-editing](../../other-customizations/collaborative-editing/) is enabled on your account and you want support for multiple concurrent users, per-change history, or persistent sessions.
 * **Editor-managed session** — the editor creates a temporary session on demand via `bee.startMcpSession()`. Choose this if co-editing is not enabled, or if you want a simpler setup without backend session management.
 
 Both paths use the same MCP endpoint and tools. See [Installation & Setup](mcp-server-installation-and-setup.md) for full details on each.

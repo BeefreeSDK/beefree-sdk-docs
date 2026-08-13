@@ -12,8 +12,8 @@ Multi-language Templates (MLT) empower your end users to design customized exper
 
 MLT provides a translation infrastructure, but does not perform the translation for each language version of your template. You can integrate translations into your application for each language version using one of the following two methods:
 
-* Enable the [DeepL AddOn](../builder-addons/partner-addons/deepl.md), which gives your end users access to a **Translate** button within the builder. When your end users click this button, all the translatable fields will automatically translate to the language corresponding with the template's language version. **Note:** MLT is a prerequisite for enabling the [DeepL AddOn](../builder-addons/partner-addons/deepl.md).
-* Enable the [AI Writing Assistant AddOn](../builder-addons/partner-addons/ai-writing-assistant/) to allow your end users to translate their template language version's content with the [AI Writing Assistant](../builder-addons/partner-addons/ai-writing-assistant/).
+* Enable the [DeepL AddOn](../ai-and-mcp/deepl.md), which gives your end users access to a **Translate** button within the builder. When your end users click this button, all the translatable fields will automatically translate to the language corresponding with the template's language version. **Note:** MLT is a prerequisite for enabling the [DeepL AddOn](../ai-and-mcp/deepl.md).
+* Enable the [AI Writing Assistant AddOn](../ai-and-mcp/ai-writing-assistant/) to allow your end users to translate their template language version's content with the [AI Writing Assistant](../ai-and-mcp/ai-writing-assistant/).
 * End users can type the translations manually for each template language version.
 
 **Note:** The style of your templates stays the same across the language version while MLT is in use. The only change that will occur is the language of the text for the relevant components.
@@ -345,4 +345,4 @@ bee.togglePreview()
 
 ## Automating Translations <a href="#triggering-the-translation-preview" id="triggering-the-translation-preview"></a>
 
-If you would like to provide your end users with the option to automatically translate all of the translatable content within their design, you can use the [DeepL addOn](../builder-addons/partner-addons/deepl.md).&#x20;
+If you would like to provide your end users with the option to automatically translate all of the translatable content within their design, you can use the [DeepL addOn](../ai-and-mcp/deepl.md).&#x20;

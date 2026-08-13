@@ -43,6 +43,31 @@
   * [Setting layout and size](visual-builders/popup-builder/setting-layout-and-size/README.md)
     * [Advanced settings](visual-builders/popup-builder/setting-layout-and-size/advanced-settings.md)
 
+## AI & MCP
+
+* [Getting started with AI in Beefree SDK](ai-and-mcp/getting-started-with-ai-in-beefree-sdk.md)
+* [AI Writing Assistant](ai-and-mcp/ai-writing-assistant/README.md)
+  * [Available Providers](ai-and-mcp/ai-writing-assistant/available-providers/README.md)
+    * [OpenAI](ai-and-mcp/ai-writing-assistant/available-providers/openai.md)
+    * [Azure OpenAI](ai-and-mcp/ai-writing-assistant/available-providers/azure-openai.md)
+    * [Anthropic](ai-and-mcp/ai-writing-assistant/available-providers/anthropic.md)
+  * [AI Providers and Data Security](ai-and-mcp/ai-writing-assistant/data-security.md)
+  * [AI-Generated Meta Tag Fields](ai-and-mcp/ai-writing-assistant/ai-generated-meta-tag-fields.md)
+  * [Token Upselling](ai-and-mcp/ai-writing-assistant/token-upselling.md)
+  * [Apply a Brand Tone](ai-and-mcp/ai-writing-assistant/apply-a-brand-tone.md)
+  * [Custom AI Writing Assistant](ai-and-mcp/ai-writing-assistant/custom-ai-writing-assistant.md)
+* [Stability AI (Text-to-image)](ai-and-mcp/stability-ai.md)
+* [Generate Alt Text with AI](ai-and-mcp/generate-alt-text-with-ai/README.md)
+  * [Bulk Alt-Text generation](ai-and-mcp/generate-alt-text-with-ai/generate-alt-text-globally-with-ai.md)
+* [DeepL (AI-powered translation)](ai-and-mcp/deepl.md)
+* [Beefree AI copilot (closed beta)](ai-and-mcp/beefree-ai-copilot-closed-beta/README.md)
+  * [Beefree AI FAQs](ai-and-mcp/beefree-ai-copilot-closed-beta/beefree-ai-faqs.md "FAQs")
+* [MCP Server](ai-and-mcp/getting-started/README.md "MCP Server")
+  * [MCP Server installation & setup](ai-and-mcp/getting-started/mcp-server-installation-and-setup.md "Installation & setup")
+  * [MCP Server tools & capabilities](ai-and-mcp/getting-started/mcp-server-tools-and-capabilities.md "Tools & capabilities")
+  * [How to get the best AI output](ai-and-mcp/getting-started/how-to-get-the-best-ai-output.md)
+  * [MCP Server FAQs](ai-and-mcp/getting-started/mcp-server-faqs.md "FAQs")
+
 ## APIs
 
 * [Content Services API](apis/content-services-api/README.md)
@@ -188,22 +213,6 @@
 * [Partner AddOns](builder-addons/partner-addons/README.md)
   * [Partner AddOns directory](builder-addons/partner-addons/partner-addons-directory.md)
   * [Installing Partner AddOns](builder-addons/partner-addons/installing-partner-addons.md)
-  * [Beefree AI AddOn (closed beta)](builder-addons/partner-addons/beefree-ai-addon-closed-beta/README.md)
-    * [FAQs](builder-addons/partner-addons/beefree-ai-addon-closed-beta/faqs.md)
-  * [DeepL](builder-addons/partner-addons/deepl.md)
-  * [Stability AI](builder-addons/partner-addons/stability-ai.md)
-  * [Generate Alt Text with AI](builder-addons/partner-addons/generate-alt-text-with-ai.md)
-  * [Generate Alt Text Globally with AI](builder-addons/partner-addons/generate-alt-text-globally-with-ai.md)
-  * [AI Writing Assistant](builder-addons/partner-addons/ai-writing-assistant/README.md)
-    * [Available Providers](builder-addons/partner-addons/ai-writing-assistant/available-providers/README.md)
-      * [OpenAI](builder-addons/partner-addons/ai-writing-assistant/available-providers/openai.md)
-      * [Azure OpenAI](builder-addons/partner-addons/ai-writing-assistant/available-providers/azure-openai.md)
-      * [Anthropic](builder-addons/partner-addons/ai-writing-assistant/available-providers/anthropic.md)
-    * [AI Providers and Data Security](builder-addons/partner-addons/ai-writing-assistant/data-security.md)
-    * [AI-Generated Meta Tag Fields](builder-addons/partner-addons/ai-writing-assistant/ai-generated-meta-tag-fields.md)
-    * [Token Upselling](builder-addons/partner-addons/ai-writing-assistant/token-upselling.md)
-    * [Apply a Brand Tone](builder-addons/partner-addons/ai-writing-assistant/apply-a-brand-tone.md)
-  * [Custom AI Writing Assistant](builder-addons/partner-addons/custom-ai-writing-assistant.md)
   * [Contribute to the Partner AddOn Marketplace](builder-addons/partner-addons/contribute-to-the-partner-addon-marketplace.md)
 * [Custom AddOns](builder-addons/custom-addons/README.md)
   * [Custom AddOn Types](builder-addons/custom-addons/custom-addon-types/README.md)
@@ -269,12 +278,6 @@
   * [Create a Custom Form Builder in Beefree SDK](resources/cookbook/create-a-custom-form-builder-in-beefree-sdk.md)
 
 ## MCP Server (BETA) <a href="#mcp-server" id="mcp-server"></a>
-
-* [Getting started with the MCP Server](early-access/beefree-sdk-mcp-server-beta.md "Getting started")
-* [MCP Server installation & setup](mcp-server/mcp-server-installation-and-setup.md "Installation & setup")
-* [MCP Server tools & capabilities](mcp-server/mcp-server-tools-and-capabilities.md "Tools & capabilities")
-* [How to get the best AI output](mcp-server/how-to-get-the-best-ai-output.md)
-* [MCP Server FAQs](mcp-server/mcp-server-faqs.md)
 
 ## Upcoming updates <a href="#updates" id="updates"></a>
 

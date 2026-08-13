@@ -316,7 +316,7 @@ const notificationTextWithCustomCTA = customLanguageEntries[customLanguageId];
 
 ## Configure Image Tokens
 
-You can also configure the Token Upselling feature to guide your application's end user to purchase images. Purchasing additional image tokens allows your end users to continue using features such as [Alt Text Generation with AI](../generate-alt-text-with-ai.md) and [Bulk Alt Text Generation](../generate-alt-text-globally-with-ai.md).
+You can also configure the Token Upselling feature to guide your application's end user to purchase images. Purchasing additional image tokens allows your end users to continue using features such as [Alt Text Generation with AI](../generate-alt-text-with-ai/) and [Bulk Alt Text Generation](../generate-alt-text-with-ai/generate-alt-text-globally-with-ai.md).
 
 The following code shows an example of a Token Upselling configuration for both text and image tokens. Purchasing text tokens supports end users as they use features connected to the [OpenAI AddOn](./), and purchasing image tokens supports ends users as they use features connected to the [Azure AI Vision AddOn](/broken/pages/btUXAXl5Rqp4whfYNN85).
 

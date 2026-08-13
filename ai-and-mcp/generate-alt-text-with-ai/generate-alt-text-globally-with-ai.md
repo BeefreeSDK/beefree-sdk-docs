@@ -4,7 +4,7 @@ description: >-
   Alt text generation with AI.
 ---
 
-# Generate Alt Text Globally with AI
+# Bulk Alt-Text generation
 
 ## Overview
 
@@ -82,7 +82,7 @@ The type of images they can create alt-text for are the following:
 * GIFs
 * Custom AddOn Images
 
-If they do not have sufficient image tokens in their account, you can redirect them to [purchase additional image tokens](ai-writing-assistant/token-upselling.md) prior to performing the bulk generation. &#x20;
+If they do not have sufficient image tokens in their account, you can redirect them to [purchase additional image tokens](../ai-writing-assistant/token-upselling.md) prior to performing the bulk generation. &#x20;
 
 ## Multi-Language Templates Compatibility
 
@@ -94,7 +94,7 @@ If you experience any issues with setting up this AddOn, take the following meas
 
 * Ensure your Azure API key is connected correctly within your Beefree SDK Developer Console. &#x20;
 * Ensure your custom endpoint is set up correctly in the SDK console.
-* Repeat the configuration steps outlined in [this document](generate-alt-text-with-ai.md).&#x20;
+* Repeat the configuration steps outlined in [this document](./).&#x20;
 
 ## Additional Considerations
 

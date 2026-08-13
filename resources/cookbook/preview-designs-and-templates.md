@@ -106,7 +106,7 @@ The following GIF shows a visual example of what this configuration looks like t
 <figure><img src="../../.gitbook/assets/CleanShot 2025-08-25 at 21.35.19.gif" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-**Note:** Use the [DeepL integration](../../builder-addons/partner-addons/deepl.md) to automatically translate a template in the primary language to other languages.
+**Note:** Use the [DeepL integration](../../ai-and-mcp/deepl.md) to automatically translate a template in the primary language to other languages.
 {% endhint %}
 
 ### Display Conditions

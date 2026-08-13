@@ -18,10 +18,10 @@ The Beefree SDK MCP Server exposes the editor, and Check API as callable tools. 
 Beefree SDK's MCP Server support both in-editor and headless use-cases. If you are integrating the MCP in a headless setup, you can follow the [API-managed session](mcp-server-installation-and-setup.md#api-managed-session) path below skipping the third step "Connect the editor"
 {% endhint %}
 
-There are two ways to connect your agent to the editor. The right choice depends on whether [co-editing](../other-customizations/collaborative-editing/) is enabled on your account:
+There are two ways to connect your agent to the editor. The right choice depends on whether [co-editing](../../other-customizations/collaborative-editing/) is enabled on your account:
 
-* [Co-editing](../other-customizations/collaborative-editing/) **not enabled** → [Editor-managed session](mcp-server-installation-and-setup.md#editor-managed-session): the editor creates a lightweight temporary session on demand via `bee.startMcpSession()`. No backend session management required.
-* [Co-editing](../other-customizations/collaborative-editing/) **enabled** → [API-managed session](mcp-server-installation-and-setup.md#api-managed-session): your host application creates and manages the session lifecycle via the Headless API. Supports multiple concurrent users, presence indicators, per-change history, and persistent sessions.
+* [Co-editing](../../other-customizations/collaborative-editing/) **not enabled** → [Editor-managed session](mcp-server-installation-and-setup.md#editor-managed-session): the editor creates a lightweight temporary session on demand via `bee.startMcpSession()`. No backend session management required.
+* [Co-editing](../../other-customizations/collaborative-editing/) **enabled** → [API-managed session](mcp-server-installation-and-setup.md#api-managed-session): your host application creates and manages the session lifecycle via the Headless API. Supports multiple concurrent users, presence indicators, per-change history, and persistent sessions.
 
 Both paths use the same MCP endpoint and authentication. They differ only in how the session and templateId are created.
 
@@ -46,14 +46,14 @@ At a protocol level:
 * **Metadata (\_meta).** A reserved envelope for passing extra routing/context (not tool args), namespaced as the spec requires. We'll use it to pass Beefree session routing when not using HTTP headers.
 
 {% hint style="info" %}
-Since the Beefree SDK MCP Server relies on Beefree's CSAPI, it is subjected to the same rate limits. [Learn more here](../apis/content-services-api/).
+Since the Beefree SDK MCP Server relies on Beefree's CSAPI, it is subjected to the same rate limits. [Learn more here](../../apis/content-services-api/).
 {% endhint %}
 
 ### Prerequisites
 
 #### Get an MCP-compatible CSAPI key
 
-All requests to the MCP endpoint require a valid [CSAPI key](../apis/content-services-api/#overview-of-content-services-api). You can enable your CSAPI Key from your SDK Console.
+All requests to the MCP endpoint require a valid [CSAPI key](../../apis/content-services-api/#overview-of-content-services-api). You can enable your CSAPI Key from your SDK Console.
 
 Once you have a key, include it in every request:
 
@@ -74,7 +74,7 @@ Your agent must complete the MCP `initialize/initialized` handshake before calli
 ### Editor-managed session
 
 {% hint style="warning" %}
-Use this path when [**co-editing**](../other-customizations/collaborative-editing/) **is not enabled on your account**, or when you want a simpler setup where the editor manages the session lifecycle on your behalf.
+Use this path when [**co-editing**](../../other-customizations/collaborative-editing/) **is not enabled on your account**, or when you want a simpler setup where the editor manages the session lifecycle on your behalf.
 {% endhint %}
 
 The session is temporary and scoped to a single user and their agent(s). If you have the co-edit enabled, please refer to the API-managed session for the setup.
@@ -159,7 +159,7 @@ Common failure scenarios:
 ### API-managed session
 
 {% hint style="warning" %}
-Use this path when [**co-editing**](../other-customizations/collaborative-editing/) **is enabled on your account**.
+Use this path when [**co-editing**](../../other-customizations/collaborative-editing/) **is enabled on your account**.
 {% endhint %}
 
 Your host application controls the full session lifecycle: you create the template, connect the agent, and optionally connect the editor — all independently.
@@ -218,7 +218,7 @@ Use `_meta` strictly for routing metadata, not for tool arguments.
 
 #### Step 3: Connect the editor (optional)
 
-The editor can join the same session for [real-time collaboration](../other-customizations/collaborative-editing/) alongside the agent. To configure this, use the `join` method in the editor configuration.
+The editor can join the same session for [real-time collaboration](../../other-customizations/collaborative-editing/) alongside the agent. To configure this, use the `join` method in the editor configuration.
 
 ```
 bee.join(templateId);
@@ -253,7 +253,7 @@ Assigning an owner is recommended in sessions with multiple real users. It ensur
 
 #### Editor configuration
 
-For the full `editorConfig` reference and co-editing setup, see the [Co-Editing Integration Guide](../other-customizations/collaborative-editing/).
+For the full `editorConfig` reference and co-editing setup, see the [Co-Editing Integration Guide](../../other-customizations/collaborative-editing/).
 
 The following fields are relevant to MCP sessions across both integration paths:
 
@@ -356,4 +356,4 @@ In the current MCP server version (v2), the session is identified by a `template
 | Editor config    | `mcpEditorClient: { enabled: true }`                 | Not required for agent connection                                                                                                                                                                                  |
 | Select element   | `beefree_get_selected`                               | `onSelectElement` callback ([more details here](https://app.gitbook.com/o/2zoWGxtV7bjhbwBdjGPS/s/8c7XIQHfAtM23Dp3ozIC/~/edit/~/changes/572/mcp-server/tools-and-capabilities#get-the-context-of-selected-element)) |
 
-{% include "../.gitbook/includes/remove-the-mcpeditorclient-....md" %}
+{% include "../../.gitbook/includes/remove-the-mcpeditorclient-....md" %}

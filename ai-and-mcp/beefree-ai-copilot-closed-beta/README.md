@@ -1,22 +1,22 @@
-# Beefree AI AddOn (closed beta)
+# Beefree AI copilot (closed beta)
 
 {% hint style="warning" %}
 **Join the Beta program and get early access to the Beefree AI AddOn**
 
-Our Beefree AI AddOn is currently in closed beta and only accessible to a selected number of early access customers. If you're interested in joining the beta, or if you'd like us to notify you when the tool is available to everyone, [please let us know](https://growens.typeform.com/to/Eji2zu9q).
+Beefree AI is currently in closed beta and only accessible to a selected number of early access customers. If you're interested in joining the beta, or if you'd like us to notify you when the tool is available to everyone, [please let us know](https://growens.typeform.com/to/Eji2zu9q).
 
 [I'd love to join the Beta →](https://growens.typeform.com/to/Eji2zu9q)
 
 The Beefree SDK Team
 {% endhint %}
 
-The Beefree AI AddOn is a Partner AddOn for the email builder. It adds an out-of-the-box AI agent that your user can prompt to create email designs, edit layouts, generate variations, and review templates. You install it in the Developer Console, choose a supported provider, and configure your model to make it available for your end users. Hosts can also persist chat history to continue guided sessions across visits and future revisions.
+Beefree AI is the out-of-the-box AI copilot that your user can prompt to create email designs, edit layouts, generate variations, and review templates. You install it in the Developer Console, choose a supported provider, and configure your model to make it available for your end users. Hosts can also persist chat history to continue guided sessions across visits and future revisions.
 
 ### Overview
 
-The Beefree AI Addon is a Partner AddOn — part of the same family of ready-to-install extensions available through the [Beefree SDK Partner AddOns directory](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/partner-addons-directory). Like other Partner AddOns, it is installed and configured directly from the Beefree SDK Developer Console, without any changes to your integration code. For a general walkthrough of how Partner AddOns work, see [Installing Partner AddOns](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/installing-partner-addons).
+Beefree AI is a Partner AddOn — part of the same family of ready-to-install extensions available through the [Beefree SDK Partner AddOns directory](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/partner-addons-directory). Like other Partner AddOns, it is installed and configured directly from the Beefree SDK Developer Console, without any changes to your integration code. For a general walkthrough of how Partner AddOns work, see [Installing Partner AddOns](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/installing-partner-addons).
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2026-05-04 at 18.48.40.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-05-04 at 18.48.40.png" alt=""><figcaption></figcaption></figure>
 
 The Beefree AI AddOn is a ready-made conversational agent that enables advanced workflows in the Beefree SDK email builder. Your users can prompt the agent to:
 
