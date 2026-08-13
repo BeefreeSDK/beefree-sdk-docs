@@ -33,7 +33,7 @@ To active alternate text generation with AI in your Beefree SDK Developer Consol
 
 **Note:** If you do not yet have an Azure API Key and Endpoint, navigate to the [Microsoft Azure Configuration Steps](./#microsoft-azure-configuration-steps) of this guide.
 
-<figure><img src="../../.gitbook/assets/CleanShot-2023-11-03-at-12.26.07.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CleanShot-2023-11-03-at-12.26.07.png" alt=""><figcaption></figcaption></figure>
 
 ### Microsoft Azure Configuration Steps <a href="#microsoft-azure-configuration-steps" id="microsoft-azure-configuration-steps"></a>
 
@@ -239,11 +239,11 @@ You can reference the difference in appearance in the following images.
 
 Image 1.0 displays an example of the wand when the feature is not active.
 
-<figure><img src="../../.gitbook/assets/2image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/2image.png" alt=""><figcaption></figcaption></figure>
 
 Image 2.0 displays an example of the AI wand icon when the feature is active.
 
-<figure><img src="../../.gitbook/assets/3image-1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/3image-1.png" alt=""><figcaption></figcaption></figure>
 
 ## Disable AddOn Per User <a href="#disable-addon-per-user" id="disable-addon-per-user"></a>
 

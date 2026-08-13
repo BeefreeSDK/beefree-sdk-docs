@@ -12,7 +12,7 @@ This AddOn is available on Beefree SDK [Enterprise](https://developers.beefree.i
 
 ## Overview
 
-The Custom AI Writing Assistant AddOn enables host applications to integrate their own LLM models with Beefree SDK. This allows host applications to provide their end users with advanced AI writing capabilities that are specific to their domains. Using the [Content Dialog](../../other-customizations/advanced-options/content-dialog.md), this AddOn employs the same entry points as the [AI writing assistant](./), allowing full control over the AI experience within your application. Once your Custom AI Writing Assistant AddOn is fully configured, the [Content Dialog](../../other-customizations/advanced-options/content-dialog.md) displays the modal you created within the user interface when end users click the **Write with AI** button in the sidebar.
+The Custom AI Writing Assistant AddOn enables host applications to integrate their own LLM models with Beefree SDK. This allows host applications to provide their end users with advanced AI writing capabilities that are specific to their domains. Using the [Content Dialog](../../other-customizations/advanced-options/content-dialog.md), this AddOn employs the same entry points as the [AI writing assistant](ai-writing-assistant/), allowing full control over the AI experience within your application. Once your Custom AI Writing Assistant AddOn is fully configured, the [Content Dialog](../../other-customizations/advanced-options/content-dialog.md) displays the modal you created within the user interface when end users click the **Write with AI** button in the sidebar.
 
 This AddOn is compatible with the following modules:
 
@@ -61,7 +61,7 @@ Take the following steps to install and enable the AddOn:
 **Note:** You can revisit this page in the future by clicking **Edit** in the AddOn card to turn the AddOn on or off as needed.
 
 {% hint style="warning" %}
-Once you activate the **Custom AI Writing Assistant AddOn** with your own LLM, you cannot activate the [AI Writing Assistant AddOn](./), which uses either OpenAI or Azure OpenAI models. Only one of these two AddOns can be active.
+Once you activate the **Custom AI Writing Assistant AddOn** with your own LLM, you cannot activate the [AI Writing Assistant AddOn](ai-writing-assistant/), which uses either OpenAI or Azure OpenAI models. Only one of these two AddOns can be active.
 {% endhint %}
 
 ### **Content Dialog Configuration**
@@ -181,5 +181,5 @@ This will update the button text from "Write with AI" to "Generate copy."
 
 Consider the following when using the Custom AI Writing Assistant AddOn:
 
-* You can reference the [AI Writing Assistant](./) [End user documentation](https://docs.beefree.io/end-user-guide/ai-writing-assistant) as an example of how engaging with AI features looks like for end users.
+* You can reference the [AI Writing Assistant](ai-writing-assistant/) [End user documentation](https://docs.beefree.io/end-user-guide/ai-writing-assistant) as an example of how engaging with AI features looks like for end users.
 * We are committed to maintaining the highest standards of security to protect your data at every level. For more information on our security practices, visit our [GDPR and Cybersecurity page](https://developers.beefree.io/gdpr-and-cybersecurity).

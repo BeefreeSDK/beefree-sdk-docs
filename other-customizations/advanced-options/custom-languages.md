@@ -195,7 +195,7 @@ translations: {
 
 ## Overriding AI Writing Assistant Default Text
 
-You can override the default text for the [AI Writing Assistant](../../ai-and-mcp/ai-writing-assistant/#customize-prompt-suggestions). The following configuration sample includes the AI component and the various default text fields you can override.
+You can override the default text for the [AI Writing Assistant](../../ai-and-mcp/ai-addons/ai-writing-assistant/#customize-prompt-suggestions). The following configuration sample includes the AI component and the various default text fields you can override.
 
 ```typescript
 const beeConfig = {

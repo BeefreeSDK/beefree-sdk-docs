@@ -16,13 +16,15 @@ Beefree SDK's AI AddOns are plug-and-play AI features you can install and launch
 
 You can install AI AddOns directly from the Developer Console and right away offer them to your end users.
 
-| AddOn                                                                              | What it does                                                                                                               |
-| ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| [AI Writing Assistant](ai-writing-assistant/)                                      | Adds a "Write with AI" button to Title, Paragraph, List, and Button blocks. Powered by OpenAI, Azure OpenAI, or Anthropic. |
-| [Custom AI Writing Assistant](ai-writing-assistant/custom-ai-writing-assistant.md) | Connect your own LLM to the "Write with AI" experience, with full control over the prompt and modal UI.                    |
-| [Stability AI (Text to image)](stability-ai.md)                                    | Text-to-image generation, directly inside the builder.                                                                     |
-| [Generate Alt Text with AI](generate-alt-text-with-ai/)                            | Automatically generates alt text for images using computer vision.                                                         |
-| [DeepL (AI-powered translation)](deepl.md)                                         | Instantly translates content across multi-language templates.                                                              |
+| AddOn                                                                   | What it does                                                                                                               |
+| ----------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| [AI Writing Assistant](ai-addons/ai-writing-assistant/)                 | Adds a "Write with AI" button to Title, Paragraph, List, and Button blocks. Powered by OpenAI, Azure OpenAI, or Anthropic. |
+| [Custom AI Writing Assistant](ai-addons/custom-ai-writing-assistant.md) | Connect your own LLM to the "Write with AI" experience, with full control over the prompt and modal UI.                    |
+| [Stability AI (Text to image)](ai-addons/stability-ai.md)               | Text-to-image generation, directly inside the builder.                                                                     |
+| [Generate Alt Text with AI](ai-addons/generate-alt-text-with-ai/)       | Automatically generates alt text for images using computer vision.                                                         |
+| [DeepL (AI-powered translation)](ai-addons/deepl.md)                    | Instantly translates content across multi-language templates.                                                              |
+
+[Learn more about the Beefree AI partner AddOns.](ai-addons/)
 
 #### ✨Beefree AI: email generation copilot
 

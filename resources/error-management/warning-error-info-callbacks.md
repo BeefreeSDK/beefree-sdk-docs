@@ -130,7 +130,7 @@ This section lists and describes the possible error code and their corresponding
 
 ## `onInfo` Callback
 
-The `onInfo` callback is specifically designed for the [AI Writing Assistant AddOn](../../ai-and-mcp/ai-writing-assistant/) and provides real-time usage data with each response, without storing or tracking the information. It also notifies your application when a user clicks on **Apply** for any AI-generated text suggestion.
+The `onInfo` callback is specifically designed for the [AI Writing Assistant AddOn](../../ai-and-mcp/ai-addons/ai-writing-assistant/) and provides real-time usage data with each response, without storing or tracking the information. It also notifies your application when a user clicks on **Apply** for any AI-generated text suggestion.
 
 To configure this in your app, add the `onInfo` callback to your [beeConfig](../../getting-started/readme/installation/configuration-parameters/):
 

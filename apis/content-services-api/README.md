@@ -77,7 +77,7 @@ Visit the [Convert API documentation](convert.md) to learn more.
 
 #### **AI Collection**
 
-This category of endpoints requires that you configure an AI Provider within the [Beefree SDK Developer Console](../../ai-and-mcp/ai-writing-assistant/available-providers/). Through the integration with your AI Provider, these endpoints generate the following supporting details for your end users templates:
+This category of endpoints requires that you configure an AI Provider within the [Beefree SDK Developer Console](../../ai-and-mcp/ai-addons/ai-writing-assistant/available-providers/). Through the integration with your AI Provider, these endpoints generate the following supporting details for your end users templates:
 
 * **SMS**: Generates concise text versions (e.g., promotional SMS).
 * **Metadata**: Generates subject lines and preheaders based on a template's content.
