@@ -4,7 +4,38 @@ description: Here you can reference current and past changes to CSS classes.
 
 # CSS Changes
 
-## Release February 2026
+### Release August 2026
+
+Reference the upcoming custom CSS changes in the following expandable section.&#x20;
+
+<details>
+
+<summary>Rich-text editor (TinyMCE) improvements</summary>
+
+#### 1. Stage – Inline Merge tags & content list
+
+**UI Area**: Stage\
+**Sub-element**: Inline merge tags (`@` key) and merge content lists (`!` key)\
+**Classnames Removed**:&#x20;
+
+* `btn-group`
+* `dropdown-custom`
+* `dropdown-custom--cs`
+* `dropdown`
+* `mentions--cs`
+* `BeeMention_*` (Internal class, not supposed to be used)
+
+**New Classnames**:
+
+* `tiny-mention-menu--cs`
+* `tiny-mention-option--cs`
+* `tiny-mention-noresults--cs`
+
+_Reminder: If you're using Custom CSS, please use "change safe" class names (marked with '--cs' suffix) to customize the look and feel of your editor. Class names without the '--cs' suffix may change without prior notice in the future._
+
+</details>
+
+### Release February 2026
 
 Reference the upcoming custom CSS changes in the following expandable section.&#x20;
 
@@ -132,7 +163,7 @@ _Reminder: If you're using Custom CSS, please use "change safe" class names (mar
 
 </details>
 
-## Release December 2025
+### Release December 2025
 
 Reference the upcoming CSS changes to the Preview Widgets in the following expandable section.
 
@@ -214,7 +245,7 @@ The button width control now uses updated wrapper `div`s for improved DOM consis
 
 </details>
 
-## Release July 2025
+### Release July 2025
 
 Reference the upcoming CSS changes to the Preview Widgets in the following expandable section.
 
@@ -622,7 +653,7 @@ Reference the upcoming CSS changes to the Rows Tab in the following expandable s
 
 </details>
 
-## Release May 2025
+### Release May 2025
 
 Reference the CSS changes for May 2025 in the following expandable section.
 
@@ -852,7 +883,7 @@ Markup Variations
 
 </details>
 
-## Release March 2025
+### Release March 2025
 
 This section includes a reference of the new classnames released in March 2025. The new classnames will be related to [Mobile Badge](css-changes.md#mobile-badge-or-scheduled-for-march-2025) and [Confirmation Dialogs](css-changes.md#confirmation-dialogs-or-scheduled-for-march-2025). For more details, click the **>** symbol to expand the expandable content sections containing additional information.&#x20;
 
@@ -1127,7 +1158,7 @@ Reference the classnames added in the following expandable section.
 
 Reference the corresponding [Custom Translations for Confirm Upload Existing File](../../advanced-options/custom-languages.md#sample-language-file-9).
 
-## January 30, 2025 Releases
+### January 30, 2025 Releases
 
 ### Display Conditions Widget and Modal | Release on January 30, 2025
 
@@ -1187,7 +1218,7 @@ Reference the corresponding [Custom Translations for Confirm Upload Existing Fil
 
 </details>
 
-## December 5, 2024 Releases
+### December 5, 2024 Releases
 
 ### Add New Social and Form | Released on December 5th
 
@@ -1362,7 +1393,7 @@ Markup Variations:
 
 </details>
 
-## November 7, 2024 Releases
+### November 7, 2024 Releases
 
 ### Mobile Stage Mode, History, and Empty States | Released on November 7th
 
@@ -1586,7 +1617,7 @@ Markup Variations:
 
 </details>
 
-## October 10, 2024 Releases
+### October 10, 2024 Releases
 
 ### Form Edit Modal | Released on October 10th
 
