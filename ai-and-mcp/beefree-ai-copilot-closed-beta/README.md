@@ -37,7 +37,6 @@ To enable the AddOn, contact your Beefree SDK Customer Success Manager. Once ena
 
 #### Prerequisites
 
-* An active Beefree SDK Superpowers or Enterprise plan.
 * An API key from one of the [supported AI providers](https://docs.google.com/document/d/1gyhEZZl3x-CzSF8iLBjpk3-PN4KHAilkf6kiyNSf4xI/edit#supported-providers).
 * The AI AddOn enabled in the Developer Console for your application.
 
