@@ -106,7 +106,7 @@ If you’re on an Essential or Core plan, these changes will go live in your app
 
 If you are on a Superpowers plan, the updated rich text editor will roll out to all your applications on September 17, 2026.&#x20;
 
-You will have the **chance to test the updates ahead of time**. Starting August 27, you’ll find a toggle in your Developer Console that lets you enable the new rich-text editor experience in any of your applications, so you can preview the experience and any impact it might have on your Custom CSS before we enforce the upgrade (and remove the preview toggle) on September 17.
+You will have the **chance to test the updates ahead of time**. Starting August 27, you’ll find a toggle in the "Configure application" page of your Developer Console that lets you enable the new rich-text editor experience in any of your applications, so you can preview the experience and any impact it might have on your Custom CSS before we enforce the upgrade (and remove the preview toggle) on September 17.
 
 <figure><img src="../.gitbook/assets/Toggle.png" alt=""><figcaption></figcaption></figure>
 
