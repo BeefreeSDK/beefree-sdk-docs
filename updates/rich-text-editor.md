@@ -2,7 +2,7 @@
 
 We are improving the rich-text editor experience for your email, page and popup builders. Beefree SDK’s updated editor engine (based on TinyMCE) brings a more consistent, modern look across all editor dialogs. It also ensures a lighter HTML output of text blocks, while confirming our ongoing commitment to keeping all tools behind Beefree SDK updated and secure.
 
-Below is a preview of what looks and behaves differently, so you can adjust your user-facing documentation and, if available in your subscription, arrange any necessary custom CSS and contentDialog modifications. Please note that we made some minor modifications to our CSS classes, as you can see in our [changelog](https://docs.beefree.io/beefree-sdk/~/changes/607/other-customizations/appearance/custom-css/css-changes#release-august-2026).
+Below is a preview of what looks and behaves differently, so you can adjust your user-facing documentation and, if available in your subscription, arrange any necessary custom CSS and contentDialog modifications. Please note that we made some minor modifications to our CSS classes, as you can see in our [changelog](https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css/css-changes#release-august-2026).
 
 {% hint style="info" %}
 If you're using Custom CSS, please only stick to "change safe" class names (marked with the '--cs' suffix) to customize the look and feel of your editor. Class names without the '--cs' suffix may change without prior notice in the future.
