@@ -1,31 +1,31 @@
-# Beefree AI copilot (closed beta)
+# AI Co-pilot (closed beta)
 
 {% hint style="warning" %}
 **Join the Beta program and get early access to the Beefree AI AddOn**
 
-Beefree AI is currently in closed beta and only accessible to a selected number of early access customers. If you're interested in joining the beta, or if you'd like us to notify you when the tool is available to everyone, [please let us know](https://growens.typeform.com/to/Eji2zu9q).
+Beefree SDK's AI Co-Pilot is currently in closed beta and only accessible to a selected number of early access customers. If you're interested in joining the beta, or if you'd like us to notify you when the tool is available to everyone, [please let us know](https://growens.typeform.com/to/Eji2zu9q).
 
 [I'd love to join the Beta →](https://growens.typeform.com/to/Eji2zu9q)
 
 The Beefree SDK Team
 {% endhint %}
 
-Beefree AI is the out-of-the-box AI copilot that your user can prompt to create email designs, edit layouts, generate variations, and review templates. You install it in the Developer Console, choose a supported provider, and configure your model to make it available for your end users. Hosts can also persist chat history to continue guided sessions across visits and future revisions.
+Beefree SDK's AI Co-Pilot is the out-of-the-box AI agent that your user can prompt to create email designs, edit layouts, generate variations, and review templates. You install it in the Developer Console, choose a supported provider, and configure your model to make it available for your end users. Hosts can also persist chat history to continue guided sessions across visits and future revisions.
 
 ### Overview
 
-Beefree AI is a Partner AddOn — part of the same family of ready-to-install extensions available through the [Beefree SDK Partner AddOns directory](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/partner-addons-directory). Like other Partner AddOns, it is installed and configured directly from the Beefree SDK Developer Console, without any changes to your integration code. For a general walkthrough of how Partner AddOns work, see [Installing Partner AddOns](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/installing-partner-addons).
+Beefree AI is installed as a Partner AddOn — part of the same family of ready-to-install extensions available through the [Beefree SDK Partner AddOns directory](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/partner-addons-directory). It is installed and configured directly from the Beefree SDK Developer Console, without any changes to your integration code. For a general walkthrough of how Partner AddOns work, see [Installing Partner AddOns](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/installing-partner-addons).
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-05-04 at 18.48.40.png" alt=""><figcaption></figcaption></figure>
 
-The Beefree AI AddOn is a ready-made conversational agent that enables advanced workflows in the Beefree SDK email builder. Your users can prompt the agent to:
+The AI Co-Pilot is a ready-made conversational agent that enables advanced workflows in the Beefree SDK email builder. Your users can prompt the agent to:
 
 * **create full** **email designs** from scratch
 * **edit existing designs**, for example by adding a content block, changing the structure, or switching the color palette
 * **generate content variations** while preserving core brand elements
 * **check an existing template** for quality or accessibility issues, for example missing image links or alt text
 
-Unlike the [AI Writing Assistant](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/ai-writing-assistant), which targets individual content blocks, this AddOn surfaces a "Create with AI" panel. Thanks to this, your users can generate, iterate on, and apply content across their design in a guided chat experience within the Beefree email builder embedded in your application.
+Unlike the [AI Writing Assistant](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/ai-writing-assistant), which targets individual content blocks, the AI Co-Pilot surfaces a "Create with AI" panel. Thanks to this, your users can generate, iterate on, and apply content across their design in a guided chat experience within the Beefree email builder embedded in your application.
 
 End users can always manually edit any design the agent generates. That keeps the workflow collaborative: AI helps your users move faster, while they stay in control as creative directors, shaping the final result to match their vision.
 
@@ -33,7 +33,7 @@ The AddOn is registered as `ai-agent` in the standard `addOns` array passed to `
 
 ### Activation
 
-To enable the AddOn, contact your Beefree SDK Customer Success Manager. Once enabled for your application, you can configure it through the Beefree SDK Developer Console under **AddOns → Beefree AI AddOn.**
+To enable Beefree SDK's AI Co-Pilot, contact your Beefree SDK Customer Success Manager. Once enabled for your application, you can configure it through the Beefree SDK Developer Console under **AddOns → Beefree AI AddOn.**
 
 #### Prerequisites
 
@@ -57,7 +57,7 @@ Once you’ve completed the setup, toggle on Enable, then click Save.
 
 #### Supported Providers
 
-The Beefree AI AddOn currently supports three AI providers.\
+The AI Co-Pilot currently supports three AI providers.\
 \
 Three models are marked as Recommended—they offer the best trade-off between cost, speed, and output quality for typical builder workflows. This is not a quality ranking: higher-tier models (Claude Opus 4.7, GPT-5.4, Gemini 2.5 Pro) will generally produce stronger results on demanding tasks, but come with higher cost and latency. For most end-user sessions in a builder context, the recommended models are a good starting point.
 
@@ -97,7 +97,7 @@ Available models:
 | Gemini 2.5 Flash \[recommended] | `gemini-2.5-flash`      |
 | Gemini 2.5 Flash Lite           | `gemini-2.5-flash-lite` |
 
-### AddOn Configuration
+### AI Co-Pilot Configuration
 
 Add an entry with `id: 'ai-agent'` to `beeConfig.addOns`. All `settings` fields are optional.
 
@@ -230,9 +230,9 @@ BeePlugin.create(token, beeConfig, (instance) => {
 })
 ```
 
-#### Disable the AddOn Per User<br>
+#### Disable the AI Co-Pilot Per User
 
-To disable the AI AddOn for a specific user, set `enabled: false` on the AddOn entry. To re-enable it, change the value to `true`.
+To disable the AI Co-Pilot for a specific user, set `enabled: false` on the AddOn entry. To re-enable it, change the value to `true`.
 
 ```
 const beeConfig = {

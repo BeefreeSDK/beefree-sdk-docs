@@ -1,16 +1,16 @@
-# FAQs
+# Beefree AI FAQs
 
-#### **What is the Beefree AI AddOn?**&#x20;
+#### **What is Beefree SDK's AI Co-Pilot ?**&#x20;
 
-The Beefree AI AddOn is a Partner AddOn available through the Beefree SDK. Once installed, it surfaces a conversational AI panel directly inside the builder within your application, letting end users generate, iterate on, and apply content across their email design, all without leaving the editor.
+The AI Co-Pilot is a ready-made promt-to-design agent available in the email builder. It is installed as  a Partner AddOn in Developer Console. Once installed, it surfaces a conversational AI panel directly inside the builder within your application, letting end users generate, iterate on, and apply content across their email design, all without leaving the editor.
 
 #### **How is this different from the AI Writing Assistant?**&#x20;
 
-The AI Writing Assistant targets individual content blocks. The AI AddOn goes further, surfacing a full conversational agent panel that allows users to work across their entire design in a guided chat experience.
+The AI Writing Assistant targets individual content blocks. The AI Co-Pilot goes further, surfacing a full conversational agent panel that allows users to work across their entire design in a guided chat experience.
 
 #### **How do I get access?**&#x20;
 
-The Beefree AI AddOn is in closed beta. Once you get accepted into the beta, log in to the Beefree SDK Developer Console, navigate to your application, and open the AddOns section. From there, click Browse AddOns, select the Beefree AI AddOn, and click Install. Once installed, select your provider and model, enter your API key, toggle Enable, and save. Make sure you have an API key from your chosen AI provider before starting.
+The AI Co-Pilot is in closed beta. Once you get accepted into the beta, log in to the Beefree SDK Developer Console, navigate to your application, and open the AddOns section. From there, click Browse AddOns, select the Beefree AI AddOn, and click Install. Once installed, select your provider and model, enter your API key, toggle Enable, and save. Make sure you have an API key from your chosen AI provider before starting.
 
 #### **Do I need my own AI provider API key?**&#x20;
 
@@ -32,16 +32,14 @@ Yes. The `maxIterations` setting caps the agent's auto-continue loop, with a def
 
 Yes, though persistence is the responsibility of the host application. The SDK broadcasts the full conversation through the `onInfo` callback after each turn. You store it, then pass it back as `initialMessages` on the next session.
 
-#### **Can I disable the AddOn for specific users?**&#x20;
+#### **Can I disable the Co-Pilot for specific users?**&#x20;
 
-Yes. Set `enabled: false` on the AddOn entry in `beeConfig` for any user you want to exclude.
+Yes. Set `enabled: false` on the AI Co-Pilot entry in `beeConfig` for any user you want to exclude.
 
 #### **Is this available in production?**&#x20;
 
-Not yet. The AI AddOn is currently in closed beta for selected partners. The interface, configuration options, supported models, and underlying behavior are all subject to change. Do not use it in production. Share feedback directly with your Beefree customer success manager.
+Not yet. The AI Co-Pilot is currently in closed beta for selected partners. The interface, configuration options, supported models, and underlying behavior are all subject to change. Do not use it in production. Share feedback directly with your Beefree customer success manager.
 
 #### **What is the applicable use policy?**
 
 During the beta, you may use the MCP Server and its tools for development, prototyping, and evaluation. Access is subject to Beefree SDK's standard Terms of Service. Abuse or production-scale misuse will result in suspension of access.
-
-<br>
