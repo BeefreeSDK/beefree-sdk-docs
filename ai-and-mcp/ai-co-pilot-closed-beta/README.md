@@ -1,7 +1,7 @@
-# AI Co-pilot (closed beta)
+# AI Co-Pilot (closed beta)
 
 {% hint style="warning" %}
-**Join the Beta program and get early access to the Beefree AI AddOn**
+**Join the Beta program and get early access to Beefree SDK's AI Co-Pilot**
 
 Beefree SDK's AI Co-Pilot is currently in closed beta and only accessible to a selected number of early access customers. If you're interested in joining the beta, or if you'd like us to notify you when the tool is available to everyone, [please let us know](https://growens.typeform.com/to/Eji2zu9q).
 
@@ -14,7 +14,9 @@ Beefree SDK's AI Co-Pilot is the out-of-the-box AI agent that your user can prom
 
 ### Overview
 
-Beefree AI is installed as a Partner AddOn — part of the same family of ready-to-install extensions available through the [Beefree SDK Partner AddOns directory](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/partner-addons-directory). It is installed and configured directly from the Beefree SDK Developer Console, without any changes to your integration code. For a general walkthrough of how Partner AddOns work, see [Installing Partner AddOns](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/installing-partner-addons).
+Beefree SDK's AI Co-Pilot is installed as a Partner AddOn — part of the same family of ready-to-install extensions available through the [Beefree SDK Partner AddOns directory](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/partner-addons-directory).&#x20;
+
+It is installed and configured directly from the Beefree SDK Developer Console, without any changes to your integration code. For a general walkthrough of how Partner AddOns work, see [Installing Partner AddOns](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/installing-partner-addons).
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-05-04 at 18.48.40.png" alt=""><figcaption></figcaption></figure>
 
