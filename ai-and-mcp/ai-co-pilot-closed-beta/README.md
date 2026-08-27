@@ -31,26 +31,26 @@ Unlike the [AI Writing Assistant](https://docs.beefree.io/beefree-sdk/builder-ad
 
 End users can always manually edit any design the agent generates. That keeps the workflow collaborative: AI helps your users move faster, while they stay in control as creative directors, shaping the final result to match their vision.
 
-The AddOn is registered as `ai-agent` in the standard `addOns` array passed to `BeePlugin.create()`. Message history is surfaced through the existing `onInfo` callback.
+AI Co-Pilot is registered as `ai-agent` in the standard `addOns` array passed to `BeePlugin.create()`. Message history is surfaced through the existing `onInfo` callback.
 
 ### Activation
 
-To enable Beefree SDK's AI Co-Pilot, contact your Beefree SDK Customer Success Manager. Once enabled for your application, you can configure it through the Beefree SDK Developer Console under **AddOns → Beefree AI AddOn.**
+To enable Beefree SDK's AI Co-Pilot, contact your Beefree SDK Customer Success Manager. Once enabled for your application, you can configure it through the Beefree SDK Developer Console under **AddOns → AI Co-Pilot.**
+
+<figure><img src="../../.gitbook/assets/AI Co-Pilot.png" alt=""><figcaption></figcaption></figure>
 
 #### Prerequisites
 
 * An API key from one of the [supported AI providers](https://docs.google.com/document/d/1gyhEZZl3x-CzSF8iLBjpk3-PN4KHAilkf6kiyNSf4xI/edit#supported-providers).
-* The AI AddOn enabled in the Developer Console for your application.
+* AI Co-Pilot enabled in the Developer Console for your application.
 
 #### Configure in the Developer Console
 
 1. Log in to the [Beefree SDK Developer Console](https://developers.beefree.io).
 2. Navigate to your application, then open the AddOns section.
-3. Click on Browse AddOns.
-4. Select the Beefree AI AddOn.
-5. Click Install.
-6. You will then see the AI AddOn available in the installed AddOn section.
-7. Set up your AI AddOn:
+3. Click on Browse AddOns and select **AI Co-Pilot**.
+4. Click Install. You will then see the AI Co-Pilot available in the installed AddOn section.
+5. Set up your AI Co-Pilot:
    * Select your provider.
    * Select your model.
    * Enter your API key.
