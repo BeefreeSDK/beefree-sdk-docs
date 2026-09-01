@@ -14,13 +14,9 @@ An MCP server exposes data or tools to AI models through a standardized interfac
 
 We provide the MCP Server that makes key Beefree SDK functionality accessible to AI agents. The host application is responsible for providing the agent. If you don't have your own agent yet, check out [our sample application using a PydanticAI agent](https://github.com/BeefreeSDK/beefree-sdk-mcp-example-demo), which you can get up and running in under five minutes.
 
-#### What is the purpose of the Beefree SDK MCP Server beta?
-
-The beta lets you explore how AI agents can integrate directly with the Beefree SDK ecosystem — designing, customizing, and validating emails programmatically — while we gather feedback and continue to refine the experience. Your input directly shapes what we prioritize next.
-
 #### Which plans can access the MCP?
 
-The MCP Server is available to all paying customers as an open beta. No waitlist or CSM request is required. If you are on a free plan, you will need to upgrade to access it. Broader availability and plan-based entitlements will be communicated before general availability.
+The MCP Server is available on Essentials, Core, Superpowers, and Enteprise plans.
 
 #### How do I get access?
 
@@ -35,15 +31,11 @@ The Beefree SDK MCP Server supports two ways to connect your AI agent to the edi
 
 Both paths use the same MCP endpoint and tools. See [Installation & Setup](mcp-server-installation-and-setup.md) for full details on each.
 
-#### Who should use the MCP beta?
+#### Who should use the MCP Server?
 
 * Product teams exploring AI-driven content workflows
 * Developers building MCP-capable clients (e.g., IDEs, agents, assistants)
 * Teams that want to streamline design inside automated pipelines
-
-#### Can I use Beefree SDK's MCP Server in production?
-
-We recommend testing and prototyping during the beta. While the server is stable, APIs and access policies may change before general availability, and this version may differ from the final release.
 
 #### Is the MCP feature complete? What are the current limitations?
 
@@ -51,28 +43,12 @@ The MCP integration is still evolving. While you can already perform many email 
 
 * Not all content blocks are supported yet
 * Some block properties and advanced configuration options are not covered
-* Functionality may change as we iterate during the beta
 
 We encourage you to explore the available tools and share feedback — your input helps us prioritize and close gaps.
 
-#### What kind of feedback are you looking for?
-
-All kinds, including:
-
-* How easy it is to discover, understand, and use the tools in the MCP catalog — whether tool names are clear, arguments make sense, and the tool set feels complete for your workflow
-* Coverage gaps (tools you need that aren't exposed yet)
-* Performance of the Check API in real workflows
-* Gaps in documentation or developer experience
-
-Share feedback with your CSM or email [beta-feedback@beefree.io](mailto:beta-feedback@beefree.io).
-
 #### Does the MCP also support the Landing Page Builder or the Popup Builder?
 
-The beta currently focuses on the Beefree SDK Email Builder. Support for the Landing Page and Popup builders is limited, but will be considered for future updates.
-
-#### **What is the** applicable **use policy?**
-
-During the beta, you may use the MCP Server and its tools for development, prototyping, and evaluation. Access is subject to Beefree SDK's standard Terms of Service. Abuse or production-scale misuse will result in suspension of access.
+The MCP Server currently supports the Beefree SDK Email Builder. Support for the Landing Page and Popup builders is limited, but will be considered for future updates.
 
 #### Is my data secure when using MCP?
 
@@ -80,11 +56,11 @@ Yes. MCP calls are authenticated with secure keys, tied to your session, and han
 
 #### I have questions, feedback, or a bug to report. Who should I contact?
 
-Contact your Beefree SDK Customer Success Manager or email [beta-feedback@beefree.io](mailto:beta-feedback@beefree.io). We actively review feedback during the beta, and your input shapes product improvements.
+Contact your Beefree SDK Customer Success Manager or submit a request via our [Help Center](https://devportal.beefree.io/hc/en-us/requests/new). We actively review feedback, and your input shapes product improvements.
 
 #### Are the MCP calls free of charge?
 
-Yes, during the open beta, MCP calls are free. However, please note that you will still be charged by your AI model provider for the agent model usage, as those costs are independent of Beefree's billing. Once the MCP Server reaches general availability, calls will be billed under your CSAPI entitlements. Pricing details will be communicated before that transition.
+Calls are billed under your CSAPI entitlements.
 
 #### How do I balance speed, token usage, and output quality?
 

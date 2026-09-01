@@ -1,11 +1,5 @@
 # MCP Server installation & setup
 
-{% hint style="danger" %}
-**MCP Server v1 is deprecated**
-
-The v1 editor client approach (`mcpEditorClient.enabled = true` + <kbd>/v1/sdk/mcp</kbd> endpoint) is deprecated and will be removed on September 1, 2026. New integrations must use the v2 setup described on this page. If you are on v1, see [Migrating from v1](mcp-server-installation-and-setup.md#migrating-from-v1).
-{% endhint %}
-
 ### Overview
 
 [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) is an open protocol that standardizes how AI agents connect to services that expose tools, resources, and prompts — a universal interface that lets you plug any agent into any integration without bespoke code.
@@ -340,6 +334,17 @@ Use Code Mode when your agent makes many sequential tool calls to reduce API cos
 **Please note**: Code Mode requires your agent to generate valid TypeScript. Implement error handling to gracefully handle partial failures.
 
 ### Migrating from v1
+
+{% hint style="warning" %}
+**Beefree SDK's MCP Server entered General Availability on September 1, 2026**
+
+To make sure your integration stays up and running after the MCP Server graduated from Open Beta on Sept 1 2026, please:
+
+* Ensure you’re using the **latest version of our MCP Server** (v2). If you still use the legacy version, identifiable by the v1 endpoint, please follow the following migration guide. The legacy version was deprecated on September 1, 2026.
+* Switch to **CSAPI keys**. The custom beta API keys which you obtained from the Beefree team were retired on September 1.
+{% endhint %}
+
+Starting September 1, MCP Server calls will count toward your plan's CSAPI totals. There won’t be any additional access costs for using the MCP Server – just standard CSAPI usage amounts in your plan.
 
 The v1 approach used `mcpEditorClient.enabled = true` in the `beeConfig` object to expose the editor to the MCP server, combined with the `/v1/sdk/mcp` endpoint and `x-bee-uid / x-bee-mcp-session-id` headers for routing.
 

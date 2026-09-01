@@ -7,21 +7,8 @@ description: >-
 
 # MCP Server
 
-{% hint style="success" %}
-**Open Beta rollout plan**
-
-Beefree SDK's MCP Server is rolling out to all customers with Essentials, Core, Superpowers and Enterprise plans, with neither waitlist nor approval needed. Follow the [Installation & Setup](mcp-server-installation-and-setup.md) guide to get started.
-{% endhint %}
-
-{% hint style="warning" %}
-**Beefree SDK's MCP Server is entering General Availability on September 1, 2026**
-
-To make sure your integration stays up and running after the MCP Server graduates from Open Beta on Sept 1 2026, please:
-
-* Ensure you’re using the **latest version of our MCP Server**. If you still use the legacy version, identifiable by the v1 endpoint, please follow the [migration guide](https://docs.beefree.io/beefree-sdk/mcp-server/mcp-server-installation-and-setup#migrating-from-v1). The legacy version will be deprecated on September 1, 2026.
-* Switch to **CSAPI keys** before September 1. The custom beta API keys which you obtained from the Beefree team will be retired on September 1.
-
-Starting September 1, MCP Server calls will count toward your plan's CSAPI totals. There won’t be any additional access costs for using the MCP Server – just standard CSAPI usage amounts in your plan.
+{% hint style="info" %}
+Beefree SDK's MCP Server is available on the Essentials, Core, Superpowers and Enterprise plans.  Follow the [Installation & Setup](mcp-server-installation-and-setup.md) guide to get started.
 {% endhint %}
 
 ### Introduction
