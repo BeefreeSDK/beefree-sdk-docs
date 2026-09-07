@@ -90,7 +90,7 @@ Visual restyle only, with all functionality identical to the previous version. T
 | :--------------------------------------------: | :--------------------------------------------: |
 | ![](<../.gitbook/assets/Color picker old.png>) | ![](<../.gitbook/assets/Color picker new.jpg>) |
 
-We replaced the bipartite color picker with a single new component, functionally equivalent to the previous one.
+We replaced the bipartite color picker with a single new component, functionally equivalent to the previous one.  If you rely on [Advanced Permissions](../other-customizations/advanced-options/advanced-permissions.md), please note that the `forecolor` and `backcolor` components are now respectively called `forecolorPlugin` and `backcolorPlugin`.
 
 ### Release plan & testing
 
