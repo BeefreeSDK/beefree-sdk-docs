@@ -16,12 +16,12 @@ If you’re on another plan type, the latest version of the Beefree SDK will aut
 
 Enterprise Version Control gives you control over when Beefree SDK updates are applied to your applications. Rather than receiving releases automatically on Beefree's timeline, you can decide when each new SDK version takes effect — per application, on your own schedule. This includes both Development and Production applications.
 
-Because you have control over the SDK release timing, you can, for example:&#x20;
+Because you decide when SDK releases apply, you can, for example:&#x20;
 
-* Decide if you’d like to take advantage of new SDK features as soon as possible — or if you prefer fewer releases
-* Give your team more time for QA (and only upgrade your production application once QA in your development application is completed)
-* Align SDK releases with your internal release calendar&#x20;
-* Prevent SDK releases from reaching your production applications during high-traffic periods (e.g. during the holiday season)
+* Take control of when changes reach production — ship new features as soon as they're released, or hold them until the timing is right for your users. You set the cadence
+* Give your team more time to align internally on documentation, user education, and pricing changes before you roll out new functionality
+* Maintain a predictable QA process. A fixed version means repeatable tests and time to review new AI-assisted capabilities before your users encounter them
+* Keep releases out of production during high-traffic periods, such as the holiday season, and add a layer of insurance for the rare case where a release causes problems
 
 ### How version control works
 
