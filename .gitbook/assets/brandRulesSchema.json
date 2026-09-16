@@ -1,0 +1,1509 @@
+{
+  "$id": "brandRulesSchema",
+  "type": "object",
+  "properties": {
+    "presets": {
+      "type": "object",
+      "properties": {
+        "blocks": {
+          "type": "object",
+          "properties": {
+            "paragraph": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "color": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontFamily": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontSize": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontWeight": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "lineHeight": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "textAlign": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "direction": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "letterSpacing": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "padding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobileFontSize": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobileAlign": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobilePadding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "linkColor": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "paragraphSpacing": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "html": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "hideOnMobile": {
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "title": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "color": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontFamily": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontSize": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontWeight": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "lineHeight": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "textAlign": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "direction": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "letterSpacing": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "padding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobileFontSize": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobileAlign": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobilePadding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "linkColor": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "headingLevel": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "hideOnMobile": {
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "list": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "color": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontFamily": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontSize": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontWeight": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "lineHeight": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "textAlign": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "direction": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "letterSpacing": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "padding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobileFontSize": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobileAlign": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobilePadding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "linkColor": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "liSpacing": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "liIndent": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "listStyleType": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "listStylePosition": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "listType": {
+                        "type": "string",
+                        "enum": [
+                          "ul",
+                          "ol"
+                        ]
+                      },
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "startFrom": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "hideOnMobile": {
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "image": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "padding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "src": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "alt": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "href": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "align": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "borderRadius": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "width": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 100
+                      },
+                      "hideOnMobile": {
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "button": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "color": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontFamily": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontSize": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontWeight": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "lineHeight": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "textAlign": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "direction": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "letterSpacing": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "padding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobileFontSize": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobileAlign": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobilePadding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "backgroundColor": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "borderRadius": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "borderTop": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "borderRight": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "borderBottom": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "borderLeft": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "width": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "maxWidth": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "href": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "hideOnMobile": {
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "social": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "padding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "textAlign": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobileAlign": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobilePadding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "iconStyle": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "iconSpacing": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "align": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "socialIcons": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "uniqueItems": true
+                      },
+                      "iconSize": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "hideOnMobile": {
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "icon": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "padding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobileFontSize": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobileAlign": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobilePadding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "color": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontFamily": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontSize": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontWeight": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "textAlign": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "itemSpacing": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "iconSpacing": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "iconHeight": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "hideOnMobile": {
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "type": "boolean"
+                      },
+                      "icons": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "src"
+                          ],
+                          "properties": {
+                            "src": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "alt": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "text": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "textPosition": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "width": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "height": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "href": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "target": {
+                              "type": "string",
+                              "minLength": 1
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "spacer": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "height": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "hideOnMobile": {
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "divider": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "padding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "line": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "width": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "align": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "hideOnMobile": {
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "table": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "color": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontFamily": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontSize": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontWeight": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "lineHeight": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "textAlign": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "direction": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "letterSpacing": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "padding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "linkColor": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "backgroundColor": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "border": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "alternateRowBackgroundColor": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "headersFontSize": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "headersFontWeight": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "headersTextAlign": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "headersBackgroundColor": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "headersColor": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "headers": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "cells"
+                          ],
+                          "properties": {
+                            "cells": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "html"
+                                ],
+                                "properties": {
+                                  "html": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "rows": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "cells"
+                          ],
+                          "properties": {
+                            "cells": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "html"
+                                ],
+                                "properties": {
+                                  "html": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "hideOnMobile": {
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "menu": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "padding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "color": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontFamily": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontSize": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fontWeight": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "linkColor": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "textAlign": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "letterSpacing": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "separator": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "hideOnMobile": {
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "type": "boolean"
+                      },
+                      "layout": {
+                        "type": "string",
+                        "enum": [
+                          "horizontal",
+                          "vertical"
+                        ]
+                      },
+                      "itemsSpacing": {
+                        "type": "object",
+                        "properties": {
+                          "paddingTop": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "paddingRight": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "paddingBottom": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "paddingLeft": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      },
+                      "hamburger": {
+                        "type": "object",
+                        "properties": {
+                          "mobile": {
+                            "type": "boolean"
+                          },
+                          "foregroundColor": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "backgroundColor": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "iconSize": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "iconType": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      },
+                      "mobileStyles": {
+                        "type": "object",
+                        "properties": {
+                          "textAlign": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "mobilePadding": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "fontSize": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      },
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "text": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "link": {
+                              "type": "object",
+                              "properties": {
+                                "href": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "target": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "title": {
+                                  "type": "string",
+                                  "minLength": 1
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "video": {
+              "type": "object",
+              "propertyNames": {
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "padding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mobilePadding": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "src": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "thumbSrc": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "thumbAlt": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "thumbRatio": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "iconSrc": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "iconSize": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mode": {
+                        "type": "string",
+                        "enum": [
+                          "embedded",
+                          "thumbnail",
+                          "custom"
+                        ]
+                      },
+                      "controls": {
+                        "type": "boolean"
+                      },
+                      "loop": {
+                        "type": "boolean"
+                      },
+                      "hideOnMobile": {
+                        "type": "boolean"
+                      },
+                      "hideOnDesktop": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "rows": {
+          "type": "object",
+          "propertyNames": {
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string",
+                "maxLength": 500
+              },
+              "properties": {
+                "type": "object",
+                "properties": {
+                  "rowBackgroundColor": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "contentAreaBackgroundColor": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "contentAreaBorderLeft": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "contentAreaBorderRight": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "contentAreaBorderTop": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "contentAreaBorderBottom": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "contentAreaBorderRadius": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "contentAreaPadding": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "columnsSpacing": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "columnsBorderRadius": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "hideOnMobile": {
+                    "type": "boolean"
+                  },
+                  "hideOnDesktop": {
+                    "type": "boolean"
+                  },
+                  "verticalAlign": {
+                    "type": "string",
+                    "enum": [
+                      "top",
+                      "middle",
+                      "bottom"
+                    ]
+                  },
+                  "rowBackgroundImage": {
+                    "type": "object",
+                    "properties": {
+                      "url": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "repeat": {
+                        "type": "boolean"
+                      },
+                      "center": {
+                        "type": "boolean"
+                      },
+                      "fit": {
+                        "type": "boolean"
+                      },
+                      "width": {
+                        "type": "string",
+                        "enum": [
+                          "row",
+                          "content area"
+                        ]
+                      }
+                    }
+                  },
+                  "columns": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "weight"
+                      ],
+                      "properties": {
+                        "weight": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 12
+                        },
+                        "columnBackgroundColor": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "columnPadding": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "columnBorderLeft": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "columnBorderRight": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "columnBorderTop": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "columnBorderBottom": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "columns": {
+          "type": "object",
+          "propertyNames": {
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string",
+                "maxLength": 500
+              },
+              "properties": {
+                "type": "object",
+                "properties": {
+                  "columnBackgroundColor": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "columnPadding": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "columnBorderLeft": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "columnBorderRight": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "columnBorderTop": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "columnBorderBottom": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "settings": {
+          "type": "object",
+          "propertyNames": {
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string",
+                "maxLength": 500
+              },
+              "properties": {
+                "type": "object",
+                "properties": {
+                  "contentAreaWidth": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "contentAreaAlignment": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "backgroundColor": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "contentAreaBackgroundColor": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "fontFamily": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "linkColor": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "permissions": {
+      "type": "object",
+      "properties": {
+        "blocks": {
+          "type": "object",
+          "properties": {
+            "noAdd": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "paragraph",
+                  "title",
+                  "list",
+                  "image",
+                  "button",
+                  "social",
+                  "icon",
+                  "spacer",
+                  "divider",
+                  "table",
+                  "menu",
+                  "video"
+                ]
+              },
+              "uniqueItems": true
+            },
+            "noUpdate": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "paragraph",
+                  "title",
+                  "list",
+                  "image",
+                  "button",
+                  "social",
+                  "icon",
+                  "spacer",
+                  "divider",
+                  "table",
+                  "menu",
+                  "video"
+                ]
+              },
+              "uniqueItems": true
+            },
+            "noDelete": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "paragraph",
+                  "title",
+                  "list",
+                  "image",
+                  "button",
+                  "social",
+                  "icon",
+                  "spacer",
+                  "divider",
+                  "table",
+                  "menu",
+                  "video"
+                ]
+              },
+              "uniqueItems": true
+            }
+          }
+        }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "properties": {
+        "rows": {
+          "type": "object",
+          "properties": {
+            "max": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "min": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "columns": {
+          "type": "object",
+          "properties": {
+            "maxPerRow": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 12
+            }
+          }
+        },
+        "blocks": {
+          "type": "object",
+          "properties": {
+            "max": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "maxPerType": {
+              "type": "object",
+              "properties": {
+                "paragraph": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "title": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "list": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "image": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "button": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "social": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "icon": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "spacer": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "divider": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "table": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "menu": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "video": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

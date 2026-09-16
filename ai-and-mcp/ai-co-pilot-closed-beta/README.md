@@ -10,7 +10,7 @@ Beefree SDK's AI Co-Pilot is currently in closed beta and only accessible to a s
 The Beefree SDK Team
 {% endhint %}
 
-Beefree SDK's AI Co-Pilot is the out-of-the-box AI agent that your user can prompt to create email designs, edit layouts, generate variations, and review templates. You install it in the Developer Console, choose a supported provider, and configure your model to make it available for your end users. Hosts can also persist chat history to continue guided sessions across visits and future revisions.
+Beefree SDK's AI Co-Pilot is the out-of-the-box AI agent that your user can prompt to create email designs, edit layouts, generate variations, and review templates. You install it in the Developer Console, choose a supported provider, and configure your model to make it available for your end users. Hosts can also persist chat history to continue guided sessions across visits and future revisions.&#x20;
 
 ### Overview
 
@@ -26,6 +26,8 @@ The AI Co-Pilot is a ready-made conversational agent that enables advanced workf
 * **edit existing designs**, for example by adding a content block, changing the structure, or switching the color palette
 * **generate content variations** while preserving core brand elements
 * **check an existing template** for quality or accessibility issues, for example missing image links or alt text
+
+If you'd like the Co-Pilot to follow specific brand guardrails, you can work with [Brand Rules](./#using-brand-rules-with-the-ai-co-pilot) to ensure the Co-Pilot's output matches your user's brand.&#x20;
 
 Unlike the [AI Writing Assistant](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/ai-writing-assistant), which targets individual content blocks, the AI Co-Pilot surfaces a "Create with AI" panel. Thanks to this, your users can generate, iterate on, and apply content across their design in a guided chat experience within the Beefree email builder embedded in your application.
 
@@ -57,7 +59,7 @@ To enable Beefree SDK's AI Co-Pilot, contact your Beefree SDK Customer Success M
 
 Once you’ve completed the setup, toggle on Enable, then click Save.
 
-#### Supported Providers
+### Supported providers
 
 The AI Co-Pilot currently supports three AI providers.\
 \
@@ -99,7 +101,7 @@ Available models:
 | Gemini 2.5 Flash \[recommended] | `gemini-2.5-flash`      |
 | Gemini 2.5 Flash Lite           | `gemini-2.5-flash-lite` |
 
-### AI Co-Pilot Configuration
+### AI Co-Pilot configuration
 
 Add an entry with `id: 'ai-agent'` to `beeConfig.addOns`. All `settings` fields are optional.
 
@@ -114,6 +116,7 @@ const beeConfig = {
         systemPrompt,     // string — appended to every chat request
         maxIterations,    // number — auto-continue cap (default: 10)
         loadingPhrases,   // string[] — overrides default cycling loader text
+        brandRules,       // brandRules object
       },
     },
   ],
@@ -121,16 +124,17 @@ const beeConfig = {
 
 ```
 
-#### Settings Reference<br>
+#### Settings reference
 
-| Field             | Type          | Required | Description                                                                                                                                                                                                                                                          |
-| ----------------- | ------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `initialMessages` | message array | No       | Loads a previous conversation at panel mount. Pass back exactly what you received from `onInfo` as `detail.messages` — the shape is identical. Persist that array (e.g. in `localStorage`) and replay it here on the next session. Pass `[]` or omit to start blank. |
-| `systemPrompt`    | `string`      | No       | Forwarded verbatim with every chat request. Use it to inject role, tone, or brand voice instructions.                                                                                                                                                                |
-| `maxIterations`   | `number`      | No       | Caps the agent's auto-continue loop on tool-call turns. Defaults to `10`. Lower it to control cost and latency.                                                                                                                                                      |
-| `loadingPhrases`  | `string[]`    | No       | Replaces the default cycling phrases shown under the loader (e.g. `"Sending request"`, `"Working"`). Phrases cycle per auto-continue turn and are announced via `aria-live`.                                                                                         |
+| Field             | Type                | Required | Description                                                                                                                                                                                                                                                          |
+| ----------------- | ------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `initialMessages` | message array       | No       | Loads a previous conversation at panel mount. Pass back exactly what you received from `onInfo` as `detail.messages` — the shape is identical. Persist that array (e.g. in `localStorage`) and replay it here on the next session. Pass `[]` or omit to start blank. |
+| `systemPrompt`    | `string`            | No       | Forwarded verbatim with every chat request. Use it to inject role, tone, or brand voice instructions.                                                                                                                                                                |
+| `maxIterations`   | `number`            | No       | Caps the agent's auto-continue loop on tool-call turns. Defaults to `10`. Lower it to control cost and latency.                                                                                                                                                      |
+| `loadingPhrases`  | `string[]`          | No       | Replaces the default cycling phrases shown under the loader (e.g. `"Sending request"`, `"Working"`). Phrases cycle per auto-continue turn and are announced via `aria-live`.                                                                                         |
+| `brandRules`      | `brandRules` object | No       | Brand Rules the Co-Pilot must follow (presets, permissions, limits). See the [Brand Rules](../brand-rules-for-ai.md) page for the full schema and logic.                                                                                                             |
 
-#### Receiving Message Updates (`onInfo`)
+#### Receiving message updates (`onInfo`)
 
 The panel's chat history is broadcast through the SDK's top-level `onInfo` callback. Filter by `code` and `detail.handle`:
 
@@ -148,7 +152,7 @@ const beeConfig = {
 
 ```
 
-#### Event Shape
+#### Event shape
 
 | <h4>Field</h4>  | <h4>Value</h4>                                          |
 | --------------- | ------------------------------------------------------- |
@@ -157,7 +161,7 @@ const beeConfig = {
 | `detail.handle` | `"ai-agent"`                                            |
 | detail.messages | Complete chat history — same shape as `initialMessages` |
 
-#### When it Fires
+#### When it fires
 
 * After each auto-continue turn (partial progress is preserved if the user closes the panel mid-iteration).
 * When the model finishes its full response.
@@ -165,7 +169,7 @@ const beeConfig = {
 
 The initial emission caused by seeding the store from `initialMessages` is not echoed back — only real changes trigger the callback.
 
-### Persisting Chat History
+### Persisting chat history
 
 The SDK does not store the conversation itself — persistence is the host application's responsibility. The simplest approach uses `localStorage`:
 
@@ -197,9 +201,9 @@ const beeConfig = {
 
 This produces a conversation that survives page reloads and follows the user across sessions.
 
-### Full Configuration Example
+### Full configuration example
 
-```
+```javascript
 const STORAGE_KEY = 'aiAgent.messages'
 
 const beeConfig = {
@@ -214,6 +218,31 @@ const beeConfig = {
         systemPrompt:    "You write in the brand's friendly, concise voice.",
         maxIterations:   8,
         loadingPhrases:  ['Drafting', 'Tweaking copy', 'Polishing'],
+        brandRules: {
+          presets: {
+            blocks: {
+              button: {
+                'brand-cta': {
+                  description: 'Mandatory brand CTA button style',
+                  properties: {
+                    backgroundColor: '#7747FF',
+                    color: '#FFFFFF',
+                    borderRadius: '24px',
+                  },
+                },
+              },
+            },
+          },
+          permissions: {
+            blocks: {
+              noAdd: ['video'],
+              noDelete: ['menu'],
+            },
+          },
+          limits: {
+            rows: { max: 12 },
+          },
+        },
       },
     },
   ],
@@ -232,7 +261,19 @@ BeePlugin.create(token, beeConfig, (instance) => {
 })
 ```
 
-#### Disable the AI Co-Pilot Per User
+### Using Brand Rules with the AI Co-Pilot
+
+With [Brand Rules](../brand-rules-for-ai.md), you can attach a `brandRules` object when starting an AI editing session. Brand Rules act as guardrails that the Co-Pilot must work within so that the output it generates matches your (or your end users') brand.&#x20;
+
+Please check out the [Brand Rules page](../brand-rules-for-ai.md) for a full overview of the different types of Brand Rules you can set and to access the full JSON Schema for Brand Rules.&#x20;
+
+To make the Co-Pilot work with Brand Rules, you simply pass the `brandRules` object in the AI Agent `settings` section of your config file when starting an AI editing session. Check out the [example above ](./#full-configuration-example)to see what that can look like.
+
+{% hint style="info" %}
+Tip: You can use the [Brand Rules validation endpoint](../brand-rules-for-ai.md#testing-and-validating-your-brand-rules) to validate your Brand Rules JSON before starting an AI editing session with the Co-Pilot.
+{% endhint %}
+
+### Disable the AI Co-Pilot per user
 
 To disable the AI Co-Pilot for a specific user, set `enabled: false` on the AddOn entry. To re-enable it, change the value to `true`.
 
@@ -248,14 +289,14 @@ const beeConfig = {
 }
 ```
 
-### Additional Considerations
+### Additional considerations
 
 * Only one provider can be active per application at a time. You can switch providers at any time from the Developer Console without code changes.
 * The `systemPrompt` field is a powerful lever for brand alignment — use it to enforce tone, language, and content guardrails across all end-user sessions.
 * Lowering `maxIterations` from the default of `10` is recommended in cost-sensitive environments, especially when using larger models such as Claude Opus or GPT-5.4.
 * For data security and privacy information, refer to the [AI Providers and Data Security](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/ai-writing-assistant/data-security) page.
 
-### Related Resources
+### Related resources
 
 * [AI Writing Assistant AddOn](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/ai-writing-assistant) — block-level AI writing, configured separately.
 * [Available Providers — AI Writing Assistant](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/ai-writing-assistant/available-providers)

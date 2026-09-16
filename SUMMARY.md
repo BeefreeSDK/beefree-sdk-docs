@@ -68,6 +68,7 @@
   * [MCP Server tools & capabilities](ai-and-mcp/getting-started/mcp-server-tools-and-capabilities.md "Tools & capabilities")
   * [How to get the best AI output](ai-and-mcp/getting-started/how-to-get-the-best-ai-output.md)
   * [MCP Server FAQs](ai-and-mcp/getting-started/mcp-server-faqs.md "FAQs")
+* [Brand Rules for AI](ai-and-mcp/brand-rules-for-ai.md)
 
 ## APIs
 

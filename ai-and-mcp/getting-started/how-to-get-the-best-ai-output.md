@@ -5,7 +5,7 @@ In our demo example, we provide a full system prompt that includes all these ins
 ### Try Code Mode today (research preview)
 
 {% hint style="info" icon="gear-complex" %}
-We’ve developed a new mode designed to help you do more with less: reduce token usage, improve output quality, and speed up generation. It’s called **Code Mode**, and it’s currently in research preview! [If you’re curious and want to learn more about the benefits of Code Mode, click here](mcp-server-installation-and-setup.md#code-mode-research-preview).
+We’ve developed a new mode designed to help you do more with less: reduce token usage, improve output quality, and speed up generation. It’s called **Code Mode**, and it’s currently in research preview. [If you’re curious and want to learn more about the benefits of Code Mode, click here](mcp-server-installation-and-setup.md#code-mode-research-preview).
 {% endhint %}
 
 ### Use the right models
@@ -102,6 +102,12 @@ Validation Workflow
 • Continue when minor tool errors occur, report limitations
 ```
 {% endcode %}
+
+### **Keep the agent on-brand with Brand Rules**
+
+Prompting alone can get you close to your brand's look and feel, but it doesn't guarantee consistency. If you want the agent's output to reliably match your or your-end users' brand, guardrails work better than instructions.
+
+[Brand Rules](../brand-rules-for-ai.md) let you define approved styles, restrict what the agent can add, update, or delete, and cap how much content a design can hold. Where a `systemPrompt` or natural-language instruction is a suggestion the agent can interpret loosely, `brandRules` are enforced automatically and agent simply can't produce output that violates them. See [Brand Rules](../brand-rules-for-ai.md) for the full schema and setup.
 
 ### Best practices for saving tokens
 

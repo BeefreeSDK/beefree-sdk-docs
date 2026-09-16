@@ -60,6 +60,10 @@ If you want to build truly custom AI experiences, [Beefree SDK's MCP Server](get
 
 Start here with the MCP: [Getting started](getting-started/)
 
+### Keep AI output on brand
+
+When you're adding agentic design functionality to your product, you don't just want to help your users create content faster. You'll also want to make sure the AI-generated content is _actually_ on-brand. [Brand Rules](brand-rules-for-ai.md) help you do just that.
+
 ## Your path, our tech
 
 **Building with a vibe coding or AI-assisted dev tool?**

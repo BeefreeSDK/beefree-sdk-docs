@@ -12,7 +12,7 @@ The Beefree SDK MCP Server exposes the editor, and Check API as callable tools. 
 Beefree SDK's MCP Server support both in-editor and headless use-cases. If you are integrating the MCP in a headless setup, you can follow the [API-managed session](mcp-server-installation-and-setup.md#api-managed-session) path below skipping the third step "Connect the editor"
 {% endhint %}
 
-There are two ways to connect your agent to the editor. The right choice depends on whether [co-editing](../../other-customizations/collaborative-editing/) is enabled on your account:
+There are two ways to connect your agent to the editor. The right choice depends on whether [co-editing](../../other-customizations/collaborative-editing/) is available and enabled on your account:
 
 * [Co-editing](../../other-customizations/collaborative-editing/) **not enabled** → [Editor-managed session](mcp-server-installation-and-setup.md#editor-managed-session): the editor creates a lightweight temporary session on demand via `bee.startMcpSession()`. No backend session management required.
 * [Co-editing](../../other-customizations/collaborative-editing/) **enabled** → [API-managed session](mcp-server-installation-and-setup.md#api-managed-session): your host application creates and manages the session lifecycle via the Headless API. Supports multiple concurrent users, presence indicators, per-change history, and persistent sessions.
@@ -132,6 +132,25 @@ This means users can undo the entire batch of agent changes as one unit, but can
 
 An editor-managed session is ephemeral. Once it ends — by timeout, automated-stop, or manual stop — it cannot be resumed. To start another agent pass on the same template, call `bee.startMcpSession()` again. Each call creates a fresh session with its own `templateId`, timeout and history entry.
 
+#### Brand Rules and Merge Tags
+
+To make the MCP Server work with Brand Rules and Merge Tags in an editor-managed session, set `brandRules` and `mergeTags` at the **root of your editor configuration.** If present there, they're picked up automatically when `bee.startMcpSession()` creates the session.
+
+Here is an example:
+
+{% code overflow="wrap" %}
+```json
+var beeConfig = {
+    mergeTags: [],
+    brandRules: {...}
+};
+```
+{% endcode %}
+
+{% hint style="info" %}
+We suggest you validate your `brandRules` payload with the Brand Rules validation endpoint beforehand to avoid discovering errors only once the session starts.
+{% endhint %}
+
 #### Error handling
 
 If `bee.startMcpSession()` fails, the error is returned in this shape:
@@ -170,17 +189,25 @@ POST https://api.getbee.io/v2/sdk/mcp/template
 
 **Request body**
 
-| Field     | Type   | Description                                                 |
-| --------- | ------ | ----------------------------------------------------------- |
-| template  | object | Optional. The JSON template to initialize the session with. |
-| mergeTags | object | Optional. Merge tags to be resolved within the template.    |
+| Field      | Type   | Description                                                                                                                                                               |
+| ---------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| template   | object | Optional. The JSON template to initialize the session with.                                                                                                               |
+| mergeTags  | object | Optional. Merge tags to be resolved within the template.                                                                                                                  |
+| brandRules | object | Optional. Brand Rules the agent must follow during the session (presets, permissions, limits). See [Brand Rules](../brand-rules-for-ai.md) for the full schema and logic. |
+
+
 
 ```json
 {
   "template": { ... },
-  "mergeTags": { ... }
+  "mergeTags": { ... },
+  "brandRules": { ... }
 }
 ```
+
+To make the MCP Server work with Brand Rules in an API-managed session, pass a `brandRules` object in this request body alongside `template` and `mergeTags`.&#x20;
+
+We recommend validating your `brandRules` payload with the [Brand Rules validation endpoint](../brand-rules-for-ai.md#testing-and-validating-your-brand-rules) before creating the template. This surfaces schema errors up front instead of only when the session starts.
 
 **Response**
 
@@ -331,7 +358,11 @@ In internal benchmarks across five models and three email complexity levels, Cod
 
 Use Code Mode when your agent makes many sequential tool calls to reduce API costs and latency.&#x20;
 
-**Please note**: Code Mode requires your agent to generate valid TypeScript. Implement error handling to gracefully handle partial failures.
+{% hint style="info" %}
+Code Mode requires your agent to generate valid TypeScript. Implement error handling to gracefully handle partial failures.
+{% endhint %}
+
+Code Mode fully supports `brandRules`. Pass it the same way as in the standard API-managed or editor-managed paths above; the agent's generated scripts are validated against your Brand Rules guardrails like any other session.
 
 ### Migrating from v1
 

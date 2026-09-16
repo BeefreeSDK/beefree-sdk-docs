@@ -76,6 +76,18 @@ Trigger template modifications directly from third-party automation platforms su
 
 …and many more! Feel free to reach out to our team [talk about your use case](mailto:beta-feedback@beefree.io)!
 
+### Using Brand Rules with the MCP Server
+
+If you'd like your AI agent to follow specific brand guardrails when creating or editing designs via the MCP Server, you can work with [Brand Rules](../brand-rules-for-ai.md) to ensure its output matches your (or your end users') brand.
+
+`brandRules` let you define approved styles, restrict what the agent can add, update, or delete, and cap how much content a design can hold. See the [dedicated page](../brand-rules-for-ai.md) for the full schema and logic.
+
+To make the MCP Server work with Brand Rules, you simply pass the `brandRules` object when creating your session: in the request body if you're using an [API-managed session](https://docs.beefree.io/beefree-sdk/ai-and-mcp/getting-started/mcp-server-installation-and-setup#api-managed-session), or at the root of your editor configuration if you're using an [editor-managed session](https://docs.beefree.io/beefree-sdk/ai-and-mcp/getting-started/mcp-server-installation-and-setup#editor-managed-session). It set there, it'll be then picked up automatically when `bee.startMcpSession()` runs. This works the same way whether you're connecting via the standard MCP tools or via [Code Mode](https://docs.beefree.io/beefree-sdk/ai-and-mcp/getting-started/mcp-server-installation-and-setup#code-mode).
+
+{% hint style="info" %}
+Tip: Use the [Brand Rules validation endpoint](../brand-rules-for-ai.md#testing-and-validating-your-brand-rules) to validate your Brand Rules JSON before starting an MCP session. This avoids discovering validation errors only once the session is already starting.
+{% endhint %}
+
 ### Sample project
 
 A sample implementation using a [PydanticAI](https://ai.pydantic.dev/) agent connected to the Beefree SDK's MCP Server. Supports Gemini, OpenAI, and Anthropic as LLM providers.
