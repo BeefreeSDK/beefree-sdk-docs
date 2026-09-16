@@ -80,6 +80,7 @@
   * [AI Collection](apis/content-services-api/ai-collection.md)
   * [Brand Style](apis/content-services-api/brand-style-management.md)
   * [Check](apis/content-services-api/check.md)
+  * [File Manager](apis/content-services-api/file-manager.md)
 * [Template Catalog API](apis/template-catalog-api/README.md)
   * [Authentication](apis/template-catalog-api/authentication.md)
   * [Templates](apis/template-catalog-api/templates.md)

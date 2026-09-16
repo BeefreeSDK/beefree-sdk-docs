@@ -18,9 +18,9 @@ Beefree SDK's API offering includes three APIs. They are the following:
 * [Template Catalog API](../template-catalog-api/)
 * [HTML Importer API](../html-importer-api/)
 
-This section of the documentation discusses the [Content Services API](./#overview-of-content-services-api), which includes resources for exporting, converting, processing, and styling templates within Beefree SDK. This collection of resources extends the functionality of the builder to offer your end users a complete content creation solution.
+This section of the documentation discusses the [Content Services API](./#overview-of-content-services-api), which includes resources for exporting, converting, processing, and styling templates within Beefree SDK as well as managing the files your end users store in the File Manager. This collection of resources extends the functionality of the builder to offer your end users a complete content creation solution.
 
-<table><thead><tr><th>API</th><th>Purpose</th><th width="208.046875">Requires Separate API Key?</th></tr></thead><tbody><tr><td><a href="../html-importer-api/">HTML Importer</a></td><td>Import custom HTML into Beefree SDK</td><td>✅ Yes, <a href="../html-importer-api/authentication.md">see authentication instructions</a>.</td></tr><tr><td><a href="./">CSAPI</a></td><td>Export, convert, and style templates and rows. Use AI to generate metadata, SMS, and summaries.</td><td>✅ Yes, <a href="authentication.md">see authentication instructions</a>.</td></tr><tr><td><a href="../template-catalog-api/">Template Catalog</a></td><td>Access Beefree's catalog of templates</td><td>✅ Yes,<a href="../template-catalog-api/authentication.md"> see authentication instructions</a>.</td></tr></tbody></table>
+<table><thead><tr><th>API</th><th>Purpose</th><th width="208.046875">Requires Separate API Key?</th></tr></thead><tbody><tr><td><a href="../html-importer-api/">HTML Importer</a></td><td>Import custom HTML into Beefree SDK</td><td>✅ Yes, <a href="../html-importer-api/authentication.md">see authentication instructions</a>.</td></tr><tr><td><a href="./">CSAPI</a></td><td>Export, convert, and style templates and rows. Manage the files and folders in your end users' File Manager storage. Use AI to generate metadata, SMS, and summaries.</td><td>✅ Yes, <a href="authentication.md">see authentication instructions</a>.</td></tr><tr><td><a href="../template-catalog-api/">Template Catalog</a></td><td>Access Beefree's catalog of templates</td><td>✅ Yes,<a href="../template-catalog-api/authentication.md"> see authentication instructions</a>.</td></tr></tbody></table>
 
 <figure><img src="../../.gitbook/assets/mermaid-diagram-BeefreeSDK-API-offering.png" alt="" width="375"><figcaption><p>Diagram Displaying Beefree SDK's API Offering</p></figcaption></figure>
 
@@ -30,7 +30,7 @@ The Content Services API is a [REST](https://restfulapi.net/)-based API that ena
 
 Beefree SDK requires that you [authenticate](authentication.md) prior to accessing the Content Services API's resources. You can generate API keys for both production and [development applications](../../getting-started/readme/development-applications.md). API keys associated with development applications are intended for pre-production environments and endpoint testing. They should not be used in production environments.
 
-There are five categories of resources within the Content Services API. Each of these categories includes a group of endpoints with resources to support various workflows.
+There are seven categories of resources within the Content Services API. Each of these categories includes a group of endpoints with resources to support various workflows.
 
 These categories are the following:
 
@@ -40,6 +40,7 @@ These categories are the following:
 * **Row Processing**: Services that operate at the structural level, such as analyzing, modifying, or extracting specific rows or sections within a design for granular control over the content layout.
 * **Brand Style**: Resources focused on enforcing or applying brand guidelines, including applying consistent colors, typography, and spacing rules to ensure brand integrity across all generated content.
 * **Check:** Perform checks on email, page, and row content. Report design feedback to end users.
+* **File Manager**: Services that manage the files and folders in your end users' File Manager storage, including listing, searching, uploading, moving, and deleting, from your own server.
 
 The following diagram displays each of the five categories within the Content Services API, and their corresponding resources.
 
@@ -115,6 +116,24 @@ You can use these endpoints to provide feedback on:
 
 Visit the [Check API documentation](check.md) to learn more.
 
+#### File Manager
+
+The File Manager group of endpoints lets your application manage an end user's files and folders from your own server, without opening a builder. They act on the same file system the File Manager displays inside the editor, so anything your application changes through the API is what your end users see the next time they open it.
+
+This means your application can do anything your end users can do to their own files: create folders, upload, search, move, and delete.
+
+You can use these endpoints to:
+
+* **Integrate asset management into agentic workflows**. When an agent or your own pipeline produces an image, upload it by URL and the file is fetched server-side. Agents can also search an end user's existing files and retrieve their URLs.
+* **Provision an account before its first design**. Create folders and load brand assets during signup, so a new end user opens the builder to their own imagery instead of an empty File Manager.
+* **Move in an existing asset library**. If your end users already have files elsewhere in your product, upload them into the File Manager once and they're available in every design from then on.
+* **Build asset search into your own product**. Search an end user's files by name, anywhere beneath a path you set, and render the results anywhere you need them.
+* **Clean up storage on your own terms**. Remove an end user's files and folders whenever you need to, deleting assets from churned end users instead of continuing to pay for CDN traffic those assets might still be generating.
+
+These endpoints require your end user's storage to run on the most recent File Manager storage backend.
+
+Visit the [File Manager API documentation](./) to learn more.
+
 ## Base URL
 
 All API access is over HTTPS, and accessed from the following URL:
@@ -125,9 +144,17 @@ https://api.getbee.io/v1/{collection}/{resource}
 
 You can reference each resource and its corresponding collection options in the following section.
 
+The File Manager category is the exception to this pattern. Its endpoints address a file or a directory rather than a fixed resource, so they take the following form instead:
+
+```http
+https://api.getbee.io/v1/file/{path}
+```
+
+Reference the [File Manager Paths](./#file-manager-paths) section to learn more.
+
 ### Collections by Category
 
-Each of the category pages include a table in the page's overview section. This table includes a list of all the possible collection values for that respective category.
+Each of the following category pages include a table in the page's overview section. This table includes a list of all the possible collection values for that respective category.
 
 The following list includes links to each of the table for the category.
 
@@ -142,13 +169,23 @@ The following list includes links to each of the table for the category.
 **Note:** Some categories only include one possible collection value. If that is the case, you will see only one collection value in the table.
 {% endhint %}
 
-The following section displays a few [example URLs](./#example-urls) that demonstrate what a complete URL with the {collection} placeholder filled in.
+### File Manager Paths
 
-#### Example URLs
+The File Manager category doesn’t use collection values. Instead of naming a collection and a resource, a File Manager URL carries the path of the file or directory you want to act on, inside the storage of one of your end users.
+
+```http
+https://api.getbee.io/v1/file/{path}
+```
+
+Everything after `/v1/file/` is that path, and it can be any depth. A trailing slash decides whether the request addresses a directory or a file, so `POST /v1/file/campaigns/` creates a folder while `POST /v1/file/campaigns/hero.jpg` uploads a file into it.
+
+Which end user's storage a request applies to is set by a header rather than by the URL. Visit the [File Manager API documentation](file-manager.md) to learn more about paths, headers, and the six available operations.
+
+### Example URLs
 
 The following table provides a few examples of URLs you can reference as an example for making specific types of requests.
 
-<table><thead><tr><th width="160">Type</th><th>Action</th><th>Example URL</th></tr></thead><tbody><tr><td>Email</td><td>Request HTML for email</td><td><code>https://api.getbee.io/v1/message/html</code></td></tr><tr><td>Landing Page</td><td>Request HTML for a landing page</td><td><code>https://api.getbee.io/v1/page/html</code></td></tr><tr><td>Popup</td><td>Request HTML for a popup</td><td><code>https://api.getbee.io/v1/popup/html</code></td></tr><tr><td>AMP</td><td>Request HTML for AMP</td><td><code>https://api.getbee.io/v1/amp/html</code></td></tr></tbody></table>
+<table><thead><tr><th width="160">Type</th><th>Action</th><th>Example URL</th></tr></thead><tbody><tr><td>Email</td><td>Request HTML for email</td><td><code>https://api.getbee.io/v1/message/html</code></td></tr><tr><td>Landing Page</td><td>Request HTML for a landing page</td><td><code>https://api.getbee.io/v1/page/html</code></td></tr><tr><td>Popup</td><td>Request HTML for a popup</td><td><code>https://api.getbee.io/v1/popup/html</code></td></tr><tr><td>AMP</td><td>Request HTML for AMP</td><td><code>https://api.getbee.io/v1/amp/html</code></td></tr><tr><td>File Manager</td><td>List the files in an end user's directory</td><td><code>https://api.getbee.io/v1/file/campaigns/</code></td></tr></tbody></table>
 
 ## Rate Limits
 
@@ -180,6 +217,8 @@ To stay within the default limits and ensure reliable delivery, the following pr
     Short-lived caching for frequently accessed data helps reduce redundant requests and conserves rate limit capacity.
 * **Monitor usage patterns.**\
   Set up alerting for repeated 429 errors to catch rate limit issues early. Monitoring request patterns can also help anticipate scale needs.
+* **Batch bulk file operations carefully.**\
+  File Manager requests are billed and rate limited like any other Content Services API call, and deleting is one call per file. A directory is only removed once it is empty, so clearing a large library runs to as many calls as there are files, plus one for each folder. Throttle bulk cleanup and bulk syncing jobs, and schedule them outside your peak editing hours.
 
 ## FAQs <a href="#api-billing-why-we-are-charging-for-this-api" id="api-billing-why-we-are-charging-for-this-api"></a>
 
