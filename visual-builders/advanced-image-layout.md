@@ -125,9 +125,7 @@ If you've set up your own CDN, every cache miss triggers a call to Beefree SDK's
 
 ### Who needs this
 
-You need to configure a transform route if you use custom storage and serve those images from your own CDN. Custom storage covers three options, and the route is required for all of them: [a custom S3 bucket or custom File System Provider](https://docs.beefree.io/beefree-sdk/server-side-configurations/server-side-options/storage-options) or a [custom File Picker](https://docs.beefree.io/beefree-sdk/other-customizations/advanced-options/custom-file-picker#a-basic-example). Beefree SDK can't serve transformed images from infrastructure it doesn't own, so without this route there's nowhere for the transformed image to come from.
-
-See [Storage options](https://docs.beefree.io/beefree-sdk/server-side-configurations/server-side-options/storage-options) if you're not sure which storage your application uses.
+You need to configure a transform route if you want to serve your images from your own CDN. Beefree SDK can't serve transformed images from infrastructure it doesn't own, so without this route there's nowhere for the transformed image to come from.
 
 You have two other options if you'd rather not configure a CDN:
 
