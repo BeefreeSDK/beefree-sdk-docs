@@ -239,3 +239,4 @@ Because error responses are never cached, the image recovers on its own. The nex
 * Transformed output is capped at 1920px wide, matching the upper limit already applied to file manager uploads.
 * Cache invalidation isn't available and isn't needed. Because URLs are content-addressed, an edited image is always a new URL.
 * Transforms keep the source format and original quality, so there's no automatic weight optimization.
+* Advanced Image Layout is not currently compatible with the [Image type Custom AddOns](https://docs.beefree.io/beefree-sdk/builder-addons/custom-addons/custom-addon-types/image-addon).
