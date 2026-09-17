@@ -44,7 +44,7 @@ These categories are the following:
 
 The following diagram displays each of the five categories within the Content Services API, and their corresponding resources.
 
-<figure><img src="../../.gitbook/assets/mermaid-diagram-2025-07-15-163938.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/mermaid-diagram-2026-09-17-102249.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ### Use Cases and Capabilities
 
