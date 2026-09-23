@@ -96,19 +96,15 @@ Visual restyle only, with all functionality identical to the previous version. T
 
 #### Free plans
 
-If you’re on a free plan, the updated rich text editor will roll out on August 27, 2026.&#x20;
+If you’re on a free plan, the updated rich text editor rolled out on August 27, 2026.&#x20;
 
 #### Essential and Core plans
 
-If you’re on an Essential or Core plan, these changes will go live in your applications on August 31, 2026.
+If you’re on an Essential or Core plan, these changes went live in your applications on August 31, 2026.
 
 #### Superpowers plans
 
-If you are on a Superpowers plan, the updated rich text editor will roll out to all your applications on September 17, 2026.&#x20;
-
-You will have the **chance to test the updates ahead of time**. Starting August 27, you’ll find a toggle in the "Configure application" page of your Developer Console that lets you enable the new rich-text editor experience in any of your applications, so you can preview the experience and any impact it might have on your Custom CSS before we enforce the upgrade (and remove the preview toggle) on September 17.
-
-<figure><img src="../.gitbook/assets/Toggle.png" alt=""><figcaption></figcaption></figure>
+If you are on a Superpowers plan, the updated rich text editor rolled out to all your applications on September 17, 2026.&#x20;
 
 {% hint style="warning" %}
 If you’re using Custom CSS, we strongly encourage you to review the CSS class changes and test the updates before the release date.
@@ -116,11 +112,11 @@ If you’re using Custom CSS, we strongly encourage you to review the CSS class 
 
 #### Enterprise plans (Version Control)
 
-If you are on an Enterprise plan, the new rich-text editor experience will be available starting with SDK version 3.55 which is scheduled to be released on August 27, 2026.
+If you are on an Enterprise plan, the new rich-text editor experience has been available starting with SDK version 3.55 which was released on August 27, 2026.
 
 Once this version is released, you can test the new experience (and any impact it might have on your custom CSS) by **applying version 3.55 to any of your test applications** via your Version Control settings.&#x20;
 
-If your production applications are set to automatic upgrade mode, the new rich-text editor will reach your production applications as soon as version 3.55 gets promoted to ‘Stable’ on September 17, 2026.
+If your production applications are set to automatic upgrade mode, the new rich-text editor reached your production applications when version 3.55 got promoted to ‘Stable’ on September 17, 2026.
 
 {% hint style="warning" %}
 If you’re using Custom CSS, we strongly encourage you to review the CSS class changes and test the updates before the new rich text editor reaches your production applications. Please remember: If you need more time for testing or adjusting you CSS, you can keep your production applications pinned to a previous version until you’re ready. [Here’s how](https://docs.beefree.io/beefree-sdk/getting-started/version-control).
