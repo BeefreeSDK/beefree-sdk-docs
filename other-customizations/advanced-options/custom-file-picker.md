@@ -41,7 +41,21 @@ Please note that **a `resolve` or `reject` call is mandatory**. If you miss this
 
 ```
 
-Images dragged onto an image block or edited via the “apply effects and more” button will be passed to the image storage per your app’s file storage settings. To prevent images from passing through Beefree SDK’s file storage, the file upload can be disabled via [advanced permissions](advanced-permissions.md).
+Images edited via the "apply effects and more" button will be passed to the image storage per your app's file storage settings.
+
+Images dragged onto an image block are, by default, passed to the `filePicker` handler through the `args` parameter in the following format:
+
+```
+{
+  "context": "imageModule.stageDrop",
+  "name": "screenshot.png",
+  "size": 35807,
+  "type": "image/png",
+  "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEU…"
+}
+```
+
+To prevent images saved in the Apply Effects editor from passing through Beefree SDK's file storage, the file upload can be disabled via [advanced permissions](advanced-permissions.md).
 
 ## Returned value syntax
 
