@@ -42,9 +42,11 @@ The new merge tag dialog now offers end users a search bar to streamline the sel
 Some --cs classes related to the merge tag `@` dropdown menu have changed. Please refer to the [changelog](https://docs.beefree.io/beefree-sdk/~/changes/607/other-customizations/appearance/custom-css/css-changes#release-august-2026) for all details.
 {% endhint %}
 
-#### New feature: editable Smart merge tags
+#### New feature: contentDialog mergeTag values
 
-When an end user clicks an existing Smart merge tag, the Content Dialog now receives data about which tag was previously selected. This lets your host application **pre-populate the dialog** for a true edit experience, instead of requiring users to delete and re-insert a tag from scratch.
+When an end user selects an existing merge tag, the `contentDialog` now receives details about which tag was selected. The host application can use this information to tailor what the dialog shows next.<br>
+
+We still recommend deleting and re-inserting merge tags rather than editing them directly.
 
 Previous payload:
 
