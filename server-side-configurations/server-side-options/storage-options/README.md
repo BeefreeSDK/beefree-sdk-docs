@@ -11,7 +11,7 @@ When you configure a builder application, you have four options for image & file
 
 <figure><img src="../../../.gitbook/assets/CleanShot 2025-03-13 at 14.33.38 (1).png" alt=""><figcaption></figcaption></figure>
 
-### Custom File System Provider&#x20;
+### Custom File System Provider
 
 When working with your own custom file system provider, there are many considerations to keep in mind. Follow the steps outlined in the[ Move Files in the File Manager](connect-your-file-storage-system.md#move-files-in-the-file-manager) documentation to ensure you configure this feature successfully for this storage option.
 
@@ -23,7 +23,7 @@ Reference[ the white label end-user documentation](https://docs.beefree.io/end-u
 
 If you need more control on what files users should be able to upload, you may activate [file manager limitations](../../../file-manager/file-manager-application-overview/) in the **Privacy & Security** section of your app’s configuration. In alternative, you may consider [connecting the builder to your file system](connect-your-file-storage-system.md).
 
-**Note:** In addition to storing images and files within the Beefree SDK File Manager, Beefree SDK also offers a storage option for saving saved rows. This is available through [Hosted Saved Rows](../../../rows/storage/hosted-saved-rows.md). To store the JSON of full email templates, you'll need to connect your own database to Beefree SDK. While there is an option to host saved rows within Beefree SDK, there currently isn't a way to host full email, page, and popup designs just yet.&#x20;
+**Note:** In addition to storing images and files within the Beefree SDK File Manager, Beefree SDK also offers a storage option for saving saved rows. This is available through [Hosted Saved Rows](../../../rows/storage/hosted-saved-rows.md). To store the JSON of full email templates, you'll need to connect your own database to Beefree SDK. While there is an option to host saved rows within Beefree SDK, there currently isn't a way to host full email, page, and popup designs just yet.
 
 ## About Beefree SDK storage
 
@@ -48,7 +48,7 @@ If you are using the Beefree AWS S3 Bucket, take the following steps to enable t
 
 If you are using your own AWS S3 bucket, take the following steps to activate the **Move File** feature:
 
-1. Ensure that your FSP is updated to the latest version.&#x20;
+1. Ensure that your FSP is updated to the latest version.
 2. Navigate to the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 3. Locate the **Move File** configuration toggle.
 4. Toggle the feature on.
@@ -99,7 +99,7 @@ E.g.: an Email Builder application shares its storage with a Popup and a Page ap
 #### **Are there any restrictions when connecting an application’s storage to an already existing one?**
 
 * It’s not possible to link a development app to a production app.
-* An app can be linked to another just once.
+* You can only link to one other application at a time.
 * The same shared storage can be shared across different applications within the same subscription
 
 #### **Can I connect my dev app storage to a production app?**
