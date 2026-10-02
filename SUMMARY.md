@@ -42,7 +42,6 @@
   * [Testing and Integrating](visual-builders/popup-builder/testing-and-integrating.md)
   * [Setting layout and size](visual-builders/popup-builder/setting-layout-and-size/README.md)
     * [Advanced settings](visual-builders/popup-builder/setting-layout-and-size/advanced-settings.md)
-* [Advanced Image Layout](visual-builders/advanced-image-layout.md)
 
 ## AI & MCP
 
@@ -150,6 +149,7 @@
 
 ## Other Customizations
 
+* [Advanced Image Layout](other-customizations/advanced-image-layout.md)
 * [Advanced options](other-customizations/advanced-options/README.md)
   * [Special Links and Merge Tags](other-customizations/advanced-options/special-links-and-merge-tags.md)
   * [Content Dialog](other-customizations/advanced-options/content-dialog.md)
