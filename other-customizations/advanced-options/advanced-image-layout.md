@@ -24,7 +24,7 @@ Advanced Image Layout is available for Email, Landing Page and Popup builders.&#
 
 You can activate Advanced Image Layout with the dedicated flag in the SDK Console. By default, the toggle is on for newly created applications.
 
-<img src="../.gitbook/assets/unknown (4).png" alt="" height="196" width="594">
+<img src="../../.gitbook/assets/unknown (4).png" alt="" height="196" width="594">
 
 For detailed information about the infrastructure options and configuration, please refer to the section below.
 
@@ -40,13 +40,13 @@ The image keeps its native proportions — no cropping, no fit/fill choice. This
 
 Your end-users can crop the image by choosing from five standard ratios – Square (1:1), Portrait (4:5), Standard (4:3), Wide (16:9), Banner (2:1)
 
-<img src="../.gitbook/assets/unknown (5).png" alt="" height="335" width="338">
+<img src="../../.gitbook/assets/unknown (5).png" alt="" height="335" width="338">
 
 With a preset selected, your users can also choose **Fit** or **Fill**. The former scales the image so it's fully visible inside the frame, without cropping anything out; the latter scales the image so it completely covers the frame, cropping any excess. Fill is the default the first time you select a preset.
 
 When Fill is selected, a 9-point grid lets you choose which part of the image stays in frame when it's cropped — useful when the subject isn't centered in the original photo.&#x20;
 
-<img src="../.gitbook/assets/unknown (6).png" alt="" height="268" width="646">
+<img src="../../.gitbook/assets/unknown (6).png" alt="" height="268" width="646">
 
 If your end-users remove an image and add a new one in its place, existing layout settings — ratio, fit/fill, focal point, alignment — carry over automatically.
 
@@ -101,9 +101,9 @@ With the release of Advanced Image Layout (Beefree SDK 3.56), we took the chance
 2. **Dynamic Image** — the alternate, merge-tag-driven source, positioned right under Image Source since it replaces the placeholder set there.
 3. **Image Dimension** — sizing, ratio, fit, and crop controls, grouped together as the final step.
 
-| Old                                                                        | New                                                                        |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| <img src="../.gitbook/assets/unknown (7).png" alt="" data-size="original"> | <img src="../.gitbook/assets/unknown (8).png" alt="" data-size="original"> |
+| Old                                                                           | New                                                                           |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| <img src="../../.gitbook/assets/unknown (7).png" alt="" data-size="original"> | <img src="../../.gitbook/assets/unknown (8).png" alt="" data-size="original"> |
 
 A couple of small naming changes come along with this: Choose image has been replaced with Add Image; Change image is now Replace.
 
@@ -187,9 +187,9 @@ Azure Front Door and Google Cloud CDN use the same concepts under different name
 
 Open application settings, go to **Advanced Image Layout**, and select **Served by your own infrastructure**. Two fields need values:
 
-<img src="../.gitbook/assets/unknown (11).png" alt="" height="196" width="594">
+<img src="../../.gitbook/assets/unknown (11).png" alt="" height="196" width="594">
 
-<img src="../.gitbook/assets/CustomFontModalURL (1).png" alt="" width="459">
+<img src="../../.gitbook/assets/CustomFontModalURL (1).png" alt="" width="459">
 
 
 

@@ -149,7 +149,6 @@
 
 ## Other Customizations
 
-* [Advanced Image Layout](other-customizations/advanced-image-layout.md)
 * [Advanced options](other-customizations/advanced-options/README.md)
   * [Special Links and Merge Tags](other-customizations/advanced-options/special-links-and-merge-tags.md)
   * [Content Dialog](other-customizations/advanced-options/content-dialog.md)
@@ -165,6 +164,7 @@
   * [Advanced Permissions](other-customizations/advanced-options/advanced-permissions.md)
   * [Custom File Picker](other-customizations/advanced-options/custom-file-picker.md)
   * [Custom Headers](other-customizations/advanced-options/custom-headers.md)
+  * [Advanced Image Layout](other-customizations/advanced-options/advanced-image-layout.md)
 * [Appearance](other-customizations/appearance/README.md)
   * [Content Defaults](other-customizations/appearance/content-defaults.md)
   * [Custom Sidebar Position](other-customizations/appearance/custom-sidebar-position.md)
