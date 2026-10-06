@@ -1,13 +1,7 @@
-# AI Co-Pilot (closed beta)
+# AI Co-Pilot (beta)
 
-{% hint style="warning" %}
-**Join the Beta program and get early access to Beefree SDK's AI Co-Pilot**
-
-Beefree SDK's AI Co-Pilot is currently in closed beta and only accessible to a selected number of early access customers. If you're interested in joining the beta, or if you'd like us to notify you when the tool is available to everyone, [please let us know](https://growens.typeform.com/to/Eji2zu9q).
-
-[I'd love to join the Beta →](https://growens.typeform.com/to/Eji2zu9q)
-
-The Beefree SDK Team
+{% hint style="info" %}
+Beefree SDK's AI Co-Pilot is currently in open beta and freely accessible to all customers with a paid plan. You just need to activate it in your Developer Console to make it available for your end-users.
 {% endhint %}
 
 Beefree SDK's AI Co-Pilot is the out-of-the-box AI agent that your user can prompt to create email designs, edit layouts, generate variations, and review templates. You install it in the Developer Console, choose a supported provider, and configure your model to make it available for your end users. Hosts can also persist chat history to continue guided sessions across visits and future revisions.&#x20;
@@ -37,14 +31,13 @@ AI Co-Pilot is registered as `ai-agent` in the standard `addOns` array passed to
 
 ### Activation
 
-To enable Beefree SDK's AI Co-Pilot, contact your Beefree SDK Customer Success Manager. Once enabled for your application, you can configure it through the Beefree SDK Developer Console under **AddOns → AI Co-Pilot.**
+You can configure AI Co-Pilot through the Beefree SDK Developer Console under **AddOns → AI Co-Pilot.**
 
 <figure><img src="../../.gitbook/assets/AI Co-Pilot.png" alt=""><figcaption></figcaption></figure>
 
 #### Prerequisites
 
 * An API key from one of the [supported AI providers](https://docs.google.com/document/d/1gyhEZZl3x-CzSF8iLBjpk3-PN4KHAilkf6kiyNSf4xI/edit#supported-providers).
-* AI Co-Pilot enabled in the Developer Console for your application.
 
 #### Configure in the Developer Console
 

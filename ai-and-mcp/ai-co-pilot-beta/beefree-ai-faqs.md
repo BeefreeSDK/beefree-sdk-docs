@@ -10,7 +10,7 @@ The AI Writing Assistant targets individual content blocks. The AI Co-Pilot goes
 
 #### **How do I get access?**&#x20;
 
-The AI Co-Pilot is in closed beta. Once you get accepted into the beta, log in to the Beefree SDK Developer Console, navigate to your application, and open the AddOns section. From there, click Browse AddOns, select the Beefree AI AddOn, and click Install. Once installed, select your provider and model, enter your API key, toggle Enable, and save. Make sure you have an API key from your chosen AI provider before starting.
+The AI Co-Pilot is freely accessible in open beta. You just need to log in to the Beefree SDK Developer Console, navigate to your application, and open the AddOns section. From there, click Browse AddOns, select the Beefree AI AddOn, and click Install. Once installed, select your provider and model, enter your API key, toggle Enable, and save. Make sure you have an API key from your chosen AI provider before starting.
 
 #### **Do I need my own AI provider API key?**&#x20;
 

@@ -29,12 +29,12 @@ You can install AI AddOns directly from the Developer Console and right away off
 #### ✨AI Co-Pilot: out-of-the-box email generation agent
 
 {% hint style="info" %}
-Beefree SDK's AI Co-Pilot is currently in closed beta. [Learn more](ai-co-pilot-closed-beta/).
+Beefree SDK's AI Co-Pilot is currently in closed beta. [Learn more](ai-co-pilot-beta/).
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/Beefree AI Screen.jpg" alt=""><figcaption></figcaption></figure>
 
-[Beefree SDK's AI Co-Pilot (closed beta)](ai-co-pilot-closed-beta/) is a ready-to-launch prompt-to-design AI agent you can bring to your integration with no development work on your end. Unlike the single-purpose AddOns above, it's designed as a more complete AI experience empowering your end-users to
+[Beefree SDK's AI Co-Pilot (closed beta)](ai-co-pilot-beta/) is a ready-to-launch prompt-to-design AI agent you can bring to your integration with no development work on your end. Unlike the single-purpose AddOns above, it's designed as a more complete AI experience empowering your end-users to
 
 * create email design from a prompt
 * edit existing design by adding blocks, modifying copy, or changing colors

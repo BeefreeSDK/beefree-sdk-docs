@@ -20,7 +20,7 @@ With Brand Rules, a host application can attach a `brandRules` object to an AI e
 2. **What is the AI allowed to touch?** With `permissions` you can control what the AI can (and cannot) edit.
 3. **How much content fits?** Use `limits` to define caps on certain content elements.&#x20;
 
-Brand Rules can apply to any AI editing session, whether you're creating with the [MCP](getting-started/) or using the [AI Co-Pilot](ai-co-pilot-closed-beta/).&#x20;
+Brand Rules can apply to any AI editing session, whether you're creating with the [MCP](getting-started/) or using the [AI Co-Pilot](ai-co-pilot-beta/).&#x20;
 
 #### The different types of brand rules: Presets, Permissions, and Limits
 
@@ -181,7 +181,7 @@ Whether you're using Brand Rules when working directly with our MCP Server or ar
 How you pass Brand Rules into the AI workflow is a little different depending on the product you're working with. Please review the instructions for each pathway here:&#x20;
 
 * How to use Brand Rules when working with the MCP: [editor-managed session](getting-started/mcp-server-installation-and-setup.md#editor-managed-session) or [API-managed session](getting-started/mcp-server-installation-and-setup.md#api-managed-session)
-* How to use Brand Rules when working with the [AI Co-Pilot](ai-co-pilot-closed-beta/#using-brand-rules-with-the-ai-co-pilot)
+* How to use Brand Rules when working with the [AI Co-Pilot](ai-co-pilot-beta/#using-brand-rules-with-the-ai-co-pilot)
 
 ### Brand Rules - Full JSON schema
 
