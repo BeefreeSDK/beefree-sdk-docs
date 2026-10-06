@@ -37,7 +37,7 @@ You can configure AI Co-Pilot through the Beefree SDK Developer Console under **
 
 #### Prerequisites
 
-* An API key from one of the [supported AI providers](https://docs.google.com/document/d/1gyhEZZl3x-CzSF8iLBjpk3-PN4KHAilkf6kiyNSf4xI/edit#supported-providers).
+* An API key from one of the [supported AI providers](./#supported-providers).
 
 #### Configure in the Developer Console
 
