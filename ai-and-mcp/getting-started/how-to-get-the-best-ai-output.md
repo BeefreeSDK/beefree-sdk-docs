@@ -2,10 +2,10 @@
 
 In our demo example, we provide a full system prompt that includes all these instructions, standards, and tool usage patterns. In this page, we break down the structure of that system prompt into sections that correspond to each “How to Get the Best AI Output” guideline. This illustrates how each part of the prompt reinforces the Agent's best practices.
 
-### Try Code Mode today (research preview)
+### Try Code Mode today (open beta)
 
 {% hint style="info" icon="gear-complex" %}
-We’ve developed a new mode designed to help you do more with less: reduce token usage, improve output quality, and speed up generation. It’s called **Code Mode**, and it’s currently in research preview. [If you’re curious and want to learn more about the benefits of Code Mode, click here](mcp-server-installation-and-setup.md#code-mode-research-preview).
+We’ve developed a mode designed to help you do more with less: reduce token usage, improve output quality, and speed up generation. It’s called **Code Mode**, and it’s currently in open beta. [If you’re curious and want to learn more about the benefits of Code Mode, click here](mcp-server-installation-and-setup.md#code-mode-research-preview).
 {% endhint %}
 
 ### Use the right models
@@ -113,7 +113,7 @@ Prompting alone can get you close to your brand's look and feel, but it doesn't 
 
 The most common ways to reduce the AI model token consumption include
 
-* [Code Mode](https://docs.beefree.io/beefree-sdk/mcp-server/installation-and-setup#code-mode-research-preview)
+* [Code Mode](mcp-server-installation-and-setup.md)
 * Prompt Caching
 * Template skeletons for email creation
 * Multi-agent architecture
