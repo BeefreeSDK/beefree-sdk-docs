@@ -194,6 +194,7 @@ POST https://api.getbee.io/v2/sdk/mcp/template
 | template   | object | Optional. The JSON template to initialize the session with.                                                                                                               |
 | mergeTags  | object | Optional. Merge tags to be resolved within the template.                                                                                                                  |
 | brandRules | object | Optional. Brand Rules the agent must follow during the session (presets, permissions, limits). See [Brand Rules](../brand-rules-for-ai.md) for the full schema and logic. |
+| reusableRows | object | Optional. A library of the customer's saved rows the agent may search and place. See [Reusable Rows for AI](../reusable-rows-for-ai.md) for the payload shape and limits. |
 
 
 
@@ -201,13 +202,16 @@ POST https://api.getbee.io/v2/sdk/mcp/template
 {
   "template": { ... },
   "mergeTags": { ... },
-  "brandRules": { ... }
+  "brandRules": { ... },
+  "reusableRows": { ... }
 }
 ```
 
 To make the MCP Server work with Brand Rules in an API-managed session, pass a `brandRules` object in this request body alongside `template` and `mergeTags`.&#x20;
 
 We recommend validating your `brandRules` payload with the [Brand Rules validation endpoint](../brand-rules-for-ai.md#testing-and-validating-your-brand-rules) before creating the template. This surfaces schema errors up front instead of only when the session starts.
+
+To let the agent work with your users' saved rows, pass a `reusableRows` object in the same request. The response reports what was stored, including how many entries were dropped if the library did not fit. See [Reusable Rows for AI](../reusable-rows-for-ai.md).
 
 **Response**
 
@@ -363,6 +367,8 @@ Code Mode requires your agent to generate valid TypeScript. Implement error hand
 {% endhint %}
 
 Code Mode fully supports `brandRules`. Pass it the same way as in the standard API-managed or editor-managed paths above; the agent's generated scripts are validated against your Brand Rules guardrails like any other session.
+
+Code Mode also supports `reusableRows`. The four row capabilities are available to the generated scripts as `searchReusableRows`, `getReusableRowsFacets`, `getReusableRowsDetails` and `addReusableRow`.
 
 ### Migrating from v1
 
