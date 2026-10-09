@@ -26,7 +26,49 @@ The agent never sees a row's raw JSON. It sees enough to choose, and it places b
 
 ### Attach a library to a session
 
-A row library is attached when the MCP session is created, the same way `brandRules` and `mergeTags` are. Pass a `reusableRows` object in the body of the template creation request:
+A row library is attached when the session the agent works in is created. There are three ways to pass it, depending on how you use AI in the editor. In all three, the library is a `reusableRows` object with an `entries` array.
+
+#### With the AI Co-Pilot
+
+Pass the library as `reusableRows` in the settings of the `ai-agent` addon. The Co-Pilot attaches it to every MCP session it starts.
+
+{% code overflow="wrap" %}
+```javascript
+const beeConfig = {
+  // ...your standard config
+  addOns: [
+    {
+      id: 'ai-agent',
+      settings: {
+        reusableRows: { entries: [ /* saved rows */ ] },
+      },
+    },
+  ],
+}
+```
+{% endcode %}
+
+See [Using Reusable Rows with the AI Co-Pilot](ai-co-pilot-beta/#using-reusable-rows-with-the-ai-co-pilot).
+
+#### With an editor-managed MCP session
+
+Pass the library to `bee.startMcpSession()`. It is attached to the session that call creates.
+
+```javascript
+const { templateId } = await bee.startMcpSession({
+  reusableRows: { entries: [ /* saved rows */ ] },
+})
+```
+
+See [Editor-managed session](getting-started/mcp-server-installation-and-setup.md#editor-managed-session).
+
+{% hint style="info" %}
+Unlike `brandRules` and `mergeTags`, there is no `reusableRows` property at the root of the editor configuration. Pass the library to the Co-Pilot addon or to `startMcpSession()`.
+{% endhint %}
+
+#### With an API-managed MCP session
+
+Pass the library in the body of the template creation request, alongside `template`, `mergeTags` and `brandRules`:
 
 ```
 POST https://api.getbee.io/v2/sdk/mcp/template
@@ -54,67 +96,96 @@ POST https://api.getbee.io/v2/sdk/mcp/template
 ```
 {% endcode %}
 
-An entry is a saved row in the shape the editor already produces, so a library you store for the row picker can be sent as it is. Only `metadata.name` and `columns` are required.
+See [API-managed session](getting-started/mcp-server-installation-and-setup.md#api-managed-session).
 
-| Field                  | Type    | Description                                                                                                  |
-| ---------------------- | ------- | ------------------------------------------------------------------------------------------------------------ |
-| `metadata.name`        | string  | Required. What the row is called. The agent searches on it and reports it back to the user.                   |
-| `columns`              | array   | Required. The row's columns, at least one.                                                                    |
-| `metadata.category`    | string  | A plain human-readable name, filtered on as it is written.                                                   |
-| `metadata.description` | string  | One line on what the row is for. Worth writing: the agent searches it, and it is often what settles a choice. |
-| `metadata.tags`        | array   | Up to 12 tags, searched and offered as filters.                                                              |
-| `synced`               | boolean | Marks a live shared row. See [Synced rows](#synced-rows-are-placed-never-edited).                             |
+### The row library
+
+An entry is a saved row in the shape the editor already produces (for example from `onSaveRow`), so a library you store for the row picker can be sent as it is. Only `metadata.name` and `columns` are required. Properties not listed below are kept as they are.
+
+| Field                  | Type             | Description                                                                                                                                                        |
+| ---------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `metadata.name`        | string           | Required. What the row is called. The agent searches on it and reports it back to the user.                                                                        |
+| `columns`              | array            | Required. The row's columns, at least one.                                                                                                                         |
+| `metadata.category`    | string or number | A category name, or a numeric category id. Names are searched as text and filtered on case-insensitively. A numeric id can be filtered on, but is not searched as text. |
+| `metadata.description` | string           | One line on what the row is for. Worth writing: the agent searches it, and it is often what settles a choice.                                                      |
+| `metadata.tags`        | array            | Searched and offered as filters.                                                                                                                                   |
+| `metadata.slug`        | string           | Searched as text.                                                                                                                                                  |
+| `metadata.uuid`        | string           | Your own id for the row. It is kept, but the agent does not use it to address the row.                                                                             |
+| `synced`               | boolean          | Marks a live shared row. See [Synced rows](#synced-rows-are-placed-never-edited).                                                                                  |
+| `type`                 | string           | The row type, as the editor saves it.                                                                                                                              |
+| `webFonts`             | array            | The fonts the row uses. They are added to the template when the row is placed.                                                                                     |
 
 {% hint style="warning" %}
-Do not send a `reusableRowId`. It is assigned when the library is stored and returned to the agent by the search tool. A row is addressed by that id for the lifetime of the session.
+Do not send a `reusableRowId`. Each row gets one when the library is stored, and the agent receives it from the search tool. A row is addressed by that id for the lifetime of the session, and any `reusableRowId` you send is replaced.
 {% endhint %}
 
 #### Limits
 
-A library is trimmed to fit, in the order you sent it, and the creation response tells you what was stored.
+| Limit                         | Value                                                     |
+| ----------------------------- | --------------------------------------------------------- |
+| Rows per library              | 1,000                                                     |
+| Row data per library          | About 1.5 MB                                              |
+| Whole session request         | 2 MB, template and library together                       |
+| Name, category, slug, description | 200 characters each                                   |
+| `uuid`, `type`                | 64 characters each                                        |
+| Tags per row                  | 12, each up to 32 characters                              |
 
-| Limit        | Value                             |
-| ------------ | --------------------------------- |
-| Entries      | 1,000                             |
-| Payload      | 1.5 MB, shared with the template   |
-| Name         | 200 characters                    |
-| Description  | 200 characters                    |
-| Tags per row | 12, each up to 32 characters      |
+`name`, `uuid`, each tag and a string `category` must not be empty.
 
-The response carries a `reusableRows` summary rather than the library you just sent:
+#### What happens when a library does not fit
+
+The two kinds of limit behave differently:
+
+* **Rows and row data are trimmed, not refused.** A library over 1,000 rows or about 1.5 MB of row data is stored up to the limit, keeping the rows in the order you sent them, and the session starts. Put the rows that matter most first.
+* **Everything else is refused.** A row that breaks a field limit (a name over 200 characters, an empty tag, a missing `columns`...) makes the whole request fail with `400` and `{ "error": "Invalid reusableRows", "details": [...] }`, and no session is created. A request over 2 MB fails with `413` before any trimming.
+
+When the editor starts the session (the AI Co-Pilot, or `bee.startMcpSession()`), a trimmed library is reported through the `onWarning` callback with code `5120`. The `detail` says how many rows were kept and how many were dropped. Surface it in your integration: a silently partial library makes the agent answer "no such row" about rows your user can see in the editor.
+
+{% hint style="warning" %}
+With an API-managed session, `POST /v2/sdk/mcp/template` only returns the `templateId`, not what was stored. Keep the library within the limits on your side, and validate it as described below.
+{% endhint %}
+
+#### Validate a library before starting a session
+
+The validation endpoint checks a `reusableRows` payload against the same rules without creating a session. It also accepts `brandRules` in the same request.
+
+```
+POST https://api.getbee.io/v2/sdk/mcp/template/validate
+```
 
 ```json
 {
-  "sessionId": "...",
-  "reusableRows": {
-    "entries": 112,
-    "categories": 9,
-    "syncedEntries": 15,
-    "taggedEntries": 74,
-    "bytes": 384210,
-    "webFonts": 3
-  }
+  "reusableRows": { "entries": [ ... ] }
 }
 ```
 
-{% hint style="warning" %}
-When a library does not fit whole, the summary also carries `sentEntries` and `droppedEntries`. Surface that in your integration. A silently partial library makes the agent answer "no such row" about rows your user can see in the editor.
-{% endhint %}
+The response lists every problem at once:
+
+```json
+{
+  "valid": false,
+  "errors": ["reusableRows.entries.0.metadata.name must NOT have more than 200 characters"]
+}
+```
+
+Validation does not check the row and size limits that trim a library, only the ones that would refuse it.
 
 ### What the agent can do
 
-With a library attached, the MCP Server exposes four more tools. They appear only in sessions that have a library, so an agent working on a session without one is never tempted to look for rows that are not there.
+With a library attached, the MCP Server exposes four more tools. They are offered only when the session has a library and your plan is Core or above. Otherwise the agent does not see them at all, and a direct call to one is refused.
 
 | Tool                                | What it does                                                                                                                                                 |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `beefree_search_reusable_rows`      | Find rows by free text, category, tags, block types, or synced status. Returns metadata only. Where the agent always starts.                                   |
 | `beefree_get_reusable_rows_facets`  | List the categories and tags this library actually uses, with a count for each. Lets the agent filter on real values rather than guessing.                     |
 | `beefree_get_reusable_rows_details` | Derived facts about up to five rows at once: their text, colours, block types, columns, link and image counts, fonts. For choosing between close candidates.    |
-| `beefree_add_reusable_row`          | Place one row into the template, by id, at a position.                                                                                                        |
+| `beefree_add_reusable_row`          | Place one row into the template, by id, at a position. Without a position, the row is added at the end.                                                       |
 
 #### Search returns metadata, never content
 
 A search answer describes a row: its id, name, category, synced flag, and where available its tags, description, a preview of the row's own words, and its structure (block types, column count, whether it has images or links). It never returns the row's content. That keeps the answer small enough that an agent can look at many rows before committing to one.
+
+The free-text search matches a row's name, tags, description, slug, category name and the row's own words, so the user's own phrasing usually works.
 
 Results are capped and there is no paging. When the cap is hit, the answer says `truncated: true`, and the right move is a narrower search rather than another page.
 
@@ -126,13 +197,17 @@ This is also why `beefree_get_reusable_rows_facets` matters: it reports `rowsWit
 
 #### Synced rows are placed, never edited <a href="#synced-rows-are-placed-never-edited" id="synced-rows-are-placed-never-edited"></a>
 
-A row with `synced: true` is a live shared row. The agent may place it like any other, but never updates, restyles or deletes it afterwards. A synced row is edited at its source, and changing one copy would break every design using it.
+A row with `synced: true` is a live shared row. The agent is instructed to place it like any other, but never to update, restyle or delete it afterwards: a synced row is edited at its source, and changing one copy would break every design using it.
+
+{% hint style="info" %}
+This is an instruction the agent follows, not a lock on the placed blocks.
+{% endhint %}
 
 #### A placed row is refitted, not copied
 
 `beefree_add_reusable_row` does not paste the saved JSON. The row is refitted to the template it lands in: module widths are recomputed for the template's width, and the fonts it needs are added to the page. It also gets fresh ids, so the same saved row can be placed more than once in one design.
 
-Those ids are only known once the call returns, as `sectionId` and `columnIds`. An agent therefore cannot place a row and edit a block inside it in the same operation. It places the row, reads the response, and edits on the next turn.
+A placed row's ids are only known once the placement has run. A direct tool call returns them as `sectionId` and `columnIds`. In [Code Mode](getting-started/mcp-server-installation-and-setup.md) the placement runs when the script ends, so a script cannot place a row and edit a block inside it in the same run: the agent places the row, then reads the content and edits it in its next step.
 
 ### Works with the rest of the session
 
@@ -150,18 +225,21 @@ The agent is only as good as the words you give it. Three things pay for themsel
 
 1. **Name rows the way users talk.** "Black Friday hero" is findable. "Row 12 v3 final" is not.
 2. **Write the one-line description.** It is searched, and it is usually what decides between two rows that look alike from their names.
-3. **Keep categories and tags small and consistent.** The agent reads the real list before filtering, so twenty tidy tags work better than two hundred near-duplicates.
+3. **Keep categories and tags small and consistent.** The agent reads the real list before filtering, so twenty tidy tags work better than two hundred near-duplicates. Prefer category names over numeric ids: names are searched as text, ids are not.
 
 ### FAQs
 
 **What happens if I create a session without `reusableRows`?**\
 The four tools are not offered at all. Nothing else changes.
 
+**What happens on a plan below Core?**\
+Creating a session with `reusableRows` is refused with `403`. The tools are not offered on those plans.
+
 **Can the agent save a new row to the library?**\
 No. The library is read-only for the session. Rows are created and maintained through the normal [Reusable Content](../rows/reusable-content/) flows.
 
 **Can I change the library during a session?**\
-No. It is attached at creation and fixed for the life of the session. Create a new session to attach a different library.
+No. It is attached at creation and fixed for the life of the session. Start a new session to attach a different library. The AI Co-Pilot starts a new session for every prompt, so a change to its `reusableRows` setting applies from the next prompt.
 
 **Does the library count against the template payload?**\
-Yes. The 1.5 MB budget is shared with the template in the same request.
+The row data has its own budget of about 1.5 MB. The whole session request, template and library together, is capped at 2 MB.

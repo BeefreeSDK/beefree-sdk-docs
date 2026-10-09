@@ -50,7 +50,7 @@ These tools add and modify individual content elements within your email, includ
 
 #### Reusable rows
 
-These tools let the agent work with the customer's own saved rows instead of generating new content. They are offered only when the session was created with a row library. See [Reusable Rows for AI](../reusable-rows-for-ai.md).
+These tools let the agent work with the customer's own saved rows instead of generating new content. They are offered only when the session was created with a row library, on Core plans and above. See [Reusable Rows for AI](../reusable-rows-for-ai.md).
 
 * `beefree_search_reusable_rows` - Search the library by text, category, tags, block types or synced status. Returns metadata only, never a row's content
 * `beefree_get_reusable_rows_facets` - List the categories and tags the library actually uses, with a count for each
