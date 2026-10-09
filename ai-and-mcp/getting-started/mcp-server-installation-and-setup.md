@@ -363,33 +363,3 @@ Code Mode requires your agent to generate valid TypeScript. Implement error hand
 {% endhint %}
 
 Code Mode fully supports `brandRules`. Pass it the same way as in the standard API-managed or editor-managed paths above; the agent's generated scripts are validated against your Brand Rules guardrails like any other session.
-
-### Migrating from v1
-
-{% hint style="warning" %}
-**Beefree SDK's MCP Server entered General Availability on September 1, 2026**
-
-To make sure your integration stays up and running after the MCP Server graduated from Open Beta on Sept 1 2026, please:
-
-* Ensure you’re using the **latest version of our MCP Server** (v2). If you still use the legacy version, identifiable by the v1 endpoint, please follow the following migration guide. The legacy version was deprecated on September 1, 2026.
-* Switch to **CSAPI keys**. The custom beta API keys which you obtained from the Beefree team were retired on September 1.
-{% endhint %}
-
-Starting September 1, MCP Server calls will count toward your plan's CSAPI totals. There won’t be any additional access costs for using the MCP Server – just standard CSAPI usage amounts in your plan.
-
-The v1 approach used `mcpEditorClient.enabled = true` in the `beeConfig` object to expose the editor to the MCP server, combined with the `/v1/sdk/mcp` endpoint and `x-bee-uid / x-bee-mcp-session-id` headers for routing.
-
-In the current MCP server version (v2), the session is identified by a `templateId` rather than a `uid` + session pair, and the endpoint has moved to `/v2/sdk/mcp`. The same CSAPI key credentials continue to work — no new credentials are required.
-
-**Key changes**
-
-|                  | v1 (deprecated)                                      | Current MCP (v2)                                                                                                                                                                                                   |
-| ---------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Architecture     | Requires a running Beefree SDK Editor in the browser | Session can be created via the Headless API or by the editor via `startMcpSession()`                                                                                                                               |
-| Session identity | `client_id` + `uid` + optional `session_id`          | `templateId`                                                                                                                                                                                                       |
-| Endpoint         | `https://api.getbee.io/v1/sdk/mcp`                   | `https://api.getbee.io/v2/sdk/mcp`                                                                                                                                                                                 |
-| Routing header   | `x-bee-uid, x-bee-mcp-session-id`                    | `x-bee-template-id`                                                                                                                                                                                                |
-| Editor config    | `mcpEditorClient: { enabled: true }`                 | Not required for agent connection                                                                                                                                                                                  |
-| Select element   | `beefree_get_selected`                               | `onSelectElement` callback ([more details here](https://app.gitbook.com/o/2zoWGxtV7bjhbwBdjGPS/s/8c7XIQHfAtM23Dp3ozIC/~/edit/~/changes/572/mcp-server/tools-and-capabilities#get-the-context-of-selected-element)) |
-
-{% include "../../.gitbook/includes/remove-the-mcpeditorclient-....md" %}
