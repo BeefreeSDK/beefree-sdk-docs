@@ -48,6 +48,15 @@ These tools add and modify individual content elements within your email, includ
 * Tabular blocks: `beefree_add_table`
 * Each with corresponding update tools
 
+#### Reusable rows
+
+These tools let the agent work with the customer's own saved rows instead of generating new content. They are offered only when the session was created with a row library, on Core plans and above. See [Reusable Rows for AI](../reusable-rows-for-ai.md).
+
+* `beefree_search_reusable_rows` - Search the library by text, category, tags, block types or synced status. Returns metadata only, never a row's content
+* `beefree_get_reusable_rows_facets` - List the categories and tags the library actually uses, with a count for each
+* `beefree_get_reusable_rows_details` - Derived facts about up to five rows at once, for choosing between close candidates
+* `beefree_add_reusable_row` - Place one row into the template, by id
+
 #### Validation & QA tools (Checker)
 
 These tools verify email quality by checking for accessibility issues, missing alt text, color contrast problems, broken links, and other best practice violations.

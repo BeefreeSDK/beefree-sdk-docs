@@ -132,7 +132,7 @@ This means users can undo the entire batch of agent changes as one unit, but can
 
 An editor-managed session is ephemeral. Once it ends — by timeout, automated-stop, or manual stop — it cannot be resumed. To start another agent pass on the same template, call `bee.startMcpSession()` again. Each call creates a fresh session with its own `templateId`, timeout and history entry.
 
-#### Brand Rules and Merge Tags
+#### Brand Rules, Merge Tags and Reusable Rows
 
 To make the MCP Server work with Brand Rules and Merge Tags in an editor-managed session, set `brandRules` and `mergeTags` at the **root of your editor configuration.** If present there, they're picked up automatically when `bee.startMcpSession()` creates the session.
 
@@ -147,8 +147,21 @@ var beeConfig = {
 ```
 {% endcode %}
 
+You can also pass `brandRules` and a `reusableRows` library directly to `bee.startMcpSession()`, for the session that call creates:
+
+```javascript
+const { templateId } = await bee.startMcpSession({
+  brandRules: { ... },                // replaces the brandRules of the editor configuration
+  reusableRows: { entries: [ ... ] }, // saved rows the agent can search and place
+})
+```
+
+* **`brandRules`:** when passed, these are used instead of the ones at the root of the editor configuration. When omitted, the root ones apply as before.
+* **`reusableRows`:** has no root-level equivalent. Pass it here to attach a library to the session. See [Reusable Rows for AI](../reusable-rows-for-ai.md) for the row shape, limits and what the agent can do with it.
+* **Calling it with no arguments** works as before.
+
 {% hint style="info" %}
-We suggest you validate your `brandRules` payload with the Brand Rules validation endpoint beforehand to avoid discovering errors only once the session starts.
+We suggest you validate your `brandRules` and `reusableRows` payloads with the [validation endpoint](../reusable-rows-for-ai.md#validate-a-library-before-starting-a-session) beforehand to avoid discovering errors only once the session starts.
 {% endhint %}
 
 #### Error handling
@@ -167,7 +180,7 @@ If `bee.startMcpSession()` fails, the error is returned in this shape:
 Common failure scenarios:
 
 * **Builder not ready** — the editor has not finished initializing.
-* **API error** — the server-side session creation request failed.
+* **API error** — the server-side session creation request failed. This includes an invalid `brandRules` or `reusableRows` payload (`400`), a request over 2 MB (`413`), and `brandRules` or `reusableRows` on a plan that does not include them (`403`).
 
 ### API-managed session
 
@@ -194,6 +207,7 @@ POST https://api.getbee.io/v2/sdk/mcp/template
 | template   | object | Optional. The JSON template to initialize the session with.                                                                                                               |
 | mergeTags  | object | Optional. Merge tags to be resolved within the template.                                                                                                                  |
 | brandRules | object | Optional. Brand Rules the agent must follow during the session (presets, permissions, limits). See [Brand Rules](../brand-rules-for-ai.md) for the full schema and logic. |
+| reusableRows | object | Optional. A library of the customer's saved rows the agent may search and place. See [Reusable Rows for AI](../reusable-rows-for-ai.md) for the payload shape and limits. |
 
 
 
@@ -201,13 +215,16 @@ POST https://api.getbee.io/v2/sdk/mcp/template
 {
   "template": { ... },
   "mergeTags": { ... },
-  "brandRules": { ... }
+  "brandRules": { ... },
+  "reusableRows": { ... }
 }
 ```
 
 To make the MCP Server work with Brand Rules in an API-managed session, pass a `brandRules` object in this request body alongside `template` and `mergeTags`.&#x20;
 
 We recommend validating your `brandRules` payload with the [Brand Rules validation endpoint](../brand-rules-for-ai.md#testing-and-validating-your-brand-rules) before creating the template. This surfaces schema errors up front instead of only when the session starts.
+
+To let the agent work with your users' saved rows, pass a `reusableRows` object in the same request. A library over the row or size limits is trimmed, while an invalid row makes the request fail with `400`. The response only returns the `templateId`, so keep the library within the limits and validate it beforehand. See [Reusable Rows for AI](../reusable-rows-for-ai.md).
 
 **Response**
 
@@ -363,6 +380,8 @@ Code Mode requires your agent to generate valid TypeScript. Implement error hand
 {% endhint %}
 
 Code Mode fully supports `brandRules`. Pass it the same way as in the standard API-managed or editor-managed paths above; the agent's generated scripts are validated against your Brand Rules guardrails like any other session.
+
+Code Mode also supports `reusableRows`. The four row capabilities are available to the generated scripts as `searchReusableRows`, `getReusableRowsFacets`, `getReusableRowsDetails` and `addReusableRow`.
 
 ### Migrating from v1
 

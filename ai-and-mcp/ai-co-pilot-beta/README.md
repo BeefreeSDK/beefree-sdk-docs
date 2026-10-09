@@ -110,6 +110,7 @@ const beeConfig = {
         maxIterations,    // number — auto-continue cap (default: 10)
         loadingPhrases,   // string[] — overrides default cycling loader text
         brandRules,       // brandRules object
+        reusableRows,     // { entries: [...] } — saved rows the Co-Pilot can place
       },
     },
   ],
@@ -126,6 +127,7 @@ const beeConfig = {
 | `maxIterations`   | `number`            | No       | Caps the agent's auto-continue loop on tool-call turns. Defaults to `10`. Lower it to control cost and latency.                                                                                                                                                      |
 | `loadingPhrases`  | `string[]`          | No       | Replaces the default cycling phrases shown under the loader (e.g. `"Sending request"`, `"Working"`). Phrases cycle per auto-continue turn and are announced via `aria-live`.                                                                                         |
 | `brandRules`      | `brandRules` object | No       | Brand Rules the Co-Pilot must follow (presets, permissions, limits). See the [Brand Rules](../brand-rules-for-ai.md) page for the full schema and logic.                                                                                                             |
+| `reusableRows`    | `{ entries: [...] }` | No      | A library of your users' saved rows the Co-Pilot can search and place instead of building them from scratch. Core plan and above. See [Reusable Rows for AI](../reusable-rows-for-ai.md) for the row shape and limits.                                              |
 
 #### Receiving message updates (`onInfo`)
 
@@ -264,6 +266,40 @@ To make the Co-Pilot work with Brand Rules, you simply pass the `brandRules` obj
 
 {% hint style="info" %}
 Tip: You can use the [Brand Rules validation endpoint](../brand-rules-for-ai.md#testing-and-validating-your-brand-rules) to validate your Brand Rules JSON before starting an AI editing session with the Co-Pilot.
+{% endhint %}
+
+### Using Reusable Rows with the AI Co-Pilot
+
+With [Reusable Rows](../reusable-rows-for-ai.md), you can hand the Co-Pilot a library of your users' saved rows: brand headers, footers with legal text, signatures. When a prompt asks for one of them, the Co-Pilot searches the library and places the approved row instead of generating a new one.
+
+To enable it, pass the library as `reusableRows` in the AI Agent `settings`:
+
+```javascript
+addOns: [
+  {
+    id: 'ai-agent',
+    settings: {
+      reusableRows: {
+        entries: [
+          {
+            metadata: { name: 'Brand footer', category: 'Footers', tags: ['legal'] },
+            columns: [ /* the row's columns, as saved from onSaveRow */ ],
+            synced: true,
+          },
+        ],
+      },
+    },
+  },
+]
+```
+
+* The Co-Pilot starts a new MCP session for every prompt and attaches the library to each of them, so a change to `reusableRows` applies from the next prompt.
+* On Core plans and above, the Co-Pilot is also told how to use the library: search before building, place rows by id, never edit a synced row.
+* If you set your own `systemPrompt`, it replaces the default instructions, including the ones about reusable rows. The library and its tools are still available, but you need to describe how to use them in your own prompt.
+* If the library is too large, it is trimmed, and the editor reports it through `onWarning` with code `5120`. If a row is invalid, the session does not start and the Co-Pilot shows the error. See [Reusable Rows for AI](../reusable-rows-for-ai.md#what-happens-when-a-library-does-not-fit).
+
+{% hint style="info" %}
+Tip: You can use the [validation endpoint](../reusable-rows-for-ai.md#validate-a-library-before-starting-a-session) to check your `reusableRows` payload before starting the Co-Pilot.
 {% endhint %}
 
 ### Disable the AI Co-Pilot per user
