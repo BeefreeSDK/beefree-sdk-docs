@@ -296,7 +296,7 @@ addOns: [
 * The Co-Pilot starts a new MCP session for every prompt and attaches the library to each of them, so a change to `reusableRows` applies from the next prompt.
 * On Core plans and above, the Co-Pilot is also told how to use the library: search before building, place rows by id, never edit a synced row.
 * If you set your own `systemPrompt`, it replaces the default instructions, including the ones about reusable rows. The library and its tools are still available, but you need to describe how to use them in your own prompt.
-* If the library is too large, it is trimmed, and the editor reports it through `onWarning` with code `5120`. If a row is invalid, the session does not start and the Co-Pilot shows the error. See [Reusable Rows for AI](../reusable-rows-for-ai.md#what-happens-when-a-library-does-not-fit).
+* If the library is too large, it is trimmed, and the editor reports it through `onWarning` with code `1770`. If a row is invalid, the session does not start and the Co-Pilot shows the error. See [Reusable Rows for AI](../reusable-rows-for-ai.md#what-happens-when-a-library-does-not-fit).
 
 {% hint style="info" %}
 Tip: You can use the [validation endpoint](../reusable-rows-for-ai.md#validate-a-library-before-starting-a-session) to check your `reusableRows` payload before starting the Co-Pilot.

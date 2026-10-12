@@ -139,7 +139,7 @@ The two kinds of limit behave differently:
 * **Rows and row data are trimmed, not refused.** A library over 1,000 rows or about 1.5 MB of row data is stored up to the limit, keeping the rows in the order you sent them, and the session starts. Put the rows that matter most first.
 * **Everything else is refused.** A row that breaks a field limit (a name over 200 characters, an empty tag, a missing `columns`...) makes the whole request fail with `400` and `{ "error": "Invalid reusableRows", "details": [...] }`, and no session is created. A request over 2 MB fails with `413` before any trimming.
 
-When the editor starts the session (the AI Co-Pilot, or `bee.startMcpSession()`), a trimmed library is reported through the `onWarning` callback with code `5120`. The `detail` says how many rows were kept and how many were dropped. Surface it in your integration: a silently partial library makes the agent answer "no such row" about rows your user can see in the editor.
+When the editor starts the session (the AI Co-Pilot, or `bee.startMcpSession()`), a trimmed library is reported through the `onWarning` callback with code `1770`. The `detail` says how many rows were kept and how many were dropped. Surface it in your integration: a silently partial library makes the agent answer "no such row" about rows your user can see in the editor.
 
 {% hint style="warning" %}
 With an API-managed session, `POST /v2/sdk/mcp/template` only returns the `templateId`, not what was stored. Keep the library within the limits on your side, and validate it as described below.
