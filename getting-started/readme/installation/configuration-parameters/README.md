@@ -413,7 +413,7 @@ advancedPermissions: {
 
 * **Type:** `object`
 * **Default:** `{}`
-* **Description:** Custom hooks for extending editor functionality.
+* **Description:** Custom hooks for extending editor functionality. Each hook is an object with a `handler: (resolve, reject, args) => void`. Examples: `getMentions` ([Commenting](../../../../other-customizations/advanced-options/commenting.md)), `brandTone` ([Brand Tone](../../../../ai-and-mcp/ai-addons/ai-writing-assistant/apply-a-brand-tone.md)), `aiAgentBeforeSend` ([AI Co-Pilot](../../../../ai-and-mcp/ai-co-pilot-beta/README.md#checking-prompts-before-they-are-sent-aiagentbeforesend)).
 
 ### metadata
 
