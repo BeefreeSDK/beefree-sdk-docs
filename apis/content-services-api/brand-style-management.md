@@ -160,8 +160,8 @@ The styles parameter in the request should follow this JSON format:
   "title": {
     // Title block styles
   },
-  "text": {
-    // Text block styles
+  "paragraph": {
+    // Paragraph block styles
   },
   "button": {
     // Button block styles

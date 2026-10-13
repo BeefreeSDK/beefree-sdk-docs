@@ -207,7 +207,11 @@ beeConfig: {
 }
 ```
 
-### **Text**
+### **Text (legacy)**
+
+{% hint style="warning" %}
+The Text block is legacy and it doesn't receive new features. Use the Paragraph block instead.
+{% endhint %}
 
 The `text` content default within the `beeConfig` provides a default HTML string and sets the styles for text blocks, including color, font, and line height. It also includes options for padding and visibility on mobile devices to ensure a consistent appearance across different screen sizes.
 

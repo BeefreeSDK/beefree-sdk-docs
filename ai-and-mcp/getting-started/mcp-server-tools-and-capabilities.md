@@ -41,7 +41,7 @@ These features work across multiple tools and categories to ensure designs are p
 
 These tools add and modify individual content elements within your email, including text, images, buttons, and other interactive components.
 
-* Text blocks: `beefree_add_title`, `beefree_add_paragraph`, `beefree_add_list`
+* Text containing blocks: `beefree_add_title`, `beefree_add_paragraph`, `beefree_add_list`
 * Media blocks: `beefree_add_image`, `beefree_add_icon`
 * Interactive blocks: `beefree_add_button`, `beefree_add_social`, `beefree_add_menu`
 * Structural blocks: `beefree_add_spacer`, `beefree_add_divider`
