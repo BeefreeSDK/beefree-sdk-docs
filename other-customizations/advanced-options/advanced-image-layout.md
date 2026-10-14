@@ -125,11 +125,11 @@ If you've set up your own CDN, every cache miss triggers a call to Beefree SDK's
 
 ### Who needs this
 
-You need to configure a transform route if you want to serve your images from your own CDN. Beefree SDK can't serve transformed images from infrastructure it doesn't own, so without this route there's nowhere for the transformed image to come from.
+Custom storage works with Advanced Image Layout. It just takes more setup than default storage: you need to configure a transform route so your images can be served from your own CDN. Beefree SDK can't serve transformed images from infrastructure it doesn't own, so without this route there's nowhere for the transformed image to come from.
 
-You have two other options if you'd rather not configure a CDN:
+If you’d rather not configure a CDN, you have two other options:
 
-* Route through Beefree SDK's CDN. Available on opt-in for custom storage. Your transformed images are then served from Beefree SDK infrastructure rather than your own, which matters if you chose custom storage for data-residency or compliance reasons.
+* Route through Beefree SDK’s CDN instead. Available on opt-in for custom storage, this takes less setup, but your transformed images are then served from Beefree SDK infrastructure rather than your own. This matters if you chose custom storage for data-residency or compliance reasons.
 * Don't enable Advanced Image Layout. Your end users stay on Original sizing, which is today's proportional-scaling behavior. Crop, fit, fill, and focal point options won’t be available.
 
 There's no automatic fallback. Beefree SDK won't serve your transformed images without your explicit opt-in, so if you don't configure the route, your end users won't get the Advanced Image Layout controls.
