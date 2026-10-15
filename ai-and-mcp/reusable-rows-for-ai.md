@@ -123,7 +123,8 @@ Do not send a `reusableRowId`. Each row gets one when the library is stored, and
 | ----------------------------- | --------------------------------------------------------- |
 | Rows per library              | 1,000                                                     |
 | Row data per library          | About 1.5 MB                                              |
-| Whole session request         | 2 MB, template and library together                       |
+| Session request without the library | 2 MB: template, merge tags, brand rules and the rest |
+| Whole session request         | 3.5 MB, library included                                  |
 | Name, category, description   | 200 characters each                                       |
 | `type`                        | 64 characters                                             |
 | Tags per row                  | 12, each up to 32 characters, also once a string is split |
@@ -135,7 +136,7 @@ Do not send a `reusableRowId`. Each row gets one when the library is stored, and
 The two kinds of limit behave differently:
 
 * **Rows and row data are trimmed, not refused.** A library over 1,000 rows or about 1.5 MB of row data is stored up to the limit, keeping the rows in the order you sent them, and the session starts. Put the rows that matter most first.
-* **Everything else is refused.** A row that breaks a field limit (a name over 200 characters, an empty tag, a missing `columns`...) makes the whole request fail with `400` and `{ "error": "Invalid reusableRows", "details": [...] }`, and no session is created. A request over 2 MB fails with `413` before any trimming.
+* **Everything else is refused.** A row that breaks a field limit (a name over 200 characters, an empty tag, a missing `columns`...) makes the whole request fail with `400` and `{ "error": "Invalid reusableRows", "details": [...] }`, and no session is created. A request over 3.5 MB, or whose fields other than `reusableRows` add up to more than 2 MB, fails with `413` before any trimming.
 
 When the editor starts the session (the AI Co-Pilot, or `bee.startMcpSession()`), a trimmed library is reported through the `onWarning` callback with code [`1770`](../resources/error-management/warning-error-info-callbacks.md). The `detail` says how many rows were kept and how many were dropped. Surface it in your integration: a silently partial library makes the agent answer "no such row" about rows your user can see in the editor.
 
@@ -240,4 +241,4 @@ No. The library is read-only for the session. Rows are created and maintained th
 No. It is attached at creation and fixed for the life of the session. Start a new session to attach a different library. The AI Co-Pilot starts a new session for every prompt, so a change to its `reusableRows` setting applies from the next prompt.
 
 **Does the library count against the template payload?**\
-The row data has its own budget of about 1.5 MB. The whole session request, template and library together, is capped at 2 MB.
+No. The row data has its own budget of about 1.5 MB, and everything else in the request (template, merge tags, brand rules...) has 2 MB. The whole request is capped at 3.5 MB, so a library sent over its budget still reaches the session and is trimmed, as long as the request stays within 3.5 MB.
