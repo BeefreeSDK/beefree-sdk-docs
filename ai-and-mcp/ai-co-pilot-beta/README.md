@@ -117,6 +117,14 @@ const beeConfig = {
 
 ```
 
+#### Custom System Prompt
+
+Customizing the system prompt lets you control how the AI Co-Pilot behaves in your application. Use it to define tone of voice, brand guidelines, and the kind of content the assistant should favor or avoid, so generated design and copy stays consistent with your product and your users’ expectations.
+
+{% hint style="info" %}
+System Prompt customization is only available for Superpowers and Enterprise plans.
+{% endhint %}
+
 #### Settings reference
 
 | Field             | Type                | Required | Description                                                                                                                                                                                                                                                          |
