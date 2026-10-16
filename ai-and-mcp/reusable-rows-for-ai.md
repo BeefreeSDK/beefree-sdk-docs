@@ -100,17 +100,15 @@ See [API-managed session](getting-started/mcp-server-installation-and-setup.md#a
 
 ### The row library
 
-An entry is a saved row in the shape the editor already produces (for example from `onSaveRow`), so a library you store for the row picker can be sent as it is. Only `metadata.name` and `columns` are required. Properties not listed below are kept as they are.
+An entry is a saved row in the shape the editor already produces (for example from `onSaveRow`), so a library you store for the row picker can be sent as it is. Only `metadata.name` and `columns` are required, and `metadata.description` is highly recommended. Properties not listed below are kept as they are, but neither checked nor searched: any other metadata field (your own ids, dates, a slug...) can stay in the row.
 
 | Field                  | Type             | Description                                                                                                                                                        |
 | ---------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `metadata.name`        | string           | Required. What the row is called. The agent searches on it and reports it back to the user.                                                                        |
 | `columns`              | array            | Required. The row's columns, at least one.                                                                                                                         |
 | `metadata.category`    | string or number | A category name, or a numeric category id. Names are searched as text and filtered on case-insensitively. A numeric id can be filtered on, but is not searched as text. |
-| `metadata.description` | string           | One line on what the row is for. Worth writing: the agent searches it, and it is often what settles a choice.                                                      |
-| `metadata.tags`        | array            | Searched and offered as filters.                                                                                                                                   |
-| `metadata.slug`        | string           | Searched as text.                                                                                                                                                  |
-| `metadata.uuid`        | string           | Your own id for the row. It is kept, but the agent does not use it to address the row.                                                                             |
+| `metadata.description` | string           | Highly recommended. One line on what the row is for: the agent searches it, and it is often what settles a choice between rows that look alike.                    |
+| `metadata.tags`        | array or string  | An array of strings, or one comma-separated string (`"promo, blue"`) as saved rows often store them. Searched and offered as filters. The row keeps the format you sent. |
 | `synced`               | boolean          | Marks a live shared row. See [Synced rows](#synced-rows-are-placed-never-edited).                                                                                  |
 | `type`                 | string           | The row type, as the editor saves it.                                                                                                                              |
 | `webFonts`             | array            | The fonts the row uses. They are added to the template when the row is placed.                                                                                     |
@@ -125,19 +123,20 @@ Do not send a `reusableRowId`. Each row gets one when the library is stored, and
 | ----------------------------- | --------------------------------------------------------- |
 | Rows per library              | 1,000                                                     |
 | Row data per library          | About 1.5 MB                                              |
-| Whole session request         | 2 MB, template and library together                       |
-| Name, category, slug, description | 200 characters each                                   |
-| `uuid`, `type`                | 64 characters each                                        |
-| Tags per row                  | 12, each up to 32 characters                              |
+| Session request without the library | 2 MB: template, merge tags, brand rules and the rest |
+| Whole session request         | 3.5 MB, library included                                  |
+| Name, category, description   | 200 characters each                                       |
+| `type`                        | 64 characters                                             |
+| Tags per row                  | 12, each up to 32 characters, also once a string is split |
 
-`name`, `uuid`, each tag and a string `category` must not be empty.
+`name`, each tag of an array and a string `category` must not be empty. In a comma-separated string, the spaces around each tag and the empty entries are ignored.
 
 #### What happens when a library does not fit
 
 The two kinds of limit behave differently:
 
 * **Rows and row data are trimmed, not refused.** A library over 1,000 rows or about 1.5 MB of row data is stored up to the limit, keeping the rows in the order you sent them, and the session starts. Put the rows that matter most first.
-* **Everything else is refused.** A row that breaks a field limit (a name over 200 characters, an empty tag, a missing `columns`...) makes the whole request fail with `400` and `{ "error": "Invalid reusableRows", "details": [...] }`, and no session is created. A request over 2 MB fails with `413` before any trimming.
+* **Everything else is refused.** A row that breaks a field limit (a name over 200 characters, an empty tag, a missing `columns`...) makes the whole request fail with `400` and `{ "error": "Invalid reusableRows", "details": [...] }`, and no session is created. A request over 3.5 MB, or whose fields other than `reusableRows` add up to more than 2 MB, fails with `413` before any trimming.
 
 When the editor starts the session (the AI Co-Pilot, or `bee.startMcpSession()`), a trimmed library is reported through the `onWarning` callback with code [`1770`](../resources/error-management/warning-error-info-callbacks.md). The `detail` says how many rows were kept and how many were dropped. Surface it in your integration: a silently partial library makes the agent answer "no such row" about rows your user can see in the editor.
 
@@ -185,7 +184,7 @@ With a library attached, the MCP Server exposes four more tools. They are offere
 
 A search answer describes a row: its id, name, category, synced flag, and where available its tags, description, a preview of the row's own words, and its structure (block types, column count, whether it has images or links). It never returns the row's content. That keeps the answer small enough that an agent can look at many rows before committing to one.
 
-The free-text search matches a row's name, tags, description, slug, category name and the row's own words, so the user's own phrasing usually works.
+The free-text search matches a row's name, tags, description, category name and the row's own words, so the user's own phrasing usually works.
 
 Results are capped and there is no paging. When the cap is hit, the answer says `truncated: true`, and the right move is a narrower search rather than another page.
 
@@ -224,7 +223,7 @@ Reusable Rows also work in [Code Mode](getting-started/mcp-server-installation-a
 The agent is only as good as the words you give it. Three things pay for themselves:
 
 1. **Name rows the way users talk.** "Black Friday hero" is findable. "Row 12 v3 final" is not.
-2. **Write the one-line description.** It is searched, and it is usually what decides between two rows that look alike from their names.
+2. **Write the one-line description.** It is highly recommended: it is searched, and it is usually what decides between two rows that look alike from their names.
 3. **Keep categories and tags small and consistent.** The agent reads the real list before filtering, so twenty tidy tags work better than two hundred near-duplicates. Prefer category names over numeric ids: names are searched as text, ids are not.
 
 ### FAQs
@@ -242,4 +241,4 @@ No. The library is read-only for the session. Rows are created and maintained th
 No. It is attached at creation and fixed for the life of the session. Start a new session to attach a different library. The AI Co-Pilot starts a new session for every prompt, so a change to its `reusableRows` setting applies from the next prompt.
 
 **Does the library count against the template payload?**\
-The row data has its own budget of about 1.5 MB. The whole session request, template and library together, is capped at 2 MB.
+No. The row data has its own budget of about 1.5 MB, and everything else in the request (template, merge tags, brand rules...) has 2 MB. The whole request is capped at 3.5 MB, so a library sent over its budget still reaches the session and is trimmed, as long as the request stays within 3.5 MB.

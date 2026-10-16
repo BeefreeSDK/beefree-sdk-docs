@@ -180,7 +180,7 @@ If `bee.startMcpSession()` fails, the error is returned in this shape:
 Common failure scenarios:
 
 * **Builder not ready** — the editor has not finished initializing.
-* **API error** — the server-side session creation request failed. This includes an invalid `brandRules` or `reusableRows` payload (`400`), a request over 2 MB (`413`), and `brandRules` or `reusableRows` on a plan that does not include them (`403`).
+* **API error** — the server-side session creation request failed. This includes an invalid `brandRules` or `reusableRows` payload (`400`), a request over 3.5 MB, or over 2 MB without the `reusableRows` (`413`), and `brandRules` or `reusableRows` on a plan that does not include them (`403`).
 
 ### API-managed session
 
