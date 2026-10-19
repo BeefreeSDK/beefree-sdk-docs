@@ -15,7 +15,7 @@ Currently, you can manage these content blocks:
 | **Title**     | Allows users to add text with H1,H2,H3 tags, for email and web accessibility, and for SEO on web pages.                         | All plans, including free | More info  |
 | **List**      | Allows users to create easy numbered and bullet lists with Paragraph's upgrades and list type, spacing, and identation support. | All plans, including free | More info  |
 | **Paragraph** | Allows users to write text with support for multiple font weights, copy/paste support, easier reformatting, and more.           | All plans, including free | More info  |
-| **Text**      | Legacy text block. Please refer to title, paragraph, and list.                                                                  | All plans, including free | More info  |
+| **Text**      | Legacy text block, not enabled by default for new applications. Please refer to title, paragraph, and list.                     | All plans, including free | More info  |
 | **Video**     | Helps users include a visual link to video content                                                                              | Paid plans only           | More info  |
 | **Icons**     | Enables users to create icon-based layouts, such as _star ratings, bullet lists, properties_                                    | All plans, including free | More info  |
 | **Spacer**    | Allows users to add a space between content                                                                                     | All plans, including free | More info  |
