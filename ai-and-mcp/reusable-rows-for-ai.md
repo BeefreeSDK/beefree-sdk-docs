@@ -233,6 +233,18 @@ A row with `synced: true` is a live shared row. The agent places it like any oth
 
 `beefree_add_reusable_row` does not paste the saved JSON. The row is refitted to the template it lands in: module widths are recomputed for the template's width, and the fonts it needs are added to the page. It also gets fresh ids, so the same saved row can be placed more than once in one design.
 
+### Mention the library in your system prompt
+
+The tool descriptions teach the agent how to search and place rows, but whether it reaches for the library at all is mostly decided by your system prompt, which it reads first. With a prompt that only says "build emails", a request like "add our footer" is often answered by building a new footer from blocks, or by replying that no saved rows are available, before the agent has looked at the tools. When you create a session with `reusableRows`, add a few lines to the system prompt you send your model, and leave them out for sessions without a library:
+
+{% code overflow="wrap" %}
+```
+This session has the customer's library of saved rows. When the user names a block or speaks of one that already exists ("our footer", "the usual header", "the Black Friday hero"), search the library before building anything, and place the row you find instead of recreating it. Rows marked synced are placed as they are and never edited.
+```
+{% endcode %}
+
+Keep it to when to use the library. How to search, filter and place is already in the tool descriptions, and repeating it in the prompt can drift out of date as the tools improve.
+
 ### Writing a library the AI can actually search
 
 The agent is only as good as the words you give it. Three things pay for themselves:
