@@ -110,12 +110,8 @@ An entry is a saved row in the shape the editor already produces (for example fr
 | `metadata.description` | string           | Highly recommended. One line on what the row is for: the agent searches it, and it is often what settles a choice between rows that look alike.                    |
 | `metadata.tags`        | array or string  | An array of strings, or one comma-separated string (`"promo, blue"`) as saved rows often store them. Searched and offered as filters. The row keeps the format you sent. |
 | `synced`               | boolean          | Marks a live shared row. See [Synced rows](#synced-rows-are-placed-never-edited).                                                                                  |
-| `type`                 | string           | The row type, as the editor saves it.                                                                                                                              |
+| `type`                 | string           | The row's layout, as the builder saves it.                                                                                                                         |
 | `webFonts`             | array            | The fonts the row uses. They are added to the template when the row is placed.                                                                                     |
-
-{% hint style="warning" %}
-Do not send a `reusableRowId`. Each row gets one when the library is stored, and the agent receives it from the search tool. A row is addressed by that id for the lifetime of the session, and any `reusableRowId` you send is replaced.
-{% endhint %}
 
 #### Limits
 
@@ -123,13 +119,8 @@ Do not send a `reusableRowId`. Each row gets one when the library is stored, and
 | ----------------------------- | --------------------------------------------------------- |
 | Rows per library              | 1,000                                                     |
 | Row data per library          | About 1.5 MB                                              |
-| Session request without the library | 2 MB: template, merge tags, brand rules and the rest |
-| Whole session request         | 3.5 MB, library included                                  |
 | Name, category, description   | 200 characters each                                       |
-| `type`                        | 64 characters                                             |
 | Tags per row                  | 12, each up to 32 characters, also once a string is split |
-
-`name`, each tag of an array and a string `category` must not be empty. In a comma-separated string, the spaces around each tag and the empty entries are ignored.
 
 #### What happens when a library does not fit
 
@@ -153,9 +144,25 @@ The two kinds of limit behave differently:
 
 When the editor starts the session (the AI Co-Pilot, or `bee.startMcpSession()`), a trimmed library is reported through the `onWarning` callback with code [`1770`](../resources/error-management/warning-error-info-callbacks.md). The `detail` says how many rows were kept and how many were dropped. Surface it in your integration: a silently partial library makes the agent answer "no such row" about rows your user can see in the editor.
 
-{% hint style="warning" %}
-With an API-managed session, `POST /v2/sdk/mcp/template` only returns the `templateId`, not what was stored. Keep the library within the limits on your side, and validate it as described below.
-{% endhint %}
+With an API-managed session, `POST /v2/sdk/mcp/template` reports what was stored next to the `templateId`:
+
+```json
+{
+  "templateId": "...",
+  "reusableRows": {
+    "entries": 1000,
+    "sentEntries": 1200,
+    "droppedEntries": 200,
+    "categories": 4,
+    "syncedEntries": 3,
+    "taggedEntries": 800,
+    "webFonts": 2,
+    "bytes": 1536000
+  }
+}
+```
+
+Check `droppedEntries` and warn your users when it is there, as the editor does with `1770`. Without a library, the response has no `reusableRows`.
 
 #### Validate a library before starting a session
 
