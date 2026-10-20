@@ -5,9 +5,7 @@ description: Ensure that the content your users create with AI adheres to brand 
 # Brand Rules for AI
 
 {% hint style="info" %}
-Brand Rules for AI are currently in Beta, and we'd love to hear any and all feedback you might have. Just email us at [beta-feedback@beefree.io](mailto:beta-feedback@beefree.io). If you need a helping hand getting started or have any questions about translating your users' brand guidelines into Brand Rules for AI, we're here to help!\
-\
-For the duration of the Beta, all SDK customers on Essentials, Core, Superpowers, and Enterprise plans have access to Brand Rules.&#x20;
+Brand Rules are available for customers on Superpowers and Enterprise plans.&#x20;
 {% endhint %}
 
 When you're adding agentic design functionality to your product, you don't just want to help your users create content faster. You'll also want to make sure that the content generated with AI is _actually_ on-brand. Brand Rules help you do just that.&#x20;

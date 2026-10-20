@@ -1,6 +1,6 @@
 # Rich-text editor (TinyMCE) update
 
-We are improving the rich-text editor experience for your email, page and popup builders. Beefree SDK’s updated editor engine (based on TinyMCE) brings a more consistent, modern look across all editor dialogs. It also ensures a lighter HTML output of text blocks, while confirming our ongoing commitment to keeping all tools behind Beefree SDK updated and secure.
+We are improving the rich-text editor experience for your email, page and popup builders. Beefree SDK’s updated editor engine (based on TinyMCE) brings a more consistent, modern look across all editor dialogs. It also ensures a lighter HTML output of text containing blocks, while confirming our ongoing commitment to keeping all tools behind Beefree SDK updated and secure.
 
 Below is a preview of what looks and behaves differently, so you can adjust your user-facing documentation and, if available in your subscription, arrange any necessary custom CSS and contentDialog modifications. Please note that we made some minor modifications to our CSS classes, as you can see in our [changelog](https://docs.beefree.io/beefree-sdk/other-customizations/appearance/custom-css/css-changes#release-august-2026).
 

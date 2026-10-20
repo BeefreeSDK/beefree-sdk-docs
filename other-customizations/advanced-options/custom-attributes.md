@@ -14,7 +14,7 @@ Custom Attributes are configured by the host application and surfaced directly i
 
 Custom Attributes can be applied to the following elements, depending on the block:
 
-* **Links inside text blocks** (Title, Paragraph, List, Table via TinyMCE link dialog)
+* **Links inside text containing blocks** (Title, Paragraph, List, Table via TinyMCE link dialog)
 * **Button links**
 * **Image tags**, including **video block thumbnails**
 * **Links contained in Social, Menu, and Icon items** (attributes are applied to the item’s underlying `<a>` tag)
@@ -44,7 +44,7 @@ The UI surfaces attributes differently depending on the content block:
 
 * **Buttons and Images**\
   Attributes appear in the **sidebar**, under **Attributes**.
-* **Links inside text blocks**\
+* **Links inside text containing blocks**\
   Attributes are available in the **Insert/Edit Link** dialog (TinyMCE-powered).
 * **Links inside Social, Menu, and Icon items**\
   Attributes appear in the sidebar and apply directly to the item’s underlying `<a>` tag. You can also add custom attributes from the “Global” section at the bottom of the sidebar, which use simple name–value fields and apply only to the container.&#x20;

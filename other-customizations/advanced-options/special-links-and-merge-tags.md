@@ -77,17 +77,17 @@ You can now use the [Content Dialog](content-dialog.md) feature to allow users t
 
 ## Merge Tag Details
 
-Merge tags can be inserted into a text block by clicking on the “Merge tags” button in the expanded text block toolbar. The button is not shown if no merge tags were submitted in the configuration file.
+Merge tags can be inserted into text containing blocks by clicking on the “Merge tags” button in the expanded text toolbar. The button is not shown if no merge tags were submitted in the configuration file.
 
 <figure><img src="../../.gitbook/assets/2bee_editor_merge_tags.png" alt=""><figcaption></figcaption></figure>
 
-Merge tags also become available to the user by pressing the @ key on the keyboard while editing a text block.
+Merge tags also become available to the user by pressing the @ key on the keyboard while editing a text containing block.
 
 Here is an example: the user wants the date of the last order to be inserted after “\[…] placing an order on …”, so he/she presses the @ key and selects “Last order date” from the list of merge tags found by the builder in the configuration file.
 
 <figure><img src="../../.gitbook/assets/3bee_v2_example_mergeTags.png" alt=""><figcaption></figcaption></figure>
 
-After inserting the merge tag, the text block now shows the placeholder for the last order date.
+After inserting the merge tag, the text containing block now shows the placeholder for the last order date.
 
 <figure><img src="../../.gitbook/assets/4bee_v2_example_mergeTags_2.png" alt=""><figcaption></figcaption></figure>
 

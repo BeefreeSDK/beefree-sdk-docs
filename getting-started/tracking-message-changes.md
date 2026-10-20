@@ -527,7 +527,7 @@ The following table lists the parameters in the onChange and onRemoteChange call
 
 | Code   | Content               |
 | ------ | --------------------- |
-| **01** | Text Block            |
+| **01** | Text Block (legacy)   |
 | **02** | Image Block           |
 | **03** | Button Block          |
 | **04** | Divider Block         |
