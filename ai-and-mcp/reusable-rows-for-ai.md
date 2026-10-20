@@ -166,7 +166,7 @@ Check `droppedEntries` and warn your users when it is there, as the editor does 
 
 #### Validate a library before starting a session
 
-The validation endpoint checks a `reusableRows` payload against the same rules without creating a session. It also accepts `brandRules` in the same request.
+The validation endpoint checks a `reusableRows` payload against the same rules without creating a session.
 
 ```
 POST https://api.getbee.io/v2/sdk/mcp/template/validate
@@ -186,8 +186,6 @@ The response lists every problem at once:
   "errors": ["reusableRows.entries.0.metadata.name must NOT have more than 200 characters"]
 }
 ```
-
-Validation does not check the row and size limits that trim a library, only the ones that would refuse it. The request itself follows the same size limits as a session request: over 3.5 MB, or over 2 MB without the `reusableRows`, it fails with `413`.
 
 ### The library is a copy for the session
 
@@ -231,27 +229,11 @@ This is also why `beefree_get_reusable_rows_facets` matters: it reports `rowsWit
 
 #### Synced rows are placed, never edited <a href="#synced-rows-are-placed-never-edited" id="synced-rows-are-placed-never-edited"></a>
 
-A row with `synced: true` is a live shared row. The agent is instructed to place it like any other, but never to update, restyle or delete it afterwards: a synced row is edited at its source, and changing one copy would break every design using it.
-
-{% hint style="info" %}
-This is an instruction the agent follows, not a lock on the placed blocks.
-{% endhint %}
+A row with `synced: true` is a live shared row. The agent places it like any other, but cannot change it afterwards: adding, updating or deleting a block in it, or changing its section or column styles, is refused. A synced row is edited at its source, and changing one copy would break every design using it. Removing the whole row from the design is allowed, unless the row is also `locked`.
 
 #### A placed row is refitted, not copied
 
 `beefree_add_reusable_row` does not paste the saved JSON. The row is refitted to the template it lands in: module widths are recomputed for the template's width, and the fonts it needs are added to the page. It also gets fresh ids, so the same saved row can be placed more than once in one design.
-
-A placed row's ids are only known once the placement has run. A direct tool call returns them as `sectionId` and `columnIds`. In [Code Mode](getting-started/mcp-server-installation-and-setup.md) the placement runs when the script ends, so a script cannot place a row and edit a block inside it in the same run: the agent places the row, then reads the content and edits it in its next step.
-
-### Works with the rest of the session
-
-[Brand Rules](brand-rules-for-ai.md) still apply to everything the agent builds itself.
-
-{% hint style="warning" %}
-A reusable row is placed as one unit, so `permissions.noAdd` is not applied to the blocks inside it. If your rules forbid the agent from adding an HTML block, a saved row that already contains one is still placed. Curate the library with the same care you put into the rules: the rows you attach are content you have already approved.
-{% endhint %}
-
-Reusable Rows also work in [Code Mode](getting-started/mcp-server-installation-and-setup.md), where the same four capabilities are available to the agent's scripts as `searchReusableRows`, `getReusableRowsFacets`, `getReusableRowsDetails` and `addReusableRow`.
 
 ### Writing a library the AI can actually search
 
@@ -261,7 +243,7 @@ The agent is only as good as the words you give it. Three things pay for themsel
 2. **Write the one-line description.** It is highly recommended: it is searched, and it is usually what decides between two rows that look alike from their names.
 3. **Keep categories and tags small and consistent.** The agent reads the real list before filtering, so twenty tidy tags work better than two hundred near-duplicates. Prefer category names over numeric ids: names are searched as text, ids are not.
 
-### FAQs
+### Frequently asked questions
 
 **What happens if I create a session without `reusableRows`?**\
 The four tools are not offered at all. Nothing else changes. A library with an empty `entries` array counts as no library: it is not stored and does not need a Core plan.
