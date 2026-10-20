@@ -133,6 +133,19 @@ Do not send a `reusableRowId`. Each row gets one when the library is stored, and
 
 #### What happens when a library does not fit
 
+When a session is created, the library goes through these checks, in this order:
+
+| Check                                   | Limit                                               | If it does not pass                                         |
+| --------------------------------------- | --------------------------------------------------- | ----------------------------------------------------------- |
+| Size of the whole request               | 3.5 MB                                              | Refused with `413`, no session                              |
+| Plan                                    | Core or above                                       | Refused with `403`, no session                              |
+| Size of the request without the library | 2 MB                                                | Refused with `413`, no session                              |
+| Fields of each row                      | See [Limits](#limits)                               | Refused with `400` `Invalid reusableRows`, no session       |
+| Number of rows                          | 1,000                                               | Trimmed: the first 1,000 are kept, the session starts        |
+| Row data                                | About 1.5 MB                                        | Trimmed: rows are kept in order until the budget is full     |
+
+A library with an empty `entries` array counts as no library: it is not checked against the plan, the fields or the trimming limits, and nothing is stored.
+
 The two kinds of limit behave differently:
 
 * **Rows and row data are trimmed, not refused.** A library over 1,000 rows or about 1.5 MB of row data is stored up to the limit, keeping the rows in the order you sent them, and the session starts. Put the rows that matter most first.
@@ -168,6 +181,21 @@ The response lists every problem at once:
 ```
 
 Validation does not check the row and size limits that trim a library, only the ones that would refuse it. The request itself follows the same size limits as a session request: over 3.5 MB, or over 2 MB without the `reusableRows`, it fails with `413`.
+
+### The library is a copy for the session
+
+The library is copied when the session is created, and the agent only ever works on that copy. Your own storage is never read again, so the copy can only be as up to date as the request that created the session:
+
+| When                          | What the session has                                                                                                                         |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| The session is created        | A copy of the rows you sent, checked and trimmed as described above. Each row gets the `reusableRowId` the agent uses.                         |
+| A saved row changes in your storage | Nothing changes for this session: it keeps the copy it was created with. The change applies to the sessions created afterwards.         |
+| The agent places a row        | A copy of the stored row, refitted to the template. It keeps its `metadata`, including your own ids and the `tags` format you sent.           |
+| The session ends or expires   | The library is deleted with the session.                                                                                                     |
+
+To keep the agent working on current rows, send the library every time a session is created, built from your storage at that moment. The AI Co-Pilot starts a new session for every prompt, so it picks up a changed `reusableRows` setting from the next prompt. With `bee.startMcpSession()`, pass the current library on each call. With an API-managed session, send it with each `POST /v2/sdk/mcp/template`.
+
+A synced row is no exception: the agent places the version that was in the library when the session started.
 
 ### What the agent can do
 
@@ -238,7 +266,7 @@ Creating a session with `reusableRows` is refused with `403`. The tools are not 
 No. The library is read-only for the session. Rows are created and maintained through the normal [Reusable Content](../rows/reusable-content/) flows.
 
 **Can I change the library during a session?**\
-No. It is attached at creation and fixed for the life of the session. Start a new session to attach a different library. The AI Co-Pilot starts a new session for every prompt, so a change to its `reusableRows` setting applies from the next prompt.
+No. It is attached at creation and fixed for the life of the session (see [The library is a copy for the session](#the-library-is-a-copy-for-the-session)). Start a new session to attach a different library. The AI Co-Pilot starts a new session for every prompt, so a change to its `reusableRows` setting applies from the next prompt.
 
 **Does the library count against the template payload?**\
 No. The row data has its own budget of about 1.5 MB, and everything else in the request (template, merge tags, brand rules...) has 2 MB. The whole request is capped at 3.5 MB, so a library sent over its budget still reaches the session and is trimmed, as long as the request stays within 3.5 MB.
