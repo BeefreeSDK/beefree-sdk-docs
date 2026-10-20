@@ -403,4 +403,4 @@ Code Mode requires your agent to generate valid TypeScript. Implement error hand
 
 Code Mode fully supports `brandRules`. Pass it the same way as in the standard API-managed or editor-managed paths above; the agent's generated scripts are validated against your Brand Rules guardrails like any other session.
 
-Code Mode also supports `reusableRows`. The four row capabilities are available to the generated scripts as `searchReusableRows`, `getReusableRowsFacets`, `getReusableRowsDetails` and `addReusableRow`.
+Code Mode also supports `reusableRows`. Pass it the same way as in the API-managed or editor-managed paths above; the agent's generated scripts can search the library and place its rows like in any other session. See [Reusable Rows for AI](../reusable-rows-for-ai.md).

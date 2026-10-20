@@ -62,13 +62,9 @@ const { templateId } = await bee.startMcpSession({
 
 See [Editor-managed session](getting-started/mcp-server-installation-and-setup.md#editor-managed-session).
 
-{% hint style="info" %}
-Unlike `brandRules` and `mergeTags`, there is no `reusableRows` property at the root of the editor configuration. Pass the library to the Co-Pilot addon or to `startMcpSession()`.
-{% endhint %}
-
 #### With an API-managed MCP session
 
-Pass the library in the body of the template creation request, alongside `template`, `mergeTags` and `brandRules`:
+Pass the library in the body of the template creation request, alongside the other keys of the request:
 
 ```
 POST https://api.getbee.io/v2/sdk/mcp/template
