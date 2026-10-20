@@ -167,7 +167,7 @@ The response lists every problem at once:
 }
 ```
 
-Validation does not check the row and size limits that trim a library, only the ones that would refuse it.
+Validation does not check the row and size limits that trim a library, only the ones that would refuse it. The request itself follows the same size limits as a session request: over 3.5 MB, or over 2 MB without the `reusableRows`, it fails with `413`.
 
 ### What the agent can do
 
@@ -229,7 +229,7 @@ The agent is only as good as the words you give it. Three things pay for themsel
 ### FAQs
 
 **What happens if I create a session without `reusableRows`?**\
-The four tools are not offered at all. Nothing else changes.
+The four tools are not offered at all. Nothing else changes. A library with an empty `entries` array counts as no library: it is not stored and does not need a Core plan.
 
 **What happens on a plan below Core?**\
 Creating a session with `reusableRows` is refused with `403`. The tools are not offered on those plans.

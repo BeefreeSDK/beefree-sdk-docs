@@ -224,7 +224,7 @@ To make the MCP Server work with Brand Rules in an API-managed session, pass a `
 
 We recommend validating your `brandRules` payload with the [Brand Rules validation endpoint](../brand-rules-for-ai.md#testing-and-validating-your-brand-rules) before creating the template. This surfaces schema errors up front instead of only when the session starts.
 
-To let the agent work with your users' saved rows, pass a `reusableRows` object in the same request. A library over the row or size limits is trimmed, while an invalid row makes the request fail with `400`. The response only returns the `templateId`, so keep the library within the limits and validate it beforehand. See [Reusable Rows for AI](../reusable-rows-for-ai.md).
+To let the agent work with your users' saved rows, pass a `reusableRows` object in the same request. A library over 1,000 rows or about 1.5 MB of row data is trimmed, while an invalid row makes the request fail with `400`, and a request over 3.5 MB, or over 2 MB without the `reusableRows`, with `413`. The response only returns the `templateId`, so keep the library within the limits and validate it beforehand. See [Reusable Rows for AI](../reusable-rows-for-ai.md).
 
 **Response**
 
