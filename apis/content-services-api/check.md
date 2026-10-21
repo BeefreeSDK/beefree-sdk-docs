@@ -1283,6 +1283,79 @@ The following table lists the possible fields and their corresponding data types
 | `widgetType`   | string    | `button`, `heading`, `paragraph`,`menu`,`list`,`table-header`, `table-content`                                                                                                                                                                                                                                                                                                                                                                        |
 | `mode`         | string    | <p>Stage mode suggestions refer to:</p><ul><li><code>both</code> : small font size set on desktop, mobile not set</li><li><code>desktop</code>: small font size set on desktop</li><li><code>mobile</code>: small font size set on mobile</li></ul><p><strong>Note:</strong> If small font size is set both on desktop and on mobile two suggestion will be returned, one with <code>mode: desktop</code> and one with <code>mode : mobile</code></p> |
 
+#### Missing Required Content
+
+This section covers the Missing Required Content check, detailing the process of adding the check to the `POST` API call, and how it appears in example responses. It includes examples of both a successful check and one that returns a suggestion.
+
+This check looks for required text within the design. Each required item can be a single value, or a set of alternatives where at least one must be found. The check treats all values as literal text, not as JSON keys or variables, and compares them against the design's visible text.
+
+<table data-full-width="false"><thead><tr><th>Check details</th><th>Corresponding options</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Suggestion</td></tr><tr><td><strong>Available for</strong></td><td>Email and page messages, email and page templates, rows</td></tr><tr><td><strong>Applicable widgets</strong></td><td>Button, social, menu, image, gif, sticker, icon, heading, paragraph, list, table</td></tr></tbody></table>
+
+Perform this check by adding `{"category": "missingRequiredContent", "content": [...]}` to your API call's request body, where `content` is an array of the required items to look for.
+
+The following table lists and defines the fields for the `content` parameter.
+
+<table data-full-width="false"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>content</code></td><td>array</td><td>The list of required items, at least 1 and at most 50</td></tr><tr><td><code>value</code></td><td>string</td><td>The text to look for, 1 to 200 characters. Mutually exclusive with <code>any_of</code></td></tr><tr><td><code>any_of</code></td><td>array</td><td>2 to 10 alternatives. The item is satisfied when at least one is found. Mutually exclusive with <code>value</code></td></tr><tr><td><code>case_sensitivity</code></td><td>string</td><td><code>sensitive</code> (default) or <code>insensitive</code></td></tr></tbody></table>
+
+{% code fullWidth="false" %}
+```json
+{
+  "checks": [
+    {
+      "category": "missingRequiredContent",
+      "content": [
+        { "value": "{{value_a}}" },
+        { "any_of": ["{{value_b}}", "%%value_c%%", "value_d"], "case_sensitivity": "insensitive" }
+      ]
+    }
+  ]
+}
+```
+{% endcode %}
+
+**Example response for a check that passed**
+
+The following JSON response shows an example of a missing required content check that passed. This means that every required item in the request was found in the design, and the end user can confidently export their design knowing the required content is present.
+
+{% code fullWidth="false" %}
+```json
+{
+    "type": "missingRequiredContent",
+    "targetsCount": 0,
+    "checkStatus": "passed",
+    "targets": []
+}
+```
+{% endcode %}
+
+**Example response for a check that returned a suggestion**
+
+The following JSON response shows an example of a missing required content check that resulted in a suggestion. This means that one or more required items weren't found in the design, and the end user should add the missing content prior to exporting their design.
+
+{% code fullWidth="false" %}
+```json
+{
+    "type": "missingRequiredContent",
+    "targetsCount": 2,
+    "checkStatus": "suggestion",
+    "targets": [
+        {
+            "value": "{{value_a}}",
+            "caseSensitivity": "sensitive"
+        },
+        {
+            "anyOf": ["{{value_b}}", "%%value_c%%", "value_d"],
+            "caseSensitivity": "insensitive"
+        }
+    ]
+}
+```
+{% endcode %}
+
+The following table lists and defines all the fields related to the `missingRequiredContent` check.
+
+<table data-full-width="false"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>Check type, equal to <code>missingRequiredContent</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>The number of required items not found</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>The status of this check: <code>passed</code> or <code>suggestion</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>The list of required items not found</td></tr><tr><td><code>value</code></td><td>string</td><td>The value that wasn't found. Absent when the item declared <code>any_of</code></td></tr><tr><td><code>anyOf</code></td><td>array</td><td>The alternatives, none of which was found. Absent when the item declared <code>value</code></td></tr><tr><td><code>caseSensitivity</code></td><td>string</td><td>How the item was compared: <code>sensitive</code> or <code>insensitive</code></td></tr></tbody></table>
+
 ## Frontend Visual Feedback and Cues
 
 This section discusses how to perform API calls on the backend in order to run checks against email, page, and row JSON. An important part of connecting the backend API calls to frontend feedback is the response body of these API calls. When a check is performed against the JSON, if an issue is identified, the `target` in the API response specifies the element that needs attention. This target is what connects to [Frontend Commands](../../other-customizations/frontend-commands.md), the `execCommand` method and actions (`select`, `highlight`, `scroll`, and `focus`), and provides feedback visually to the end users on the frontend.
@@ -1492,7 +1565,7 @@ This section lists and describes each of the Check endpoints. You can use this s
 This section includes details on how to make an API call using the email check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="message-check" path="/v1/message/check" method="post" %}
-[OpenAPI message-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/a0a803fcab82fc94a75d76e02422bbaee4b3d159b979391ed8095e475d723f49.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260716%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260716T094914Z&X-Amz-Expires=172800&X-Amz-Signature=b6984cbc30199ab5f0929927672501d62378aeeb8d8edb48a8a13b1fca1d74d6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI message-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/a0a803fcab82fc94a75d76e02422bbaee4b3d159b979391ed8095e475d723f49.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20261021%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261021T125120Z&X-Amz-Expires=172800&X-Amz-Signature=daecd999e2d941e5fab0ec0c656fb3c0015c759f3f02f3612287ed9956041984&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
@@ -1694,7 +1767,7 @@ Reference the following example email response:
 This section includes details on how to make an API call using the page check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="page-check" path="/v1/page/check" method="post" %}
-[OpenAPI page-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/4308febd44d915cc101689a737e2381eb1c6723b5e3d523e010547c938a72ba9.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260716%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260716T094914Z&X-Amz-Expires=172800&X-Amz-Signature=152ba74fa089104fb9d78cd2ca0d2d7f9411527ffc463d7afcc376a22efcc17b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI page-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/4308febd44d915cc101689a737e2381eb1c6723b5e3d523e010547c938a72ba9.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20261021%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261021T125120Z&X-Amz-Expires=172800&X-Amz-Signature=079b67a56a9dc1ea391aac31a06164fbc3c90b2b908bcb150d19939e061037e7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
@@ -1879,7 +1952,7 @@ Reference an example page response:
 This section includes details on how to make an API call using the row check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="row-check" path="/v1/row/check" method="post" %}
-[OpenAPI row-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/fd96add5eb3171c8641c68e85b13ca24fd76b94debf20b7a3b25a7b5e4c01264.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260716%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260716T094914Z&X-Amz-Expires=172800&X-Amz-Signature=52959452ddd3b18ca61a3d906dd527a1bc18bd5e685113e7a4e05f55a446210d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI row-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/fd96add5eb3171c8641c68e85b13ca24fd76b94debf20b7a3b25a7b5e4c01264.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20261021%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261021T125120Z&X-Amz-Expires=172800&X-Amz-Signature=e961da343257b9b1c7f0b6b73238b6fdfd948b6c7cb1aa9a250348f184218968&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
