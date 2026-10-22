@@ -162,11 +162,12 @@ metadata: {
 **Recommended metadata**
 
 * `category`: A category can be useful for organizing your feeds on the Rows tab.
+* `description`: One line on what the row is for. Useful to find the row again, and the field the AI relies on most to choose between similar rows when the row is used as a [reusable row for AI](../../../ai-and-mcp/reusable-rows-for-ai.md).
 * **id:** A handle that identifies the row in the host application’s data storage.
 * **idParent:** Useful to track rows that were saved from previously saved rows. Keeping track of where a row came from allows you to implement additional editing features.
 * **dateCreated:** The date the row was created: useful for filtering/sorting rows for content management purposes in your application. It can also help with technical support tasks.
 * **dateModified:** The date a saved row was updated: useful for filtering/sorting rows for content management purposes in your application. It can also help with technical support tasks.
 * **userId:** To let your application decide whom can edit or saved rows.
-* **tags:** Useful to create filters, management, search, and in general to organize the content in your application.
+* **tags:** Useful to create filters, management, search, and in general to organize the content in your application. A comma-separated string or an array of strings.
 
 Reference the [Row Metadata page](../../../data-structures/row-metadata.md) to learn more.

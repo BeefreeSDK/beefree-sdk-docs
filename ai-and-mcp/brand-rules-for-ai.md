@@ -199,7 +199,7 @@ In addition to that, the following validation endpoint helps you test and valida
 
 **Endpoint**
 
-`POST https://api.getbee.io/v2/sdk/mcp/template`
+`POST https://api.getbee.io/v2/sdk/mcp/template/validate`
 
 **Request body**
 
