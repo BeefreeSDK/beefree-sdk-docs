@@ -39,10 +39,6 @@ At a protocol level:
 * **Tools.** Servers list tools via tools/list and invoke them via tools/call. Each tool has a name and JSON Schema for inputs (and optionally outputs).
 * **Metadata (\_meta).** A reserved envelope for passing extra routing/context (not tool args), namespaced as the spec requires. We'll use it to pass Beefree session routing when not using HTTP headers.
 
-{% hint style="info" %}
-Since the Beefree SDK MCP Server relies on Beefree's CSAPI, it is subjected to the [same rate limits](../../apis/content-services-api/#rate-limits).
-{% endhint %}
-
 ### Prerequisites
 
 #### Get an MCP-compatible CSAPI key
@@ -64,6 +60,14 @@ https://api.getbee.io/v2/sdk/mcp
 ```
 
 Your agent must complete the MCP `initialize/initialized` handshake before calling any tools. MCP clients (SDKs, runtimes) typically handle this automatically.
+
+### Rate Limits
+
+MCP template operations (`/v2/sdk/mcp/template*`, used to create and retrieve templates) have their own dedicated rate-limit budget: 500 requests / 60s on Standard plans, 1,000 requests / 60s on Enterprise. This is a separate budget from other Content Services API groups, not shared with them.
+
+Tool calls made through `/v2/sdk/mcp` and `/v2/sdk/mcp/codemode` are not currently subject to any per-client rate limit.
+
+See the [Content Services API Rate Limits section](../../apis/content-services-api/#rate-limits) for the full breakdown of all endpoint groups.
 
 ### Editor-managed session
 
