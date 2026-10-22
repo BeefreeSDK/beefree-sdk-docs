@@ -278,9 +278,18 @@ Tip: You can use the [Brand Rules validation endpoint](../brand-rules-for-ai.md#
 
 ### Using the File Manager with the AI Co-Pilot
 
-With [File Manager for AI](../file-manager-for-ai.md), the Co-Pilot can work in your user's File Manager: reuse the images they already have, save the images it brings in where they will find them again, and delete the files it no longer needs, only in the folders you allow.
+With [File Manager for AI](../file-manager-for-ai.md), the Co-Pilot can find, save, and delete files in your user's File Manager, only in the folders you allow. Pass the folders as `fileManager` in the AI Agent `settings`:
 
-To enable it, pass the folders as `fileManager` in the AI Agent `settings`:
+```typescript
+// Exported by @beefree.io/sdk as McpFileManager
+interface McpFileManager {
+  readPaths?: string[]   // folders the Co-Pilot can list and search, subfolders included
+  uploadPaths?: string[] // folders it can save files to
+  deletePaths?: string[] // folders it can delete files from, subfolders included
+}
+// A list you leave out defaults to ['/AI Generated Images']; [] turns that operation off.
+// Without fileManager, the Co-Pilot has no file tools.
+```
 
 ```javascript
 addOns: [
@@ -288,25 +297,20 @@ addOns: [
     id: 'ai-agent',
     settings: {
       fileManager: {
-        readPaths: ['/'],                      // folders the Co-Pilot can list and search
-        uploadPaths: ['/AI Generated Images'], // folders it can save files to
-        deletePaths: [],                       // folders it can delete files from: none
+        readPaths: ['/'],
+        uploadPaths: ['/AI Generated Images'],
+        deletePaths: [],
       },
     },
   },
 ]
 ```
 
-* Pass only the folders. The Co-Pilot works in the File Manager of the `uid` the editor was started with, and a `uid` in `fileManager` is ignored.
-* Without `fileManager`, the Co-Pilot has no file tools. For the defaults of the lists you leave out, and for applications with a Customer Shared Folder, see [The `fileManager` object](../file-manager-for-ai.md#the-filemanager-object).
-* The Co-Pilot attaches the folders when it starts an MCP session for a prompt, so a change to `fileManager` applies from the next session it starts.
-* If the session of an earlier prompt is still open, or the editor joined a session with `bee.join()`, the prompt runs in that session, and this setting does not apply to it. In a joined session, the Co-Pilot works with that session's own `fileManager` and `uid`, or without the file tools if the session has none.
-* The Co-Pilot is not told which folders it can use. Let your users name them in their prompts; on the Superpowers and Enterprise plans, you can also name them in your [`systemPrompt`](#custom-system-prompt). See [Choosing folders for the agent](../file-manager-for-ai.md#choosing-folders-for-the-agent).
-* If `fileManager` is invalid, the session does not start: the Co-Pilot does not send the prompt, and shows a generic error with a Retry button. Check the folders with the validation endpoint to find what is wrong.
+* The Co-Pilot works in the File Manager of the `uid` the editor was started with.
+* The folders apply to the MCP session the Co-Pilot starts for a prompt. If a session is still open, or the editor joined one with `bee.join()`, the prompt runs in that session, with that session's own `fileManager`.
+* An invalid `fileManager` keeps the session from starting, and the Co-Pilot shows an error with a Retry button. Check it with the [validation endpoint](../file-manager-for-ai.md#validate-a-configuration-before-starting-a-session), adding the editor's `uid`: the endpoint requires one.
 
-{% hint style="info" %}
-Tip: You can use the [validation endpoint](../file-manager-for-ai.md#validate-a-configuration-before-starting-a-session) to check your folders before starting the Co-Pilot. Add the `uid` the editor was started with to the object you validate: the endpoint requires one, while the Co-Pilot ignores it.
-{% endhint %}
+See [File Manager for AI](../file-manager-for-ai.md) for path rules, limits, and [choosing folders for the agent](../file-manager-for-ai.md#choosing-folders-for-the-agent).
 
 ### Disable the AI Co-Pilot per user
 
