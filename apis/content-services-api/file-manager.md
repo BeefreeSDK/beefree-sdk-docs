@@ -50,7 +50,7 @@ Everything after `/v1/file/` is the path to a file or directory inside your end 
 
 Each request counts as one Content Services API call, and these endpoints are subject to the [same rate limits](./#rate-limits) as every other category.
 
-Once [File Manager for AI](../../ai-and-mcp/file-manager-for-ai.md) is available for your application, an AI agent can also list, search, upload, and delete files in this file system during an MCP session, only in the folders you allow.
+With [File Manager for AI](../../ai-and-mcp/file-manager-for-ai.md), an AI agent can also list, search, upload, and delete files in this file system during an MCP session, only in the folders you allow.
 
 ## Headers and authentication
 
