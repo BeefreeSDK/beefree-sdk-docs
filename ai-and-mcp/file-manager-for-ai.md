@@ -117,21 +117,14 @@ Each list stands on its own, and leaving one out is not the same as sending it e
 #### Folder paths
 
 * A path starts with `/` and names a folder from the root of the File Manager, for example `/Brand/Logos`. `/` alone is the whole File Manager.
-* Matching is exact, case included. `/brand` and `/Brand Assets` are not inside `/Brand`; `/Brand/Logos` is.
-* `.` and `..` segments and empty segments (`//`) are refused. A single trailing slash is accepted and dropped.
-* The folders are not checked against the File Manager when the session is created. A folder that does not exist is accepted, and the agent finds out when it uses it.
+* Matching is exact, case included: `/brand` is not `/Brand`.
 
 #### Limits
 
-| Limit                                                   | Value                                                                                                                                                                                                                      |
-| ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Folders per list                                        | 20                                                                                                                                                                                                                         |
-| Folder path                                             | 512 characters                                                                                                                                                                                                             |
-| `uid`                                                   | 128 characters. From the editor, this applies to the `uid` the editor was started with, although you do not send it: with a longer one, the session fails as an invalid configuration. |
-| Search term                                             | 3 to 255 characters                                                                                                                                                                                                        |
-| Search results                                          | 200 per search, no paging                                                                                                                                                                                                  |
-| Time for one tool call (in Code Mode, one whole script) | 30 seconds, including the download from `sourceUrl`                                                                                                                                                                        |
-| Upload file types and size                              | Whatever your application allows for File Manager uploads: by default, images, videos, and PDFs up to 20 MB. See [Mime Types and Groups](../file-manager/file-manager-application-overview/file-extensions-and-groups.md). |
+| Limit                      | Value |
+| -------------------------- | ----- |
+| Folders per list           | 20    |
+| Upload file types and size | Whatever your application allows for File Manager uploads: by default, images, videos, and PDFs up to 20 MB. See [Mime Types and Groups](../file-manager/file-manager-application-overview/file-extensions-and-groups.md). |
 
 #### What happens when a configuration is invalid
 
