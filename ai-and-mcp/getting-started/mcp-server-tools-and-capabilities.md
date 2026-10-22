@@ -55,6 +55,15 @@ These tools verify email quality by checking for accessibility issues, missing a
 * `beefree_check_template` - Template validation
 * `beefree_check_section` - Section validation
 
+#### File Manager
+
+These tools let the agent work in your users' File Manager: find the images they already have, save the images it brings in, and delete the files it no longer needs. File Manager for AI is not yet available to Beefree SDK applications. Once it is, these tools are offered only to sessions created with a `fileManager` configuration that allows their operation. See [File Manager for AI](../file-manager-for-ai.md).
+
+* `beefree_list_files` - List the files and folders directly inside a folder
+* `beefree_search_files` - Find files by name across the folders the agent can read
+* `beefree_upload_file` - Save a file from a URL into a folder and return its public URL
+* `beefree_remove_file` - Delete one file, never a folder
+
 #### External services
 
 These tools integrate with third-party services to enhance your email designs with external resources and assets.

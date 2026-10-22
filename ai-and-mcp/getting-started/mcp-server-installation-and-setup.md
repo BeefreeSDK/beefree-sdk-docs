@@ -200,18 +200,22 @@ POST https://api.getbee.io/v2/sdk/mcp/template
 | template   | object | Optional. The JSON template to initialize the session with.                                                                                                               |
 | mergeTags  | object | Optional. Merge tags to be resolved within the template.                                                                                                                  |
 | brandRules | object | Optional. Brand Rules the agent must follow during the session (presets, permissions, limits). See [Brand Rules](../brand-rules-for-ai.md) for the full schema and logic. |
+| fileManager | object | Optional. The end user whose File Manager the agent can work in (`uid`), and the folders it can read, upload to, and delete from. See [File Manager for AI](../file-manager-for-ai.md) for availability, fields, defaults, and limits. |
 
 ```json
 {
   "template": { ... },
   "mergeTags": { ... },
-  "brandRules": { ... }
+  "brandRules": { ... },
+  "fileManager": { ... }
 }
 ```
 
 To make the MCP Server work with Brand Rules in an API-managed session, pass a `brandRules` object in this request body alongside `template` and `mergeTags`.
 
 We recommend validating your `brandRules` payload with the [Brand Rules validation endpoint](../brand-rules-for-ai.md#testing-and-validating-your-brand-rules) before creating the template. This surfaces schema errors up front instead of only when the session starts.
+
+To let the agent work in your users' File Manager, pass a `fileManager` object in the same request body, with the `uid` of the end user and the folders the agent can read, upload to, and delete from. An invalid `fileManager` makes the request fail with `400`, and no session is created. Validate it beforehand with the [validation endpoint](../file-manager-for-ai.md#validate-a-configuration-before-starting-a-session). File Manager for AI is not yet available to Beefree SDK applications: until it is, the agent does not see the file tools. See [File Manager for AI](../file-manager-for-ai.md).
 
 **Response**
 
@@ -367,3 +371,5 @@ Code Mode requires your agent to generate valid TypeScript. Implement error hand
 {% endhint %}
 
 Code Mode fully supports `brandRules`. Pass it the same way as in the standard API-managed or editor-managed paths above; the agent's generated scripts are validated against your Brand Rules guardrails like any other session.
+
+Once File Manager for AI is available for your application, Code Mode supports `fileManager` too. Pass it in the template creation request of an API-managed session; the agent's scripts can then list, search, upload, and remove files as with the standard tools, and place a file they just saved in the same script. See [File Manager for AI](../file-manager-for-ai.md).

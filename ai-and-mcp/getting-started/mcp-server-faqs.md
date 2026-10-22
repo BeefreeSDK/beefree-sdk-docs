@@ -50,6 +50,10 @@ We encourage you to explore the available tools and share feedback — your inpu
 
 The MCP Server currently supports the Beefree SDK Email Builder. Support for the Landing Page and Popup builders is limited, but will be considered for future updates.
 
+#### Can the agent use the images in my users' File Manager?
+
+Not yet. File Manager for AI, which lets the agent list, search, upload, and delete files in an end user's File Manager, only in the folders you allow, is not yet available to Beefree SDK applications. See [File Manager for AI](../file-manager-for-ai.md) to learn how it works.
+
 #### Is my data secure when using MCP?
 
 Yes. MCP calls are authenticated with secure keys, tied to your session, and handled in accordance with Beefree SDK's security and data policies.

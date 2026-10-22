@@ -10,6 +10,8 @@ Instead of having to switch between different applications or tools, they can ac
 
 {% hint style="info" %}
 Your application can also manage these files from your own server. The [File Manager endpoints](../../apis/content-services-api/file-manager.md) in the [Content Services API](../../apis/content-services-api/) can list, search, create, upload, move, and delete an end user's files and folders without opening a builder.
+
+Once [File Manager for AI](../../ai-and-mcp/file-manager-for-ai.md) is available for your application, an AI agent can work in the same files during an MCP session, only in the folders you allow: find your users' images, save new ones, and delete the ones it no longer needs.
 {% endhint %}
 
 ## Testing and integrating the File Manager <a href="#testing-and-integrating-the-file-manager" id="testing-and-integrating-the-file-manager"></a>
