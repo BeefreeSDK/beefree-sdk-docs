@@ -194,7 +194,7 @@ When the server refused the session creation request, `detail` holds the HTTP `s
 Common failure scenarios:
 
 * **Builder not ready** — the editor has not finished initializing.
-* **API error** — the server-side session creation request failed. For an invalid `fileManager`, `detail.status` is `400`, `detail.error` is `Invalid fileManager`, and `detail.details` lists what is wrong.
+* **API error** — the server-side session creation request failed.
 
 ### API-managed session
 
