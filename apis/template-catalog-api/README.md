@@ -85,17 +85,14 @@ Implement caching mechanisms to reduce API calls and minimize user loading times
 
 ### Rate Limits
 
-Handle errors gracefully and provide clear error messages to assist in resolving any issues.\
-These endpoints have the following rate limits:
+Handle errors gracefully and provide clear error messages to assist in resolving any issues. Template Catalog endpoints (`/v1/catalog/*`) share a per-application rate limit with other endpoints in the same group:
 
-* Per minute: 500 requests;
-* Per second:  100 requests.
+* **Standard plans:** 500 requests / 60 seconds
+* **Enterprise plans:** 1,000 requests / 60 seconds
 
-Therefore, we recommend not enforcing excessive automatic tries when you get an error message, otherwise, you may exceed the limit and won’t be able to proceed with more requests.
+This limit is shared across your application's other `catalog`-group calls, not just Template Catalog requests. See the [Content Services API Rate Limits](../content-services-api/#rate-limits) section for the full picture across all endpoint groups.
 
-The API is a read-only API. The only method is `GET`.
-
-Find answers to common queries related to the Template Catalog API, its features, and integration.
+The API is read-only (`GET` only), so we recommend avoiding excessive automatic retries when you receive an error — this can cause you to exceed the limit and be temporarily unable to make further requests.
 
 ## FAQs
 

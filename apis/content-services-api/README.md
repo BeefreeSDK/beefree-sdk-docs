@@ -191,21 +191,38 @@ The following table provides a few examples of URLs you can reference as an exam
 
 API requests rate limits exist independently of API key’s monthly usage allowance.
 
-By default, the API has the following rate limits:
+Beefree SDK applies rate limits per application, with a separate request budget for each group of endpoints below, rather than one shared limit across every call. Your plan tier sets the default budget per group; Enterprise customers can also request custom per-application limits for any group.
 
-* **Per minute:** 500 requests
-* **Per second:** 100 requests
-* **X-Rate-Limit:** An integer representing the total number of requests available per cycle. Exceeding the limit per cycle results in a 429 error. (e.g. 500)
-* **X-Rate-Limit-Remaining:** An integer representing the number of remaining requests before the next cycle begins, and the count resets. (e.g. 100)
-* **X-Rate-Limit-Reset:** A Unix timestamp representing the time the next cycle will begin, and the count will reset.
-* **Retry-After:** A Unix timestamp representing the time the application may resume submitting requests.
+### Limits by group and plan
+
+| Group              | Endpoints                                                                            | Standard      | Enterprise      |
+| ------------------ | ------------------------------------------------------------------------------------ | ------------- | --------------- |
+| Image & PDF Export | `/v1/{collection}/image`, `/v1/{collection}/pdf`                                     | 50 req / 60s  | 100 req / 60s   |
+| HTML Importer      | `/v1/conversion/html-to-json`                                                        | 50 req / 60s  | 100 req / 60s   |
+| Template Catalog   | `/v1/catalog/*`                                                                      | 500 req / 60s | 1,000 req / 60s |
+| MCP                | `/v2/sdk/mcp/template*`                                                              | 500 req / 60s | 1,000 req / 60s |
+| General            | All endpoints not covered by Renderer, HTML Importer, Template Catalog, or MCP above | 500 req / 60s | 1,000 req / 60s |
+
+{% hint style="info" %}
+**Note:** Image and PDF Export and HTML Importer have lower budgets than the other groups. If your application does bulk or bursty rendering, plan request volume accordingly.
+{% endhint %}
+
+**Plan tiers**: Standard includes Free, Essentials, Core, and Superpowers plans. Enterprise is its own tier with higher default limits.
+
+**Development applications**: All development applications of the same parent application share one rate-limit budget per group. This budget is separate from the parent application’s own budget, so development traffic never reduces production capacity.
+
+**X-Rate-Limit, X-Rate-Limit-Remaining**: These reflect the status of the specific endpoint group your request belongs to. For example, a call to a Renderer endpoint reports the Renderer group’s limit and remaining count, not an account-wide total. Since the headers describe the call you just made, you can tell which group’s budget they refer to by which endpoint you called.
+
+**Retry-After**: The number of seconds to wait before sending another request to the same group.
+
+**X-Rate-Limit-Reset**: The number of milliseconds until the current window resets.
 
 ### Strategies for Managing Rate Limits
 
 To stay within the default limits and ensure reliable delivery, the following practices are recommended. These not only help distribute traffic more evenly but also provide resilience against transient network issues:
 
 * **Monitor rate limit headers and handle 429 responses gracefully.**\
-  Response metadata indicates remaining capacity and reset timing. When receiving a `429 Too Many Requests`, it’s best to pause requests and retry after the time specified in the `Retry-After` header.
+  Response metadata reflects the remaining capacity and reset timing for the specific group your request hit, not a global total across all groups. When receiving a `429 Too Many Requests`, it’s best to pause requests and retry after the time specified in the `Retry-After` header.&#x20;
 * **Use exponential backoff.**\
   On retries, apply an exponentially increasing delay with a small random variation. This helps prevent synchronized retry storms that can worsen congestion.
 * **Throttle traffic using a queue.**\
@@ -253,9 +270,4 @@ The Content Services API is provided as a component for your current subscriptio
 
 ### How do you calculate request limits? <a href="#how-do-you-calculate-request-limits" id="how-do-you-calculate-request-limits"></a>
 
-API requests rate limits exist independently of any API key’s monthly usage allowance.
-
-The API has the following rate limits:
-
-* **Per minute:** 500 requests
-* **Per second:** 100 requests
+Rate limits are calculated per application, per endpoint group, based on your plan tier (see [Rate Limits](./#rate-limits)). In addition, all endpoints share a limit of 100 requests per second per IP address, checked before authentication.

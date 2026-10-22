@@ -59,6 +59,15 @@ Using a simple API, you can pass us the email you'd like us to convert, and the 
 
 <figure><img src="../../.gitbook/assets/mermaid-diagram-HTML-Importer.png" alt=""><figcaption></figcaption></figure>
 
+### Rate Limits
+
+The HTML Importer endpoint (`/v1/conversion/html-to-json`) has a dedicated per-application rate limit:
+
+* **Standard plans:** 50 requests / 60 seconds
+* **Enterprise plans:** 100 requests / 60 seconds
+
+See the [Content Services API Rate Limits](../content-services-api/#rate-limits) section for how rate limits work across all endpoint groups, including custom limits and development application behavior.
+
 ### FAQs
 
 Explore answers to the most frequently asked questions.

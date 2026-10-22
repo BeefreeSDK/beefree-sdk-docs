@@ -40,7 +40,7 @@ At a protocol level:
 * **Metadata (\_meta).** A reserved envelope for passing extra routing/context (not tool args), namespaced as the spec requires. We'll use it to pass Beefree session routing when not using HTTP headers.
 
 {% hint style="info" %}
-Since the Beefree SDK MCP Server relies on Beefree's CSAPI, it is subjected to the same rate limits. [Learn more here](../../apis/content-services-api/).
+Since the Beefree SDK MCP Server relies on Beefree's CSAPI, it is subjected to the [same rate limits](../../apis/content-services-api/#rate-limits).
 {% endhint %}
 
 ### Prerequisites
