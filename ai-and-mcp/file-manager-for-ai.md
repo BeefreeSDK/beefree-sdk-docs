@@ -29,7 +29,7 @@ The agent works in one user's File Manager and, for each operation, only in the 
 
 The File Manager is attached when the session the agent works in is created, and it stays the same for the life of the session. There are three ways to pass it, depending on how you use AI in the editor. In all three, it is a `fileManager` object with the folders the agent can use for each operation, and [Code Mode](getting-started/mcp-server-installation-and-setup.md#code-mode) works with all three. The examples below give the agent the same access: it can read the whole File Manager, save files to `/AI Generated Images`, and delete nothing.
 
-From the editor, with the AI Co-Pilot or `bee.startMcpSession()`, you pass only the folders: the agent works in the File Manager of the `uid` the editor was started with (see [Whose File Manager the agent works in](#whose-file-manager-the-agent-works-in)). This requires Beefree SDK version 3.58 or later, which becomes Latest on November 5, 2026 and Stable on December 3, 2026. On an earlier version, `fileManager` is ignored and the session starts without the file tools. If your application uses [Version Control](../getting-started/version-control.md), production applications on the default auto-upgrade receive version 3.58 when it becomes Stable: apply it yourself to use File Manager for AI from the editor sooner. An API-managed session does not depend on the editor version.
+From the editor, with the AI Co-Pilot or `bee.startMcpSession()`, you pass only the folders: the agent works in the File Manager of the `uid` the editor was started with (see [Whose File Manager the agent works in](#whose-file-manager-the-agent-works-in)).
 
 #### With the AI Co-Pilot
 
@@ -286,7 +286,7 @@ The agent can only be as careful as the folders you give it. Four things pay for
 The four tools are not offered at all. Nothing else changes: the agent can still find stock images and place images from a URL.
 
 **Can I attach the File Manager to an editor-managed session or to the AI Co-Pilot?**\
-Yes, with Beefree SDK version 3.58 or later. Pass the folders as `fileManager` to `bee.startMcpSession()`, or in the `settings` of the `ai-agent` addon for the AI Co-Pilot. See [Attach the File Manager to a session](#attach-the-file-manager-to-a-session).
+Yes. Pass the folders as `fileManager` to `bee.startMcpSession()`, or in the `settings` of the `ai-agent` addon for the AI Co-Pilot. See [Attach the File Manager to a session](#attach-the-file-manager-to-a-session).
 
 **Can the agent reach another user's files?**\
 No. The `uid` is fixed when the session is created, and no tool takes one. From the editor, it is the `uid` the editor was started with, whatever the page sends, unless the editor joined an API-managed session with `bee.join()`: then it is the `uid` in that session's `fileManager`. See [Whose File Manager the agent works in](#whose-file-manager-the-agent-works-in).

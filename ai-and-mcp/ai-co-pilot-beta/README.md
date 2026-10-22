@@ -297,7 +297,6 @@ addOns: [
 ]
 ```
 
-* `fileManager` requires Beefree SDK version 3.58 or later. See [Attach the File Manager to a session](../file-manager-for-ai.md#attach-the-file-manager-to-a-session).
 * Pass only the folders. The Co-Pilot works in the File Manager of the `uid` the editor was started with, and a `uid` in `fileManager` is ignored.
 * Without `fileManager`, the Co-Pilot has no file tools. For the defaults of the lists you leave out, and for applications with a Customer Shared Folder, see [The `fileManager` object](../file-manager-for-ai.md#the-filemanager-object).
 * The Co-Pilot attaches the folders when it starts an MCP session for a prompt, so a change to `fileManager` applies from the next session it starts.

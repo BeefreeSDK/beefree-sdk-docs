@@ -159,7 +159,7 @@ We suggest you validate your `brandRules` payload with the Brand Rules validatio
 
 #### File Manager
 
-To let the agent work in your user's File Manager, pass the folders it can use as `fileManager` to `bee.startMcpSession()`. It has no equivalent at the root of the editor configuration, and it requires Beefree SDK version 3.58 or later.
+To let the agent work in your user's File Manager, pass the folders it can use as `fileManager` to `bee.startMcpSession()`. It has no equivalent at the root of the editor configuration.
 
 ```javascript
 const { templateId } = await bee.startMcpSession({
