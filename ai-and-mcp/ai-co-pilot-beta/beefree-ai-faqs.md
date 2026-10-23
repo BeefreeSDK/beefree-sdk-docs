@@ -18,7 +18,7 @@ Yes. You supply an API key from a supported provider during setup in the Develop
 
 #### **Which AI providers and models are supported?**&#x20;
 
-Three providers are currently supported: Anthropic, OpenAI, and Gemini (Gemini support is currently in preview). Each provider offers multiple models. Recommended starting points, chosen for their balance of cost, speed, and output quality, are Claude Haiku 4.5, GPT-5.4 Mini, and Gemini 2.5 Flash. Higher-tier models are available if your use case demands stronger output, but come with higher cost and latency.
+Three providers are currently supported: Anthropic, OpenAI, and Gemini. Each provider offers multiple models. Higher-tier models will provide stronger output, but come with higher cost and latency. For Anthropic, Claude Haiku 5.5 leads at the lower tier and Claude Opus 5 at the higher tier. For OpenAI, GPT-6 Sol produces the strongest results, though at higher cost; GPT-5.6 Luna and GPT-5.5 follow closely behind. For Gemini, Gemini 3.7 Flash and Gemini 3.8 Flash are the strongest performers. In our internal testing, Gemini models as a group tended to produce lower-quality output than Anthropic or OpenAI models.
 
 #### **Can I customize how the AI behaves for my users?**&#x20;
 
