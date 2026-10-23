@@ -279,6 +279,10 @@ This Quickstart Guide walks you through embedding the Beefree SDK's no-code emai
 
 Reference the [angular-email-builder GitHub repository](https://github.com/BeefreeSDK/angular-email-builder) with the complete code for this project to follow along in this Angular Quickstart Guide. The [`src/`](https://github.com/BeefreeSDK/angular-email-builder/tree/main/src) folder in the repository contains a full working demo application.
 
+{% hint style="info" %}
+**Using an AI agent to help with setup?** Try our Beefree SDK setup skill. It walks your agent through the steps in this guide. [Get the setup skill](https://github.com/BeefreeSDK/beefree-sdk-skills/tree/main/skills/beefree-sdk-setup).
+{% endhint %}
+
 ### Prerequisites
 
 Before you begin, make sure you:

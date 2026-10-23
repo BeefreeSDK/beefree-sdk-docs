@@ -17,7 +17,11 @@ beeConfig: {
 
 ```
 
-Loading Popup Builder with no additional settings will give the end-user a beautifully designed popup and workspace to design their content. However, Popup Builder comes with an additional, robust set of configuration options to customize the workspace.  This allows the host application to build a workspace that matches their popup’s look and feel and that of the destination page.
+{% hint style="info" %}
+**Using an AI agent to help with setup?** Try our Beefree SDK setup skill. It supports Pop-up builder as well as Email builder. [Get the setup skill](https://github.com/BeefreeSDK/beefree-sdk-skills/tree/main/skills/beefree-sdk-setup).
+{% endhint %}
+
+Loading Popup Builder with no additional settings will give the end-user a beautifully designed popup and workspace to design their content. However, Popup Builder comes with an additional, robust set of configuration options to customize the workspace. This allows the host application to build a workspace that matches their popup’s look and feel and that of the destination page.
 
 For example, the host app can customize…
 
@@ -39,7 +43,7 @@ In Email and Page Builder, the content area width is saved in the template. For 
 
 With Popup Builder, the same template may have multiple contexts, and each context will likely have specific size requirements. For example, an exit-intent popup may have a max-width of 600px on a desktop with a classical layout centered on the screen. On the other hand, the host app may display the same template on mobile in the bar style docked at the bottom of the screen with a restricted width of 300px.
 
-Since the content area’s width is tightly coupled to the context and layout, no one size fits all width is saved in the template. Instead, the host app will specify the width settings when the builder loads, based on the context of using the template.  You’ll find an example in the common settings section below.
+Since the content area’s width is tightly coupled to the context and layout, no one size fits all width is saved in the template. Instead, the host app will specify the width settings when the builder loads, based on the context of using the template. You’ll find an example in the common settings section below.
 
 Popup Builder does not support fluid 100% width content.
 
@@ -53,7 +57,7 @@ The HTML partial will come with all the CSS required to look as it did in the pr
 
 Now that we covered the basic differences between Popup Builder and our other applications let’s discuss what you should expect when the builder starts.
 
-As mentioned above in the Getting Started section, you will receive a ready-to-go design experience if no settings are provided.  The default layout is a classic centered modal with a fixed width.
+As mentioned above in the Getting Started section, you will receive a ready-to-go design experience if no settings are provided. The default layout is a classic centered modal with a fixed width.
 
 If the default popup style and layout suit your needs, then you are all set to start designing! You can load the builder without additional configuration and use the same standard controls and callbacks to access the HTML and JSON template.
 
@@ -78,7 +82,7 @@ beeConfig: {
 
 ```
 
-If this option is not set, then we will provide a default skeleton layout.  It’s worth noting at this point that you can apply every setting for both desktop and mobile design modes. That means you can have a different background when editing in _Mobile Design Mode_. We’ll show you how later!&#x20;
+If this option is not set, then we will provide a default skeleton layout. It’s worth noting at this point that you can apply every setting for both desktop and mobile design modes. That means you can have a different background when editing in _Mobile Design Mode_. We’ll show you how later!
 
 ## Popup default layouts <a href="#popup-default-layouts" id="popup-default-layouts"></a>
 

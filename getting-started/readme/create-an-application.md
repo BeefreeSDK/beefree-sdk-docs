@@ -122,3 +122,7 @@ For 24 hours after regenerating a new Client Secret, you will temporarily have a
 * [Configuration parameters](installation/configuration-parameters/)
 * [Server-side options](../../server-side-configurations/server-side-options/)
 * [Sample code](../sample-code.md)
+
+{% hint style="info" %}
+**Using an AI agent to help with setup?** Add your credentials to an `.env` file, then try our Beefree SDK setup skill to get a working builder running. [Get the setup skill](https://github.com/BeefreeSDK/beefree-sdk-skills/tree/main/skills/beefree-sdk-setup).
+{% endhint %}

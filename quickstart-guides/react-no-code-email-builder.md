@@ -244,6 +244,10 @@ This Quickstart Guide shows you step by step how to embed the Beefree SDK's Emai
 
 Reference the [react-email-builder GitHub repository](https://github.com/BeefreeSDK/react-email-builder) with the complete code for this project to follow along in this React Quickstart Guide. The [`example/`](https://github.com/BeefreeSDK/react-email-builder/tree/main/example) folder in the repository contains a full working demo application.
 
+{% hint style="info" %}
+**Using an AI agent to help with setup?** Try our Beefree SDK setup skill. It walks your agent through the steps in this guide. [Get the setup skill](https://github.com/BeefreeSDK/beefree-sdk-skills/tree/main/skills/beefree-sdk-setup).
+{% endhint %}
+
 ### Prerequisites
 
 Prior to getting started, ensure you:

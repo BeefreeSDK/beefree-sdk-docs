@@ -28,6 +28,10 @@ File manager applications share the same core functionalities as all other build
 
 For those who are new to our platform, our documentation includes a comprehensive [Getting Started](../../getting-started/readme/installation/) section that provides detailed instructions on how to set up and use our builders. This section is applicable to all products.
 
+{% hint style="info" %}
+**Using an AI agent to help with setup?** Try our Beefree SDK setup skill. It supports standalone File Manager applications as well as Email builder. [Get the setup skill](https://github.com/BeefreeSDK/beefree-sdk-skills/tree/main/skills/beefree-sdk-setup).
+{% endhint %}
+
 File Manager and all builders are available to customers under the same [all-in-one pricing.](https://developers.beefree.io/pricing-plans) Please contact your Customer Success Manager for more details.
 
 ## Configure "Insert" and "X" Buttons

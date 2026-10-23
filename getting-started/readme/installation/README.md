@@ -8,6 +8,7 @@ layout:
   cover:
     visible: false
     size: full
+    mask: none
   title:
     visible: true
   description:
@@ -24,6 +25,8 @@ layout:
     visible: true
   actions:
     visible: true
+  anchors:
+    visible: true
 ---
 
 # Installation and Fundamentals
@@ -39,6 +42,14 @@ This page discusses the core concepts related to installing Beefree SDK within y
 By the end of this guide, you'll understand the core concepts related to how you can install the package, authenticate, and get started with Beefree SDK. You'll have working a local environment set up on your machine to experiment with.
 
 For a quick start, visit our [React](../../../quickstart-guides/react-no-code-email-builder.md), [Angular](../../../quickstart-guides/angular-no-code-email-builder.md), and [Vue.js](../../../quickstart-guides/vue.js-no-code-email-builder.md) Quickstart guides, which each include complete sample code by framework.
+
+{% hint style="success" %}
+The Beefree SDK setup skill guides your coding agent through the steps on this page.
+
+To install it, ask your agent to run `npx skills add BeefreeSDK/beefree-sdk-skills --skill beefree-sdk-setup`, or run the command yourself in terminal. Then start a new chat and prompt: "Set up Beefree SDK in this folder and get me to a running demo."
+
+For other ways to install, see the [setup skill guide](https://github.com/BeefreeSDK/beefree-sdk-skills/tree/main/skills/beefree-sdk-setup).
+{% endhint %}
 
 ## **Prerequisites**
 

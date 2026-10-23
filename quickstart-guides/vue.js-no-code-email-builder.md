@@ -290,6 +290,10 @@ Reference the [vue-email-builder GitHub repository](https://github.com/BeefreeSD
 
 Watch the Vue.js Video Series to learn more about how to install Beefree SDK into your Vue.js application visually.
 
+{% hint style="info" %}
+**Using an AI agent to help with setup?** Try our Beefree SDK setup skill. It walks your agent through the steps in this guide. [Get the setup skill](https://github.com/BeefreeSDK/beefree-sdk-skills/tree/main/skills/beefree-sdk-setup).
+{% endhint %}
+
 ### Prerequisites
 
 Before you begin, make sure you:

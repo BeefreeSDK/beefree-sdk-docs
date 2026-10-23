@@ -58,6 +58,10 @@ Take the following steps to get started with Beefree SDK in a few minutes:
 
 **Note:** Visit the [Beefree SDK pricing page](https://developers.beefree.io/pricing-plans) for a comprehensive list of features and the plan type they correspond to.
 
+{% hint style="success" %}
+**Using an AI agent to help with setup?** Try our Beefree SDK setup skill to go from credentials to a running builder. [Get the setup skill](https://github.com/BeefreeSDK/beefree-sdk-skills/tree/main/skills/beefree-sdk-setup).
+{% endhint %}
+
 ## Quickstart Guides by Framework <a href="#welcome" id="welcome"></a>
 
 Reference Quickstart Guides specific to your tech stack:

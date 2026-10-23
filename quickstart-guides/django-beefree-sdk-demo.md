@@ -23,6 +23,10 @@ This project provides:
 * A template with a container and a "Read the Docs" button.
 * A frontend script that imports the SDK, starts it, and then loads a starter template for a smooth, interactive experience.
 
+{% hint style="info" %}
+**Using an AI agent to help with setup?** Try our Beefree SDK setup skill. It walks your agent through the steps in this guide. [Get the setup skill](https://github.com/BeefreeSDK/beefree-sdk-skills/tree/main/skills/beefree-sdk-setup).
+{% endhint %}
+
 ### Quick start (clone and run)
 
 ```bash

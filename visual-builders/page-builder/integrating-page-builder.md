@@ -8,6 +8,10 @@ When you create an application in the [Beefree SDK Console](https://developers.b
 
 Page and Email builders **share the same core functionalities**, including authentication and configuration. If you already integrated our Email builder, you can re-use most of your work by using the **same configuration and callbacks**. If this is your first approach to our builders, just follow the [Installation section in our documentation](../../getting-started/readme/installation/). All the documentation in this site applies to both products, except where noted.
 
+{% hint style="info" %}
+**Using an AI agent to help with setup?** Try our Beefree SDK setup skill. It supports Page builder as well as Email builder. [Get the setup skill](https://github.com/BeefreeSDK/beefree-sdk-skills/tree/main/skills/beefree-sdk-setup).
+{% endhint %}
+
 All builders are available to Beefree SDK customers under the same [all-in-one pricing](https://developers.beefree.io/pricing-plans). Please contact your Customer Success Manager for more details.
 
 ### The experience <a href="#the-experience" id="the-experience"></a>

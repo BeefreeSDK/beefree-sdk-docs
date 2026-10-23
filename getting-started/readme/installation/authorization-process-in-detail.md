@@ -91,6 +91,10 @@ You can reference `/loginV2` examples in the following Quickstart Guides:
 * [Vue](../../../quickstart-guides/vue.js-no-code-email-builder.md)
 * [Angular](../../../quickstart-guides/angular-no-code-email-builder.md)
 
+{% hint style="info" %}
+**Using an AI agent to help with setup?** Try our Beefree SDK setup skill. It walks you through adding a server-side token endpoint, the recommended way to keep your credentials out of client-side code. [Get the setup skill](https://github.com/BeefreeSDK/beefree-sdk-skills/tree/main/skills/beefree-sdk-setup).
+{% endhint %}
+
 Ensure to call the authorization endpoint server-side to protect your credentials.
 
 Once you obtain the token, the [configuration parameters](https://docs.beefree.io/configuration-parameters/) object is passed to Beefree SDK to set up your customization options, for example setting the editor’s language to “Spanish”.
