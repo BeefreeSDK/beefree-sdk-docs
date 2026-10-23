@@ -65,8 +65,6 @@ Your agent must complete the MCP `initialize/initialized` handshake before calli
 
 MCP template operations (`/v2/sdk/mcp/template*`, used to create and retrieve templates) have their own dedicated rate-limit budget: 500 requests / 60s on Standard plans, 1,000 requests / 60s on Enterprise. This is a separate budget from other Content Services API groups, not shared with them.
 
-Tool calls made through `/v2/sdk/mcp` and `/v2/sdk/mcp/codemode` are not currently subject to any per-client rate limit.
-
 See the [Content Services API Rate Limits section](../../apis/content-services-api/#rate-limits) for the full breakdown of all endpoint groups.
 
 ### Editor-managed session
