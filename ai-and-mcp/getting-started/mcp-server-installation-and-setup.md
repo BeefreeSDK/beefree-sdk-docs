@@ -8,9 +8,13 @@ The Beefree SDK MCP Server exposes the editor, and Check API as callable tools. 
 
 ### Choose your integration path
 
-{% hint style="info" %}
-Beefree SDK's MCP Server support both in-editor and headless use-cases. If you are integrating the MCP in a headless setup, you can follow the [API-managed session](mcp-server-installation-and-setup.md#api-managed-session) path below skipping the third step "Connect the editor"
-{% endhint %}
+Beefree SDK's MCP Server support both headless and in-editor use-cases.
+
+#### Headless
+
+To integrate the MCP Server in a headless setup, you can follow the [API-managed session](mcp-server-installation-and-setup.md#api-managed-session) path below skipping the third step to "Connect the editor".
+
+#### In-Editor
 
 There are two ways to connect your agent to the editor. The right choice depends on whether [co-editing](../../other-customizations/collaborative-editing/) is available and enabled on your account:
 
@@ -174,7 +178,7 @@ Common failure scenarios:
 ### API-managed session
 
 {% hint style="warning" %}
-Use this path when [**co-editing**](../../other-customizations/collaborative-editing/) **is enabled on your account**.
+Use this path either for a [**headless setup**](mcp-server-installation-and-setup.md#headless) (skipping step 3), or when [**co-editing**](../../other-customizations/collaborative-editing/) is enabled on your account and you want to integrate the builder with it.
 {% endhint %}
 
 Your host application controls the full session lifecycle: you create the template, connect the agent, and optionally connect the editor — all independently.
@@ -197,8 +201,6 @@ POST https://api.getbee.io/v2/sdk/mcp/template
 | mergeTags  | object | Optional. Merge tags to be resolved within the template.                                                                                                                  |
 | brandRules | object | Optional. Brand Rules the agent must follow during the session (presets, permissions, limits). See [Brand Rules](../brand-rules-for-ai.md) for the full schema and logic. |
 
-
-
 ```json
 {
   "template": { ... },
@@ -207,7 +209,7 @@ POST https://api.getbee.io/v2/sdk/mcp/template
 }
 ```
 
-To make the MCP Server work with Brand Rules in an API-managed session, pass a `brandRules` object in this request body alongside `template` and `mergeTags`.&#x20;
+To make the MCP Server work with Brand Rules in an API-managed session, pass a `brandRules` object in this request body alongside `template` and `mergeTags`.
 
 We recommend validating your `brandRules` payload with the [Brand Rules validation endpoint](../brand-rules-for-ai.md#testing-and-validating-your-brand-rules) before creating the template. This surfaces schema errors up front instead of only when the session starts.
 
@@ -343,7 +345,7 @@ In the [Beefree SDK MCP v2 demo repository](https://github.com/BeefreeSDK/beefre
 {% hint style="success" %}
 **Try Code Mode for Beefree SDK's MCP Server**
 
-Code Mode is currently in open beta and rolling out to all customers with Essentials, Core, Superpowers and Enterprise plans.&#x20;
+Code Mode is currently in open beta and rolling out to all customers with Essentials, Core, Superpowers and Enterprise plans.
 {% endhint %}
 
 Code Mode is an alternative way to interact with the Beefree SDK MCP Server that significantly **reduces token consumption**.
@@ -358,7 +360,7 @@ https://api.getbee.io/v2/sdk/mcp/codemode
 
 In internal benchmarks across five models and three email complexity levels, Code Mode reduced total token consumption by 68–96%, with most results in the 85–95% range ([learn more in our blogpost](https://developers.beefree.io/blog/ai-agents-email-saving-tokens#code-mode))
 
-Use Code Mode when your agent makes many sequential tool calls to reduce API costs and latency.&#x20;
+Use Code Mode when your agent makes many sequential tool calls to reduce API costs and latency.
 
 {% hint style="info" %}
 Code Mode requires your agent to generate valid TypeScript. Implement error handling to gracefully handle partial failures.
