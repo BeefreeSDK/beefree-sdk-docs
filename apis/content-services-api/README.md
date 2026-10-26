@@ -207,7 +207,7 @@ Beefree SDK applies rate limits per application, with a separate request budget 
 **Note:** Image and PDF Export and HTML Importer have lower budgets than the other groups. If your application does bulk or bursty rendering, plan request volume accordingly.
 {% endhint %}
 
-**Plan tiers**: Standard includes Free, Essentials, Core, and Superpowers plans. Enterprise is its own tier with higher default limits.
+**Plan tiers**: Standard includes Essentials, Core, and Superpowers plans. Enterprise is its own tier with higher default limits.
 
 **Development applications**: All development applications of the same parent application share one rate-limit budget per group. This budget is separate from the parent application’s own budget, so development traffic never reduces production capacity.
 
