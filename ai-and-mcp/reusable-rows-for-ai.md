@@ -213,13 +213,15 @@ With a library attached, the MCP Server exposes four more tools. They are offere
 
 A search answer describes a row: its id, name, category, synced flag, and where available its tags, description, a preview of the row's own words, and its structure (block types, column count, whether it has images or links). It never returns the row's content. That keeps the answer small enough that an agent can look at many rows before committing to one.
 
-The free-text search matches a row's name, tags, description, category name and the row's own words, so the user's own phrasing usually works.
+The free-text search matches a row's name, tags, description, category name and the row's own words. Every word must appear somewhere in the row, in any order and in any of those fields, and the match ignores case, so the user's own phrasing usually works. Filters on category, tags, block types and synced status narrow further; by default a row must pass all of them, or any one of them when the agent asks for it.
 
 Results are capped and there is no paging. When the cap is hit, the answer says `truncated: true`, and the right move is a narrower search rather than another page.
 
 #### An empty result is informative
 
 When nothing matches, the answer explains which filter was too narrow and what dropping it would return. An agent that reads this recovers on its next call instead of guessing at another query.
+
+The answer also catches the misses that look like an empty library: a category or tag the library does not use is reported, with the nearest values it does use, and a name that matched nothing comes back with the row names spelled most like it. When two returned rows share a name, the answer says so, so the agent tells them apart before placing one.
 
 This is also why `beefree_get_reusable_rows_facets` matters: it reports `rowsWithoutText`, the rows that carry no searchable words at all. Those cannot be found by a text search, so an empty result is not proof the library lacks what the user asked for.
 
