@@ -280,7 +280,3 @@
   * [Create a Default Form in Beefree SDK](resources/cookbook/create-a-default-form-in-beefree-sdk.md)
   * [Create a Form Library in Beefree SDK](resources/cookbook/create-a-form-library-in-beefree-sdk.md)
   * [Create a Custom Form Builder in Beefree SDK](resources/cookbook/create-a-custom-form-builder-in-beefree-sdk.md)
-
-## Upcoming updates <a href="#updates" id="updates"></a>
-
-* [Rich-text editor (TinyMCE) update](updates/rich-text-editor.md)
