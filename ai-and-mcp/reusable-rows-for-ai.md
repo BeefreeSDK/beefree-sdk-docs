@@ -109,6 +109,47 @@ An entry is a saved row in the shape the editor already produces (for example fr
 | `type`                 | string           | The row's layout, as the builder saves it.                                                                                                                         |
 | `webFonts`             | array            | The fonts the row uses. They are added to the template when the row is placed.                                                                                     |
 
+#### Identify rows by your own key
+
+If your rows already carry an id of your own in their metadata, name that field in `rowIdentifierLabel`, next to `entries`:
+
+{% code overflow="wrap" %}
+```json
+{
+  "reusableRows": {
+    "rowIdentifierLabel": "customUUID",
+    "entries": [
+      {
+        "metadata": { "name": "Primary header", "customUUID": "HDR-2024" },
+        "columns": [ ... ]
+      },
+      {
+        "metadata": { "name": "Legal footer", "customUUID": "FT-06" },
+        "columns": [ ... ],
+        "synced": true
+      }
+    ]
+  }
+}
+```
+{% endcode %}
+
+Every row then needs that field, and its value is the row's key:
+
+* **Required and unique.** Each row must carry the field, and no two rows may share a value.
+* **A string or a number.** A number is read as its digits, so `4412` and `"4412"` are the same key.
+* **Up to 128 characters, not starting with `rr_`.** That prefix belongs to the ids the agent uses.
+
+A row that breaks one of these makes the request fail with `400` `Invalid reusableRows`, like any other field error. For example: `reusableRows.entries.3.metadata.customUUID is required, because rowIdentifierLabel is customUUID`, or `reusableRows.entries.5.metadata.customUUID must be unique: entries.2 has FT-06 too`.
+
+With a key, three things change for the agent:
+
+* **The row's id is your key.** The agent places rows by an id that starts with `rr_`. Without `rowIdentifierLabel`, that id is random and new in every session. With it, the id is `rr_` followed by your key (`rr_FT-06`), the same in every session, and the agent also sees the key itself and the name of your field.
+* **Rows in an existing design are recognized.** Placed rows keep their `metadata`, so an email built from your saved rows still carries your keys. When such an email or template is in the agent's context (pasted by the user, or added by your integration, for example to make a new email in the style of an old one), a row whose metadata holds your field is that saved row: the agent places it from the library by its key, without searching and without rebuilding it from its blocks. Rows without the field are built as usual.
+* **Placed rows can be found again.** When the agent reads the design, each section that came from a saved row reports its key, so on a later turn it can find "the FT-06 footer" and restyle or remove that section.
+
+The key is also searched as text, so a user who types `FT-06` finds the row. Without `rowIdentifierLabel`, nothing changes: rows get random ids and are found by their words.
+
 #### Limits
 
 | Limit                         | Value                                                     |
@@ -117,6 +158,8 @@ An entry is a saved row in the shape the editor already produces (for example fr
 | Row data per library          | About 1.5 MB                                              |
 | Name, category, description   | 200 characters each                                       |
 | Tags per row                  | 12, each up to 32 characters, also once a string is split |
+| `rowIdentifierLabel`          | 64 characters                                             |
+| A row's key                   | 128 characters, unique, not starting with `rr_`           |
 
 #### What happens when a library does not fit
 
@@ -158,7 +201,7 @@ With an API-managed session, `POST /v2/sdk/mcp/template` reports what was stored
 }
 ```
 
-Check `droppedEntries` and warn your users when it is there, as the editor does with `1770`. Without a library, the response has no `reusableRows`.
+Check `droppedEntries` and warn your users when it is there, as the editor does with `1770`. With [your own key](#identify-rows-by-your-own-key), the summary also echoes `rowIdentifierLabel`. Without a library, the response has no `reusableRows`.
 
 #### Validate a library before starting a session
 
@@ -189,7 +232,7 @@ The library is copied when the session is created, and the agent only ever works
 
 | When                          | What the session has                                                                                                                         |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| The session is created        | A copy of the rows you sent, checked and trimmed as described above. Each row gets the `reusableRowId` the agent uses.                         |
+| The session is created        | A copy of the rows you sent, checked and trimmed as described above. Each row gets the `reusableRowId` the agent uses: `rr_` and your key with `rowIdentifierLabel`, otherwise a random id. |
 | A saved row changes in your storage | Nothing changes for this session: it keeps the copy it was created with. The change applies to the sessions created afterwards.         |
 | The agent places a row        | A copy of the stored row, refitted to the template. It keeps its `metadata`, including your own ids and the `tags` format you sent.           |
 | The session ends or expires   | The library is deleted with the session.                                                                                                     |
@@ -245,6 +288,14 @@ This session has the customer's library of saved rows. When the user names a blo
 
 Keep it to when to use the library. How to search, filter and place is already in the tool descriptions, and repeating it in the prompt can drift out of date as the tools improve.
 
+If your integration puts an existing email or template in the context, for the agent to make a new one like it, say in the same prompt or next to the template that its rows carrying your key are saved rows to place from the library. Asked only for "a new email like this one", the agent tends to read the template as a design to copy and rebuilds every row, saved ones included. One sentence that names the library is usually enough:
+
+{% code overflow="wrap" %}
+```
+Rows of this template whose metadata holds customUUID are our saved rows: place them from the library, and build only the others.
+```
+{% endcode %}
+
 ### Writing a library the AI can actually search
 
 The agent is only as good as the words you give it. Three things pay for themselves:
@@ -266,6 +317,9 @@ No. The library is read-only for the session. Rows are created and maintained th
 
 **Can I change the library during a session?**\
 No. It is attached at creation and fixed for the life of the session (see [The library is a copy for the session](#the-library-is-a-copy-for-the-session)). Start a new session to attach a different library. The AI Co-Pilot starts a new session for every prompt, so a change to its `reusableRows` setting applies from the next prompt.
+
+**Do row ids stay the same across sessions?**\
+Only with `rowIdentifierLabel`. Then a row's id is `rr_` followed by your key, in every session. Without it, ids are random and new in each session, so never store them.
 
 **Does the library count against the template payload?**\
 No. The row data has its own budget of about 1.5 MB, and everything else in the request (template, merge tags, brand rules...) has 2 MB. The whole request is capped at 3.5 MB, so a library sent over its budget still reaches the session and is trimmed, as long as the request stays within 3.5 MB.
