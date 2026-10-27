@@ -138,17 +138,9 @@ Every row then needs that field, and its value is the row's key:
 
 * **Required and unique.** Each row must carry the field, and no two rows may share a value.
 * **A string or a number.** A number is read as its digits, so `4412` and `"4412"` are the same key.
-* **Up to 128 characters, not starting with `rr_`.** That prefix belongs to the ids the agent uses.
+* **Up to 128 characters.**
 
 A row that breaks one of these makes the request fail with `400` `Invalid reusableRows`, like any other field error. For example: `reusableRows.entries.3.metadata.customUUID is required, because rowIdentifierLabel is customUUID`, or `reusableRows.entries.5.metadata.customUUID must be unique: entries.2 has FT-06 too`.
-
-With a key, three things change for the agent:
-
-* **The row's id is your key.** The agent places rows by an id that starts with `rr_`. Without `rowIdentifierLabel`, that id is random and new in every session. With it, the id is `rr_` followed by your key (`rr_FT-06`), the same in every session, and the agent also sees the key itself and the name of your field.
-* **Rows in an existing design are recognized.** Placed rows keep their `metadata`, so an email built from your saved rows still carries your keys. When such an email or template is in the agent's context (pasted by the user, or added by your integration, for example to make a new email in the style of an old one), a row whose metadata holds your field is that saved row: the agent places it from the library by its key, without searching and without rebuilding it from its blocks. Rows without the field are built as usual.
-* **Placed rows can be found again.** When the agent reads the design, each section that came from a saved row reports its key, so on a later turn it can find "the FT-06 footer" and restyle or remove that section.
-
-The key is also searched as text, so a user who types `FT-06` finds the row. Without `rowIdentifierLabel`, nothing changes: rows get random ids and are found by their words.
 
 #### Limits
 
@@ -159,7 +151,7 @@ The key is also searched as text, so a user who types `FT-06` finds the row. Wit
 | Name, category, description   | 200 characters each                                       |
 | Tags per row                  | 12, each up to 32 characters, also once a string is split |
 | `rowIdentifierLabel`          | 64 characters                                             |
-| A row's key                   | 128 characters, unique, not starting with `rr_`           |
+| A row's key                   | 128 characters, unique                                    |
 
 #### What happens when a library does not fit
 
@@ -201,7 +193,7 @@ With an API-managed session, `POST /v2/sdk/mcp/template` reports what was stored
 }
 ```
 
-Check `droppedEntries` and warn your users when it is there, as the editor does with `1770`. With [your own key](#identify-rows-by-your-own-key), the summary also echoes `rowIdentifierLabel`. Without a library, the response has no `reusableRows`.
+Check `droppedEntries` and warn your users when it is there, as the editor does with `1770`. Without a library, the response has no `reusableRows`.
 
 #### Validate a library before starting a session
 
