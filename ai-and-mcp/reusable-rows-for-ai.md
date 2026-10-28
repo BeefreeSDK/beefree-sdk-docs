@@ -138,7 +138,7 @@ Every row then needs that field, and its value is the row's key:
 
 * **Required and unique.** Each row must carry the field, and no two rows may share a value.
 * **A string or a number.** A number is read as its digits, so `4412` and `"4412"` are the same key.
-* **Up to 128 characters.**
+* **Up to 128 characters, not starting with `rr_`.**
 
 A row that breaks one of these makes the request fail with `400` `Invalid reusableRows`, like any other field error. For example: `reusableRows.entries.3.metadata.customUUID is required, because rowIdentifierLabel is customUUID`, or `reusableRows.entries.5.metadata.customUUID must be unique: entries.2 has FT-06 too`.
 
@@ -151,7 +151,7 @@ A row that breaks one of these makes the request fail with `400` `Invalid reusab
 | Name, category, description   | 200 characters each                                       |
 | Tags per row                  | 12, each up to 32 characters, also once a string is split |
 | `rowIdentifierLabel`          | 64 characters                                             |
-| A row's key                   | 128 characters, unique                                    |
+| A row's key                   | 128 characters, unique, not starting with `rr_`           |
 
 #### What happens when a library does not fit
 
@@ -224,7 +224,7 @@ The library is copied when the session is created, and the agent only ever works
 
 | When                          | What the session has                                                                                                                         |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| The session is created        | A copy of the rows you sent, checked and trimmed as described above. Each row gets the `reusableRowId` the agent uses: `rr_` and your key with `rowIdentifierLabel`, otherwise a random id. |
+| The session is created        | A copy of the rows you sent, checked and trimmed as described above. Each row gets the `reusableRowId` the agent uses: `rr_` and your key with `rowIdentifierLabel`, otherwise an id derived from the row itself. |
 | A saved row changes in your storage | Nothing changes for this session: it keeps the copy it was created with. The change applies to the sessions created afterwards.         |
 | The agent places a row        | A copy of the stored row, refitted to the template. It keeps its `metadata`, including your own ids and the `tags` format you sent.           |
 | The session ends or expires   | The library is deleted with the session.                                                                                                     |
@@ -311,7 +311,7 @@ No. The library is read-only for the session. Rows are created and maintained th
 No. It is attached at creation and fixed for the life of the session (see [The library is a copy for the session](#the-library-is-a-copy-for-the-session)). Start a new session to attach a different library. The AI Co-Pilot starts a new session for every prompt, so a change to its `reusableRows` setting applies from the next prompt.
 
 **Do row ids stay the same across sessions?**\
-Only with `rowIdentifierLabel`. Then a row's id is `rr_` followed by your key, in every session. Without it, ids are random and new in each session, so never store them.
+Yes, for an unchanged row. With `rowIdentifierLabel`, a row's id is `rr_` followed by your key, in every session, even after you edit the row. Without it, the id is derived from the row itself: the same row gets the same id in every session, and an edited row gets a new one. Use your own key when you need an id that survives edits.
 
 **Does the library count against the template payload?**\
 No. The row data has its own budget of about 1.5 MB, and everything else in the request (template, merge tags, brand rules...) has 2 MB. The whole request is capped at 3.5 MB, so a library sent over its budget still reaches the session and is trimmed, as long as the request stays within 3.5 MB.
