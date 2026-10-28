@@ -138,7 +138,7 @@ Every row then needs that field, and its value is the row's key:
 
 * **Required and unique.** Each row must carry the field, and no two rows may share a value.
 * **A string or a number.** A number is read as its digits, so `4412` and `"4412"` are the same key.
-* **Up to 128 characters, not starting with `rr_`.**
+* **Up to 128 characters.**
 
 A row that breaks one of these makes the request fail with `400` `Invalid reusableRows`, like any other field error. For example: `reusableRows.entries.3.metadata.customUUID is required, because rowIdentifierLabel is customUUID`, or `reusableRows.entries.5.metadata.customUUID must be unique: entries.2 has FT-06 too`.
 
@@ -151,7 +151,7 @@ A row that breaks one of these makes the request fail with `400` `Invalid reusab
 | Name, category, description   | 200 characters each                                       |
 | Tags per row                  | 12, each up to 32 characters, also once a string is split |
 | `rowIdentifierLabel`          | 64 characters                                             |
-| A row's key                   | 128 characters, unique, not starting with `rr_`           |
+| A row's key                   | 128 characters, unique                                    |
 
 #### What happens when a library does not fit
 
