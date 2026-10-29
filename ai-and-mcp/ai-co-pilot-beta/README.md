@@ -84,6 +84,7 @@ const beeConfig = {
         maxIterations,    // number — auto-continue cap (default: 10)
         loadingPhrases,   // string[] — overrides default cycling loader text
         brandRules,       // brandRules object
+        beforeSendTimeout, // number (ms) — wait for the aiAgentBeforeSend hook (default: 30000)
       },
     },
   ],
@@ -108,6 +109,7 @@ System Prompt customization is only available for Superpowers and Enterprise pla
 | `maxIterations`   | `number`            | No       | Caps the agent's auto-continue loop on tool-call turns. Defaults to `10`. Lower it to control cost and latency.                                                                                                                                                      |
 | `loadingPhrases`  | `string[]`          | No       | Replaces the default cycling phrases shown under the loader (e.g. `"Sending request"`, `"Working"`). Phrases cycle per auto-continue turn and are announced via `aria-live`.                                                                                         |
 | `brandRules`      | `brandRules` object | No       | Brand Rules the Co-Pilot must follow (presets, permissions, limits). See the [Brand Rules](../brand-rules-for-ai.md) page for the full schema and logic.                                                                                                             |
+| `beforeSendTimeout` | `number`          | No       | How long (in milliseconds) the Co-Pilot waits for your [`aiAgentBeforeSend`](./#checking-prompts-before-they-are-sent-aiagentbeforesend) hook to answer. Defaults to `30000`. With no answer in time, the prompt is not sent. Ignored when the hook is not configured. |
 
 #### Receiving message updates (`onInfo`)
 
@@ -236,6 +238,66 @@ BeePlugin.create(token, beeConfig, (instance) => {
 })
 ```
 
+### Checking prompts before they are sent (`aiAgentBeforeSend`)
+
+You can inspect every prompt your users type into the Co-Pilot **before** it leaves the browser, for example to run a DLP check that keeps personal or sensitive data away from Beefree and the AI provider. Define the optional `aiAgentBeforeSend` hook in `beeConfig.hooks`, the same way as other hooks such as `getMentions`.
+
+The Co-Pilot calls the hook first, before anything reaches Beefree's backend. The prompt is sent only when your handler resolves with `{ allowed: true }`.
+
+```javascript
+const beeConfig = {
+  // ...
+  hooks: {
+    aiAgentBeforeSend: {
+      handler: async (resolve, reject, { promptText }) => {
+        try {
+          const verdict = await checkPrompt(promptText) // your own DLP / policy check
+          if (verdict.ok) {
+            resolve({ allowed: true })
+          } else {
+            resolve({ allowed: false, message: 'Please remove patient data from your prompt.' })
+          }
+        } catch (err) {
+          reject() // the prompt is not sent
+        }
+      },
+    },
+  },
+}
+```
+
+#### Handler arguments
+
+| Field        | Type     | Description                       |
+| ------------ | -------- | --------------------------------- |
+| `promptText` | `string` | The text the user typed and sent. |
+
+#### Response
+
+Call `resolve` with:
+
+| Field     | Type      | Required | Description                                                                                                                                                                  |
+| --------- | --------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `allowed` | `boolean` | Yes      | `true` sends the prompt, `false` blocks it.                                                                                                                                  |
+| `message` | `string`  | No       | Shown to the user when the prompt is blocked, as plain text (no HTML), truncated to 500 characters. When omitted, a default message asks the user to edit the prompt and try again. |
+
+#### What the user sees
+
+* **Allowed:** the Co-Pilot proceeds as usual.
+* **Blocked** (`allowed: false`): the chat shows your `message` (or the default text). The prompt stays in the input so the user can edit it. No Retry button is offered, since the same prompt would be blocked again.
+* **Check failed:** the prompt is not sent and the chat shows a "couldn't verify this prompt" message with a Retry button. Retry calls your hook again. This happens when:
+  * your handler calls `reject`,
+  * your handler resolves with a malformed response (for example, `allowed` is missing or not a boolean),
+  * your handler does not answer within `beforeSendTimeout` (default 30 seconds), including when it throws before calling `resolve` or `reject`.
+
+The check is **fail-closed**: whenever there is no clear `{ allowed: true }`, nothing is sent.
+
+When the hook is not configured, the Co-Pilot behaves exactly as before, with no extra round trip.
+
+{% hint style="warning" %}
+Only the text the user types is passed to the hook. The template content, including the selected element's content, still reaches the AI provider through the Co-Pilot's tools while it works on the design. Account for this in your data protection policy.
+{% endhint %}
+
 ### Using Brand Rules with the AI Co-Pilot
 
 With [Brand Rules](../brand-rules-for-ai.md), you can attach a `brandRules` object when starting an AI editing session. Brand Rules act as guardrails that the Co-Pilot must work within so that the output it generates matches your (or your end users') brand.&#x20;
@@ -269,6 +331,7 @@ const beeConfig = {
 * Only one provider can be active per application at a time. You can switch providers at any time from the Developer Console without code changes.
 * The `systemPrompt` field is a powerful lever for brand alignment — use it to enforce tone, language, and content guardrails across all end-user sessions.
 * Lowering `maxIterations` from the default of `10` is recommended in cost-sensitive environments, especially when using larger models such as Claude Opus or GPT-5.4.
+* To enforce your own data policy on user prompts (for example DLP for personal or health data), use the [`aiAgentBeforeSend`](./#checking-prompts-before-they-are-sent-aiagentbeforesend) hook. It adds one round trip to your handler on every send.
 * For data security and privacy information, refer to the [AI Providers and Data Security](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/ai-writing-assistant/data-security) page.
 
 ### Related resources
