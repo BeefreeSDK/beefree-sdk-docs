@@ -54,45 +54,19 @@ Once you’ve completed the setup, toggle on Enable, then click Save.
 
 ### Supported providers
 
-The AI Co-Pilot currently supports three AI providers.\
-\
-Three models are marked as Recommended—they offer the best trade-off between cost, speed, and output quality for typical builder workflows. This is not a quality ranking: higher-tier models (Claude Opus 4.7, GPT-5.4, Gemini 2.5 Pro) will generally produce stronger results on demanding tasks, but come with higher cost and latency. For most end-user sessions in a builder context, the recommended models are a good starting point.
+Three providers are currently supported: Anthropic, OpenAI, and Gemini. Each provider offers a range of models, from faster and more economical options to higher-capability ones that produce stronger output at higher cost and latency. The [Developer Console](https://developers.beefree.io/login?from=website_menu) shows a recommended default for each provider and flags any models that've been deprecated or retired. You'll always find current availability and status there, rather than on this page.
 
 #### Anthropic
 
 [Anthropic](https://docs.anthropic.com/en/docs/welcome)'s Claude models prioritize safety, alignment, and high-quality conversational output — making them well-suited for creative and editorial workflows inside the builder.
 
-Available models:
-
-| <h4>Model Name</h4>             | <h4>Model String</h4> |
-| ------------------------------- | --------------------- |
-| Claude Haiku 4.5 \[recommended] | `claude-haiku-4-5`    |
-| Claude Sonnet 4.6               | `claude-sonnet-4-6`   |
-| Claude Opus 4.7                 | `claude-opus-4-7`     |
-
 #### OpenAI
 
-[OpenAI](https://platform.openai.com/docs/concepts)'s GPT models offer broad language coverage and advanced text generation capabilities across a wide range of writing styles and use cases.<br>
-
-Available models:
-
-| <h4>Model Name</h4>         | <h4>Model String</h4> |
-| --------------------------- | --------------------- |
-| GPT-5.4                     | `gpt-5.4`             |
-| GPT-5.4 Mini \[recommended] | `gpt-5.4-mini`        |
-| GPT-5.4 Nano                | `gpt-5.4-nano`        |
+[OpenAI](https://platform.openai.com/docs/concepts)'s GPT models offer broad language coverage and advanced text generation capabilities across a wide range of writing styles and use cases.
 
 #### Gemini
 
 [Gemini](https://ai.google.dev/) models from Google DeepMind offer multimodal capabilities and competitive performance on text generation tasks.
-
-Available models:
-
-| <h4>Model Name</h4>             | <h4>Model String</h4>   |
-| ------------------------------- | ----------------------- |
-| Gemini 2.5 Pro                  | `gemini-2.5-pro`        |
-| Gemini 2.5 Flash \[recommended] | `gemini-2.5-flash`      |
-| Gemini 2.5 Flash Lite           | `gemini-2.5-flash-lite` |
 
 ### AI Co-Pilot configuration
 

@@ -10,7 +10,11 @@ We’ve developed a mode designed to help you do more with less: reduce token us
 
 ### Use the right models
 
-The chosen model has a major impact on output quality. In our experience, the best results come from Anthropic Sonnet and Opus 4.5, as well as GPT-5.2 with medium reasoning enabled. However, while the most capable models available today offer better performance on complex tasks, they require accepting higher costs and increased latency. So choose your model carefully.
+The chosen model has a major impact on output quality. For Anthropic, Claude Haiku 5.5 leads at the lower tier and Claude Opus 5 at the higher tier. For OpenAI, GPT-5.4 Mini leads at the lower tier and GPT-6 Sol at the higher tier. The most capable models available will offer better performance on complex tasks, but they require accepting higher costs and increased latency. So choose your model carefully.
+
+{% hint style="info" %}
+Model quality shifts quickly as providers release new versions, so treat this as a general starting point rather than a fixed recommendation.
+{% endhint %}
 
 ### Write effective instructions for the Agent
 
