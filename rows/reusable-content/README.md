@@ -28,6 +28,10 @@ In addition to rows offering a variety of benefits for end users, there are also
 * **Optional removal of empty structures**: Host applications can disable empty row options if desired, encouraging users to focus on modifying pre-existing content.
 * **Efficient content management**: Rows enable the host to provide consistent, reusable content blocks that can be updated globally, streamlining content management and maintaining design consistency across the platform.
 
+{% hint style="info" %}
+A row library is not only for people. You can attach one to an AI editing session so an agent searches your users' saved rows and places the approved one instead of generating a new one. See [Reusable Rows for AI](../../ai-and-mcp/reusable-rows-for-ai.md).
+{% endhint %}
+
 ### Understanding the Different Types of Rows in Beefree SDK
 
 This section outlines the different row-related features available within Beefree SDK. Throughout the following pages of the Rows section, we will discuss each of these different row-related features in depth, including what they are, how they look, and how to implement them if they are a good fit for your application and end users.

@@ -419,6 +419,9 @@ metadata: {
 **category**\
 A category can be useful for organizing your feeds on the Rows tab.
 
+**description**\
+One line on what the row is for. Useful to find the row again, and the field the AI relies on most to choose between similar rows when the row is used as a [reusable row for AI](../../../../../ai-and-mcp/reusable-rows-for-ai.md).
+
 **id**\
 A handle that identifies the row in the host application’s data storage.
 
@@ -435,7 +438,7 @@ The date a saved row was updated: useful for filtering/sorting rows for content 
 To let your application decide whom can edit or saved rows.
 
 **tags**\
-Useful to create filters, management, search, and in general to organize the content in your application.
+Useful to create filters, management, search, and in general to organize the content in your application. A comma-separated string or an array of strings.
 
 ## Metadata Content Dialog <a href="#metadata-content-dialog" id="metadata-content-dialog"></a>
 

@@ -13,8 +13,9 @@ The `metadata` object is a plain JSON object that lives inside a row. It stores 
 | Field          | Type                    | Description                                                                                     |
 | -------------- | ----------------------- | ----------------------------------------------------------------------------------------------- |
 | `name`         | string (required)       | A human-readable title for the row shown in the Rows panel. This can be used to filter the row. |
-| `tags`         | string                  | A comma-separated list of keywords.                                                             |
+| `tags`         | string or array         | Keywords, as a comma-separated string or an array of strings.                                   |
 | `category`     | string or number        | An identifier that groups rows into categories.                                                 |
+| `description`  | string                  | Recommended. One line on what the row is for. The AI relies on it most to choose a [reusable row](../ai-and-mcp/reusable-rows-for-ai.md). |
 | `id`           | string or number        | A unique identifier for the row, assigned by the host application.                              |
 | `idParent`     | string, number, or null | Optional ID of a parent row, if this row is derived from another.                               |
 | `dateCreated`  | string (ISO 8601)       | When the row was originally created.                                                            |

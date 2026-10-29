@@ -69,6 +69,7 @@
   * [How to get the best AI output](ai-and-mcp/getting-started/how-to-get-the-best-ai-output.md)
   * [MCP Server FAQs](ai-and-mcp/getting-started/mcp-server-faqs.md "FAQs")
 * [Brand Rules for AI](ai-and-mcp/brand-rules-for-ai.md)
+* [Reusable Rows for AI](ai-and-mcp/reusable-rows-for-ai.md)
 
 ## APIs
 
