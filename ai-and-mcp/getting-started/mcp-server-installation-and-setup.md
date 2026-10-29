@@ -157,18 +157,39 @@ var beeConfig = {
 We suggest you validate your `brandRules` payload with the Brand Rules validation endpoint beforehand to avoid discovering errors only once the session starts.
 {% endhint %}
 
+#### File Manager
+
+To let the agent work in your user's File Manager, pass the folders it can use as `fileManager` to `bee.startMcpSession()`. It has no equivalent at the root of the editor configuration.
+
+```javascript
+const { templateId } = await bee.startMcpSession({
+  fileManager: {
+    readPaths: ['/'],                      // folders the agent can list and search
+    uploadPaths: ['/AI Generated Images'], // folders it can save files to
+    deletePaths: [],                       // folders it can delete files from: none
+  },
+})
+```
+
+Pass only the folders: the agent works in the File Manager of the `uid` the editor was started with. Without `fileManager`, the session has no file tools. See [File Manager for AI](../file-manager-for-ai.md) for the [defaults](../file-manager-for-ai.md#the-filemanager-object), the [limits](../file-manager-for-ai.md#limits), and how to [validate the folders](../file-manager-for-ai.md#validate-a-configuration-before-starting-a-session).
+
 #### Error handling
 
-If `bee.startMcpSession()` fails, the error is returned in this shape:
+If `bee.startMcpSession()` fails, the promise is rejected with an object in this shape:
 
 ```json
 {
-  "error": {
-    "code": "<code>",
-    "message": "<description>"
+  "code": "<code>",
+  "message": "<description>",
+  "detail": {
+    "status": "<HTTP status>",
+    "error": "<reason>",
+    "details": ["<what is wrong>"]
   }
 }
 ```
+
+When the server refused the session creation request, `detail` holds the HTTP `status` of the response, the `error`, and, for an invalid payload, the `details` list. In other failures, `detail` is empty or absent.
 
 Common failure scenarios:
 
@@ -200,18 +221,22 @@ POST https://api.getbee.io/v2/sdk/mcp/template
 | template   | object | Optional. The JSON template to initialize the session with.                                                                                                               |
 | mergeTags  | object | Optional. Merge tags to be resolved within the template.                                                                                                                  |
 | brandRules | object | Optional. Brand Rules the agent must follow during the session (presets, permissions, limits). See [Brand Rules](../brand-rules-for-ai.md) for the full schema and logic. |
+| fileManager | object | Optional. The end user whose File Manager the agent can work in (`uid`), and the folders it can read, upload to, and delete from. See [File Manager for AI](../file-manager-for-ai.md) for fields, defaults, and limits. |
 
 ```json
 {
   "template": { ... },
   "mergeTags": { ... },
-  "brandRules": { ... }
+  "brandRules": { ... },
+  "fileManager": { ... }
 }
 ```
 
 To make the MCP Server work with Brand Rules in an API-managed session, pass a `brandRules` object in this request body alongside `template` and `mergeTags`.
 
 We recommend validating your `brandRules` payload with the [Brand Rules validation endpoint](../brand-rules-for-ai.md#testing-and-validating-your-brand-rules) before creating the template. This surfaces schema errors up front instead of only when the session starts.
+
+To let the agent work in your users' File Manager, pass a `fileManager` object in the same request body, with the `uid` of the end user and the folders the agent can read, upload to, and delete from. An invalid `fileManager` makes the request fail with `400`, and no session is created. Validate it beforehand with the [validation endpoint](../file-manager-for-ai.md#validate-a-configuration-before-starting-a-session). See [File Manager for AI](../file-manager-for-ai.md).
 
 **Response**
 
@@ -367,3 +392,5 @@ Code Mode requires your agent to generate valid TypeScript. Implement error hand
 {% endhint %}
 
 Code Mode fully supports `brandRules`. Pass it the same way as in the standard API-managed or editor-managed paths above; the agent's generated scripts are validated against your Brand Rules guardrails like any other session.
+
+Code Mode also supports `fileManager`. Pass it the same way as in the API-managed or editor-managed paths above; the agent's scripts can then list, search, upload, and remove files as with the standard tools, and place a file they just saved in the same script. See [File Manager for AI](../file-manager-for-ai.md).
