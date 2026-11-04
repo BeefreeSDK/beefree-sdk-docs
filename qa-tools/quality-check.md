@@ -38,7 +38,15 @@ You can activate Quality Check with the dedicated flag in the SDK Console.
 
 #### Running a check
 
-Once Quality Check is enabled, your end users see a shield icon in the editor. By clicking it, they run the check against the current email or page and open the Quality Check sidebar.&#x20;
+Once Quality Check is enabled, your end users see a shield icon in the editor. By clicking it, they run the check against the current email or page and open the Quality Check sidebar.
+
+You can also open or close the Quality Check sidebar programmatically using the `toggleChecker` Frontend Command, without requiring a click on the shield icon.
+
+```javascript
+beeInstance.execCommand('toggleChecker');
+```
+
+If Brand Check is also enabled on the account, `toggleChecker` opens whichever checker tab was last active rather than Quality Check specifically. See the [Frontend Commands page](../other-customizations/frontend-commands.md) for the full reference.
 
 <figure><img src="../.gitbook/assets/Quality Check Arrow.jpg" alt=""><figcaption></figcaption></figure>
 

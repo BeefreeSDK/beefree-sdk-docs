@@ -16,7 +16,9 @@ These commands help you build guided experiences, automate QA checks (when coupl
 * [**Scroll**](frontend-commands.md#scroll) – Navigate to a precise part of the editor.
 * [**Highlight**](frontend-commands.md#highlight) – Briefly emphasize a target element.
 * [**Select**](frontend-commands.md#select) – Choose a row or module within the template.
-* [Tab](frontend-commands.md#tab) - Navigate to a specific tab within the builder. Options include: **Settings**, **Content**, and **Rows**.
+* [**Tab**](frontend-commands.md#tab) - Navigate to a specific tab within the builder. Options include: **Settings**, **Content**, and **Rows**.
+* [**Toggle Agent**](frontend-commands.md#toggle-agent) – Open or close the AI Co-Pilot panel.
+* [**Toggle Checker**](frontend-commands.md#toggle-checker) – Open or close the Quality/Brand Check panel.
 
 {% hint style="info" %}
 **Important:** You can use Frontend Commands to navigate to elements with the entire builder. This includes the stage and the sidebar. For example, if you want to navigate to an image on the stage missing alt text, and then indicate on the sidebar where the end user can add the alt text, both are possible with Frontend Commands.&#x20;
@@ -31,6 +33,8 @@ The `execCommand` method is the central function used to trigger any Frontend Co
 * `highlight`
 * `select`
 * `tab`
+* `toggleAgent`
+* `toggleChecker`
 
 ## Target Object
 
@@ -402,3 +406,39 @@ When working with the **tab** action, two types of errors may occur:
 * **Locked or Unavailable Tab:** An error is thrown if the requested sidebar tab is currently locked or unavailable.
   * **What this means:** The editor is preventing access to that tab due to configuration, user permissions, or current editing state.
   * **How to fix:** Verify that the tab is enabled in the editor configuration and that you have permission to open it. Try again once it becomes available.
+
+### Toggle Agent <a href="#toggle-agent" id="toggle-agent"></a>
+
+The `toggleAgent` command opens or closes the AI Co-Pilot panel.
+
+Unlike the other commands on this page, `toggleAgent` doesn't take a target object. Each call simply flips the panel's current state: calling it while the panel is closed opens it, and calling it while it's open closes it.
+
+#### How to Use Toggle Agent
+
+Take the following step to open or close the AI Co-Pilot panel:
+
+1. Call the `execCommand` method on the Beefree SDK instance, setting the action to `"toggleAgent"`.
+
+**Example**
+
+```javascript
+beeInstance.execCommand('toggleAgent');
+```
+
+### Toggle Checker <a href="#toggle-checker" id="toggle-checker"></a>
+
+The `toggleChecker` command opens or closes the Quality/Brand Check panel. It doesn't support opening a specific tab: if both checkers are enabled, it opens whichever tab was last active.
+
+Like `toggleAgent`, this command doesn't take a target object. Each call flips the panel's current state.
+
+#### How to Use Toggle Checker
+
+Take the following step to open or close the Quality/Brand Check panel:
+
+1. Call the `execCommand` method on the Beefree SDK instance, setting the action to `"toggleChecker"`.
+
+**Example**
+
+```javascript
+beeInstance.execCommand('toggleChecker');
+```

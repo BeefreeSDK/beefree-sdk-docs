@@ -144,6 +144,16 @@ const beeConfig = {
 
 The initial emission caused by seeding the store from `initialMessages` is not echoed back — only real changes trigger the callback.
 
+#### Opening and closing the panel programmatically
+
+By default, end users open the AI Co-Pilot panel by clicking its icon in the builder. You can also open or close the panel programmatically using the `toggleAgent` Frontend Command, without requiring a click.
+
+```javascript
+beeInstance.execCommand('toggleAgent');
+```
+
+Each call toggles the panel's current state: calling it while the panel is closed opens it, and calling it while it's open closes it. See the [Frontend Commands page](../../other-customizations/frontend-commands.md) for the full reference.
+
 ### Persisting chat history
 
 The SDK does not store the conversation itself — persistence is the host application's responsibility. The simplest approach uses `localStorage`:
