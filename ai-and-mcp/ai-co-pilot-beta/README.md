@@ -107,7 +107,7 @@ System Prompt customization is only available for Superpowers and Enterprise pla
 | `systemPrompt`    | `string`            | No       | Forwarded verbatim with every chat request. Use it to inject role, tone, or brand voice instructions.                                                                                                                                                                |
 | `maxIterations`   | `number`            | No       | Caps the agent's auto-continue loop on tool-call turns. Defaults to `10`. Lower it to control cost and latency.                                                                                                                                                      |
 | `loadingPhrases`  | `string[]`          | No       | Replaces the default cycling phrases shown under the loader (e.g. `"Sending request"`, `"Working"`). Phrases cycle per auto-continue turn and are announced via `aria-live`.                                                                                         |
-| `brandRules`      | `brandRules` object | No       | Brand Rules the Co-Pilot must follow (presets, permissions, limits). See the [Brand Rules](../brand-rules-for-ai.md) page for the full schema and logic.                                                                                                             |
+| `brandRules`      | `brandRules` object | No       | Brand Rules the Co-Pilot must follow (presets, permissions, limits). See the [Brand Rules](../brand-rules.md) page for the full schema and logic.                                                                                                                    |
 
 #### Receiving message updates (`onInfo`)
 
@@ -248,14 +248,14 @@ BeePlugin.create(token, beeConfig, (instance) => {
 
 ### Using Brand Rules with the AI Co-Pilot
 
-With [Brand Rules](../brand-rules-for-ai.md), you can attach a `brandRules` object when starting an AI editing session. Brand Rules act as guardrails that the Co-Pilot must work within so that the output it generates matches your (or your end users') brand.&#x20;
+With [Brand Rules](../brand-rules.md), you can attach a `brandRules` object when starting an AI editing session. Brand Rules act as guardrails that the Co-Pilot must work within so that the output it generates matches your (or your end users') brand.&#x20;
 
-Please check out the [Brand Rules page](../brand-rules-for-ai.md) for a full overview of the different types of Brand Rules you can set and to access the full JSON Schema for Brand Rules.&#x20;
+Please check out the [Brand Rules page](../brand-rules.md) for a full overview of the different types of Brand Rules you can set and to access the full JSON Schema for Brand Rules.&#x20;
 
 To make the Co-Pilot work with Brand Rules, you simply pass the `brandRules` object in the AI Agent `settings` section of your config file when starting an AI editing session. Check out the [example above ](./#full-configuration-example)to see what that can look like.
 
 {% hint style="info" %}
-Tip: You can use the [Brand Rules validation endpoint](../brand-rules-for-ai.md#testing-and-validating-your-brand-rules) to validate your Brand Rules JSON before starting an AI editing session with the Co-Pilot.
+Tip: You can use the [Brand Rules validation endpoint](../brand-rules.md#testing-and-validating-your-brand-rules) to validate your Brand Rules JSON before starting an AI editing session with the Co-Pilot.
 {% endhint %}
 
 ### Disable the AI Co-Pilot per user

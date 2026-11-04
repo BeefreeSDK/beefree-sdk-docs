@@ -62,7 +62,7 @@ Start here with the MCP: [Getting started](getting-started/)
 
 ### Keep AI output on brand
 
-When you're adding agentic design functionality to your product, you don't just want to help your users create content faster. You'll also want to make sure the AI-generated content is _actually_ on-brand. [Brand Rules](brand-rules-for-ai.md) help you do just that.
+When you're adding agentic design functionality to your product, you don't just want to help your users create content faster. You'll also want to make sure the AI-generated content is _actually_ on-brand. [Brand Rules](brand-rules.md) help you do just that.
 
 ## Your path, our tech
 

@@ -195,11 +195,11 @@ POST https://api.getbee.io/v2/sdk/mcp/template
 
 **Request body**
 
-| Field      | Type   | Description                                                                                                                                                               |
-| ---------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| template   | object | Optional. The JSON template to initialize the session with.                                                                                                               |
-| mergeTags  | object | Optional. Merge tags to be resolved within the template.                                                                                                                  |
-| brandRules | object | Optional. Brand Rules the agent must follow during the session (presets, permissions, limits). See [Brand Rules](../brand-rules-for-ai.md) for the full schema and logic. |
+| Field      | Type   | Description                                                                                                                                                        |
+| ---------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| template   | object | Optional. The JSON template to initialize the session with.                                                                                                        |
+| mergeTags  | object | Optional. Merge tags to be resolved within the template.                                                                                                           |
+| brandRules | object | Optional. Brand Rules the agent must follow during the session (presets, permissions, limits). See [Brand Rules](../brand-rules.md) for the full schema and logic. |
 
 ```json
 {
@@ -211,7 +211,7 @@ POST https://api.getbee.io/v2/sdk/mcp/template
 
 To make the MCP Server work with Brand Rules in an API-managed session, pass a `brandRules` object in this request body alongside `template` and `mergeTags`.
 
-We recommend validating your `brandRules` payload with the [Brand Rules validation endpoint](../brand-rules-for-ai.md#testing-and-validating-your-brand-rules) before creating the template. This surfaces schema errors up front instead of only when the session starts.
+We recommend validating your `brandRules` payload with the [Brand Rules validation endpoint](../brand-rules.md#testing-and-validating-your-brand-rules) before creating the template. This surfaces schema errors up front instead of only when the session starts.
 
 **Response**
 

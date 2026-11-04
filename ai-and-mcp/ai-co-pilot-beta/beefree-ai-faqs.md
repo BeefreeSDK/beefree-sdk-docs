@@ -24,7 +24,7 @@ Three providers are currently supported: Anthropic, OpenAI, and Gemini. Each pro
 
 Yes. The `systemPrompt` setting lets you inject role, tone, or brand voice instructions that are forwarded with every chat request.&#x20;
 
-You can also use [Brand Rules](../brand-rules-for-ai.md) to ensure the Co-Pilot follows specific brand guidelines.&#x20;
+You can also use [Brand Rules](../brand-rules.md) to ensure the Co-Pilot follows specific brand guidelines.&#x20;
 
 #### **Can I control costs?**&#x20;
 

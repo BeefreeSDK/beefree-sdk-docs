@@ -68,7 +68,7 @@
   * [MCP Server tools & capabilities](ai-and-mcp/getting-started/mcp-server-tools-and-capabilities.md "Tools & capabilities")
   * [How to get the best AI output](ai-and-mcp/getting-started/how-to-get-the-best-ai-output.md)
   * [MCP Server FAQs](ai-and-mcp/getting-started/mcp-server-faqs.md "FAQs")
-* [Brand Rules for AI](ai-and-mcp/brand-rules-for-ai.md)
+* [Brand Rules](ai-and-mcp/brand-rules.md)
 
 ## APIs
 
@@ -146,6 +146,7 @@
 ## QA tools
 
 * [Quality Check](qa-tools/quality-check.md)
+* [Brand Check](qa-tools/brand-check.md)
 
 ## Other Customizations
 
@@ -210,6 +211,7 @@
 * [Form Validation Schema](data-structures/form-validation-schema.md)
 * [Comments Schema](data-structures/comments-schema/README.md)
   * [Change Schema for Comments](data-structures/comments-schema/change-schema-for-comments.md)
+* [Brand Rules Schema](data-structures/brand-rules-schema.md)
 
 ## Builder AddOns
 

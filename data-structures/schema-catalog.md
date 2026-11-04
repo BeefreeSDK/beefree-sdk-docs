@@ -137,3 +137,9 @@ The following section includes a comprehensive list of schemas in Beefree SDK.&#
 **Name:** [Change Schema for Comments](comments-schema/change-schema-for-comments.md)
 
 **Description:** Defines the structure for tracking changes in collaborative environments, particularly for managing comment threads within content blocks.&#x20;
+
+***
+
+**Name:** [Brand Rules Schema](brand-rules-schema.md)
+
+**Description:** Defines the presets, permissions, and limits used to guide AI-generated content (MCP, AI Co-Pilot) and to validate designs with Brand Check.

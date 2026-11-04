@@ -111,7 +111,7 @@ Validation Workflow
 
 Prompting alone can get you close to your brand's look and feel, but it doesn't guarantee consistency. If you want the agent's output to reliably match your or your-end users' brand, guardrails work better than instructions.
 
-[Brand Rules](../brand-rules-for-ai.md) let you define approved styles, restrict what the agent can add, update, or delete, and cap how much content a design can hold. Where a `systemPrompt` or natural-language instruction is a suggestion the agent can interpret loosely, `brandRules` are enforced automatically and agent simply can't produce output that violates them. See [Brand Rules](../brand-rules-for-ai.md) for the full schema and setup.
+[Brand Rules](../brand-rules.md) let you define approved styles, restrict what the agent can add, update, or delete, and cap how much content a design can hold. Where a `systemPrompt` or natural-language instruction is a suggestion the agent can interpret loosely, `brandRules` are enforced automatically and agent simply can't produce output that violates them. See [Brand Rules](../brand-rules.md) for the full schema and setup.
 
 ### Best practices for saving tokens
 

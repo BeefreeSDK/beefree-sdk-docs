@@ -1,45 +1,43 @@
 ---
-description: Ensure that the content your users create with AI adheres to brand guidelines.
+description: >-
+  Define brand once, use it everywhere: as guardrails for AI-generated content
+  and as the rules Brand Check uses to validate designs.
 ---
 
-# Brand Rules for AI
+# Brand Rules
 
 {% hint style="info" %}
 Brand Rules are available for customers on Superpowers and Enterprise plans.&#x20;
 {% endhint %}
 
-When you're adding agentic design functionality to your product, you don't just want to help your users create content faster. You'll also want to make sure that the content generated with AI is _actually_ on-brand. Brand Rules help you do just that.&#x20;
+Agentic design functionality helps your users create content faster, but speed alone isn’t the goal. However it’s created, that content also needs to be on-brand and Brand Rules make sure it is. As guardrails, they guide what the MCP or AI Co-Pilot can create: presets define approved styles, permissions restrict what the AI can touch, and limits cap how much content it adds. The same presets are also what [Brand Check](../qa-tools/brand-check.md) validates designs, AI-generated or not, against before your users send it.
 
-### Use Brand Rules to help AI create on-brand designs
+### How Brand Rules work
 
-With Brand Rules, a host application can attach a `brandRules` object to an AI editing session. Brand Rules act as guardrails that the AI must work within so that the output it generates matches your (or your end users') brand. At their core, Brand Rules give guidance on three key questions: <br>
+With Brand Rules, a host application can attach a `brandRules` object to an AI editing session. Brand Rules act as guardrails that the AI must work within so that the output it generates matches your (or your end user's) brand. At their core, Brand Rules give guidance on three key questions:
 
-1. **What should certain design elements look like?** You define the styles using `presets` .
-2. **What is the AI allowed to touch?** With `permissions` you can control what the AI can (and cannot) edit.
-3. **How much content fits?** Use `limits` to define caps on certain content elements.&#x20;
+1. What should certain design elements look like? You define the styles using presets.
+2. What is the AI allowed to touch? With permissions you can control what the AI can (and cannot) edit.
+3. How much content fits? Use limits to define caps on certain content elements.
 
-Brand Rules can apply to any AI editing session, whether you're creating with the [MCP](getting-started/) or using the [AI Co-Pilot](ai-co-pilot-beta/).&#x20;
+Brand Rules can apply to any AI editing session, whether you're creating with the [MCP](getting-started/) or using the [AI Co-Pilot](ai-co-pilot-beta/). The same `brandRules` object also powers [Brand Check](../qa-tools/brand-check.md). Brand Check runs independently of MCP or AI Co-Pilot: it’s a deterministic, rule-based check, not an AI feature. Brand Check validates any design against your presets before it’s sent, whether or not AI was involved in creating it. This means a single brand configuration covers both AI-assisted creation and pre-send validation. Not every field is read by both sides; see the Brand Rules JSON schema for exactly which properties each one uses.
 
 #### The different types of brand rules: Presets, Permissions, and Limits
 
-| **Type**      | **What it does**                                                                                                                                                                                                                                               | **Example**                                                        |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| `presets`     | Named, pre-approved styles for blocks, rows, columns, and settings. Once presets are defined, the AI **must** pick one — preset values override the AI's own styling choices. [Learn more](brand-rules-for-ai.md#key-behaviors-to-carry-into-the-public-docs). | `"brandCta"` → blue background, white bold label, 4px corners      |
-| `permissions` | Per-block-type "no" lists: `noAdd`, `noUpdate`, `noDelete`. Refused operations return a clear message to the AI. [Learn more](brand-rules-for-ai.md#permissions).                                                                                              | `noUpdate: ["menu"]` → the AI can never change the navigation menu |
-| `limits`      | Content caps: `rows.max/min`, `columns.maxPerRow`, `blocks.max`, `blocks.maxPerType`. [Learn more](brand-rules-for-ai.md#limits).                                                                                                                              | `blocks.maxPerType.menu: 1` → at most one menu in the email        |
+<table data-header-hidden><thead><tr><th width="252"></th><th></th><th></th><th></th></tr></thead><tbody><tr><td><strong>Type</strong></td><td><strong>Used by</strong></td><td><strong>What it does</strong></td><td><strong>Example</strong></td></tr><tr><td><code>presets</code></td><td>MCP, AI Co-Pilot, and Brand Check</td><td>Named, pre-approved styles for blocks, rows, columns, and settings. Once presets are defined, the AI <strong>must</strong> pick one — preset values override the AI's own styling choices. <a href="brand-rules.md#key-behaviors-to-carry-into-the-public-docs">Learn more</a>.</td><td><code>"brandCta"</code> → blue background, white bold label, 4px corners</td></tr><tr><td><code>permissions</code></td><td>MCP and AI Co-Pilot Only</td><td>Per-block-type "no" lists: <code>noAdd</code>, <code>noUpdate</code>, <code>noDelete</code>. Refused operations return a clear message to the AI. <a href="brand-rules.md#permissions">Learn more</a>.</td><td><code>noUpdate: ["menu"]</code> → the AI can never change the navigation menu</td></tr><tr><td><code>limits</code></td><td>MCP and AI Co-Pilot Only</td><td>Content caps: <code>rows.max/min</code>, <code>columns.maxPerRow</code>, <code>blocks.max</code>, <code>blocks.maxPerType</code>. <a href="brand-rules.md#limits">Learn more</a>.</td><td><code>blocks.maxPerType.menu: 1</code> → at most one menu in the email</td></tr></tbody></table>
 
 Setting Brand Rules is optional. You can choose which Brand Rule type you'd like to define and how detailed you want to be in defining the rules for each of your Brand Rule types. If you don't define a `brandRules` object, it simply means that the AI isn't restricted by any brand guardrails.&#x20;
 
 ### Presets <a href="#key-behaviors-to-carry-into-the-public-docs" id="key-behaviors-to-carry-into-the-public-docs"></a>
 
-`presets` are at the core of your Brand Rules because they define styles — colors, typography, and more — the AI _must_ follow when creating content. They allow you to define how content blocks like buttons, paragraphs, or titles should look when they're created by AI. \
-\
-You can use `presets` in your Brand rules to set one preset per content block or create more sophisticated design systems.&#x20;
+`presets` are at the core of your Brand Rules. They define styles, colors, typography, and more that the AI must follow when creating content and that Brand Check validates designs against before they’re sent. They allow you to define how content blocks like buttons, paragraphs, or titles should look.
+
+You can use `presets` in your Brand rules to set one preset per content block or build more sophisticated design systems with multiple preset checks per block.
 
 #### Basic presets: Define one preset per element
 
-You define a single `preset` per block type that applies to every single content block the AI adds to your design. \
-\
+You define a single `preset` per block type that applies to every content block that supports `presets`.&#x20;
+
 Let's say your user's brand guidelines call for all buttons to be bright blue, with slightly rounded corners and white text. You can define your button `presets` like this:
 
 ```
@@ -64,9 +62,9 @@ Let's say your user's brand guidelines call for all buttons to be bright blue, w
 }
 ```
 
-Every single time the AI adds a button to the design, it will use the  `brandButton`  styles you defined — and every button will look exactly the same, in compliance with the styles you defined in your `presets`.&#x20;
+Every single time the AI adds a button to the design, it will use the `brandButton` styles you defined, and every button will look exactly the same, in compliance with the styles you defined in your `presets`.
 
-This basic preset is simple to set up and leaves zero ambiguity for the AI.&#x20;
+This basic preset is simple to set up and leaves zero ambiguity for the AI.
 
 #### Advanced design systems: Define multiple presets per element
 
@@ -115,7 +113,7 @@ Every button the AI adds to a design will still be on-brand, but now it can choo
 
 Whether you're working with simple or more sophisticated `presets`, here are some important considerations you must be aware of:&#x20;
 
-* Presets can be applied to content blocks, rows, columns, and the email's overall settings. For a **complete overview of the presets you can define with Brand Rules**, see the [full Brand Rules JSON schema.](brand-rules-for-ai.md#brand-rules-full-json-schema)
+* Presets can be applied to content blocks, rows, columns, and the email's overall settings. For a **complete overview of the presets you can define with Brand Rules**, see the [full Brand Rules JSON schema.](../data-structures/brand-rules-schema.md)
 * **Presets are mandatory once defined.** For example, if a button preset exists, every button the AI adds or updates must use the preset you defined.
 * **Preset values take precedence.** If the AI asks for a red button and the preset says blue, the button in the generated design will be blue—and the AI is told which values were overridden.
 * **Presets define only the styles they list — all other styles remain free for the AI to choose.** For example, if a button preset only defines `backgroundColor` and `fontFamily` , it only sets the fixed rules for those two values. The AI retains full freedom over every other property (for example, text, size, padding, borders, etc). For stricter brand control, define all relevant properties.&#x20;
@@ -134,7 +132,7 @@ There are three different types of `permissions` you can set:
 
 You can set `permissions` for one or more of the following content blocks: `paragraph`, `title`, `list`, `image`, `button`, `social`, `icon`, `spacer`, `divider`, `table`, `menu`, and `video`.
 
-Here is an example of permissions that define that the AI can never add videos, never touch the menu, and never delete an image:
+Here's an example of permissions that define that the AI can never add videos, never touch the menu, and never delete an image:
 
 ```
 {
@@ -183,17 +181,13 @@ How you pass Brand Rules into the AI workflow is a little different depending on
 
 ### Brand Rules - Full JSON schema
 
-The complete JSON schema for Brand Rules, including all properties you can define using presets, permissions, and limits, is available here.&#x20;
+Presets, permissions, and limits all live in the same `brandRules` object, and the properties you can set for each preset are outlined in the [Brand Rules JSON schema](../data-structures/brand-rules-schema.md). That page also covers which properties [Brand Check](../qa-tools/brand-check.md) reads versus which are MCP/Copilot only, since both features share this schema.
 
-{% file src="../.gitbook/assets/brandRulesSchema.json" %}
-
-{% hint style="info" %}
-The brandRulesSchema.json was last updated on September 10, 2026
-{% endhint %}
+The raw schema file is attached there as well.
 
 ### Testing and validating your Brand Rules&#x20;
 
-Whenever  you pass a `brandRules` object to the MCP Server or to the AI Co-Pilot, we validate it automatically at that point. If the payload is invalid, we reject it with a full list of issues.&#x20;
+Whenever you pass a brandRules object to the MCP Server, AI Co-Pilot, or Brand Check, we validate it automatically at that point. For MCP and the AI Co-Pilot, we reject an invalid payload with a full list of issues. For Brand Check, an invalid brandRules object fires error code 1770 instead, see [Error management](../resources/error-management/) for details.
 
 In addition to that, the following validation endpoint helps you test and validate your `brandRules` payload _before_ you start an agent or an MCP session. This can come in handy while you're still developing and testing your Brand Rules implementation, or can be used as a checkpoint in case you're building ways for your end users to create their own Brand Rules. &#x20;
 

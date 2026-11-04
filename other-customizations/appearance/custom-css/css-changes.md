@@ -4,6 +4,36 @@ description: Here you can reference current and past changes to CSS classes.
 
 # CSS Changes
 
+#### Release November 2026
+
+Reference the upcoming custom CSS changes in the following expandable section.
+
+<details>
+
+<summary>Brand Check</summary>
+
+**1. Checker Panel – Brand cards and presets**
+
+**UI Area**: Checker Panel / Brand\
+**Sub-element**: Result cards, expand/collapse controls, preset choices and Applied indicators\
+**Classnames Removed**: None
+
+**New Classnames**:
+
+* `checker-brand-card--cs`
+* `checker-brand-card-applied--cs`
+* `checker-brand-card-toggle--cs`
+* `checker-brand-chevron--cs`
+* `checker-brand-preset--cs`
+* `checker-brand-preset-applied--cs`
+* `checker-brand-preset-label--cs`
+* `checker-brand-applied-badge--cs`
+* `checker-brand-applied-icon--cs`
+
+_Reminder: If you're using Custom CSS, please use "change safe" class names (marked with '--cs' suffix) to customize the look and feel of your editor. Class names without the '--cs' suffix may change without prior notice in the future._
+
+</details>
+
 ### Release August 2026
 
 Reference the upcoming custom CSS changes in the following expandable section.&#x20;
