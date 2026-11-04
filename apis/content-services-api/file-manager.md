@@ -50,6 +50,8 @@ Everything after `/v1/file/` is the path to a file or directory inside your end 
 
 Each request counts as one Content Services API call, and these endpoints are subject to the [same rate limits](./#rate-limits) as every other category.
 
+With [File Manager for AI](../../ai-and-mcp/file-manager-for-ai.md), an AI agent can also list, search, upload, and delete files in this file system during an MCP session, only in the folders you allow.
+
 ## Headers and authentication
 
 Every request carries your Content Services API key as a bearer token, plus a header identifying the end user whose files you're working with.
@@ -213,37 +215,37 @@ The following table lists the statuses these endpoints return.
 ## List a directory <a href="#list-a-directory" id="list-a-directory"></a>
 
 {% openapi-operation spec="list-a-directory" path="/v1/file/{path}" method="get" %}
-[OpenAPI list-a-directory](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/c482e20d83003b5567585a5873d70b55628733ac144d9eb7ef008127a50be195.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260916%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260916T204804Z&X-Amz-Expires=172800&X-Amz-Signature=e781cefecb183289ca60255cbe3615ce1ad45babab0ec96d91aed81e6ff78a9e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI list-a-directory](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/c482e20d83003b5567585a5873d70b55628733ac144d9eb7ef008127a50be195.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=6949830200cf8c4d704b1e4b8bcd1a92%2F20261104%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261104T233513Z&X-Amz-Expires=172800&X-Amz-Signature=cbbe652e76efb2a7c74a602e39d3f3f59d5c50ae712fda803d4f03a4886186a7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## Search files <a href="#search-files" id="search-files"></a>
 
 {% openapi-operation spec="search-files" path="/v1/file/{path}" method="get" %}
-[OpenAPI search-files](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/927850588e424820f02fc7bdafd383bc753b02dd2a8830212a4a03b74a7fd11e.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260916%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260916T204804Z&X-Amz-Expires=172800&X-Amz-Signature=edf085de9447460366f82af81c24c9c2afca8bdef79bcc35f57d8a8c1b6cf432&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI search-files](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/927850588e424820f02fc7bdafd383bc753b02dd2a8830212a4a03b74a7fd11e.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=6949830200cf8c4d704b1e4b8bcd1a92%2F20261104%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261104T233513Z&X-Amz-Expires=172800&X-Amz-Signature=90af1cd4b0ef251d12adf8a5ce6e479ff50d9995bce84deb128055582426b56d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## Create a directory <a href="#create-a-directory" id="create-a-directory"></a>
 
 {% openapi-operation spec="create-directory" path="/v1/file/{path}/" method="post" %}
-[OpenAPI create-directory](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/2e0d2e944b07358577818424f25fbee9cc48653fc51b01407a1832ae9eca3980.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260916%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260916T204804Z&X-Amz-Expires=172800&X-Amz-Signature=bc62141a332f38495d54568753d300fcda64f5e8280eff9281704dc96340b77a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI create-directory](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/2e0d2e944b07358577818424f25fbee9cc48653fc51b01407a1832ae9eca3980.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=6949830200cf8c4d704b1e4b8bcd1a92%2F20261104%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261104T233513Z&X-Amz-Expires=172800&X-Amz-Signature=e0b1f239d392ef86fbd512c354071ff831948b9ed864cf5cbede00a427dc0715&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## Upload a file
 
 {% openapi-operation spec="upload-a-file" path="/v1/file/{path}/{filename}" method="post" %}
-[OpenAPI upload-a-file](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/08c674d3f4b3d25910548c51ffd5af96a754aa67429943f8b13aa430dab03d63.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260916%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260916T204804Z&X-Amz-Expires=172800&X-Amz-Signature=8c119bfe8cd63496b45e76e0a06265687658de9e8a873d2211bb15118c8209c2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI upload-a-file](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/08c674d3f4b3d25910548c51ffd5af96a754aa67429943f8b13aa430dab03d63.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=6949830200cf8c4d704b1e4b8bcd1a92%2F20261104%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261104T233513Z&X-Amz-Expires=172800&X-Amz-Signature=48759a0fb7880689ce0c156f61db551c471df5a730969eba7288cb88ada193d8&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## Move a file
 
 {% openapi-operation spec="move-a-file" path="/v1/file/{path}/{filename}" method="patch" %}
-[OpenAPI move-a-file](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/b8d22ba0daf92b9e2c49e8aee121a836495570729b55f94816a1d365bcf0b608.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260916%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260916T204804Z&X-Amz-Expires=172800&X-Amz-Signature=8bd4de1c95a430c0621de1475eeea95252c8cd11a415009e2b665be632124089&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI move-a-file](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/b8d22ba0daf92b9e2c49e8aee121a836495570729b55f94816a1d365bcf0b608.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=6949830200cf8c4d704b1e4b8bcd1a92%2F20261104%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261104T233513Z&X-Amz-Expires=172800&X-Amz-Signature=e6ea10167ea96708d8bbc72397bed0797f9e44d2a01125a4ec00687f0598899d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## Delete a file or directory
 
 {% openapi-operation spec="delete-file" path="/v1/file/{path}/{filename}" method="delete" %}
-[OpenAPI delete-file](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/2f73a62c7c828e48a61707a6faa02adc4437be90f4a5af8ffb30bb2ce5a236da.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260916%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260916T204804Z&X-Amz-Expires=172800&X-Amz-Signature=08c86eb56f96748173d6ed1e30485cb4b4532141eadbade80e0b0fbe89561861&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI delete-file](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/2f73a62c7c828e48a61707a6faa02adc4437be90f4a5af8ffb30bb2ce5a236da.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=6949830200cf8c4d704b1e4b8bcd1a92%2F20261104%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261104T233513Z&X-Amz-Expires=172800&X-Amz-Signature=6e4d18c4b7384af1f1e596a8e9776cb0b0ce98565eb9d19e15e4724fcf248375&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 ## Limitations

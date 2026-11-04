@@ -64,6 +64,15 @@ These tools verify email quality by checking for accessibility issues, missing a
 * `beefree_check_template` - Template validation
 * `beefree_check_section` - Section validation
 
+#### File Manager
+
+These tools let the agent work in your users' File Manager: find the images they already have, save the images it brings in, and delete the files it no longer needs. They are offered only to sessions created with a `fileManager` configuration that allows their operation. See [File Manager for AI](../file-manager-for-ai.md).
+
+* `beefree_list_files` - List the files and folders directly inside a folder
+* `beefree_search_files` - Find files by name across the folders the agent can read
+* `beefree_upload_file` - Save a file from a URL into a folder and return its public URL
+* `beefree_remove_file` - Delete one file, never a folder
+
 #### External services
 
 These tools integrate with third-party services to enhance your email designs with external resources and assets.
@@ -77,5 +86,7 @@ With each of the tools in the categories above, agents can build complete workfl
 #### Actions Available on Blocks
 
 The table below outlines the specific operations (Add, Read, Update, and Delete) that AI agents can perform on various content blocks within the editor via the Beefree SDK MCP server. Use this reference to understand the current capabilities and functional coverage available for each block type.
+
+<table><thead><tr><th>Block</th><th data-type="checkbox">ADD</th><th data-type="checkbox">READ</th><th data-type="checkbox">UPDATE</th><th data-type="checkbox">DELETE</th></tr></thead><tbody><tr><td>Button</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Paragraph</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Heading</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Image</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Divider</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Spacer</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>List</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Icon</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Social</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Text</td><td>false</td><td>true</td><td>false</td><td>true</td></tr><tr><td>Menu</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Dynamic Content</td><td>false</td><td>false</td><td>false</td><td>true</td></tr><tr><td>HTML</td><td>false</td><td>false</td><td>false</td><td>true</td></tr><tr><td>Table</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Video</td><td>false</td><td>true</td><td>false</td><td>true</td></tr></tbody></table>
 
 <table><thead><tr><th>Block</th><th data-type="checkbox">ADD</th><th data-type="checkbox">READ</th><th data-type="checkbox">UPDATE</th><th data-type="checkbox">DELETE</th></tr></thead><tbody><tr><td>Button</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Paragraph</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Heading</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Image</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Divider</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Spacer</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>List</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Icon</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Social</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Text</td><td>false</td><td>true</td><td>false</td><td>true</td></tr><tr><td>Menu</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Dynamic Content</td><td>false</td><td>false</td><td>false</td><td>true</td></tr><tr><td>HTML</td><td>false</td><td>false</td><td>false</td><td>true</td></tr><tr><td>Table</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Video</td><td>false</td><td>true</td><td>false</td><td>true</td></tr></tbody></table>

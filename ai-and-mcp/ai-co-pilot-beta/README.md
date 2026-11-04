@@ -91,6 +91,7 @@ const beeConfig = {
         loadingPhrases,   // string[] — overrides default cycling loader text
         brandRules,       // brandRules object
         reusableRows,     // { entries: [...] } — saved rows the Co-Pilot can place
+        fileManager,      // { readPaths, uploadPaths, deletePaths } — File Manager folders the Co-Pilot can use
       },
     },
   ],
@@ -116,6 +117,7 @@ System Prompt customization is only available for Superpowers and Enterprise pla
 | `loadingPhrases`  | `string[]`           | No       | Replaces the default cycling phrases shown under the loader (e.g. `"Sending request"`, `"Working"`). Phrases cycle per auto-continue turn and are announced via `aria-live`.                                                                                         |
 | `brandRules`      | `brandRules` object  | No       | Brand Rules the Co-Pilot must follow (presets, permissions, limits). See the [Brand Rules](../brand-rules.md) page for the full schema and logic.                                                                                                                    |
 | `reusableRows`    | `{ entries: [...] }` | No       | A library of your users' saved rows the Co-Pilot can search and place instead of building them from scratch. Core plan and above. See [Reusable Rows for AI](../reusable-rows-for-ai.md) for the row shape and limits.                                               |
+| `fileManager`     | `fileManager` object | No       | The folders of your user's File Manager the Co-Pilot can list and search, save files to, and delete files from. See [Using the File Manager with the AI Co-Pilot](./#using-the-file-manager-with-the-ai-co-pilot).                                                   |
 
 #### Receiving message updates (`onInfo`)
 
@@ -410,6 +412,42 @@ addOns: [
 {% hint style="info" %}
 Tip: You can use the [validation endpoint](../reusable-rows-for-ai.md#validate-a-library-before-starting-a-session) to check your `reusableRows` payload before starting the Co-Pilot.
 {% endhint %}
+
+### Using the File Manager with the AI Co-Pilot
+
+With [File Manager for AI](../file-manager-for-ai.md), the Co-Pilot can find, save, and delete files in your user's File Manager, only in the folders you allow. Pass the folders as `fileManager` in the AI Agent `settings`:
+
+```typescript
+// Exported by @beefree.io/sdk as McpFileManager
+interface McpFileManager {
+  readPaths?: string[]   // folders the Co-Pilot can list and search, subfolders included
+  uploadPaths?: string[] // folders it can save files to
+  deletePaths?: string[] // folders it can delete files from, subfolders included
+}
+// A list you leave out defaults to ['/AI Generated Images']; [] turns that operation off.
+// Without fileManager, the Co-Pilot has no file tools.
+```
+
+```javascript
+addOns: [
+  {
+    id: 'ai-agent',
+    settings: {
+      fileManager: {
+        readPaths: ['/'],
+        uploadPaths: ['/AI Generated Images'],
+        deletePaths: [],
+      },
+    },
+  },
+]
+```
+
+* The Co-Pilot works in the File Manager of the `uid` the editor was started with.
+* The folders apply to the MCP session the Co-Pilot starts for a prompt. If a session is still open, or the editor joined one with `bee.join()`, the prompt runs in that session, with that session's own `fileManager`.
+* An invalid `fileManager` keeps the session from starting, and the Co-Pilot shows an error with a Retry button. Check it with the [validation endpoint](../file-manager-for-ai.md#validate-a-configuration-before-starting-a-session), adding the editor's `uid`: the endpoint requires one.
+
+See [File Manager for AI](../file-manager-for-ai.md) for path rules, limits, and [choosing folders for the agent](../file-manager-for-ai.md#choosing-folders-for-the-agent).
 
 ### Disable the AI Co-Pilot per user
 

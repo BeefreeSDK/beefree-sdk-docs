@@ -70,6 +70,7 @@
   * [MCP Server FAQs](ai-and-mcp/getting-started/mcp-server-faqs.md "FAQs")
 * [Brand Rules](ai-and-mcp/brand-rules.md)
 * [Reusable Rows for AI](ai-and-mcp/reusable-rows-for-ai.md)
+* [File Manager for AI](ai-and-mcp/file-manager-for-ai.md)
 
 ## APIs
 
