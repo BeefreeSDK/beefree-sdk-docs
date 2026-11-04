@@ -145,6 +145,7 @@
 
 ## QA tools
 
+* [QA Tools overview](qa-tools/qa-tools-overview.md)
 * [Quality Check](qa-tools/quality-check.md)
 * [Brand Check](qa-tools/brand-check.md)
 
