@@ -10,21 +10,23 @@ The `metadata` object is part of the overall Row structure and is intended for i
 
 The `metadata` object is a plain JSON object that lives inside a row. It stores contextual information about the row, such as:
 
-| Field          | Type                    | Description                                                                                     |
-| -------------- | ----------------------- | ----------------------------------------------------------------------------------------------- |
-| `name`         | string (required)       | A human-readable title for the row shown in the Rows panel. This can be used to filter the row. |
-| `tags`         | string                  | A comma-separated list of keywords.                                                             |
-| `category`     | string or number        | An identifier that groups rows into categories.                                                 |
-| `id`           | string or number        | A unique identifier for the row, assigned by the host application.                              |
-| `idParent`     | string, number, or null | Optional ID of a parent row, if this row is derived from another.                               |
-| `dateCreated`  | string (ISO 8601)       | When the row was originally created.                                                            |
-| `dateModified` | string (ISO 8601)       | When the row was last modified.                                                                 |
-| `userId`       | string or number        | ID of the user who created or owns the row.                                                     |
+| Field          | Type                    | Description                                                                                                                               |
+| -------------- | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`         | string (required)       | A human-readable title for the row shown in the Rows panel. This can be used to filter the row.                                           |
+| `tags`         | string or array         | Keywords, as a comma-separated string or an array of strings.                                                                             |
+| `category`     | string or number        | An identifier that groups rows into categories.                                                                                           |
+| `description`  | string                  | Recommended. One line on what the row is for. The AI relies on it most to choose a [reusable row](../ai-and-mcp/reusable-rows-for-ai.md). |
+| `id`           | string or number        | A unique identifier for the row, assigned by the host application.                                                                        |
+| `idParent`     | string, number, or null | Optional ID of a parent row, if this row is derived from another.                                                                         |
+| `dateCreated`  | string (ISO 8601)       | When the row was originally created.                                                                                                      |
+| `dateModified` | string (ISO 8601)       | When the row was last modified.                                                                                                           |
+| `userId`       | string or number        | ID of the user who created or owns the row.                                                                                               |
 
 All fields are optional except `name`, and you can adjust or extend this structure to fit your system’s needs.
 
 ### Example: Row with Metadata
 
+{% code collapsedlinecount="10" %}
 ```json
 {
   "name": "Two-Column Product Row",
@@ -41,3 +43,4 @@ All fields are optional except `name`, and you can adjust or extend this structu
   }
 }
 ```
+{% endcode %}

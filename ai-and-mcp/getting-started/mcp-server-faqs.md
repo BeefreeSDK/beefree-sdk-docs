@@ -20,7 +20,7 @@ The MCP Server is available on Essentials, Core, Superpowers, and Enteprise plan
 
 #### How do I get access?
 
-Access is available directly to all paying customers with no application or approval needed. Sign in to your developer account and follow the [Installation & Setup](https://app.gitbook.com/o/2zoWGxtV7bjhbwBdjGPS/s/8c7XIQHfAtM23Dp3ozIC/~/diff/~/changes/579/mcp-server/installation-and-setup) guide to get started.
+Access is available directly to all paying customers with no application or approval needed. Sign in to your developer account and follow the [Installation & Setup](mcp-server-installation-and-setup.md) guide to get started.
 
 #### What are the two integration paths, and which one should I use?
 
@@ -45,6 +45,10 @@ The MCP integration is still evolving. While you can already perform many email 
 * Some block properties and advanced configuration options are not covered
 
 We encourage you to explore the available tools and share feedback — your input helps us prioritize and close gaps.
+
+#### Can the agent reuse my user's saved rows instead of generating new content?
+
+Yes. Attach a row library to the session with `reusableRows` and the agent can search it and place the row your user already approved. Search returns metadata only, rows are placed by id, and a synced row is placed but never edited. See [Reusable Rows for AI](../reusable-rows-for-ai.md).
 
 #### Does the MCP also support the Landing Page Builder or the Popup Builder?
 

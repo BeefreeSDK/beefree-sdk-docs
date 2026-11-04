@@ -25,6 +25,7 @@ Both paths use the same MCP endpoint and authentication. They differ only in how
 
 ### Core architecture
 
+{% code collapsedlinecount="10" %}
 ```
 AI Agent → MCP Client → CSAPI → MCP Server → Beefree SDK Ecosystem (optional)
     ↓           ↓         ↓          ↓               ↓
@@ -32,6 +33,7 @@ AI Agent → MCP Client → CSAPI → MCP Server → Beefree SDK Ecosystem (opti
  Language   Protocol   Routing   Processing      Check API
 
 ```
+{% endcode %}
 
 * **CSAPI** — public API entry point for your agent. Authenticates requests and routes them to the MCP server.
 * **MCP Server** — implements the MCP protocol and exposes tools that operate on Beefree SDK resources.
@@ -51,17 +53,21 @@ All requests to the MCP endpoint require a valid [CSAPI key](../../apis/content-
 
 Once you have a key, include it in every request:
 
+{% code collapsedlinecount="10" %}
 ```
 Authorization: Bearer <YOUR_CONTENT_SERVICES_API_KEY>
 ```
+{% endcode %}
 
 #### MCP endpoint
 
 All agent connections use the v2 endpoint:
 
+{% code collapsedlinecount="10" %}
 ```
 https://api.getbee.io/v2/sdk/mcp
 ```
+{% endcode %}
 
 Your agent must complete the MCP `initialize/initialized` handshake before calling any tools. MCP clients (SDKs, runtimes) typically handle this automatically.
 
@@ -87,9 +93,11 @@ No additional editor configuration is required beyond your standard Beefree SDK 
 
 When the user is ready to involve the agent, your host application calls:
 
+{% code collapsedlinecount="10" %}
 ```javascript
 const { templateId } = await bee.startMcpSession();
 ```
+{% endcode %}
 
 The editor creates an MCP session server-side and returns a `templateId`. Pass this to your agent(s).
 
@@ -97,9 +105,11 @@ The editor creates an MCP session server-side and returns a `templateId`. Pass t
 
 Connect to the v2 MCP endpoint using the `templateId` from Step 2, exactly as in the API-managed path:
 
+{% code collapsedlinecount="10" %}
 ```
 x-bee-template-id: <templateId>
 ```
+{% endcode %}
 
 The agent connects and can immediately begin editing the template.
 
@@ -138,13 +148,13 @@ This means users can undo the entire batch of agent changes as one unit, but can
 
 An editor-managed session is ephemeral. Once it ends — by timeout, automated-stop, or manual stop — it cannot be resumed. To start another agent pass on the same template, call `bee.startMcpSession()` again. Each call creates a fresh session with its own `templateId`, timeout and history entry.
 
-#### Brand Rules and Merge Tags
+#### Brand Rules, Merge Tags and Reusable Rows
 
 To make the MCP Server work with Brand Rules and Merge Tags in an editor-managed session, set `brandRules` and `mergeTags` at the **root of your editor configuration.** If present there, they're picked up automatically when `bee.startMcpSession()` creates the session.
 
 Here is an example:
 
-{% code overflow="wrap" %}
+{% code overflow="wrap" collapsedlinecount="10" %}
 ```json
 var beeConfig = {
     mergeTags: [],
@@ -153,14 +163,30 @@ var beeConfig = {
 ```
 {% endcode %}
 
+You can also pass `brandRules` and a `reusableRows` library directly to `bee.startMcpSession()`, for the session that call creates:
+
+{% code collapsedlinecount="10" %}
+```javascript
+const { templateId } = await bee.startMcpSession({
+  brandRules: { ... },                // replaces the brandRules of the editor configuration
+  reusableRows: { entries: [ ... ] }, // saved rows the agent can search and place
+})
+```
+{% endcode %}
+
+* **`brandRules`:** when passed, these are used instead of the ones at the root of the editor configuration. When omitted, the root ones apply as before.
+* **`reusableRows`:** has no root-level equivalent. Pass it here to attach a library to the session. See [Reusable Rows for AI](../reusable-rows-for-ai.md) for the row shape, limits, and what the agent can do with it.
+* **Calling it with no arguments** works as before.
+
 {% hint style="info" %}
-We suggest you validate your `brandRules` payload with the Brand Rules validation endpoint beforehand to avoid discovering errors only once the session starts.
+We suggest you validate your `brandRules` and `reusableRows` payloads with the [validation endpoint](../reusable-rows-for-ai.md#validate-a-library-before-starting-a-session) beforehand to avoid discovering errors only once the session starts.
 {% endhint %}
 
 #### Error handling
 
 If `bee.startMcpSession()` fails, the error is returned in this shape:
 
+{% code collapsedlinecount="10" %}
 ```json
 {
   "error": {
@@ -169,11 +195,12 @@ If `bee.startMcpSession()` fails, the error is returned in this shape:
   }
 }
 ```
+{% endcode %}
 
 Common failure scenarios:
 
 * **Builder not ready** — the editor has not finished initializing.
-* **API error** — the server-side session creation request failed.
+* **API error** — the server-side session creation request failed. This includes an invalid `brandRules` or `reusableRows` payload (`400`), a request over 3.5 MB, or over 2 MB without the `reusableRows` (`413`), and `brandRules` or `reusableRows` on a plan that does not include them (`403`).
 
 ### API-managed session
 
@@ -189,33 +216,67 @@ Call the template creation endpoint to initialize a new editing session server-s
 
 **Endpoint**
 
+{% code collapsedlinecount="10" %}
 ```
 POST https://api.getbee.io/v2/sdk/mcp/template
 ```
+{% endcode %}
 
 **Request body**
 
-| Field      | Type   | Description                                                                                                                                                        |
-| ---------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| template   | object | Optional. The JSON template to initialize the session with.                                                                                                        |
-| mergeTags  | object | Optional. Merge tags to be resolved within the template.                                                                                                           |
-| brandRules | object | Optional. Brand Rules the agent must follow during the session (presets, permissions, limits). See [Brand Rules](../brand-rules.md) for the full schema and logic. |
+| Field        | Type   | Description                                                                                                                                                               |
+| ------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| template     | object | Optional. The JSON template to initialize the session with.                                                                                                               |
+| mergeTags    | object | Optional. Merge tags to be resolved within the template.                                                                                                                  |
+| brandRules   | object | Optional. Brand Rules the agent must follow during the session (presets, permissions, limits). See [Brand Rules](../brand-rules.md) for the full schema and logic.        |
+| reusableRows | object | Optional. A library of the customer's saved rows the agent may search and place. See [Reusable Rows for AI](../reusable-rows-for-ai.md) for the payload shape and limits. |
 
+{% code collapsedlinecount="10" %}
 ```json
 {
   "template": { ... },
   "mergeTags": { ... },
-  "brandRules": { ... }
+  "brandRules": { ... },
+  "reusableRows": { ... }
 }
 ```
+{% endcode %}
 
 To make the MCP Server work with Brand Rules in an API-managed session, pass a `brandRules` object in this request body alongside `template` and `mergeTags`.
 
 We recommend validating your `brandRules` payload with the [Brand Rules validation endpoint](../brand-rules.md#testing-and-validating-your-brand-rules) before creating the template. This surfaces schema errors up front instead of only when the session starts.
 
+To let the agent work with your user's saved rows, pass a `reusableRows` object in the same request. A library over 1,000 rows (or about 1.5 MB of row data) is trimmed, while an invalid row makes the request fail with `400`. A request over 3.5 MB, or over 2 MB without the `reusableRows`, fails with `413`. The response then also reports what was stored in `reusableRows`, `droppedEntries` is included when the library was trimmed. Validate the library beforehand to catch invalid rows. See [Reusable Rows for AI](../reusable-rows-for-ai.md#what-happens-when-a-library-does-not-fit).
+
 **Response**
 
 Returns a templateId. You must pass this as the `x-bee-template-id` header (or `_meta` field) when connecting to the MCP endpoint.
+
+{% code collapsedlinecount="10" %}
+```json
+{ "templateId": "..." }
+```
+{% endcode %}
+
+When the request carries `reusableRows`, the response also describes what was stored: how many rows and how many were sent and dropped if the library was trimmed. See [Reusable Rows for AI](../reusable-rows-for-ai.md#what-happens-when-a-library-does-not-fit) for every field.
+
+{% code collapsedlinecount="10" %}
+```json
+{
+  "templateId": "...",
+  "reusableRows": {
+    "entries": 1000,
+    "sentEntries": 1200,
+    "droppedEntries": 200,
+    "categories": 4,
+    "syncedEntries": 3,
+    "taggedEntries": 800,
+    "webFonts": 2,
+    "bytes": 1536000
+  }
+}
+```
+{% endcode %}
 
 #### Step 2: Connect your agent
 
@@ -223,11 +284,12 @@ Point your MCP client at the v2 endpoint and provide the `templateId` you receiv
 
 **Option A — HTTP header (recommended)**
 
-<pre><code><strong>x-bee-template-id: &#x3C;templateId>
+<pre data-collapsed-line-count="10"><code><strong>x-bee-template-id: &#x3C;templateId>
 </strong></code></pre>
 
 **Option B — `_meta` field in the MCP `initialize` request**
 
+{% code collapsedlinecount="10" %}
 ```json
 {
   "method": "initialize",
@@ -238,6 +300,7 @@ Point your MCP client at the v2 endpoint and provide the `templateId` you receiv
   }
 }
 ```
+{% endcode %}
 
 Use `_meta` strictly for routing metadata, not for tool arguments.
 
@@ -245,17 +308,21 @@ Use `_meta` strictly for routing metadata, not for tool arguments.
 
 The editor can join the same session for [real-time collaboration](../../other-customizations/collaborative-editing/) alongside the agent. To configure this, use the `join` method in the editor configuration.
 
+{% code collapsedlinecount="10" %}
 ```
 bee.join(templateId);
 ```
+{% endcode %}
 
 #### Step 4: Retrieve the final template
 
 After the agent has finished its work, fetch the modified template from the server:
 
+{% code collapsedlinecount="10" %}
 ```
 GET https://api.getbee.io/v2/sdk/mcp/template/:templateId
 ```
+{% endcode %}
 
 This returns the current state of the template with all agent modifications applied.
 
@@ -282,6 +349,7 @@ For the full `editorConfig` reference and co-editing setup, see the [Co-Editing 
 
 The following fields are relevant to MCP sessions across both integration paths:
 
+{% code collapsedlinecount="10" %}
 ```
 {
   "username": "Display name shown for this user in the editor",
@@ -289,6 +357,7 @@ The following fields are relevant to MCP sessions across both integration paths:
   "userColor": "#hex color for the user's presence indicator"
 }
 ```
+{% endcode %}
 
 `userHandle` behavior
 
@@ -354,9 +423,11 @@ Instead of exposing 33 individual tools — each with a full parameter schema se
 
 **Code mode endpoint**
 
+{% code collapsedlinecount="10" %}
 ```
 https://api.getbee.io/v2/sdk/mcp/codemode
 ```
+{% endcode %}
 
 In internal benchmarks across five models and three email complexity levels, Code Mode reduced total token consumption by 68–96%, with most results in the 85–95% range ([learn more in our blogpost](https://developers.beefree.io/blog/ai-agents-email-saving-tokens#code-mode))
 
@@ -366,4 +437,6 @@ Use Code Mode when your agent makes many sequential tool calls to reduce API cos
 Code Mode requires your agent to generate valid TypeScript. Implement error handling to gracefully handle partial failures.
 {% endhint %}
 
-Code Mode fully supports `brandRules`. Pass it the same way as in the standard API-managed or editor-managed paths above; the agent's generated scripts are validated against your Brand Rules guardrails like any other session.
+Code Mode fully supports `brandRules`. Pass it the same way as in the standard API-managed or editor-managed paths above. The agent's generated scripts are validated against your Brand Rules guardrails like any other session.
+
+Code Mode also supports `reusableRows`. Also pass it the same way as in the API-managed or editor-managed paths above. The agent's generated scripts can search the library and place its rows like in any other session. See [Reusable Rows for AI](../reusable-rows-for-ai.md).

@@ -4,7 +4,7 @@
 This feature is available on Beefree SDK [Core plan](https://developers.beefree.io/pricing-plans) and above. Upgrade a [development application](../../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
 {% endhint %}
 
-The [Reusable Content page](../) discusses, on a very high-level, the differences between key row-related features offered within Beefree SDK. This page provides more detailed information on pre-building and saving reusable content.&#x20;
+The [Reusable Content page](../) discusses, on a very high-level, the differences between key row-related features offered within Beefree SDK. This page provides more detailed information on pre-building and saving reusable content.
 
 ## Pre-build Reusable Content
 
@@ -114,7 +114,7 @@ It is entirely up to the host application:
 
 ## Data Structures for Rows
 
-There are two data structures that are important to understand and utilize when working with both Custom Rows and Self-hosted Saved Rows.&#x20;
+There are two data structures that are important to understand and utilize when working with both Custom Rows and Self-hosted Saved Rows.
 
 These structures are the following:
 
@@ -123,7 +123,7 @@ These structures are the following:
 
 Reference the [Simple Row Schema documentation](../../../data-structures/simple-schema/row-schema.md) or the [GitHub repository for Simple Schema](https://github.com/BeefreeSDK/beefree-sdk-simple-schema) to learn more. Throughout the subsequent pages, these two schemas and their applications will be referenced and discussed more thoroughly.
 
-### Row Metadata&#x20;
+### Row Metadata
 
 The following code shows a row with `metadata` and `columns` objects.
 
@@ -162,11 +162,12 @@ metadata: {
 **Recommended metadata**
 
 * `category`: A category can be useful for organizing your feeds on the Rows tab.
+* `description`: One line on what the row is for. Useful to find the row again, and the field the AI relies on most to choose between similar rows when the row is used as a [reusable row for AI](../../../ai-and-mcp/reusable-rows-for-ai.md).
 * **id:** A handle that identifies the row in the host application’s data storage.
 * **idParent:** Useful to track rows that were saved from previously saved rows. Keeping track of where a row came from allows you to implement additional editing features.
 * **dateCreated:** The date the row was created: useful for filtering/sorting rows for content management purposes in your application. It can also help with technical support tasks.
 * **dateModified:** The date a saved row was updated: useful for filtering/sorting rows for content management purposes in your application. It can also help with technical support tasks.
 * **userId:** To let your application decide whom can edit or saved rows.
-* **tags:** Useful to create filters, management, search, and in general to organize the content in your application.
+* **tags:** Useful to create filters, management, search, and in general to organize the content in your application. A comma-separated string or an array of strings.
 
 Reference the [Row Metadata page](../../../data-structures/row-metadata.md) to learn more.
