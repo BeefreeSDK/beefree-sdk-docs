@@ -66,7 +66,7 @@ Each group shows a badge count reflecting the number of individual element-level
 
 #### Navigating to issues
 
-When your users click a check result, the editor will highlight the related element in the stage. A click on the navigation arrow opens the associated editor sidebar, so your users can go straight to editing the element that Quality Check flagged.&#x20;
+When your users click a check result, the editor will highlight the related element in the stage. A click on the pencil icon opens the associated editor sidebar, so your users can go straight to editing the element that Quality Check flagged.&#x20;
 
 <figure><img src="../.gitbook/assets/Quality Check.gif" alt=""><figcaption></figcaption></figure>
 
