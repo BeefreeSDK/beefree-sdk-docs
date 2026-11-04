@@ -413,7 +413,34 @@ advancedPermissions: {
 
 * **Type:** `object`
 * **Default:** `{}`
-* **Description:** Custom hooks for extending editor functionality.
+* **Description:** Functions in your application that the builder calls when it needs data from you, or a decision. Unlike `contentDialog`, a hook shows no UI of its own. The builder asks, your handler answers.
+
+Each key of `hooks` is the name of a hook, and its value is an object with a `handler` function:
+
+```javascript
+hooks: {
+    getRows: {
+        handler: async (resolve, reject, args) => {
+            // args: what the builder sends for this hook
+            // resolve(data): answer the request
+            // reject(): the request failed
+        }
+    }
+}
+```
+
+* `args` depends on the hook (see the table below).
+* `resolve(data)` sends your answer back to the builder. The builder validates its shape. A malformed answer is treated as a failure and reported through `onError`.
+* `reject()` tells the builder the request failed. What happens next depends on the hook.
+
+The handler can be `async`: the builder waits until you call `resolve` or `reject`. Configure only the hooks you need. A hook that isn't configured is never called.
+
+| Hook                | Called when                                                              | `args`                                                         | Answer with                              | Learn more                                                                                                                                                                     |
+| ------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `getRows`           | The builder loads a row category configured with `isLocal: true`         | The category metadata from `rowsConfiguration` (e.g. `handle`) | An array of rows                         | [Loading external rows with an instance method](../../../../rows/reusable-content/create/save/implement-self-hosted-saved-rows/#loading-external-rows-with-an-instance-method) |
+| `getMentions`       | The user types `@` in a comment                                          | The text typed after `@`                                       | An array of users to mention             | [Adding mentions](../../../../other-customizations/advanced-options/commenting.md#adding-mentions)                                                                             |
+| `brandTone`         | The AI Writing Assistant reads, saves, edits or deletes a Brand Tone     | `{ action, data }`                                             | Depends on `action`                      | [Apply a Brand Tone](../../../../ai-and-mcp/ai-addons/ai-writing-assistant/apply-a-brand-tone.md)                                                                              |
+| `aiAgentBeforeSend` | The user sends a prompt to the AI Co-Pilot, before it leaves the browser | `{ promptText }`                                               | `{ allowed: boolean, message?: string }` | [Checking prompts before they are sent](../../../../ai-and-mcp/ai-co-pilot-beta/#checking-prompts-before-they-are-sent-aiagentbeforesend)                                      |
 
 ### metadata
 

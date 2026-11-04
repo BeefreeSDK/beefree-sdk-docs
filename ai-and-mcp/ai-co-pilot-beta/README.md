@@ -27,6 +27,12 @@ Unlike the [AI Writing Assistant](https://docs.beefree.io/beefree-sdk/builder-ad
 
 End users can always manually edit any design the agent generates. That keeps the workflow collaborative: AI helps your users move faster, while they stay in control as creative directors, shaping the final result to match their vision.
 
+Inside the builder, your users can:
+
+* **open the Co-Pilot** from the floating button on the stage, or from the **Edit with AI** (sparkle) action on the toolbar of the selected row or content block. When opened from a toolbar, the Co-Pilot keeps that row or block selected and uses it as the context of the conversation.
+* **start from a prompt starter**: when the conversation is empty, the panel shows a short list of suggested prompts. Clicking one fills the prompt input, so the user can complete it before sending. You can replace them with your own using [`promptStarters`](./#settings-reference).
+* **copy an answer** of the agent to the clipboard, as plain text, with the copy button under the answer.
+
 AI Co-Pilot is registered as `ai-agent` in the standard `addOns` array passed to `BeePlugin.create()`. Message history is surfaced through the existing `onInfo` callback.
 
 ### Activation
@@ -83,7 +89,10 @@ const beeConfig = {
         systemPrompt,     // string — appended to every chat request
         maxIterations,    // number — auto-continue cap (default: 10)
         loadingPhrases,   // string[] — overrides default cycling loader text
+        promptStarters,   // string[] — overrides the default prompt starters
+        submitOnEnterKey, // boolean — send the prompt with Enter (default: false)
         brandRules,       // brandRules object
+        beforeSendTimeout, // number (ms) — wait for the aiAgentBeforeSend hook (default: 30000)
       },
     },
   ],
@@ -101,13 +110,16 @@ System Prompt customization is only available for Superpowers and Enterprise pla
 
 #### Settings reference
 
-| Field             | Type                | Required | Description                                                                                                                                                                                                                                                          |
-| ----------------- | ------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `initialMessages` | message array       | No       | Loads a previous conversation at panel mount. Pass back exactly what you received from `onInfo` as `detail.messages` — the shape is identical. Persist that array (e.g. in `localStorage`) and replay it here on the next session. Pass `[]` or omit to start blank. |
-| `systemPrompt`    | `string`            | No       | Forwarded verbatim with every chat request. Use it to inject role, tone, or brand voice instructions.                                                                                                                                                                |
-| `maxIterations`   | `number`            | No       | Caps the agent's auto-continue loop on tool-call turns. Defaults to `10`. Lower it to control cost and latency.                                                                                                                                                      |
-| `loadingPhrases`  | `string[]`          | No       | Replaces the default cycling phrases shown under the loader (e.g. `"Sending request"`, `"Working"`). Phrases cycle per auto-continue turn and are announced via `aria-live`.                                                                                         |
-| `brandRules`      | `brandRules` object | No       | Brand Rules the Co-Pilot must follow (presets, permissions, limits). See the [Brand Rules](../brand-rules.md) page for the full schema and logic.                                                                                                                    |
+| Field               | Type                | Required | Description                                                                                                                                                                                                                                                                                                                    |
+| ------------------- | ------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `initialMessages`   | message array       | No       | Loads a previous conversation at panel mount. Pass back exactly what you received from `onInfo` as `detail.messages` — the shape is identical. Persist that array (e.g. in `localStorage`) and replay it here on the next session. Pass `[]` or omit to start blank.                                                           |
+| `systemPrompt`      | `string`            | No       | Forwarded verbatim with every chat request. Use it to inject role, tone, or brand voice instructions.                                                                                                                                                                                                                          |
+| `maxIterations`     | `number`            | No       | Caps the agent's auto-continue loop on tool-call turns. Defaults to `10`. Lower it to control cost and latency.                                                                                                                                                                                                                |
+| `loadingPhrases`    | `string[]`          | No       | Replaces the default cycling phrases shown under the loader (e.g. `"Sending request"`, `"Working"`). Phrases cycle per auto-continue turn and are announced via `aria-live`.                                                                                                                                                   |
+| `promptStarters`    | `string[]`          | No       | Replaces the default prompt starters shown when the conversation is empty. Each string is shown as is, and blank entries are skipped. Clicking a starter fills the prompt input without sending it. Pass `[]` to show no starters (the panel shows a greeting instead).                                                        |
+| `submitOnEnterKey`  | `boolean`           | No       | Defaults to `false`: **Enter** adds a new line, and the prompt is sent with the Send button. Set it to `true` to send the prompt with **Enter**; **Shift + Enter** then adds a new line. Same setting as the [AI Writing Assistant](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/ai-writing-assistant)'s. |
+| `brandRules`        | `brandRules` object | No       | Brand Rules the Co-Pilot must follow (presets, permissions, limits). See the [Brand Rules](../brand-rules.md) page for the full schema and logic.                                                                                                                                                                              |
+| `beforeSendTimeout` | `number`            | No       | How long (in milliseconds) the Co-Pilot waits for your [`aiAgentBeforeSend`](./#checking-prompts-before-they-are-sent-aiagentbeforesend) hook to answer. Defaults to `30000`. If there is no answer in time, the prompt is not sent. Ignored when the hook is not configured.                                                  |
 
 #### Receiving message updates (`onInfo`)
 
@@ -153,6 +165,112 @@ beeInstance.execCommand('toggleAgent');
 ```
 
 Each call toggles the panel's current state: calling it while the panel is closed opens it, and calling it while it's open closes it. See the [Frontend Commands page](../../other-customizations/frontend-commands.md) for the full reference.
+
+### Tracking token usage (`onInfo` code `1000`) <a href="#tracking-token-usage-oninfo-code-1000" id="tracking-token-usage-oninfo-code-1000"></a>
+
+The Co-Pilot reports the tokens it uses through the same `onInfo` callback, with code `1000`, the code the [AI Writing Assistant](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/ai-writing-assistant) uses for its usage reports. Use it to monitor consumption or to bill your users.
+
+A single prompt can result in several requests to the AI provider: when the agent edits the design, it keeps working in more steps until it answers (up to `maxIterations`). The Co-Pilot sends one `1000` event for each request, and all the events of the same prompt share the same `promptId`. Add them up to get the usage of a prompt; don't keep only one event per `promptId`, or you lose part of the usage.
+
+```javascript
+const usageByPrompt = {}
+
+const beeConfig = {
+  // ...
+  onInfo(data) {
+    if (data?.code === 1000 && data?.detail?.handle === 'ai-agent') {
+      const { promptId, usage } = data.detail
+      usageByPrompt[promptId] = (usageByPrompt[promptId] ?? 0) + (usage.totalTokens ?? 0)
+    }
+  },
+}
+```
+
+#### Usage event shape
+
+| Field             | Value                                                  |
+| ----------------- | ------------------------------------------------------ |
+| `code`            | `1000`                                                 |
+| `message`         | `"Token usage for addon handle: ai-agent"`             |
+| `detail.handle`   | `"ai-agent"`                                           |
+| `detail.promptId` | `string` — the same for all the requests of one prompt |
+| `detail.usage`    | Token usage of this request (see below)                |
+
+#### `detail.usage`
+
+| Field                                | Type     | Description                           |
+| ------------------------------------ | -------- | ------------------------------------- |
+| `inputTokens`                        | `number` | Input (prompt) tokens.                |
+| `inputTokenDetails.noCacheTokens`    | `number` | Input tokens not read from the cache. |
+| `inputTokenDetails.cacheReadTokens`  | `number` | Input tokens read from the cache.     |
+| `inputTokenDetails.cacheWriteTokens` | `number` | Input tokens written to the cache.    |
+| `outputTokens`                       | `number` | Output (completion) tokens.           |
+| `outputTokenDetails.textTokens`      | `number` | Output tokens of text.                |
+| `outputTokenDetails.reasoningTokens` | `number` | Output tokens used for reasoning.     |
+| `totalTokens`                        | `number` | Total tokens of the request.          |
+
+Not every provider and model reports every field: a field can be missing or `undefined`, so treat it as `0`.
+
+{% hint style="info" %}
+The `usage` object of the Co-Pilot has a different shape from the AI Writing Assistant's (for example, `totalTokens` instead of `total_tokens`). If you use both AddOns, check `detail.handle` before reading it. Token usage is not included in the messages of the `1010` event.
+{% endhint %}
+
+### Checking prompts before they are sent (`aiAgentBeforeSend`) <a href="#checking-prompts-before-they-are-sent-aiagentbeforesend" id="checking-prompts-before-they-are-sent-aiagentbeforesend"></a>
+
+With the `aiAgentBeforeSend` hook, your application can check every prompt before it leaves the browser, and allow it or block it. Use it, for example, to run a DLP (data loss prevention) check on your server and keep personal or sensitive data away from Beefree and the AI provider.
+
+Declare the hook in `beeConfig.hooks`. When it's configured, each time the user sends a prompt the Co-Pilot calls your handler first. Nothing reaches any Beefree backend or the AI provider until your handler allows it.
+
+```javascript
+const beeConfig = {
+  // ...your standard config
+  hooks: {
+    aiAgentBeforeSend: {
+      handler: async (resolve, reject, { promptText }) => {
+        try {
+          const verdict = await myDlpService.check(promptText) // your own server
+          if (verdict.ok) {
+            resolve({ allowed: true })
+          } else {
+            resolve({ allowed: false, message: 'Remove patient data before sending this prompt.' })
+          }
+        } catch (err) {
+          reject() // the prompt is not sent
+        }
+      },
+    },
+  },
+}
+```
+
+#### Payload
+
+| Field        | Type     | Description                          |
+| ------------ | -------- | ------------------------------------ |
+| `promptText` | `string` | The text the user typed in the chat. |
+
+#### Response
+
+Call `resolve` with an object:
+
+| Field     | Type      | Required | Description                                                                                                           |
+| --------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------- |
+| `allowed` | `boolean` | Yes      | `true` sends the prompt. `false` blocks it.                                                                           |
+| `message` | `string`  | No       | Shown to the user when `allowed` is `false`, as plain text (up to 500 characters). Omit it to show a default message. |
+
+#### What the user sees
+
+* **Allowed**: the prompt is sent as usual.
+* **Blocked** (`allowed: false`): the chat shows your `message`, or a default message if you didn't provide one. The prompt stays in the input, so the user can edit it and send it again.
+* **Check failed**: the prompt is not sent and the chat shows an error with a **Retry** button. Retry asks your handler again. This happens when your handler calls `reject()`, resolves with a response that doesn't match the shape above, or doesn't answer within `beforeSendTimeout` (30 seconds by default). A malformed response is also reported through `onError`.
+
+The check is fail-closed: if your handler can't give a verdict, the prompt is never sent.
+
+{% hint style="warning" %}
+The hook checks only the text the user types. While it works, the Co-Pilot still reads the template content, including the selected element, and sends it to the AI provider. If your policy covers template content too, check it separately.
+{% endhint %}
+
+If the hook isn't configured, the Co-Pilot sends prompts directly, without any extra round trip.
 
 ### Persisting chat history
 
@@ -203,6 +321,8 @@ const beeConfig = {
         systemPrompt:    "You write in the brand's friendly, concise voice.",
         maxIterations:   8,
         loadingPhrases:  ['Drafting', 'Tweaking copy', 'Polishing'],
+        promptStarters:  ['Create a newsletter for our spring sale', 'Make this email more concise'],
+        submitOnEnterKey: true,
         brandRules: {
           presets: {
             blocks: {
@@ -236,6 +356,9 @@ const beeConfig = {
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(data.detail.messages))
       } catch (err) { /* noop */ }
+    }
+    if (data?.code === 1000 && data?.detail?.handle === 'ai-agent') {
+      trackTokenUsage(data.detail.promptId, data.detail.usage) // your own function
     }
     // ...handle other onInfo codes here
   },
@@ -279,6 +402,8 @@ const beeConfig = {
 * Only one provider can be active per application at a time. You can switch providers at any time from the Developer Console without code changes.
 * The `systemPrompt` field is a powerful lever for brand alignment — use it to enforce tone, language, and content guardrails across all end-user sessions.
 * Lowering `maxIterations` from the default of `10` is recommended in cost-sensitive environments, especially when using larger models such as Claude Opus or GPT-5.4.
+* To monitor the tokens your users consume, listen to the [token usage events](./#tracking-token-usage-oninfo-code-1000) (`onInfo` code `1000`).
+* To inspect or block prompts before they are sent (for example, for DLP), use the [`aiAgentBeforeSend` hook](./#checking-prompts-before-they-are-sent-aiagentbeforesend).
 * For data security and privacy information, refer to the [AI Providers and Data Security](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/ai-writing-assistant/data-security) page.
 
 ### Related resources
