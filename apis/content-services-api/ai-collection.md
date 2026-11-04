@@ -65,22 +65,22 @@ Prior to getting started with the resources in this collection, ensure you have 
 
 `v1/ai/metadata`
 
-{% openapi src="../../.gitbook/assets/metadata_endpoint.yaml" path="/v1/{collection}/metadata" method="post" %}
-[metadata_endpoint.yaml](../../.gitbook/assets/metadata_endpoint.yaml)
-{% endopenapi %}
+{% openapi-operation spec="metadata-endpoint" path="/v1/{collection}/metadata" method="post" %}
+[OpenAPI metadata-endpoint](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/327db3f634df95f1ea2c4dc1475b0e19ae2ef3b25942401bea437fb1dd5d7079.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=6949830200cf8c4d704b1e4b8bcd1a92%2F20261104%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261104T141607Z&X-Amz-Expires=172800&X-Amz-Signature=a8d991c1f70dcf38d627cecd0489047f1a9a2dacf2f938b2a78588dd33f7b25d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% endopenapi-operation %}
 
 ### SMS <a href="#sms" id="sms"></a>
 
 `v1/ai/sms`
 
-{% openapi src="../../.gitbook/assets/sms_endpoint.yaml" path="/v1/{collection}/sms" method="post" %}
-[sms_endpoint.yaml](../../.gitbook/assets/sms_endpoint.yaml)
-{% endopenapi %}
+{% openapi-operation spec="sms-endpoint" path="/v1/{collection}/sms" method="post" %}
+[OpenAPI sms-endpoint](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/5a0289796ed07080cd3aafa10b5299a2abe70c8a0096b2576a363cfaeef27c2e.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=6949830200cf8c4d704b1e4b8bcd1a92%2F20261104%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261104T141608Z&X-Amz-Expires=172800&X-Amz-Signature=6de18b7f78a1174cb7dce5abd8653cae756baeba78dac4e094da8d696ec34471&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% endopenapi-operation %}
 
 ### Summary
 
 `v1/ai/summary`
 
-{% openapi src="../../.gitbook/assets/summary_endpoint.yaml" path="/v1/{collection}/summary" method="post" %}
-[summary_endpoint.yaml](../../.gitbook/assets/summary_endpoint.yaml)
-{% endopenapi %}
+{% openapi-operation spec="summary-endpoint" path="/v1/{collection}/summary" method="post" %}
+[OpenAPI summary-endpoint](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/44ee493c1cc9d159c976e053f8f0752e3e00d5df71525c0217641aca7e1ad084.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=6949830200cf8c4d704b1e4b8bcd1a92%2F20261104%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261104T141608Z&X-Amz-Expires=172800&X-Amz-Signature=5d64d2979e823d77af202a431312b42f19c54edc001f4b34e8761b815234c3b6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% endopenapi-operation %}
