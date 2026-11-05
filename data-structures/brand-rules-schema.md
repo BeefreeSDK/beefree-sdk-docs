@@ -14,10 +14,10 @@ Each feature reads only the fields it needs and ignores the rest. Brand Check ig
 
 The complete JSON schema for Brand Rules, including all properties you can define using presets, permissions, and limits, is available here.
 
-{% file src="../.gitbook/assets/brandRules.schema.json" %}
+{% file src="../.gitbook/assets/brandRules.schema (1).json" %}
 
 {% hint style="info" %}
-The brandRulesSchema.json was last updated on November 4, 2026.
+The brandRulesSchema.json was last updated on November 5, 2026.
 {% endhint %}
 
 ### Preset structure
