@@ -17,7 +17,7 @@ The complete JSON schema for Brand Rules, including all properties you can defin
 {% file src="../.gitbook/assets/brandRules.schema (1).json" %}
 
 {% hint style="info" %}
-The brandRulesSchema.json was last updated on November 5, 2026.
+The brandRules.schema.json was last updated on November 5, 2026.
 {% endhint %}
 
 ### Preset structure
