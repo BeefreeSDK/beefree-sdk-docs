@@ -153,8 +153,8 @@ The `onInfo` callback reports information from the AI AddOns: real-time usage da
 | `1000` | `ai-integration` | [AI Writing Assistant](../../ai-and-mcp/ai-addons/ai-writing-assistant/)                   | A prompt generates content (token usage).                  |
 | `1001` | `ai-integration` | [AI Writing Assistant](../../ai-and-mcp/ai-addons/ai-writing-assistant/)                   | The user applies AI-generated content.                     |
 | `1000` | `ai-alt-text`    | [Alternate Text Generation with AI](../../ai-and-mcp/ai-addons/generate-alt-text-with-ai/) | Alternate text is generated (images processed).            |
-| `1000` | `ai-agent`       | [AI Co-Pilot](../../ai-and-mcp/ai-co-pilot-beta/)                                          | Each request of a prompt to the AI provider (token usage). |
-| `1010` | `ai-agent`       | [AI Co-Pilot](../../ai-and-mcp/ai-co-pilot-beta/)                                          | The chat history changes.                                  |
+| `1000` | `ai-agent`       | [AI Co-Pilot](../../ai-and-mcp/ai-co-pilot/)                                               | Each request of a prompt to the AI provider (token usage). |
+| `1010` | `ai-agent`       | [AI Co-Pilot](../../ai-and-mcp/ai-co-pilot/)                                               | The chat history changes.                                  |
 
 The `usage` object has a different shape for each AddOn: check `detail.handle` before reading it.
 
@@ -227,7 +227,7 @@ Here’s an example of the data you can expect when the user applies AI-generate
 
 ### Example Response on AI Co-Pilot token usage
 
-Here’s an example of the data you can expect for each request the [AI Co-Pilot](../../ai-and-mcp/ai-co-pilot-beta/) sends to the AI provider. A prompt can send several requests, all with the same `promptId`: add them up to get the usage of the prompt. See [Tracking token usage](../../ai-and-mcp/ai-co-pilot-beta/#tracking-token-usage-oninfo-code-1000) for the fields of `usage`.
+Here’s an example of the data you can expect for each request the [AI Co-Pilot](../../ai-and-mcp/ai-co-pilot/) sends to the AI provider. A prompt can send several requests, all with the same `promptId`: add them up to get the usage of the prompt. See [Tracking token usage](../../ai-and-mcp/ai-co-pilot/#tracking-token-usage-oninfo-code-1000) for the fields of `usage`.
 
 {% code collapsedlinecount="10" %}
 ```json
@@ -251,7 +251,7 @@ Here’s an example of the data you can expect for each request the [AI Co-Pilot
 
 ### Example Response on AI Co-Pilot chat history change
 
-Here’s an example of the data you can expect when the [AI Co-Pilot](../../ai-and-mcp/ai-co-pilot-beta/) chat history changes. `messages` is the full conversation: persist it and pass it back as `initialMessages` to restore the chat in the next session.
+Here’s an example of the data you can expect when the [AI Co-Pilot](../../ai-and-mcp/ai-co-pilot/) chat history changes. `messages` is the full conversation: persist it and pass it back as `initialMessages` to restore the chat in the next session.
 
 {% code collapsedlinecount="10" %}
 ```javascript

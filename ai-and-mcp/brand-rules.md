@@ -24,7 +24,7 @@ With Brand Rules, a host application can attach a `brandRules` object to an AI e
 2. What is the AI allowed to touch? With permissions you can control what the AI can (and cannot) edit.
 3. How much content fits? Use limits to define caps on certain content elements.
 
-Brand Rules can apply to any AI editing session, whether you're creating with the [MCP](getting-started/) or using the [AI Co-Pilot](ai-co-pilot-beta/). The same `brandRules` object also powers [Brand Check](../qa-tools/brand-check.md). Brand Check runs independently of MCP or AI Co-Pilot: it’s a deterministic, rule-based check, not an AI feature. Brand Check validates any design against your presets before it’s sent, whether or not AI was involved in creating it. This means a single brand configuration covers both AI-assisted creation and pre-send validation. Not every field is read by both sides; see the Brand Rules JSON schema for exactly which properties each one uses.
+Brand Rules can apply to any AI editing session, whether you're creating with the [MCP](getting-started/) or using the [AI Co-Pilot](ai-co-pilot/). The same `brandRules` object also powers [Brand Check](../qa-tools/brand-check.md). Brand Check runs independently of MCP or AI Co-Pilot: it’s a deterministic, rule-based check, not an AI feature. Brand Check validates any design against your presets before it’s sent, whether or not AI was involved in creating it. This means a single brand configuration covers both AI-assisted creation and pre-send validation. Not every field is read by both sides; see the Brand Rules JSON schema for exactly which properties each one uses.
 
 #### The different types of brand rules: Presets, Permissions, and Limits
 
@@ -193,7 +193,7 @@ Whether you're using Brand Rules when working directly with our MCP Server or ar
 How you pass Brand Rules into the AI workflow is a little different depending on the product you're working with. Please review the instructions for each pathway here:&#x20;
 
 * How to use Brand Rules when working with the MCP: [editor-managed session](getting-started/mcp-server-installation-and-setup.md#editor-managed-session) or [API-managed session](getting-started/mcp-server-installation-and-setup.md#api-managed-session)
-* How to use Brand Rules when working with the [AI Co-Pilot](ai-co-pilot-beta/#using-brand-rules-with-the-ai-co-pilot)
+* How to use Brand Rules when working with the [AI Co-Pilot](ai-co-pilot/#using-brand-rules-with-the-ai-co-pilot)
 
 ### Brand Rules - Full JSON schema
 

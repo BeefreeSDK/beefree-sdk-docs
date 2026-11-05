@@ -7,7 +7,7 @@ description: >-
 # File Manager for AI
 
 {% hint style="info" %}
-File Manager for AI is available to all Beefree SDK customers who use the [MCP Server](getting-started/) or the [AI Co-Pilot](ai-co-pilot-beta/), on any plan that includes them. We'd love your feedback at [beta-feedback@beefree.io](mailto:beta-feedback@beefree.io).
+File Manager for AI is available to all Beefree SDK customers who use the [MCP Server](getting-started/) or the [AI Co-Pilot](ai-co-pilot/), on any plan that includes them. We'd love your feedback at [beta-feedback@beefree.io](mailto:beta-feedback@beefree.io).
 {% endhint %}
 
 The agent can already find stock images with `beefree_search_stock_images`. File Manager for AI also lets it work with the images your users already have, and saves new ones where your users can find them again, in the folders you allow.
@@ -55,7 +55,7 @@ const beeConfig = {
 ```
 {% endcode %}
 
-See [Using the File Manager with the AI Co-Pilot](ai-co-pilot-beta/#using-the-file-manager-with-the-ai-co-pilot).
+See [Using the File Manager with the AI Co-Pilot](ai-co-pilot/#using-the-file-manager-with-the-ai-co-pilot).
 
 #### With an editor-managed MCP session
 
@@ -270,7 +270,7 @@ A refused call isn't an error in your integration. The agent gets a message that
 
 The agent can only be as careful as the folders you give it. Four things pay for themselves:
 
-1. **Name the folders in your prompt.** The agent isn't told which folders it can use: it finds out when a call is refused. Say it up front, in your system prompt or in the request: "Brand images are in /Brand. Save new images to /AI Generated Images." With the AI Co-Pilot, let your users name the folders in their prompts; on the Superpowers and Enterprise plans, you can also name them in its [`systemPrompt`](ai-co-pilot-beta/#custom-system-prompt) setting.
+1. **Name the folders in your prompt.** The agent isn't told which folders it can use: it finds out when a call is refused. Say it up front, in your system prompt or in the request: "Brand images are in /Brand. Save new images to /AI Generated Images." With the AI Co-Pilot, let your users name the folders in their prompts; on the Superpowers and Enterprise plans, you can also name them in its [`systemPrompt`](ai-co-pilot/#custom-system-prompt) setting.
 2. **Read wide, write narrow.** Reading changes nothing; saving and deleting change what your users see. A safe start reads the whole File Manager (`"readPaths": ["/"]`), saves to one folder, and deletes nowhere. A list left out falls back to `/AI Generated Images`, so pass `"deletePaths": []` unless the agent should clean up after itself.
 3. **Create subfolders ahead of time.** The agent can't create a folder inside an upload folder. To have it file images by campaign or brand, create those folders first, in the File Manager or with the [File Manager endpoints](../apis/content-services-api/file-manager.md#create-a-directory).
 4. **Say when images must be saved first.** The agent can also place an image straight from its URL, without saving it. If every image in your users' designs should come from their File Manager, say so in your prompt.

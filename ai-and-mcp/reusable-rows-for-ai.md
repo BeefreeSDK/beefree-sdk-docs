@@ -48,7 +48,7 @@ const beeConfig = {
 ```
 {% endcode %}
 
-See [Using Reusable Rows with the AI Co-Pilot](ai-co-pilot-beta/#using-reusable-rows-with-the-ai-co-pilot).
+See [Using Reusable Rows with the AI Co-Pilot](ai-co-pilot/#using-reusable-rows-with-the-ai-co-pilot).
 
 #### With an editor-managed MCP session
 

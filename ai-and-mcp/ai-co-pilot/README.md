@@ -1,7 +1,7 @@
-# AI Co-Pilot (beta)
+# AI Co-Pilot
 
 {% hint style="info" %}
-Beefree SDK's AI Co-Pilot is currently in open beta and freely accessible to all customers with a paid plan. You just need to activate it in your Developer Console to make it available for your end-users.
+Beefree SDK's AI Co-Pilot is freely accessible to all customers on a paid plan. You just need to activate it in your Developer Console and add your LLM provider API key to make it available for your end-users.
 {% endhint %}
 
 Beefree SDK's AI Co-Pilot is the out-of-the-box AI agent that your user can prompt to create email designs, edit layouts, generate variations, and review templates. You install it in the Developer Console, choose a supported provider, and configure your model to make it available for your end users. Hosts can also persist chat history to continue guided sessions across visits and future revisions.&#x20;

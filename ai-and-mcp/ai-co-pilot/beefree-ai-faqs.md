@@ -10,7 +10,7 @@ The AI Writing Assistant targets individual content blocks. The AI Co-Pilot goes
 
 #### **How do I get access?**&#x20;
 
-The AI Co-Pilot is freely accessible in open beta. You just need to log in to the Beefree SDK Developer Console, navigate to your application, and open the AddOns section. From there, click Browse AddOns, select the Beefree AI AddOn, and click Install. Once installed, select your provider and model, enter your API key, toggle Enable, and save. Make sure you have an API key from your chosen AI provider before starting.
+The AI Co-Pilot is freely available on all Beefree SDK paid plans. You just need to log in to the Beefree SDK Developer Console, navigate to your application, and open the AddOns section. From there, click Browse AddOns, select the Beefree AI AddOn, and click Install. Once installed, select your provider and model, enter your API key, toggle Enable, and save. Make sure you have an API key from your chosen AI provider before starting.
 
 #### **Do I need my own AI provider API key?**&#x20;
 
@@ -37,11 +37,3 @@ Yes, though persistence is the responsibility of the host application. The SDK b
 #### **Can I disable the Co-Pilot for specific users?**&#x20;
 
 Yes. Set `enabled: false` on the AI Co-Pilot entry in `beeConfig` for any user you want to exclude.
-
-#### **Is this available in production?**&#x20;
-
-Not yet. The AI Co-Pilot is currently in closed beta for selected partners. The interface, configuration options, supported models, and underlying behavior are all subject to change. Do not use it in production. Share feedback directly with your Beefree customer success manager.
-
-#### **What is the applicable use policy?**
-
-During the beta, you may use the MCP Server and its tools for development, prototyping, and evaluation. Access is subject to Beefree SDK's standard Terms of Service. Abuse or production-scale misuse will result in suspension of access.
