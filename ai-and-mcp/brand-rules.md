@@ -8,13 +8,7 @@ description: Ensure that the content your users create with AI adheres to brand 
 Brand Rules are available for customers on Superpowers and Enterprise plans.&#x20;
 {% endhint %}
 
-With Brand Rules, a host application can attach a `brandRules` object to an AI editing session. Brand Rules act as guardrails that the AI must work within so that the output it generates matches your (or your end user's) brand. At their core, Brand Rules give guidance on three key questions:<br>
-
-1. **What should certain design elements look like?** You define the styles using `presets` .
-2. **What is the AI allowed to touch?** With `permissions` you can control what the AI can (and cannot) edit.
-3. **How much content fits?** Use `limits` to define caps on certain content elements.&#x20;
-
-Agentic design functionality helps your users create content faster, but speed alone isn’t the goal. However it’s created, that content also needs to be on-brand and Brand Rules make sure it is. As guardrails, they guide what the MCP or AI Co-Pilot can create: presets define approved styles, permissions restrict what the AI can touch, and limits cap how much content it adds. The same presets are also what [Brand Check](../qa-tools/brand-check.md) validates designs, AI-generated or not, against before your users send it.
+Agentic design functionality helps your users create content faster, but speed alone isn’t the goal. However it’s created, that content also needs to be on-brand and Brand Rules make sure it is. As guardrails, they guide what the [MCP](getting-started/) or [AI Co-Pilot](ai-co-pilot/) can create: presets define approved styles, permissions restrict what the AI can touch, and limits cap how much content it adds. The same presets are also what [Brand Check](../qa-tools/brand-check.md) validates designs, AI-generated or not, against before your users send it.
 
 ### How Brand Rules work
 
@@ -24,7 +18,7 @@ With Brand Rules, a host application can attach a `brandRules` object to an AI e
 2. What is the AI allowed to touch? With permissions you can control what the AI can (and cannot) edit.
 3. How much content fits? Use limits to define caps on certain content elements.
 
-Brand Rules can apply to any AI editing session, whether you're creating with the [MCP](getting-started/) or using the [AI Co-Pilot](ai-co-pilot/). The same `brandRules` object also powers [Brand Check](../qa-tools/brand-check.md). Brand Check runs independently of MCP or AI Co-Pilot: it’s a deterministic, rule-based check, not an AI feature. Brand Check validates any design against your presets before it’s sent, whether or not AI was involved in creating it. This means a single brand configuration covers both AI-assisted creation and pre-send validation. Not every field is read by both sides; see the Brand Rules JSON schema for exactly which properties each one uses.
+Brand Rules can apply to any AI editing session, whether you’re creating with the MCP or using the AI Co-Pilot. Brand Check also uses the same presets for designs made without AI. Not every field is read by both MCP/Co-Pilot and Brand Check; see the [Brand Rules JSON schema](../data-structures/brand-rules-schema.md) for exactly which properties each one uses.
 
 #### The different types of brand rules: Presets, Permissions, and Limits
 
