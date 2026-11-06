@@ -34,6 +34,8 @@ You can activate Quality Check with the dedicated flag in the SDK Console.
 
 <figure><img src="../.gitbook/assets/SDK console - QA tools.png" alt=""><figcaption></figcaption></figure>
 
+You can also control this per end user with the `qualityCheck.enabled` config parameter, the same way you would for Brand Check. It’s `true` by default, so you only need to set it explicitly to turn Quality Check _off_ for specific end users or sessions.
+
 ### How it works
 
 #### Running a check
