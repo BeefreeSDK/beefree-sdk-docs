@@ -12,7 +12,7 @@ Beefree SDK's AI Co-Pilot is installed as a Partner AddOn — part of the same f
 
 It is installed and configured directly from the Beefree SDK Developer Console, without any changes to your integration code. For a general walkthrough of how Partner AddOns work, see [Installing Partner AddOns](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/installing-partner-addons).
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-05-04 at 18.48.40.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/edit-with-ai-blank.png" alt=""><figcaption></figcaption></figure>
 
 The AI Co-Pilot is a ready-made conversational agent that enables advanced workflows in the Beefree SDK email builder. Your users can prompt the agent to:
 
@@ -32,6 +32,8 @@ Inside the builder, your users can:
 * **open the Co-Pilot** from the floating button on the stage, or from the **Edit with AI** (sparkle) action on the toolbar of the selected row or content block. When opened from a toolbar, the Co-Pilot keeps that row or block selected and uses it as the context of the conversation.
 * **start from a prompt starter**: when the conversation is empty, the panel shows a short list of suggested prompts. Clicking one fills the prompt input, so the user can complete it before sending. You can replace them with your own using [`promptStarters`](./#settings-reference).
 * **copy an answer** of the agent to the clipboard, as plain text, with the copy button under the answer.
+
+<figure><img src="../../.gitbook/assets/populated-prompt (1).png" alt=""><figcaption></figcaption></figure>
 
 AI Co-Pilot is registered as `ai-agent` in the standard `addOns` array passed to `BeePlugin.create()`. Message history is surfaced through the existing `onInfo` callback.
 
