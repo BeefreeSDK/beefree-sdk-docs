@@ -56,7 +56,7 @@ One of the most common use cases for the Content Services API is exporting diffe
 
 Your end users may want to export their templates into various formats in the following scenarios:
 
-* **HTML:** For sending email campaigns, publishing landing pages, or embedding popups.
+* **HTML:** For sending email campaigns, publishing landing pages, or embedding pop-ups.
 * **Plain Text:** For accessibility, compatibility with text-only email clients, improved deliverability, and compliance with communication regulations.
 * **PDF:** For attaching designs to emails, SMS, WhatsApp, printing hard copies, or creating flyers, while preserving the design's layout.
 * **Image:** For creating visual galleries, dashboards, social media posts, internal presentations, or campaign planning visuals.
@@ -185,7 +185,7 @@ Which end user's storage a request applies to is set by a header rather than by 
 
 The following table provides a few examples of URLs you can reference as an example for making specific types of requests.
 
-<table><thead><tr><th width="160">Type</th><th>Action</th><th>Example URL</th></tr></thead><tbody><tr><td>Email</td><td>Request HTML for email</td><td><code>https://api.getbee.io/v1/message/html</code></td></tr><tr><td>Landing Page</td><td>Request HTML for a landing page</td><td><code>https://api.getbee.io/v1/page/html</code></td></tr><tr><td>Popup</td><td>Request HTML for a popup</td><td><code>https://api.getbee.io/v1/popup/html</code></td></tr><tr><td>AMP</td><td>Request HTML for AMP</td><td><code>https://api.getbee.io/v1/amp/html</code></td></tr><tr><td>File Manager</td><td>List the files in an end user's directory</td><td><code>https://api.getbee.io/v1/file/campaigns/</code></td></tr></tbody></table>
+<table><thead><tr><th width="160">Type</th><th>Action</th><th>Example URL</th></tr></thead><tbody><tr><td>Email</td><td>Request HTML for email</td><td><code>https://api.getbee.io/v1/message/html</code></td></tr><tr><td>Landing Page</td><td>Request HTML for a landing page</td><td><code>https://api.getbee.io/v1/page/html</code></td></tr><tr><td>Pop-up</td><td>Request HTML for a pop-up</td><td><code>https://api.getbee.io/v1/popup/html</code></td></tr><tr><td>AMP</td><td>Request HTML for AMP</td><td><code>https://api.getbee.io/v1/amp/html</code></td></tr><tr><td>File Manager</td><td>List the files in an end user's directory</td><td><code>https://api.getbee.io/v1/file/campaigns/</code></td></tr></tbody></table>
 
 ## Rate Limits
 

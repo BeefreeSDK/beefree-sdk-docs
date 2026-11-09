@@ -124,7 +124,7 @@ The following section includes a comprehensive list of schemas in Beefree SDK.&#
 
 **GitHub File:** [`form_validation_schema.json`](https://github.com/BeefreeSDK/beefree-sdk-sample-forms/blob/master/validation%20schema/form_validation_schema.json)&#x20;
 
-**Description:** Schema for building and validating forms for popup and page builders.
+**Description:** Schema for building and validating forms for Pop-up and Page builders.
 
 ***
 

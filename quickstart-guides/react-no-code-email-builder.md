@@ -699,4 +699,4 @@ The wrapper supports real-time collaborative editing. To enable it, pass `shared
 
 Explore the [technical documentation](https://docs.beefree.io/beefree-sdk) to learn more about the other customization options within Beefree SDK.
 
-For a full working example including multiple builder types (Email, Page, Popup, File Manager), collaborative editing, and multi-language support, see the [`example/` folder](https://github.com/BeefreeSDK/react-email-builder/tree/main/example) in the react-email-builder repository.
+For a full working example including multiple builder types (Email, Page, Pop-up, File Manager), collaborative editing, and multi-language support, see the [`example/` folder](https://github.com/BeefreeSDK/react-email-builder/tree/main/example) in the react-email-builder repository.

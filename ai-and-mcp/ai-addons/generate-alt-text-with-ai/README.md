@@ -27,7 +27,7 @@ To active alternate text generation with AI in your Beefree SDK Developer Consol
 4. Select the “Azure AI Vision – Image Analysis” AddOn
 5.  Click “Install”
 
-    Once you click “Install”, the “Set Up Content” pop up will appear to configure the AddOn
+    Once you click “Install”, the “Set Up Content” pop-up will appear to configure the AddOn
 6. Toggle “Enable” to on
 7. Insert your Azure API Key and Endpoint
 

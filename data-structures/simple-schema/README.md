@@ -97,7 +97,7 @@ Enforce validation rules that check your schema structure or inputs to meet your
 
 #### Backend template workflows
 
-Simple Schema lets you build and manage complete email, page, and popup templates from your own application, without the visual editor involved at any stage. Use it for programmatic campaigns, content pipelines, template marketplaces, or internal automation systems where templates are assembled from data and rules rather than designed manually.
+Simple Schema lets you build and manage complete email, page, and pop-up templates from your own application, without the visual editor involved at any stage. Use it for programmatic campaigns, content pipelines, template marketplaces, or internal automation systems where templates are assembled from data and rules rather than designed manually.
 
 ## Custom AddOns
 

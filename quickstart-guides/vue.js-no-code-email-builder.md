@@ -758,4 +758,4 @@ The wrapper supports real-time collaborative editing. To enable it, pass `shared
 
 Explore more in the [Beefree SDK documentation](https://docs.beefree.io/beefree-sdk).
 
-For a full working example including multiple builder types (Email, Page, Popup, File Manager), collaborative editing, and multi-language support (22 languages), see the [`example/` folder](https://github.com/BeefreeSDK/vue-email-builder/tree/main/example) in the vue-email-builder repository.
+For a full working example including multiple builder types (Email, Page, Pop-up, File Manager), collaborative editing, and multi-language support (22 languages), see the [`example/` folder](https://github.com/BeefreeSDK/vue-email-builder/tree/main/example) in the vue-email-builder repository.

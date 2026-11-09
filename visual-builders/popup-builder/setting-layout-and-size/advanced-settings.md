@@ -1,10 +1,10 @@
 # Advanced settings
 
-What if the default styles and standard settings aren’t enough? No worries! In the following sections, we will look at styling your popup to make it look and feel more like the one real visitors will interact with.
+What if the default styles and standard settings aren’t enough? No worries! In the following sections, we will look at styling your pop-up to make it look and feel more like the one real visitors will interact with.
 
 ## Custom styles (themes) <a href="#custom-styles-themes" id="custom-styles-themes"></a>
 
-A theme is simply a set of custom styles that give the popup its look and feel. Separate from your layout, Popup Builder comes with some preset themes.  The primary is our default theme that is loaded when no settings are specified.  We also provide an empty theme that has no styles, which you can use a blank canvas to create your own theme.  This is one of the most powerful features of Popup Builder, and we’ll be covering custom styles in depth below.
+A theme is simply a set of custom styles that give the pop-up its look and feel. Separate from your layout, Pop-up Builder comes with some preset themes.  The primary is our default theme that is loaded when no settings are specified.  We also provide an empty theme that has no styles, which you can use a blank canvas to create your own theme.  This is one of the most powerful features of Pop-up Builder, and we’ll be covering custom styles in depth below.
 
 Here is a preview of the configuration:
 
@@ -24,7 +24,7 @@ workspace: {
 
 To understand the best way to apply your styles, let’s start by inspecting the underlying HTML structure so you can view where the system will map your styles.
 
-### **Popup HTML**
+### **Pop-up HTML**
 
 ```markup
 
@@ -50,13 +50,13 @@ Here is a quick break down of what each div does:
 popup-container
 ```
 
-This is where you will apply any styles related to how the popup looks, such as border-radius, drop shadows, background colors, or padding.
+This is where you will apply any styles related to how the pop-up looks, such as border-radius, drop shadows, background colors, or padding.
 
 ```
 popup-header
 ```
 
-The header is sometimes used to add a close icon to a popup or display a title.
+The header is sometimes used to add a close icon to a pop-up or display a title.
 
 ```
 popup-content
@@ -68,7 +68,7 @@ The div that holds the editable content of your Beefree application.
 popup-footer
 ```
 
-You can use this div to show a traditional footer for your popup or position some icons outside the popup container (e.g., a close button).
+You can use this div to show a traditional footer for your pop-up or position some icons outside the pop-up container (e.g., a close button).
 
 The above HTML structure is represented in your bee config as the following JSON object.
 

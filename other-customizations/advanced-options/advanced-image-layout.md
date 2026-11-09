@@ -20,7 +20,7 @@ Advanced Image Layout is also **efficient by design** as it doesn't create extra
 
 ### Availability
 
-Advanced Image Layout is available for Email, Landing Page and Popup builders.&#x20;
+Advanced Image Layout is available for Email, Landing Page and Pop-up builders.&#x20;
 
 You can activate Advanced Image Layout with the dedicated flag in the SDK Console. By default, the toggle is on for newly created applications.
 
@@ -113,7 +113,7 @@ This Image sidebar improvement ships for every builder, regardless of whether yo
 
 ### CDN Configuration
 
-Advanced Image Layout produces a real image file for each transformation, and that file has to be hosted somewhere it can be loaded from when the email, landing page, or popup is opened.
+Advanced Image Layout produces a real image file for each transformation, and that file has to be hosted somewhere it can be loaded from when the email, landing page, or pop-up is opened.
 
 If Beefree SDK [stores and serves your images](http://docs.beefree.io/beefree-sdk/file-manager/cdn-domains), transformed images are delivered from the same segmented CDN domain that already serves the rest of your assets. There's nothing to configure and no new domains to allowlist. If you're unsure whether you're on a custom CDN, open your application in the [Developer Console](https://developers.beefree.io/login), go to Configure Application > Storage options, and check the CDN domains listed there. If you see “Use the default storage” option selected then there’s nothing additional you need to configure.
 

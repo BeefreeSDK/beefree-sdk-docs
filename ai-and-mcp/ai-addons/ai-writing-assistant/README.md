@@ -359,7 +359,7 @@ Here’s a simplified step-by-step guide on how to use suggestions, as shown bel
 2. If you desire to adjust the tone to be more formal, for example, click on the paragraph, list, title, or button you want to modify.
 3. Navigate to the ‘Write with AI’ option.
 4. Click on the area designated for adding prompts.
-5. You’ll notice the prompt suggestions popup.
+5. You’ll notice the prompt suggestions pop-up.
 6. Select the ‘Make it \[desired tone]’ option, making sure to replace \[desired tone] with a value (e.g., funny)
 7. Click ‘Generate’.
 

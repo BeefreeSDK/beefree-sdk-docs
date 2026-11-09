@@ -755,4 +755,4 @@ this.beefreeService.save();
 
 Explore more in the [Beefree SDK documentation](https://docs.beefree.io/beefree-sdk).
 
-For a full working example including multiple builder types (Email, Page, Popup, File Manager), collaborative editing, and multi-language support (22 languages), see the [`src/` folder](https://github.com/BeefreeSDK/angular-email-builder/tree/main/src) in the angular-email-builder repository.
+For a full working example including multiple builder types (Email, Page, Pop-up, File Manager), collaborative editing, and multi-language support (22 languages), see the [`src/` folder](https://github.com/BeefreeSDK/angular-email-builder/tree/main/src) in the angular-email-builder repository.

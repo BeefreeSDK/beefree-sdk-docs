@@ -6,7 +6,7 @@ Mobile Design Mode is available on all [Beefree SDK plan types](https://develope
 
 ## Overview <a href="#overview" id="overview"></a>
 
-Your customers can easily design responsive emails, pages, and popups for mobile using **Mobile Design Mode**. When enabled, your customers will be able to:
+Your customers can easily design responsive emails, pages, and pop-ups for mobile using **Mobile Design Mode**. When enabled, your customers will be able to:
 
 * Easily switch between desktop and mobile view to access and edit content;
 * Edit padding, text alignment, and font size optimized for Mobile;
@@ -162,7 +162,7 @@ Here is a brief description of the parameters and their options. They are all op
 
 Beefree SDK provides addition mobile optimization settings both for rows and content blocks. These are available on [paid plans](https://developers.beefree.io/pricing-plans).
 
-To change how content behaves on mobile and create a mobile version of an email, page, or popup, you can add the following enhancements to your application:
+To change how content behaves on mobile and create a mobile version of an email, page, or pop-up, you can add the following enhancements to your application:
 
 * **Hide on mobile/Hide on desktop:** A content property to hide a block when displaying the email/page on a specific device.
   * **Server-side configuration:** <img src="../.gitbook/assets/Hide Content.png" alt="" data-size="original">

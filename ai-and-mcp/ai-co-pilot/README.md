@@ -21,7 +21,7 @@ The AI Co-Pilot is a ready-made conversational agent that enables advanced workf
 * **generate content variations** while preserving core brand elements
 * **check an existing template** for quality or accessibility issues, for example missing image links or alt text
 
-If you'd like the Co-Pilot to follow specific brand guardrails, you can work with [Brand Rules](./#using-brand-rules-with-the-ai-co-pilot) to ensure the Co-Pilot's output matches your user's brand.&#x20;
+If you'd like the Co-Pilot to follow specific brand guardrails, you can work with [Brand Rules](./#using-brand-rules-with-the-ai-co-pilot) to ensure the Co-Pilot's output matches your users' brand.&#x20;
 
 Unlike the [AI Writing Assistant](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/ai-writing-assistant), which targets individual content blocks, the AI Co-Pilot surfaces a "Create with AI" panel. Thanks to this, your users can generate, iterate on, and apply content across their design in a guided chat experience within the Beefree email builder embedded in your application.
 
@@ -383,7 +383,7 @@ Tip: You can use the [Brand Rules validation endpoint](../brand-rules.md#testing
 
 ### Using Reusable Rows with the AI Co-Pilot
 
-With [Reusable Rows](../reusable-rows-for-ai.md), you can hand the Co-Pilot a library of your user's saved rows: like brand headers, footers with legal text, signatures. When prompted to find a saved row, the Co-Pilot searches the library and places the approved row instead of generating a new one.
+With [Reusable Rows](../reusable-rows-for-ai.md), you can hand the Co-Pilot a library of your users' saved rows: like brand headers, footers with legal text, signatures. When prompted to find a saved row, the Co-Pilot searches the library and places the approved row instead of generating a new one.
 
 To enable it, pass the library as `reusableRows` in the AI Agent `settings`:
 

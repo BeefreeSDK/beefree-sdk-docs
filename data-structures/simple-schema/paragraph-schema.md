@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Schemas are structured definitions that describe the format, rules, and relationships of data within a system. They ensure consistency and validate inputs. In Beefree SDK, the Simple Paragraph Schema defines how paragraphs are displayed within email, page, and popup builders. It provides control over typography, formatting, alignment, and responsive layout. This documentation breaks down the schema's properties, requirements, and usage examples to help you implement and customize paragraph blocks effectively.
+Schemas are structured definitions that describe the format, rules, and relationships of data within a system. They ensure consistency and validate inputs. In Beefree SDK, the Simple Paragraph Schema defines how paragraphs are displayed within Email, Page, and Pop-up builders. It provides control over typography, formatting, alignment, and responsive layout. This documentation breaks down the schema's properties, requirements, and usage examples to help you implement and customize paragraph blocks effectively.
 
 {% hint style="success" %}
 Reference the [Simple Schema GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main) for more information.

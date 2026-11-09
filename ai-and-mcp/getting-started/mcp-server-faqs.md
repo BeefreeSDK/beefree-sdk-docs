@@ -46,13 +46,13 @@ The MCP integration is still evolving. While you can already perform many email 
 
 We encourage you to explore the available tools and share feedback — your input helps us prioritize and close gaps.
 
-#### Can the agent reuse my user's saved rows instead of generating new content?
+#### Can the agent reuse my users' saved rows instead of generating new content?
 
 Yes. Attach a row library to the session with `reusableRows` and the agent can search it and place the row your user already approved. Search returns metadata only, rows are placed by id, and a synced row is placed but never edited. See [Reusable Rows for AI](../reusable-rows-for-ai.md).
 
-#### Does the MCP also support the Landing Page Builder or the Popup Builder?
+#### Does the MCP also support the Landing Page Builder or the Pop-up Builder?
 
-The MCP Server currently supports the Beefree SDK Email Builder. Support for the Landing Page and Popup builders is limited, but will be considered for future updates.
+The MCP Server currently supports the Beefree SDK Email Builder. Support for the Landing Page and Pop-up builders is limited, but will be considered for future updates.
 
 #### Can the agent use the images in my users' File Manager?
 

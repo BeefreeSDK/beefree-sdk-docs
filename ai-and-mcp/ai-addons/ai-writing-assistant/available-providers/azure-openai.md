@@ -7,7 +7,7 @@ description: >-
 # Azure OpenAI
 
 {% hint style="info" %}
-The AI Writing Assistant AddOn is only available for [Superpowers](https://developers.beefree.io/pricing-plans) and [Enterprise](https://developers.beefree.io/pricing-plans) plans. The AI Writing Assistant and Azure OpenAI provider are available for Email, Page, and Popup builders.
+The AI Writing Assistant AddOn is only available for [Superpowers](https://developers.beefree.io/pricing-plans) and [Enterprise](https://developers.beefree.io/pricing-plans) plans. The AI Writing Assistant and Azure OpenAI provider are available for Email, Page, and Pop-up builders.
 {% endhint %}
 
 ## **Overview**

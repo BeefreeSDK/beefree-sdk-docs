@@ -46,7 +46,7 @@ The following table provides a comprehensive reference of all available options 
 
 **URL:** `https://api.getbee.io/v1/{collection}/html`
 
-This endpoint allows you to retrieve the full or partial HTML output of a template (email, page, or popup).
+This endpoint allows you to retrieve the full or partial HTML output of a template (email, page, or pop-up).
 
 {% hint style="info" %}
 **Important:** `collection` is a placeholder within the URL. This placeholder can be replaced with any of the `collection` options available for the HTML resource. Reference the [Export Resource and Collection Options table](./#export) for a list of available option.
@@ -79,9 +79,9 @@ To generate HTML from a template's JSON:
 * Partial HTML rendering is also supported for specific components or modules (if required by your use case).
 * The output HTML reflects the current rendering engine used by Beefree, ensuring up-to-date compatibility.
 
-{% openapi src="../../.gitbook/assets/html_endpoint.yaml" path="/v1/{collection}/html" method="post" %}
-[html_endpoint.yaml](../../.gitbook/assets/html_endpoint.yaml)
-{% endopenapi %}
+{% openapi-operation spec="html-endpoint" path="/v1/{collection}/html" method="post" %}
+[OpenAPI html-endpoint](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/efebe251ecde69af553deeb54ac6fecb6fbe7f12ef8cc272a04056723174a763.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cc7c3f440ca5fd44ab53362d4a69dfe%2F20261109%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261109T150736Z&X-Amz-Expires=172800&X-Amz-Signature=0a254b80eeaba216004a6dc0256ae86b1381379da54245e46e972d5e32627962&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% endopenapi-operation %}
 
 ## Plain Text
 
@@ -220,5 +220,5 @@ You may override the clipping size if your layout requires a custom viewport. If
 | file\_type\* | String  | Accepts jpg or png.                                                                                                                                                                                                                                                                                                                |
 
 {% openapi-operation spec="image-endpoint" path="/v1/{collection}/image" method="post" %}
-[OpenAPI image-endpoint](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/9ef1477fd159d69dd4d46a9bcb0a071ad5b3a925ff92efcaebcdfc0c8a935c47.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260305%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260305T133154Z&X-Amz-Expires=172800&X-Amz-Signature=93a4202c6d28f2027ecc7716b6aa7b1493a6f76fbefa68501878281409c658e5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI image-endpoint](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/9ef1477fd159d69dd4d46a9bcb0a071ad5b3a925ff92efcaebcdfc0c8a935c47.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cc7c3f440ca5fd44ab53362d4a69dfe%2F20261109%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261109T150736Z&X-Amz-Expires=172800&X-Amz-Signature=f317ec54ee7906121578a2278bf8fb49c57507a280c4a80238dee1cf1ed6c227&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}

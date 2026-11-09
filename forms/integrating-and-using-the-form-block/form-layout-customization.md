@@ -5,7 +5,7 @@ description: Explore how to implement customization options for a form's layout.
 # Form layout customization
 
 {% hint style="info" %}
-This feature is available on all [Beefree SDK plan types](https://developers.beefree.io/pricing-plans) and applies only to [Page](../../visual-builders/page-builder/) and [Popup](../../visual-builders/popup-builder/) builders.
+This feature is available on all [Beefree SDK plan types](https://developers.beefree.io/pricing-plans) and applies only to [Page](../../visual-builders/page-builder/) and [Pop-up](../../visual-builders/popup-builder/) builders.
 {% endhint %}
 
 ## Overview
@@ -30,7 +30,7 @@ The following video provides a visual representation of these customization opti
 Prior to getting started, ensure you have the following:
 
 * [Beefree SDK Plan](https://developers.beefree.io/signup)
-  * Page builder or Popup builder application within your [Dev Console](https://developers.beefree.io/login?from=website_menu)
+  * Page builder or Pop-up builder application within your [Dev Console](https://developers.beefree.io/login?from=website_menu)
 
 ## Implementing Multiple and Single Choice Orientation
 
@@ -207,4 +207,4 @@ By following these steps, you can effectively configure the `fullWidth` property
 * **Layout Widget**: End users can change the layout preset using a layout widget available in the form sidebar.
 * **Field Width Widget**: When the form is using the `grid` preset, the `fullWidth` field can be modified by users through a field width widget available in the **Manage Fields** section or the **Edit Form Modal**.
 
-The **Submit** field will always have `fullWidth` set to `true`, and the corresponding widget will be disabled to ensure it spans the full width. For more details on the end user experience, reference the [Form Layout Customization end user documentation](https://docs.beefree.io/end-user-guide/forms/form-layout-customization).&#x20;
+The **Submit** field will always have `fullWidth` set to `true`, and the corresponding widget will be disabled to ensure it spans the full width. For more details on the end user experience, reference the [Form Layout Customization end user documentation](https://docs.beefree.io/end-user-guide/forms/form-layout-customization).

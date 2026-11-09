@@ -14,7 +14,7 @@ Authorization: Bearer {token}
 
 ## Create a Bearer Token
 
-To use the Template Catalog API you will first need to obtain a your API Key—the bearer token you will use to authenticate to make API calls—from the Beefree SDK Developer Console.&#x20;
+To use the Template Catalog API you will first need to obtain a your API Key—the bearer token you will use to authenticate to make API calls—from the Beefree SDK Developer Console.
 
 To obtain an API Key, take the following steps:
 
@@ -24,7 +24,7 @@ To obtain an API Key, take the following steps:
 4. Navigate to the Content Services API section of the **Details** page.
 5.  Click **Create New API Key**.
 
-    A pop up will appear asking you to confirm that you understand [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) may apply.
+    A pop-up will appear asking you to confirm that you understand [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) may apply.
 6. Click **Create Key**.
 
 Your API key will appear under the **Template Catalog API** section of your application details.

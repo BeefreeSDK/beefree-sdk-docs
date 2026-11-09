@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Schemas are structured definitions that describe the format, rules, and relationships of data within a system. They ensure consistency and validate inputs. In Beefree SDK, the Simple Menu Schema defines how navigation menus are configured and rendered within email, page, and popup builders. It supports lists of items with links, customizable paddings, and metadata. This documentation breaks down the schema's properties, requirements, and usage examples to help you implement and customize menu blocks effectively.
+Schemas are structured definitions that describe the format, rules, and relationships of data within a system. They ensure consistency and validate inputs. In Beefree SDK, the Simple Menu Schema defines how navigation menus are configured and rendered within Email, Page, and Pop-up builders. It supports lists of items with links, customizable paddings, and metadata. This documentation breaks down the schema's properties, requirements, and usage examples to help you implement and customize menu blocks effectively.
 
 {% hint style="success" %}
 Reference the [Simple Schema GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main) for more information.

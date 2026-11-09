@@ -8,7 +8,7 @@ description: >-
 
 ## Overview of Form Block
 
-The Form Block allows you to integrate no-code form creation within your implementation of Beefree SDK. This is helpful in scenarios where your application's end users may want to add forms to their [page](../visual-builders/page-builder/integrating-page-builder.md) or [popup](../visual-builders/popup-builder/) designs.
+The Form Block allows you to integrate no-code form creation within your implementation of Beefree SDK. This is helpful in scenarios where your application's end users may want to add forms to their [page](../visual-builders/page-builder/integrating-page-builder.md) or [pop-up](../visual-builders/popup-builder/) designs.
 
 Forms are an important part of the content creation workflow, because they enable your end users to gather important information and data relevant to their campaigns and workflows. This data can then be used for future targeted campaigns, personalized content, and so on.
 
@@ -24,7 +24,7 @@ There are several ways you can integrate the Form Block within Beefree SDK to pr
     &#x20;
 
     <figure><img src="../.gitbook/assets/CleanShot 2025-07-28 at 14.07.12.gif" alt="" width="563"><figcaption></figcaption></figure>
-*   [Implement a Form Builder](https://app.gitbook.com/o/hABGoPMOKISmuDmz4fbV/s/xZgBDrdhQLtWmkGqVR59/) that your end users can use to build their own custom form, load them into their page or popup design, and edit as needed.
+*   [Implement a Form Builder](https://app.gitbook.com/o/hABGoPMOKISmuDmz4fbV/s/xZgBDrdhQLtWmkGqVR59/) that your end users can use to build their own custom form, load them into their page or pop-up design, and edit as needed.
 
 
 

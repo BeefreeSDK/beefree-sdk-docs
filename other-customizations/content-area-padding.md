@@ -1,7 +1,7 @@
 # Content Area Padding
 
 {% hint style="info" %}
-This feature is available on all [Beefree SDK plans](https://beefree-sdk-testing.webflow.io/pricing-plans). It is available for Email, Page, and Popup builders.
+This feature is available on all [Beefree SDK plans](https://beefree-sdk-testing.webflow.io/pricing-plans). It is available for Email, Page, and Pop-up builders.
 {% endhint %}
 
 ## Overview
@@ -13,7 +13,7 @@ By using Content Area Padding, end users can:
 *   Design outer areas with different colors.
 
     <div align="left"><figure><img src="../.gitbook/assets/CleanShot 2025-01-15 at 14.52.49.gif" alt="" width="563"><figcaption></figcaption></figure></div>
-*   Add transparent borders.&#x20;
+*   Add transparent borders.
 
     <div align="left"><figure><img src="../.gitbook/assets/CleanShot 2025-01-15 at 15.20.59.gif" alt="" width="563"><figcaption></figcaption></figure></div>
 * Gain precise control over padding, borders, and spacing.
@@ -23,7 +23,7 @@ The following GIF displays how end users can apply padding around content within
 
 <div align="left"><figure><img src="../.gitbook/assets/CleanShot 2025-01-10 at 16.08.29.gif" alt="" width="563"><figcaption></figcaption></figure></div>
 
-Reference the [white label end user guide ](https://docs.beefree.io/end-user-guide)to learn more about the end user experience. You can clone the Markdown files in this [GitHub repository](https://github.com/mailupinc/beefreeSDKwhiteLabelDocs/blob/main/content-area-padding.md) and customize the instructions for your application's end users.&#x20;
+Reference the [white label end user guide ](https://docs.beefree.io/end-user-guide)to learn more about the end user experience. You can clone the Markdown files in this [GitHub repository](https://github.com/mailupinc/beefreeSDKwhiteLabelDocs/blob/main/content-area-padding.md) and customize the instructions for your application's end users.
 
 ## Prerequisites
 
@@ -112,4 +112,4 @@ Learn more about [Content Area Padding for Simplified Rows Schema.](../rows/reus
 
 Consider the following when using Content Area Padding:
 
-* Content Area Padding is  compatible with the [Brand Management API](../apis/content-services-api/brand-style-management.md). However, note that the Brand Management API is not compatible with the `mobileStyles` property.
+* Content Area Padding is compatible with the [Brand Management API](../apis/content-services-api/brand-style-management.md). However, note that the Brand Management API is not compatible with the `mobileStyles` property.

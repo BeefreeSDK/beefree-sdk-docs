@@ -1,12 +1,12 @@
 # Hover Effect for Buttons
 
 {% hint style="info" %}
-Hover Effect for Buttons is available on [all Beefree SDK plan types](https://developers.beefree.io/pricing-plans) and is available for Email, Page, and Popup builders.
+Hover Effect for Buttons is available on [all Beefree SDK plan types](https://developers.beefree.io/pricing-plans) and is available for Email, Page, and Pop-up builders.
 {% endhint %}
 
 ## Overview
 
-The Hover Effect allows end users to design a standard view of buttons within their design, and a hover view of the button when a viewer of their email, page, or popup design hovers their cursor over the button. The Hover Effect for Buttons is available as a new content property available under the **Content** tab located within the builder's sidebar. Through applying this Hover Effect, your application's end users can design more attention-grabbing buttons within their design. Reference the Hover Effect for Buttons End User Guide to learn more about how this experience is for your application's end users. Continue reading this page to learn more about how to implement this feature.
+The Hover Effect allows end users to design a standard view of buttons within their design, and a hover view of the button when a viewer of their email, page, or pop-up design hovers their cursor over the button. The Hover Effect for Buttons is available as a new content property available under the **Content** tab located within the builder's sidebar. Through applying this Hover Effect, your application's end users can design more attention-grabbing buttons within their design. Reference the Hover Effect for Buttons End User Guide to learn more about how this experience is for your application's end users. Continue reading this page to learn more about how to implement this feature.
 
 To learn more about the end user experience and what it looks like to utilize this feature on the frontend, visit the [Hover Effect for Buttons](https://docs.beefree.io/end-user-guide/hover-effect-for-buttons) white label end user documentation. The markdown file is also available in our [white label docs repository](https://github.com/mailupinc/beefreeSDKwhiteLabelDocs/blob/main/hover-effect-for-buttons.md).
 
@@ -14,7 +14,7 @@ To learn more about the end user experience and what it looks like to utilize th
 **Important:** Hover effects are supported by about 60% of email clients, with notable limitations in Outlook on Windows. View a [list of email clients that are compatible with the Hover Effect Button](https://www.caniemail.com/features/css-pseudo-class-hover/).
 {% endhint %}
 
-### Which email clients support the hover effect for buttons?&#x20;
+### Which email clients support the hover effect for buttons?
 
 Hover effects are supported by about 60% of email clients, with notable limitations in Outlook on Windows. Reference [this Can I Email resource](https://www.caniemail.com/features/css-pseudo-class-hover/) to view a list of email clients that are and aren't compatible with the Hover Effect for Buttons.
 
@@ -42,7 +42,7 @@ Prior to implementing the Hover Effect button, ensure you have the following:
 Take the following steps to toggle on and activate the Hover Effect for Buttons for your application:
 
 1. Log in to your [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
-2. Navigate to the application where you'd like to enable Hover Effect for Buttons.&#x20;
+2. Navigate to the application where you'd like to enable Hover Effect for Buttons.
 3. Click **Details** to navigate to the application's details.
 4. Click **Application configuration.**
 5. Scroll to the **Services** section.
@@ -51,7 +51,7 @@ Take the following steps to toggle on and activate the Hover Effect for Buttons 
 The **Button Hover** section is now available under **Content Properties** within your application's builder.
 
 {% hint style="info" %}
-**Note:** This feature is disabled by default for all existing applications. For new applications, it is enabled by default in the [Page](../visual-builders/page-builder/) and [Popup](../visual-builders/popup-builder/) Builder, but is disabled by default for the [Email](../visual-builders/email-builder.md) Builder.
+**Note:** This feature is disabled by default for all existing applications. For new applications, it is enabled by default in the [Page](../visual-builders/page-builder/) and [Pop-up](../visual-builders/popup-builder/) Builder, but is disabled by default for the [Email](../visual-builders/email-builder.md) Builder.
 {% endhint %}
 
 ## Content Defaults
@@ -73,7 +73,7 @@ The following table displays each `hoverStyles` property and its corresponding d
 
 ### HoverStyles Inside the Button Schema
 
-The `hoverStyles` object defines the visual changes that occur when a viewer hovers over a button with their cursor on a desktop. It allows you to set hover-specific styles such as font color, background color, and border appearance. These properties can be customized directly in the builder's Content Properties for the button. For example, changing the `backgroundColor` in the **Button Hover** sub-section of **Content Properties** will update the button to reflect that color when hovered over. You can reference an example of a complete [Button Schema on the Content Defaults page](appearance/content-defaults.md#button).&#x20;
+The `hoverStyles` object defines the visual changes that occur when a viewer hovers over a button with their cursor on a desktop. It allows you to set hover-specific styles such as font color, background color, and border appearance. These properties can be customized directly in the builder's Content Properties for the button. For example, changing the `backgroundColor` in the **Button Hover** sub-section of **Content Properties** will update the button to reflect that color when hovered over. You can reference an example of a complete [Button Schema on the Content Defaults page](appearance/content-defaults.md#button).
 
 ```json
 "hoverStyles": {

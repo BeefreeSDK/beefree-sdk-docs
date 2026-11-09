@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Schemas are structured definitions that describe the format, rules, and relationships of data within a system. They ensure consistency and validate inputs. In Beefree SDK, the Simple Image Schema defines how image blocks are configured and rendered within email, page, and popup builders. It manages image sources, alt text, click behavior, and styling such as padding. This documentation breaks down the schema's properties, requirements, and usage examples to help you implement and customize image blocks effectively.
+Schemas are structured definitions that describe the format, rules, and relationships of data within a system. They ensure consistency and validate inputs. In Beefree SDK, the Simple Image Schema defines how image blocks are configured and rendered within Email, Page, and Pop-up builders. It manages image sources, alt text, click behavior, and styling such as padding. This documentation breaks down the schema's properties, requirements, and usage examples to help you implement and customize image blocks effectively.
 
 {% hint style="success" %}
 Reference the [Simple Schema GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main) for more information.

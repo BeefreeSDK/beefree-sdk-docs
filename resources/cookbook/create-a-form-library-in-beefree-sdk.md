@@ -57,7 +57,7 @@ Here's how the form library integrates with Beefree SDK:
 +-------------------+        +-------------------+        +-------------------+
 ```
 
-**Why this flow?** Beefree SDK triggers the form library through the `contentDialog`, and end users select a pre-built form from the list of available forms within the custom modal. The chosen structure is returned as JSON, and then integrated into the page or popup design.
+**Why this flow?** Beefree SDK triggers the form library through the `contentDialog`, and end users select a pre-built form from the list of available forms within the custom modal. The chosen structure is returned as JSON, and then integrated into the page or pop-up design.
 
 #### Step 1: Clone and Setup
 

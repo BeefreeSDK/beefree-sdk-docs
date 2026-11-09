@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Schemas are structured definitions that describe the format, rules, and relationships of data within a system. They ensure consistency and validate inputs. In Beefree SDK, the Simple Button Schema defines how buttons are structured and styled within email, page, and popup builders. It enables customization of appearance, behavior, and interactivity — including hover effects, borders, padding, and click-through destinations. This documentation breaks down the schema's properties, requirements, and usage examples to help you implement and design button blocks effectively.
+Schemas are structured definitions that describe the format, rules, and relationships of data within a system. They ensure consistency and validate inputs. In Beefree SDK, the Simple Button Schema defines how buttons are structured and styled within Email, Page, and Pop-up builders. It enables customization of appearance, behavior, and interactivity — including hover effects, borders, padding, and click-through destinations. This documentation breaks down the schema's properties, requirements, and usage examples to help you implement and design button blocks effectively.
 
 {% hint style="success" %}
 Reference the [Simple Schema GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main) for more information.

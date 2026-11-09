@@ -6,7 +6,7 @@ This feature is available on the Beefree SDK [Superpowers plan](https://develope
 
 ## Overview
 
-With Co-editing, multiple users can work on the same asset (email, page or popup) simultaneously. Co-editors can see what each other is doing, as their changes are synced to the stage in real-time.
+With Co-editing, multiple users can work on the same asset (email, page or pop-up) simultaneously. Co-editors can see what each other is doing, as their changes are synced to the stage in real-time.
 
 <figure><img src="../../.gitbook/assets/Co-editing-avatars.png" alt=""><figcaption></figcaption></figure>
 
@@ -24,7 +24,7 @@ When multiple people collaborate on creating content, co-editing is the logical 
 
 <figure><img src="../../.gitbook/assets/3coediting_min.gif" alt=""><figcaption></figcaption></figure>
 
-If you add [Commenting](../advanced-options/commenting.md) to the mix, Beefree SDK becomes an all-around, real-time, collaborative content creation platform to design and review emails, landing pages, and popups, unifying your customers’ workflow under one roof.
+If you add [Commenting](../advanced-options/commenting.md) to the mix, Beefree SDK becomes an all-around, real-time, collaborative content creation platform to design and review emails, landing pages, and pop-ups, unifying your customers’ workflow under one roof.
 
 ### Availability <a href="#availability" id="availability"></a>
 
@@ -120,7 +120,7 @@ bee.join(sessionId)
 
 ## Monitor a Session
 
-Once the session is started, all changes to the session are reported to the `onSessionChange` callback. The host application can monitor this callback to understand the session’s status.&#x20;
+Once the session is started, all changes to the session are reported to the `onSessionChange` callback. The host application can monitor this callback to understand the session’s status.
 
 ### Example Return JSON
 
@@ -170,10 +170,10 @@ onSessionChange: function(data) {
 
 There are some limitations set for the Co-editing feature to preserve the integrity of the experience. These are:
 
-* **Undo/redo:**  If only a single user is present in the co-editing session at any given time, undo/redo will function the same as in a normal session. When a second user is present, undo/redo will be limited to only allow changes while the content or row is locked, and users cannot undo the changes of other users or those that have been synchronized across all sessions.
-* **Load/reload:**  The host application cannot trigger any action that overwrites the user’s changes.
+* **Undo/redo:** If only a single user is present in the co-editing session at any given time, undo/redo will function the same as in a normal session. When a second user is present, undo/redo will be limited to only allow changes while the content or row is locked, and users cannot undo the changes of other users or those that have been synchronized across all sessions.
+* **Load/reload:** The host application cannot trigger any action that overwrites the user’s changes.
 * **Autosave:** The autosave timer is set on the instance that started the session; it’s not recommended for co-editing sessions.
-* **onChange:**  The onChange callback occurs only for the user that makes the change. For example, if user A makes a change, the onChange event fires only for their instance, and user B won’t receive the notification.
+* **onChange:** The onChange callback occurs only for the user that makes the change. For example, if user A makes a change, the onChange event fires only for their instance, and user B won’t receive the notification.
 
 ## Versioning
 
@@ -223,15 +223,15 @@ onSend: function(htmlFile, version) {
 
 ## Track Message Changes
 
-You can [track message changes](./#track-message-changes) for the main user and additional users in a collaborative editing session.&#x20;
+You can [track message changes](./#track-message-changes) for the main user and additional users in a collaborative editing session.
 
-The `onChange` callback allows you to track the activities and changes to the design JSON performed by session's main user (User A). Reference the `onChange` [section of the Track Message Changes page](../../getting-started/tracking-message-changes.md#onchange-event) to learn more about implementing and using this callback.&#x20;
+The `onChange` callback allows you to track the activities and changes to the design JSON performed by session's main user (User A). Reference the `onChange` [section of the Track Message Changes page](../../getting-started/tracking-message-changes.md#onchange-event) to learn more about implementing and using this callback.
 
-The `onRemoteChange` callback allows you to track the activities and changes to the design's JSON performed by additional users (User B, User C, and so on). Reference the `onRemoteChange` [section of the Track Message Changes page](../../getting-started/tracking-message-changes.md#onremotechange) to learn more about implementing and using this callback.&#x20;
+The `onRemoteChange` callback allows you to track the activities and changes to the design's JSON performed by additional users (User B, User C, and so on). Reference the `onRemoteChange` [section of the Track Message Changes page](../../getting-started/tracking-message-changes.md#onremotechange) to learn more about implementing and using this callback.
 
 ## Custom Languages
 
-You may override any of the default language strings using [custom translations](./#custom-languages).  The code block below contains the JSON required to replace all co-editing strings.
+You may override any of the default language strings using [custom translations](./#custom-languages). The code block below contains the JSON required to replace all co-editing strings.
 
 ```json
 
@@ -254,7 +254,7 @@ translations: {
 
 ### Heartbeat
 
-Both the server and client regularly check the connection using the “ping-pong” heartbeat.&#x20;
+Both the server and client regularly check the connection using the “ping-pong” heartbeat.
 
 If the client misses 5 consecutive pings (ping is emitted every 10s), the server considers the connection to be lost and disconnects the client.
 
@@ -276,7 +276,7 @@ In case of error, another overlay modal is displayed to prevent the user from in
 
 ### Error Codes
 
-You can monitor the onError callback to know when a problem occurs, and then alert users of the problem.  For example, if a user loses internet connection, you can display an alert in the host application to let them know their changes have not been saved.
+You can monitor the onError callback to know when a problem occurs, and then alert users of the problem. For example, if a user loses internet connection, you can display an alert in the host application to let them know their changes have not been saved.
 
 Here is the full list of error codes that can be returned for Co-editing.
 

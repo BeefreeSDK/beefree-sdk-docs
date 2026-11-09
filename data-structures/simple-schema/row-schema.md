@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Schemas are structured definitions that describe the format, rules, and relationships of data within a system. They ensure consistency and validate inputs. In Beefree SDK, the Simple Row Schema defines how rows are structured within the email, page, and popup builders, controlling layout, styling, and responsive behavior. This documentation breaks down the schema's properties, requirements, and usage examples to help you implement and extend row configurations effectively.
+Schemas are structured definitions that describe the format, rules, and relationships of data within a system. They ensure consistency and validate inputs. In Beefree SDK, the Simple Row Schema defines how rows are structured within the Email, Page, and Pop-up builders, controlling layout, styling, and responsive behavior. This documentation breaks down the schema's properties, requirements, and usage examples to help you implement and extend row configurations effectively.
 
 {% hint style="success" %}
 Reference the [Simple Schema GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main) for more information.

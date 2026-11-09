@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Schemas are structured definitions that describe the format, rules, and relationships of data within a system. They ensure consistency and validate inputs. In Beefree SDK, the Simple HTML Schema enables the inclusion of raw HTML code blocks within email, page, and popup builders. This provides full flexibility for embedding custom markup, third-party widgets, or advanced layouts not covered by predefined content blocks. This documentation breaks down the schema's properties, requirements, and usage examples to help you implement and manage custom HTML inserts effectively.
+Schemas are structured definitions that describe the format, rules, and relationships of data within a system. They ensure consistency and validate inputs. In Beefree SDK, the Simple HTML Schema enables the inclusion of raw HTML code blocks within Email, Page, and Pop-up builders. This provides full flexibility for embedding custom markup, third-party widgets, or advanced layouts not covered by predefined content blocks. This documentation breaks down the schema's properties, requirements, and usage examples to help you implement and manage custom HTML inserts effectively.
 
 {% hint style="success" %}
 Reference the [Simple Schema GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main) for more information.

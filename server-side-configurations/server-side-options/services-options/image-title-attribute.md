@@ -6,7 +6,7 @@ Available on all builders and all [plans](https://developers.beefree.io/pricing-
 
 ## Overview
 
-The Image Title Attribute allows end users to add a [custom title attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#the_title_attribute) to images in their [email](../../../visual-builders/email-builder.md), [page](../../../visual-builders/page-builder/), or [popup](../../../visual-builders/popup-builder/) designs.
+The Image Title Attribute allows end users to add a [custom title attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#the_title_attribute) to images in their [email](../../../visual-builders/email-builder.md), [page](../../../visual-builders/page-builder/), or [pop-up](../../../visual-builders/popup-builder/) designs.
 
 Adding a title attribute is an important step toward improving accessibility and user experience. When present, the title attribute provides additional context when a user hovers over an image. Also, screen readers can use it to deliver a verbal description, helping visually impaired users better understand the image in context.
 

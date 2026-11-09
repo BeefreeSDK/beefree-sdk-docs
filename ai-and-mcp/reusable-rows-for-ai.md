@@ -1,6 +1,6 @@
 ---
 description: >-
-  Let the AI place your user's saved rows instead of generating new content from
+  Let the AI place your users' saved rows instead of generating new content from
   scratch.
 ---
 

@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Schemas are structured definitions that describe the format, rules, and relationships of data within a system. They ensure consistency and validate inputs. In Beefree SDK, the Simple List Schema defines how list elements (ordered and unordered) are rendered within email, page, and popup builders. It allows developers to customize list appearance using text formatting, alignment, spacing, and HTML tags. This documentation breaks down the schema's properties, requirements, and usage examples to help you implement and style list blocks effectively.
+Schemas are structured definitions that describe the format, rules, and relationships of data within a system. They ensure consistency and validate inputs. In Beefree SDK, the Simple List Schema defines how list elements (ordered and unordered) are rendered within Email, Page, and Pop-up builders. It allows developers to customize list appearance using text formatting, alignment, spacing, and HTML tags. This documentation breaks down the schema's properties, requirements, and usage examples to help you implement and style list blocks effectively.
 
 {% hint style="success" %}
 Reference the [Simple Schema GitHub repository](https://github.com/BeefreeSDK/beefree-sdk-simple-schema/tree/main) for more information.

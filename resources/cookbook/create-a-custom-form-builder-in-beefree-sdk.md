@@ -14,7 +14,7 @@ While [pre-defined default forms](create-a-form-library-in-beefree-sdk.md) are g
 1. Dynamically add form fields of different types (text, email, select, etc.)
 2. Preview forms as they build them
 3. Customize field properties like labels and options
-4. Save and integrate forms directly into their page and popup designs
+4. Save and integrate forms directly into their page and pop-up designs
 5. Reuse form structures across multiple campaigns
 
 With Beefree SDK's `contentDialog.manageForm` handler, you can create a modal-based form builder that seamlessly integrates with the editor workflow.
@@ -431,7 +431,7 @@ Open `form-builder-example.html` in your browser:
 3. **Click "Edit Form"** to open the form builder modal
 4. **Add fields** using the field type buttons
 5. **Preview in real-time** as you build your form
-6. **Save the form** to integrate it into your page or popup design
+6. **Save the form** to integrate it into your page or pop-up design
 
 #### Step 12: CSS Styling
 
@@ -498,4 +498,4 @@ Customize the form builder further with your additions and styling. A few custom
 * **Test the complete workflow** from form building to design integration
 * **Customize the form builder by adding your own advanced features** like templates and field reordering
 
-Clone the example project, explore the `form-builder-example.html` file, and customize the form builder interface to match your application's needs. Your users will then have a powerful tool for creating custom forms directly within their page and popup designs.
+Clone the example project, explore the `form-builder-example.html` file, and customize the form builder interface to match your application's needs. Your users will then have a powerful tool for creating custom forms directly within their page and pop-up designs.

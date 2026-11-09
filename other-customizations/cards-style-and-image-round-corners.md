@@ -7,18 +7,18 @@ description: >-
 # Cards Style and Image Round Corners
 
 {% hint style="info" %}
-This feature is available for all [Beefree SDK plan types](https://developers.beefree.io/pricing-plans). Available for Email Builder, Page Builder, and Popup Builder.
+This feature is available for all [Beefree SDK plan types](https://developers.beefree.io/pricing-plans). Available for Email Builder, Page Builder, and Pop-up Builder.
 {% endhint %}
 
 ## Implementing Image Rounded Corners and Card Style Features
 
-This guide explains how to enable the Image Rounded Corners and Cards Style features in your host application. It provides instructions for making these features available to your application's end users while they are designing emails, pages, and popups.
+This guide explains how to enable the Image Rounded Corners and Cards Style features in your host application. It provides instructions for making these features available to your application's end users while they are designing emails, pages, and pop-ups.
 
 ### Cards Style
 
 Cards Style is a Row Property that enables you to create space between columns and round the corners of columns within a row.
 
-The Cards Style feature allows users to transform ordinary messages into visually appealing layouts that grab their audience’s attention effortlessly. By incorporating stylish cards, users can effectively highlight product features, display customer testimonials, promote special offers, and present news updates in a structured and eye-catching manner. This not only enhances the readability and engagement of emails, pages, and popups but also ensures that important information stands out and resonates with viewers, providing significant value to the end-users and enriching their design experience within your application.
+The Cards Style feature allows users to transform ordinary messages into visually appealing layouts that grab their audience’s attention effortlessly. By incorporating stylish cards, users can effectively highlight product features, display customer testimonials, promote special offers, and present news updates in a structured and eye-catching manner. This not only enhances the readability and engagement of emails, pages, and pop-ups but also ensures that important information stands out and resonates with viewers, providing significant value to the end-users and enriching their design experience within your application.
 
 {% embed url="https://beefree.screencasthost.com/watch/cZ1uqcV803R" %}
 
@@ -26,7 +26,7 @@ Reference the [Column Management article in the White label end user guide](http
 
 ### Image Round Corners
 
-The Image Round Corners feature allows your application's end users to easily add rounded corners to images from the side panel, enhancing the visuals of emails, pages, and popups. This built-in tool offers a sleek and professional design option, ensuring a modern look.
+The Image Round Corners feature allows your application's end users to easily add rounded corners to images from the side panel, enhancing the visuals of emails, pages, and pop-ups. This built-in tool offers a sleek and professional design option, ensuring a modern look.
 
 Together, these features empower your application’s end-users to create more compelling and attractive designs effortlessly. Users can employ these stylistic options to make their content more engaging and easier to scan.
 

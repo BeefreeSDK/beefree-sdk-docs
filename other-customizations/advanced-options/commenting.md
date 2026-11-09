@@ -6,7 +6,7 @@ The Commenting feature is available for [Core plan or higher](https://developers
 
 ## Overview
 
-With Commenting, teams using your application can **collaborate asynchronously** on the same email, page or popup, in order to **get their work done** more quickly and **reach approval** for going live more efficiently.
+With Commenting, teams using your application can **collaborate asynchronously** on the same email, page or pop-up, in order to **get their work done** more quickly and **reach approval** for going live more efficiently.
 
 <figure><img src="../../.gitbook/assets/Commenting_10s.gif" alt=""><figcaption></figcaption></figure>
 
@@ -58,7 +58,7 @@ const beeConfig = {
 
 ### **Adding comments and starting threads**
 
-When opening an email, a landing page or a popup, a contributor can add a new comment to a content block or a row by clicking the “Balloon” icon, available in two spots:
+When opening an email, a landing page or a pop-up, a contributor can add a new comment to a content block or a row by clicking the “Balloon” icon, available in two spots:
 
 * in the row or block outline, inside the editing stage
 * in the header of the Row properties or Content properties

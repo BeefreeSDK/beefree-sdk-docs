@@ -7,15 +7,15 @@ description: >-
 # Anthropic
 
 {% hint style="info" %}
-The AI Writing Assistant AddOn is only available for [Superpowers](https://developers.beefree.io/pricing-plans) and [Enterprise](https://developers.beefree.io/pricing-plans) plans. The AI Writing Assistant and Anthropic provider are available for Email, Page, and Popup builders.
+The AI Writing Assistant AddOn is only available for [Superpowers](https://developers.beefree.io/pricing-plans) and [Enterprise](https://developers.beefree.io/pricing-plans) plans. The AI Writing Assistant and Anthropic provider are available for Email, Page, and Pop-up builders.
 {% endhint %}
 
 ## Overview
 
-This page discusses how to configure Anthropic as a provider for the [AI Writing Assistant AddOn](../) within the Beefree SDK Developer Console. If the AI Writing Assistant AddOn is already enabled for your application, and you'd like to switch providers, take the steps outlined in the [Switch Providers](../#switch-providers) section of the [AI Writing Assistant page](../#switch-providers) to enable Anthropic as your new provider.&#x20;
+This page discusses how to configure Anthropic as a provider for the [AI Writing Assistant AddOn](../) within the Beefree SDK Developer Console. If the AI Writing Assistant AddOn is already enabled for your application, and you'd like to switch providers, take the steps outlined in the [Switch Providers](../#switch-providers) section of the [AI Writing Assistant page](../#switch-providers) to enable Anthropic as your new provider.
 
 {% hint style="info" %}
-**Note:** [Claude Sonnet 3.5](https://docs.anthropic.com/en/docs/about-claude/models/overview) is the model used when you configure Anthropic as your provider.&#x20;
+**Note:** [Claude Sonnet 3.5](https://docs.anthropic.com/en/docs/about-claude/models/overview) is the model used when you configure Anthropic as your provider.
 {% endhint %}
 
 ### Prerequisites
@@ -24,7 +24,7 @@ Prior to getting started, ensure you have the following:
 
 * A [Superpowers or Enterprise Beefree SDK plan](https://developers.beefree.io/pricing-plans)
 * The AI Writing Assistant AddOn enabled in the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
-* An API Key for [Anthropic](https://www.anthropic.com/)&#x20;
+* An API Key for [Anthropic](https://www.anthropic.com/)
   * **Note:** Refer to [Anthropic’s documentation](https://www.anthropic.com/) for instructions on creating an account and generating your API key.
 
 ### Configuration Steps
@@ -49,7 +49,7 @@ Consider the following shared logic when integrating the AI Writing Assistant Ad
 
 * **Methods:** The methods used for the Anthropic provider are inherited from the [AI Writing Assistant AddOn](../). These include functionality for generating content for supported block types (Title, Paragraph, List, Button) and for handling metadata.
 * **Events:** The integration supports all events from the [AI Writing Assistant](../), such as tracking user actions and processing content generation requests.
-* **Callbacks:**  All callbacks associated with the Anthropic provider are inherited from the [AI Writing Assistant](../). They manage notifications for successful or failed content generation attempts.
+* **Callbacks:** All callbacks associated with the Anthropic provider are inherited from the [AI Writing Assistant](../). They manage notifications for successful or failed content generation attempts.
 
 ### Additional Considerations
 

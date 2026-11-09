@@ -6,7 +6,7 @@ This feature is available on Beefree SDK [Core plan](https://developers.beefree.
 
 ## **Overview**
 
-With Hosted Saved Rows, you can provide your end users with the option to save and manage reusable content directly within the builder. Hosted Saved Rows are on by default. You can disable and re-enable them through a check within the [Developer Console](https://developers.beefree.io/login?from=website_menu). With this feature, your end users will be able to save the rows they create within the builder, and reuse them easily in the future. They can also perform actions to manage the rows that they save, such as renaming them, deleting them, categorizing, or recategorizing them. This page covers [the steps](implement-hosted-saved-rows.md#enable-hosted-saved-rows) you need to take to successfully configure [Hosted Saved Rows](../../../storage/hosted-saved-rows.md). &#x20;
+With Hosted Saved Rows, you can provide your end users with the option to save and manage reusable content directly within the builder. Hosted Saved Rows are on by default. You can disable and re-enable them through a check within the [Developer Console](https://developers.beefree.io/login?from=website_menu). With this feature, your end users will be able to save the rows they create within the builder, and reuse them easily in the future. They can also perform actions to manage the rows that they save, such as renaming them, deleting them, categorizing, or recategorizing them. This page covers [the steps](implement-hosted-saved-rows.md#enable-hosted-saved-rows) you need to take to successfully configure [Hosted Saved Rows](../../../storage/hosted-saved-rows.md).
 
 The following video tutorial discusses what Saved Rows are, how reusable content can support your end users throughout their content creation journeys, and how you can customize Hosted Saved Rows in your application.
 
@@ -32,7 +32,7 @@ To enable or disable Hosted Saved Rows for your application, follow these steps:
    1.  Check the **Hosted on the Beefree SDK Infrastructure** option to on or off.
 
        <figure><img src="../../../../.gitbook/assets/CleanShot 2024-11-20 at 20.28.15.png" alt="Beefree SDK Developer console user interface displaying the toggle options for hosted and self-hosted saved rows" width="563"><figcaption></figcaption></figure>
-   2.  (Applicable if you are enabling) Read the pricing information in the popup closely, because additional fees may apply.\*&#x20;
+   2.  (Applicable if you are enabling) Read the pricing information in the pop-up closely, because additional fees may apply.\*
 
        <figure><img src="../../../../.gitbook/assets/CleanShot 2024-11-20 at 20.28.37.png" alt="Beefree SDK Developer console user interface displaying the popup confirming usage based fees may apply" width="443"><figcaption></figcaption></figure>
    3. Save your changes.
@@ -61,16 +61,16 @@ When enabled, your application's end users will have access to a new **Save** ic
 
 The Hosted Saved Rows UI includes the following experience for end users:
 
-*   End users can save a row using the **Save** icon.    &#x20;
+*   End users can save a row using the **Save** icon.
 
     <figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 14.00.04.png" alt="Beefree SDK user interface displaying the save icon on the builder stage end users see"><figcaption></figcaption></figure>
-*   They have the ability to name and categorize rows.&#x20;
+*   They have the ability to name and categorize rows.
 
     <figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 14.03.25.png" alt="Beefree SDK user interface displaying the save row modal with Row name and Category options"><figcaption></figcaption></figure>
-*   They  can edit a row's name or category and save those changes. &#x20;
+*   They can edit a row's name or category and save those changes.
 
     <figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 14.07.16.gif" alt="Beefree SDK user interface displaying the edit row options, which allows editing the name or category of a row"><figcaption></figcaption></figure>
-*   End users can decide to reuse or delete rows through the **Rows** tab in the side panel.&#x20;
+*   End users can decide to reuse or delete rows through the **Rows** tab in the side panel.
 
     <figure><img src="../../../../.gitbook/assets/CleanShot 2025-01-27 at 14.08.29.gif" alt="Beefree SDK user interface displaying the delete row option, which allows deleting a row"><figcaption></figcaption></figure>
 *   They can also use the vertical three dots to add and manage categories.
@@ -103,7 +103,7 @@ const beeConfig = {
 };
 ```
 
-In this example, the user can save up to 10 Hosted Saved Rows. Beefree SDK will block attempts to save more than this limit. &#x20;
+In this example, the user can save up to 10 Hosted Saved Rows. Beefree SDK will block attempts to save more than this limit.
 
 ### **Custom the Toast Message**
 
@@ -117,11 +117,11 @@ The following image shows how this default toast message looks within the user i
 
 <figure><img src="../../../../.gitbook/assets/CleanShot 2025-06-07 at 16.14.11.png" alt="Default toast message the end user sees when they&#x27;ve reached their saved rows limit"><figcaption></figcaption></figure>
 
-You can use [Custom Languages](../../../../other-customizations/advanced-options/custom-languages.md) to customize both the title and description text within this message. For example, if you have more of playful brand tone within your application, and want to adjust the message accordingly, you can.&#x20;
+You can use [Custom Languages](../../../../other-customizations/advanced-options/custom-languages.md) to customize both the title and description text within this message. For example, if you have more of playful brand tone within your application, and want to adjust the message accordingly, you can.
 
-In the following code snippet, the default text was changed to the following:&#x20;
+In the following code snippet, the default text was changed to the following:
 
-> **Title:** Whoa there, design superstar!&#x20;
+> **Title:** Whoa there, design superstar!
 >
 > **Description:** You’ve hit your 5-row max—time to let one go before saving another.
 

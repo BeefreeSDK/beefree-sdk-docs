@@ -12,7 +12,7 @@ Agentic design functionality helps your users create content faster, but speed a
 
 ### How Brand Rules work
 
-With Brand Rules, a host application can attach a `brandRules` object to an AI editing session. Brand Rules act as guardrails that the AI must work within so that the output it generates matches your (or your end user's) brand. At their core, Brand Rules give guidance on three key questions:
+With Brand Rules, a host application can attach a `brandRules` object to an AI editing session. Brand Rules act as guardrails that the AI must work within so that the output it generates matches your (or your end users') brand. At their core, Brand Rules give guidance on three key questions:
 
 1. What should certain design elements look like? You define the styles using presets.
 2. What is the AI allowed to touch? With permissions you can control what the AI can (and cannot) edit.
@@ -42,10 +42,6 @@ You can use `presets` in your Brand rules to set one preset per content block or
 
 You define a single `preset` per block type that applies to every single content block the AI adds to your design.\
 \
-Let's say your user's brand guidelines call for all buttons to be bright blue, with slightly rounded corners and white text. You can define your button `presets` like this:
-
-You define a single `preset` per block type that applies to every content block that supports `presets`.&#x20;
-
 Let's say your user's brand guidelines call for all buttons to be bright blue, with slightly rounded corners and white text. You can define your button `presets` like this:
 
 ```

@@ -8,7 +8,7 @@ description: >-
 
 ## Why Use Default Forms?
 
-When building email campaigns, forms are essential for collecting user data like newsletter signups, survey responses, or contact information. Email recipients are typically led to these forms by clicking on a CTA (call-to-action) within the email that redirects to a landing page with the form within it. In Beefree SDK, forms can be built in both the page and popup builders. Instead of making your end users build forms from scratch every time they want to embed one within their page or popup design, you can pre-configure a default form with common field types and layouts. This default form will appear each time your end users drag and drop the Form block onto the stage for their page or popup design. Having a default form saves your end users time, and ensures consistency across content assets for their email campaigns.
+When building email campaigns, forms are essential for collecting user data like newsletter signups, survey responses, or contact information. Email recipients are typically led to these forms by clicking on a CTA (call-to-action) within the email that redirects to a landing page with the form within it. In Beefree SDK, forms can be built in both the Page and Pop-up builders. Instead of making your end users build forms from scratch every time they want to embed one within their page or pop-up design, you can pre-configure a default form with common field types and layouts. This default form will appear each time your end users drag and drop the Form block onto the stage for their page or pop-up design. Having a default form saves your end users time, and ensures consistency across content assets for their email campaigns.
 
 With Beefree SDK's `defaultForm` configuration, you can:
 

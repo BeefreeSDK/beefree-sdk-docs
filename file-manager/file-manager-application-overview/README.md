@@ -2,7 +2,7 @@
 
 ## Managing assets with File Manager <a href="#managing-assets-with-file-manager" id="managing-assets-with-file-manager"></a>
 
-The File Manager can be launched as a standalone application. This means that users can access the File Manager directly, without having to first launch the builder application. This is useful for situations where a user needs to quickly upload or manage assets, but doesn’t need to create a full email, landing page, or popup.
+The File Manager can be launched as a standalone application. This means that users can access the File Manager directly, without having to first launch the builder application. This is useful for situations where a user needs to quickly upload or manage assets, but doesn’t need to create a full email, landing page, or pop-up.
 
 <figure><img src="../../.gitbook/assets/Recording-13.gif" alt=""><figcaption></figcaption></figure>
 

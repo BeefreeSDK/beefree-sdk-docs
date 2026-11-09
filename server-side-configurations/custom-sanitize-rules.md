@@ -7,7 +7,7 @@ description: >-
 # Custom Sanitize Rules
 
 {% hint style="info" %}
-This feature requires the [Superpowers plan](https://developers.beefree.io/pricing-plans) or above. Available for the Email Builder, Page Builder, and Popup Builder.
+This feature requires the [Superpowers plan](https://developers.beefree.io/pricing-plans) or above. Available for the Email Builder, Page Builder, and Pop-up Builder.
 {% endhint %}
 
 ### Overview

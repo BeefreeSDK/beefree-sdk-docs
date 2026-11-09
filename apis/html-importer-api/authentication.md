@@ -16,7 +16,7 @@ Authorization: Bearer {token}
 
 ## Create a Bearer Token
 
-To use the HTML Importer API, you will need an API Key, which is the bearer token you will use to authenticate, from the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).&#x20;
+To use the HTML Importer API, you will need an API Key, which is the bearer token you will use to authenticate, from the [Beefree SDK Developer Console](https://developers.beefree.io/login?from=website_menu).
 
 Take the following steps to obtain your API key:
 
@@ -26,7 +26,7 @@ Take the following steps to obtain your API key:
 4. Navigate to the **HTML Importer API** section of the **Details** page.
 5.  Click **Create New API Key**.
 
-    A pop up will appear asking you to confirm that you understand [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) apply.
+    A pop-up will appear asking you to confirm that you understand [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) apply.
 6. Click **Create Key**.
 
 Your API key will appear under the **HTML Importer API** section of your application details.

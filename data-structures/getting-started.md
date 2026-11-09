@@ -6,7 +6,7 @@ description: Get started with schemas in Beefree SDK.
 
 ## Introduction
 
-Schemas are structured definitions that describe the format, rules, and relationships of data. They ensure consistency by validating data formats. In Beefree SDK, schemas define how data is structured in relation to email, page, and popup templates. This section of the documentation lists each schema used within Beefree SDK, and outlines its corresponding purpose, properties, requirements, and usage examples to help you utilize each data structure effectively.
+Schemas are structured definitions that describe the format, rules, and relationships of data. They ensure consistency by validating data formats. In Beefree SDK, schemas define how data is structured in relation to email, page, and pop-up templates. This section of the documentation lists each schema used within Beefree SDK, and outlines its corresponding purpose, properties, requirements, and usage examples to help you utilize each data structure effectively.
 
 ### Schema Scenarios
 

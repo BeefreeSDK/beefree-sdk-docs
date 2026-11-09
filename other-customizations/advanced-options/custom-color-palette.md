@@ -34,10 +34,10 @@ var beeConfig = {
 ## Advanced Permissions for the Color Picker
 
 {% hint style="info" %}
-You can set [Advanced Permissions](advanced-permissions.md) for the Color Picker on any builder type (Email, Page, or Popup). Advanced Permissions are available for [Superpowers](https://developers.beefree.io/pricing-plans) and [Enterprise](https://developers.beefree.io/pricing-plans) plans.  &#x20;
+You can set [Advanced Permissions](advanced-permissions.md) for the Color Picker on any builder type (Email, Page, or Pop-up). Advanced Permissions are available for [Superpowers](https://developers.beefree.io/pricing-plans) and [Enterprise](https://developers.beefree.io/pricing-plans) plans.
 {% endhint %}
 
-Through setting [Advanced Permissions](advanced-permissions.md) for the color picker, you can control the visibility of, and access to, color codes, the slider, and swatches that appear within builder. These customization options enable you to control access to various elements of the color picker for different end users of your application.&#x20;
+Through setting [Advanced Permissions](advanced-permissions.md) for the color picker, you can control the visibility of, and access to, color codes, the slider, and swatches that appear within builder. These customization options enable you to control access to various elements of the color picker for different end users of your application.
 
 A few of the benefits of applying advanced permissions to the Color Picker are the following:
 
@@ -52,7 +52,7 @@ A few scenarios in which these advanced permissions are particularly helpful inc
 
 ### Configuration Steps
 
-Take the following steps&#x20;
+Take the following steps
 
 1. **Update the `beeConfig` File:** Open the `beeConfig` file and locate the section for `advancedPermissions`. Within this section, ensure there is a field for `components` and add a new entry specifically for the `colorPicker`.
 2. **Define Permission Settings:** Within the color picker section, specify the necessary parameters that determine user access. Set the relevant parameters to either `true` or `false`, depending on whether the feature should be enabled or restricted for the end user.
@@ -79,11 +79,11 @@ const advancedPermissions = {
 
 The table below outlines the configurable parameters for the color picker.
 
-| Parameter           | Type    | Description                                                         | Additional info         |
-| ------------------- | ------- | ------------------------------------------------------------------- | ----------------------- |
-| `canViewColorInput` | boolean | Hides or shows the text input for the color picker in the sidebar.  |  Default value is true. |
-| `canViewSliders`    | boolean | Hides or shows the sliders inside the color picker popover.         |  Default value is true. |
-| `canViewSwatches`   | boolean | Hides or shows the swatches inside the color picker popover.        |  Default value is true. |
+| Parameter           | Type    | Description                                                        | Additional info        |
+| ------------------- | ------- | ------------------------------------------------------------------ | ---------------------- |
+| `canViewColorInput` | boolean | Hides or shows the text input for the color picker in the sidebar. | Default value is true. |
+| `canViewSliders`    | boolean | Hides or shows the sliders inside the color picker popover.        | Default value is true. |
+| `canViewSwatches`   | boolean | Hides or shows the swatches inside the color picker popover.       | Default value is true. |
 
 {% hint style="info" %}
 **Note:** If both `canViewSliders` and `canViewSwatches` are set to `false`, the popover will not open.
@@ -91,7 +91,7 @@ The table below outlines the configurable parameters for the color picker.
 
 ## Disabling the color history <a href="#disabling-the-color-history" id="disabling-the-color-history"></a>
 
-The builder will remember recently selected colors and add them to your color palette.  If the browser’s privacy settings allow it, the color picker history will be saved in the browser’s local storage.
+The builder will remember recently selected colors and add them to your color palette. If the browser’s privacy settings allow it, the color picker history will be saved in the browser’s local storage.
 
 If you want the color palette to be static such that recently selected colors are not included, then you can disable the history in your configuration.
 

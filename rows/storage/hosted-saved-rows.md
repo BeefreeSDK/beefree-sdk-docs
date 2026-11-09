@@ -6,7 +6,7 @@ This feature is available on Beefree SDK [Core plan](https://developers.beefree.
 
 ## **Overview**
 
-Hosted Saved Rows offers a fully managed solution, eliminating the need to set up and maintain backend systems. With this option, Beefree SDK handles storage, security, scaling, and updates, allowing your team to focus on delivering a great user experience. In addition to managing storage, this option also provides you with a [ready-to-go user interface](hosted-saved-rows.md#ready-to-go-user-interface) made available to your application's end users.&#x20;
+Hosted Saved Rows offers a fully managed solution, eliminating the need to set up and maintain backend systems. With this option, Beefree SDK handles storage, security, scaling, and updates, allowing your team to focus on delivering a great user experience. In addition to managing storage, this option also provides you with a [ready-to-go user interface](hosted-saved-rows.md#ready-to-go-user-interface) made available to your application's end users.
 
 This [ready-to-go UI](hosted-saved-rows.md#ready-to-go-user-interface) enables application end users to:
 
@@ -14,13 +14,13 @@ This [ready-to-go UI](hosted-saved-rows.md#ready-to-go-user-interface) enables a
 * Add new saved row categories to organize the rows they save.
 * Edit a saved row's existing name and category.
 * Delete a saved row.
-* Update existing saved rows with the option to save them as new saved rows.&#x20;
+* Update existing saved rows with the option to save them as new saved rows.
 
 ### **Key Benefits**
 
 * Available by default for Core plans and above.
 * Ideal for teams that want a quick setup without maintaining backend systems.
-* Offers centralized storage, security, and reliability, while also providing a user interface to save and  reuse rows within your application.
+* Offers centralized storage, security, and reliability, while also providing a user interface to save and reuse rows within your application.
 * Allows for advanced controls through configuring [Advanced Permissions for Hosted Saved Rows](../../other-customizations/advanced-options/advanced-permissions.md#hosted-saved-rows).
 
 ### Webinar Tutorial
@@ -51,7 +51,7 @@ To disable or enable Hosted Saved Rows for your application, follow these steps:
    1.  Check on the **Hosted on the Beefree SDK Infrastructure** option to enable or disable it.
 
        <figure><img src="../../.gitbook/assets/CleanShot 2024-11-20 at 20.28.15.png" alt="" width="563"><figcaption></figcaption></figure>
-   2.  (Applicable if enabling) Read the pricing information in the popup closely, because additional fees may apply.\*&#x20;
+   2.  (Applicable if enabling) Read the pricing information in the pop-up closely, because additional fees may apply.\*
 
        <figure><img src="../../.gitbook/assets/CleanShot 2024-11-20 at 20.28.37.png" alt="" width="443"><figcaption></figcaption></figure>
    3. If you'd like to proceed, confirm you read and understand the pricing to activate the feature.
@@ -99,7 +99,7 @@ Beefree SDK has introduced an updated version of the popular Saved Rows feature 
 
 #### What are the biggest benefits of this feature for your end users? <a href="#what-are-the-biggest-benefits-of-this-feature-for-your-end-users" id="what-are-the-biggest-benefits-of-this-feature-for-your-end-users"></a>
 
-End users can now easily save and reuse rows across multiple designs, including emails, pages, and popups. They can quickly find and manage Hosted Saved Rows by category.
+End users can now easily save and reuse rows across multiple designs, including emails, pages, and pop-ups. They can quickly find and manage Hosted Saved Rows by category.
 
 #### What is the difference between Hosted Saved Rows and Self-Hosted Saved Rows? <a href="#what-is-the-difference-between-hosted-rows-and-saved-rows" id="what-is-the-difference-between-hosted-rows-and-saved-rows"></a>
 

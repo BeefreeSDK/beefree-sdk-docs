@@ -32,7 +32,7 @@ Take the following steps to sign up for a Beefree SDK account:
 
 2. Check your inbox and verify your email address.
    1. Once it is successfully verified, you'll be redirected to the [Log in page](https://developers.beefree.io/login). Enter your email and password to login.
-3.  You'll be redirected to a page with an active free subscription called **MyFirstSubscription**. Under this subscription, there are four applications you can activate: Email Builder, Page Builder, Popup Builder, and File manager. You can activate one or all of them if you'd like.
+3.  You'll be redirected to a page with an active free subscription called **MyFirstSubscription**. Under this subscription, there are four applications you can activate: Email Builder, Page Builder, Pop-up Builder, and File manager. You can activate one or all of them if you'd like.
 
     1. Click the **Activate** button corresponding to the application type you'd like to start experimenting with.&#x20;
     2. You'll be prompted to fill in your company information to complete the activation of your first application.
@@ -63,7 +63,7 @@ You will have the option to activate any or all of the following applications:
 
 * [Email Builder Application](../../visual-builders/email-builder.md)
 * [Page Builder Application](../../visual-builders/page-builder/)
-* [Popup Builder Application](../../visual-builders/popup-builder/)
+* [Pop-up Builder Application](../../visual-builders/popup-builder/)
 * [File manager Application](../../file-manager/file-manager-application-overview/)
 
 Take the following steps to create an application:
