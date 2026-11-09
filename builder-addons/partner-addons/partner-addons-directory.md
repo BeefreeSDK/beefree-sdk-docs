@@ -44,16 +44,6 @@ Sendtric countdown timers are perfect for your customers to create urgency in th
 
 [Addon website](https://dam.beefree.io/sendtricmain) | [About the AddOn](https://dam.beefree.io/sendtricabout) | [Privacy Policy](https://www.sendtric.com/terms-of-service/) | [Support](mailto:support@sendtric.com)
 
-## Viewed <a href="#viewed" id="viewed"></a>
-
-<figure><img src="../../.gitbook/assets/5thumbnail_viewed_300.jpeg" alt=""><figcaption></figcaption></figure>
-
-Capture your customer’s attention and stand out from the competition with the use of autoplay video in email.
-
-It works with all email clients and devices. Get up to 90% of views on your opened emails, against only 16% that can be achieved including a static picture linked to YouTube. Autoplay video in email is the best solution to quickly spread your message and get millions of video views.
-
-[Addon website](https://dam.beefree.io/viewedmain) | [About the AddOn](https://dam.beefree.io/viewedabout) | [Privacy Policy](https://www.viewed.video/privacy-policy/) | [Support](mailto:support@viewed.video)
-
 ## Gifs <a href="#gifs" id="gifs"></a>
 
 <figure><img src="../../.gitbook/assets/7gifsbygiphy-300x188.png" alt=""><figcaption></figcaption></figure>
