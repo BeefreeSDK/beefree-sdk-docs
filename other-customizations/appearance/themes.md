@@ -1,7 +1,7 @@
 # Themes
 
 {% hint style="info" %}
-This feature is available on Beefree SDK [Core plan](https://developers.beefree.io/pricing-plans) and above. Upgrade a [development application](../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers. **Note:** Usage on a development application still counts toward [usage-based fees](https://devportal.beefree.io/hc/en-us/articles/4403095825042-Usage-based-fees) and limits.
+This feature is available on Beefree SDK [Core plan](https://developers.beefree.io/pricing-plans) and above. Upgrade a [development application](../../getting-started/readme/development-applications.md) at no extra charge to explore features from higher plan tiers.&#x20;
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/gif-base_hi-res_2.gif" alt=""><figcaption></figcaption></figure>
@@ -66,7 +66,7 @@ This section controls the appearance of the right panel’s top tabs. You can ad
 
 ### Draggable tiles and Tile icons
 
-These sections will help you customize the tiles that are used for content items and row structures. Here is an example  (left: default theme, right: aubergine).
+These sections will help you customize the tiles that are used for content items and row structures. Here is an example (left: default theme, right: aubergine).
 
 <figure><img src="../../.gitbook/assets/7tiles-1024x363.png" alt=""><figcaption></figcaption></figure>
 
