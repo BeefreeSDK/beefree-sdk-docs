@@ -195,13 +195,13 @@ Beefree SDK applies rate limits per application, with a separate request budget 
 
 ### Limits by group and plan
 
-| Group              | Endpoints                                                                            | Standard      | Enterprise      |
-| ------------------ | ------------------------------------------------------------------------------------ | ------------- | --------------- |
-| Image & PDF Export | `/v1/{collection}/image`, `/v1/{collection}/pdf`                                     | 50 req / 60s  | 100 req / 60s   |
-| HTML Importer      | `/v1/conversion/html-to-json`                                                        | 50 req / 60s  | 100 req / 60s   |
-| Template Catalog   | `/v1/catalog/*`                                                                      | 500 req / 60s | 1,000 req / 60s |
-| MCP                | `/v2/sdk/mcp/template*`                                                              | 500 req / 60s | 1,000 req / 60s |
-| General            | All endpoints not covered by Renderer, HTML Importer, Template Catalog, or MCP above | 500 req / 60s | 1,000 req / 60s |
+| Group              | Endpoints                                                                                      | Standard      | Enterprise      |
+| ------------------ | ---------------------------------------------------------------------------------------------- | ------------- | --------------- |
+| Image & PDF Export | `/v1/{collection}/image`, `/v1/{collection}/pdf`                                               | 50 req / 60s  | 100 req / 60s   |
+| HTML Importer      | `/v1/conversion/html-to-json`                                                                  | 50 req / 60s  | 100 req / 60s   |
+| Template Catalog   | `/v1/catalog/*`                                                                                | 500 req / 60s | 1,000 req / 60s |
+| MCP                | `/v2/sdk/mcp/template*`                                                                        | 500 req / 60s | 1,000 req / 60s |
+| General            | All endpoints not covered by Image & PDF Export, HTML Importer, Template Catalog, or MCP above | 500 req / 60s | 1,000 req / 60s |
 
 {% hint style="info" %}
 **Note:** Image and PDF Export and HTML Importer have lower budgets than the other groups. If your application does bulk or bursty rendering, plan request volume accordingly.
@@ -211,7 +211,7 @@ Beefree SDK applies rate limits per application, with a separate request budget 
 
 **Development applications**: All development applications of the same parent application share one rate-limit budget per group. This budget is separate from the parent application’s own budget, so development traffic never reduces production capacity.
 
-**X-Rate-Limit, X-Rate-Limit-Remaining**: These reflect the status of the specific endpoint group your request belongs to. For example, a call to a Renderer endpoint reports the Renderer group’s limit and remaining count, not an account-wide total. Since the headers describe the call you just made, you can tell which group’s budget they refer to by which endpoint you called.
+**X-Rate-Limit, X-Rate-Limit-Remaining**: These reflect the status of the specific endpoint group your request belongs to. For example, a call to a Image & PDF Export endpoint reports the Image & PDF Export group’s limit and remaining count, not an account-wide total. Since the headers describe the call you just made, you can tell which group’s budget they refer to by which endpoint you called.
 
 **Retry-After**: The number of seconds to wait before sending another request to the same group.
 
