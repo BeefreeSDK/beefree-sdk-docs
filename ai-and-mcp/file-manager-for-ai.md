@@ -224,7 +224,7 @@ The download counts toward the 30 seconds a tool call has. If an upload times ou
 
 #### Uploads don't create subfolders
 
-The agent saves a file directly into an upload folder, or into subfolder that already exists. A subfolder that doesn't exist is refused and never created. The refusal tells the agent where to store the file instead. Subfolders are created in the File Manager, by your users or through the [File Manager endpoints](../apis/content-services-api/file-manager.md#create-a-directory).
+The agent saves a file directly into an upload folder, or into a subfolder that already exists. A subfolder that doesn't exist is refused and never created. The refusal tells the agent where to store the file instead. Subfolders are created in the File Manager, by your users or through the [File Manager endpoints](../apis/content-services-api/file-manager.md#create-a-directory).
 
 An upload folder that doesn't exist yet, such as `/AI Generated Images` before its first file, is created by the first upload into it, together with any missing folders above it.
 

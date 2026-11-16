@@ -12,11 +12,11 @@ MCP is an open protocol (think "USB-C for AI") that standardizes how clients con
 
 An MCP server exposes data or tools to AI models through a standardized interface — it provides capabilities but doesn’t make decisions. An AI agent, on the other hand, is a system that can autonomously perceive its environment, reason about goals, and take actions. Agents can use MCP servers to get information or perform tasks.
 
-We provide the MCP Server that makes key Beefree SDK functionality accessible to AI agents. The host application is responsible for providing the agent. If you don't have your own agent yet, check out [our sample application using a PydanticAI agent](https://github.com/BeefreeSDK/beefree-sdk-mcp-example-demo), which you can get up and running in under five minutes.
+We provide the MCP Server that makes key Beefree SDK functionality accessible to AI agents. The host application is responsible for providing the agent. If you don't have your own agent yet, check out [our sample application using a PydanticAI agent](https://github.com/BeefreeSDK/beefree-sdk-mcp-v2-example-demo), which you can get up and running in under five minutes.
 
 #### Which plans can access the MCP?
 
-The MCP Server is available on Essentials, Core, Superpowers, and Enteprise plans.
+The MCP Server is available on Essentials, Core, Superpowers, and Enterprise plans.
 
 #### How do I get access?
 
@@ -72,7 +72,7 @@ Calls are billed under your CSAPI entitlements.
 
 #### How do I balance speed, token usage, and output quality?
 
-Model choice is the biggest lever. For token usage specifically, consider [Code Mode](mcp-server-installation-and-setup.md#code-mode-research-preview), now in open beta. Code mode is an experimental alternative that optimizes your interaction with the Beefree SDK MCP Server.
+Model choice is the biggest lever. For token usage specifically, consider [Code Mode](mcp-server-installation-and-setup.md#code-mode), now in open beta. Code mode is an experimental alternative that optimizes your interaction with the Beefree SDK MCP Server.
 
 #### What is Code Mode?
 

@@ -292,11 +292,11 @@ Rows of this template whose metadata holds customUUID are our saved rows: place 
 ```
 {% endcode %}
 
-The agent, if recognize the match, places the saved rows as they are, for example the header and the footer, and builds only the rest of the email.
+The agent, if it recognizes the match, places the saved rows as they are, for example the header and the footer, and builds only the rest of the email.
 
 ### Writing a library the AI can search
 
-The agent is only as good as the words its given. Three things make the biggest difference:
+The agent is only as good as the words it's given. Three things make the biggest difference:
 
 1. **Name rows the way users talk.** "Black Friday hero" is findable. "Row 12 v3 final" isn't.
 2. **Write the one-line description.** Highly recommended: it's searched and helps decide between two rows that have similar names.

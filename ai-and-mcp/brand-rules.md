@@ -26,17 +26,11 @@ Brand Rules can apply to any AI editing session, whether you’re creating with 
 
 Setting Brand Rules is optional. You can choose which Brand Rule type you'd like to define and how detailed you want to be in defining the rules for each of your Brand Rule types. If you don't define a `brandRules` object, it simply means that the AI isn't restricted by any brand guardrails.&#x20;
 
-Setting Brand Rules is optional. You can choose which Brand Rule type you'd like to define and how detailed you want to be in defining the rules for each of your Brand Rule types. If you don't define a `brandRules` object, it simply means that the AI isn't restricted by any brand guardrails.&#x20;
-
 ### Presets <a href="#key-behaviors-to-carry-into-the-public-docs" id="key-behaviors-to-carry-into-the-public-docs"></a>
 
 `presets` are at the core of your Brand Rules because they define styles — colors, typography, and more — the AI _must_ follow when creating content. They allow you to define how content blocks like buttons, paragraphs, or titles should look when they're created by AI.\
 \
 You can use `presets` in your Brand rules to set one preset per content block or create more sophisticated design systems.&#x20;
-
-`presets` are at the core of your Brand Rules. They define styles, colors, typography, and more that the AI must follow when creating content and that Brand Check validates designs against before they’re sent. They allow you to define how content blocks like buttons, paragraphs, or titles should look.
-
-You can use `presets` in your Brand rules to set one preset per content block or build more sophisticated design systems with multiple preset checks per block.
 
 #### Basic presets: Define one preset per element
 
@@ -66,9 +60,7 @@ Let's say your user's brand guidelines call for all buttons to be bright blue, w
 }
 ```
 
-Every single time the AI adds a button to the design, it'll use the `brandButton` styles you defined — and every button will look exactly the same, in compliance with the styles you defined in your `presets`.&#x20;
-
-Every single time the AI adds a button to the design, it will use the `brandButton` styles you defined, and every button will look exactly the same, in compliance with the styles you defined in your `presets`.
+Every single time the AI adds a button to the design, it'll use the `brandButton` styles you defined, and every button will look exactly the same, in compliance with the styles you defined in your `presets`.
 
 This basic preset is simple to set up and leaves zero ambiguity for the AI.
 
@@ -193,8 +185,6 @@ The raw schema file is attached there as well.
 
 ### Testing and validating your Brand Rules&#x20;
 
-Whenever  you pass a `brandRules` object to the MCP Server or to the AI Co-Pilot, we validate it automatically at that point. If the payload is invalid, we reject it with a full list of issues.&#x20;
-
 Whenever you pass a brandRules object to the MCP Server, AI Co-Pilot, or Brand Check, we validate it automatically at that point. For MCP and the AI Co-Pilot, we reject an invalid payload with a full list of issues. For Brand Check, an invalid brandRules object fires error code 1770 instead, see [Error management](../resources/error-management/) for details.
 
 In addition to that, the following validation endpoint helps you test and validate your `brandRules` payload _before_ you start an agent or an MCP session. This can come in handy while you're still developing and testing your Brand Rules implementation, or can be used as a checkpoint in case you're building ways for your end users to create their own Brand Rules. &#x20;
@@ -219,4 +209,4 @@ Returns the list of errors found when validating the brandRules object.
 
 [Content Defaults](../other-customizations/appearance/content-defaults.md) let you set default styles that are applied whenever a human drops a new content block onto the stage.&#x20;
 
-Brand Rules, on the other hand, are made to support the agentic design workflow. While the core schema of `presets` within Brand Rules closely mirrors those the schema you might already be familiar with when using Content Defaults, Brand Rules help you go far beyond just setting a single default style. You can use Brand Rules to codify even the most complex design systems, give the AI instructions for when to use which predefined styles, set restrictions on what the AI can and cannot edit, and more.&#x20;
+Brand Rules, on the other hand, are made to support the agentic design workflow. While the core schema of `presets` within Brand Rules closely mirrors the schema you might already be familiar with when using Content Defaults, Brand Rules help you go far beyond just setting a single default style. You can use Brand Rules to codify even the most complex design systems, give the AI instructions for when to use which predefined styles, set restrictions on what the AI can and cannot edit, and more.&#x20;
