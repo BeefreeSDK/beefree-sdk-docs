@@ -895,7 +895,9 @@ On requests in checks list: `{"category":"insufficientColorContrast"}`
             "color": "#dddddd",
             "backgroundColor": "#ffffff",
             "contrastRatio": 1.36,
-            "label": "default"
+            "label": "default",
+            "suggestedColor": "#837373",
+            "contrastRatioWithSuggestion": 4.5
           }
         ],
         "hasLinks": false,
@@ -912,7 +914,9 @@ On requests in checks list: `{"category":"insufficientColorContrast"}`
             "color": "#dddddd",
             "backgroundColor": "#ffffff",
             "contrastRatio": 1.36,
-            "label": "default"
+            "label": "default",
+            "suggestedColor": "#837373",
+            "contrastRatioWithSuggestion": 4.5
           }
         ],
         "hasLinks": false,
@@ -920,7 +924,10 @@ On requests in checks list: `{"category":"insufficientColorContrast"}`
           {
             "text": "new",
             "backgroundColor": "#ffffff",
-            "color": "#ffffaa"
+            "color": "#ffffaa",
+            "contrastRatio": 1.88,
+            "suggestedColor": "#837373",
+            "contrastRatioWithSuggestion": 4.5
           }
         ]
       },
@@ -935,7 +942,9 @@ On requests in checks list: `{"category":"insufficientColorContrast"}`
             "color": "#dddddd",
             "backgroundColor": "#ffffff",
             "contrastRatio": 1.36,
-            "label": "default"
+            "label": "default",
+            "suggestedColor": "#837373",
+            "contrastRatioWithSuggestion": 4.5
           }
         ],
         "hasLinks": false,
@@ -943,7 +952,10 @@ On requests in checks list: `{"category":"insufficientColorContrast"}`
           {
             "text": "block",
             "backgroundColor": "#ffffff",
-            "color": "#ffffaa"
+            "color": "#ffffaa",
+            "contrastRatio": 1.88,
+            "suggestedColor": "#837373",
+            "contrastRatioWithSuggestion": 4.5
           }
         ]
       },
@@ -958,7 +970,9 @@ On requests in checks list: `{"category":"insufficientColorContrast"}`
             "color": "#dddddd",
             "backgroundColor": "#ffffff",
             "contrastRatio": 1.36,
-            "label": "default"
+            "label": "default",
+            "suggestedColor": "#837373",
+            "contrastRatioWithSuggestion": 4.5
           }
         ],
         "hasLinks": false,
@@ -966,7 +980,10 @@ On requests in checks list: `{"category":"insufficientColorContrast"}`
           {
             "text": "unordered",
             "backgroundColor": "#ffffff",
-            "color": "#ffffaa"
+            "color": "#ffffaa",
+            "contrastRatio": 1.88,
+            "suggestedColor": "#837373",
+            "contrastRatioWithSuggestion": 4.5
           }
         ]
       },
@@ -981,7 +998,9 @@ On requests in checks list: `{"category":"insufficientColorContrast"}`
             "color": "#dddddd",
             "backgroundColor": "#ffffff",
             "contrastRatio": 1.36,
-            "label": "default"
+            "label": "default",
+            "suggestedColor": "#837373",
+            "contrastRatioWithSuggestion": 4.5
           }
         ],
         "hasLinks": false,
@@ -998,7 +1017,9 @@ On requests in checks list: `{"category":"insufficientColorContrast"}`
             "color": "#cccccc",
             "backgroundColor": "#ffffff",
             "contrastRatio": 1.61,
-            "label": "default"
+            "label": "default",
+            "suggestedColor": "#837373",
+            "contrastRatioWithSuggestion": 4.5
           }
         ],
         "hasLinks": false,
@@ -1015,7 +1036,9 @@ On requests in checks list: `{"category":"insufficientColorContrast"}`
             "color": "#eeeeee",
             "backgroundColor": "#dddddd",
             "contrastRatio": 1.17,
-            "label": "default"
+            "label": "default",
+            "suggestedColor": "#837373",
+            "contrastRatioWithSuggestion": 4.5
           }
         ],
         "hasLinks": false,
@@ -1029,7 +1052,7 @@ On requests in checks list: `{"category":"insufficientColorContrast"}`
 
 The following table lists and defines all the fields related to the `insufficientColorContrast` check.
 
-<table data-full-width="false"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>check type, equal to <code>insufficientColorContrast</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>the number of widgets with warnings</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>the status of this check: <code>passed</code> or <code>warning</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>the list of widgets with warnings</td></tr><tr><td><code>locked</code></td><td>boolean</td><td>if the widget is in a locked row</td></tr><tr><td><code>synced</code></td><td>boolean</td><td>if the widget is in a synced row</td></tr><tr><td><code>uuid</code></td><td>string</td><td>uuid of the row containing this widget</td></tr><tr><td><code>widgetLabel</code></td><td>string</td><td>label of the widget</td></tr><tr><td><code>widgetType</code></td><td>string</td><td><code>button</code>, <code>heading</code></td></tr><tr><td><code>hasLinks</code></td><td>boolean</td><td>If the widget contains any link</td></tr><tr><td><code>tinyColorList</code></td><td>array</td><td>list of colors applied with tiny mce with warnings. Each element contains the following fields: <code>color</code>, <code>backgroundColor</code>, <code>text</code></td></tr><tr><td><code>text</code></td><td>string</td><td>the text on which color with tiny mce is applied</td></tr><tr><td><code>colors</code></td><td>array</td><td>list of color pairs with warnings. Each element contains the following fields: <code>backgroundColor, color, contrastRatio, label</code></td></tr><tr><td><code>backgroundColor</code></td><td>string</td><td>color in hexadecimal format</td></tr><tr><td><code>color</code></td><td>string</td><td>color in hexadecimal format</td></tr><tr><td><code>contrastRatio</code></td><td>float</td><td>contrast ratio between <code>color</code> and <code>backgroundColor</code></td></tr><tr><td><code>label</code></td><td>string</td><td>description of the color pairs</td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th>Field</th><th>Data type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>check type, equal to <code>insufficientColorContrast</code></td></tr><tr><td><code>targetsCount</code></td><td>integer</td><td>the number of widgets with warnings</td></tr><tr><td><code>checkStatus</code></td><td>string</td><td>the status of this check: <code>passed</code> or <code>warning</code></td></tr><tr><td><code>targets</code></td><td>array</td><td>the list of widgets with warnings</td></tr><tr><td><code>locked</code></td><td>boolean</td><td>if the widget is in a locked row</td></tr><tr><td><code>synced</code></td><td>boolean</td><td>if the widget is in a synced row</td></tr><tr><td><code>uuid</code></td><td>string</td><td>uuid of the row containing this widget</td></tr><tr><td><code>widgetLabel</code></td><td>string</td><td>label of the widget</td></tr><tr><td><code>widgetType</code></td><td>string</td><td><code>button</code>, <code>heading</code></td></tr><tr><td><code>hasLinks</code></td><td>boolean</td><td>If the widget contains any link</td></tr><tr><td><code>tinyColorList</code></td><td>array</td><td>list of colors applied with tiny mce with warnings. Each element contains the following fields: <code>color</code>, <code>backgroundColor</code>, <code>text</code></td></tr><tr><td><code>text</code></td><td>string</td><td>the text on which color with tiny mce is applied</td></tr><tr><td><code>colors</code></td><td>array</td><td>list of color pairs with warnings. Each element contains the following fields: <code>backgroundColor, color, contrastRatio, label</code></td></tr><tr><td><code>backgroundColor</code></td><td>string</td><td>color in hexadecimal format</td></tr><tr><td><code>color</code></td><td>string</td><td>color in hexadecimal format</td></tr><tr><td><code>contrastRatio</code></td><td>float</td><td>contrast ratio between <code>color</code> and <code>backgroundColor</code></td></tr><tr><td><code>label</code></td><td>string</td><td>description of the color pairs</td></tr><tr><td><code>suggestedColor</code></td><td>string</td><td>suggested color in hex to reach the minimum contrast ratio; a brightness variation of the color, hue and saturation preserved</td></tr><tr><td><code>contrastRatioWithSuggestion</code></td><td>float</td><td>contrast ratio between <code>suggestedColor</code> and <code>backgroundColor</code></td></tr></tbody></table>
 
 ### Highlight unreachable web link
 
@@ -1565,7 +1588,7 @@ This section lists and describes each of the Check endpoints. You can use this s
 This section includes details on how to make an API call using the email check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="message-check" path="/v1/message/check" method="post" %}
-[OpenAPI message-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/a0a803fcab82fc94a75d76e02422bbaee4b3d159b979391ed8095e475d723f49.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=6949830200cf8c4d704b1e4b8bcd1a92%2F20261104%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261104T140707Z&X-Amz-Expires=172800&X-Amz-Signature=c7fbd2be763c8bef1c05414ace72021604a3e6e113df409f727438160f9854a5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI message-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/a0a803fcab82fc94a75d76e02422bbaee4b3d159b979391ed8095e475d723f49.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cc7c3f440ca5fd44ab53362d4a69dfe%2F20261118%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261118T162204Z&X-Amz-Expires=172800&X-Amz-Signature=43e343dca7e749d10ac672e0ac42a859eee503830d5f9df92ddb9a667aa8ddeb&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
@@ -1767,7 +1790,7 @@ Reference the following example email response:
 This section includes details on how to make an API call using the page check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="page-check" path="/v1/page/check" method="post" %}
-[OpenAPI page-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/4308febd44d915cc101689a737e2381eb1c6723b5e3d523e010547c938a72ba9.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=6949830200cf8c4d704b1e4b8bcd1a92%2F20261104%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261104T140707Z&X-Amz-Expires=172800&X-Amz-Signature=c39676dc31268cd446d005e2da5802a73f00d42642cf45b9db9ba82e6aa1d988&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI page-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/4308febd44d915cc101689a737e2381eb1c6723b5e3d523e010547c938a72ba9.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cc7c3f440ca5fd44ab53362d4a69dfe%2F20261118%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261118T162204Z&X-Amz-Expires=172800&X-Amz-Signature=cd82e296470f275835edf7e1597bfe62a51fdf6f51c75a2a3a8743f44ff7b47a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
@@ -1952,7 +1975,7 @@ Reference an example page response:
 This section includes details on how to make an API call using the row check endpoint. In the following environment, you can reference comprehensive endpoint details and use the interactive testing environment to get started with the endpoint.
 
 {% openapi-operation spec="row-check" path="/v1/row/check" method="post" %}
-[OpenAPI row-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/fd96add5eb3171c8641c68e85b13ca24fd76b94debf20b7a3b25a7b5e4c01264.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=6949830200cf8c4d704b1e4b8bcd1a92%2F20261104%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261104T140707Z&X-Amz-Expires=172800&X-Amz-Signature=acc4d729b2a263d8b5bcae2c16eb4f1d57d3ffc3848748459f8f2524c7eadb84&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+[OpenAPI row-check](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/fd96add5eb3171c8641c68e85b13ca24fd76b94debf20b7a3b25a7b5e4c01264.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cc7c3f440ca5fd44ab53362d4a69dfe%2F20261118%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261118T162204Z&X-Amz-Expires=172800&X-Amz-Signature=bfc599af137ed688555176e943ab380137d70e485e126bbb2ebd68a2c3061924&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 {% endopenapi-operation %}
 
 <details>
