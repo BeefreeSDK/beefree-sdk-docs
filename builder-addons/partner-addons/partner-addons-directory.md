@@ -32,7 +32,7 @@ Engage and inform with dynamic content, timers, and millions of visuals.
 
 Email from your platform will come alive with this powerful set of dynamic-content tools and a massive collection of ready-to-use visuals. On-open content transforms the email experience into a live marketing channel, backed by millions of royalty-free visuals to grab inbox attention with eye-catching emails.
 
-[Addon website](https://dam.beefree.io/visboxmain) | [Privacy Policy](https://dam.beefree.io/visboxtos) | [Support](https://dam.beefree.io/visboxsupport)
+[Addon website](https://dam.beefree.io/visboxmain) | [Privacy Policy](https://campaigngenius.io/privacy/) | [Support](https://campaigngenius.io/bee)
 
 ## Countdown Timers by Sendtric <a href="#countdown-timers-by-sendtric" id="countdown-timers-by-sendtric"></a>
 
@@ -42,7 +42,7 @@ Boost clickthrough rates with dynamic countdown timers.
 
 Sendtric countdown timers are perfect for your customers to create urgency in their campaigns. With our robust architecture and limitless customization options, our timers can be used for a variety of use cases such as sales, events, deadlines, new account sign-ups, abandoned cart reminders, and much more.
 
-[Addon website](https://dam.beefree.io/sendtricmain) | [About the AddOn](https://dam.beefree.io/sendtricabout) | [Privacy Policy](https://www.sendtric.com/terms-of-service/) | [Support](mailto:support@sendtric.com)
+[Addon website](https://dam.beefree.io/sendtricmain) | [About the AddOn](https://www.sendtric.com/) | [Privacy Policy](https://www.sendtric.com/terms-of-service/) | [Support](mailto:support@sendtric.com)
 
 ## Gifs <a href="#gifs" id="gifs"></a>
 
