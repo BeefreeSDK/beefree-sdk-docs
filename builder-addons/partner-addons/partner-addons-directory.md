@@ -14,7 +14,7 @@ Over 600 digital publishers use Interactive Offers to help captivate new audienc
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-01-12 at 10.21.48@2x.png" alt=""><figcaption></figcaption></figure>
 
-[AddOn website](https://www.interactiveoffers.com/) | [About Ads By Interactive Offers](https://www.interactiveoffers.com/publishers) | [Privacy Policy](https://app.gitbook.com/o/hABGoPMOKISmuDmz4fbV/s/xZgBDrdhQLtWmkGqVR59/) | [Support](https://www.interactiveoffers.com/knowledgeBase)
+[AddOn website](https://www.interactiveoffers.com/) | [About Ads By Interactive Offers](https://www.interactiveoffers.com/publishers) | [Privacy Policy](https://www.interactiveoffers.com/privacy-policy) | [Support](https://www.interactiveoffers.com/knowledgeBase)
 
 ## Countdown Timers by NiftyImages <a href="#countdown-timers-by-niftyimages" id="countdown-timers-by-niftyimages"></a>
 
@@ -42,7 +42,7 @@ Boost clickthrough rates with dynamic countdown timers.
 
 Sendtric countdown timers are perfect for your customers to create urgency in their campaigns. With our robust architecture and limitless customization options, our timers can be used for a variety of use cases such as sales, events, deadlines, new account sign-ups, abandoned cart reminders, and much more.
 
-[Addon website](https://dam.beefree.io/sendtricmain) | [About the AddOn](https://www.sendtric.com/) | [Privacy Policy](https://www.sendtric.com/terms-of-service/) | [Support](mailto:support@sendtric.com)
+[Addon website](https://www.sendtric.com/integrations/) | [About the AddOn](https://www.sendtric.com/) | [Privacy Policy](https://www.sendtric.com/terms-of-service/) | [Support](mailto:support@sendtric.com)
 
 ## Gifs <a href="#gifs" id="gifs"></a>
 
@@ -52,7 +52,7 @@ The GIFs by GIPHY AddOn gives your customers the best source for GIFs, ready to 
 
 Once installed and configured, they will see a new content tile in the builder. Once dragged into the email or page, a click on a button in the stage area will launch a GIPHY search dialog. Clicking on a GIF will import it instantly into the email or page.
 
-[Addon website](./) | [About the AddOn](./) | [Privacy Policy](https://beefree.io/privacy-policy/) | [Support](https://devportal.beefree.io/hc/en-us)
+[About the AddOn](./) | [Privacy Policy](https://beefree.io/privacy-policy/) | [Support](https://devportal.beefree.io/hc/en-us)
 
 ## Stickers <a href="#stickers" id="stickers"></a>
 
@@ -62,7 +62,7 @@ The Stickers by GIPHY AddOn gives your customers the best source for stickers, r
 
 Once installed and configured, they will see a new content tile in the builder. Once dragged into the email or page, a click on a button in the stage area will launch a GIPHY search dialog. Clicking on a sticker will import it instantly into the email or page.
 
-[Addon website](./) | [About the AddOn](./) | [Privacy Policy](https://beefree.io/privacy-policy/) | [Support](https://devportal.beefree.io/hc/en-us)
+[About the AddOn](./) | [Privacy Policy](https://beefree.io/privacy-policy/) | [Support](https://devportal.beefree.io/hc/en-us)
 
 ## Buzzworks
 
