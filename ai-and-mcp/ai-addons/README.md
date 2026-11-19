@@ -20,14 +20,6 @@ The Custom AI Writing Assistant AddOn enables host applications to integrate the
 
 [How do I enable the Custom AI Writing Assistant AddOn?](https://docs.beefree.io/beefree-sdk/ai-and-mcp/ai-writing-assistant/custom-ai-writing-assistant) | [Terms of Services](https://developers.beefree.io/terms-of-service)
 
-### Stability AI (Text-to-image)
-
-The Stability AI AddOn converts text to images. This feature allows your end users to submit descriptions of what they would like to see in their AI-generated images, and to also submit negative prompts of what they do not want to see in their image. Once they submit the prompt and negative prompt, they'll receive an AI-generated image that they can use directly within their designs.<br>
-
-<figure><img src="../../.gitbook/assets/Stability.png" alt=""><figcaption></figcaption></figure>
-
-[How do I enable the Stability AI AddOn?](https://docs.beefree.io/beefree-sdk/builder-addons/partner-addons/partner-addons-directory#openai) | [AI Providers and Data Security](https://docs.beefree.io/beefree-sdk/ai-and-mcp/ai-writing-assistant/data-security) | [Terms of Services](https://developers.beefree.io/terms-of-service)
-
 ### Generate Alt Text with AI
 
 Generate alt-text descriptions with the power of Computer Vision. Azure AI Vision is a unified service that offers innovative computer vision capabilities. Image analysis pulls from more than 10,000 concepts and objects to detect, and caption images.

@@ -57,7 +57,6 @@
     * [Token Upselling](ai-and-mcp/ai-addons/ai-writing-assistant/token-upselling.md)
     * [Apply a Brand Tone](ai-and-mcp/ai-addons/ai-writing-assistant/apply-a-brand-tone.md)
   * [Custom AI Writing Assistant](ai-and-mcp/ai-addons/custom-ai-writing-assistant.md)
-  * [Stability AI (Text-to-image)](ai-and-mcp/ai-addons/stability-ai.md)
   * [Generate Alt Text with AI](ai-and-mcp/ai-addons/generate-alt-text-with-ai/README.md)
     * [Bulk Alt-Text generation](ai-and-mcp/ai-addons/generate-alt-text-with-ai/generate-alt-text-globally-with-ai.md)
   * [DeepL (AI-powered translation)](ai-and-mcp/ai-addons/deepl.md)
