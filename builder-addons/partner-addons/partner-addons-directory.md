@@ -32,7 +32,7 @@ Engage and inform with dynamic content, timers, and millions of visuals.
 
 Email from your platform will come alive with this powerful set of dynamic-content tools and a massive collection of ready-to-use visuals. On-open content transforms the email experience into a live marketing channel, backed by millions of royalty-free visuals to grab inbox attention with eye-catching emails.
 
-[Addon website](https://dam.beefree.io/visboxmain) | [Privacy Policy](https://campaigngenius.io/privacy/) | [Support](https://campaigngenius.io/bee)
+[Addon website](https://campaigngenius.io/bee/) | [Privacy Policy](https://campaigngenius.io/privacy/) | [Support](https://campaigngenius.io/bee)
 
 ## Countdown Timers by Sendtric <a href="#countdown-timers-by-sendtric" id="countdown-timers-by-sendtric"></a>
 
